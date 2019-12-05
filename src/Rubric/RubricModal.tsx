@@ -66,7 +66,7 @@ export class RubricModal extends React.Component<
               </button>
             </div>
             <div className="modal-body">
-              <RubricTable {...this.props} />
+              <RubricTable {...this.props} showExampler={true} />
             </div>
             <div className="modal-footer">
               <button

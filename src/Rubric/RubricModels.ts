@@ -43,3 +43,7 @@ export interface RubricTableRowModel {
   rationale: string;
   sample: string;
 }
+export interface RubricAnswerKeyModel {
+  name: string;
+  AnswerKey: string;
+}

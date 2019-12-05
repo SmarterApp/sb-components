@@ -1,8 +1,7 @@
 import * as React from "react";
-import * as Collapsible from "../Rubric/Collapsible";
 import { AboutItemModel } from "./AboutItemModels";
 import { AboutThisItemDetail } from "./AboutItemDetail";
-import { Rubric } from "../Rubric/Rubric";
+import { RubricRenderer } from "../Rubric/RubricRenderer";
 import * as ReactModal from "react-modal";
 
 export interface AboutItemProps extends AboutItemModel {
@@ -30,19 +29,23 @@ export class AboutItem extends React.Component<AboutItemProps, AboutItemState> {
     this.setState({ showModal: false });
   };
 
-  private renderRubrics(): JSX.Element | undefined {
-    const { sampleItemScoring, showRubrics } = this.props;
-    let content: JSX.Element | undefined;
+  private renderRubric() {
+    const aboutItem = this.props;
+    let props = {
+      itemCardViewModel: aboutItem.itemCardViewModel,
+      rubrics: aboutItem.sampleItemScoring
+        ? aboutItem.sampleItemScoring.rubrics
+        : [],
+      answerKey: aboutItem.sampleItemScoring
+        ? aboutItem.sampleItemScoring.answerKey
+        : ""
+    };
 
-    if (showRubrics && sampleItemScoring && sampleItemScoring.rubrics) {
-      const rubrics = sampleItemScoring.rubrics.map((ru, i) => (
-        <Rubric {...ru} key={String(i)} />
-      ));
-
-      content = <div className="rubric">{rubrics}</div>;
-    }
-
-    return content;
+    return (
+      <div>
+        <RubricRenderer {...props} />
+      </div>
+    );
   }
 
   render() {
@@ -83,7 +86,7 @@ export class AboutItem extends React.Component<AboutItemProps, AboutItemState> {
             </div>
             <div className="modal-body">
               <AboutThisItemDetail {...this.props} />
-              {this.renderRubrics()}
+              {this.renderRubric()}
             </div>
             <div className="modal-footer">
               <button

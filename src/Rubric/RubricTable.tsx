@@ -5,6 +5,7 @@ import { ItemRevisionModel } from "@src/index";
 export interface RubricTableProps {
   rubrics: RubricModel[];
   itemModel?: ItemRevisionModel;
+  showExampler?: boolean;
 }
 
 export class RubricTable extends React.Component<RubricTableProps, {}> {
@@ -29,8 +30,9 @@ export class RubricTable extends React.Component<RubricTableProps, {}> {
         };
       });
     }
-    const showSample = rubric.samples ? rubric.samples.length !== 0 : false;
-
+    const showSample = this.props.showExampler
+      ? rubric.samples ? rubric.samples.length !== 0 : false
+      : false;
     const leftAlign: React.CSSProperties = {
       textAlign: "left"
     };
