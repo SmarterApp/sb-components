@@ -7,6 +7,7 @@ import {
   ItemModel,
   ItemCard
 } from "@src/index";
+import * as ReactModal from "react-modal";
 
 /**
  * SearchResultType enum
@@ -28,6 +29,7 @@ export enum SearchResultType {
 export interface SearchResultContainerProps {
   onRowSelection: (item: ItemModel, reset: boolean) => void;
   onItemSelection: (item: ItemCardModel) => void;
+  onPrintItems: () => void;
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
@@ -42,6 +44,7 @@ export interface SearchResultContainerProps {
 export interface SearchResultContainerState {
   renderType: SearchResultType;
   loading: boolean;
+  showModal: boolean;
 }
 
 /**
@@ -58,9 +61,17 @@ export class SearchResultContainer extends React.Component<
     super(props);
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
-      loading: true
+      loading: true,
+      showModal: false
     };
   }
+  handleShowModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  handleHideModal = () => {
+    this.setState({ showModal: false });
+  };
 
   componentWillReceiveProps(nextProps: SearchResultContainerProps) {
     let loading = true;
@@ -112,6 +123,10 @@ export class SearchResultContainer extends React.Component<
     this.setState({ renderType });
   };
 
+  handlePrintItemsClick = (): void => {
+    this.props.onPrintItems();
+  };
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -143,14 +158,43 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
+  renderPrintButton(viewType: SearchResultType): JSX.Element {
+    const { renderType } = this.state;
+    const className = "btn-gray";
+    let label = "";
+    let iconClass = "";
+    label = "Print Items";
+    iconClass = "glyphicon glyphicon-th-large glyphicon-print";
+
+    return (
+      <button
+        onClick={() => this.handleShowModal()}
+        aria-label="Print Item"
+        title="Print Items"
+        className={"btn btn-default"}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />{" "}
+        Print
+      </button>
+    );
+  }
+
   /**
    * Renders toggle buttons for changing the layout to table and item card
    */
   renderHeader(): JSX.Element {
     return (
       <div className="search-result-header">
-        {this.renderToggle(SearchResultType.Table)}
-        {this.renderToggle(SearchResultType.ItemCard)}
+        <div className="search-type">
+          {this.renderToggle(SearchResultType.Table)}
+          {this.renderToggle(SearchResultType.ItemCard)}
+        </div>
+        <div className="PrintItem">
+          {this.renderPrintButton(SearchResultType.ItemCard)}
+        </div>
       </div>
     );
   }
@@ -162,6 +206,47 @@ export class SearchResultContainer extends React.Component<
   render() {
     return (
       <div className="search-result-container">
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="About This Item Modal"
+          onRequestClose={this.handleHideModal}
+          overlayClassName="react-modal-overlay"
+          className="react-modal-content about-item-modal"
+        >
+          <div
+            className="modal-wrapper"
+            aria-labelledby="About Item Modal"
+            aria-hidden="true"
+          >
+            <div className="modal-header">
+              <h4 className="modal-title">Accessibility Options</h4>
+              <button
+                className="close"
+                onClick={this.handleHideModal}
+                aria-label="Close modal"
+              >
+                <span className="fa fa-times" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="modal-body">Testing</div>
+            <div className="modal-footer">
+              <button
+                className="btn btn-primary"
+                aria-label="Close modal"
+                onClick={this.handleHideModal}
+              >
+                Close
+              </button>
+              <button
+                className="btn btn-primary"
+                aria-label="Continue modal"
+                onClick={this.handleHideModal}
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </ReactModal>
         {this.renderHeader()}
         {this.renderBody()}
       </div>

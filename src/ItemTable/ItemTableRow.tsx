@@ -58,6 +58,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
+    if (rowData.selected === true) rowData.selected = false;
+    else rowData.selected = true;
     e.stopPropagation();
     this.props.onRowSelect(rowData);
   };
@@ -105,7 +107,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     } else if (col.className === "item" && !this.props.hasControls) {
       content = (
         <a tabIndex={0} role="link">
-          {columnText}
+          {columnText}-yes
         </a>
       );
     } else if (col.className === "subject") {
@@ -135,11 +137,14 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
           tabIndex={0}
         >
+          {" "}
           {rowData.selected === true ? checked : unChecked}&nbsp;
         </td>,
-        <td className="arrow-indicator" tabIndex={0} key="expand-control">
-          {isExpanded ? expand : collapse}
-        </td>
+        <td />
+        // ,
+        // <td className="arrow-indicator" tabIndex={0} key="expand-control">
+        //   {isExpanded ? expand : collapse}
+        // </td>
       ];
     }
 
@@ -148,7 +153,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   render() {
     const { rowData, isExpanded, columns } = this.props;
-
     return (
       <tr
         key={`${rowData.bankKey}-${rowData.itemKey}`}

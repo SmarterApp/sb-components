@@ -2,11 +2,15 @@ import { SearchResultContainerProps, SearchResultType } from "@src/index";
 import { itemCardList } from "@mocks/index";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
-  isLinkTable: true,
+  isLinkTable: false,
   onRowSelection: () => {
     return;
   },
   onItemSelection: () => {
+    return;
+  },
+  onPrintItems: () => {
+    console.log("Base method");
     return;
   },
   itemCards: itemCardList,
