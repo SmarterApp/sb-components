@@ -14,6 +14,7 @@ export interface ItemTableRowProps {
   isExpanded: boolean;
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
+  isItemSelected: boolean;
 }
 
 const unChecked = (
@@ -35,13 +36,16 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
+    console.log("shouldcomponentupdate called " + this.props.rowData.selected);
     return (
       this.props.isExpanded !== nextProps.isExpanded ||
-      this.props.rowData.selected !== nextProps.rowData.selected
+      this.props.rowData.selected !== nextProps.rowData.selected ||
+      this.props.isItemSelected !== nextProps.isItemSelected
     );
   }
 
   handleRowClick = (rowData: ItemCardModel) => {
+    console.log("row click ");
     this.props.onRowExpand(rowData);
   };
 
@@ -58,10 +62,13 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
+    console.log("item slect ");
     if (rowData.selected === true) rowData.selected = false;
     else rowData.selected = true;
-    e.stopPropagation();
+    //e.stopPropagation();
     this.props.onRowSelect(rowData);
+    //this.props.onRowExpand(rowData);
+    e.stopPropagation();
   };
 
   handleCheckboxKeyUpEnter = (
@@ -107,7 +114,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     } else if (col.className === "item" && !this.props.hasControls) {
       content = (
         <a tabIndex={0} role="link">
-          {columnText}-yes
+          {columnText}
         </a>
       );
     } else if (col.className === "subject") {
@@ -137,11 +144,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
           tabIndex={0}
         >
-          {" "}
           {rowData.selected === true ? checked : unChecked}&nbsp;
-        </td>,
-        <td />
-        // ,
+        </td>
         // <td className="arrow-indicator" tabIndex={0} key="expand-control">
         //   {isExpanded ? expand : collapse}
         // </td>
@@ -153,6 +157,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   render() {
     const { rowData, isExpanded, columns } = this.props;
+
     return (
       <tr
         key={`${rowData.bankKey}-${rowData.itemKey}`}

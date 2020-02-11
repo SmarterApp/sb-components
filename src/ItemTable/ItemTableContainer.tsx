@@ -12,6 +12,7 @@ import {
   ItemCardModel,
   AboutItemModel
 } from "@src/index";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 
 /**
  * Properties for ItemTableContainer
@@ -33,6 +34,7 @@ export interface ItemTableContainerProps {
 export interface ItemTableContainerState {
   sorts: HeaderSortModel[];
   expandedRow?: ItemCardModel;
+  isItemSelected: boolean;
 }
 /**
  * Container for a table of Items that can be sorted by clicking on a table header.
@@ -47,7 +49,8 @@ export class ItemTableContainer extends React.Component<
   constructor(props: ItemTableContainerProps) {
     super(props);
     this.state = {
-      sorts: []
+      sorts: [],
+      isItemSelected: false
     };
   }
 
@@ -70,7 +73,8 @@ export class ItemTableContainer extends React.Component<
     };
     if (unmatchFound > -1) {
       this.state = {
-        sorts: [newSortModel]
+        sorts: [newSortModel],
+        isItemSelected: this.state.isItemSelected
       };
     }
     const newSorts = (this.state.sorts || []).slice();
@@ -116,6 +120,7 @@ export class ItemTableContainer extends React.Component<
 
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
+    this.setState({ isItemSelected: this.state.isItemSelected ? false : true });
   };
   /**
    * Sorts two ItemCardModels on the property specified by the sort parameter
@@ -173,6 +178,7 @@ export class ItemTableContainer extends React.Component<
         No results found for the given search terms.
       </span>
     );
+
     if (itemCards !== undefined) {
       // if no items are returned we want to return a friendly message
       if (itemCards.length !== 0) {
@@ -184,6 +190,7 @@ export class ItemTableContainer extends React.Component<
             sort={this.state.sorts}
             columns={this.pageHeaderColumns}
             expandedRow={this.state.expandedRow}
+            isItemSelected={this.state.isItemSelected}
             item={this.props.item}
             isLinkTable={this.props.isLinkTable}
           />

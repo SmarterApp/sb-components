@@ -23,6 +23,7 @@ export interface ItemTableProps {
   expandedRow?: ItemCardModel;
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
+  isItemSelected: boolean;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -83,6 +84,7 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         isExpanded={isExpanded}
         onRowExpand={onRowExpand}
         onRowSelect={onRowSelect}
+        isItemSelected={this.props.isItemSelected}
       />
     );
 
