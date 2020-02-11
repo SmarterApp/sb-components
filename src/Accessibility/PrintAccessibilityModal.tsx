@@ -91,13 +91,16 @@ export class PrintAccessibilityModal extends React.Component<
     });
 
     return (
-      <Select
-        label="Language"
-        labelClass="hidden"
-        selected={selectedLanguageCode || ""}
-        options={selectOptions}
-        onChange={this.handleLanguageChange}
-      />
+      <>
+        <Select
+          className="select-print-accessibility"
+          label="Language"
+          // labelClass="hidden"
+          selected={selectedLanguageCode || ""}
+          options={selectOptions}
+          onChange={this.handleLanguageChange}
+        />
+      </>
     );
   }
 
@@ -120,8 +123,9 @@ export class PrintAccessibilityModal extends React.Component<
 
     return (
       <Select
-        label="Illustration"
-        labelClass="hidden"
+        className="select-print-accessibility"
+        label="Illustration Glossary"
+        //labelClass="hidden"
         selected={selectedIllustration || ""}
         options={selectOptions}
         onChange={this.handleIllustrationChange}
@@ -147,13 +151,16 @@ export class PrintAccessibilityModal extends React.Component<
     });
 
     return (
-      <Select
-        label="Illustration"
-        labelClass="hidden"
-        selected={selectedGlossary || ""}
-        options={selectOptions}
-        onChange={this.handleGlossaryOptionChange}
-      />
+      <>
+        <Select
+          className="select-print-accessibility"
+          label="Glossary"
+          //labelClass="hidden"
+          selected={selectedGlossary || ""}
+          options={selectOptions}
+          onChange={this.handleGlossaryOptionChange}
+        />
+      </>
     );
   }
 
@@ -169,25 +176,31 @@ export class PrintAccessibilityModal extends React.Component<
           overlayClassName="react-modal-overlay"
           className="react-modal-content about-item-modal"
         >
-          <div
-            className="modal-wrapper"
-            aria-labelledby="About Item Modal"
-            aria-hidden="true"
-          >
+          <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
             <div className="modal-header">
-              <h4 className="modal-title">Accessibility Options</h4>
-              <button
-                className="close"
-                onClick={this.handleHideModal}
-                aria-label="Close modal"
-              >
+              <h4 className="modal-title">Print Accessibility Options</h4>
+              <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
             <div className="modal-body">
-              {this.renderTranslationLanguages()}
-              {this.renderGlossaryOptions()}
-              {this.renderIllustrationOptions()}{" "}
+              <form id="accessibility-form">
+                <div className="accessibility-groups">
+                  <div className="accessibility-resource-type section section-light">
+                    <div className="accessibility-dropdowns">
+                      <div className="accessibility-dropdown form-group selection-enabled">
+                        {this.renderTranslationLanguages()}
+                      </div>
+                      <div className="accessibility-dropdown form-group selection-enabled">
+                        {this.renderGlossaryOptions()}
+                      </div>
+                      <div className="accessibility-dropdown form-group selection-enabled">
+                        {this.renderIllustrationOptions()}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
             <div className="modal-footer">
               <button
