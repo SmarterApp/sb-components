@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
-import { ItemCardModel } from "lib/src";
+//import { ItemCardModel } from "lib/src";
 
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;

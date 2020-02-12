@@ -22,6 +22,9 @@ export const itemTableProps: ItemTableContainerProps = {
   onItemSelection: () => {
     return;
   },
+  onCountNumberOfItemSelection: () => {
+    return;
+  },
   itemCards: itemCardList,
   item: {
     kind: "none"

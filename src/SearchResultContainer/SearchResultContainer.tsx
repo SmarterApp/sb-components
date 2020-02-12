@@ -54,6 +54,7 @@ export interface SearchResultContainerState {
   showModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
+  countSelectedItems: number;
 }
 
 /**
@@ -73,7 +74,8 @@ export class SearchResultContainer extends React.Component<
       loading: true,
       showModal: false,
       showErrorModal: false,
-      statusMessage: ""
+      statusMessage: "",
+      countSelectedItems: this.getSelectedItemCount()
     };
   }
 
@@ -84,19 +86,19 @@ export class SearchResultContainer extends React.Component<
     }
     this.setState({ loading });
   }
+
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
+    this.handleCountNumberOfItemSelection();
   };
   /**
    * Renders all results to ItemCard view.
    */
-  // Changed by Sonu => passing additional 2 props or the whole props to get ItemcardModel
   renderItemCards(): JSX.Element[] | undefined {
     let tags: JSX.Element[] | undefined;
 
     if (this.props.itemCards) {
       tags = this.props.itemCards.map(digest => (
-        // onItemSelection = {this.props.onItemSelection}
         <ItemCard
           rowData={digest}
           onRowSelect={this.handleSelectItem}
@@ -116,7 +118,13 @@ export class SearchResultContainer extends React.Component<
     let tag: JSX.Element | JSX.Element[] | undefined;
     if (this.props.itemCards && this.props.itemCards.length > 0) {
       if (this.state.renderType === SearchResultType.Table) {
-        tag = <ItemTableContainer {...this.props} />;
+        tag = <ItemTableContainer 
+                onRowSelection={this.props.onRowSelection}
+                onItemSelection={this.props.onItemSelection}
+                itemCards={this.props.itemCards}
+                item={this.props.item}
+                isLinkTable={this.props.isLinkTable}
+                onCountNumberOfItemSelection = {this.handleCountNumberOfItemSelection} />;
       } else {
         tag = this.renderItemCards();
       }
@@ -134,6 +142,22 @@ export class SearchResultContainer extends React.Component<
   handleTypeChange = (renderType: SearchResultType): void => {
     this.setState({ renderType });
   };
+
+  handleResetItems = (): void => {
+    this.props.onResetItems();
+  }
+
+  handleCountNumberOfItemSelection = ():void => {
+    this.setState({countSelectedItems: this.getSelectedItemCount()}); 
+  }
+
+  getSelectedItemCount = ():number => {
+    let selectedItemCount = 0
+    if(this.props.itemCards !== undefined) {
+      selectedItemCount = this.props.itemCards.filter(it => it.selected === true).length;
+    }
+    return selectedItemCount;
+  }
 
   handlePrintItemsClick = (
     langCode: string,
@@ -204,6 +228,23 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
+  renderResetButton(): JSX.Element {
+    return(
+      <button 
+        onClick={this.handleResetItems}
+        aria-label="Clear Selection"
+        title="Clear Selection"
+        className={"btn btn-default"}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-refresh"
+        />{" "}
+        Clear Selection
+      </button>
+    );
+  }
+
   renderPrintButton(viewType: SearchResultType): JSX.Element {
     return (
       <button
@@ -226,14 +267,19 @@ export class SearchResultContainer extends React.Component<
    */
   renderHeader(): JSX.Element {
     return (
-      <div className="search-result-header">
-        <div className="search-type">
+      <div className="row">
+        <div className="col-sm-4 header-grid-div">
+          <strong>
+          Total item(s) selected: {this.state.countSelectedItems}
+          </strong>
+        </div>
+        <div className="col-sm-3 header-grid-div">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
-        <div className="PrintItem">
-          {this.renderPrintButton(SearchResultType.ItemCard)}
-        </div>
+        <div className="col-sm-5 header-grid-div">
+          {this.renderResetButton()}
+          {this.renderPrintButton(SearchResultType.ItemCard)}</div>
       </div>
     );
   }

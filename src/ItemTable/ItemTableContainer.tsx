@@ -25,6 +25,7 @@ export interface ItemTableContainerProps {
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
+  onCountNumberOfItemSelection: () => void;
 }
 
 /**
@@ -121,6 +122,7 @@ export class ItemTableContainer extends React.Component<
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
     this.setState({ isItemSelected: this.state.isItemSelected ? false : true });
+    this.props.onCountNumberOfItemSelection();
   };
   /**
    * Sorts two ItemCardModels on the property specified by the sort parameter
