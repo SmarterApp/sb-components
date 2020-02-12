@@ -9,8 +9,12 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   onItemSelection: () => {
     return;
   },
-  onPrintItems: () => {
+  onResetItems: () => {
     return;
+  },
+  onPrintItems: () => {
+    console.log("Base method");
+    return "";
   },
   itemCards: itemCardList,
   item: {

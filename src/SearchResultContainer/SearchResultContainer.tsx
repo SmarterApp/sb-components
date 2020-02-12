@@ -36,6 +36,7 @@ export interface SearchResultContainerProps {
     GlossaryRequired: string,
     IllustrationRequired: string
   ) => void;
+  onResetItems: () => void;
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
