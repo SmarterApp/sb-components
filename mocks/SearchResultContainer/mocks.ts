@@ -10,7 +10,6 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     return;
   },
   onPrintItems: () => {
-    console.log("Base method");
     return;
   },
   itemCards: itemCardList,

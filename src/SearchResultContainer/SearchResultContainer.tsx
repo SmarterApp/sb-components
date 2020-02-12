@@ -9,6 +9,7 @@ import {
 } from "@src/index";
 import * as ReactModal from "react-modal";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
+import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 
 /**
  * SearchResultType enum
@@ -50,6 +51,8 @@ export interface SearchResultContainerState {
   renderType: SearchResultType;
   loading: boolean;
   showModal: boolean;
+  statusMessage: string;
+  showErrorModal: boolean;
 }
 
 /**
@@ -67,7 +70,9 @@ export class SearchResultContainer extends React.Component<
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
-      showModal: false
+      showModal: false,
+      showErrorModal: false,
+      statusMessage: ""
     };
   }
 
@@ -135,10 +140,36 @@ export class SearchResultContainer extends React.Component<
     IllustrationRequired: string
   ): void => {
     this.props.onPrintItems(langCode, GlossaryRequired, IllustrationRequired);
+    this.setState({ showModal: false, statusMessage: "" });
   };
 
   handleShowModal = (modelState: boolean): void => {
-    this.setState({ showModal: modelState });
+    //check item selected , if not show error msg popup
+    let visibleItems = this.props.itemCards;
+    let selectedItemCount = 0;
+    if (visibleItems !== undefined) {
+      for (let i = 0; i < visibleItems.length; i++) {
+        if (visibleItems[i].selected === true) {
+          selectedItemCount = selectedItemCount + 1;
+        }
+      }
+    }
+    console.log(selectedItemCount);
+    if (selectedItemCount == 0 || selectedItemCount < 0) {
+      this.setState({
+        showErrorModal: modelState,
+        statusMessage: "Please select at least one item to print"
+      });
+    } else {
+      this.setState({
+        showModal: modelState,
+        statusMessage: selectedItemCount.toString()
+      });
+    }
+  };
+
+  handleHideErrorModal = () => {
+    this.setState({ showErrorModal: false, statusMessage: "" });
   };
 
   /**
@@ -216,13 +247,21 @@ export class SearchResultContainer extends React.Component<
    *
    */
   renderPrintAccessibility(): JSX.Element {
-    const { showModal } = this.state;
+    const { showModal, statusMessage, showErrorModal } = this.state;
     return (
-      <PrintAccessibilityModal
-        onChangeModelState={this.handleShowModal}
-        onSubmitPrint={this.handlePrintItemsClick}
-        showModal={showModal}
-      />
+      <>
+        <PrintAccessibilityModal
+          onChangeModelState={this.handleShowModal}
+          onSubmitPrint={this.handlePrintItemsClick}
+          showModal={showModal}
+          StatusMessage={statusMessage}
+        />
+        <ErrorMessageModal
+          StatusMessage={statusMessage}
+          showModal={showErrorModal}
+          onChangeErrorModelState={this.handleHideErrorModal}
+        />
+      </>
     );
   }
 

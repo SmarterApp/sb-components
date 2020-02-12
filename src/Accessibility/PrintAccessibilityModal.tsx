@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
+import { ItemCardModel } from "lib/src";
 
-export interface PrintAccessibilityContainerState {
+export interface PrintAccessibilityContainerProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
   onSubmitPrint: (
@@ -10,6 +11,7 @@ export interface PrintAccessibilityContainerState {
     GlossaryRequired?: string,
     IllustrationRequired?: string
   ) => void;
+  StatusMessage: string;
 }
 export interface pageState {
   selectedLangCode?: string;
@@ -18,10 +20,10 @@ export interface pageState {
 }
 
 export class PrintAccessibilityModal extends React.Component<
-  PrintAccessibilityContainerState,
+  PrintAccessibilityContainerProps,
   pageState
 > {
-  constructor(props: PrintAccessibilityContainerState) {
+  constructor(props: PrintAccessibilityContainerProps) {
     super(props);
     this.state = {
       selectedLangCode: "ENU",
@@ -176,14 +178,29 @@ export class PrintAccessibilityModal extends React.Component<
           overlayClassName="react-modal-overlay"
           className="react-modal-content about-item-modal"
         >
-          <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
+          <div
+            className="modal-wrapper"
+            aria-labelledby="About Item Modal"
+            aria-hidden="true"
+          >
             <div className="modal-header">
-              <h4 className="modal-title">Print Accessibility Options</h4>
-              <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
+              <h4 className="modal-title">Accessibility Options</h4>
+              <button
+                className="close"
+                onClick={this.handleHideModal}
+                aria-label="Close modal"
+              >
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
             <div className="modal-body">
+              <div className="status-message-print">
+                <strong>
+                  {" "}
+                  Total item(s) selected : {this.props.StatusMessage}
+                </strong>{" "}
+                <br />
+              </div>
               <form id="accessibility-form">
                 <div className="accessibility-groups">
                   <div className="accessibility-resource-type section section-light">
