@@ -15,6 +15,8 @@ export interface ItemTableRowProps {
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
   isItemSelected: boolean;
+  numberOfSelectedItem: number;
+
 }
 
 const unChecked = (
@@ -40,12 +42,12 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     return (
       this.props.isExpanded !== nextProps.isExpanded ||
       this.props.rowData.selected !== nextProps.rowData.selected ||
-      this.props.isItemSelected !== nextProps.isItemSelected
+      this.props.isItemSelected !== nextProps.isItemSelected || 
+      this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
     );
   }
 
   handleRowClick = (rowData: ItemCardModel) => {
-    console.log("row click ");
     this.props.onRowExpand(rowData);
   };
 
@@ -62,7 +64,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
-    console.log("item slect ");
     if (rowData.selected === true) rowData.selected = false;
     else rowData.selected = true;
     //e.stopPropagation();

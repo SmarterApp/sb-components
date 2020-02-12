@@ -26,6 +26,7 @@ export interface ItemTableContainerProps {
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
   onCountNumberOfItemSelection: () => void;
+  numberOfSelectedItem: number;
 }
 
 /**
@@ -195,6 +196,7 @@ export class ItemTableContainer extends React.Component<
             isItemSelected={this.state.isItemSelected}
             item={this.props.item}
             isLinkTable={this.props.isLinkTable}
+            numberOfSelectedItem = {this.props.numberOfSelectedItem}
           />
         );
       }

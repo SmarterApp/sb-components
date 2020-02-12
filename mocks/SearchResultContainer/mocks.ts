@@ -10,10 +10,18 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     return;
   },
   onResetItems: () => {
+    let visibleItemCardCopy = [];
+    visibleItemCardCopy = itemCardList.slice();
+    visibleItemCardCopy.forEach((element) => {
+      if (element.selected) {
+        element.selected = false;
+      }
+    });
     return;
+    //itemCardList = visibleItemCardCopy;
   },
   onPrintItems: () => {
-    console.log("Base method");
+    //console.log("Base method");
     return "";
   },
   itemCards: itemCardList,

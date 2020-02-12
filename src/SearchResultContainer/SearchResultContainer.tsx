@@ -124,7 +124,8 @@ export class SearchResultContainer extends React.Component<
                 itemCards={this.props.itemCards}
                 item={this.props.item}
                 isLinkTable={this.props.isLinkTable}
-                onCountNumberOfItemSelection = {this.handleCountNumberOfItemSelection} />;
+                onCountNumberOfItemSelection = {this.handleCountNumberOfItemSelection} 
+                numberOfSelectedItem = {this.state.countSelectedItems}/>;
       } else {
         tag = this.renderItemCards();
       }
@@ -145,6 +146,7 @@ export class SearchResultContainer extends React.Component<
 
   handleResetItems = (): void => {
     this.props.onResetItems();
+    this.handleCountNumberOfItemSelection();
   }
 
   handleCountNumberOfItemSelection = ():void => {
@@ -179,7 +181,7 @@ export class SearchResultContainer extends React.Component<
         }
       }
     }
-    console.log(selectedItemCount);
+    //console.log(selectedItemCount);
     if (selectedItemCount == 0 || selectedItemCount < 0) {
       this.setState({
         showErrorModal: modelState,
@@ -273,11 +275,11 @@ export class SearchResultContainer extends React.Component<
           Total item(s) selected: {this.state.countSelectedItems}
           </strong>
         </div>
-        <div className="col-sm-3 header-grid-div">
+        <div className="col-sm-4 header-grid-div">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
-        <div className="col-sm-5 header-grid-div">
+        <div className="col-sm-4 header-grid-div">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}</div>
       </div>

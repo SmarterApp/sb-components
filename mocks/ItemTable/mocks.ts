@@ -28,7 +28,8 @@ export const itemTableProps: ItemTableContainerProps = {
   itemCards: itemCardList,
   item: {
     kind: "none"
-  }
+  },
+  numberOfSelectedItem: 0
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

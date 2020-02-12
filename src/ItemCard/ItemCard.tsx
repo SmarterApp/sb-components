@@ -60,7 +60,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       isCheckBoxChanged: true
     });
 
-    console.log(item);
+    
   };
 
   handleOnClick = () => {
