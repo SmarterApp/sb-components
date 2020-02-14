@@ -87,11 +87,6 @@ export class SearchResultContainer extends React.Component<
     this.setState({ loading });
   }
 
-  componentDidMount() {
-    console.log("search container component mounted");
-    this.handleCountNumberOfItemSelection();
-  }
-
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
     this.handleCountNumberOfItemSelection();
