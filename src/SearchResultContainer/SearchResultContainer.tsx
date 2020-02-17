@@ -271,16 +271,16 @@ export class SearchResultContainer extends React.Component<
     return (
       <div className="row">
         <div className="col-sm-4 header-grid-div">
-          {/* <strong>
+          <strong>
           Total item(s) selected: {this.state.countSelectedItems}
-          </strong> */}
+          </strong>
         </div>
         <div className="col-sm-4 header-grid-div">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
         <div className="col-sm-4 header-grid-div">
-          {/* {this.renderResetButton()} */}
+          {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}</div>
       </div>
     );
