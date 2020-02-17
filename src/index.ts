@@ -62,6 +62,7 @@ export { Accordion, AccordionProps } from "./Accordion/Accordion";
 // Button
 //
 export { BtnGroupOptionProps, BtnGroupOption } from "./Button/BtnGroupOption";
+export { BtnPrintCartProps, BtnPrintCart } from "./Button/BtnPrintCart";
 
 //
 // Common

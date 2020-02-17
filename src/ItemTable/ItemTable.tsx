@@ -24,7 +24,7 @@ export interface ItemTableProps {
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
   isItemSelected: boolean;
-  numberOfSelectedItem: number;
+  // numberOfSelectedItem: number;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -86,7 +86,7 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         onRowExpand={onRowExpand}
         onRowSelect={onRowSelect}
         isItemSelected={this.props.isItemSelected}
-        numberOfSelectedItem = {this.props.numberOfSelectedItem}
+        // numberOfSelectedItem = {this.props.numberOfSelectedItem}
       />
     );
 

@@ -15,7 +15,7 @@ export interface ItemTableRowProps {
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
   isItemSelected: boolean;
-  numberOfSelectedItem: number;
+  // numberOfSelectedItem: number;
 
 }
 
@@ -40,10 +40,11 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
     console.log("shouldcomponentupdate called " + this.props.rowData.selected);
     return (
-      this.props.isExpanded !== nextProps.isExpanded ||
-      this.props.rowData.selected !== nextProps.rowData.selected ||
-      this.props.isItemSelected !== nextProps.isItemSelected || 
-      this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
+      // this.props.isExpanded !== nextProps.isExpanded ||
+      // this.props.rowData.selected !== nextProps.rowData.selected ||
+      // this.props.isItemSelected !== nextProps.isItemSelected  
+      true
+      // this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
     );
   }
 

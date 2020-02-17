@@ -22,14 +22,14 @@ export const itemTableProps: ItemTableContainerProps = {
   onItemSelection: () => {
     return;
   },
-  onCountNumberOfItemSelection: () => {
-    return;
-  },
+  // onCountNumberOfItemSelection: () => {
+  //   return;
+  // },
   itemCards: itemCardList,
   item: {
     kind: "none"
   },
-  numberOfSelectedItem: 0
+  // numberOfSelectedItem: 0
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {
