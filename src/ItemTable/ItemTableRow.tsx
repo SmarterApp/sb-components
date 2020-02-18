@@ -52,6 +52,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     this.props.onRowExpand(rowData);
   };
 
+  
+
   handleKeyUpEnter = (
     e: React.KeyboardEvent<HTMLTableRowElement>,
     rowData: ItemCardModel
@@ -136,21 +138,41 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   renderControls(): JSX.Element[] | undefined {
     const { rowData, hasControls, isExpanded } = this.props;
+
+    const addOrRemoveIcon = () => {
+      return (rowData.selected === true ? "fa-minus" : "fa-plus");
+    };
+
+    const getToolTipMsg = () => {
+      if (addOrRemoveIcon() === "fa-plus")
+        return "Add item to print bucket";
+      else
+        return "Remove item from print bucket ";
+    };
+
+    const iconsAddOrRemove = (<td
+                    className="item-checkbox"
+                    onClick={e => this.handleCheckboxClick(e, rowData)}
+                    onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+                    tabIndex={0}
+                  >
+                    <i className={"fa " + addOrRemoveIcon()}></i>
+                  </td>
+                  );
+
+    const tooltip = generateTooltip({
+                      displayIcon: false,
+                      className: "",
+                      helpText: <span>{getToolTipMsg()}</span>,
+                      displayText: iconsAddOrRemove
+                    });
+
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
       controls = [
-        <td
-          className="item-checkbox"
-          key="checkbox-control"
-          onClick={e => this.handleCheckboxClick(e, rowData)}
-          onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-          tabIndex={0}
-        >
-          {rowData.selected === true ? checked : unChecked}&nbsp;
-        </td>
-        // <td className="arrow-indicator" tabIndex={0} key="expand-control">
-        //   {isExpanded ? expand : collapse}
-        // </td>
+        <div>
+          {tooltip}
+        </div>
       ];
     }
 
@@ -173,3 +195,10 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     );
   }
 }
+
+
+
+// for expand...  deprecitd... after addremove icon
+// <td className="arrow-indicator" tabIndex={0} key="expand-control">
+//   {isExpanded ? expand : collapse}
+// </td>

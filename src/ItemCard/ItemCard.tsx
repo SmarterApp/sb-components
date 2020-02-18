@@ -56,6 +56,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     else item.selected = true;
     this.props.onRowSelect(item);
     //this.props.onItemSelection(item);
+    e.stopPropagation();
     this.setState({
       isChecked: value === true,
       isCheckBoxChanged: true
@@ -79,11 +80,33 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: this.props.rowData.targetId
       });
 
-      const tooltip_printOption = generateTooltip({
-        displayIcon: true,
-        className: "box",
-        helpText: <span>Select to print this item</span>,
-        displayText: ""
+      const addOrRemoveIcon = () => {
+        return (this.props.rowData.selected === true ? "fa-minus" : "fa-plus");
+      };
+      const addOrRemoveIconClass = () => {
+        return (this.props.rowData.selected === true ? "btn-danger" : "btn-warning");
+      };
+      const getToolTipMsg = () => {
+        if (addOrRemoveIcon() === "fa-plus")
+          return "Add item to print bucket";
+        else
+          return "Remove item from print bucket ";
+      };
+      const iconsAddOrRemove = (<button
+        className={"item-add-remove btn btn-sm btn-default" }
+        onClick={e =>
+          this.handleCheckBoxChange(this.props.rowData, e)
+        }
+        //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+      >
+        <i className={"fa fa-lg " + addOrRemoveIcon()}></i>
+      </button>
+      );
+      const tooltip_addRemovePrintCart = generateTooltip({
+        displayIcon: false,
+        className: "",
+        helpText: <span>{getToolTipMsg()}</span>,
+        displayText: iconsAddOrRemove
       });
 
       content = (
@@ -98,6 +121,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             <div className="card-header">
               <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
               <div className="card-icon-container">
+                  {tooltip_addRemovePrintCart}
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(
                     this.props.rowData.grade
@@ -145,7 +169,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
             {/* Add checkbox for selecting item for printing */}
 
-            <p className="card-text item-id">
+            {/* <p className="card-text item-id">
               <span className="card-text-label">SELECT TO PRINT:</span>
               <span className="card-text-value">
                 <label
@@ -168,7 +192,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                   <span className="checkmark" />
                 </label>
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
       );

@@ -31,7 +31,7 @@ export const BtnPrintCart: React.SFC<BtnPrintCartProps> = props => {
     // </button>
 
     <button type="button" className="btn btn-default btn-sm" onClick={() => props.onClick(true)}>
-      <span className="glyphicon glyphicon-shopping-cart"></span> {props.label}{" "}
+      <span className="glyphicon glyphicon-print"></span> {props.label}{" "}
       <span className="circle">{props.itemsInCart}</span>
     </button>
   );
