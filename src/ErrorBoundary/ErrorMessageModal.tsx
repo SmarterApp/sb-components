@@ -30,7 +30,7 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
             aria-hidden="true"
           >
             <div className="modal-header">
-              <button
+              <button style={{float:"right"}}
                 className="close"
                 onClick={this.handleHideModal}
                 aria-label="Close modal"

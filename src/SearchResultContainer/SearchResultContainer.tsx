@@ -161,6 +161,20 @@ export class SearchResultContainer extends React.Component<
     return selectedItemCount;
   }
 
+  areSelectedItemsHaveMath = ():boolean => {
+    let areSelectedItemsHaveMath: boolean = false;
+    if(this.props.itemCards !== undefined && this.getSelectedItemCount() > 0) {
+      let len = this.props.itemCards.length;
+      for(let i = 0; i < len; i++) {
+        if(this.props.itemCards[i].selected === true && this.props.itemCards[i].subjectCode === "MATH") {
+          areSelectedItemsHaveMath = true;
+          break;
+        }
+      }
+    }
+    return areSelectedItemsHaveMath;
+  }
+
   handlePrintItemsClick = (
     langCode: string,
     GlossaryRequired: string,
@@ -271,16 +285,16 @@ export class SearchResultContainer extends React.Component<
     return (
       <div className="row">
         <div className="col-sm-4 header-grid-div">
-          <strong>
+          {/* <strong>
           Total item(s) selected: {this.state.countSelectedItems}
-          </strong>
+          </strong> */}
         </div>
         <div className="col-sm-4 header-grid-div">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
         <div className="col-sm-4 header-grid-div">
-          {this.renderResetButton()}
+          {/* {this.renderResetButton()} */}
           {this.renderPrintButton(SearchResultType.ItemCard)}</div>
       </div>
     );
@@ -304,6 +318,7 @@ export class SearchResultContainer extends React.Component<
           onSubmitPrint={this.handlePrintItemsClick}
           showModal={showModal}
           StatusMessage={statusMessage}
+          areSelectedItemsHaveMath = {this.areSelectedItemsHaveMath()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
