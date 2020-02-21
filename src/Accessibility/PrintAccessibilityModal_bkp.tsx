@@ -4,11 +4,14 @@ import { SelectOptionProps, Select } from "@src/index";
 //import { ItemCardModel } from "lib/src";
 
 export interface PrintAccessibilityContainerProps {
+  showModal: boolean;
+  onChangeModelState: (modelShowState: boolean) => void;
   onSubmitPrint: (
     langCode?: string,
     GlossaryRequired?: string,
     IllustrationRequired?: string
   ) => void;
+  StatusMessage: string;
 }
 export interface pageState {
   selectedLangCode?: string;
@@ -28,6 +31,15 @@ export class PrintAccessibilityModal extends React.Component<
       selectedGlossary: "false"
     };
   }
+
+  handleHideModal = () => {
+    this.setState({
+      selectedLangCode: "ENU",
+      selectedIllustration: "false",
+      selectedGlossary: "false"
+    });
+    this.props.onChangeModelState(false);
+  };
 
   handlePrintItems = () => {
     this.props.onSubmitPrint(
@@ -155,9 +167,40 @@ export class PrintAccessibilityModal extends React.Component<
   }
 
   render() {
+    const modelState = this.props.showModal;
     return (
       <div className="search-result-container">
+        <ReactModal
+          // isOpen={this.state.showModal}
+          isOpen={modelState}
+          contentLabel="About This Item Modal"
+          onRequestClose={this.handleHideModal}
+          overlayClassName="react-modal-overlay"
+          className="react-modal-content about-item-modal"
+        >
+          <div
+            className="modal-wrapper"
+            aria-labelledby="About Item Modal"
+            aria-hidden="true"
+          >
+            <div className="modal-header">
+              <h4 className="modal-title">Accessibility Options</h4>
+              <button
+                className="close"
+                onClick={this.handleHideModal}
+                aria-label="Close modal"
+              >
+                <span className="fa fa-times" aria-hidden="true" />
+              </button>
+            </div>
             <div className="modal-body">
+              <div className="status-message-print">
+                <strong>
+                  {" "}
+                  Total item(s) selected : {this.props.StatusMessage}
+                </strong>{" "}
+                <br />
+              </div>
               <form id="accessibility-form">
                 <div className="accessibility-groups">
                   <div className="accessibility-resource-type section section-light">
@@ -176,14 +219,25 @@ export class PrintAccessibilityModal extends React.Component<
                 </div>
               </form>
             </div>
-            {/* <button
+            <div className="modal-footer">
+              <button
+                className="btn btn-primary"
+                aria-label="Close modal"
+                onClick={this.handleHideModal}
+              >
+                Close
+              </button>
+              <button
                 className="btn btn-primary"
                 aria-label="Continue modal"
                 onClick={this.handlePrintItems}
               >
                 Submit
-              </button> */}
+              </button>
             </div>
+          </div>
+        </ReactModal>
+      </div>
     );
   }
 }

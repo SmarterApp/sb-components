@@ -12,6 +12,8 @@ import * as ReactModal from "react-modal";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
+import Loader from 'react-loader-advanced';
+import { PrintCartButton } from "@src/PrintCart/PrintCartButton";
 
 /**
  * SearchResultType enum
@@ -54,6 +56,7 @@ export interface SearchResultContainerState {
   showErrorModal: boolean;
   selectedItems: ItemCardModel[];
   hasReceiveNewProps: number;
+  //selectedItemsInCart: ItemCardModel[];
 }
 
 /**
@@ -75,37 +78,42 @@ export class SearchResultContainer extends React.Component<
       showErrorModal: false,
       statusMessage: "",
       selectedItems: [],
-      hasReceiveNewProps: 0
+      hasReceiveNewProps: 0,
+      //selectedItemsInCart: []
     };
   }
 
   componentWillReceiveProps(nextProps: SearchResultContainerProps) {
+    let shouldUpdateSelectedItemsState = 0;
     let loading = true;
     if (nextProps.itemCards) {
       loading = false;
     }
-    if(nextProps.itemCards !== this.props.itemCards) {
-      this.setState({hasReceiveNewProps: this.state.hasReceiveNewProps + 1});
-    }
-    this.setState({ loading });
-  }
-
-  componentDidMount() {
+    
     let selectedItems:ItemCardModel[] = [];
-    if(this.props.itemCards) {
-      this.props.itemCards.forEach( (item) => {
+    if(nextProps.itemCards) {
+      nextProps.itemCards.forEach( (item) => {
         if(item.selected === true) {
           selectedItems.push(item);
+          shouldUpdateSelectedItemsState = 1;
         }
       })     
     }
-    this.setState({selectedItems: selectedItems});
+    if(shouldUpdateSelectedItemsState === 1) 
+      this.setState({selectedItems: selectedItems, loading});
+    else
+      this.setState({ loading });
+
+    //this.setState({ loading });
+  }
+
+
+  componentDidMount() {
   }
 
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
     this.handleStoreSelectedItems(item);
-    //this.handleCountNumberOfItemSelection();
   };
 
   //store seleted items in state.selectedItems
@@ -290,7 +298,7 @@ export class SearchResultContainer extends React.Component<
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
         <div className="col-sm-4 header-grid-div">
-          <BtnPrintCart
+          <PrintCartButton
             // onClick={this.onSelectionAddItemToCart}
             label="Print Cart"
             itemsInCart={this.getSelectedItemCount()}
@@ -314,6 +322,7 @@ export class SearchResultContainer extends React.Component<
    */
   renderPrintAccessibility(): JSX.Element {
     const { showModal, statusMessage, showErrorModal } = this.state;
+    const selectedItems  = this.state.selectedItems.slice();
     return (
       <>
         {/* <PrintAccessibilityModal
@@ -330,10 +339,11 @@ export class SearchResultContainer extends React.Component<
         <PrintCartModal
           showModal= {showModal}
           onChangeModelState={this.handleShowPrintCartModal}
-          itemsInCart={this.state.selectedItems}
+          itemsInCart={selectedItems}
           onRowSelection={this.props.onRowSelection}
           onItemSelection={this.handleSelectItem}
           isLinkTable={false}
+          onSubmitPrint={this.handlePrintItemsClick}
           //statusMessage= {statusMessage}
 
         />
@@ -369,15 +379,15 @@ export class SearchResultContainer extends React.Component<
     if (this.props.itemCards && this.props.itemCards.length > 0) {
       if (this.state.renderType === SearchResultType.Table) {
         tag = (
-          <ItemTableContainer
-            onRowSelection={this.props.onRowSelection}
-            onItemSelection={this.handleSelectItem}
-            itemCards={this.props.itemCards}
-            item={this.props.item}
-            isLinkTable={this.props.isLinkTable}
-            // onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
-            // numberOfSelectedItem={this.state.countSelectedItems}
-          />
+          // <Loader show={true} message={'loading'}>
+            <ItemTableContainer
+              onRowSelection={this.props.onRowSelection}
+              onItemSelection={this.handleSelectItem}
+              itemCards={this.props.itemCards}
+              item={this.props.item}
+              isLinkTable={this.props.isLinkTable}
+            />
+          // </Loader>
         );
       } else {
         tag = this.renderItemCards();

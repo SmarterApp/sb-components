@@ -16,7 +16,7 @@ const claimIcons: { [claimCode: string]: string } = {
 };
 // tslint:enable:no-require-imports
 
-//Added by sonu => props interface
+//props interface
 export interface ItemCardProps {
   rowData: ItemCardModel;
   onRowSelect: (item: ItemCardModel) => void;
@@ -121,7 +121,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             <div className="card-header">
               <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
               <div className="card-icon-container">
-                  {tooltip_addRemovePrintCart}
+                  {/* {tooltip_addRemovePrintCart} */}
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(
                     this.props.rowData.grade
@@ -193,6 +193,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </label>
               </span>
             </p> */}
+            <button type="button" 
+              className={`btn btn-default btn-add-remove-print ${this.props.rowData.subjectCode.toLowerCase()}`}>
+                <i className="fa fa-lg fa-times-circle"></i>
+                {"  Remove from print queue"}
+            </button>
           </div>
         </div>
       );
