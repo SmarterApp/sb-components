@@ -79,16 +79,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: this.props.rowData.targetId
       });
 
-      const onBtnClickChangeIcon = () => {
-        return (this.props.rowData.selected === true ? "fa-check-square" : "fa-plus-square");
-      };
-      const onBtnClickChangeBtnStyleCss = () => {
-        return (this.props.rowData.selected === true ? " btn-selected" : " btn-unselected");
-      }
-      const selectOrSelectedBtnText = () => {
-        return (this.props.rowData.selected === true ? "  Item Selected" : "   Select to Print");
-      };
-
       const tooltip_printOption = generateTooltip({
         displayIcon: true,
         className: "box",

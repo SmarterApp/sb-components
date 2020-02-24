@@ -2,8 +2,6 @@ import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
 //import { ItemCardModel } from "lib/src";
-import ReactLoading from "react-loading";
-import { PrintCartButtonProps } from "lib/src/PrintCart/PrintCartButton";
 
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;
