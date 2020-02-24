@@ -49,6 +49,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   handleCheckBoxChange = (item: ItemCardModel, e: React.SyntheticEvent) => {
+    e.stopPropagation();
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
     if (item.selected === true) item.selected = false;
@@ -77,6 +78,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         helpText: <span>{this.props.rowData.targetDescription}</span>,
         displayText: this.props.rowData.targetId
       });
+
+      const onBtnClickChangeIcon = () => {
+        return (this.props.rowData.selected === true ? "fa-check-square" : "fa-plus-square");
+      };
+      const onBtnClickChangeBtnStyleCss = () => {
+        return (this.props.rowData.selected === true ? " btn-selected" : " btn-unselected");
+      }
+      const selectOrSelectedBtnText = () => {
+        return (this.props.rowData.selected === true ? "  Item Selected" : "   Select to Print");
+      };
 
       const tooltip_printOption = generateTooltip({
         displayIcon: true,
@@ -168,6 +179,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </label>
               </span>
             </p>
+            {/* <button type="button" 
+              className={`btn btn-default btn-add-remove-print ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e =>
+                this.handleCheckBoxChange(this.props.rowData, e)
+              }
+            >
+                <i className={"fa fa-lg " + onBtnClickChangeIcon()}></i>
+                {selectOrSelectedBtnText()}
+            </button> */}
           </div>
         </div>
       );

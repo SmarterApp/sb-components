@@ -17,37 +17,38 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
     return (
       <div className="search-result-container">
         <ReactModal
-          // isOpen={this.state.showModal}
           isOpen={modelState}
           contentLabel="About This Item Modal"
           onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay"
           className="react-modal-content about-item-modal"
         >
-          <div
-            className="modal-wrapper"
-            aria-labelledby="About Item Modal"
-            aria-hidden="true"
-          >
+          <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
             <div className="modal-header">
-              <button style={{float:"right"}}
-                className="close"
-                onClick={this.handleHideModal}
-                aria-label="Close modal"
-              >
+              <h4 className="modal-title">
+                <h4> Choose Accessibility Options for Printout </h4>
+              </h4>
+              <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
             <div className="modal-body">
-              <div>
-                <strong>
-                  <i
-                    className="error-message fa fa-exclamation-triangle"
-                    aria-hidden="true"
-                  />{" "}
-                  {this.props.StatusMessage}
-                </strong>
-              </div>
+              <form id="accessibility-form">
+                <div className="accessibility-groups">
+                  <div className="accessibility-resource-type section section-light">
+                    <h5>
+                      <i
+                        className="error-message fa fa-exclamation-triangle"
+                        aria-hidden="true"
+                      />
+                      {" "} 
+                      <strong>
+                        {this.props.StatusMessage} 
+                      </strong>
+                    </h5>
+                  </div>
+                </div>
+              </form>
             </div>
             <div className="modal-footer">
               <button
@@ -60,6 +61,7 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
             </div>
           </div>
         </ReactModal>
+
       </div>
     );
   }
