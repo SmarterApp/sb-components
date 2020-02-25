@@ -41,6 +41,7 @@ export interface SearchResultContainerProps {
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
   isLinkTable: boolean;
+  totalItemCards?: ItemCardModel[];
 }
 
 /**
@@ -155,18 +156,18 @@ export class SearchResultContainer extends React.Component<
 
   getSelectedItemCount = ():number => {
     let selectedItemCount = 0
-    if(this.props.itemCards !== undefined) {
-      selectedItemCount = this.props.itemCards.filter(it => it.selected === true).length;
+    if(this.props.totalItemCards !== undefined) {
+      selectedItemCount = this.props.totalItemCards.filter(it => it.selected === true).length;
     }
     return selectedItemCount;
   }
 
   areSelectedItemsHaveMath = ():boolean => {
     let areSelectedItemsHaveMath: boolean = false;
-    if(this.props.itemCards !== undefined && this.getSelectedItemCount() > 0) {
-      let len = this.props.itemCards.length;
+    if(this.props.totalItemCards !== undefined && this.getSelectedItemCount() > 0) {
+      let len = this.props.totalItemCards.length;
       for(let i = 0; i < len; i++) {
-        if(this.props.itemCards[i].selected === true && this.props.itemCards[i].subjectCode === "MATH") {
+        if(this.props.totalItemCards[i].selected === true && this.props.totalItemCards[i].subjectCode === "MATH") {
           areSelectedItemsHaveMath = true;
           break;
         }
@@ -186,11 +187,13 @@ export class SearchResultContainer extends React.Component<
 
   handleShowModal = (modelState: boolean): void => {
     //check item selected , if not show error msg popup
+    this.areSelectedItemsHaveMath();
+    const totalItemCards = this.props.totalItemCards;
     let visibleItems = this.props.itemCards;
     let selectedItemCount = 0;
-    if (visibleItems !== undefined) {
-      for (let i = 0; i < visibleItems.length; i++) {
-        if (visibleItems[i].selected === true) {
+    if (totalItemCards !== undefined) {
+      for (let i = 0; i < totalItemCards.length; i++) {
+        if (totalItemCards[i].selected === true) {
           selectedItemCount = selectedItemCount + 1;
         }
       }

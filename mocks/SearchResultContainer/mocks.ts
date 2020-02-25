@@ -1,8 +1,9 @@
 import { SearchResultContainerProps, SearchResultType } from "@src/index";
-import { itemCardList } from "@mocks/index";
+import { itemCardList, totalItemsCardList } from "@mocks/index";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
+  totalItemCards: totalItemsCardList,
   onRowSelection: () => {
     return;
   },

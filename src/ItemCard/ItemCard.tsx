@@ -69,6 +69,20 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   render() {
+
+   /**
+   * Function related to print button view
+   */
+    const onBtnClickChangeIcon = () => {
+      return (this.props.rowData.selected === true ? "fa-check-square" : "fa-plus-square");
+    };
+    const onBtnClickChangeBtnStyleCss = () => {
+      return (this.props.rowData.selected === true ? " btn-selected" : " btn-unselected");
+    }
+    const selectOrSelectedBtnText = () => {
+      return (this.props.rowData.selected === true ? " Item selected" : " Select to print");
+    };
+
     const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
     if (!this.state.redirect) {
@@ -145,7 +159,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
             {/* Add checkbox for selecting item for printing */}
 
-            <p className="card-text item-id">
+            {/* <p className="card-text item-id">
               <span className="card-text-label">SELECT TO PRINT:</span>
               <span className="card-text-value">
                 <label
@@ -168,16 +182,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                   <span className="checkmark" />
                 </label>
               </span>
-            </p>
-            {/* <button type="button" 
-              className={`btn btn-default btn-add-remove-print ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+            </p> */}
+            <button type="button" 
+              className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
               onClick={e =>
                 this.handleCheckBoxChange(this.props.rowData, e)
               }
             >
-                <i className={"fa fa-lg " + onBtnClickChangeIcon()}></i>
+                <i className={"fa  " + onBtnClickChangeIcon()}></i>&nbsp;&nbsp;
                 {selectOrSelectedBtnText()}
-            </button> */}
+            </button>
           </div>
         </div>
       );

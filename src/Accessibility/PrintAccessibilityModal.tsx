@@ -18,6 +18,7 @@ export interface pageState {
   selectedLangCode?: string;
   selectedIllustration?: string;
   selectedGlossary?: string;
+  areSelectedItemsHaveMath: boolean;
 }
 
 export class PrintAccessibilityModal extends React.Component<
@@ -29,15 +30,16 @@ export class PrintAccessibilityModal extends React.Component<
     this.state = {
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
+      selectedGlossary: "true",
+      areSelectedItemsHaveMath: props.areSelectedItemsHaveMath
     };
   }
 
-  // componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
-  //   if(nextProps.showModal !== this.props.showModal) {
-      
-  //   }
-  // }
+  componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
+    if(nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath) {
+      this.setState({areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath});
+    }
+  }
 
   handleHideModal = () => {
     this.setState({
@@ -180,7 +182,7 @@ export class PrintAccessibilityModal extends React.Component<
   }
 
   renderDesignatedSupport(): JSX.Element {
-    if (!this.props.areSelectedItemsHaveMath) {
+    if (!this.state.areSelectedItemsHaveMath) {
       return <></>;
       // Please wait while items is converting to pdf<ReactLoading type={"spokes"} color={"#000000"} height={'20%'} width={'20%'} />
     } else {
