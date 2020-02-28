@@ -257,6 +257,7 @@ export { Footer } from "./Layout/Footer";
 export { NavMenu } from "./Layout/NavMenu";
 export { SbNavLink, SbNavlinkProps } from "./Layout/SbNavLink";
 export { LoadingOverlay } from "./Layout/LoadingOverlay";
+export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent"
 
 //
 // Modals Components

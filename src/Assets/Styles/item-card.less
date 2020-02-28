@@ -217,40 +217,55 @@
   transform: rotate(45deg);
 }
 
-.item-add-remove {
-  // background-color: @sb-white;
-  // border-radius: 5px;
-  // padding: 4px 7px;
-  // font-family: "PT Sans", sans-serif;
-  // text-transform: uppercase;
-  // letter-spacing: 1px;
-  // font-size: 18px;
-  // font-weight: bold;
-  color: black;
-}
-
-.btn-add-remove-print {
-  margin: 8px;
-  width: 280px;
+.btn-add-remove-print-selection {
+  margin: 4%;
+  width: 92%;
+  border-radius: 6px;
+	font-family: PTSans-Bold;
+	font-size: 17px;
+	text-align: center;
   //color: black;
+  // margin-left: 13px;
+  // margin-right: 13px;
+  position: absolute;
+  bottom: 0;
 }
 
 .btn.math {
-  border-color: @sb-green;
+  border: 2px solid @sb-green;
   color: @sb-green;
+  
 }
 
 .btn.ela {
-  border-color: @sb-blue;
+  border: 2px solid @sb-blue;
   color: @sb-blue;
 }
 
 .btn.math:hover {
-  background-color: lightgreen;
-  color: black;
+  background-color: white;
+  // color: black;
 }
 
 .btn.ela:hover {
-  background-color: lightblue;
-  color: black;
+  background-color: white;
+  // color: black;
+}
+
+.btn.math.btn-selected {
+  background: @sb-green;
+  color: white;
+}
+.btn.ela.btn-selected {
+  background: @sb-blue;
+  color: white;
+}
+
+.btn-unselected {
+	background: #FFFFFF;
+}
+
+.card-block {
+  position: relative;
+  min-height: 320px;
 }

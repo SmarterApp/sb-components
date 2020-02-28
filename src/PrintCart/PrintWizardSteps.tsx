@@ -3,17 +3,14 @@ import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
-// import { BarLoader } from 'react-css-loaders';
-import ReactLoading from 'react-loading';
+import { PrintCartTableContainer } from "./PrintCartItemTableContainer";
 
 
 export interface PrintWizardSteps1_Props {
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
-  onRowSelection: (item: ItemModel, reset: boolean) => void;
-  onItemSelection: (item: ItemCardModel) => void;
-  isLinkTable: boolean;
   currentStep: number;
+  onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
 }
 
 export interface PrintWizardSteps2_Props {
@@ -22,7 +19,12 @@ export interface PrintWizardSteps2_Props {
     GlossaryRequired?: string,
     IllustrationRequired?: string
   ) => void;
+  itemsInCart: ItemCardModel[];
   currentStep: number;
+  onChangeModelState: (modelShowState: boolean) => void;
+  showModal: boolean;
+  //StatusMessage: string
+  isSelectedItemsHaveMathItem: boolean;
 }
 
 export class PrintWizardSteps1 extends React.Component<PrintWizardSteps1_Props> {
@@ -36,12 +38,9 @@ export class PrintWizardSteps1 extends React.Component<PrintWizardSteps1_Props> 
       if (this.props.itemsInCart && this.props.itemsInCart.length > 0) {
         return (
           <div className="accessibility-resource-type section section-light">
-            <ItemTableContainer
-              onRowSelection={this.props.onRowSelection}
-              onItemSelection={this.props.onItemSelection}
-              itemCards={this.props.itemsInCart}
-              //item={this.props.item}
-              isLinkTable={false}
+            <PrintCartTableContainer 
+              ItemsInPrintCart={this.props.itemsInCart}
+              onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
             />
           </div>
         );
@@ -62,8 +61,13 @@ export class PrintWizardSteps2 extends React.Component<PrintWizardSteps2_Props> 
     else {
       return (
         <>
-          <ReactLoading type="spinningBubbles"  color="#000000" height={'10%'} width={'10%'}/>
-          /* <PrintAccessibilityModal onSubmitPrint={this.props.onSubmitPrint} /> */
+          <PrintAccessibilityModal 
+            onSubmitPrint={this.props.onSubmitPrint} 
+            onChangeModelState={this.props.onChangeModelState}
+            showModal={this.props.showModal}
+            itemsInCartCount={this.props.itemsInCart.length.toString()}
+            isSelectedItemsHaveMathItem = {this.props.isSelectedItemsHaveMathItem}
+          />
         </>
       );
     }

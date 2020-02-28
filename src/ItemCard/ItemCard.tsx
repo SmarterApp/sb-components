@@ -61,8 +61,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       isChecked: value === true,
       isCheckBoxChanged: true
     });
-
-    
   };
 
   handleOnClick = () => {
@@ -70,6 +68,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   render() {
+    const onBtnClickChangeIcon = () => {
+      return this.props.rowData.selected === true ? "fa-check-square" : "fa-plus-square";
+    };
+    const onBtnClickChangeBtnStyleCss = () => {
+      return this.props.rowData.selected === true ? " btn-selected" : " btn-unselected";
+    };
+    const selectOrSelectedBtnText = () => {
+      return this.props.rowData.selected === true ? " Item selected" : " Select to print";
+    };
+
     const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
     if (!this.state.redirect) {
@@ -81,26 +89,23 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       });
 
       const addOrRemoveIcon = () => {
-        return (this.props.rowData.selected === true ? "fa-minus" : "fa-plus");
+        return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
       };
       const addOrRemoveIconClass = () => {
-        return (this.props.rowData.selected === true ? "btn-danger" : "btn-warning");
+        return this.props.rowData.selected === true ? "btn-danger" : "btn-warning";
       };
       const getToolTipMsg = () => {
-        if (addOrRemoveIcon() === "fa-plus")
-          return "Add item to print bucket";
-        else
-          return "Remove item from print bucket ";
+        if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
+        else return "Remove item from print bucket ";
       };
-      const iconsAddOrRemove = (<button
-        className={"item-add-remove btn btn-sm btn-default" }
-        onClick={e =>
-          this.handleCheckBoxChange(this.props.rowData, e)
-        }
-        //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-      >
-        <i className={"fa fa-lg " + addOrRemoveIcon()}></i>
-      </button>
+      const iconsAddOrRemove = (
+        <button
+          className={"item-add-remove btn btn-sm btn-default"}
+          onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+          //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+        >
+          <i className={"fa fa-lg " + addOrRemoveIcon()}></i>
+        </button>
       );
       const tooltip_addRemovePrintCart = generateTooltip({
         displayIcon: false,
@@ -121,11 +126,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             <div className="card-header">
               <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
               <div className="card-icon-container">
-                  {/* {tooltip_addRemovePrintCart} */}
+                {/* {tooltip_addRemovePrintCart} */}
                 <span className="card-grade-tag card-icon">
-                  {GradeLevels.GradeLevel.gradeCaseToShortString(
-                    this.props.rowData.grade
-                  )}
+                  {GradeLevels.GradeLevel.gradeCaseToShortString(this.props.rowData.grade)}
                 </span>
                 {/* <img
                   src={claimIcons[this.props.claimCode]}
@@ -137,17 +140,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </div>
             <p className="card-text grade">
               <span className="card-text-label">Grade:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.gradeLabel}
-              </span>
+              <span className="card-text-value"> {this.props.rowData.gradeLabel}</span>
             </p>
             <p className="card-text claim">
               <span className="card-text-label">Claim:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.claimLabel}
-              </span>
+              <span className="card-text-value"> {this.props.rowData.claimLabel}</span>
             </p>
             <p className="card-text target">
               <span className="card-text-label">Target:</span>
@@ -161,44 +158,28 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.itemKey}
-              </span>
+              <span className="card-text-value"> {this.props.rowData.itemKey}</span>
             </p>
 
             {/* Add checkbox for selecting item for printing */}
 
-            {/* <p className="card-text item-id">
-              <span className="card-text-label">SELECT TO PRINT:</span>
-              <span className="card-text-value">
-                <label
-                  className="custom-checkbox"
-                  onClick={e => e.stopPropagation()}
-                >
-                  <input
-                    name="isChecked"
-                    type="checkbox"
-                    checked={
-                      this.props.rowData.selected === undefined
-                        ? false
-                        : this.props.rowData.selected
-                    }
-                    onClick={e => e.stopPropagation()}
-                    onChange={e =>
-                      this.handleCheckBoxChange(this.props.rowData, e)
-                    }
-                  />
-                  <span className="checkmark" />
-                </label>
-              </span>
-            </p> */}
-            <button type="button" 
-              className={`btn btn-default btn-add-remove-print ${this.props.rowData.subjectCode.toLowerCase()}`}>
-                <i className="fa fa-lg fa-times-circle"></i>
-                {"  Remove from print queue"}
-            </button>
+            {/* <button
+              type="button"
+              className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+            >
+              <i className={"fa  " + onBtnClickChangeIcon()}></i>&nbsp;&nbsp;
+              {selectOrSelectedBtnText()}
+            </button> */}
           </div>
+          <button
+              type="button"
+              className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+            >
+              <i className={"fa  " + onBtnClickChangeIcon()}></i>&nbsp;&nbsp;
+              {selectOrSelectedBtnText()}
+            </button>
         </div>
       );
     }

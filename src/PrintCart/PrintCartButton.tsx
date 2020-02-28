@@ -13,6 +13,8 @@ export interface PrintCartButtonProps {
 
 export interface PrintCartButtonState {
     itemsInCart: number;
+    shouldDoAddToCartPopupEffect: boolean;
+    addToCartPopupEffectCSS: string;
 }
 
 /**
@@ -25,19 +27,30 @@ export class PrintCartButton extends React.Component<PrintCartButtonProps,PrintC
     constructor(props: PrintCartButtonProps) {
         super(props);
         this.state = {
-            itemsInCart: props.itemsInCart
+            itemsInCart: props.itemsInCart,
+            shouldDoAddToCartPopupEffect: false,
+            addToCartPopupEffectCSS: ""
         }
     }
 
     componentWillReceiveProps(nextProps: PrintCartButtonProps) {
-        this.setState({itemsInCart: nextProps.itemsInCart});
+        if(this.props.itemsInCart !== nextProps.itemsInCart) {
+            const tempCSSClassName = this.state.addToCartPopupEffectCSS === " popout-effect1" ? " popout-effect2" : " popout-effect1";
+            this.setState({itemsInCart: nextProps.itemsInCart, addToCartPopupEffectCSS: tempCSSClassName});
+        }
+        else {
+            this.setState({itemsInCart: nextProps.itemsInCart});
+        }
+        
+        
     }
-  
+
     render() {
+        const btnClassName = "circle " + this.state.addToCartPopupEffectCSS;
         return(
-            <button type="button" className="btn btn-default btn-sm" onClick={() => this.props.onClick(true)}>
+            <button type="button" className="btn btn-default btn-sm btn-print-cart" onClick={() => this.props.onClick(true)}>
                 <span className="glyphicon glyphicon-print"></span> {this.props.label}{" "}
-                <span className="circle">{this.state.itemsInCart}</span>
+                <span className={btnClassName}>{this.state.itemsInCart}</span>
             </button>
         );
     }   

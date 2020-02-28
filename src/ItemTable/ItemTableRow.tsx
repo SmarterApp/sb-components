@@ -112,8 +112,11 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const { rowData, hasControls, isExpanded } = this.props;
 
     const addOrRemoveIcon = () => {
-      return rowData.selected === true ? "fa-times-circle" : "fa-plus-circle";
+      return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
     };
+    const addRemoveItemBtnCSSClass = () => {
+      return rowData.selected === true ? "btn-red-border" : "btn-blue-border";
+    }
 
     const getToolTipMsg = () => {
       if (addOrRemoveIcon() === "fa-plus-circle") return "Add item to print queue";
@@ -134,9 +137,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       >
         <button
           type="button"
-          className={`btn btn-default  btn-item-add-remove-grid btn-sm ${this.props.rowData.subjectCode.toLowerCase()}`}
+          className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()} }`}  //${this.props.rowData.subjectCode.toLowerCase()
         >
-          <i className={"fa fa-lg " + addOrRemoveIcon()}></i>
+          <i className={"fa fa-2x " + addOrRemoveIcon()}></i>
           {/* {getAddRemoveTextBtn()} */}
         </button>
       </td>
