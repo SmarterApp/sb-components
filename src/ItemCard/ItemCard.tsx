@@ -80,7 +80,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       return (this.props.rowData.selected === true ? " btn-selected" : " btn-unselected");
     }
     const selectOrSelectedBtnText = () => {
-      return (this.props.rowData.selected === true ? " Item selected" : " Select to print");
+      return (this.props.rowData.selected === true ? " Item Selected" : " Select to Print");
     };
 
     const { bankKey, itemKey } = this.props.rowData;
@@ -184,7 +184,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               </span>
             </p> */}
             <button type="button" 
-              className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
               onClick={e =>
                 this.handleCheckBoxChange(this.props.rowData, e)
               }

@@ -110,7 +110,7 @@ export class PrintAccessibilityModal extends React.Component<
       <>
         <Select
           className="select-print-accessibility"
-          label="Language"
+          label="Translation (Stacked)"
           // labelClass="hidden"
           selected={selectedLanguageCode || ""}
           options={selectOptions}
@@ -189,11 +189,14 @@ export class PrintAccessibilityModal extends React.Component<
       return (
         <div className="accessibility-groups">
           <div className="accessibility-resource-type section section-light">
-            <div className="accessibility-header">
+            {/* <div className="accessibility-header"> */}
               <h4 className="green-title">
                 <span className="fa fa-tasks" aria-hidden="true"></span> Designated Supports
               </h4>
-            </div>
+              <p className="font-italic">
+                Note: These options only apply to math items.
+              </p>
+            {/* </div> */}
 
             <div className="accessibility-dropdowns">
               <div className="accessibility-dropdown form-group selection-enabled">
@@ -240,12 +243,12 @@ export class PrintAccessibilityModal extends React.Component<
               <form id="accessibility-form">
                 <div className="accessibility-groups">
                   <div className="accessibility-resource-type section section-light">
-                    <div className="accessibility-header">
+                    {/* <div className="accessibility-header"> */}
                       <h4 className="green-title">
                         <span className="fa fa-tasks" aria-hidden="true"></span> Universal
                         Tools
                       </h4>
-                    </div>
+                    {/* </div> */}
                     <div className="accessibility-dropdown form-group selection-enabled">
                       {this.renderGlossaryOptions()}
                     </div>
