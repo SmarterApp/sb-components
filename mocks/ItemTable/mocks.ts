@@ -29,7 +29,9 @@ export const itemTableProps: ItemTableContainerProps = {
   item: {
     kind: "none"
   },
-  numberOfSelectedItem: 0
+  numberOfSelectedItem: 0,
+  getSelectedItemCount: () => {return 0;},
+  showErrorModalOnPrintItemsCountExceeded: () => {return}
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

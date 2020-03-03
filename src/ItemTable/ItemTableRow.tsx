@@ -16,7 +16,8 @@ export interface ItemTableRowProps {
   onRowSelect: (item: ItemCardModel) => void;
   isItemSelected: boolean;
   numberOfSelectedItem: number;
-
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
 }
 
 const unChecked = (
@@ -63,12 +64,19 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
-    if (rowData.selected === true) rowData.selected = false;
-    else rowData.selected = true;
-    //e.stopPropagation();
-    this.props.onRowSelect(rowData);
-    //this.props.onRowExpand(rowData);
     e.stopPropagation();
+    let selectedItemsCount = this.props.getSelectedItemCount();
+    if(rowData.selected !== true &&  selectedItemsCount >= 20) {
+      //this.setState({showErrorModal: true, statusMessage:"Maximum number of items for printing cannot exceed 20"});
+      this.props.showErrorModalOnPrintItemsCountExceeded();
+      return;
+    }
+    else {
+      if (rowData.selected === true) rowData.selected = false;
+      else rowData.selected = true;
+      this.props.onRowSelect(rowData);
+      e.stopPropagation();
+    }
   };
 
   handleCheckboxKeyUpEnter = (

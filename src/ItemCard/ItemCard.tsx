@@ -3,6 +3,7 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
+import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
   MATH1: require("@sbac/sbac-ui-kit/src/images/math-1.svg"),
@@ -20,12 +21,16 @@ const claimIcons: { [claimCode: string]: string } = {
 export interface ItemCardProps {
   rowData: ItemCardModel;
   onRowSelect: (item: ItemCardModel) => void;
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
 }
 
 export interface ItemCardState {
   redirect: boolean;
   isCheckBoxChanged: boolean;
   isChecked: boolean;
+  showErrorModal: boolean;
+  statusMessage: string;
 }
 
 export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
@@ -34,7 +39,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     this.state = {
       redirect: false,
       isChecked: false,
-      isCheckBoxChanged: false
+      isCheckBoxChanged: false,
+      showErrorModal: false,
+      statusMessage: ""
     };
   }
 
@@ -52,21 +59,44 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     e.stopPropagation();
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    if (item.selected === true) item.selected = false;
-    else item.selected = true;
-    this.props.onRowSelect(item);
-    //this.props.onItemSelection(item);
-    this.setState({
-      isChecked: value === true,
-      isCheckBoxChanged: true
-    });
-
+    let selectedItemsCount = this.props.getSelectedItemCount();
+    //check if selection items count exceed the limits
+    if(item.selected !== true &&  selectedItemsCount >= 20) {
+        //this.setState({showErrorModal: true, statusMessage:"Maximum number of items for printing cannot exceed 20"});
+        this.props.showErrorModalOnPrintItemsCountExceeded();
+        return;
+    }
+    else {
+      if (item.selected === true) item.selected = false;
+      else item.selected = true;
+      this.props.onRowSelect(item);
+      //this.props.onItemSelection(item);
+      this.setState({
+        isChecked: value === true,
+        isCheckBoxChanged: true
+      });
+    }
     
   };
 
   handleOnClick = () => {
     this.setState({ redirect: true });
   };
+
+  handleHideErrorModal = () => {
+    this.setState({ showErrorModal: false, statusMessage: "" });
+  };
+
+  // renderErrorModal(): JSX.Element {
+  //   const { statusMessage, showErrorModal } = this.state;
+  //   return (
+  //       <ErrorMessageModal
+  //         StatusMessage={statusMessage}
+  //         showModal={showErrorModal}
+  //         onChangeErrorModelState={this.handleHideErrorModal}
+  //       />
+  //   );
+  // }
 
   render() {
 
@@ -197,6 +227,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       );
     }
 
-    return content;
+
+    return (
+      <>
+        {/* {this.renderErrorModal()} */}
+        {content}
+      </>
+      );
   }
 }

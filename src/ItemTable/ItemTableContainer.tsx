@@ -27,6 +27,8 @@ export interface ItemTableContainerProps {
   isLinkTable: boolean;
   onCountNumberOfItemSelection: () => void;
   numberOfSelectedItem: number;
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
 }
 
 /**
@@ -197,6 +199,8 @@ export class ItemTableContainer extends React.Component<
             item={this.props.item}
             isLinkTable={this.props.isLinkTable}
             numberOfSelectedItem = {this.props.numberOfSelectedItem}
+            getSelectedItemCount={this.props.getSelectedItemCount}
+            showErrorModalOnPrintItemsCountExceeded = {this.props.showErrorModalOnPrintItemsCountExceeded}
           />
         );
       }

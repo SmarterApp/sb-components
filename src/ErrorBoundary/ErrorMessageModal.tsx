@@ -26,7 +26,7 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
           <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
             <div className="modal-header">
               <h4 className="modal-title">
-                <h4> Choose Accessibility Options for Printout </h4>
+                <h4> </h4>
               </h4>
               <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
                 <span className="fa fa-times" aria-hidden="true" />

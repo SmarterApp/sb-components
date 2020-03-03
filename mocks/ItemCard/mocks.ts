@@ -194,5 +194,7 @@ export const itemCardProps: ItemCardProps = {
   rowData: completeItemCard,
   onRowSelect: () => {
     return;
-  }
+  },
+  getSelectedItemCount: () => {return 0;},
+  showErrorModalOnPrintItemsCountExceeded: () => {return}
 };

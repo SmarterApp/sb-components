@@ -89,8 +89,21 @@ export class SearchResultContainer extends React.Component<
   }
 
   handleSelectItem = (item: ItemCardModel) => {
-    this.props.onItemSelection(item);
-    this.handleCountNumberOfItemSelection();
+    //this.props.onItemSelection(item);
+    //check if item selection count exceed 20, show warning on exceeding
+    // if (item.selected === true) {
+    //   let selectedItemsCount = this.getSelectedItemCount();
+    //   if (selectedItemsCount > 2) {
+    //     this.setState({ showErrorModal: true });
+    //   } else {
+    //     this.props.onItemSelection(item);
+    //     this.handleCountNumberOfItemSelection();
+    //   }
+    // }
+    // else {
+      this.props.onItemSelection(item);
+      this.handleCountNumberOfItemSelection();
+    // }
   };
   /**
    * Renders all results to ItemCard view.
@@ -104,6 +117,8 @@ export class SearchResultContainer extends React.Component<
           rowData={digest}
           onRowSelect={this.handleSelectItem}
           key={`${digest.bankKey} - ${digest.itemKey}`}
+          getSelectedItemCount={this.getSelectedItemCount}
+          showErrorModalOnPrintItemsCountExceeded = {this.showErrorModalOnPrintItemsCountExceeded}
         />
       ));
     }
@@ -119,14 +134,19 @@ export class SearchResultContainer extends React.Component<
     let tag: JSX.Element | JSX.Element[] | undefined;
     if (this.props.itemCards && this.props.itemCards.length > 0) {
       if (this.state.renderType === SearchResultType.Table) {
-        tag = <ItemTableContainer 
-                onRowSelection={this.props.onRowSelection}
-                onItemSelection={this.props.onItemSelection}
-                itemCards={this.props.itemCards}
-                item={this.props.item}
-                isLinkTable={this.props.isLinkTable}
-                onCountNumberOfItemSelection = {this.handleCountNumberOfItemSelection} 
-                numberOfSelectedItem = {this.state.countSelectedItems}/>;
+        tag = (
+          <ItemTableContainer
+            onRowSelection={this.props.onRowSelection}
+            onItemSelection={this.props.onItemSelection}
+            itemCards={this.props.itemCards}
+            item={this.props.item}
+            isLinkTable={this.props.isLinkTable}
+            onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
+            numberOfSelectedItem={this.state.countSelectedItems}
+            showErrorModalOnPrintItemsCountExceeded = {this.showErrorModalOnPrintItemsCountExceeded}
+            getSelectedItemCount={this.getSelectedItemCount}
+          />
+        );
       } else {
         tag = this.renderItemCards();
       }
@@ -148,33 +168,41 @@ export class SearchResultContainer extends React.Component<
   handleResetItems = (): void => {
     this.props.onResetItems();
     this.handleCountNumberOfItemSelection();
-  }
+  };
 
-  handleCountNumberOfItemSelection = ():void => {
-    this.setState({countSelectedItems: this.getSelectedItemCount()}); 
-  }
+  handleCountNumberOfItemSelection = (): void => {
+    this.setState({ countSelectedItems: this.getSelectedItemCount() });
+  };
 
-  getSelectedItemCount = ():number => {
-    let selectedItemCount = 0
-    if(this.props.totalItemCards !== undefined) {
-      selectedItemCount = this.props.totalItemCards.filter(it => it.selected === true).length;
+  getSelectedItemCount = (): number => {
+    let selectedItemCount = 0;
+    if (this.props.totalItemCards !== undefined) {
+      selectedItemCount = this.props.totalItemCards.filter(
+        it => it.selected === true
+      ).length;
     }
     return selectedItemCount;
-  }
+  };
 
-  areSelectedItemsHaveMath = ():boolean => {
+  areSelectedItemsHaveMath = (): boolean => {
     let areSelectedItemsHaveMath: boolean = false;
-    if(this.props.totalItemCards !== undefined && this.getSelectedItemCount() > 0) {
+    if (
+      this.props.totalItemCards !== undefined &&
+      this.getSelectedItemCount() > 0
+    ) {
       let len = this.props.totalItemCards.length;
-      for(let i = 0; i < len; i++) {
-        if(this.props.totalItemCards[i].selected === true && this.props.totalItemCards[i].subjectCode === "MATH") {
+      for (let i = 0; i < len; i++) {
+        if (
+          this.props.totalItemCards[i].selected === true &&
+          this.props.totalItemCards[i].subjectCode === "MATH"
+        ) {
           areSelectedItemsHaveMath = true;
           break;
         }
       }
     }
     return areSelectedItemsHaveMath;
-  }
+  };
 
   handlePrintItemsClick = (
     langCode: string,
@@ -216,6 +244,10 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showErrorModal: false, statusMessage: "" });
   };
 
+  showErrorModalOnPrintItemsCountExceeded = () => {
+    this.setState({ showErrorModal: true, statusMessage: " Maximum number of items for printing cannot exceed 20" });
+  }
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -248,8 +280,8 @@ export class SearchResultContainer extends React.Component<
   }
 
   renderResetButton(): JSX.Element {
-    return(
-      <button 
+    return (
+      <button
         onClick={this.handleResetItems}
         aria-label="Clear Selection"
         title="Clear Selection"
@@ -298,7 +330,8 @@ export class SearchResultContainer extends React.Component<
         </div>
         <div className="col-sm-4 header-grid-div">
           {/* {this.renderResetButton()} */}
-          {this.renderPrintButton(SearchResultType.ItemCard)}</div>
+          {this.renderPrintButton(SearchResultType.ItemCard)}
+        </div>
       </div>
     );
   }
@@ -321,7 +354,7 @@ export class SearchResultContainer extends React.Component<
           onSubmitPrint={this.handlePrintItemsClick}
           showModal={showModal}
           StatusMessage={statusMessage}
-          areSelectedItemsHaveMath = {this.areSelectedItemsHaveMath()}
+          areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
