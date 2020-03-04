@@ -366,6 +366,7 @@ export {
 // Error Components
 //
 export { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
+export { ErrorMessageModal } from "./ErrorBoundary/ErrorMessageModal"
 export {
   ErrorPageContainer,
   ErrorPageContainerProps,
