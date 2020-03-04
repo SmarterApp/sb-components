@@ -36,15 +36,15 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
               <form id="accessibility-form">
                 <div className="accessibility-groups">
                   <div className="accessibility-resource-type section section-light">
-                    <h5>
+                    <h5 style={{fontWeight: "bold"}}>
                       <i
                         className="error-message fa fa-exclamation-triangle"
                         aria-hidden="true"
                       />
-                      {" "} 
-                      <strong>
+                      {"    "} 
+                      {/* <strong> */}
                         {this.props.StatusMessage} 
-                      </strong>
+                      {/* </strong> */}
                     </h5>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
                 aria-label="Close modal"
                 onClick={this.handleHideModal}
               >
-                Close
+                Ok
               </button>
             </div>
           </div>

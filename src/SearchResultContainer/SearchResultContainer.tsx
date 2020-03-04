@@ -245,7 +245,7 @@ export class SearchResultContainer extends React.Component<
   };
 
   showErrorModalOnPrintItemsCountExceeded = () => {
-    this.setState({ showErrorModal: true, statusMessage: " Maximum number of items for printing cannot exceed 20" });
+    this.setState({ showErrorModal: true, statusMessage: " Printing is limited to 20 items." });
   }
 
   /**
