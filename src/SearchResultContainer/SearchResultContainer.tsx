@@ -361,6 +361,7 @@ export class SearchResultContainer extends React.Component<
           showModal={showErrorModal}
           onChangeErrorModelState={this.handleHideErrorModal}
         />
+        
       </>
     );
   }

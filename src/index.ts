@@ -264,6 +264,8 @@ export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent"
 export { MoreLikeThisModal } from "./Modals/MoreLikeThisModal";
 export { ShareModal } from "./Modals/ShareModal";
 export { IframeModal, IframeModalProps } from "./Modals/IframeModal";
+export { DownloadPDFModal } from "./Modals/DownloadPDFModal";
+export { LoadingModal } from "./Modals/LoadingModal";
 //
 // Page Tabs Components
 //
