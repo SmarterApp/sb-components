@@ -46,7 +46,8 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   }
 
   shouldComponentUpdate(nextProps: ItemCardProps, nextState: ItemCardState) {
-    return nextState.redirect || nextState.isCheckBoxChanged;
+    // return nextState.redirect || nextState.isCheckBoxChanged;
+    return true;
   }
 
   handleKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {

@@ -17,13 +17,12 @@ export class LoadingModal extends React.Component<ErrorMessageModalProps> {
   render() {
     const modelState = this.props.showModal;
     return (
-      <div className="search-result-container">
         <ReactModal
           isOpen={modelState}
           contentLabel="About This Item Modal"
           // onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay"
-          className="react-modal-content about-item-modal react-modal-download-size"
+          className="react-modal-content about-item-modal react-modal-loading-size react-modal-loading-msg"
           shouldCloseOnEsc={false}
           shouldCloseOnOverlayClick={false}
         >
@@ -32,7 +31,6 @@ export class LoadingModal extends React.Component<ErrorMessageModalProps> {
             <span>{this.props.LoadingStatusMessage}</span>
           </div>
         </ReactModal>
-      </div>
     );
   }
 }

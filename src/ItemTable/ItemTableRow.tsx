@@ -39,12 +39,13 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
-    return (
-      this.props.isExpanded !== nextProps.isExpanded ||
-      this.props.rowData.selected !== nextProps.rowData.selected ||
-      this.props.isItemSelected !== nextProps.isItemSelected || 
-      this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
-    );
+    // return (
+    //   this.props.isExpanded !== nextProps.isExpanded ||
+    //   this.props.rowData.selected !== nextProps.rowData.selected ||
+    //   this.props.isItemSelected !== nextProps.isItemSelected || 
+    //   this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
+    // );
+    return true;
   }
 
   handleRowClick = (rowData: ItemCardModel) => {

@@ -4,6 +4,7 @@ export interface DownloadPDFModalProps {
   showModal: boolean;
   downloadPDFUrl: string;
   onChangeDownloadPdfModelState: () => void;
+  onResetItems: () => void;
 }
 
 export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
@@ -12,6 +13,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
   }
 
   handleHideModal = () => {
+    this.props.onResetItems();
     this.props.onChangeDownloadPdfModelState();
   };
 
@@ -19,10 +21,24 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
     var a = document.createElement("a");
     document.body.appendChild(a);
     a.href = this.props.downloadPDFUrl;
-    a.download = "download.pdf";
+    const fileName = getFileNameAsPerDate();
+    a.download = fileName;
     a.click();
-    window.URL.revokeObjectURL(this.props.downloadPDFUrl);
+    //window.URL.revokeObjectURL(this.props.downloadPDFUrl);
 
+  }
+
+  viewPDF = () => {
+    let params = `width=600,height=300,left=100,top=100`;
+    
+    let SB_PrintOutWindow:any = window.open('', "SB_PrintOutWindow", params);
+    SB_PrintOutWindow.location = this.props.downloadPDFUrl;
+    SB_PrintOutWindow.opener = null;
+    SB_PrintOutWindow.blur();
+    SB_PrintOutWindow.focus();
+
+    // myWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(base64data)+"'></iframe>"
+    
   }
 
   render() {
@@ -59,23 +75,28 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
             <div className="modal-body">
               <form id="accessibility-form">
                 <div className="accessibility-groups">
-                  <div className="accessibility-resource-type section section-light">
-                    PDF is ready to download.
+                  <div className="accessibility-resource-type section section-light pdf-download-msg">
+                  <i className="fa fa-lg fa-check"></i> {"  "} PDF is ready to download.
                   </div>
                 </div>
               </form>
             </div>
             <div className="modal-footer">
-              <a
+              {/* <a
                 style={{ marginLeft: "30%", color: "white" }}
                 href={this.props.downloadPDFUrl}
-                target="_blank"
+                // target="_blank"
                 className="btn btn-primary"
                 role="button"
                 // onClick={this.handleHideModal}
               >
                 <i className="fa fa-eye" aria-hidden="true" />  View PDF
-              </a>
+              </a> */}
+
+              <button className="btn btn-primary" onClick={this.viewPDF}>
+                <i className="fa fa-eye" aria-hidden="true" />
+                {"  "} View PDF
+              </button>
 
               <button
                 className="btn btn-primary"
@@ -100,3 +121,17 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
     );
   }
 }
+
+
+function getFileNameAsPerDate() {
+  const currentdatatime = new Date();
+  const day = currentdatatime.getDate();
+  const month = currentdatatime.getMonth();
+  const year = currentdatatime.getFullYear().toString().substring(2, 5);
+  const hour = currentdatatime.getHours();
+  const min = currentdatatime.getMinutes();
+  const sec = currentdatatime.getSeconds();
+  const fileName = "SB_Printout_" + day + month + year + "_" + hour + min + sec + '.pdf';
+  return fileName;
+}
+

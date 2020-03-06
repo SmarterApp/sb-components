@@ -280,7 +280,25 @@ export class SearchResultContainer extends React.Component<
   }
 
   renderResetButton(): JSX.Element {
-    return (
+   
+      if(this.getSelectedItemCount() <= 0) {
+         return (
+          <button
+          onClick={this.handleResetItems}
+          aria-label="Clear Selection"
+          title="Clear Selection"
+          className={"btn btn-default disabled"}
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-eraser"
+          />{" "}
+          Clear selection
+        </button>
+         );
+      }
+      else 
+      return (
       <button
         onClick={this.handleResetItems}
         aria-label="Clear Selection"
@@ -289,9 +307,9 @@ export class SearchResultContainer extends React.Component<
       >
         <i
           aria-hidden="true"
-          className="glyphicon glyphicon-th-large glyphicon-refresh"
+          className="fa fa-eraser"
         />{" "}
-        Clear Selection
+        Clear selection
       </button>
     );
   }
@@ -329,8 +347,8 @@ export class SearchResultContainer extends React.Component<
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
         <div className="col-sm-4 header-grid-div">
-          {/* {this.renderResetButton()} */}
           {this.renderPrintButton(SearchResultType.ItemCard)}
+          {this.renderResetButton()}
         </div>
       </div>
     );
