@@ -287,13 +287,13 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleResetItems}
           aria-label="Clear Selection"
           title="Clear Selection"
-          className={"btn btn-default disabled"}
+          className={"btn btn-default search-result-container-header-button disabled"}
         >
           <i
             aria-hidden="true"
             className="fa fa-eraser"
           />{" "}
-          Clear selection
+          Clear
         </button>
          );
       }
@@ -303,13 +303,13 @@ export class SearchResultContainer extends React.Component<
         onClick={this.handleResetItems}
         aria-label="Clear Selection"
         title="Clear Selection"
-        className={"btn btn-default"}
+        className={"btn btn-default search-result-container-header-button"}
       >
         <i
           aria-hidden="true"
           className="fa fa-eraser"
         />{" "}
-        Clear selection
+        Clear
       </button>
     );
   }
@@ -320,7 +320,7 @@ export class SearchResultContainer extends React.Component<
         onClick={() => this.handleShowModal(true)}
         aria-label="Print Item"
         title="Print Items"
-        className={"btn btn-default"}
+        className={"btn btn-default search-result-container-header-button"}
       >
         <i
           aria-hidden="true"
@@ -337,18 +337,19 @@ export class SearchResultContainer extends React.Component<
   renderHeader(): JSX.Element {
     return (
       <div className="row">
-        <div className="col-sm-4 header-grid-div">
+        <div className="col-sm-5 header-grid-div">
           {/* <strong>
           Total item(s) selected: {this.state.countSelectedItems}
           </strong> */}
         </div>
-        <div className="col-sm-4 header-grid-div">
+        <div className="col-sm-2 header-grid-div  ">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
-        <div className="col-sm-4 header-grid-div">
-          {this.renderPrintButton(SearchResultType.ItemCard)}
+        <div className="col-sm-5 header-grid-div ">
           {this.renderResetButton()}
+          {this.renderPrintButton(SearchResultType.ItemCard)}
+          
         </div>
       </div>
     );
