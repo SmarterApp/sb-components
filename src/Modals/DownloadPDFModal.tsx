@@ -28,18 +28,18 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 
   }
 
-  viewPDF = () => {
-    let params = `width=600,height=300,left=100,top=100`;
+  // viewPDF = () => {
+  //   let params = `width=600,height=300,left=100,top=100`;
     
-    let SB_PrintOutWindow:any = window.open('', "SB_PrintOutWindow", params);
-    SB_PrintOutWindow.location = this.props.downloadPDFUrl;
-    SB_PrintOutWindow.opener = null;
-    SB_PrintOutWindow.blur();
-    SB_PrintOutWindow.focus();
+  //   let SB_PrintOutWindow:any = window.open('', "SB_PrintOutWindow", params);
+  //   SB_PrintOutWindow.location = this.props.downloadPDFUrl;
+  //   SB_PrintOutWindow.opener = null;
+  //   SB_PrintOutWindow.blur();
+  //   SB_PrintOutWindow.focus();
 
-    // myWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(base64data)+"'></iframe>"
+  //   // myWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + encodeURI(base64data)+"'></iframe>"
     
-  }
+  // }
 
   render() {
     const modelState = this.props.showModal;
@@ -82,21 +82,11 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
               </form>
             </div>
             <div className="modal-footer">
-              {/* <a
-                style={{ marginLeft: "30%", color: "white" }}
-                href={this.props.downloadPDFUrl}
-                // target="_blank"
-                className="btn btn-primary"
-                role="button"
-                // onClick={this.handleHideModal}
-              >
-                <i className="fa fa-eye" aria-hidden="true" />  View PDF
-              </a> */}
 
-              <button className="btn btn-primary" onClick={this.viewPDF}>
+              {/* <button className="btn btn-primary" onClick={this.viewPDF}>
                 <i className="fa fa-eye" aria-hidden="true" />
                 {"  "} View PDF
-              </button>
+              </button> */}
 
               <button
                 className="btn btn-primary"
