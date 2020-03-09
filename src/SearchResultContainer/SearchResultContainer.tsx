@@ -337,7 +337,7 @@ export class SearchResultContainer extends React.Component<
    */
   renderHeader(): JSX.Element {
     return (
-      <div className="row">
+      <div className="row search-result-header-row">
         <div className="col-sm-5 header-grid-div">
           {/* <strong>
           Total item(s) selected: {this.state.countSelectedItems}
@@ -347,7 +347,7 @@ export class SearchResultContainer extends React.Component<
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
-        <div className="col-sm-5 header-grid-div ">
+        <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
           

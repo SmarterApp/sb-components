@@ -109,7 +109,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 function getFileNameAsPerDate() {
   const currentdatatime = new Date();
   const day = currentdatatime.getDate();
-  const month = currentdatatime.getMonth();
+  const month = currentdatatime.getMonth() + 1;
   const year = currentdatatime
     .getFullYear()
     .toString()
@@ -118,6 +118,6 @@ function getFileNameAsPerDate() {
   const min = currentdatatime.getMinutes();
   const sec = currentdatatime.getSeconds();
   const fileName =
-    "SB_Printout_" + day + month + year + "_" + hour + min + sec + ".pdf";
+    "Sample Items Printout-" + day + "-" + month + "-" + year + ".pdf";
   return fileName;
 }
