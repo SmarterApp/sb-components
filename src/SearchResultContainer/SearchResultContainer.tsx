@@ -5,7 +5,8 @@ import {
   Resource,
   ItemTableContainer,
   ItemModel,
-  ItemCard
+  ItemCard,
+  IframeModal
 } from "@src/index";
 import * as ReactModal from "react-modal";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
@@ -380,7 +381,6 @@ export class SearchResultContainer extends React.Component<
           showModal={showErrorModal}
           onChangeErrorModelState={this.handleHideErrorModal}
         />
-        
       </>
     );
   }
