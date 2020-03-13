@@ -1,4 +1,5 @@
-import { ItemCardModel } from "@src/index";
+import { ItemCardModel, ItemTableContainerProps } from "@src/index";
+import { ItemCardProps } from "@src/ItemCard/ItemCard";
 
 export const completeItemCard: ItemCardModel = {
   selected: false,
@@ -107,6 +108,8 @@ export const itemCardList: ItemCardModel[] = [
   }
 ];
 
+export const totalItemsCardList: ItemCardModel[] = itemCardList;
+
 export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
@@ -185,3 +188,16 @@ export const sortableItemCards: ItemCardModel[] = [
     brailleOnlyItem: false
   }
 ];
+
+export const itemCardProps: ItemCardProps = {
+  rowData: completeItemCard,
+  onRowSelect: () => {
+    return;
+  },
+  getSelectedItemCount: () => {
+    return 0;
+  },
+  showErrorModalOnPrintItemsCountExceeded: () => {
+    return;
+  }
+};

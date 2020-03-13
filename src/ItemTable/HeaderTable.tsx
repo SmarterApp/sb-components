@@ -123,7 +123,7 @@ export class HeaderTable extends React.Component<HeaderTableProps, {}> {
     return (
       <thead>
         <tr className="primary">
-          {this.props.isLinkTable ? undefined : <td colSpan={2} />}
+          {this.props.isLinkTable ? undefined : <td colSpan={1} />}
           {this.props.columns.map(col => this.renderHeader(col))}
         </tr>
       </thead>

@@ -1,13 +1,29 @@
 import { SearchResultContainerProps, SearchResultType } from "@src/index";
-import { itemCardList } from "@mocks/index";
+import { itemCardList, totalItemsCardList } from "@mocks/index";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
-  isLinkTable: true,
+  isLinkTable: false,
+  totalItemCards: totalItemsCardList,
   onRowSelection: () => {
     return;
   },
   onItemSelection: () => {
     return;
+  },
+  onResetItems: () => {
+    let visibleItemCardCopy = [];
+    visibleItemCardCopy = itemCardList.slice();
+    visibleItemCardCopy.forEach((element) => {
+      if (element.selected) {
+        element.selected = false;
+      }
+    });
+    return;
+    //itemCardList = visibleItemCardCopy;
+  },
+  onPrintItems: () => {
+    //console.log("Base method");
+    return "";
   },
   itemCards: itemCardList,
   item: {

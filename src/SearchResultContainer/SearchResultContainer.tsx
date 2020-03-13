@@ -5,8 +5,12 @@ import {
   Resource,
   ItemTableContainer,
   ItemModel,
-  ItemCard
+  ItemCard,
+  IframeModal
 } from "@src/index";
+import * as ReactModal from "react-modal";
+import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
+import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 
 /**
  * SearchResultType enum
@@ -28,10 +32,17 @@ export enum SearchResultType {
 export interface SearchResultContainerProps {
   onRowSelection: (item: ItemModel, reset: boolean) => void;
   onItemSelection: (item: ItemCardModel) => void;
+  onPrintItems: (
+    langCode: string,
+    GlossaryRequired: string,
+    IllustrationRequired: string
+  ) => void;
+  onResetItems: () => void;
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
   isLinkTable: boolean;
+  totalItemCards?: ItemCardModel[];
 }
 
 /**
@@ -42,6 +53,10 @@ export interface SearchResultContainerProps {
 export interface SearchResultContainerState {
   renderType: SearchResultType;
   loading: boolean;
+  showModal: boolean;
+  statusMessage: string;
+  showErrorModal: boolean;
+  countSelectedItems: number;
 }
 
 /**
@@ -58,7 +73,11 @@ export class SearchResultContainer extends React.Component<
     super(props);
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
-      loading: true
+      loading: true,
+      showModal: false,
+      showErrorModal: false,
+      statusMessage: "",
+      countSelectedItems: this.getSelectedItemCount()
     };
   }
 
@@ -70,6 +89,10 @@ export class SearchResultContainer extends React.Component<
     this.setState({ loading });
   }
 
+  handleSelectItem = (item: ItemCardModel) => {
+    this.props.onItemSelection(item);
+    this.handleCountNumberOfItemSelection();
+  };
   /**
    * Renders all results to ItemCard view.
    */
@@ -78,7 +101,15 @@ export class SearchResultContainer extends React.Component<
 
     if (this.props.itemCards) {
       tags = this.props.itemCards.map(digest => (
-        <ItemCard {...digest} key={`${digest.bankKey} - ${digest.itemKey}`} />
+        <ItemCard
+          rowData={digest}
+          onRowSelect={this.handleSelectItem}
+          key={`${digest.bankKey} - ${digest.itemKey}`}
+          getSelectedItemCount={this.getSelectedItemCount}
+          showErrorModalOnPrintItemsCountExceeded={
+            this.showErrorModalOnPrintItemsCountExceeded
+          }
+        />
       ));
     }
 
@@ -93,7 +124,21 @@ export class SearchResultContainer extends React.Component<
     let tag: JSX.Element | JSX.Element[] | undefined;
     if (this.props.itemCards && this.props.itemCards.length > 0) {
       if (this.state.renderType === SearchResultType.Table) {
-        tag = <ItemTableContainer {...this.props} />;
+        tag = (
+          <ItemTableContainer
+            onRowSelection={this.props.onRowSelection}
+            onItemSelection={this.props.onItemSelection}
+            itemCards={this.props.itemCards}
+            item={this.props.item}
+            isLinkTable={this.props.isLinkTable}
+            onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
+            numberOfSelectedItem={this.state.countSelectedItems}
+            showErrorModalOnPrintItemsCountExceeded={
+              this.showErrorModalOnPrintItemsCountExceeded
+            }
+            getSelectedItemCount={this.getSelectedItemCount}
+          />
+        );
       } else {
         tag = this.renderItemCards();
       }
@@ -110,6 +155,92 @@ export class SearchResultContainer extends React.Component<
 
   handleTypeChange = (renderType: SearchResultType): void => {
     this.setState({ renderType });
+  };
+
+  handleResetItems = (): void => {
+    this.props.onResetItems();
+    this.handleCountNumberOfItemSelection();
+  };
+
+  handleCountNumberOfItemSelection = (): void => {
+    this.setState({ countSelectedItems: this.getSelectedItemCount() });
+  };
+
+  getSelectedItemCount = (): number => {
+    let selectedItemCount = 0;
+    if (this.props.totalItemCards !== undefined) {
+      selectedItemCount = this.props.totalItemCards.filter(
+        it => it.selected === true
+      ).length;
+    }
+    return selectedItemCount;
+  };
+
+  areSelectedItemsHaveMath = (): boolean => {
+    let areSelectedItemsHaveMath: boolean = false;
+    if (
+      this.props.totalItemCards !== undefined &&
+      this.getSelectedItemCount() > 0
+    ) {
+      let len = this.props.totalItemCards.length;
+      for (let i = 0; i < len; i++) {
+        if (
+          this.props.totalItemCards[i].selected === true &&
+          this.props.totalItemCards[i].subjectCode === "MATH"
+        ) {
+          areSelectedItemsHaveMath = true;
+          break;
+        }
+      }
+    }
+    return areSelectedItemsHaveMath;
+  };
+
+  handlePrintItemsClick = (
+    langCode: string,
+    GlossaryRequired: string,
+    IllustrationRequired: string
+  ): void => {
+    this.props.onPrintItems(langCode, GlossaryRequired, IllustrationRequired);
+    this.setState({ showModal: false, statusMessage: "" });
+  };
+
+  handleShowModal = (modelState: boolean): void => {
+    //check item selected , if not show error msg popup
+    this.areSelectedItemsHaveMath();
+    const totalItemCards = this.props.totalItemCards;
+    let visibleItems = this.props.itemCards;
+    let selectedItemCount = 0;
+    if (totalItemCards !== undefined) {
+      for (let i = 0; i < totalItemCards.length; i++) {
+        if (totalItemCards[i].selected === true) {
+          selectedItemCount = selectedItemCount + 1;
+        }
+      }
+    }
+    //console.log(selectedItemCount);
+    if (selectedItemCount == 0 || selectedItemCount < 0) {
+      this.setState({
+        showErrorModal: modelState,
+        statusMessage: "Please select at least one item to print"
+      });
+    } else {
+      this.setState({
+        showModal: modelState,
+        statusMessage: selectedItemCount.toString()
+      });
+    }
+  };
+
+  handleHideErrorModal = () => {
+    this.setState({ showErrorModal: false, statusMessage: "" });
+  };
+
+  showErrorModalOnPrintItemsCountExceeded = () => {
+    this.setState({
+      showErrorModal: true,
+      statusMessage: " Printing is limited to 20 items."
+    });
   };
 
   /**
@@ -143,14 +274,69 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
+  renderResetButton(): JSX.Element {
+    if (this.getSelectedItemCount() <= 0) {
+      return (
+        <button
+          onClick={this.handleResetItems}
+          aria-label="Clear Selection"
+          title="Clear Selection"
+          className={
+            "btn btn-default search-result-container-header-button disabled"
+          }
+        >
+          <i aria-hidden="true" className="fa fa-eraser" /> Clear
+        </button>
+      );
+    } else
+      return (
+        <button
+          onClick={this.handleResetItems}
+          aria-label="Clear Selection"
+          title="Clear Selection"
+          className={"btn btn-default search-result-container-header-button"}
+        >
+          <i aria-hidden="true" className="fa fa-eraser" /> Clear
+        </button>
+      );
+  }
+
+  renderPrintButton(viewType: SearchResultType): JSX.Element {
+    return (
+      <button
+        onClick={() => this.handleShowModal(true)}
+        aria-label="Print Item"
+        title="Print Items"
+        className={"btn btn-default search-result-container-header-button"}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />{" "}
+        Print
+      </button>
+    );
+  }
+
   /**
    * Renders toggle buttons for changing the layout to table and item card
    */
   renderHeader(): JSX.Element {
     return (
-      <div className="search-result-header">
-        {this.renderToggle(SearchResultType.Table)}
-        {this.renderToggle(SearchResultType.ItemCard)}
+      <div className="row search-result-header-row">
+        <div className="col-sm-5 header-grid-div">
+          {/* <strong>
+          Total item(s) selected: {this.state.countSelectedItems}
+          </strong> */}
+        </div>
+        <div className="col-sm-2 header-grid-div  ">
+          {this.renderToggle(SearchResultType.Table)}
+          {this.renderToggle(SearchResultType.ItemCard)}
+        </div>
+        <div className="col-sm-5 header-grid-div header-print-button-groups">
+          {this.renderResetButton()}
+          {this.renderPrintButton(SearchResultType.ItemCard)}
+        </div>
       </div>
     );
   }
@@ -159,9 +345,39 @@ export class SearchResultContainer extends React.Component<
    * Returns a wrapper of items displayed as a table or card view
    * @returns default render method
    */
+
+  /**
+   * Renders Print Accessibility model
+   *
+   */
+  renderPrintAccessibility(): JSX.Element {
+    const { showModal, statusMessage, showErrorModal } = this.state;
+    return (
+      <>
+        <PrintAccessibilityModal
+          onChangeModelState={this.handleShowModal}
+          onSubmitPrint={this.handlePrintItemsClick}
+          showModal={showModal}
+          StatusMessage={statusMessage}
+          areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
+        />
+        <ErrorMessageModal
+          StatusMessage={statusMessage}
+          showModal={showErrorModal}
+          onChangeErrorModelState={this.handleHideErrorModal}
+        />
+      </>
+    );
+  }
+
+  /**
+   * Returns a wrapper of Accessability model View
+   */
+
   render() {
     return (
       <div className="search-result-container">
+        {this.renderPrintAccessibility()}
         {this.renderHeader()}
         {this.renderBody()}
       </div>

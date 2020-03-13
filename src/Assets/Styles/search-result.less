@@ -1,18 +1,40 @@
-@import 'constants.less';
+@import "constants.less";
 
 .search-result-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: @spacing-unit;
+  display: flex;
+  //display: inline;
+  flex-direction: row;
+  justify-content: center;
+  margin: @spacing-unit;
+}
+
+.search-result-header-row {
+  margin: @spacing-unit;
 }
 
 .search-result-body {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .search-result-container {
-    width: 100%;
+  width: 100%;
+}
+
+.header-grid-div {
+  display: flex;
+  padding: 0 auto;
+  //text-align: center;
+  justify-content: center;
+}
+
+.search-result-container-header-button {
+  min-width: 120px;
+}
+
+@media only screen and (max-width: 991px) {
+  .header-print-button-groups {
+    margin: 4px 0px;
+  }
 }

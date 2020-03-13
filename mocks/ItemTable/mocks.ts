@@ -22,10 +22,16 @@ export const itemTableProps: ItemTableContainerProps = {
   onItemSelection: () => {
     return;
   },
+  onCountNumberOfItemSelection: () => {
+    return;
+  },
   itemCards: itemCardList,
   item: {
     kind: "none"
-  }
+  },
+  numberOfSelectedItem: 0,
+  getSelectedItemCount: () => {return 0;},
+  showErrorModalOnPrintItemsCountExceeded: () => {return}
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

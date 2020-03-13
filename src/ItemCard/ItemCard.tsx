@@ -3,6 +3,7 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
+import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
   MATH1: require("@sbac/sbac-ui-kit/src/images/math-1.svg"),
@@ -16,18 +17,37 @@ const claimIcons: { [claimCode: string]: string } = {
 };
 // tslint:enable:no-require-imports
 
-export interface ItemCardState {
-  redirect: boolean;
+//Added by sonu => props interface
+export interface ItemCardProps {
+  rowData: ItemCardModel;
+  onRowSelect: (item: ItemCardModel) => void;
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
 }
 
-export class ItemCard extends React.Component<ItemCardModel, ItemCardState> {
-  constructor(props: ItemCardModel) {
+export interface ItemCardState {
+  redirect: boolean;
+  isCheckBoxChanged: boolean;
+  isChecked: boolean;
+  showErrorModal: boolean;
+  statusMessage: string;
+}
+
+export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
+  constructor(props: ItemCardProps) {
     super(props);
-    this.state = { redirect: false };
+    this.state = {
+      redirect: false,
+      isChecked: false,
+      isCheckBoxChanged: false,
+      showErrorModal: false,
+      statusMessage: ""
+    };
   }
 
-  shouldComponentUpdate(nextProps: ItemCardModel, nextState: ItemCardState) {
-    return nextState.redirect;
+  shouldComponentUpdate(nextProps: ItemCardProps, nextState: ItemCardState) {
+    // return nextState.redirect || nextState.isCheckBoxChanged;
+    return true;
   }
 
   handleKeyPress = (e: React.KeyboardEvent<HTMLElement>) => {
@@ -36,53 +56,104 @@ export class ItemCard extends React.Component<ItemCardModel, ItemCardState> {
     }
   };
 
+  handleCheckBoxChange = (item: ItemCardModel, e: React.SyntheticEvent) => {
+    e.stopPropagation();
+    const target = e.target as HTMLInputElement;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    let selectedItemsCount = this.props.getSelectedItemCount();
+    //check if selection items count exceed the limits
+    if (item.selected !== true && selectedItemsCount >= 20) {
+      this.props.showErrorModalOnPrintItemsCountExceeded();
+      return;
+    } else {
+      if (item.selected === true) item.selected = false;
+      else item.selected = true;
+      this.props.onRowSelect(item);
+      //this.props.onItemSelection(item);
+      this.setState({
+        isChecked: value === true,
+        isCheckBoxChanged: true
+      });
+    }
+  };
+
   handleOnClick = () => {
     this.setState({ redirect: true });
   };
 
+  handleHideErrorModal = () => {
+    this.setState({ showErrorModal: false, statusMessage: "" });
+  };
+
   render() {
-    const { bankKey, itemKey } = this.props;
+    /**
+     * Function related to print button view
+     */
+    const onBtnClickChangeIcon = () => {
+      return this.props.rowData.selected === true
+        ? "fa-check-square"
+        : "fa-plus-square";
+    };
+    const onBtnClickChangeBtnStyleCss = () => {
+      return this.props.rowData.selected === true
+        ? " btn-selected"
+        : " btn-unselected";
+    };
+    const selectOrSelectedBtnText = () => {
+      return this.props.rowData.selected === true
+        ? " Item Selected"
+        : " Select to Print";
+    };
+
+    const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
     if (!this.state.redirect) {
       const tooltip = generateTooltip({
         displayIcon: true,
         className: "box",
-        helpText: <span>{this.props.targetDescription}</span>,
-        displayText: this.props.targetId
+        helpText: <span>{this.props.rowData.targetDescription}</span>,
+        displayText: this.props.rowData.targetId
+      });
+
+      const tooltip_printOption = generateTooltip({
+        displayIcon: true,
+        className: "box",
+        helpText: <span>Select to print this item</span>,
+        displayText: ""
       });
 
       content = (
         <div
           role="link"
-          className={`card card-block ${this.props.subjectCode.toLowerCase()}`}
+          className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
           onClick={this.handleOnClick}
           onKeyUp={this.handleKeyPress}
           tabIndex={0}
         >
           <div className="card-contents">
             <div className="card-header">
-              <h4 className="card-title">{this.props.subjectLabel}</h4>
+              <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
               <div className="card-icon-container">
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(
-                    this.props.grade
+                    this.props.rowData.grade
                   )}
                 </span>
-                {/* <img
-                  src={claimIcons[this.props.claimCode]}
-                  alt={this.props.claimLabel}
-                  className="card-icon"
-                  width="32px"
-                /> */}
               </div>
             </div>
             <p className="card-text grade">
               <span className="card-text-label">Grade:</span>
-              <span className="card-text-value"> {this.props.gradeLabel}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.gradeLabel}
+              </span>
             </p>
             <p className="card-text claim">
               <span className="card-text-label">Claim:</span>
-              <span className="card-text-value"> {this.props.claimLabel}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.claimLabel}
+              </span>
             </p>
             <p className="card-text target">
               <span className="card-text-label">Target:</span>
@@ -91,18 +162,34 @@ export class ItemCard extends React.Component<ItemCardModel, ItemCardState> {
             <p className="card-text interaction-type">
               <span className="card-text-label">Item Type:</span>
               <span className="card-text-value">
-                {` ${this.props.interactionTypeLabel}`}
+                {` ${this.props.rowData.interactionTypeLabel}`}
               </span>
             </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
-              <span className="card-text-value"> {this.props.itemKey}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.itemKey}
+              </span>
             </p>
+            <button
+              type="button"
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+            >
+              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+              {selectOrSelectedBtnText()}
+            </button>
           </div>
         </div>
       );
     }
 
-    return content;
+    return (
+      <>
+        {/* {this.renderErrorModal()} */}
+        {content}
+      </>
+    );
   }
 }

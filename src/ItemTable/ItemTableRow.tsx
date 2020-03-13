@@ -14,6 +14,10 @@ export interface ItemTableRowProps {
   isExpanded: boolean;
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
+  isItemSelected: boolean;
+  numberOfSelectedItem: number;
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
 }
 
 const unChecked = (
@@ -35,10 +39,13 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
-    return (
-      this.props.isExpanded !== nextProps.isExpanded ||
-      this.props.rowData.selected !== nextProps.rowData.selected
-    );
+    // return (
+    //   this.props.isExpanded !== nextProps.isExpanded ||
+    //   this.props.rowData.selected !== nextProps.rowData.selected ||
+    //   this.props.isItemSelected !== nextProps.isItemSelected ||
+    //   this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
+    // );
+    return true;
   }
 
   handleRowClick = (rowData: ItemCardModel) => {
@@ -59,7 +66,16 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     rowData: ItemCardModel
   ) => {
     e.stopPropagation();
-    this.props.onRowSelect(rowData);
+    let selectedItemsCount = this.props.getSelectedItemCount();
+    if (rowData.selected !== true && selectedItemsCount >= 20) {
+      this.props.showErrorModalOnPrintItemsCountExceeded();
+      return;
+    } else {
+      if (rowData.selected === true) rowData.selected = false;
+      else rowData.selected = true;
+      this.props.onRowSelect(rowData);
+      e.stopPropagation();
+    }
   };
 
   handleCheckboxKeyUpEnter = (
@@ -136,9 +152,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           tabIndex={0}
         >
           {rowData.selected === true ? checked : unChecked}&nbsp;
-        </td>,
-        <td className="arrow-indicator" tabIndex={0} key="expand-control">
-          {isExpanded ? expand : collapse}
         </td>
       ];
     }
