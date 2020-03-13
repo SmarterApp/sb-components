@@ -5,7 +5,10 @@ export interface LoadingOverlayTransparentProps {
 }
 
 // tslint:disable-next-line:variable-name
-export class LoadingOverlayTransparent extends React.Component<LoadingOverlayTransparentProps, {}> {
+export class LoadingOverlayTransparent extends React.Component<
+  LoadingOverlayTransparentProps,
+  {}
+> {
   render() {
     const { loading, children } = this.props;
     let content;

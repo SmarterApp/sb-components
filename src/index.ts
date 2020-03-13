@@ -256,7 +256,7 @@ export { Footer } from "./Layout/Footer";
 export { NavMenu } from "./Layout/NavMenu";
 export { SbNavLink, SbNavlinkProps } from "./Layout/SbNavLink";
 export { LoadingOverlay } from "./Layout/LoadingOverlay";
-export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent"
+export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent";
 
 //
 // Modals Components
@@ -368,7 +368,7 @@ export {
 // Error Components
 //
 export { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
-export { ErrorMessageModal } from "./ErrorBoundary/ErrorMessageModal"
+export { ErrorMessageModal } from "./ErrorBoundary/ErrorMessageModal";
 export {
   ErrorPageContainer,
   ErrorPageContainerProps,

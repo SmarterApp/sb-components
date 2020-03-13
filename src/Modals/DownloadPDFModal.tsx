@@ -55,7 +55,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
           aria-label="Close modal"
           onClick={this.downloadPDF}
         >
-          <i className="fa fa-download"></i>
+          <i className="fa fa-download" />
           {"  "} Download PDF
         </button>
 
@@ -99,7 +99,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
           shouldCloseOnEsc={false}
           shouldCloseOnOverlayClick={false}
         >
-         {this.renderModalWrapper()}
+          {this.renderModalWrapper()}
         </ReactModal>
       </div>
     );

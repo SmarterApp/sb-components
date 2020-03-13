@@ -198,9 +198,11 @@ export class ItemTableContainer extends React.Component<
             isItemSelected={this.state.isItemSelected}
             item={this.props.item}
             isLinkTable={this.props.isLinkTable}
-            numberOfSelectedItem = {this.props.numberOfSelectedItem}
+            numberOfSelectedItem={this.props.numberOfSelectedItem}
             getSelectedItemCount={this.props.getSelectedItemCount}
-            showErrorModalOnPrintItemsCountExceeded = {this.props.showErrorModalOnPrintItemsCountExceeded}
+            showErrorModalOnPrintItemsCountExceeded={
+              this.props.showErrorModalOnPrintItemsCountExceeded
+            }
           />
         );
       }

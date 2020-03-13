@@ -88,9 +88,11 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         onRowExpand={onRowExpand}
         onRowSelect={onRowSelect}
         isItemSelected={this.props.isItemSelected}
-        numberOfSelectedItem = {this.props.numberOfSelectedItem}
+        numberOfSelectedItem={this.props.numberOfSelectedItem}
         getSelectedItemCount={this.props.getSelectedItemCount}
-        showErrorModalOnPrintItemsCountExceeded = {this.props.showErrorModalOnPrintItemsCountExceeded}
+        showErrorModalOnPrintItemsCountExceeded={
+          this.props.showErrorModalOnPrintItemsCountExceeded
+        }
       />
     );
 
