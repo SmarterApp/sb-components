@@ -62,12 +62,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     const value = target.type === "checkbox" ? target.checked : target.value;
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if(item.selected !== true &&  selectedItemsCount >= 20) {
-        //this.setState({showErrorModal: true, statusMessage:"Maximum number of items for printing cannot exceed 20"});
-        this.props.showErrorModalOnPrintItemsCountExceeded();
-        return;
-    }
-    else {
+    if (item.selected !== true && selectedItemsCount >= 20) {
+      this.props.showErrorModalOnPrintItemsCountExceeded();
+      return;
+    } else {
       if (item.selected === true) item.selected = false;
       else item.selected = true;
       this.props.onRowSelect(item);
@@ -77,7 +75,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         isCheckBoxChanged: true
       });
     }
-    
   };
 
   handleOnClick = () => {
@@ -88,30 +85,24 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     this.setState({ showErrorModal: false, statusMessage: "" });
   };
 
-  // renderErrorModal(): JSX.Element {
-  //   const { statusMessage, showErrorModal } = this.state;
-  //   return (
-  //       <ErrorMessageModal
-  //         StatusMessage={statusMessage}
-  //         showModal={showErrorModal}
-  //         onChangeErrorModelState={this.handleHideErrorModal}
-  //       />
-  //   );
-  // }
-
   render() {
-
-   /**
-   * Function related to print button view
-   */
+    /**
+     * Function related to print button view
+     */
     const onBtnClickChangeIcon = () => {
-      return (this.props.rowData.selected === true ? "fa-check-square" : "fa-plus-square");
+      return this.props.rowData.selected === true
+        ? "fa-check-square"
+        : "fa-plus-square";
     };
     const onBtnClickChangeBtnStyleCss = () => {
-      return (this.props.rowData.selected === true ? " btn-selected" : " btn-unselected");
-    }
+      return this.props.rowData.selected === true
+        ? " btn-selected"
+        : " btn-unselected";
+    };
     const selectOrSelectedBtnText = () => {
-      return (this.props.rowData.selected === true ? " Item Selected" : " Select to Print");
+      return this.props.rowData.selected === true
+        ? " Item Selected"
+        : " Select to Print";
     };
 
     const { bankKey, itemKey } = this.props.rowData;
@@ -148,12 +139,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                     this.props.rowData.grade
                   )}
                 </span>
-                {/* <img
-                  src={claimIcons[this.props.claimCode]}
-                  alt={this.props.claimLabel}
-                  className="card-icon"
-                  width="32px"
-                /> */}
               </div>
             </div>
             <p className="card-text grade">
@@ -187,53 +172,24 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-
-            {/* Add checkbox for selecting item for printing */}
-
-            {/* <p className="card-text item-id">
-              <span className="card-text-label">SELECT TO PRINT:</span>
-              <span className="card-text-value">
-                <label
-                  className="custom-checkbox"
-                  onClick={e => e.stopPropagation()}
-                >
-                  <input
-                    name="isChecked"
-                    type="checkbox"
-                    checked={
-                      this.props.rowData.selected === undefined
-                        ? false
-                        : this.props.rowData.selected
-                    }
-                    onClick={e => e.stopPropagation()}
-                    onChange={e =>
-                      this.handleCheckBoxChange(this.props.rowData, e)
-                    }
-                  />
-                  <span className="checkmark" />
-                </label>
-              </span>
-            </p> */}
-            <button type="button" 
+            <button
+              type="button"
               className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-              onClick={e =>
-                this.handleCheckBoxChange(this.props.rowData, e)
-              }
+              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
             >
-                <i className={"fa  " + onBtnClickChangeIcon()}></i>&nbsp;&nbsp;
-                {selectOrSelectedBtnText()}
+              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+              {selectOrSelectedBtnText()}
             </button>
           </div>
         </div>
       );
     }
 
-
     return (
       <>
         {/* {this.renderErrorModal()} */}
         {content}
       </>
-      );
+    );
   }
 }

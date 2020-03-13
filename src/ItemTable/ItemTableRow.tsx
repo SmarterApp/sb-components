@@ -42,7 +42,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     // return (
     //   this.props.isExpanded !== nextProps.isExpanded ||
     //   this.props.rowData.selected !== nextProps.rowData.selected ||
-    //   this.props.isItemSelected !== nextProps.isItemSelected || 
+    //   this.props.isItemSelected !== nextProps.isItemSelected ||
     //   this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
     // );
     return true;
@@ -67,12 +67,10 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   ) => {
     e.stopPropagation();
     let selectedItemsCount = this.props.getSelectedItemCount();
-    if(rowData.selected !== true &&  selectedItemsCount >= 20) {
-      //this.setState({showErrorModal: true, statusMessage:"Maximum number of items for printing cannot exceed 20"});
+    if (rowData.selected !== true && selectedItemsCount >= 20) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
-    }
-    else {
+    } else {
       if (rowData.selected === true) rowData.selected = false;
       else rowData.selected = true;
       this.props.onRowSelect(rowData);
@@ -155,9 +153,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         >
           {rowData.selected === true ? checked : unChecked}&nbsp;
         </td>
-        // <td className="arrow-indicator" tabIndex={0} key="expand-control">
-        //   {isExpanded ? expand : collapse}
-        // </td>
       ];
     }
 

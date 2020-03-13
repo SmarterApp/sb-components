@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
-//import { ItemCardModel } from "lib/src";
 
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;
@@ -36,8 +35,12 @@ export class PrintAccessibilityModal extends React.Component<
   }
 
   componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
-    if(nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath) {
-      this.setState({areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath});
+    if (
+      nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath
+    ) {
+      this.setState({
+        areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath
+      });
     }
   }
 
@@ -160,7 +163,6 @@ export class PrintAccessibilityModal extends React.Component<
       selected: selectedGlossary === "True"
     });
 
-
     selectOptions.push({
       label: "Glossary off",
       value: "false",
@@ -184,20 +186,17 @@ export class PrintAccessibilityModal extends React.Component<
   renderDesignatedSupport(): JSX.Element {
     if (!this.state.areSelectedItemsHaveMath) {
       return <></>;
-      // Please wait while items is converting to pdf<ReactLoading type={"spokes"} color={"#000000"} height={'20%'} width={'20%'} />
     } else {
       return (
         <div className="accessibility-groups">
           <div className="accessibility-resource-type section section-light">
-            {/* <div className="accessibility-header"> */}
-              <h4 className="green-title">
-                <span className="fa fa-tasks" aria-hidden="true"></span> Designated Supports
-              </h4>
-              <p className="font-italic">
-                Note: These options only apply to math items.
-              </p>
-            {/* </div> */}
-
+            <h4 className="green-title">
+              <span className="fa fa-tasks" aria-hidden="true" /> Designated
+              Supports
+            </h4>
+            <p className="font-italic">
+              Note: These options only apply to math items.
+            </p>
             <div className="accessibility-dropdowns">
               <div className="accessibility-dropdown form-group selection-enabled">
                 {this.renderTranslationLanguages()}
@@ -224,12 +223,20 @@ export class PrintAccessibilityModal extends React.Component<
           overlayClassName="react-modal-overlay"
           className="react-modal-content about-item-modal"
         >
-          <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
+          <div
+            className="modal-wrapper"
+            aria-labelledby="About Item Modal"
+            aria-hidden="true"
+          >
             <div className="modal-header">
               <h4 className="modal-title">
                 <h4> Choose Accessibility Options for Printout </h4>
               </h4>
-              <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
+              <button
+                className="close"
+                onClick={this.handleHideModal}
+                aria-label="Close modal"
+              >
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
@@ -243,12 +250,10 @@ export class PrintAccessibilityModal extends React.Component<
               <form id="accessibility-form">
                 <div className="accessibility-groups">
                   <div className="accessibility-resource-type section section-light">
-                    {/* <div className="accessibility-header"> */}
-                      <h4 className="green-title">
-                        <span className="fa fa-tasks" aria-hidden="true"></span> Universal
-                        Tools
-                      </h4>
-                    {/* </div> */}
+                    <h4 className="green-title">
+                      <span className="fa fa-tasks" aria-hidden="true" />{" "}
+                      Universal Tools
+                    </h4>
                     <div className="accessibility-dropdown form-group selection-enabled">
                       {this.renderGlossaryOptions()}
                     </div>
@@ -256,19 +261,6 @@ export class PrintAccessibilityModal extends React.Component<
                 </div>
 
                 {this.renderDesignatedSupport()}
-
-                {/* <div className="accessibility-groups">
-                  <div className="accessibility-resource-type section section-light">
-                    <div className="accessibility-dropdowns">
-                      <div className="accessibility-dropdown form-group selection-enabled">
-                        {this.renderTranslationLanguages()}
-                      </div>
-                      <div className="accessibility-dropdown form-group selection-enabled">
-                        {this.renderIllustrationOptions()}
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
               </form>
             </div>
             <div className="modal-footer">

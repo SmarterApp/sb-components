@@ -90,21 +90,8 @@ export class SearchResultContainer extends React.Component<
   }
 
   handleSelectItem = (item: ItemCardModel) => {
-    //this.props.onItemSelection(item);
-    //check if item selection count exceed 20, show warning on exceeding
-    // if (item.selected === true) {
-    //   let selectedItemsCount = this.getSelectedItemCount();
-    //   if (selectedItemsCount > 2) {
-    //     this.setState({ showErrorModal: true });
-    //   } else {
-    //     this.props.onItemSelection(item);
-    //     this.handleCountNumberOfItemSelection();
-    //   }
-    // }
-    // else {
-      this.props.onItemSelection(item);
-      this.handleCountNumberOfItemSelection();
-    // }
+    this.props.onItemSelection(item);
+    this.handleCountNumberOfItemSelection();
   };
   /**
    * Renders all results to ItemCard view.
@@ -119,7 +106,9 @@ export class SearchResultContainer extends React.Component<
           onRowSelect={this.handleSelectItem}
           key={`${digest.bankKey} - ${digest.itemKey}`}
           getSelectedItemCount={this.getSelectedItemCount}
-          showErrorModalOnPrintItemsCountExceeded = {this.showErrorModalOnPrintItemsCountExceeded}
+          showErrorModalOnPrintItemsCountExceeded={
+            this.showErrorModalOnPrintItemsCountExceeded
+          }
         />
       ));
     }
@@ -144,7 +133,9 @@ export class SearchResultContainer extends React.Component<
             isLinkTable={this.props.isLinkTable}
             onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
             numberOfSelectedItem={this.state.countSelectedItems}
-            showErrorModalOnPrintItemsCountExceeded = {this.showErrorModalOnPrintItemsCountExceeded}
+            showErrorModalOnPrintItemsCountExceeded={
+              this.showErrorModalOnPrintItemsCountExceeded
+            }
             getSelectedItemCount={this.getSelectedItemCount}
           />
         );
@@ -246,8 +237,11 @@ export class SearchResultContainer extends React.Component<
   };
 
   showErrorModalOnPrintItemsCountExceeded = () => {
-    this.setState({ showErrorModal: true, statusMessage: " Printing is limited to 20 items." });
-  }
+    this.setState({
+      showErrorModal: true,
+      statusMessage: " Printing is limited to 20 items."
+    });
+  };
 
   /**
    * Renders button toggle for changing the layout to cards or table
@@ -281,38 +275,30 @@ export class SearchResultContainer extends React.Component<
   }
 
   renderResetButton(): JSX.Element {
-   
-      if(this.getSelectedItemCount() <= 0) {
-         return (
-          <button
+    if (this.getSelectedItemCount() <= 0) {
+      return (
+        <button
           onClick={this.handleResetItems}
           aria-label="Clear Selection"
           title="Clear Selection"
-          className={"btn btn-default search-result-container-header-button disabled"}
+          className={
+            "btn btn-default search-result-container-header-button disabled"
+          }
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-eraser"
-          />{" "}
-          Clear
+          <i aria-hidden="true" className="fa fa-eraser" /> Clear
         </button>
-         );
-      }
-      else 
+      );
+    } else
       return (
-      <button
-        onClick={this.handleResetItems}
-        aria-label="Clear Selection"
-        title="Clear Selection"
-        className={"btn btn-default search-result-container-header-button"}
-      >
-        <i
-          aria-hidden="true"
-          className="fa fa-eraser"
-        />{" "}
-        Clear
-      </button>
-    );
+        <button
+          onClick={this.handleResetItems}
+          aria-label="Clear Selection"
+          title="Clear Selection"
+          className={"btn btn-default search-result-container-header-button"}
+        >
+          <i aria-hidden="true" className="fa fa-eraser" /> Clear
+        </button>
+      );
   }
 
   renderPrintButton(viewType: SearchResultType): JSX.Element {
@@ -350,7 +336,6 @@ export class SearchResultContainer extends React.Component<
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
-          
         </div>
       </div>
     );

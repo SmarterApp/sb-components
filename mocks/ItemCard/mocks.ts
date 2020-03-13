@@ -25,7 +25,6 @@ export const completeItemCard: ItemCardModel = {
   ccssDescription: "this is the common core description",
   domain: "domain"
 };
- 
 
 export const itemCardList: ItemCardModel[] = [
   {
@@ -64,7 +63,7 @@ export const itemCardList: ItemCardModel[] = [
     targetDescription: "Target B description",
     targetShortName: "Key Details",
     interactionTypeCode: "MC",
-    interactionTypeLabel: "Multiple Choice Multiple Choice Multiple Choice",
+    interactionTypeLabel: "Multiple Choice",
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: false
@@ -195,6 +194,10 @@ export const itemCardProps: ItemCardProps = {
   onRowSelect: () => {
     return;
   },
-  getSelectedItemCount: () => {return 0;},
-  showErrorModalOnPrintItemsCountExceeded: () => {return}
+  getSelectedItemCount: () => {
+    return 0;
+  },
+  showErrorModalOnPrintItemsCountExceeded: () => {
+    return;
+  }
 };
