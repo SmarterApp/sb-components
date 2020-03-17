@@ -77,6 +77,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     }
   };
 
+
   handleOnClick = () => {
     this.setState({ redirect: true });
   };
@@ -176,6 +177,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               type="button"
               className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
               onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+              tabIndex={0}
             >
               <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
               {selectOrSelectedBtnText()}
