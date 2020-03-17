@@ -82,6 +82,10 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.KeyboardEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
+    if(e.keyCode === 13) {
+      e.preventDefault();
+      return;
+    }
     if (e.keyCode === 32) {
       e.preventDefault();
       let selectedItemsCount = this.props.getSelectedItemCount();
@@ -97,6 +101,12 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       }
       e.preventDefault();
     }
+  };
+
+  handleKeyUpEnterStopPropogation = (
+    e: React.SyntheticEvent
+  ) => {
+    e.stopPropagation();
   };
 
   renderColumnGroup(
@@ -168,6 +178,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           key="checkbox-control"
           onClick={e => this.handleCheckboxClick(e, rowData)}
           onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
+          onKeyUp={e =>  this.handleKeyUpEnterStopPropogation(e)}
           tabIndex={0}
         >
           {rowData.selected === true ? checked : unChecked}&nbsp;
