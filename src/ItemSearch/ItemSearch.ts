@@ -26,6 +26,10 @@ export class ItemSearch {
     filterModels: FilterCategoryModel[]
   ): SearchAPIParamsModel {
     const subjects = Filter.getSelectedCodes(FilterType.Subject, filterModels);
+    const testNames = Filter.getSelectedCodes(
+      FilterType.TestNames,
+      filterModels
+    );
     const gradeLevels = Filter.getSelectedGrade(filterModels);
     const claims = Filter.getSelectedCodes(FilterType.Claim, filterModels);
     const interactionTypes = Filter.getSelectedCodes(
@@ -63,7 +67,8 @@ export class ItemSearch {
       targets,
       catOnly,
       performanceOnly,
-      calculator
+      calculator,
+      testNames
     };
   }
 
@@ -295,6 +300,14 @@ export class ItemSearch {
           filter.code,
           defaultOptionKeys,
           searchApi.subjects
+        );
+        break;
+      case FilterType.TestNames:
+        options = this.searchOptionFilterString(
+          filter.filterOptions,
+          filter.code,
+          defaultOptionKeys,
+          searchApi.testNames
         );
         break;
       case FilterType.Grade:

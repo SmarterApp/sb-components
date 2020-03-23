@@ -11,7 +11,8 @@ import {
 export type SearchFilterStringTypes =
   | SubjectModel
   | InteractionTypeModel
-  | SearchBaseModel;
+  | SearchBaseModel
+  | TestNameModel;
 export type SearchFilterTypes =
   | SearchFilterStringTypes
   | TargetModel
@@ -38,6 +39,10 @@ export interface SubjectModel extends SearchBaseModel {
   shortLabel?: string;
 }
 
+export interface TestNameModel extends SearchBaseModel {
+  shortLabel?: string;
+}
+
 export interface ClaimModel extends SearchBaseModel {
   targetCodes?: string[];
   claimNumber: string;
@@ -60,6 +65,7 @@ export interface SearchAPIParamsModel {
   catOnly?: boolean;
   targets?: string[];
   calculator?: boolean;
+  testNames?: string[];
 }
 
 export interface ItemsSearchModel {
@@ -67,6 +73,7 @@ export interface ItemsSearchModel {
   subjects?: SubjectModel[];
   claims?: ClaimModel[];
   targets?: TargetModel[];
+  testNames?: TestNameModel[];
 }
 
 export interface ItemsSearchFilterModel {
@@ -77,6 +84,7 @@ export interface ItemsSearchFilterModel {
   grades: FilterSearchGradeModel;
   technologyTypes: FilterSearchStringModel<SearchBaseModel>;
   calculator: FilterSearchStringModel<SearchBaseModel>;
+  testNames: FilterSearchStringModel<TestNameModel>;
 }
 
 export interface FilterSearchModel {
@@ -93,7 +101,8 @@ export interface FilterSearchStringModel<T extends SearchFilterStringTypes>
     | FilterType.InteractionType
     | FilterType.Subject
     | FilterType.TechnologyType
-    | FilterType.Calculator;
+    | FilterType.Calculator
+    | FilterType.TestNames;
 }
 
 export interface FilterSearchGradeLevelModel extends FilterSearchModel {

@@ -74,7 +74,8 @@ export enum FilterType {
   InteractionType = "InteractionType",
   Calculator = "Calculator",
   TechnologyType = "TechnologyType", // Contains Performance and CAT
-  SearchItemId = "SearchItemId"
+  SearchItemId = "SearchItemId",
+  TestNames = "TestNames"
 }
 
 export interface FilterOptionModel {

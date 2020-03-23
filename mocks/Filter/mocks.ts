@@ -51,6 +51,21 @@ export const subjectsFilterOptions: FilterOptionModel[] = [
   }
 ];
 
+export const testNameFilterOptions: FilterOptionModel[] = [
+  {
+    label: "Test 1",
+    key: "Test 1",
+    isSelected: false,
+    filterType: FilterType.TestNames
+  },
+  {
+    label: "Test 2",
+    key: "Test 1",
+    isSelected: false,
+    filterType: FilterType.TestNames
+  }
+];
+
 export const subjectsFilterOptionsSelected: FilterOptionModel[] = [
   {
     label: "English Literacy & Arts",
@@ -299,6 +314,13 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
         filterType: FilterType.Subject
       }
     ],
+    optionType: OptionTypeModel.AdvFilter
+  },
+  {
+    disabled: false,
+    label: "Test Name",
+    code: FilterType.TestNames,
+    filterOptions: testNameFilterOptions,
     optionType: OptionTypeModel.DropDown
   },
   {
