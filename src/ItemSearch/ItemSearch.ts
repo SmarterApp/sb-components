@@ -150,15 +150,19 @@ export class ItemSearch {
     const selectedSubjects = (model.subjects || []).filter(
       s => (searchParams.subjects || []).indexOf(s.code) !== -1
     );
+
     const visibleClaims = selectedSubjects
       .map(s => s.claimCodes || [])
       .reduce((prev, curr) => prev.concat(curr), []);
+
     const visibleInteractions = selectedSubjects
       .map(s => s.interactionTypeCodes || [])
       .reduce((prev, curr) => prev.concat(curr), []);
+
     const visibleClaimModels = visibleClaims.map(c =>
       (model.claims || []).find(cm => cm.code === c)
     );
+
     const visibleTargets = visibleClaimModels
       .filter(
         c => (c ? (searchParams.claims || []).indexOf(c.code) !== -1 : false)
@@ -166,9 +170,15 @@ export class ItemSearch {
       .map(c => (c ? c.targetCodes || [] : []))
       .reduce((prev, curr) => prev.concat(curr), []);
 
+    //Filter testnames by selected subject
+    const visibleTestNames = selectedSubjects
+      .map(s => s.testCodes || [])
+      .reduce((prev, curr) => prev.concat(curr), []);
+
     searchParams.claims = searchParams.claims
       ? searchParams.claims.filter(c => visibleClaims.indexOf(c) !== -1)
       : undefined;
+
     searchParams.interactionTypes = searchParams.interactionTypes
       ? searchParams.interactionTypes.filter(
           i => visibleInteractions.indexOf(i) !== -1
@@ -177,6 +187,14 @@ export class ItemSearch {
     searchParams.targets = searchParams.targets
       ? searchParams.targets.filter(t => visibleTargets.indexOf(t) !== -1)
       : undefined;
+
+    searchParams.testNames = searchParams.testNames
+      ? searchParams.testNames.filter(c => visibleTestNames.indexOf(c) !== -1)
+      : undefined;
+
+    console.log(
+      "------------------updateDependentSearchParams------------------"
+    );
 
     return searchParams;
   }

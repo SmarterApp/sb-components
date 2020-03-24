@@ -19,6 +19,7 @@ import {
   InteractionTypeModel
 } from "@src/index";
 import { constants } from "fs";
+import { TestNameModel } from "@src/ItemSearch/ItemSearchModels";
 
 // tslint:disable-next-line:no-stateless-class, no-unnecessary-class
 export class Filter {
@@ -121,6 +122,15 @@ export class Filter {
       .reduce((pc, cc) => pc.concat(cc), []);
   }
 
+  /** Returns the list of related Testnames
+   * @param  {SubjectModel[]} subjects
+   */
+  public static getSubjectTestNameCodes(subjects: SubjectModel[]): string[] {
+    return subjects
+      .map(s => s.testCodes || [])
+      .reduce((pc, cc) => pc.concat(cc), []);
+  }
+
   /**
    * Returns the list of related interaction types
    * @param  {SubjectModel[]} subjects
@@ -159,6 +169,24 @@ export class Filter {
     }
 
     return filteredClaims;
+  }
+
+  /**
+   * Gets the list of current TestNames from dependent subjects
+   * @param {TestNameModel[]} claims
+   * @param {SubjectModel[]} filteredSubjects
+   */
+  public static getCurrentTestNameFilter(
+    testNames: TestNameModel[],
+    filteredSubjects: SubjectModel[]
+  ): TestNameModel[] | undefined {
+    let filteredTestNames: TestNameModel[] | undefined;
+
+    if (filteredSubjects && filteredSubjects.length > 0) {
+      const subjectTestNames = this.getSubjectTestNameCodes(filteredSubjects);
+      filteredTestNames = this.filterStringTypes(testNames, subjectTestNames);
+    }
+    return filteredTestNames;
   }
 
   /**
@@ -228,6 +256,8 @@ export class Filter {
       );
       let filteredClaims: ClaimModel[] | undefined;
 
+      let filteredTestNames: TestNameModel[] | undefined;
+
       const claimFilterIdx = filters.findIndex(
         f => f.code === FilterType.Claim
       );
@@ -237,6 +267,29 @@ export class Filter {
       const targetFilterIdx = filters.findIndex(
         f => f.code === FilterType.Target
       );
+
+      const testNameFilterIdx = filters.findIndex(
+        f => f.code === FilterType.TestNames
+      );
+
+      // TestNames
+      if (testNameFilterIdx !== -1 && model.testNames) {
+        filteredTestNames =
+          this.getCurrentTestNameFilter(model.testNames, filteredSubjects) ||
+          [];
+
+        let filterOptions: FilterOptionModel[] = [];
+
+        if (searchAPI.subjects && searchAPI.subjects.length > 0) {
+          filterOptions = ItemSearch.searchOptionFilterString(
+            filteredTestNames,
+            FilterType.TestNames,
+            searchAPI.testNames
+          );
+        }
+
+        filters[testNameFilterIdx].filterOptions = filterOptions;
+      }
 
       // claims
       if (claimFilterIdx !== -1 && model.claims) {
@@ -292,7 +345,7 @@ export class Filter {
         filters[targetFilterIdx].filterOptions = filterOptions;
       }
     }
-
+    console.log("Filtering here");
     return filters;
   }
 

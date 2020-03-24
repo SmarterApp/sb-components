@@ -82,7 +82,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.KeyboardEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
-    if(e.keyCode === 13) {
+    if (e.keyCode === 13) {
       e.preventDefault();
       return;
     }
@@ -93,8 +93,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       if (rowData.selected !== true && selectedItemsCount >= 20) {
         this.props.showErrorModalOnPrintItemsCountExceeded();
         return;
-      } 
-      else {
+      } else {
         if (rowData.selected === true) rowData.selected = false;
         else rowData.selected = true;
         this.props.onRowSelect(rowData);
@@ -103,9 +102,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-  handleKeyUpEnterStopPropogation = (
-    e: React.SyntheticEvent
-  ) => {
+  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
     e.stopPropagation();
   };
 
@@ -154,15 +151,15 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         </span>
       );
     } else {
-        if(col.className === 'item') {
-          content = <a tabIndex={0} role="link">
-                  {columnText}
-                </a>
-        }
-        else {
-          content = <span>{columnText}</span>;
-        }
-      
+      if (col.className === "item") {
+        content = (
+          <a tabIndex={0} role="link">
+            {columnText}
+          </a>
+        );
+      } else {
+        content = <span>{columnText}</span>;
+      }
     }
 
     return <span key={col.className}>{content}</span>;
@@ -178,7 +175,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           key="checkbox-control"
           onClick={e => this.handleCheckboxClick(e, rowData)}
           onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-          onKeyUp={e =>  this.handleKeyUpEnterStopPropogation(e)}
+          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
           tabIndex={0}
         >
           {rowData.selected === true ? checked : unChecked}&nbsp;
@@ -197,7 +194,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         key={`${rowData.bankKey}-${rowData.itemKey}`}
         className={isExpanded ? "selected" : ""}
         onClick={() => this.handleRowClick(rowData)}
-        onKeyUp={e => this.handleKeyUpEnter(e,rowData)}
+        onKeyUp={e => this.handleKeyUpEnter(e, rowData)}
       >
         {this.renderControls()}
         {columns.map(col => this.renderColumnGroup(col, rowData))}

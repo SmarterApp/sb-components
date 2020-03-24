@@ -68,6 +68,7 @@ export class BasicFilterContainer extends React.Component<
     category: BasicFilterCategoryModel,
     option?: FilterOptionModel
   ) {
+    console.log("On DD Select");
     const index = this.props.filterCategories.indexOf(category);
     const { filterCategories } = this.props;
     if (!category.disabled) {

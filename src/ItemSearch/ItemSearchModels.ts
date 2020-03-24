@@ -37,6 +37,7 @@ export interface SubjectModel extends SearchBaseModel {
   claimCodes?: string[];
   interactionTypeCodes?: string[];
   shortLabel?: string;
+  testCodes?: string[];
 }
 
 export interface TestNameModel extends SearchBaseModel {
