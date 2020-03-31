@@ -130,6 +130,12 @@ export class ItemSearch {
         const newItemID = category.filterOptions[0].key;
         newModel.itemId = newItemID;
         break;
+      case FilterType.TestNames:
+        const testNameCodes = Filter.getSelectedCodes(category.code, [
+          category
+        ]);
+        newModel.testNames = testNameCodes;
+        break;
       default:
     }
 
@@ -398,7 +404,8 @@ export class ItemSearch {
   public static filterSearchToCategory(
     filter: SearchFilterModelTypes,
     searchApi: SearchAPIParamsModel = {},
-    defaultOptionKeys?: string[]
+    defaultOptionKeys?: string[],
+    showControl: boolean = true
   ): FilterCategoryModel {
     const options = this.getFilterOptionModel(
       filter,
@@ -409,7 +416,8 @@ export class ItemSearch {
     return {
       ...filter,
       disabled: false,
-      filterOptions: options
+      filterOptions: options,
+      show: showControl
     };
   }
 
@@ -417,6 +425,7 @@ export class ItemSearch {
     itemCards: ItemCardModel[],
     filter: SearchAPIParamsModel
   ): ItemCardModel[] {
+    debugger;
     let results = itemCards;
     // item
     if (filter.itemId && filter.itemId !== "") {
@@ -478,6 +487,115 @@ export class ItemSearch {
     // calculator
     if (filter.calculator !== undefined) {
       results = results.filter(i => i.calculator === filter.calculator);
+    }
+
+    //Filter based on testnames
+    if (
+      filter.testNames !== undefined &&
+      filter.testNames.length > 0 &&
+      filter.testNames[0] !== "0"
+    ) {
+      const testname = filter.testNames[0];
+      var itemsID = Array<string>();
+
+      if (testname === "ELA_Test1")
+        itemsID.push(
+          "182889",
+          "183161",
+          "54920",
+          "183187",
+          "183163",
+          "183160",
+          "182924",
+          "182888",
+          "183178",
+          "182880",
+          "182884",
+          "183180",
+          "182882",
+          "182891",
+          "182827",
+          "182818",
+          "57190",
+          "182816",
+          "96010",
+          "94963"
+        );
+      else if (testname === "ELA_Test2")
+        itemsID.push(
+          "182863",
+          "182825",
+          "182831",
+          "182849",
+          "182862",
+          "182860",
+          "182643",
+          "182926",
+          "182645",
+          "182876",
+          "182865",
+          "182814",
+          "182810",
+          "182830",
+          "182829",
+          "182812",
+          "182828",
+          "182665",
+          "182872",
+          "182664"
+        );
+      else if (testname === "MATH_Test1")
+        itemsID.push(
+          "183417",
+          "183431",
+          "183246",
+          "183597",
+          "183473",
+          "183393",
+          "183407",
+          "18918",
+          "183471",
+          "183579",
+          "183405",
+          "183537",
+          "183210",
+          "183533",
+          "183391",
+          "183643",
+          "183212",
+          "183234",
+          "183441",
+          "183222"
+        );
+      else if (testname === "MATH_Test2")
+        itemsID.push(
+          "183350",
+          "182797",
+          "183617",
+          "183340",
+          "183497",
+          "182798",
+          "183597",
+          "183324",
+          "183481",
+          "182799",
+          "183268",
+          "183258",
+          "182796",
+          "183366",
+          "183379",
+          "183637",
+          "183411",
+          "183547",
+          "183322",
+          "183601"
+        );
+      else itemsID.push("");
+      //results = results.filter(i =>i.itemKey.toString().includes(itemsID.toString()));
+
+      results = results.filter(function(item) {
+        return itemsID.find(x => x == item.itemKey.toString());
+      });
     }
 
     return results;

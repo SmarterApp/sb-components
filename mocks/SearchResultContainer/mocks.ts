@@ -4,6 +4,7 @@ import { itemCardList, totalItemsCardList } from "@mocks/index";
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
   totalItemCards: totalItemsCardList,
+  showSelectAllButton: false,
   onRowSelection: () => {
     return;
   },
@@ -13,13 +14,23 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();
-    visibleItemCardCopy.forEach((element) => {
+    visibleItemCardCopy.forEach(element => {
       if (element.selected) {
         element.selected = false;
       }
     });
     return;
     //itemCardList = visibleItemCardCopy;
+  },
+  onSelectAll: () => {
+    let visibleItemCardCopy = [];
+    visibleItemCardCopy = itemCardList.slice();
+    visibleItemCardCopy.forEach(element => {
+      if (!element.selected) {
+        element.selected = true;
+      }
+    });
+    return;
   },
   onPrintItems: () => {
     //console.log("Base method");

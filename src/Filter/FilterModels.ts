@@ -99,6 +99,7 @@ export interface FilterCategoryModel {
   emptyOptionsText?: string;
   code: FilterType;
   isMultiSelect?: boolean;
+  show?: boolean;
 }
 
 export interface AdvancedFilterCategoryModel extends FilterCategoryModel {

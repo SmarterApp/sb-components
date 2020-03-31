@@ -104,6 +104,7 @@ export interface FilterSearchStringModel<T extends SearchFilterStringTypes>
     | FilterType.TechnologyType
     | FilterType.Calculator
     | FilterType.TestNames;
+  show: boolean;
 }
 
 export interface FilterSearchGradeLevelModel extends FilterSearchModel {

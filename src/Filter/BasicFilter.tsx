@@ -119,10 +119,10 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
       filterOptions,
       disabled,
       label,
-      code
+      code,
+      emptyOptionsText
     } = this.props;
     const defaultValue = "default";
-
     const selected = filterOptions.find(fil => fil.isSelected === true);
     const selectedValue = selected ? selected.key : defaultValue;
 
@@ -144,17 +144,37 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
       });
     }
 
-    return (
-      <Select
-        disabled={disabled}
-        label={label}
-        selected={selectedValue}
-        options={selectOptions}
-        onChange={val => selectedHandler(this.findFilterOption(val))}
-        key={code}
-        className={"input-sm"}
-      />
-    );
+    if (filterOptions.length > 0) {
+      return (
+        <Select
+          disabled={disabled}
+          label={label}
+          selected={selectedValue}
+          options={selectOptions}
+          onChange={val => selectedHandler(this.findFilterOption(val))}
+          key={code}
+          className={"input-sm"}
+        />
+      );
+    } else {
+      return (
+        <div tabIndex={0}>
+          <div>
+            <label>
+              <span className="">{label}</span>
+            </label>
+            <div
+              className="nested-btn-group btn-group-sm toggle-group vertical"
+              data-toggle="buttons"
+            >
+              <div className="btn-group filter-btn-group">
+                <div>{emptyOptionsText}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   /**

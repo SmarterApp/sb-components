@@ -68,7 +68,6 @@ export class BasicFilterContainer extends React.Component<
     category: BasicFilterCategoryModel,
     option?: FilterOptionModel
   ) {
-    console.log("On DD Select");
     const index = this.props.filterCategories.indexOf(category);
     const { filterCategories } = this.props;
     if (!category.disabled) {
@@ -116,20 +115,22 @@ export class BasicFilterContainer extends React.Component<
    * @method renderFilters
    */
   renderFilters() {
+    debugger;
     const { filterCategories } = this.props;
 
     return filterCategories.map((fil, i) => {
       if (fil.optionType === OptionTypeModel.AdvFilter) {
         return this.renderAdvFilter(fil, i);
       }
-
-      return (
-        <BasicFilter
-          key={i}
-          {...fil}
-          selectedHandler={opt => this.onFilterSelect(fil, opt)}
-        />
-      );
+      if (fil.show == true) {
+        return (
+          <BasicFilter
+            key={i}
+            {...fil}
+            selectedHandler={opt => this.onFilterSelect(fil, opt)}
+          />
+        );
+      }
     });
   }
 

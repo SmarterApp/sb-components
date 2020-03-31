@@ -254,6 +254,7 @@ export class Filter {
         model.subjects,
         searchAPI.subjects
       );
+
       let filteredClaims: ClaimModel[] | undefined;
 
       let filteredTestNames: TestNameModel[] | undefined;
@@ -274,6 +275,12 @@ export class Filter {
 
       // TestNames
       if (testNameFilterIdx !== -1 && model.testNames) {
+        const selectedTestName = filters[testNameFilterIdx].filterOptions
+          .filter(x => x.isSelected == true)
+          .map((item, i) => {
+            return item.key;
+          })[0];
+
         filteredTestNames =
           this.getCurrentTestNameFilter(model.testNames, filteredSubjects) ||
           [];
@@ -286,6 +293,15 @@ export class Filter {
             FilterType.TestNames,
             searchAPI.testNames
           );
+        }
+
+        if (selectedTestName && selectedTestName != undefined) {
+          const selectedItemRowIndex = filterOptions.findIndex(
+            obj => obj.key === selectedTestName
+          );
+          if (selectedItemRowIndex !== -1 && filterOptions) {
+            filterOptions[selectedItemRowIndex].isSelected = true;
+          }
         }
 
         filters[testNameFilterIdx].filterOptions = filterOptions;
