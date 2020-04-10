@@ -3,11 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { SbNavLink, SbNavlinkProps } from "./SbNavLink";
 /*tslint:disable: no-require-imports no-var-requires */
 const sbLogo = require("@sbac/sbac-ui-kit/src/images/SmarterBalanced-Logo.png");
+// const sbLogo = require("../Assets/Images/");
 
 export interface NavMenuProps {
   links?: SbNavlinkProps[];
   siteName: string;
   mainContentId: string;
+  isInterimSite?: boolean;
+  userName?: string;
+  signoutLink?: string;
 }
 
 export class NavMenu extends React.Component<NavMenuProps, {}> {
@@ -19,6 +23,21 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
       content = <div className="nav-linksGroup">{sbLinks}</div>;
     }
 
+    return content;
+  }
+
+  renderLoggedInUserProfileMenu() {
+    let content: JSX.Element | undefined;
+    console.log(this.props.isInterimSite);
+    if (this.props.isInterimSite !== undefined && this.props.isInterimSite === true) {
+      content = <div className="dropdown nav-linksGroup-item">
+                  <span>Welcome, {this.props.userName}</span>
+                  <div className="dropdown-content">
+                    <a href={this.props.signoutLink}>Logout</a>
+                  </div>
+                </div>
+    }
+  
     return content;
   }
 
@@ -65,6 +84,12 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
               </div>
             </div>
             {this.renderLinks()}
+
+             {/* check if site is interim 
+                For interim site, display username with option to logout
+            */}
+            {this.renderLoggedInUserProfileMenu()}
+
           </div>
         </nav>
       </header>
