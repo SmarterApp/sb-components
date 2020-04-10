@@ -42,6 +42,8 @@ export interface SubjectModel extends SearchBaseModel {
 
 export interface TestNameModel extends SearchBaseModel {
   shortLabel?: string;
+  subject?: string;
+  grade?: string;
 }
 
 export interface ClaimModel extends SearchBaseModel {
@@ -86,6 +88,7 @@ export interface ItemsSearchFilterModel {
   technologyTypes: FilterSearchStringModel<SearchBaseModel>;
   calculator: FilterSearchStringModel<SearchBaseModel>;
   testNames: FilterSearchStringModel<TestNameModel>;
+  testNameItemPools: TestNameItemsPoolModel[];
 }
 
 export interface FilterSearchModel {
@@ -125,4 +128,9 @@ export interface FilterSearchGradeModel extends FilterSearchModel {
 export interface FilterSearchClaimModel extends FilterSearchModel {
   filterOptions: ClaimModel[];
   code: FilterType.Claim;
+}
+
+export interface TestNameItemsPoolModel {
+  code: string;
+  itemKey: number;
 }

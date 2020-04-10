@@ -93,6 +93,39 @@ export class Filter {
     return filteredClaims;
   }
 
+  public static filterTestNames<T extends TestNameModel>(
+    filterOptions: T[],
+    subjectCodes?: string[],
+    gradeCodes?: string
+  ): T[] {
+    let filteredTestNames = filterOptions;
+    //for all grade and selected subject
+    //if (gradeCodes=="1023" && subjectCodes && subjectCodes.length > 0)
+    if (
+      (gradeCodes !== "" || gradeCodes !== undefined) &&
+      subjectCodes &&
+      subjectCodes.length > 0
+    ) {
+      filteredTestNames = filteredTestNames.filter(
+        s => subjectCodes.some(ssc => ssc === s.subject) || s.code == "0"
+      );
+    } else if (
+      (gradeCodes !== "" || gradeCodes !== undefined) &&
+      subjectCodes &&
+      subjectCodes.length > 0
+    ) {
+      //for selected grade and selected subject
+      filteredTestNames = filteredTestNames.filter(
+        s =>
+          (subjectCodes.some(ssc => ssc === s.subject) &&
+            s.grade == gradeCodes) ||
+          s.code == "0"
+      );
+    }
+
+    return filteredTestNames;
+  }
+
   /**
    * Filters targets with the given codes
    * @param  {TargetModel[]} targets
@@ -178,13 +211,25 @@ export class Filter {
    */
   public static getCurrentTestNameFilter(
     testNames: TestNameModel[],
-    filteredSubjects: SubjectModel[]
+    filteredSubjects: string[] | undefined,
+    selectedGrade: string
   ): TestNameModel[] | undefined {
     let filteredTestNames: TestNameModel[] | undefined;
 
+    //Assign default grade code.
+    selectedGrade =
+      selectedGrade === "" || selectedGrade === undefined
+        ? "1023"
+        : selectedGrade;
+
     if (filteredSubjects && filteredSubjects.length > 0) {
-      const subjectTestNames = this.getSubjectTestNameCodes(filteredSubjects);
-      filteredTestNames = this.filterStringTypes(testNames, subjectTestNames);
+      const subjectTestNames =
+        filteredSubjects != undefined ? filteredSubjects : [];
+      filteredTestNames = this.filterTestNames(
+        testNames,
+        subjectTestNames,
+        selectedGrade
+      );
     }
     return filteredTestNames;
   }
@@ -273,6 +318,10 @@ export class Filter {
         f => f.code === FilterType.TestNames
       );
 
+      const gradeFilterIdx = filters.findIndex(
+        f => f.code === FilterType.Grade
+      );
+
       // TestNames
       if (testNameFilterIdx !== -1 && model.testNames) {
         const selectedTestName = filters[testNameFilterIdx].filterOptions
@@ -281,9 +330,17 @@ export class Filter {
             return item.key;
           })[0];
 
+        let selectedGrade =
+          filters[gradeFilterIdx].filterOptions.filter(
+            x => x.isSelected === true
+          )[0] || "";
+
         filteredTestNames =
-          this.getCurrentTestNameFilter(model.testNames, filteredSubjects) ||
-          [];
+          this.getCurrentTestNameFilter(
+            model.testNames,
+            searchAPI.subjects,
+            selectedGrade.key
+          ) || [];
 
         let filterOptions: FilterOptionModel[] = [];
 
