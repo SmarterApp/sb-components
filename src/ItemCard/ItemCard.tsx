@@ -23,6 +23,7 @@ export interface ItemCardProps {
   onRowSelect: (item: ItemCardModel) => void;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  isPrintLimitEnabled: boolean;
 }
 
 export interface ItemCardState {
@@ -62,7 +63,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     const value = target.type === "checkbox" ? target.checked : target.value;
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if (item.selected !== true && selectedItemsCount >= 20) {
+    if (
+      item.selected !== true &&
+      this.props.isPrintLimitEnabled == true &&
+      selectedItemsCount >= 20
+    ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {

@@ -45,6 +45,7 @@ export interface SearchResultContainerProps {
   isLinkTable: boolean;
   showSelectAllButton: boolean;
   totalItemCards?: ItemCardModel[];
+  isPrintLimitEnabled: boolean;
 }
 
 /**
@@ -111,6 +112,7 @@ export class SearchResultContainer extends React.Component<
           showErrorModalOnPrintItemsCountExceeded={
             this.showErrorModalOnPrintItemsCountExceeded
           }
+          isPrintLimitEnabled={this.props.isPrintLimitEnabled}
         />
       ));
     }

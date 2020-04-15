@@ -199,5 +199,6 @@ export const itemCardProps: ItemCardProps = {
   },
   showErrorModalOnPrintItemsCountExceeded: () => {
     return;
-  }
+  },
+  isPrintLimitEnabled: true
 };

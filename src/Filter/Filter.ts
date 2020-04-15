@@ -100,9 +100,10 @@ export class Filter {
   ): T[] {
     let filteredTestNames = filterOptions;
     //for all grade and selected subject
-    //if (gradeCodes=="1023" && subjectCodes && subjectCodes.length > 0)
     if (
-      (gradeCodes !== "" || gradeCodes !== undefined) &&
+      gradeCodes !== undefined &&
+      gradeCodes !== "" &&
+      gradeCodes == "1023" &&
       subjectCodes &&
       subjectCodes.length > 0
     ) {
@@ -110,7 +111,8 @@ export class Filter {
         s => subjectCodes.some(ssc => ssc === s.subject) || s.code == "0"
       );
     } else if (
-      (gradeCodes !== "" || gradeCodes !== undefined) &&
+      gradeCodes !== "" &&
+      gradeCodes !== undefined &&
       subjectCodes &&
       subjectCodes.length > 0
     ) {
