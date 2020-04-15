@@ -30,7 +30,14 @@ storiesOf("Layout", module)
   .addDecorator(routerDecorator)
   .add("name no links no body", () => <Layout siteName="Test" />)
   .add("name links header and body", () => (
-    <Layout children={body} siteName="SB-Components" links={mockSiteLinks} isInterimSite={true} userName="xyz" signoutLink="/saml/logout"/>
+    <Layout
+      children={body}
+      siteName="SB-Components"
+      links={mockSiteLinks}
+      isInterimSite={true}
+      userName="xyz"
+      signoutLink="/saml/logout"
+    />
   ))
   .add("name links body", () => (
     <Layout

@@ -12,7 +12,7 @@ export interface NavMenuProps {
   isInterimSite?: boolean;
   userName?: string;
   signoutLink?: string;
-  signinLink?:string;
+  signinLink?: string;
 }
 
 export class NavMenu extends React.Component<NavMenuProps, {}> {
@@ -30,20 +30,31 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
   renderLoggedInUserProfileMenu() {
     let content: JSX.Element | undefined;
     console.log(this.props.isInterimSite);
-    if (this.props.isInterimSite !== undefined && this.props.isInterimSite === true) {
-      content = <div className="dropdown nav-linksGroup-item">
-                  <span>{this.props.userName}</span>
-                  <div className="dropdown-content">
-                    <a href={this.props.signoutLink}>Logout</a>
-                  </div>
-                </div>
+    if (
+      this.props.isInterimSite !== undefined &&
+      this.props.isInterimSite === true
+    ) {
+      content = (
+        <div className="dropdown nav-linksGroup-item">
+          <span>{this.props.userName}</span>
+          <div className="dropdown-content">
+            <a href={this.props.signoutLink}>Logout</a>
+          </div>
+        </div>
+      );
+    } else if (
+      this.props.isInterimSite !== undefined &&
+      this.props.isInterimSite === false
+    ) {
+      content = (
+        <div className="nav-linksGroup-item">
+          <span>
+            <a href="https://interim-stage.smarterbalanced.org/">Login</a>
+          </span>
+        </div>
+      );
     }
-    else if (this.props.isInterimSite !== undefined && this.props.isInterimSite === false) {
-      content = <div className="nav-linksGroup-item">
-                  <span><a href="https://interim-stage.smarterbalanced.org/">Login</a></span>
-                </div>
-    }
-  
+
     return content;
   }
 
@@ -91,11 +102,10 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
             </div>
             {this.renderLinks()}
 
-             {/* check if site is interim 
+            {/* check if site is interim 
                 For interim site, display username with option to logout
             */}
             {this.renderLoggedInUserProfileMenu()}
-
           </div>
         </nav>
       </header>
