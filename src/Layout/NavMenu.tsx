@@ -12,6 +12,7 @@ export interface NavMenuProps {
   isInterimSite?: boolean;
   userName?: string;
   signoutLink?: string;
+  signinLink?:string;
 }
 
 export class NavMenu extends React.Component<NavMenuProps, {}> {
@@ -31,10 +32,15 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
     console.log(this.props.isInterimSite);
     if (this.props.isInterimSite !== undefined && this.props.isInterimSite === true) {
       content = <div className="dropdown nav-linksGroup-item">
-                  <span>Welcome, {this.props.userName}</span>
+                  <span>{this.props.userName}</span>
                   <div className="dropdown-content">
                     <a href={this.props.signoutLink}>Logout</a>
                   </div>
+                </div>
+    }
+    else if (this.props.isInterimSite !== undefined && this.props.isInterimSite === false) {
+      content = <div className="nav-linksGroup-item">
+                  <span><a href="https://interim-stage.smarterbalanced.org/">Login</a></span>
                 </div>
     }
   
