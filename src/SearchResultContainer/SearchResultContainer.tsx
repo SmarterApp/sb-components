@@ -166,7 +166,7 @@ export class SearchResultContainer extends React.Component<
     this.handleCountNumberOfItemSelection();
   };
   handleSelectAllItems = (): void => {
-    this.props.onResetItems();
+    // this.props.onResetItems();
     this.props.onSelectAll();
     this.handleCountNumberOfItemSelection();
   };

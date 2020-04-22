@@ -34,9 +34,9 @@ storiesOf("Layout", module)
       children={body}
       siteName="SB-Components"
       links={mockSiteLinks}
-      isInterimSite={true}
-      userName="xyz"
-      signoutLink="/saml/logout"
+      isInterimSite={false}
+      // userName="xyz"
+      signinLink="https://smarterbalanced.oktapreview.com/home/smarterbalanced_siwdev_1/0oaqpsj0nhzFufP1G0h7/alnqptcba9kPYvTVf0h7?fromHome=true"
     />
   ))
   .add("name links body", () => (

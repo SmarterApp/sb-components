@@ -49,7 +49,7 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
       content = (
         <div className="nav-linksGroup-item">
           <span>
-            <a href="https://interim-stage.smarterbalanced.org/">Login</a>
+            <a target="_blank" href={this.props.signinLink}>Login</a>
           </span>
         </div>
       );
