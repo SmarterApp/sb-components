@@ -33,7 +33,7 @@ export class Filter {
     filterModels: FilterCategoryModel[]
   ): string[] | undefined {
     const filterCategory = filterModels.find(f => f.code === key);
-    console.log(key);
+
     return filterCategory
       ? filterCategory.filterOptions
           .filter(f => f.isSelected)
@@ -420,7 +420,6 @@ export class Filter {
         filters[targetFilterIdx].filterOptions = filterOptions;
       }
     }
-    console.log("Filtering here");
     return filters;
   }
 

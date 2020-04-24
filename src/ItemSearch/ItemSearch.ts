@@ -433,7 +433,7 @@ export class ItemSearch {
         i.itemKey.toString().includes(filter.itemId || "")
       );
     }
-    debugger;
+
     // grade level
     if (filter.gradeLevels && filter.gradeLevels !== GradeLevels.NA) {
       results = results.filter(i =>

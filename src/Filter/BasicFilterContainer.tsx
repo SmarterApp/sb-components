@@ -115,7 +115,6 @@ export class BasicFilterContainer extends React.Component<
    * @method renderFilters
    */
   renderFilters() {
-    debugger;
     const { filterCategories } = this.props;
 
     return filterCategories.map((fil, i) => {

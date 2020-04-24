@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { SbNavLink, SbNavlinkProps } from "./SbNavLink";
 /*tslint:disable: no-require-imports no-var-requires */
 const sbLogo = require("@sbac/sbac-ui-kit/src/images/SmarterBalanced-Logo.png");
-// const sbLogo = require("../Assets/Images/");
 
 export interface NavMenuProps {
   links?: SbNavlinkProps[];
@@ -49,7 +48,9 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
       content = (
         <div className="nav-linksGroup-item">
           <span>
-            <a target="_blank" href={this.props.signinLink}>Login</a>
+            <a target="_blank" href={this.props.signinLink}>
+              Login
+            </a>
           </span>
         </div>
       );

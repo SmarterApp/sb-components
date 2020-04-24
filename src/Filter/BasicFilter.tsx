@@ -144,7 +144,7 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
       });
     }
 
-    if (filterOptions.length > 0) {
+    if (filterOptions != undefined && filterOptions.length > 0) {
       return (
         <Select
           disabled={disabled}
