@@ -43,7 +43,7 @@ describe("BasicFilterContainer", () => {
   });
 
   it("can select dropdown filter options", () => {
-    const options = ["default", 7, 56, 960];
+    const options = [ 7, 56, 960];
     options.forEach(opt => {
       wrapper
         .findWhere(node => node.type() === BasicFilter)

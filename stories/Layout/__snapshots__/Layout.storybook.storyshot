@@ -276,6 +276,18 @@ exports[`Storyshots Layout name links header and body 1`] = `
             Browse Items
           </a>
         </div>
+        <div
+          className="nav-linksGroup-item"
+        >
+          <span>
+            <a
+              href="https://smarterbalanced.oktapreview.com/home/smarterbalanced_siwdev_1/0oaqpsj0nhzFufP1G0h7/alnqptcba9kPYvTVf0h7?fromHome=true"
+              target="_blank"
+            >
+              Login
+            </a>
+          </span>
+        </div>
       </div>
     </nav>
   </header>

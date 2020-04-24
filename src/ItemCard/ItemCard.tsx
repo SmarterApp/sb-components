@@ -17,7 +17,7 @@ const claimIcons: { [claimCode: string]: string } = {
 };
 // tslint:enable:no-require-imports
 
-//Added by sonu => props interface
+//props interface
 export interface ItemCardProps {
   rowData: ItemCardModel;
   onRowSelect: (item: ItemCardModel) => void;

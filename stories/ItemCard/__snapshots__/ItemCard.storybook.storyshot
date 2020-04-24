@@ -105,7 +105,7 @@ exports[`Storyshots Item Card Item Card 1`] = `
                 className="tool-tip-message  "
               >
                 <span>
-                  target description right hereeeee
+                  target description right here
                 </span>
               </span>
             </span>
@@ -141,6 +141,20 @@ exports[`Storyshots Item Card Item Card 1`] = `
           3434
         </span>
       </p>
+      <button
+        className="btn btn-add-remove-print-selection ela  btn-unselected"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <i
+          className="fa  fa-plus-square"
+        />
+          
+         Select to Print
+      </button>
     </div>
   </div>
 </div>

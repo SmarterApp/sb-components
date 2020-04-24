@@ -86,6 +86,7 @@ export const advancedFilterSubject: AdvancedFilterCategoryModel = {
   isMultiSelect: false,
   label: "Subjects",
   code: FilterType.Subject,
+  show: true,
   filterOptions: [
     {
       label: "English Literacy/ Arts",
@@ -106,6 +107,7 @@ export const advancedFilterSubject: AdvancedFilterCategoryModel = {
 
 export const advancedFilterSubjectMulti: AdvancedFilterCategoryModel = {
   ...advancedFilterSubject,
+  show: true,
   filterOptions: [
     {
       label: "English Literacy & Arts",
@@ -126,6 +128,7 @@ export const advancedFilterSubjectMulti: AdvancedFilterCategoryModel = {
 
 export const advancedFilterSubjectDisabled: AdvancedFilterCategoryModel = {
   ...advancedFilterSubject,
+  show: true,
   filterOptions: [
     {
       label: "English",
@@ -146,6 +149,7 @@ export const advancedFilterSubjectDisabled: AdvancedFilterCategoryModel = {
 
 export const advancedFilterSubjectDisabledMulti: AdvancedFilterCategoryModel = {
   ...advancedFilterSubject,
+  show: true,
   filterOptions: [
     {
       label: "Reading",
@@ -167,6 +171,7 @@ export const advancedFilterSubjectDisabledMulti: AdvancedFilterCategoryModel = {
 
 export const advancedFilterSubjectMultiAll: AdvancedFilterCategoryModel = {
   ...advancedFilterSubject,
+  show: true,
   filterOptions: [
     {
       label: "US History",
@@ -188,6 +193,7 @@ export const advancedFilterSubjectMultiAll: AdvancedFilterCategoryModel = {
 
 export const advancedFilterSubjectMultiAllDisabled: AdvancedFilterCategoryModel = {
   ...advancedFilterSubject,
+  show: true,
   filterOptions: [
     {
       label: "Calculus",
@@ -211,6 +217,7 @@ export const advancedFilterGrade: AdvancedFilterCategoryModel = {
   disabled: false,
   isMultiSelect: false,
   label: "Grade",
+  show: true,
   filterOptions: gradeFilterOptions,
   displayAllButton: true,
   helpText: "Grade Help",
@@ -231,6 +238,7 @@ export const mockAdvancedFilterCategoriesSelected: AdvancedFilterCategoryModel[]
     disabled: false,
     isMultiSelect: false,
     label: "Grade",
+    show: true,
     filterOptions: subjectsFilterOptionsSelected,
     displayAllButton: true,
     helpText: "Grade Help",
@@ -243,6 +251,7 @@ export const mockBasicFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Grade",
     code: FilterType.Grade,
+    show: true,
     filterOptions: gradeFilterOptions,
     optionType: OptionTypeModel.DropDown
   },
@@ -250,6 +259,7 @@ export const mockBasicFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Subjects",
     code: FilterType.Subject,
+    show: true,
     filterOptions: [
       {
         label: "English Literacy/ Arts",
@@ -270,6 +280,7 @@ export const mockBasicFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "TechType",
     code: FilterType.TechnologyType,
+    show: true,
     filterOptions: [
       {
         label: "tech1",
@@ -293,6 +304,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Grade",
     code: FilterType.Grade,
+    show: true,
     filterOptions: gradeFilterOptions,
     optionType: OptionTypeModel.DropDown
   },
@@ -300,6 +312,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Subjects",
     code: FilterType.Subject,
+    show: true,
     filterOptions: [
       {
         label: "English Literacy/ Arts",
@@ -320,6 +333,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Test Name",
     code: FilterType.TestNames,
+    show: true,
     filterOptions: testNameFilterOptions,
     optionType: OptionTypeModel.DropDown
   },
@@ -327,6 +341,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Claims",
     code: FilterType.Claim,
+    show: true,
     filterOptions: [
       {
         label: "Problem Solving",
@@ -347,6 +362,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Item Types",
     code: FilterType.InteractionType,
+    show: true,
     filterOptions: [
       {
         label: "Equation",
@@ -367,6 +383,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "TechType",
     code: FilterType.TechnologyType,
+    show: true,
     filterOptions: [
       {
         label: "tech1",
@@ -387,6 +404,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Targets",
     code: FilterType.Target,
+    show: true,
     filterOptions: [
       {
         label: "t1",
@@ -407,6 +425,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     disabled: false,
     label: "Calculator",
     code: FilterType.Calculator,
+    show: true,
     filterOptions: [
       {
         label: "On",
@@ -524,6 +543,7 @@ export const emptyAdvancedFilterClaims: AdvancedFilterCategoryModel = {
   label: "Claims",
   code: FilterType.Claim,
   displayAllButton: true,
+  show: true,
   filterOptions: [],
   helpText: "Claims help text here."
 };
@@ -543,6 +563,7 @@ export const filledAdvancedFilterClaims: AdvancedFilterCategoryModel = {
   label: "Claims",
   code: FilterType.Claim,
   displayAllButton: true,
+  show: true,
   filterOptions: allClaimsFilterOptions,
   helpText: "Claims help text here."
 };
@@ -553,6 +574,7 @@ export const emptyAdvancedFilterInteractionTypes: AdvancedFilterCategoryModel = 
   label: "interaction type",
   code: FilterType.InteractionType,
   displayAllButton: true,
+  show: true,
   filterOptions: [],
   helpText: "InteractionTypes help text here."
 };
@@ -562,6 +584,7 @@ export const emptyAdvancedFilterTargets: AdvancedFilterCategoryModel = {
   label: "Targets",
   code: FilterType.Target,
   displayAllButton: true,
+  show: true,
   filterOptions: [],
   helpText: "Targets help text here."
 };

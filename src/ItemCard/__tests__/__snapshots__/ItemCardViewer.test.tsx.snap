@@ -24,6 +24,7 @@ exports[`ItemCardViewer renders information tab 1`] = `
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
+              "calculator": false,
               "ccssDescription": "this is the common core description",
               "claimCode": "ELA3",
               "claimLabel": "Claim",
@@ -39,10 +40,10 @@ exports[`ItemCardViewer renders information tab 1`] = `
               "selected": false,
               "subjectCode": "ELA",
               "subjectLabel": "ELA",
-              "targetDescription": "target description right hereeeee",
+              "targetDescription": "target description right here",
               "targetHash": 33434,
               "targetId": "dfas",
-              "targetShortName": "Short Name",
+              "targetShortName": "target short name",
               "title": "ELA Grade 4",
             }
           }

@@ -33,6 +33,7 @@ exports[`FilterContainer expands the advanced filter 1`] = `
           ],
           "label": "Grade",
           "optionType": 3,
+          "show": true,
         },
         Object {
           "code": "Subject",
@@ -53,6 +54,7 @@ exports[`FilterContainer expands the advanced filter 1`] = `
           ],
           "label": "Subjects",
           "optionType": 2,
+          "show": true,
         },
         Object {
           "code": "TechnologyType",
@@ -73,6 +75,7 @@ exports[`FilterContainer expands the advanced filter 1`] = `
           ],
           "label": "TechType",
           "optionType": 4,
+          "show": true,
         },
       ]
     }
@@ -115,6 +118,7 @@ exports[`FilterContainer expands the advanced filter 2`] = `
           ],
           "label": "Grade",
           "optionType": 3,
+          "show": true,
         },
         Object {
           "code": "Subject",
@@ -135,6 +139,7 @@ exports[`FilterContainer expands the advanced filter 2`] = `
           ],
           "label": "Subjects",
           "optionType": 2,
+          "show": true,
         },
         Object {
           "code": "TechnologyType",
@@ -155,6 +160,7 @@ exports[`FilterContainer expands the advanced filter 2`] = `
           ],
           "label": "TechType",
           "optionType": 4,
+          "show": true,
         },
       ]
     }
@@ -197,6 +203,7 @@ exports[`FilterContainer expands the advanced filter 3`] = `
           ],
           "label": "Grade",
           "optionType": 3,
+          "show": true,
         },
         Object {
           "code": "Subject",
@@ -217,6 +224,7 @@ exports[`FilterContainer expands the advanced filter 3`] = `
           ],
           "label": "Subjects",
           "optionType": 2,
+          "show": true,
         },
         Object {
           "code": "TechnologyType",
@@ -237,6 +245,7 @@ exports[`FilterContainer expands the advanced filter 3`] = `
           ],
           "label": "TechType",
           "optionType": 4,
+          "show": true,
         },
       ]
     }

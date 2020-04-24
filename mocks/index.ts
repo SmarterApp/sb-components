@@ -45,6 +45,7 @@ export {
 //
 export {
   completeItemCard,
+  itemCardProps,
   itemCardList,
   sortableItemCards,
   totalItemsCardList
