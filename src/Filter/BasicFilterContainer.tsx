@@ -121,14 +121,15 @@ export class BasicFilterContainer extends React.Component<
       if (fil.optionType === OptionTypeModel.AdvFilter) {
         return this.renderAdvFilter(fil, i);
       }
-
-      return (
-        <BasicFilter
-          key={i}
-          {...fil}
-          selectedHandler={opt => this.onFilterSelect(fil, opt)}
-        />
-      );
+      if (fil.show == true) {
+        return (
+          <BasicFilter
+            key={i}
+            {...fil}
+            selectedHandler={opt => this.onFilterSelect(fil, opt)}
+          />
+        );
+      }
     });
   }
 

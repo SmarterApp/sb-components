@@ -4,38 +4,90 @@ exports[`SearchResultContainer card to table transition 1`] = `
 <div
   className="search-result-container"
 >
+  <React.Fragment>
+    <PrintAccessibilityModal
+      StatusMessage=""
+      areSelectedItemsHaveMath={false}
+      onChangeModelState={[Function]}
+      onSubmitPrint={[Function]}
+      showModal={false}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
-    className="search-result-header"
+    className="row search-result-header-row"
   >
-    <button
-      aria-label="table view toggle"
-      className="btn btn-gray"
-      onClick={[Function]}
-      value={0}
+    <div
+      className="col-sm-4 header-grid-div header-print-button-groups"
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-table"
-      />
-    </button>
-    <button
-      aria-label="item card view toggle"
-      className="btn btn-white"
-      onClick={[Function]}
-      value={1}
+      <React.Fragment />
+    </div>
+    <div
+      className="col-sm-3 header-grid-div  "
     >
-      <i
-        aria-hidden="true"
-        className="glyphicon glyphicon-th-large glyphicon-pad"
-      />
-    </button>
+      <button
+        aria-label="table view toggle"
+        className="btn btn-gray"
+        onClick={[Function]}
+        value={0}
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-table"
+        />
+      </button>
+      <button
+        aria-label="item card view toggle"
+        className="btn btn-white"
+        onClick={[Function]}
+        value={1}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-pad"
+        />
+      </button>
+    </div>
+    <div
+      className="col-sm-5 header-grid-div header-print-button-groups"
+    >
+      <button
+        aria-label="Clear Selection"
+        className="btn btn-default search-result-container-header-button disabled"
+        onClick={[Function]}
+        title="Clear Selection"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-eraser"
+        />
+         Clear
+      </button>
+      <button
+        aria-label="Print Item"
+        className="btn btn-default search-result-container-header-button"
+        onClick={[Function]}
+        title="Print Items"
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />
+         
+        Print
+      </button>
+    </div>
   </div>
   <div
     className="search-result-body"
   >
     <ItemTableContainer
-      defaultRenderType={1}
-      isLinkTable={true}
+      getSelectedItemCount={[Function]}
+      isLinkTable={false}
       item={
         Object {
           "kind": "none",
@@ -123,8 +175,11 @@ exports[`SearchResultContainer card to table transition 1`] = `
           },
         ]
       }
+      numberOfSelectedItem={0}
+      onCountNumberOfItemSelection={[Function]}
       onItemSelection={[Function]}
       onRowSelection={[Function]}
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
   </div>
 </div>
@@ -134,31 +189,83 @@ exports[`SearchResultContainer empty itemCards 1`] = `
 <div
   className="search-result-container"
 >
+  <React.Fragment>
+    <PrintAccessibilityModal
+      StatusMessage=""
+      areSelectedItemsHaveMath={false}
+      onChangeModelState={[Function]}
+      onSubmitPrint={[Function]}
+      showModal={false}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
-    className="search-result-header"
+    className="row search-result-header-row"
   >
-    <button
-      aria-label="table view toggle"
-      className="btn btn-white"
-      onClick={[Function]}
-      value={0}
+    <div
+      className="col-sm-4 header-grid-div header-print-button-groups"
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-table"
-      />
-    </button>
-    <button
-      aria-label="item card view toggle"
-      className="btn btn-gray"
-      onClick={[Function]}
-      value={1}
+      <React.Fragment />
+    </div>
+    <div
+      className="col-sm-3 header-grid-div  "
     >
-      <i
-        aria-hidden="true"
-        className="glyphicon glyphicon-th-large glyphicon-pad"
-      />
-    </button>
+      <button
+        aria-label="table view toggle"
+        className="btn btn-white"
+        onClick={[Function]}
+        value={0}
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-table"
+        />
+      </button>
+      <button
+        aria-label="item card view toggle"
+        className="btn btn-gray"
+        onClick={[Function]}
+        value={1}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-pad"
+        />
+      </button>
+    </div>
+    <div
+      className="col-sm-5 header-grid-div header-print-button-groups"
+    >
+      <button
+        aria-label="Clear Selection"
+        className="btn btn-default search-result-container-header-button disabled"
+        onClick={[Function]}
+        title="Clear Selection"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-eraser"
+        />
+         Clear
+      </button>
+      <button
+        aria-label="Print Item"
+        className="btn btn-default search-result-container-header-button"
+        onClick={[Function]}
+        title="Print Items"
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />
+         
+        Print
+      </button>
+    </div>
   </div>
   <div
     className="search-result-body"
@@ -174,116 +281,200 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
 <div
   className="search-result-container"
 >
+  <React.Fragment>
+    <PrintAccessibilityModal
+      StatusMessage=""
+      areSelectedItemsHaveMath={false}
+      onChangeModelState={[Function]}
+      onSubmitPrint={[Function]}
+      showModal={false}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
-    className="search-result-header"
+    className="row search-result-header-row"
   >
-    <button
-      aria-label="table view toggle"
-      className="btn btn-white"
-      onClick={[Function]}
-      value={0}
+    <div
+      className="col-sm-4 header-grid-div header-print-button-groups"
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-table"
-      />
-    </button>
-    <button
-      aria-label="item card view toggle"
-      className="btn btn-gray"
-      onClick={[Function]}
-      value={1}
+      <React.Fragment />
+    </div>
+    <div
+      className="col-sm-3 header-grid-div  "
     >
-      <i
-        aria-hidden="true"
-        className="glyphicon glyphicon-th-large glyphicon-pad"
-      />
-    </button>
+      <button
+        aria-label="table view toggle"
+        className="btn btn-white"
+        onClick={[Function]}
+        value={0}
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-table"
+        />
+      </button>
+      <button
+        aria-label="item card view toggle"
+        className="btn btn-gray"
+        onClick={[Function]}
+        value={1}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-pad"
+        />
+      </button>
+    </div>
+    <div
+      className="col-sm-5 header-grid-div header-print-button-groups"
+    >
+      <button
+        aria-label="Clear Selection"
+        className="btn btn-default search-result-container-header-button disabled"
+        onClick={[Function]}
+        title="Clear Selection"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-eraser"
+        />
+         Clear
+      </button>
+      <button
+        aria-label="Print Item"
+        className="btn btn-default search-result-container-header-button"
+        onClick={[Function]}
+        title="Print Items"
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />
+         
+        Print
+      </button>
+    </div>
   </div>
   <div
     className="search-result-body"
   >
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      calculator={true}
-      claimCode="MATH1"
-      claimLabel="Concepts and Procedures"
-      grade={8}
-      gradeLabel="Grade 6"
-      interactionTypeCode="EQ"
-      interactionTypeLabel="Equation"
-      isPerformanceItem={true}
-      itemKey={3206}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3206"
-      subjectCode="MATH"
-      subjectLabel="Math"
-      targetDescription="Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia"
-      targetHash={100}
-      targetId="A"
-      targetShortName=""
-      title="Math Grade 6 Claim 1"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": true,
+          "claimCode": "MATH1",
+          "claimLabel": "Concepts and Procedures",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "EQ",
+          "interactionTypeLabel": "Equation",
+          "isPerformanceItem": true,
+          "itemKey": 3206,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetHash": 100,
+          "targetId": "A",
+          "targetShortName": "",
+          "title": "Math Grade 6 Claim 1",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      calculator={false}
-      claimCode="ELA1"
-      claimLabel="Reading"
-      grade={1}
-      gradeLabel="Grade 3"
-      interactionTypeCode="MC"
-      interactionTypeLabel="Multiple Choice"
-      isPerformanceItem={true}
-      itemKey={3163}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3163"
-      subjectCode="ELA"
-      subjectLabel="ELA/literacy"
-      targetDescription="Target B description"
-      targetHash={1039}
-      targetId="B"
-      targetShortName="Key Details"
-      title="ELA/ literacy Grade 3 Claim 1"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": false,
+          "claimCode": "ELA1",
+          "claimLabel": "Reading",
+          "grade": 1,
+          "gradeLabel": "Grade 3",
+          "interactionTypeCode": "MC",
+          "interactionTypeLabel": "Multiple Choice",
+          "isPerformanceItem": true,
+          "itemKey": 3163,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "Target B description",
+          "targetHash": 1039,
+          "targetId": "B",
+          "targetShortName": "Key Details",
+          "title": "ELA/ literacy Grade 3 Claim 1",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      claimCode="MATH4"
-      claimLabel="Modeling/Data Analysis"
-      grade={8}
-      gradeLabel="Grade 6"
-      interactionTypeCode="MS"
-      interactionTypeLabel="Multi Select"
-      isPerformanceItem={false}
-      itemKey={3615}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3615"
-      subjectCode="MATH"
-      subjectLabel="Math"
-      targetDescription="target C description"
-      targetHash={0}
-      targetId="C"
-      targetShortName=""
-      title="Math Grade 6 Claim 4"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "MATH4",
+          "claimLabel": "Modeling/Data Analysis",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": false,
+          "itemKey": 3615,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "target C description",
+          "targetHash": 0,
+          "targetId": "C",
+          "targetShortName": "",
+          "title": "Math Grade 6 Claim 4",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      claimCode="ELA4"
-      claimLabel="Research/Inquiry"
-      grade={2}
-      gradeLabel="Grade 4"
-      interactionTypeCode="MS"
-      interactionTypeLabel="Multi Select"
-      isPerformanceItem={false}
-      itemKey={2928}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 2928"
-      subjectCode="ELA"
-      subjectLabel="ELA/literacy"
-      targetDescription="target D description"
-      targetHash={2832}
-      targetId="D"
-      targetShortName="Evaluate Information/ sources"
-      title="ELA/ literacy Grade 4 Claim 4"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "ELA4",
+          "claimLabel": "Research/Inquiry",
+          "grade": 2,
+          "gradeLabel": "Grade 4",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": false,
+          "itemKey": 2928,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "target D description",
+          "targetHash": 2832,
+          "targetId": "D",
+          "targetShortName": "Evaluate Information/ sources",
+          "title": "ELA/ literacy Grade 4 Claim 4",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
   </div>
 </div>
@@ -293,38 +484,90 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
 <div
   className="search-result-container"
 >
+  <React.Fragment>
+    <PrintAccessibilityModal
+      StatusMessage=""
+      areSelectedItemsHaveMath={false}
+      onChangeModelState={[Function]}
+      onSubmitPrint={[Function]}
+      showModal={false}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
-    className="search-result-header"
+    className="row search-result-header-row"
   >
-    <button
-      aria-label="table view toggle"
-      className="btn btn-gray"
-      onClick={[Function]}
-      value={0}
+    <div
+      className="col-sm-4 header-grid-div header-print-button-groups"
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-table"
-      />
-    </button>
-    <button
-      aria-label="item card view toggle"
-      className="btn btn-white"
-      onClick={[Function]}
-      value={1}
+      <React.Fragment />
+    </div>
+    <div
+      className="col-sm-3 header-grid-div  "
     >
-      <i
-        aria-hidden="true"
-        className="glyphicon glyphicon-th-large glyphicon-pad"
-      />
-    </button>
+      <button
+        aria-label="table view toggle"
+        className="btn btn-gray"
+        onClick={[Function]}
+        value={0}
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-table"
+        />
+      </button>
+      <button
+        aria-label="item card view toggle"
+        className="btn btn-white"
+        onClick={[Function]}
+        value={1}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-pad"
+        />
+      </button>
+    </div>
+    <div
+      className="col-sm-5 header-grid-div header-print-button-groups"
+    >
+      <button
+        aria-label="Clear Selection"
+        className="btn btn-default search-result-container-header-button disabled"
+        onClick={[Function]}
+        title="Clear Selection"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-eraser"
+        />
+         Clear
+      </button>
+      <button
+        aria-label="Print Item"
+        className="btn btn-default search-result-container-header-button"
+        onClick={[Function]}
+        title="Print Items"
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />
+         
+        Print
+      </button>
+    </div>
   </div>
   <div
     className="search-result-body"
   >
     <ItemTableContainer
-      defaultRenderType={0}
-      isLinkTable={true}
+      getSelectedItemCount={[Function]}
+      isLinkTable={false}
       item={
         Object {
           "kind": "none",
@@ -412,8 +655,11 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
           },
         ]
       }
+      numberOfSelectedItem={0}
+      onCountNumberOfItemSelection={[Function]}
       onItemSelection={[Function]}
       onRowSelection={[Function]}
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
   </div>
 </div>
@@ -423,116 +669,200 @@ exports[`SearchResultContainer table to card transition 1`] = `
 <div
   className="search-result-container"
 >
+  <React.Fragment>
+    <PrintAccessibilityModal
+      StatusMessage=""
+      areSelectedItemsHaveMath={false}
+      onChangeModelState={[Function]}
+      onSubmitPrint={[Function]}
+      showModal={false}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
-    className="search-result-header"
+    className="row search-result-header-row"
   >
-    <button
-      aria-label="table view toggle"
-      className="btn btn-white"
-      onClick={[Function]}
-      value={0}
+    <div
+      className="col-sm-4 header-grid-div header-print-button-groups"
     >
-      <i
-        aria-hidden="true"
-        className="fa fa-table"
-      />
-    </button>
-    <button
-      aria-label="item card view toggle"
-      className="btn btn-gray"
-      onClick={[Function]}
-      value={1}
+      <React.Fragment />
+    </div>
+    <div
+      className="col-sm-3 header-grid-div  "
     >
-      <i
-        aria-hidden="true"
-        className="glyphicon glyphicon-th-large glyphicon-pad"
-      />
-    </button>
+      <button
+        aria-label="table view toggle"
+        className="btn btn-white"
+        onClick={[Function]}
+        value={0}
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-table"
+        />
+      </button>
+      <button
+        aria-label="item card view toggle"
+        className="btn btn-gray"
+        onClick={[Function]}
+        value={1}
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-pad"
+        />
+      </button>
+    </div>
+    <div
+      className="col-sm-5 header-grid-div header-print-button-groups"
+    >
+      <button
+        aria-label="Clear Selection"
+        className="btn btn-default search-result-container-header-button disabled"
+        onClick={[Function]}
+        title="Clear Selection"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-eraser"
+        />
+         Clear
+      </button>
+      <button
+        aria-label="Print Item"
+        className="btn btn-default search-result-container-header-button"
+        onClick={[Function]}
+        title="Print Items"
+      >
+        <i
+          aria-hidden="true"
+          className="glyphicon glyphicon-th-large glyphicon-print"
+        />
+         
+        Print
+      </button>
+    </div>
   </div>
   <div
     className="search-result-body"
   >
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      calculator={true}
-      claimCode="MATH1"
-      claimLabel="Concepts and Procedures"
-      grade={8}
-      gradeLabel="Grade 6"
-      interactionTypeCode="EQ"
-      interactionTypeLabel="Equation"
-      isPerformanceItem={true}
-      itemKey={3206}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3206"
-      subjectCode="MATH"
-      subjectLabel="Math"
-      targetDescription="Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia"
-      targetHash={100}
-      targetId="A"
-      targetShortName=""
-      title="Math Grade 6 Claim 1"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": true,
+          "claimCode": "MATH1",
+          "claimLabel": "Concepts and Procedures",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "EQ",
+          "interactionTypeLabel": "Equation",
+          "isPerformanceItem": true,
+          "itemKey": 3206,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetHash": 100,
+          "targetId": "A",
+          "targetShortName": "",
+          "title": "Math Grade 6 Claim 1",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      calculator={false}
-      claimCode="ELA1"
-      claimLabel="Reading"
-      grade={1}
-      gradeLabel="Grade 3"
-      interactionTypeCode="MC"
-      interactionTypeLabel="Multiple Choice"
-      isPerformanceItem={true}
-      itemKey={3163}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3163"
-      subjectCode="ELA"
-      subjectLabel="ELA/literacy"
-      targetDescription="Target B description"
-      targetHash={1039}
-      targetId="B"
-      targetShortName="Key Details"
-      title="ELA/ literacy Grade 3 Claim 1"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": false,
+          "claimCode": "ELA1",
+          "claimLabel": "Reading",
+          "grade": 1,
+          "gradeLabel": "Grade 3",
+          "interactionTypeCode": "MC",
+          "interactionTypeLabel": "Multiple Choice",
+          "isPerformanceItem": true,
+          "itemKey": 3163,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "Target B description",
+          "targetHash": 1039,
+          "targetId": "B",
+          "targetShortName": "Key Details",
+          "title": "ELA/ literacy Grade 3 Claim 1",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      claimCode="MATH4"
-      claimLabel="Modeling/Data Analysis"
-      grade={8}
-      gradeLabel="Grade 6"
-      interactionTypeCode="MS"
-      interactionTypeLabel="Multi Select"
-      isPerformanceItem={false}
-      itemKey={3615}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 3615"
-      subjectCode="MATH"
-      subjectLabel="Math"
-      targetDescription="target C description"
-      targetHash={0}
-      targetId="C"
-      targetShortName=""
-      title="Math Grade 6 Claim 4"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "MATH4",
+          "claimLabel": "Modeling/Data Analysis",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": false,
+          "itemKey": 3615,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "target C description",
+          "targetHash": 0,
+          "targetId": "C",
+          "targetShortName": "",
+          "title": "Math Grade 6 Claim 4",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
     <ItemCard
-      bankKey={187}
-      brailleOnlyItem={false}
-      claimCode="ELA4"
-      claimLabel="Research/Inquiry"
-      grade={2}
-      gradeLabel="Grade 4"
-      interactionTypeCode="MS"
-      interactionTypeLabel="Multi Select"
-      isPerformanceItem={false}
-      itemKey={2928}
+      getSelectedItemCount={[Function]}
+      isPrintLimitEnabled={true}
       key="187 - 2928"
-      subjectCode="ELA"
-      subjectLabel="ELA/literacy"
-      targetDescription="target D description"
-      targetHash={2832}
-      targetId="D"
-      targetShortName="Evaluate Information/ sources"
-      title="ELA/ literacy Grade 4 Claim 4"
+      onRowSelect={[Function]}
+      rowData={
+        Object {
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "ELA4",
+          "claimLabel": "Research/Inquiry",
+          "grade": 2,
+          "gradeLabel": "Grade 4",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": false,
+          "itemKey": 2928,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "target D description",
+          "targetHash": 2832,
+          "targetId": "D",
+          "targetShortName": "Evaluate Information/ sources",
+          "title": "ELA/ literacy Grade 4 Claim 4",
+        }
+      }
+      showErrorModalOnPrintItemsCountExceeded={[Function]}
     />
   </div>
 </div>

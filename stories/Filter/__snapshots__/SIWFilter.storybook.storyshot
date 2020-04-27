@@ -15,6 +15,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         className="bf-selection"
         id="grade-bf"
         tabIndex={0}
+        title=""
       >
         <div
           className=""
@@ -69,9 +70,66 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         </div>
       </div>
       <div
+        className="filter-selection"
+        id="subjects-filter"
+      >
+        <div
+          className="filter-container-header"
+        >
+          <label>
+            <span
+              className="tooltip-label"
+              info-label="true"
+            >
+              Subjects
+            </span>
+          </label>
+        </div>
+        <div
+          className="nested-btn-group btn-group-sm toggle-group vertical"
+          data-toggle="buttons"
+        >
+          <button
+            aria-checked={true}
+            aria-label="Select All Subjects"
+            className="btn btn-primary active"
+            disabled={false}
+            onClick={[Function]}
+            role="switch"
+          >
+            All
+          </button>
+          <div
+            className="btn-group filter-btn-group"
+          >
+            <button
+              aria-checked={false}
+              aria-label="English Literacy/ Arts"
+              className="btn btn-primary "
+              disabled={false}
+              onClick={[Function]}
+              role="switch"
+            >
+              English Literacy/ Arts
+            </button>
+            <button
+              aria-checked={false}
+              aria-label="Mathematics"
+              className="btn btn-primary "
+              disabled={false}
+              onClick={[Function]}
+              role="switch"
+            >
+              Mathematics
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
         className="bf-selection"
-        id="subjects-bf"
+        id="test-name-bf"
         tabIndex={0}
+        title=""
       >
         <div
           className=""
@@ -80,7 +138,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             <span
               className=""
             >
-              Subjects
+              Test Name
             </span>
           </label>
           <select
@@ -93,26 +151,26 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             <option
               aria-selected={true}
               disabled={false}
-              label="Select Subjects"
+              label="Select Test Name"
               value="default"
             >
-              Select Subjects
+              Select Test Name
             </option>
             <option
               aria-selected={false}
               disabled={false}
-              label="English Literacy/ Arts"
-              value="ELA"
+              label="Test 1"
+              value="Test 1"
             >
-              English Literacy/ Arts
+              Test 1
             </option>
             <option
               aria-selected={false}
               disabled={false}
-              label="Mathematics"
-              value="Math"
+              label="Test 2"
+              value="Test 1"
             >
-              Mathematics
+              Test 2
             </option>
           </select>
         </div>
@@ -233,6 +291,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         className="bf-selection"
         id="techtype-bf"
         tabIndex={0}
+        title=""
       >
         <div
           className=""
@@ -338,6 +397,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         className="bf-selection"
         id="calculator-bf"
         tabIndex={0}
+        title=""
       >
         <div
           className=""

@@ -17,12 +17,13 @@ const claimIcons: { [claimCode: string]: string } = {
 };
 // tslint:enable:no-require-imports
 
-//Added by sonu => props interface
+//props interface
 export interface ItemCardProps {
   rowData: ItemCardModel;
   onRowSelect: (item: ItemCardModel) => void;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  isPrintLimitEnabled: boolean;
 }
 
 export interface ItemCardState {
@@ -62,7 +63,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     const value = target.type === "checkbox" ? target.checked : target.value;
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if (item.selected !== true && selectedItemsCount >= 20) {
+    if (
+      item.selected !== true &&
+      this.props.isPrintLimitEnabled == true &&
+      selectedItemsCount >= 20
+    ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -77,20 +82,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     }
   };
 
-  handleKeyUpEnterStopPropogation = (
-    e: React.SyntheticEvent
-  ) => {
+  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
     e.stopPropagation();
   };
 
-  handleEnterKeyDown = 
-  (e: React.KeyboardEvent) => {
+  handleEnterKeyDown = (e: React.KeyboardEvent) => {
     //if enter key is press prevent its default behaviour from selecting/clicking on elements
-    if(e.keyCode === 13) {
+    if (e.keyCode === 13) {
       e.preventDefault();
     }
   };
-
 
   handleOnClick = () => {
     this.setState({ redirect: true });
@@ -192,7 +193,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
               onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
               tabIndex={0}
-              onKeyUp={e =>  this.handleKeyUpEnterStopPropogation(e)}
+              onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
               onKeyDown={e => this.handleEnterKeyDown(e)}
             >
               <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;

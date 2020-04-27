@@ -33,6 +33,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Grade Help",
         "isMultiSelect": false,
         "label": "Grade",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -55,6 +56,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -77,6 +79,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": false,
         "label": "Disabled",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -99,6 +102,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Disabled Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -121,6 +125,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -143,6 +148,7 @@ exports[`FilterContainer renders 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All Disabled",
+        "show": true,
       },
     ]
   }
@@ -173,6 +179,7 @@ exports[`FilterContainer renders 1`] = `
         ],
         "label": "Grade",
         "optionType": 3,
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -193,6 +200,7 @@ exports[`FilterContainer renders 1`] = `
         ],
         "label": "Subjects",
         "optionType": 2,
+        "show": true,
       },
       Object {
         "code": "TechnologyType",
@@ -213,6 +221,7 @@ exports[`FilterContainer renders 1`] = `
         ],
         "label": "TechType",
         "optionType": 4,
+        "show": true,
       },
     ]
   }
@@ -251,6 +260,7 @@ exports[`FilterContainer renders 1`] = `
             ],
             "label": "Grade",
             "optionType": 3,
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -271,6 +281,7 @@ exports[`FilterContainer renders 1`] = `
             ],
             "label": "Subjects",
             "optionType": 2,
+            "show": true,
           },
           Object {
             "code": "TechnologyType",
@@ -291,6 +302,7 @@ exports[`FilterContainer renders 1`] = `
             ],
             "label": "TechType",
             "optionType": 4,
+            "show": true,
           },
         ]
       }
@@ -335,11 +347,13 @@ exports[`FilterContainer renders 1`] = `
             label="Grade"
             optionType={3}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="grade-bf"
               tabIndex={0}
+              title=""
             >
               <Component
                 className="input-sm"
@@ -485,11 +499,13 @@ exports[`FilterContainer renders 1`] = `
             label="Subjects"
             optionType={2}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="subjects-bf"
               tabIndex={0}
+              title=""
             >
               <label>
                 Subjects
@@ -553,6 +569,7 @@ exports[`FilterContainer renders 1`] = `
             label="TechType"
             onFilterOptionSelect={[Function]}
             optionType={4}
+            show={true}
           >
             <div
               className="filter-selection"
@@ -697,6 +714,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Grade Help",
         "isMultiSelect": false,
         "label": "Grade",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -719,6 +737,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -741,6 +760,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": false,
         "label": "Disabled",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -763,6 +783,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Disabled Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -785,6 +806,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -807,6 +829,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All Disabled",
+        "show": true,
       },
     ]
   }
@@ -837,6 +860,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         ],
         "label": "Grade",
         "optionType": 3,
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -857,6 +881,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         ],
         "label": "Subjects",
         "optionType": 2,
+        "show": true,
       },
       Object {
         "code": "TechnologyType",
@@ -877,6 +902,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         ],
         "label": "TechType",
         "optionType": 4,
+        "show": true,
       },
     ]
   }
@@ -932,6 +958,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               ],
               "label": "Grade",
               "optionType": 3,
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -952,6 +979,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               ],
               "label": "Subjects",
               "optionType": 2,
+              "show": true,
             },
             Object {
               "code": "TechnologyType",
@@ -972,6 +1000,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               ],
               "label": "TechType",
               "optionType": 4,
+              "show": true,
             },
           ],
           Array [
@@ -1002,6 +1031,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Grade Help",
               "isMultiSelect": false,
               "label": "Grade",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1024,6 +1054,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1046,6 +1077,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Subject Help",
               "isMultiSelect": false,
               "label": "Disabled",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1068,6 +1100,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Disabled Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1090,6 +1123,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1112,6 +1146,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All Disabled",
+              "show": true,
             },
           ],
         ],
@@ -1152,6 +1187,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             ],
             "label": "Grade",
             "optionType": 3,
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -1172,6 +1208,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             ],
             "label": "Subjects",
             "optionType": 2,
+            "show": true,
           },
           Object {
             "code": "TechnologyType",
@@ -1192,6 +1229,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             ],
             "label": "TechType",
             "optionType": 4,
+            "show": true,
           },
         ]
       }
@@ -1236,11 +1274,13 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             label="Grade"
             optionType={3}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="grade-bf"
               tabIndex={0}
+              title=""
             >
               <Component
                 className="input-sm"
@@ -1386,11 +1426,13 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             label="Subjects"
             optionType={2}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="subjects-bf"
               tabIndex={0}
+              title=""
             >
               <label>
                 Subjects
@@ -1454,6 +1496,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             label="TechType"
             onFilterOptionSelect={[Function]}
             optionType={4}
+            show={true}
           >
             <div
               className="filter-selection"
@@ -1598,6 +1641,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Grade Help",
         "isMultiSelect": false,
         "label": "Grade",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1620,6 +1664,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1642,6 +1687,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Subject Help",
         "isMultiSelect": false,
         "label": "Disabled",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1664,6 +1710,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Disabled Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1686,6 +1733,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1708,6 +1756,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All Disabled",
+        "show": true,
       },
     ]
   }
@@ -1738,6 +1787,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         ],
         "label": "Grade",
         "optionType": 3,
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -1758,6 +1808,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         ],
         "label": "Subjects",
         "optionType": 2,
+        "show": true,
       },
       Object {
         "code": "TechnologyType",
@@ -1778,6 +1829,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         ],
         "label": "TechType",
         "optionType": 4,
+        "show": true,
       },
     ]
   }
@@ -1833,6 +1885,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               ],
               "label": "Grade",
               "optionType": 3,
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1853,6 +1906,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               ],
               "label": "Subjects",
               "optionType": 2,
+              "show": true,
             },
             Object {
               "code": "TechnologyType",
@@ -1873,6 +1927,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               ],
               "label": "TechType",
               "optionType": 4,
+              "show": true,
             },
           ],
           Array [
@@ -1903,6 +1958,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Grade Help",
               "isMultiSelect": false,
               "label": "Grade",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1925,6 +1981,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1947,6 +2004,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Subject Help",
               "isMultiSelect": false,
               "label": "Disabled",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1969,6 +2027,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Disabled Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -1991,6 +2050,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -2013,6 +2073,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All Disabled",
+              "show": true,
             },
           ],
         ],
@@ -2053,6 +2114,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             ],
             "label": "Grade",
             "optionType": 3,
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2073,6 +2135,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             ],
             "label": "Subjects",
             "optionType": 2,
+            "show": true,
           },
           Object {
             "code": "TechnologyType",
@@ -2093,6 +2156,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             ],
             "label": "TechType",
             "optionType": 4,
+            "show": true,
           },
         ]
       }
@@ -2137,11 +2201,13 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             label="Grade"
             optionType={3}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="grade-bf"
               tabIndex={0}
+              title=""
             >
               <Component
                 className="input-sm"
@@ -2287,11 +2353,13 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             label="Subjects"
             optionType={2}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="subjects-bf"
               tabIndex={0}
+              title=""
             >
               <label>
                 Subjects
@@ -2355,6 +2423,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             label="TechType"
             onFilterOptionSelect={[Function]}
             optionType={4}
+            show={true}
           >
             <div
               className="filter-selection"
@@ -2494,6 +2563,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Grade Help",
             "isMultiSelect": false,
             "label": "Grade",
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2516,6 +2586,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Subject Help",
             "isMultiSelect": true,
             "label": "Multi",
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2538,6 +2609,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Subject Help",
             "isMultiSelect": false,
             "label": "Disabled",
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2560,6 +2632,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Subject Help",
             "isMultiSelect": true,
             "label": "Disabled Multi",
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2582,6 +2655,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Subject Help",
             "isMultiSelect": true,
             "label": "Multi All",
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -2604,6 +2678,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             "helpText": "Subject Help",
             "isMultiSelect": true,
             "label": "Multi All Disabled",
+            "show": true,
           },
         ]
       }
@@ -2687,6 +2762,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="0"
               label="Grade"
               onFilterOptionSelect={[Function]}
+              show={true}
             >
               <div
                 className="filter-selection"
@@ -2854,6 +2930,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="1"
               label="Multi"
               onFilterOptionSelect={[Function]}
+              show={true}
             >
               <div
                 className="filter-selection"
@@ -2985,6 +3062,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="2"
               label="Disabled"
               onFilterOptionSelect={[Function]}
+              show={true}
             />
             <AdvancedFilter
               code="Subject"
@@ -3011,6 +3089,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="3"
               label="Disabled Multi"
               onFilterOptionSelect={[Function]}
+              show={true}
             />
             <AdvancedFilter
               code="Subject"
@@ -3037,6 +3116,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="4"
               label="Multi All"
               onFilterOptionSelect={[Function]}
+              show={true}
             >
               <div
                 className="filter-selection"
@@ -3186,6 +3266,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               key="5"
               label="Multi All Disabled"
               onFilterOptionSelect={[Function]}
+              show={true}
             >
               <div
                 className="filter-selection"
@@ -3349,6 +3430,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Grade Help",
         "isMultiSelect": false,
         "label": "Grade",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3371,6 +3453,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3393,6 +3476,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Subject Help",
         "isMultiSelect": false,
         "label": "Disabled",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3415,6 +3499,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Disabled Multi",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3437,6 +3522,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All",
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3459,6 +3545,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         "helpText": "Subject Help",
         "isMultiSelect": true,
         "label": "Multi All Disabled",
+        "show": true,
       },
     ]
   }
@@ -3489,6 +3576,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         ],
         "label": "Grade",
         "optionType": 3,
+        "show": true,
       },
       Object {
         "code": "Subject",
@@ -3509,6 +3597,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         ],
         "label": "Subjects",
         "optionType": 2,
+        "show": true,
       },
       Object {
         "code": "TechnologyType",
@@ -3529,6 +3618,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         ],
         "label": "TechType",
         "optionType": 4,
+        "show": true,
       },
     ]
   }
@@ -3584,6 +3674,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               ],
               "label": "Grade",
               "optionType": 3,
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3604,6 +3695,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               ],
               "label": "Subjects",
               "optionType": 2,
+              "show": true,
             },
             Object {
               "code": "TechnologyType",
@@ -3624,6 +3716,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               ],
               "label": "TechType",
               "optionType": 4,
+              "show": true,
             },
           ],
           Array [
@@ -3654,6 +3747,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Grade Help",
               "isMultiSelect": false,
               "label": "Grade",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3676,6 +3770,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3698,6 +3793,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Subject Help",
               "isMultiSelect": false,
               "label": "Disabled",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3720,6 +3816,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Disabled Multi",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3742,6 +3839,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All",
+              "show": true,
             },
             Object {
               "code": "Subject",
@@ -3764,6 +3862,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               "helpText": "Subject Help",
               "isMultiSelect": true,
               "label": "Multi All Disabled",
+              "show": true,
             },
           ],
         ],
@@ -3804,6 +3903,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             ],
             "label": "Grade",
             "optionType": 3,
+            "show": true,
           },
           Object {
             "code": "Subject",
@@ -3824,6 +3924,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             ],
             "label": "Subjects",
             "optionType": 2,
+            "show": true,
           },
           Object {
             "code": "TechnologyType",
@@ -3844,6 +3945,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             ],
             "label": "TechType",
             "optionType": 4,
+            "show": true,
           },
         ]
       }
@@ -3888,11 +3990,13 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             label="Grade"
             optionType={3}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="grade-bf"
               tabIndex={0}
+              title=""
             >
               <Component
                 className="input-sm"
@@ -4038,11 +4142,13 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             label="Subjects"
             optionType={2}
             selectedHandler={[Function]}
+            show={true}
           >
             <div
               className="bf-selection"
               id="subjects-bf"
               tabIndex={0}
+              title=""
             >
               <label>
                 Subjects
@@ -4106,6 +4212,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             label="TechType"
             onFilterOptionSelect={[Function]}
             optionType={4}
+            show={true}
           >
             <div
               className="filter-selection"

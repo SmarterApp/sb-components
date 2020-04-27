@@ -9,7 +9,8 @@ import {
   TargetModel,
   ClaimModel,
   ItemsSearchModel,
-  SearchAPIParamsModel
+  SearchAPIParamsModel,
+  TestNameModel
 } from "../../ItemSearch/ItemSearchModels";
 import { Filter } from "../Filter";
 import { InteractionTypeModel } from "../../AboutTestItems/AboutTestItemsModels";
@@ -190,6 +191,34 @@ export const subjects: SubjectModel[] = [
   }
 ];
 
+export const testNames: TestNameModel[] = [
+  {
+    code: "1",
+    label: "TestName1",
+    shortLabel: "TestName1"
+  },
+  {
+    code: "2",
+    label: "TestName2",
+    shortLabel: "TestName2"
+  },
+  {
+    code: "3",
+    label: "TestName3",
+    shortLabel: "TestName3"
+  },
+  {
+    code: "4",
+    label: "TestName4",
+    shortLabel: "TestName4"
+  },
+  {
+    code: "5",
+    label: "TestName5",
+    shortLabel: "TestName5"
+  }
+];
+
 export const claims: ClaimModel[] = [
   {
     targetCodes: ["11", "12", "13", "14"],
@@ -251,5 +280,6 @@ export const searchModel: ItemsSearchModel = {
   interactionTypes,
   claims,
   subjects,
-  targets
+  targets,
+  testNames
 };

@@ -11,6 +11,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
     className="item-checkbox"
     key="checkbox-control"
     onClick={[Function]}
+    onKeyDown={[Function]}
     onKeyUp={[Function]}
     tabIndex={0}
   >
@@ -21,16 +22,6 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
      
   </td>
   <td
-    className="arrow-indicator"
-    key="expand-control"
-    tabIndex={0}
-  >
-    <i
-      aria-hidden="true"
-      className="fa fa-chevron-down fa-sm table-icon"
-    />
-  </td>
-  <td
     className="item"
     key="item-187-3206"
     role="gridcell"
@@ -38,9 +29,12 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
     <span
       key="item"
     >
-      <span>
+      <a
+        role="link"
+        tabIndex={0}
+      >
         3206
-      </span>
+      </a>
     </span>
   </td>
   <td
@@ -220,6 +214,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           className="item-checkbox"
           key="checkbox-control"
           onClick={[Function]}
+          onKeyDown={[Function]}
           onKeyUp={[Function]}
           tabIndex={0}
         >
@@ -230,16 +225,6 @@ exports[`ItemTableRow matches snapshot 1`] = `
            
         </td>
         <td
-          className="arrow-indicator"
-          key="expand-control"
-          tabIndex={0}
-        >
-          <i
-            aria-hidden="true"
-            className="fa fa-chevron-right fa-sm table-icon"
-          />
-        </td>
-        <td
           className="item"
           key="item-187-3206"
           role="gridcell"
@@ -247,9 +232,12 @@ exports[`ItemTableRow matches snapshot 1`] = `
           <span
             key="item"
           >
-            <span>
+            <a
+              role="link"
+              tabIndex={0}
+            >
               3206
-            </span>
+            </a>
           </span>
         </td>
         <td
