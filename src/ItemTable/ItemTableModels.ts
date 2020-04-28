@@ -3,7 +3,7 @@ import { ItemCardModel } from "../ItemCard/ItemCardModels";
 export type HeaderType =
   | "Item"
   | "Claim/Target"
-  | "Content"
+  | "Standard"
   | "Subject"
   | "Grade"
   | "Item Type";
@@ -81,32 +81,6 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) => a.grade - b.grade
   },
   {
-    header: "Content",
-    headerClassName: "content",
-    cols: [
-      {
-        accessor: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,true),
-        className: "item",
-        helpText: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,false)
-      }
-    ],
-    compare: (a, b) => {
-      let direction;
-      const commonCoreStandardId_1 = getContentStandard(a.ccssDescription, a.commonCoreStandardId, a.subjectCode, a.claimCode, true)
-      const commonCoreStandardId_2 = getContentStandard(b.ccssDescription, b.commonCoreStandardId, b.subjectCode, b.claimCode,true);
-      if(commonCoreStandardId_1 < commonCoreStandardId_2) {
-        direction = SortDirection.Ascending;
-      }
-      else if(commonCoreStandardId_1 < commonCoreStandardId_2) {
-        direction = SortDirection.Descending;
-      }
-      else {
-        direction = SortDirection.NoSort;
-      }
-      return direction;
-    }
-  },
-  {
     header: "Claim/Target",
     headerClassName: "claimAndTarget",
     cols: [
@@ -130,6 +104,36 @@ export const headerColumns: ColumnGroup[] = [
         direction = SortDirection.NoSort;
       }
 
+      return direction;
+    }
+  },
+  {
+    header: "Standard",
+    headerClassName: "standard",
+    cols: [
+      {
+        accessor: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,true),
+        className: "standard"
+      },
+      {
+        accessor: label => "",
+        className: "standard",
+        helpText: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,false)
+      }
+    ],
+    compare: (a, b) => {
+      let direction;
+      const commonCoreStandardId_1 = getContentStandard(a.ccssDescription, a.commonCoreStandardId, a.subjectCode, a.claimCode, true)
+      const commonCoreStandardId_2 = getContentStandard(b.ccssDescription, b.commonCoreStandardId, b.subjectCode, b.claimCode,true);
+      if(commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Ascending;
+      }
+      else if(commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Descending;
+      }
+      else {
+        direction = SortDirection.NoSort;
+      }
       return direction;
     }
   },

@@ -194,12 +194,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               </span>
             </p>
             <p className="card-text target">
-              <span className="card-text-label">Content:</span>
-              <span className="card-text-value">{tooltipCcontentStandard}</span>
-            </p>
-            <p className="card-text target">
               <span className="card-text-label">Target:</span>
               <span className="card-text-value">{tooltip}</span>
+            </p>
+            <p className="card-text target">
+              <span className="card-text-label">Standard:</span>
+              <span className="card-text-value">{tooltipCcontentStandard}</span>
             </p>
             <p className="card-text interaction-type">
               <span className="card-text-label">Item Type:</span>
