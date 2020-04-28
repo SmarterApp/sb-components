@@ -17,7 +17,7 @@ const claimIcons: { [claimCode: string]: string } = {
 };
 // tslint:enable:no-require-imports
 
-//Added by sonu => props interface
+//props interface
 export interface ItemCardProps {
   rowData: ItemCardModel;
   onRowSelect: (item: ItemCardModel) => void;
@@ -107,12 +107,34 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
     const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
+
     if (!this.state.redirect) {
+
       const tooltip = generateTooltip({
         displayIcon: true,
         className: "box",
         helpText: <span>{this.props.rowData.targetDescription}</span>,
         displayText: this.props.rowData.targetId
+      });
+
+      // Tooltip for content standard
+      const subjectCode = this.props.rowData.subjectCode;
+      const claimCode = this.props.rowData.claimCode;
+      let commonCoreStandardId = this.props.rowData.commonCoreStandardId;
+      let ccssDescription = this.props.rowData.ccssDescription;
+      if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
+        commonCoreStandardId = "Math Practice";
+        ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
+      }
+      else if(ccssDescription === null || ccssDescription === undefined) {
+        commonCoreStandardId = "Not Available"
+        ccssDescription = "Content Standard information is currently unavailable for this item.";
+      }
+      const tooltipCcontentStandard = generateTooltip({
+        displayIcon: true,
+        className: "box",
+        helpText: <span>{ccssDescription}</span>,
+        displayText: commonCoreStandardId
       });
 
       const tooltip_printOption = generateTooltip({
@@ -156,6 +178,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               </span>
             </p>
             <p className="card-text target">
+              <span className="card-text-label">Content:</span>
+              <span className="card-text-value">{tooltipCcontentStandard}</span>
+            </p>
+            <p className="card-text target">
               <span className="card-text-label">Target:</span>
               <span className="card-text-value">{tooltip}</span>
             </p>
@@ -172,14 +198,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            <button
-              type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-            >
-              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
-              {selectOrSelectedBtnText()}
-            </button>
+            {/* <p> */}
+              <button
+                type="button"
+                className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+                onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+              >
+                <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+                {selectOrSelectedBtnText()}
+              </button>
+            {/* </p> */}
           </div>
         </div>
       );

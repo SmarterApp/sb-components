@@ -20,6 +20,25 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
   }
 
   render() {
+
+    /**
+     * check if Content Standards is undefined, null or blank
+     * 
+     */
+
+    const subjectCode = this.props.itemCardViewModel.subjectCode;
+    const claimCode = this.props.itemCardViewModel.claimCode;
+    let commonCoreStandardId = this.props.itemCardViewModel.commonCoreStandardId;
+    let ccssDescription = this.props.itemCardViewModel.ccssDescription;
+    if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
+      commonCoreStandardId = "Math Practice";
+      ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
+    }
+    else if(ccssDescription === null || ccssDescription === undefined) {
+      commonCoreStandardId = "Not Available"
+      ccssDescription = "Content Standard information is currently unavailable for this item.";
+    }
+
     return (
       <div className={"item-details"}>
         {this.renderField(
@@ -37,6 +56,11 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           "claim",
           this.props.itemCardViewModel.claimLabel
         )}
+        {/* {this.renderField(
+          "Content",
+          "ccss",
+          commonCoreStandardId
+        )} */}
         {this.renderField(
           "Target",
           "target",
@@ -58,9 +82,9 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           this.props.depthOfKnowledge
         )}
         {this.renderField(
-          "Common Core State Standard",
+          "Content Standard",
           "ccss",
-          this.props.commonCoreStandardsDescription
+          commonCoreStandardId + ". " + ccssDescription
         )}
         {this.renderField(
           "Target Description",

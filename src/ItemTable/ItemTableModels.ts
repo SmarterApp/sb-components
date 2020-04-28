@@ -3,6 +3,7 @@ import { ItemCardModel } from "../ItemCard/ItemCardModels";
 export type HeaderType =
   | "Item"
   | "Claim/Target"
+  | "Content"
   | "Subject"
   | "Grade"
   | "Item Type";
@@ -33,6 +34,23 @@ export interface ColumnGroup {
   headerHelp?: string;
 }
 
+ // Logic for content standard
+export function getContentStandard(ccssDescription:any, commonCoreStandardId:any, subjectCode:any, claimCode:any, flag_sendcommonCoreStanrdId:boolean) {
+  if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
+    commonCoreStandardId = "Math Practice";
+    ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
+  }
+  else if(ccssDescription === null || ccssDescription === undefined) {
+    commonCoreStandardId = "Not Available"
+    ccssDescription = "Content Standard information is currently unavailable for this item.";
+  }
+  if(flag_sendcommonCoreStanrdId)
+    return commonCoreStandardId;
+  else
+    return ccssDescription;
+}
+
+
 export const headerColumns: ColumnGroup[] = [
   {
     header: "Item",
@@ -61,6 +79,32 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.grade - b.grade
+  },
+  {
+    header: "Content",
+    headerClassName: "content",
+    cols: [
+      {
+        accessor: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,true),
+        className: "item",
+        helpText: label => getContentStandard(label.ccssDescription, label.commonCoreStandardId, label.subjectCode, label.claimCode,false)
+      }
+    ],
+    compare: (a, b) => {
+      let direction;
+      const commonCoreStandardId_1 = getContentStandard(a.ccssDescription, a.commonCoreStandardId, a.subjectCode, a.claimCode, true)
+      const commonCoreStandardId_2 = getContentStandard(b.ccssDescription, b.commonCoreStandardId, b.subjectCode, b.claimCode,true);
+      if(commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Ascending;
+      }
+      else if(commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Descending;
+      }
+      else {
+        direction = SortDirection.NoSort;
+      }
+      return direction;
+    }
   },
   {
     header: "Claim/Target",
