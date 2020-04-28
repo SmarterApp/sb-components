@@ -23,6 +23,7 @@ export interface ItemCardProps {
   onRowSelect: (item: ItemCardModel) => void;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  isPrintLimitEnabled: boolean;
 }
 
 export interface ItemCardState {
@@ -62,7 +63,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     const value = target.type === "checkbox" ? target.checked : target.value;
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if (item.selected !== true && selectedItemsCount >= 20) {
+    if (
+      item.selected !== true &&
+      this.props.isPrintLimitEnabled == true &&
+      selectedItemsCount >= 20
+    ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -74,6 +79,17 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         isChecked: value === true,
         isCheckBoxChanged: true
       });
+    }
+  };
+
+  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+  };
+
+  handleEnterKeyDown = (e: React.KeyboardEvent) => {
+    //if enter key is press prevent its default behaviour from selecting/clicking on elements
+    if (e.keyCode === 13) {
+      e.preventDefault();
     }
   };
 
@@ -198,16 +214,17 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            {/* <p> */}
-              <button
-                type="button"
-                className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-                onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-              >
-                <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
-                {selectOrSelectedBtnText()}
-              </button>
-            {/* </p> */}
+            <button
+              type="button"
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+              tabIndex={0}
+              onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+              onKeyDown={e => this.handleEnterKeyDown(e)}
+            >
+              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+              {selectOrSelectedBtnText()}
+            </button>
           </div>
         </div>
       );

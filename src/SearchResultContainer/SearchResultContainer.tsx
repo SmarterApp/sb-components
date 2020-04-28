@@ -38,11 +38,14 @@ export interface SearchResultContainerProps {
     IllustrationRequired: string
   ) => void;
   onResetItems: () => void;
+  onSelectAll: () => void;
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
   isLinkTable: boolean;
+  showSelectAllButton: boolean;
   totalItemCards?: ItemCardModel[];
+  isPrintLimitEnabled: boolean;
 }
 
 /**
@@ -109,6 +112,7 @@ export class SearchResultContainer extends React.Component<
           showErrorModalOnPrintItemsCountExceeded={
             this.showErrorModalOnPrintItemsCountExceeded
           }
+          isPrintLimitEnabled={this.props.isPrintLimitEnabled}
         />
       ));
     }
@@ -159,6 +163,11 @@ export class SearchResultContainer extends React.Component<
 
   handleResetItems = (): void => {
     this.props.onResetItems();
+    this.handleCountNumberOfItemSelection();
+  };
+  handleSelectAllItems = (): void => {
+    // this.props.onResetItems();
+    this.props.onSelectAll();
     this.handleCountNumberOfItemSelection();
   };
 
@@ -318,18 +327,34 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
+  /*To select all visible items to print when testname dropdown is selected */
+  renderSelectAllButton(visible: boolean): JSX.Element {
+    if (visible) {
+      return (
+        <button
+          onClick={this.handleSelectAllItems}
+          aria-label="Clear Selection"
+          title="Clear Selection"
+          className={"btn btn-default search-result-container-header-button"}
+        >
+          <i className="fa fa-check" aria-hidden="true" /> Select All
+        </button>
+      );
+    } else {
+      return <></>;
+    }
+  }
+
   /**
    * Renders toggle buttons for changing the layout to table and item card
    */
   renderHeader(): JSX.Element {
     return (
       <div className="row search-result-header-row">
-        <div className="col-sm-5 header-grid-div">
-          {/* <strong>
-          Total item(s) selected: {this.state.countSelectedItems}
-          </strong> */}
+        <div className="col-sm-4 header-grid-div header-print-button-groups">
+          {this.renderSelectAllButton(this.props.showSelectAllButton)}
         </div>
-        <div className="col-sm-2 header-grid-div  ">
+        <div className="col-sm-3 header-grid-div  ">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>

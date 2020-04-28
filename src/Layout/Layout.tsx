@@ -7,6 +7,10 @@ export interface LayoutProps {
   children?: React.ReactNode;
   links?: SbNavlinkProps[];
   siteName: string;
+  isInterimSite?: boolean;
+  userName?: string;
+  signoutLink?: string;
+  signinLink?: string;
 }
 
 export class Layout extends React.Component<LayoutProps, {}> {
@@ -17,6 +21,10 @@ export class Layout extends React.Component<LayoutProps, {}> {
           siteName={this.props.siteName}
           links={this.props.links}
           mainContentId="main"
+          isInterimSite={this.props.isInterimSite}
+          userName={this.props.userName}
+          signoutLink={this.props.signoutLink}
+          signinLink={this.props.signinLink}
         />
         <main id="main" className="site-content" role="main">
           {this.props.children}

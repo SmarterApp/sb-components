@@ -14,7 +14,8 @@ import {
   TargetModel,
   SearchFilterModelTypes,
   ItemsSearchFilterModel,
-  ClaimModel
+  ClaimModel,
+  TestNameItemsPoolModel
 } from "../ItemSearch/ItemSearchModels";
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
 import { GradeLevels, GradeLevel } from "../GradeLevels/GradeLevels";
@@ -26,6 +27,10 @@ export class ItemSearch {
     filterModels: FilterCategoryModel[]
   ): SearchAPIParamsModel {
     const subjects = Filter.getSelectedCodes(FilterType.Subject, filterModels);
+    const testNames = Filter.getSelectedCodes(
+      FilterType.TestNames,
+      filterModels
+    );
     const gradeLevels = Filter.getSelectedGrade(filterModels);
     const claims = Filter.getSelectedCodes(FilterType.Claim, filterModels);
     const interactionTypes = Filter.getSelectedCodes(
@@ -63,7 +68,8 @@ export class ItemSearch {
       targets,
       catOnly,
       performanceOnly,
-      calculator
+      calculator,
+      testNames
     };
   }
 
@@ -125,6 +131,12 @@ export class ItemSearch {
         const newItemID = category.filterOptions[0].key;
         newModel.itemId = newItemID;
         break;
+      case FilterType.TestNames:
+        const testNameCodes = Filter.getSelectedCodes(category.code, [
+          category
+        ]);
+        newModel.testNames = testNameCodes;
+        break;
       default:
     }
 
@@ -145,15 +157,19 @@ export class ItemSearch {
     const selectedSubjects = (model.subjects || []).filter(
       s => (searchParams.subjects || []).indexOf(s.code) !== -1
     );
+
     const visibleClaims = selectedSubjects
       .map(s => s.claimCodes || [])
       .reduce((prev, curr) => prev.concat(curr), []);
+
     const visibleInteractions = selectedSubjects
       .map(s => s.interactionTypeCodes || [])
       .reduce((prev, curr) => prev.concat(curr), []);
+
     const visibleClaimModels = visibleClaims.map(c =>
       (model.claims || []).find(cm => cm.code === c)
     );
+
     const visibleTargets = visibleClaimModels
       .filter(
         c => (c ? (searchParams.claims || []).indexOf(c.code) !== -1 : false)
@@ -161,9 +177,15 @@ export class ItemSearch {
       .map(c => (c ? c.targetCodes || [] : []))
       .reduce((prev, curr) => prev.concat(curr), []);
 
+    //Filter testnames by selected subject
+    const visibleTestNames = (model.testNames || []).filter(
+      s => (searchParams.testNames || []).indexOf(s.code) !== -1
+    );
+
     searchParams.claims = searchParams.claims
       ? searchParams.claims.filter(c => visibleClaims.indexOf(c) !== -1)
       : undefined;
+
     searchParams.interactionTypes = searchParams.interactionTypes
       ? searchParams.interactionTypes.filter(
           i => visibleInteractions.indexOf(i) !== -1
@@ -173,6 +195,13 @@ export class ItemSearch {
       ? searchParams.targets.filter(t => visibleTargets.indexOf(t) !== -1)
       : undefined;
 
+    if (visibleTestNames && visibleTestNames.length > 0) {
+      searchParams.testNames = searchParams.testNames
+        ? searchParams.testNames.filter(
+            c => visibleTestNames[0].code.indexOf(c) !== -1
+          )
+        : undefined;
+    }
     return searchParams;
   }
 
@@ -297,6 +326,14 @@ export class ItemSearch {
           searchApi.subjects
         );
         break;
+      case FilterType.TestNames:
+        options = this.searchOptionFilterString(
+          filter.filterOptions,
+          filter.code,
+          defaultOptionKeys,
+          searchApi.testNames
+        );
+        break;
       case FilterType.Grade:
         let grade: GradeLevels;
         if (defaultOptionKeys !== undefined) {
@@ -367,7 +404,8 @@ export class ItemSearch {
   public static filterSearchToCategory(
     filter: SearchFilterModelTypes,
     searchApi: SearchAPIParamsModel = {},
-    defaultOptionKeys?: string[]
+    defaultOptionKeys?: string[],
+    showControl: boolean = true
   ): FilterCategoryModel {
     const options = this.getFilterOptionModel(
       filter,
@@ -378,13 +416,15 @@ export class ItemSearch {
     return {
       ...filter,
       disabled: false,
-      filterOptions: options
+      filterOptions: options,
+      show: showControl
     };
   }
 
   public static filterItemCards(
     itemCards: ItemCardModel[],
-    filter: SearchAPIParamsModel
+    filter: SearchAPIParamsModel,
+    testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
     // item
@@ -447,6 +487,25 @@ export class ItemSearch {
     // calculator
     if (filter.calculator !== undefined) {
       results = results.filter(i => i.calculator === filter.calculator);
+    }
+
+    //Filter based on testnames
+    if (
+      filter.testNames !== undefined &&
+      filter.testNames.length > 0 &&
+      filter.testNames[0] !== "0" &&
+      testItemsPool !== undefined &&
+      testItemsPool.length > 0
+    ) {
+      const testName = filter.testNames[0];
+      var itemsID = Array<number>();
+      var itemsID = testItemsPool
+        .filter(x => x.code == testName)
+        .map(y => y.itemKey);
+
+      results = results.filter(function(item) {
+        return itemsID.find(x => x == item.itemKey);
+      });
     }
 
     return results;

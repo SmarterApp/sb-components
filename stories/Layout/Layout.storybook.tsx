@@ -30,7 +30,14 @@ storiesOf("Layout", module)
   .addDecorator(routerDecorator)
   .add("name no links no body", () => <Layout siteName="Test" />)
   .add("name links header and body", () => (
-    <Layout children={body} siteName="SB-Components" links={mockSiteLinks} />
+    <Layout
+      children={body}
+      siteName="SB-Components"
+      links={mockSiteLinks}
+      isInterimSite={false}
+      // userName="xyz"
+      signinLink="https://smarterbalanced.oktapreview.com/home/smarterbalanced_siwdev_1/0oaqpsj0nhzFufP1G0h7/alnqptcba9kPYvTVf0h7?fromHome=true"
+    />
   ))
   .add("name links body", () => (
     <Layout
