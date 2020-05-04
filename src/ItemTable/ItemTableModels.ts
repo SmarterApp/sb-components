@@ -38,7 +38,7 @@ export interface ColumnGroup {
  // Logic for content standard
 export function getContentStandard(ccssDescription:any, commonCoreStandardId:any, subjectCode:any, claimCode:any, flag_sendcommonCoreStanrdId:boolean) {
 
-  const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+  const standard  = getContentStandardCode(subjectCode, claimCode, commonCoreStandardId, ccssDescription);
   commonCoreStandardId = standard["commonCoreStandardId"];
   ccssDescription = standard["ccssDescription"];
   if(flag_sendcommonCoreStanrdId)

@@ -140,7 +140,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       let commonCoreStandardId = this.props.rowData.commonCoreStandardId;
       let ccssDescription = this.props.rowData.ccssDescription;
       //get the new and logically updated commonCoreStandardId, ccssDescription value
-      const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+      const standard  = getContentStandardCode(subjectCode, claimCode, commonCoreStandardId, ccssDescription);
       commonCoreStandardId = standard["commonCoreStandardId"];
       ccssDescription = standard["ccssDescription"];
       

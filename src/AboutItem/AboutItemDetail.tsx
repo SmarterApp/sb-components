@@ -33,7 +33,7 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     let ccssDescription = this.props.itemCardViewModel.ccssDescription;
     
     //get the new and logically updated commonCoreStandardId, ccssDescription value
-    const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+    const standard  = getContentStandardCode(subjectCode, claimCode, commonCoreStandardId, ccssDescription);
     commonCoreStandardId = standard["commonCoreStandardId"];
     ccssDescription = standard["ccssDescription"];
 

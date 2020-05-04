@@ -1,4 +1,4 @@
-export function getContentStandardCode(ccssDescription:any, commonCoreStandardId:any, subjectCode:any, claimCode:any) {
+export function getContentStandardCode(subjectCode:any, claimCode:any,  commonCoreStandardId:any, ccssDescription:any) {
 
     commonCoreStandardId = (commonCoreStandardId == null || commonCoreStandardId == undefined) ?  "Not Available" : commonCoreStandardId;
     ccssDescription = (ccssDescription == null || ccssDescription == undefined) ? "Content Standard information is currently unavailable for this item." : ccssDescription;
