@@ -3,7 +3,8 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
-import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
+import { getContentStandardCode } from "./ItemContentStandardHelper";
+
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
   MATH1: require("@sbac/sbac-ui-kit/src/images/math-1.svg"),
@@ -138,14 +139,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       const claimCode = this.props.rowData.claimCode;
       let commonCoreStandardId = this.props.rowData.commonCoreStandardId;
       let ccssDescription = this.props.rowData.ccssDescription;
-      if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
-        commonCoreStandardId = "Math Practice";
-        ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
-      }
-      else if(ccssDescription === null || ccssDescription === undefined) {
-        commonCoreStandardId = "Not Available"
-        ccssDescription = "Content Standard information is currently unavailable for this item.";
-      }
+      //get the new and logically updated commonCoreStandardId, ccssDescription value
+      const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+      commonCoreStandardId = standard["commonCoreStandardId"];
+      ccssDescription = standard["ccssDescription"];
+      
       const tooltipCcontentStandard = generateTooltip({
         displayIcon: true,
         className: "box",

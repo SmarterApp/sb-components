@@ -1,5 +1,6 @@
 import * as React from "react";
 import { AboutItemModel } from "./AboutItemModels";
+import { getContentStandardCode } from "@src/ItemCard/ItemContentStandardHelper";
 
 export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
   renderField(
@@ -30,14 +31,11 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     const claimCode = this.props.itemCardViewModel.claimCode;
     let commonCoreStandardId = this.props.itemCardViewModel.commonCoreStandardId;
     let ccssDescription = this.props.itemCardViewModel.ccssDescription;
-    if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
-      commonCoreStandardId = "Math Practice";
-      ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
-    }
-    else if(ccssDescription === null || ccssDescription === undefined) {
-      commonCoreStandardId = "Not Available"
-      ccssDescription = "Content Standard information is currently unavailable for this item.";
-    }
+    
+    //get the new and logically updated commonCoreStandardId, ccssDescription value
+    const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+    commonCoreStandardId = standard["commonCoreStandardId"];
+    ccssDescription = standard["ccssDescription"];
 
     return (
       <div className={"item-details"}>

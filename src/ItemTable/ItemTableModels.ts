@@ -1,4 +1,5 @@
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
+import { getContentStandardCode } from '../ItemCard/ItemContentStandardHelper';
 
 export type HeaderType =
   | "Item"
@@ -36,14 +37,10 @@ export interface ColumnGroup {
 
  // Logic for content standard
 export function getContentStandard(ccssDescription:any, commonCoreStandardId:any, subjectCode:any, claimCode:any, flag_sendcommonCoreStanrdId:boolean) {
-  if(subjectCode === 'MATH' && (claimCode == 'MATH2' || claimCode == 'MATH3' || claimCode == 'MATH4' )) {
-    commonCoreStandardId = "Math Practice";
-    ccssDescription = "Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.";
-  }
-  else if(ccssDescription === null || ccssDescription === undefined) {
-    commonCoreStandardId = "Not Available"
-    ccssDescription = "Content Standard information is currently unavailable for this item.";
-  }
+
+  const standard  = getContentStandardCode(subjectCode, claimCode, subjectCode, claimCode);
+  commonCoreStandardId = standard["commonCoreStandardId"];
+  ccssDescription = standard["ccssDescription"];
   if(flag_sendcommonCoreStanrdId)
     return commonCoreStandardId;
   else
