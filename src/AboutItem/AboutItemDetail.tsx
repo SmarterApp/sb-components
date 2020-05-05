@@ -40,9 +40,9 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     return (
       <div className={"item-details"}>
         {this.renderField(
-          "Subject",
-          "subject",
-          this.props.itemCardViewModel.subjectLabel
+          "Item Id",
+          "item-id",
+          this.props.itemCardViewModel.itemKey
         )}
         {this.renderField(
           "Grade",
@@ -50,19 +50,29 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           this.props.itemCardViewModel.gradeLabel
         )}
         {this.renderField(
+          "Subject",
+          "subject",
+          this.props.itemCardViewModel.subjectLabel
+        )}
+        {this.renderField(
           "Claim",
           "claim",
           this.props.itemCardViewModel.claimLabel
         )}
-        {/* {this.renderField(
-          "Content",
-          "ccss",
-          commonCoreStandardId
-        )} */}
         {this.renderField(
           "Target",
           "target",
           this.props.itemCardViewModel.targetShortName
+        )}       
+        {this.renderField(
+          "Target Description",
+          "target-description",
+          this.props.targetDescription
+        )} 
+        {this.renderField(
+          "Content Standard",
+          "ccss",
+          commonCoreStandardId + ". " + ccssDescription
         )}
         {this.renderField(
           "Item Type",
@@ -70,25 +80,12 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           this.props.itemCardViewModel.interactionTypeLabel
         )}
         {this.renderField(
-          "Item Id",
-          "item-id",
-          this.props.itemCardViewModel.itemKey
-        )}
-        {this.renderField(
           "Depth of Knowledge",
           "dok",
           this.props.depthOfKnowledge
         )}
-        {this.renderField(
-          "Content Standard",
-          "ccss",
-          commonCoreStandardId + ". " + ccssDescription
-        )}
-        {this.renderField(
-          "Target Description",
-          "target-description",
-          this.props.targetDescription
-        )}
+        
+        
         {this.renderField(
           "Educational Difficulty",
           "educational-difficulty",
