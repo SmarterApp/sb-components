@@ -119,10 +119,10 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
       filterOptions,
       disabled,
       label,
-      code
+      code,
+      emptyOptionsText
     } = this.props;
     const defaultValue = "default";
-
     const selected = filterOptions.find(fil => fil.isSelected === true);
     const selectedValue = selected ? selected.key : defaultValue;
 
@@ -144,17 +144,35 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
       });
     }
 
-    return (
-      <Select
-        disabled={disabled}
-        label={label}
-        selected={selectedValue}
-        options={selectOptions}
-        onChange={val => selectedHandler(this.findFilterOption(val))}
-        key={code}
-        className={"input-sm"}
-      />
-    );
+    if (filterOptions != undefined && filterOptions.length > 0) {
+      return (
+        <Select
+          disabled={disabled}
+          label={label}
+          selected={selectedValue}
+          options={selectOptions}
+          onChange={val => selectedHandler(this.findFilterOption(val))}
+          key={code}
+          className={"input-sm"}
+        />
+      );
+    } else {
+      return (
+        <div>
+          <label>
+            <span className="">{label}</span>
+          </label>
+          <div
+            className="nested-btn-group btn-group-sm toggle-group vertical"
+            data-toggle="buttons"
+          >
+            <div className="btn-group filter-btn-group">
+              <div>{emptyOptionsText}</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   /**
@@ -187,14 +205,23 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
    * @returns default render method JSX Element
    */
   render() {
-    let { label } = this.props;
+    let { label, filterOptions } = this.props;
     label = label.replace(/\ /g, "-");
+
+    const selected = filterOptions.find(fil => fil.isSelected === true);
+    const selectedValue = selected ? selected.label : "";
+
+    //if test name is empty the disable tabIndex
+    let tabIndex = 0;
+    if (label.toLocaleLowerCase() == "test-name" && filterOptions.length == 0)
+      tabIndex = -1;
 
     return (
       <div
+        title={selectedValue}
         id={`${label}-bf`.toLocaleLowerCase()}
         className="bf-selection"
-        tabIndex={0}
+        tabIndex={tabIndex}
       >
         {this.renderCategory()}
       </div>

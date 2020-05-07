@@ -19,6 +19,7 @@ exports[`Storyshots Basic Filter DropDown: multiple filter items 1`] = `
     className="bf-selection"
     id="grade-bf"
     tabIndex={0}
+    title=""
   >
     <div
       className=""
@@ -102,6 +103,7 @@ exports[`Storyshots Basic Filter DropDown: one filter item 1`] = `
     className="bf-selection"
     id="grade-bf"
     tabIndex={0}
+    title=""
   >
     <div
       className=""
@@ -161,6 +163,7 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
     className="bf-selection"
     id="grade-bf"
     tabIndex={0}
+    title=""
   >
     <label>
       Grade
@@ -248,6 +251,7 @@ exports[`Storyshots Basic Filter RadioBtn: one filter item 1`] = `
     className="bf-selection"
     id="grade-bf"
     tabIndex={0}
+    title=""
   >
     <label>
       Grade

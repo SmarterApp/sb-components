@@ -9,7 +9,18 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(227,227,227, 0.5);
+  background-color: rgba(227, 227, 227, 0.5);
+}
+
+.loader-overlay-transparent {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  cursor: pointer;
 }
 
 .loader-overlay-transparent {
@@ -60,8 +71,24 @@
 }
 
 .loader-dark {
-   border-left: 1.1em solid black;
-   top: 28%;
+  border-left: 1.1em solid black;
+  top: 28%;
+}
+
+.loader-downloading {
+  font-size: 5px;
+  border-top: 1.1em solid rgba(227, 227, 227, 0.1);
+  border-right: 1.1em solid rgba(227, 227, 227, 0.1);
+  border-bottom: 1.1em solid rgba(227, 227, 227, 0.1);
+  margin: 0px;
+  margin-right: 10px;
+}
+.loader-downloading,
+.loader-downloading:after {
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+  margin-left: 10px;
 }
 
 @-webkit-keyframes load8 {

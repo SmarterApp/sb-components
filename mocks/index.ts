@@ -45,8 +45,10 @@ export {
 //
 export {
   completeItemCard,
+  itemCardProps,
   itemCardList,
-  sortableItemCards
+  sortableItemCards,
+  totalItemsCardList
 } from "./ItemCard/mocks";
 
 //

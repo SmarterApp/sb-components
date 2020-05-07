@@ -257,7 +257,7 @@ export { Footer } from "./Layout/Footer";
 export { NavMenu } from "./Layout/NavMenu";
 export { SbNavLink, SbNavlinkProps } from "./Layout/SbNavLink";
 export { LoadingOverlay } from "./Layout/LoadingOverlay";
-export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent"
+export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent";
 
 //
 // Modals Components
@@ -265,6 +265,8 @@ export { LoadingOverlayTransparent } from "./Layout/LoadingOverlayTransparent"
 export { MoreLikeThisModal } from "./Modals/MoreLikeThisModal";
 export { ShareModal } from "./Modals/ShareModal";
 export { IframeModal, IframeModalProps } from "./Modals/IframeModal";
+export { DownloadPDFModal } from "./Modals/DownloadPDFModal";
+export { LoadingModal } from "./Modals/LoadingModal";
 //
 // Page Tabs Components
 //
@@ -367,6 +369,7 @@ export {
 // Error Components
 //
 export { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
+export { ErrorMessageModal } from "./ErrorBoundary/ErrorMessageModal";
 export {
   ErrorPageContainer,
   ErrorPageContainerProps,

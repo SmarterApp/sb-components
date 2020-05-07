@@ -47,6 +47,13 @@ export class SearchUrl {
     if (search.calculator !== undefined) {
       pairs.push(`${FilterType.Calculator}=${search.calculator}`);
     }
+    if (
+      search.testNames &&
+      search.testNames.length > 0 &&
+      search.testNames[0] != "0"
+    ) {
+      pairs.push(this.encodeFilter(FilterType.TestNames, search.testNames));
+    }
 
     return pairs.length > 0 ? `?${pairs.join("&")}` : "";
   }
@@ -76,6 +83,7 @@ export class SearchUrl {
     const targetOptions = queryObject[FilterType.Target];
     const targets = targetOptions ? targetOptions.map(t => t) : undefined;
     const calculator = this.optionFlag(queryObject[FilterType.Calculator]);
+    const testNames = queryObject[FilterType.TestNames];
 
     return {
       calculator,
@@ -85,7 +93,8 @@ export class SearchUrl {
       performanceOnly,
       catOnly,
       targets,
-      gradeLevels
+      gradeLevels,
+      testNames
     };
   }
 
@@ -126,6 +135,7 @@ export class SearchUrl {
     );
     const catOnly = this.getBoolQueryParam(query, FilterType.CAT);
     const calculator = this.getBoolQueryParam(query, FilterType.Calculator);
+    const testNames = this.getQueryParam(query, FilterType.TestNames);
 
     return {
       subjects,
@@ -135,7 +145,8 @@ export class SearchUrl {
       performanceOnly,
       catOnly,
       targets,
-      gradeLevels: gradesEnum
+      gradeLevels: gradesEnum,
+      testNames
     };
   }
 

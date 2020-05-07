@@ -74,7 +74,8 @@ export enum FilterType {
   InteractionType = "InteractionType",
   Calculator = "Calculator",
   TechnologyType = "TechnologyType", // Contains Performance and CAT
-  SearchItemId = "SearchItemId"
+  SearchItemId = "SearchItemId",
+  TestNames = "TestNames"
 }
 
 export interface FilterOptionModel {
@@ -98,6 +99,7 @@ export interface FilterCategoryModel {
   emptyOptionsText?: string;
   code: FilterType;
   isMultiSelect?: boolean;
+  show?: boolean;
 }
 
 export interface AdvancedFilterCategoryModel extends FilterCategoryModel {

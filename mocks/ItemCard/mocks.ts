@@ -2,12 +2,10 @@ import { ItemCardModel, ItemTableContainerProps } from "@src/index";
 import { ItemCardProps } from "@src/ItemCard/ItemCard";
 
 export const completeItemCard: ItemCardModel = {
+
   selected: false,
   bankKey: 187,
   itemKey: 3434,
-  interactionTypeCode: "GI",
-  interactionTypeLabel: "Item Type",
-  targetShortName: "Short Name",
   title: "ELA Grade 4",
   grade: 4,
   gradeLabel: "Grade 4",
@@ -16,14 +14,41 @@ export const completeItemCard: ItemCardModel = {
   claimCode: "ELA3",
   claimLabel: "Claim",
   targetHash: 33434,
-  targetDescription: "target description right hereeeee",
+  targetShortName: "target short name",
+  targetId: "dfas",
+  targetDescription: "target description right here",
+  interactionTypeCode: "GI",
+  interactionTypeLabel: "Item Type",
   isPerformanceItem: false,
   brailleOnlyItem: false,
-  targetId: "dfas",
+  domain: "domain",
   depthOfKnowledge: "2",
   commonCoreStandardId: "AB-123",
   ccssDescription: "this is the common core description",
-  domain: "domain"
+  calculator: false
+
+  // selected: false,
+  // bankKey: 187,
+  // itemKey: 3434,
+  // interactionTypeCode: "GI",
+  // interactionTypeLabel: "Item Type",
+  // targetShortName: "Short Name",
+  // title: "ELA Grade 4",
+  // grade: 4,
+  // gradeLabel: "Grade 4",
+  // subjectCode: "ELA",
+  // subjectLabel: "ELA",
+  // claimCode: "ELA3",
+  // claimLabel: "Claim",
+  // targetHash: 33434,
+  // targetDescription: "target description right hereeeee",
+  // isPerformanceItem: false,
+  // brailleOnlyItem: false,
+  // targetId: "dfas",
+  // depthOfKnowledge: "2",
+  // commonCoreStandardId: "AB-123",
+  // ccssDescription: "this is the common core description",
+  // domain: "domain"
 };
 
 export const itemCardList: ItemCardModel[] = [
@@ -108,6 +133,8 @@ export const itemCardList: ItemCardModel[] = [
   }
 ];
 
+export const totalItemsCardList: ItemCardModel[] = itemCardList;
+
 export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
@@ -191,5 +218,12 @@ export const itemCardProps: ItemCardProps = {
   rowData: completeItemCard,
   onRowSelect: () => {
     return;
-  }
+  },
+  getSelectedItemCount: () => {
+    return 0;
+  },
+  showErrorModalOnPrintItemsCountExceeded: () => {
+    return;
+  },
+  isPrintLimitEnabled: true
 };

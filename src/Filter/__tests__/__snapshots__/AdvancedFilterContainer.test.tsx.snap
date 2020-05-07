@@ -67,6 +67,7 @@ exports[`AdvancedFilterContainer 'Reset Filters' button resets filters 1`] = `
             "helpText": "Grade Help",
             "isMultiSelect": false,
             "label": "Grade",
+            "show": true,
           }
         }
         key="GradeELA"
@@ -103,6 +104,7 @@ exports[`AdvancedFilterContainer 'Reset Filters' button resets filters 1`] = `
             "helpText": "Grade Help",
             "isMultiSelect": false,
             "label": "Grade",
+            "show": true,
           }
         }
         key="GradeMath"
@@ -188,6 +190,7 @@ exports[`AdvancedFilterContainer 'Reset Filters' button resets filters 2`] = `
             "helpText": "Grade Help",
             "isMultiSelect": false,
             "label": "Grade",
+            "show": true,
           }
         }
         key="GradeELA"
@@ -224,6 +227,7 @@ exports[`AdvancedFilterContainer 'Reset Filters' button resets filters 2`] = `
             "helpText": "Grade Help",
             "isMultiSelect": false,
             "label": "Grade",
+            "show": true,
           }
         }
         key="GradeMath"
@@ -327,6 +331,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="0"
         label="Grade"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
       <AdvancedFilter
         code="Subject"
@@ -353,6 +358,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="1"
         label="Multi"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
       <AdvancedFilter
         code="Subject"
@@ -379,6 +385,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="2"
         label="Disabled"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
       <AdvancedFilter
         code="Subject"
@@ -405,6 +412,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="3"
         label="Disabled Multi"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
       <AdvancedFilter
         code="Subject"
@@ -431,6 +439,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="4"
         label="Multi All"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
       <AdvancedFilter
         code="Subject"
@@ -457,6 +466,7 @@ exports[`AdvancedFilterContainer expands and collapses on click 1`] = `
         key="5"
         label="Multi All Disabled"
         onFilterOptionSelect={[Function]}
+        show={true}
       />
     </div>
   </div>

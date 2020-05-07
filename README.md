@@ -13,7 +13,7 @@
 
 ### Install sb-components using npm:
 ```
-npm install --save @osu-cass/sb-components
+npm install --save @smarterbalanced/sb-components
 ```
 ### Typings
 Included in lib

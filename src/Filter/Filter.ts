@@ -19,6 +19,7 @@ import {
   InteractionTypeModel
 } from "@src/index";
 import { constants } from "fs";
+import { TestNameModel } from "@src/ItemSearch/ItemSearchModels";
 
 // tslint:disable-next-line:no-stateless-class, no-unnecessary-class
 export class Filter {
@@ -92,6 +93,41 @@ export class Filter {
     return filteredClaims;
   }
 
+  public static filterTestNames<T extends TestNameModel>(
+    filterOptions: T[],
+    subjectCodes?: string[],
+    gradeCodes?: string
+  ): T[] {
+    let filteredTestNames = filterOptions;
+    //for all grade and selected subject
+    if (
+      gradeCodes !== undefined &&
+      gradeCodes !== "" &&
+      gradeCodes == "1023" &&
+      subjectCodes &&
+      subjectCodes.length > 0
+    ) {
+      filteredTestNames = filteredTestNames.filter(
+        s => subjectCodes.some(ssc => ssc === s.subject) || s.code == "0"
+      );
+    } else if (
+      gradeCodes !== "" &&
+      gradeCodes !== undefined &&
+      subjectCodes &&
+      subjectCodes.length > 0
+    ) {
+      //for selected grade and selected subject
+      filteredTestNames = filteredTestNames.filter(
+        s =>
+          (subjectCodes.some(ssc => ssc === s.subject) &&
+            s.grade == gradeCodes) ||
+          s.code == "0"
+      );
+    }
+
+    return filteredTestNames;
+  }
+
   /**
    * Filters targets with the given codes
    * @param  {TargetModel[]} targets
@@ -118,6 +154,15 @@ export class Filter {
   public static getSubjectClaimCodes(subjects: SubjectModel[]): string[] {
     return subjects
       .map(s => s.claimCodes || [])
+      .reduce((pc, cc) => pc.concat(cc), []);
+  }
+
+  /** Returns the list of related Testnames
+   * @param  {SubjectModel[]} subjects
+   */
+  public static getSubjectTestNameCodes(subjects: SubjectModel[]): string[] {
+    return subjects
+      .map(s => s.testCodes || [])
       .reduce((pc, cc) => pc.concat(cc), []);
   }
 
@@ -159,6 +204,36 @@ export class Filter {
     }
 
     return filteredClaims;
+  }
+
+  /**
+   * Gets the list of current TestNames from dependent subjects
+   * @param {TestNameModel[]} claims
+   * @param {SubjectModel[]} filteredSubjects
+   */
+  public static getCurrentTestNameFilter(
+    testNames: TestNameModel[],
+    filteredSubjects: string[] | undefined,
+    selectedGrade: string
+  ): TestNameModel[] | undefined {
+    let filteredTestNames: TestNameModel[] | undefined;
+
+    //Assign default grade code.
+    selectedGrade =
+      selectedGrade === "" || selectedGrade === undefined
+        ? "1023"
+        : selectedGrade;
+
+    if (filteredSubjects && filteredSubjects.length > 0) {
+      const subjectTestNames =
+        filteredSubjects != undefined ? filteredSubjects : [];
+      filteredTestNames = this.filterTestNames(
+        testNames,
+        subjectTestNames,
+        selectedGrade
+      );
+    }
+    return filteredTestNames;
   }
 
   /**
@@ -226,7 +301,10 @@ export class Filter {
         model.subjects,
         searchAPI.subjects
       );
+
       let filteredClaims: ClaimModel[] | undefined;
+
+      let filteredTestNames: TestNameModel[] | undefined;
 
       const claimFilterIdx = filters.findIndex(
         f => f.code === FilterType.Claim
@@ -237,6 +315,56 @@ export class Filter {
       const targetFilterIdx = filters.findIndex(
         f => f.code === FilterType.Target
       );
+
+      const testNameFilterIdx = filters.findIndex(
+        f => f.code === FilterType.TestNames
+      );
+
+      const gradeFilterIdx = filters.findIndex(
+        f => f.code === FilterType.Grade
+      );
+
+      // TestNames
+      if (testNameFilterIdx !== -1 && model.testNames) {
+        const selectedTestName = filters[testNameFilterIdx].filterOptions
+          .filter(x => x.isSelected == true)
+          .map((item, i) => {
+            return item.key;
+          })[0];
+
+        let selectedGrade =
+          filters[gradeFilterIdx].filterOptions.filter(
+            x => x.isSelected === true
+          )[0] || "";
+
+        filteredTestNames =
+          this.getCurrentTestNameFilter(
+            model.testNames,
+            searchAPI.subjects,
+            selectedGrade.key
+          ) || [];
+
+        let filterOptions: FilterOptionModel[] = [];
+
+        if (searchAPI.subjects && searchAPI.subjects.length > 0) {
+          filterOptions = ItemSearch.searchOptionFilterString(
+            filteredTestNames,
+            FilterType.TestNames,
+            searchAPI.testNames
+          );
+        }
+
+        if (selectedTestName && selectedTestName != undefined) {
+          const selectedItemRowIndex = filterOptions.findIndex(
+            obj => obj.key === selectedTestName
+          );
+          if (selectedItemRowIndex !== -1 && filterOptions) {
+            filterOptions[selectedItemRowIndex].isSelected = true;
+          }
+        }
+
+        filters[testNameFilterIdx].filterOptions = filterOptions;
+      }
 
       // claims
       if (claimFilterIdx !== -1 && model.claims) {
@@ -292,7 +420,6 @@ export class Filter {
         filters[targetFilterIdx].filterOptions = filterOptions;
       }
     }
-
     return filters;
   }
 

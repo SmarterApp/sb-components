@@ -17,7 +17,6 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
     return (
       <div className="search-result-container">
         <ReactModal
-          // isOpen={this.state.showModal}
           isOpen={modelState}
           contentLabel="About This Item Modal"
           onRequestClose={this.handleHideModal}
@@ -30,6 +29,9 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
             aria-hidden="true"
           >
             <div className="modal-header">
+              <h4 className="modal-title">
+                <h4> </h4>
+              </h4>
               <button
                 className="close"
                 onClick={this.handleHideModal}
@@ -39,15 +41,21 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
               </button>
             </div>
             <div className="modal-body">
-              <div>
-                <strong>
-                  <i
-                    className="error-message fa fa-exclamation-triangle"
-                    aria-hidden="true"
-                  />{" "}
-                  {this.props.StatusMessage}
-                </strong>
-              </div>
+              <form id="accessibility-form">
+                <div className="accessibility-groups">
+                  <div className="accessibility-resource-type section section-light">
+                    <h5 style={{ fontWeight: "bold" }}>
+                      <i
+                        className="error-message fa fa-exclamation-triangle"
+                        aria-hidden="true"
+                      />
+                      {"    "}
+
+                      {this.props.StatusMessage}
+                    </h5>
+                  </div>
+                </div>
+              </form>
             </div>
             <div className="modal-footer">
               <button
@@ -55,7 +63,7 @@ export class ErrorMessageModal extends React.Component<ErrorMessageModalProps> {
                 aria-label="Close modal"
                 onClick={this.handleHideModal}
               >
-                Close
+                Ok
               </button>
             </div>
           </div>

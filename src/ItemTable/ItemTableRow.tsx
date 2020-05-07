@@ -9,7 +9,13 @@ export interface ItemTableRowProps {
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
   isItemSelected: boolean;
+/*<<<<<<< HEAD
   // numberOfSelectedItem: number;
+=======*/
+  numberOfSelectedItem: number;
+  getSelectedItemCount: () => number;
+  showErrorModalOnPrintItemsCountExceeded: () => void;
+//>>>>>>> dev
 }
 
 const unChecked = <i className="fa fa-square-o fa-sm table-icon" aria-hidden="true" />;
@@ -23,14 +29,13 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
-    console.log("shouldcomponentupdate called " + this.props.rowData.selected);
-    return (
-      // this.props.isExpanded !== nextProps.isExpanded ||
-      // this.props.rowData.selected !== nextProps.rowData.selected ||
-      // this.props.isItemSelected !== nextProps.isItemSelected
-      true
-      // this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
-    );
+    // return (
+    //   this.props.isExpanded !== nextProps.isExpanded ||
+    //   this.props.rowData.selected !== nextProps.rowData.selected ||
+    //   this.props.isItemSelected !== nextProps.isItemSelected ||
+    //   this.props.numberOfSelectedItem !== nextProps.numberOfSelectedItem
+    // );
+    return true;
   }
 
   handleRowClick = (rowData: ItemCardModel) => {
@@ -43,26 +48,68 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
+/*<<<<<<< HEAD
   handleCheckboxClick = (e: React.MouseEvent<HTMLTableDataCellElement>, rowData: ItemCardModel) => {
     if (rowData.selected === true) rowData.selected = false;
     else rowData.selected = true;
     //e.stopPropagation();
     this.props.onRowSelect(rowData);
     //this.props.onRowExpand(rowData);
+=======*/
+  handleCheckboxClick = (
+    e: React.MouseEvent<HTMLTableDataCellElement>,
+    rowData: ItemCardModel
+  ) => {
+//>>>>>>> dev
     e.stopPropagation();
+    let selectedItemsCount = this.props.getSelectedItemCount();
+    if (rowData.selected !== true && selectedItemsCount >= 20) {
+      this.props.showErrorModalOnPrintItemsCountExceeded();
+      return;
+    } else {
+      if (rowData.selected === true) rowData.selected = false;
+      else rowData.selected = true;
+      this.props.onRowSelect(rowData);
+      e.stopPropagation();
+    }
   };
 
-  handleCheckboxKeyUpEnter = (
+  handleKeyUpSpacebar = (
     e: React.KeyboardEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
     if (e.keyCode === 13) {
-      e.stopPropagation();
-      this.props.onRowSelect(rowData);
+      e.preventDefault();
+      return;
+    }
+    if (e.keyCode === 32) {
+      e.preventDefault();
+      let selectedItemsCount = this.props.getSelectedItemCount();
+
+      if (rowData.selected !== true && selectedItemsCount >= 20) {
+        this.props.showErrorModalOnPrintItemsCountExceeded();
+        return;
+      } else {
+        if (rowData.selected === true) rowData.selected = false;
+        else rowData.selected = true;
+        this.props.onRowSelect(rowData);
+      }
+      e.preventDefault();
     }
   };
 
+/*<<<<<<< HEAD
   renderColumnGroup(colGroup: ColumnGroup, cellData: ItemCardModel): JSX.Element {
+=======*/
+  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+  };
+
+  renderColumnGroup(
+    colGroup: ColumnGroup,
+    cellData: ItemCardModel
+  ): JSX.Element {
+//>>>>>>> dev
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
@@ -102,7 +149,15 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         </span>
       );
     } else {
-      content = <span>{columnText}</span>;
+      if (col.className === "item") {
+        content = (
+          <a tabIndex={0} role="link">
+            {columnText}
+          </a>
+        );
+      } else {
+        content = <span>{columnText}</span>;
+      }
     }
 
     return <span key={col.className}>{content}</span>;
@@ -154,7 +209,22 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
+/*<<<<<<< HEAD
       controls = [<>{tooltip}</>];
+=======*/
+      controls = [
+        <td
+          className="item-checkbox"
+          key="checkbox-control"
+          onClick={e => this.handleCheckboxClick(e, rowData)}
+          onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
+          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+          tabIndex={0}
+        >
+          {rowData.selected === true ? checked : unChecked}&nbsp;
+        </td>
+      ];
+//>>>>>>> dev
     }
 
     return controls;
