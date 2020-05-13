@@ -66,7 +66,8 @@ export class PrintWizardSteps2 extends React.Component<PrintWizardSteps2_Props> 
             onChangeModelState={this.props.onChangeModelState}
             showModal={this.props.showModal}
             itemsInCartCount={this.props.itemsInCart.length.toString()}
-            isSelectedItemsHaveMathItem = {this.props.isSelectedItemsHaveMathItem}
+            areSelectedItemsHaveMath = {this.props.isSelectedItemsHaveMathItem}
+            StatusMessage = {"Check it........"}
           />
         </>
       );

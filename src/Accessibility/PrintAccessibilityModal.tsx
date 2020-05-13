@@ -289,9 +289,9 @@ export class PrintAccessibilityModal extends React.Component<
               </button>
             </div>
           </div>
-        </div>
+        </ReactModal>
         {this.renderDesignatedSupport()}
-      </>
+      </div>
     );
   }
 }

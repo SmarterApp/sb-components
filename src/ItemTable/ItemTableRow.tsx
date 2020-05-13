@@ -48,6 +48,16 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
+  handleCheckboxKeyUpEnter = (
+    e: React.KeyboardEvent<HTMLTableDataCellElement>,
+    rowData: ItemCardModel
+  ) => {
+    if (e.keyCode === 13) {
+      e.stopPropagation();
+      this.props.onRowSelect(rowData);
+    }
+  };
+
 /*<<<<<<< HEAD
   handleCheckboxClick = (e: React.MouseEvent<HTMLTableDataCellElement>, rowData: ItemCardModel) => {
     if (rowData.selected === true) rowData.selected = false;
