@@ -103,7 +103,11 @@ export class BasicFilterContainer extends React.Component<
       <AdvancedFilter
         {...fil}
         isMultiSelect={true}
-        displayAllButton={true}
+        displayAllButton={
+          fil.displayAllButton == null || undefined
+            ? true
+            : fil.displayAllButton
+        }
         key={iter}
         onFilterOptionSelect={opt => this.onFilterSelect(fil, opt)}
       />

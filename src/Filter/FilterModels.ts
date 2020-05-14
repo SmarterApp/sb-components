@@ -75,7 +75,8 @@ export enum FilterType {
   Calculator = "Calculator",
   TechnologyType = "TechnologyType", // Contains Performance and CAT
   SearchItemId = "SearchItemId",
-  TestNames = "TestNames"
+  TestNames = "TestNames",
+  CoreStandards = "CoreStandards"
 }
 
 export interface FilterOptionModel {
@@ -89,6 +90,7 @@ export interface BasicFilterCategoryModel extends FilterCategoryModel {
   optionType: OptionTypeModel;
   placeholderText?: string;
   hideSelectMessage?: boolean;
+  displayAllButton?: boolean;
 }
 
 export interface FilterCategoryModel {

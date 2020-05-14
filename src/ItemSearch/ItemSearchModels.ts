@@ -13,16 +13,20 @@ export type SearchFilterStringTypes =
   | InteractionTypeModel
   | SearchBaseModel
   | TestNameModel;
+
 export type SearchFilterTypes =
   | SearchFilterStringTypes
   | TargetModel
   | GradeLevels
-  | ClaimModel;
+  | ClaimModel
+  | CoreStandardModel;
+
 export type SearchFilterModelTypes =
   | FilterSearchGradeLevelModel
   | FilterSearchStringModel<SearchFilterStringTypes>
   | FilterSearchTargetModel
-  | FilterSearchClaimModel;
+  | FilterSearchClaimModel
+  | FilterSearchCoreStandardModel;
 
 export interface SubjectClaimsModel {
   [subject: string]: { text: string; value: string }[];
@@ -49,6 +53,7 @@ export interface TestNameModel extends SearchBaseModel {
 export interface ClaimModel extends SearchBaseModel {
   targetCodes?: string[];
   claimNumber: string;
+  coreStandardCodes?: string;
 }
 
 export interface TargetModel {
@@ -56,6 +61,14 @@ export interface TargetModel {
   nameHash: number;
   idLabel: string;
   id: string;
+}
+
+export interface CoreStandardModel {
+  commonCoreStandardsId: string;
+  commonCoreStandardsDescription: number;
+  claimId: string;
+  subject: string;
+  target: TargetModel;
 }
 
 export interface SearchAPIParamsModel {
@@ -69,6 +82,7 @@ export interface SearchAPIParamsModel {
   targets?: string[];
   calculator?: boolean;
   testNames?: string[];
+  coreStandards?: string[];
 }
 
 export interface ItemsSearchModel {
@@ -77,6 +91,7 @@ export interface ItemsSearchModel {
   claims?: ClaimModel[];
   targets?: TargetModel[];
   testNames?: TestNameModel[];
+  coreStandard?: CoreStandardModel[];
 }
 
 export interface ItemsSearchFilterModel {
@@ -89,6 +104,7 @@ export interface ItemsSearchFilterModel {
   calculator: FilterSearchStringModel<SearchBaseModel>;
   testNames: FilterSearchStringModel<TestNameModel>;
   testNameItemPools: TestNameItemsPoolModel[];
+  coreStandards: FilterSearchCoreStandardModel;
 }
 
 export interface FilterSearchModel {
@@ -118,6 +134,11 @@ export interface FilterSearchGradeLevelModel extends FilterSearchModel {
 export interface FilterSearchTargetModel extends FilterSearchModel {
   filterOptions: TargetModel[];
   code: FilterType.Target;
+}
+
+export interface FilterSearchCoreStandardModel extends FilterSearchModel {
+  filterOptions: CoreStandardModel[];
+  code: FilterType.CoreStandards;
 }
 
 export interface FilterSearchGradeModel extends FilterSearchModel {

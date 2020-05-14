@@ -15,7 +15,8 @@ import {
   SearchFilterModelTypes,
   ItemsSearchFilterModel,
   ClaimModel,
-  TestNameItemsPoolModel
+  TestNameItemsPoolModel,
+  CoreStandardModel
 } from "../ItemSearch/ItemSearchModels";
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
 import { GradeLevels, GradeLevel } from "../GradeLevels/GradeLevels";
@@ -27,6 +28,7 @@ export class ItemSearch {
     filterModels: FilterCategoryModel[]
   ): SearchAPIParamsModel {
     const subjects = Filter.getSelectedCodes(FilterType.Subject, filterModels);
+
     const testNames = Filter.getSelectedCodes(
       FilterType.TestNames,
       filterModels
@@ -58,8 +60,9 @@ export class ItemSearch {
       calculatorCodes && calculatorCodes.length > 0
         ? calculatorCodes[0] === "true"
         : undefined;
-    const targets = Filter.getSelectedTargets(filterModels);
 
+    const targets = Filter.getSelectedTargets(filterModels);
+    const coreStandards = Filter.getSelectedTargets(filterModels);
     return {
       subjects,
       gradeLevels,
@@ -69,7 +72,8 @@ export class ItemSearch {
       catOnly,
       performanceOnly,
       calculator,
-      testNames
+      testNames,
+      coreStandards
     };
   }
 
@@ -136,6 +140,10 @@ export class ItemSearch {
           category
         ]);
         newModel.testNames = testNameCodes;
+        break;
+      case FilterType.CoreStandards:
+        const CoreStandardsCodes = Filter.getSelectedCoreStandards([category]);
+        newModel.coreStandards = CoreStandardsCodes;
         break;
       default:
     }
@@ -273,6 +281,29 @@ export class ItemSearch {
     });
   }
 
+  public static searchOptionToFilterCoreStandard(
+    options: CoreStandardModel[],
+    filterType: FilterType,
+    defaultOptionKeys?: string[],
+    searchApi?: string[]
+  ): FilterOptionModel[] {
+    let selectedCodes = searchApi;
+    if (searchApi === undefined || searchApi.length < 1) {
+      selectedCodes = defaultOptionKeys;
+    }
+    debugger;
+    return options.map(o => {
+      return {
+        filterType,
+        label: o.commonCoreStandardsId,
+        key: o.commonCoreStandardsId,
+        isSelected: (selectedCodes || []).some(
+          s => s === o.commonCoreStandardsId
+        )
+      };
+    });
+  }
+
   public static searchOptionToFilterClaim(
     options: ClaimModel[],
     filterType: FilterType,
@@ -372,6 +403,14 @@ export class ItemSearch {
           filter.code,
           defaultOptionKeys,
           flagCodes
+        );
+        break;
+      case FilterType.CoreStandards:
+        options = this.searchOptionToFilterCoreStandard(
+          filter.filterOptions,
+          filter.code,
+          defaultOptionKeys,
+          searchApi.coreStandards
         );
         break;
       default:

@@ -2,10 +2,11 @@ import { ItemCardModel } from "../ItemCard/ItemCardModels";
 
 export type HeaderType =
   | "Item"
-  | "Claim/Target"
+  | "Claim"
   | "Subject"
   | "Grade"
-  | "Item Type";
+  | "Item Type"
+  | "Target";
 
 export enum SortDirection {
   NoSort = 0,
@@ -63,24 +64,19 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) => a.grade - b.grade
   },
   {
-    header: "Claim/Target",
-    headerClassName: "claimAndTarget",
+    header: "Claim",
+    headerClassName: "claim",
     cols: [
       {
         accessor: card => card.claimLabel,
         className: "claim"
-      },
-      {
-        accessor: card => card.targetId,
-        className: "target",
-        helpText: card => card.targetDescription
       }
     ],
     compare: (a, b) => {
       let direction;
-      if (a.claimCode < b.claimCode || a.targetId < b.targetId) {
+      if (a.claimCode < b.claimCode) {
         direction = SortDirection.Ascending;
-      } else if (a.claimCode > b.claimCode || a.targetId > b.targetId) {
+      } else if (a.claimCode > b.claimCode) {
         direction = SortDirection.Descending;
       } else {
         direction = SortDirection.NoSort;
@@ -88,6 +84,18 @@ export const headerColumns: ColumnGroup[] = [
 
       return direction;
     }
+  },
+  {
+    header: "Target",
+    headerClassName: "Target",
+    cols: [
+      {
+        accessor: label => label.targetId,
+        className: "target",
+        helpText: card => card.targetDescription
+      }
+    ],
+    compare: (a, b) => a.targetId.localeCompare(b.targetId)
   },
   {
     header: "Item Type",
