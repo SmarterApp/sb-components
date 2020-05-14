@@ -1,8 +1,10 @@
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
+import { getContentStandardCode } from "../ItemCard/ItemContentStandardHelper";
 
 export type HeaderType =
   | "Item"
   | "Claim"
+  | "Standard"
   | "Subject"
   | "Grade"
   | "Item Type"
@@ -32,6 +34,26 @@ export interface ColumnGroup {
   cols: SortColumnModel[];
   compare: (a: ItemCardModel, b: ItemCardModel) => number;
   headerHelp?: string;
+}
+
+// Logic for content standard
+export function getContentStandard(
+  ccssDescription: any,
+  commonCoreStandardId: any,
+  subjectCode: any,
+  claimCode: any,
+  flag_sendcommonCoreStanrdId: boolean
+) {
+  const standard = getContentStandardCode(
+    subjectCode,
+    claimCode,
+    commonCoreStandardId,
+    ccssDescription
+  );
+  commonCoreStandardId = standard["commonCoreStandardId"];
+  ccssDescription = standard["ccssDescription"];
+  if (flag_sendcommonCoreStanrdId) return commonCoreStandardId;
+  else return ccssDescription;
 }
 
 export const headerColumns: ColumnGroup[] = [
@@ -96,6 +118,61 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.targetId.localeCompare(b.targetId)
+  },
+  {
+    header: "Standard",
+    headerClassName: "standard",
+    cols: [
+      {
+        accessor: label =>
+          getContentStandard(
+            label.ccssDescription,
+            label.commonCoreStandardId,
+            label.subjectCode,
+            label.claimCode,
+            true
+          ),
+        className: "standard"
+      },
+      {
+        accessor: label => "",
+        className: "standard",
+        helpText: label =>
+          getContentStandard(
+            label.ccssDescription,
+            label.commonCoreStandardId,
+            label.subjectCode,
+            label.claimCode,
+            false
+          )
+      }
+    ],
+    compare: (a, b) => {
+      debugger;
+      let direction;
+      const commonCoreStandardId_1 = getContentStandard(
+        a.ccssDescription,
+        a.commonCoreStandardId,
+        a.subjectCode,
+        a.claimCode,
+        true
+      );
+      const commonCoreStandardId_2 = getContentStandard(
+        b.ccssDescription,
+        b.commonCoreStandardId,
+        b.subjectCode,
+        b.claimCode,
+        true
+      );
+      if (commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Ascending;
+      } else if (commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Descending;
+      } else {
+        direction = SortDirection.NoSort;
+      }
+      return direction;
+    }
   },
   {
     header: "Item Type",
