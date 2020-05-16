@@ -219,21 +219,21 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-/*<<<<<<< HEAD
+//<<<<<<< HEAD
       controls = [<>{tooltip}</>];
-=======*/
-      controls = [
-        <td
-          className="item-checkbox"
-          key="checkbox-control"
-          onClick={e => this.handleCheckboxClick(e, rowData)}
-          onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-          tabIndex={0}
-        >
-          {rowData.selected === true ? checked : unChecked}&nbsp;
-        </td>
-      ];
+//=======
+      // controls = [
+      //   <td
+      //     className="item-checkbox"
+      //     key="checkbox-control"
+      //     onClick={e => this.handleCheckboxClick(e, rowData)}
+      //     onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
+      //     onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+      //     tabIndex={0}
+      //   >
+      //     {rowData.selected === true ? checked : unChecked}&nbsp;
+      //   </td>
+      // ];
 //>>>>>>> dev
     }
 

@@ -109,7 +109,7 @@ export const itemCardList: ItemCardModel[] = [
     targetShortName: "",
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
-    isPerformanceItem: false,
+    isPerformanceItem: true,
     brailleOnlyItem: false
   },
   {
@@ -227,3 +227,11 @@ export const itemCardProps: ItemCardProps = {
   },
   isPrintLimitEnabled: true
 };
+
+
+//PerformanceTaskAssociatedItems mockup data
+export const performanceTaskAssociatedItems:any = {
+  "3206": [3163, 3206, 3615],
+  "3163": [3163, 3206, 3615],
+  "3615": [3163, 3206, 3615],
+}

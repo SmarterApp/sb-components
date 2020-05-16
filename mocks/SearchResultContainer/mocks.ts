@@ -1,5 +1,5 @@
 import { SearchResultContainerProps, SearchResultType } from "@src/index";
-import { itemCardList, totalItemsCardList } from "@mocks/index";
+import { itemCardList, totalItemsCardList, performanceTaskAssociatedItems } from "@mocks/index";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
@@ -41,7 +41,8 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   item: {
     kind: "none"
   },
-  defaultRenderType: SearchResultType.ItemCard
+  defaultRenderType: SearchResultType.ItemCard,
+  performanceTaskAssociatedItems: performanceTaskAssociatedItems
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {
@@ -57,3 +58,5 @@ export const mockSearchResultEmptyProps: SearchResultContainerProps = {
   },
   defaultRenderType: SearchResultType.ItemCard
 };
+
+
