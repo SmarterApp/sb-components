@@ -11,6 +11,7 @@ export interface PrintWizardSteps1_Props {
   StatusMessage?: string;
   currentStep: number;
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
+  associatedItemsInPrintCart?: ItemCardModel[];
 }
 
 export interface PrintWizardSteps2_Props {
@@ -31,7 +32,7 @@ export class PrintWizardSteps1 extends React.Component<PrintWizardSteps1_Props> 
   constructor(props: PrintWizardSteps1_Props) {
     super(props);
   }
-
+  
   render() {
     if (this.props.currentStep !== 1) return null;
     else {
@@ -40,6 +41,7 @@ export class PrintWizardSteps1 extends React.Component<PrintWizardSteps1_Props> 
           <div className="accessibility-resource-type section section-light">
             <PrintCartTableContainer 
               ItemsInPrintCart={this.props.itemsInCart}
+              associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
               onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
             />
           </div>

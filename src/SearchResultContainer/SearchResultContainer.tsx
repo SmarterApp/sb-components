@@ -61,6 +61,7 @@ export interface SearchResultContainerState {
   hasReceiveNewProps: number;
   itemsInPrintCart: ItemCardModel[];
   numberOfSelectedItems: number;
+  associatedItemsInPrintCart: any;
 }
 
 /**
@@ -85,7 +86,8 @@ export class SearchResultContainer extends React.Component<
         selectedItems: [],
         hasReceiveNewProps: 0,
         itemsInPrintCart: [],
-        numberOfSelectedItems: 0
+        numberOfSelectedItems: 0,
+        associatedItemsInPrintCart: {}
       };
     }
 
@@ -107,24 +109,41 @@ export class SearchResultContainer extends React.Component<
   handleSelectItem = (item: ItemCardModel) => {
     // Associated PT items should also be seletced if item is PT item
     if(item.isPerformanceItem) {
-      const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[item.itemKey];
-      const itemCards = this.props.itemCards !== undefined ? this.props.itemCards.slice() : undefined;
-      for(let i = 0; i < associatedItemsKey.length; i++) {    
-        if(itemCards){
-          for(let j = 0; j < itemCards.length; j++) {
-            if(associatedItemsKey[i] == itemCards[j].itemKey) {
-              this.props.onItemSelection(itemCards[j]);
-              this.updateSelectedItemsInState(itemCards[j]);
-            }
-          }
+      // const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[item.itemKey];
+      // const itemCards = this.props.itemCards !== undefined ? this.props.itemCards.slice() : undefined;
+      // for(let i = 0; i < associatedItemsKey.length; i++) {    
+      //   if(itemCards){
+      //     for(let j = 0; j < itemCards.length; j++) {
+      //       if(associatedItemsKey[i] == itemCards[j].itemKey) {
+      //         this.props.onItemSelection(itemCards[j]);
+      //         this.updateSelectedItemsInState(itemCards[j]);
+      //       }
+      //     }
           
+      //   }
+      // }
+      const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[item.itemKey];
+      const itemCards = this.props.totalItemCards !== undefined ? this.props.totalItemCards.slice() : undefined;
+      let associatedItems = this.state.associatedItemsInPrintCart;
+      if(itemCards) {
+        // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+        let associatedItems_temp = [];
+        for(let i=0; i<associatedItemsKey.length; i++) {
+          const x = itemCards.filter(item => item.itemKey === associatedItemsKey[i]);
+          associatedItems_temp.push(x);
         }
+        associatedItems[item.itemKey] = associatedItems_temp;
       }
+          
+      //     === associatedItems.forEach(element => {
+      //     element
+      //   }) associatedItemsKey[1]);
+      this.setState({associatedItemsInPrintCart: associatedItems});
     }
-    else {
+    // else {
       this.props.onItemSelection(item);
       this.updateSelectedItemsInState(item);
-    }
+    // }
   };
 
   handleSyncSelectedItemsAndItemsinCart = (itemsInPrintCart: ItemCardModel[], isItemsInCartChanged: boolean) => {
@@ -470,7 +489,7 @@ export class SearchResultContainer extends React.Component<
    * Renders Print Accessibility model
    */
   renderPrintAccessibility(): JSX.Element {
-    const { showModal, statusMessage, showErrorModal } = this.state;
+    const { showModal, statusMessage, showErrorModal, associatedItemsInPrintCart } = this.state;
     const selectedItems  = this.state.selectedItems.slice();
     return (
       <>
@@ -478,6 +497,7 @@ export class SearchResultContainer extends React.Component<
           showModal= {showModal}
           onChangeModelState={this.handleShowModal}
           itemsInCart={selectedItems}
+          associatedItemsInPrintCart={associatedItemsInPrintCart}
           onSubmitPrint={this.handlePrintItemsClick}
           isSelectedItemsHaveMathItem = {this.isSelectedItemsHaveMathItem()}
           syncSelectedItemsAndItemsinCart = {this.handleSyncSelectedItemsAndItemsinCart}

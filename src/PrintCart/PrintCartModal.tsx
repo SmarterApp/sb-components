@@ -22,6 +22,7 @@ export interface PrintCartProps {
   ) => void;
   onUpdateItemsInPrintCart:(item:ItemCardModel)=>void;
   isSelectedItemsHaveMathItem: boolean;
+  associatedItemsInPrintCart?: ItemCardModel[];
 }
 export interface PrintCartState {
   isChanged: boolean;
@@ -110,6 +111,7 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
       <>
         <PrintWizardSteps1
           itemsInCart={this.props.itemsInCart}
+          associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
           currentStep={this.state.currentStep}
           onAddOrRemoveSelectedItems = {this.props.onUpdateItemsInPrintCart}
         />
