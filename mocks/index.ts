@@ -48,7 +48,8 @@ export {
   itemCardProps,
   itemCardList,
   sortableItemCards,
-  totalItemsCardList
+  totalItemsCardList,
+  performanceTaskAssociatedItems
 } from "./ItemCard/mocks";
 
 //

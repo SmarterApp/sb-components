@@ -18,6 +18,7 @@ export interface ItemTableRowProps {
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
 }
 
 const unChecked = (
@@ -61,10 +62,29 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
+  handleCheckboxKeyUpEnter = (
+    e: React.KeyboardEvent<HTMLTableDataCellElement>,
+    rowData: ItemCardModel
+  ) => {
+    if (e.keyCode === 13) {
+      e.stopPropagation();
+      this.props.onRowSelect(rowData);
+    }
+  };
+
+  /*<<<<<<< HEAD
+  handleCheckboxClick = (e: React.MouseEvent<HTMLTableDataCellElement>, rowData: ItemCardModel) => {
+    if (rowData.selected === true) rowData.selected = false;
+    else rowData.selected = true;
+    //e.stopPropagation();
+    this.props.onRowSelect(rowData);
+    //this.props.onRowExpand(rowData);
+=======*/
   handleCheckboxClick = (
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
+    //>>>>>>> dev
     e.stopPropagation();
     let selectedItemsCount = this.props.getSelectedItemCount();
     if (rowData.selected !== true && selectedItemsCount >= 20) {
@@ -102,6 +122,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
+  /*<<<<<<< HEAD
+  renderColumnGroup(colGroup: ColumnGroup, cellData: ItemCardModel): JSX.Element {
+=======*/
   handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
     e.stopPropagation();
   };
@@ -110,6 +133,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     colGroup: ColumnGroup,
     cellData: ItemCardModel
   ): JSX.Element {
+    //>>>>>>> dev
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
@@ -167,20 +191,86 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   renderControls(): JSX.Element[] | undefined {
     const { rowData, hasControls, isExpanded } = this.props;
+
+    const shouldBeDisabled = () => {
+      if (
+        this.props.rowData.selected === undefined ||
+        this.props.rowData.selected === false
+      ) {
+        if (this.props.associatedItems !== undefined) {
+          const associatedItems = this.props.associatedItems;
+          const itemKey = this.props.rowData.itemKey;
+          for (const itemKeyInAssociatedItems in associatedItems) {
+            const associatedItemsArray =
+              associatedItems[itemKeyInAssociatedItems];
+            if (associatedItemsArray.includes(itemKey) !== -1)
+              return "disabled";
+          }
+        }
+      }
+
+      return " ";
+    };
+
+    const addOrRemoveIcon = () => {
+      return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
+    };
+    const addRemoveItemBtnCSSClass = () => {
+      return rowData.selected === true ? "btn-red-border" : "btn-blue-border";
+    };
+
+    const getToolTipMsg = () => {
+      if (addOrRemoveIcon() === "fa-plus-circle")
+        return "Add item to print queue";
+      else return "Remove item from print queue ";
+    };
+
+    const getAddRemoveTextBtn = () => {
+      return rowData.selected === true ? " Remove" : " Add";
+    };
+
+    const iconsAddOrRemove = (
+      <td
+        className={`item-checkbox item-add-remove `}
+        onClick={e => this.handleCheckboxClick(e, rowData)}
+        onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+        tabIndex={0}
+      >
+        <button
+          type="button"
+          className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
+        >
+          <i className={"fa fa-2x " + addOrRemoveIcon()} />
+          {/* {getAddRemoveTextBtn()} */}
+        </button>
+      </td>
+    );
+
+    const tooltip = generateTooltip({
+      displayIcon: false,
+      className: "",
+      helpText: <label>{getToolTipMsg()}</label>,
+      displayText: iconsAddOrRemove
+    });
+
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-      controls = [
-        <td
-          className="item-checkbox"
-          key="checkbox-control"
-          onClick={e => this.handleCheckboxClick(e, rowData)}
-          onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-          tabIndex={0}
-        >
-          {rowData.selected === true ? checked : unChecked}&nbsp;
-        </td>
-      ];
+      //<<<<<<< HEAD
+      controls = [<>{tooltip}</>];
+      //=======
+      // controls = [
+      //   <td
+      //     className="item-checkbox"
+      //     key="checkbox-control"
+      //     onClick={e => this.handleCheckboxClick(e, rowData)}
+      //     onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
+      //     onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+      //     tabIndex={0}
+      //   >
+      //     {rowData.selected === true ? checked : unChecked}&nbsp;
+      //   </td>
+      // ];
+      //>>>>>>> dev
     }
 
     return controls;
@@ -202,3 +292,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     );
   }
 }
+
+// for expand...  deprecitd... after addremove icon
+// <td className="arrow-indicator" tabIndex={0} key="expand-control">
+//   {isExpanded ? expand : collapse}
+// </td>

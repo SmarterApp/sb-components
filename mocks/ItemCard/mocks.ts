@@ -232,5 +232,13 @@ export const itemCardProps: ItemCardProps = {
   showErrorModalOnPrintItemsCountExceeded: () => {
     return;
   },
-  isPrintLimitEnabled: true
+  isPrintLimitEnabled: true,
+  associatedItems: []
+};
+
+//PerformanceTaskAssociatedItems mockup data
+export const performanceTaskAssociatedItems: any = {
+  3206: [3163, 3206, 3615],
+  3163: [3163, 3206, 3615],
+  3615: [3163, 3206, 3615]
 };

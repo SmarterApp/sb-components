@@ -10,6 +10,8 @@ export interface PrintAccessibilityContainerProps {
     GlossaryRequired?: string,
     IllustrationRequired?: string
   ) => void;
+
+  itemsInCartCount: string;
   StatusMessage: string;
   areSelectedItemsHaveMath: boolean;
 }
@@ -186,6 +188,8 @@ export class PrintAccessibilityModal extends React.Component<
   renderDesignatedSupport(): JSX.Element {
     if (!this.state.areSelectedItemsHaveMath) {
       return <></>;
+
+      // Please wait while items is converting to pdf<ReactLoading type={"spokes"} color={"#000000"} height={'20%'} width={'20%'} />
     } else {
       return (
         <div className="accessibility-groups">
@@ -197,6 +201,7 @@ export class PrintAccessibilityModal extends React.Component<
             <p className="font-italic">
               Note: These options only apply to math items.
             </p>
+
             <div className="accessibility-dropdowns">
               <div className="accessibility-dropdown form-group selection-enabled">
                 {this.renderTranslationLanguages()}
@@ -211,77 +216,104 @@ export class PrintAccessibilityModal extends React.Component<
     }
   }
 
+  // render() {
+  //   const modelState = this.props.showModal;
+  //   return (
+
+  //     <div className="search-result-container">
+  //       <ReactModal
+  //         // isOpen={this.state.showModal}
+  //         isOpen={modelState}
+  //         contentLabel="About This Item Modal"
+  //         onRequestClose={this.handleHideModal}
+  //         overlayClassName="react-modal-overlay"
+  //         className="react-modal-content about-item-modal"
+  //       >
+  //         <div
+  //           className="modal-wrapper"
+  //           aria-labelledby="About Item Modal"
+  //           aria-hidden="true"
+  //         >
+  //           <div className="modal-header">
+  //             <h4 className="modal-title">
+  //               <h4> Choose Accessibility Options for Printout </h4>
+  //             </h4>
+  //             <button
+  //               className="close"
+  //               onClick={this.handleHideModal}
+  //               aria-label="Close modal"
+  //             >
+  //               <span className="fa fa-times" aria-hidden="true" />
+  //             </button>
+  //           </div>
+  //           <div className="modal-body">
+  //             <div className="status-message-print">
+  //               <h5 className="accessibility-form-heading">
+  //                 {" "}
+  //                 Total Item(s) selected : {this.props.StatusMessage}
+  //               </h5>{" "}
+  //             </div>
+  //             <form id="accessibility-form">
+  //               <div className="accessibility-groups">
+  //                 <div className="accessibility-resource-type section section-light">
+  //                   <h4 className="green-title">
+  //                     <span className="fa fa-tasks" aria-hidden="true" />{" "}
+  //                     Universal Tools
+  //                   </h4>
+  //                   <div className="accessibility-dropdown form-group selection-enabled">
+  //                     {this.renderGlossaryOptions()}
+  //                   </div>
+  //                 </div>
+  //               </div>
+
+  //               {this.renderDesignatedSupport()}
+  //             </form>
+  //           </div>
+  //           <div className="modal-footer">
+  //             <button
+  //               className="btn btn-primary"
+  //               aria-label="Close modal"
+  //               onClick={this.handleHideModal}
+  //             >
+  //               Close
+  //             </button>
+  //             <button
+  //               className="btn btn-primary"
+  //               aria-label="Continue modal"
+  //               onClick={this.handlePrintItems}
+  //             >
+  //               Print Items to PDF
+  //             </button>
+  //           </div>
+  //         </div>
+  //       </ReactModal>
+  //       {this.renderDesignatedSupport()}
+  //     </div>
+  //   );
+  // }
+
   render() {
     const modelState = this.props.showModal;
     return (
-      <div className="search-result-container">
-        <ReactModal
-          // isOpen={this.state.showModal}
-          isOpen={modelState}
-          contentLabel="About This Item Modal"
-          onRequestClose={this.handleHideModal}
-          overlayClassName="react-modal-overlay"
-          className="react-modal-content about-item-modal"
-        >
-          <div
-            className="modal-wrapper"
-            aria-labelledby="About Item Modal"
-            aria-hidden="true"
-          >
-            <div className="modal-header">
-              <h4 className="modal-title">
-                <h4> Choose Accessibility Options for Printout </h4>
+      <>
+        <div className="accessibility-groups">
+          <div className="accessibility-resource-type section section-light">
+            <div className="accessibility-header">
+              <h4 className="green-title">
+                <span className="fa fa-tasks" aria-hidden="true" /> Universal
+                Tools
               </h4>
-              <button
-                className="close"
-                onClick={this.handleHideModal}
-                aria-label="Close modal"
-              >
-                <span className="fa fa-times" aria-hidden="true" />
-              </button>
             </div>
-            <div className="modal-body">
-              <div className="status-message-print">
-                <h5 className="accessibility-form-heading">
-                  {" "}
-                  Total Item(s) selected : {this.props.StatusMessage}
-                </h5>{" "}
-              </div>
-              <form id="accessibility-form">
-                <div className="accessibility-groups">
-                  <div className="accessibility-resource-type section section-light">
-                    <h4 className="green-title">
-                      <span className="fa fa-tasks" aria-hidden="true" />{" "}
-                      Universal Tools
-                    </h4>
-                    <div className="accessibility-dropdown form-group selection-enabled">
-                      {this.renderGlossaryOptions()}
-                    </div>
-                  </div>
-                </div>
 
-                {this.renderDesignatedSupport()}
-              </form>
-            </div>
-            <div className="modal-footer">
-              <button
-                className="btn btn-primary"
-                aria-label="Close modal"
-                onClick={this.handleHideModal}
-              >
-                Close
-              </button>
-              <button
-                className="btn btn-primary"
-                aria-label="Continue modal"
-                onClick={this.handlePrintItems}
-              >
-                Print Items to PDF
-              </button>
+            <div className="accessibility-dropdowns">
+              <div className="accessibility-dropdown form-group selection-enabled">
+                {this.renderGlossaryOptions()}
+              </div>
             </div>
           </div>
-        </ReactModal>
-      </div>
+        </div>
+        {this.renderDesignatedSupport()}
+      </>
     );
   }
 }

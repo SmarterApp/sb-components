@@ -8,9 +8,14 @@ import {
   ItemCard,
   IframeModal
 } from "@src/index";
-import * as ReactModal from "react-modal";
-import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
+import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
+import { PrintCartButton } from "@src/PrintCart/PrintCartButton";
+import {
+  getUpdatedSelectedItems,
+  shouldUpdateSelectedItemsInState
+} from "./SearchResultContainerHelper";
+import * as arrayMove from "array-move";
 
 /**
  * SearchResultType enum
@@ -44,8 +49,9 @@ export interface SearchResultContainerProps {
   defaultRenderType?: SearchResultType;
   isLinkTable: boolean;
   showSelectAllButton: boolean;
-  totalItemCards?: ItemCardModel[];
   isPrintLimitEnabled: boolean;
+  totalItemCards?: ItemCardModel[];
+  performanceTaskAssociatedItems: any[];
 }
 
 /**
@@ -59,7 +65,11 @@ export interface SearchResultContainerState {
   showModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
-  countSelectedItems: number;
+  selectedItems: ItemCardModel[];
+  hasReceiveNewProps: number;
+  itemsInPrintCart: ItemCardModel[];
+  numberOfSelectedItems: number;
+  associatedItemsInPrintCart: any;
 }
 
 /**
@@ -74,95 +84,99 @@ export class SearchResultContainer extends React.Component<
 > {
   constructor(props: SearchResultContainerProps) {
     super(props);
+    this.handleUpdateItemsInPrintcart = this.handleUpdateItemsInPrintcart.bind(
+      this
+    );
+    // this.shouldAddToCartButtonBeDisabled = this.shouldAddToCartButtonBeDisabled.bind(this);
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
       showModal: false,
       showErrorModal: false,
       statusMessage: "",
-      countSelectedItems: this.getSelectedItemCount()
+      selectedItems: [],
+      hasReceiveNewProps: 0,
+      itemsInPrintCart: [],
+      numberOfSelectedItems: 0,
+      associatedItemsInPrintCart: {}
     };
   }
 
   componentWillReceiveProps(nextProps: SearchResultContainerProps) {
+    let shouldUpdateSelectedItemsState = 0;
     let loading = true;
     if (nextProps.itemCards) {
       loading = false;
     }
-    this.setState({ loading });
+
+    let selectedItems: ItemCardModel[] | undefined;
+    ({
+      selectedItems,
+      shouldUpdateSelectedItemsState
+    } = shouldUpdateSelectedItemsInState(
+      nextProps,
+      shouldUpdateSelectedItemsState
+    ));
+    if (shouldUpdateSelectedItemsState === 1)
+      this.setState({ selectedItems: selectedItems, loading });
+    else this.setState({ loading });
   }
 
   handleSelectItem = (item: ItemCardModel) => {
+    // Associated PT items should also be seletced if item is PT item
+    if (item.isPerformanceItem) {
+      const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[
+        item.itemKey
+      ];
+      const itemCards =
+        this.props.totalItemCards !== undefined
+          ? this.props.totalItemCards.slice()
+          : undefined;
+      let associatedItems = this.state.associatedItemsInPrintCart;
+      if (itemCards) {
+        // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+        let associatedItems_temp = [];
+        for (let i = 0; i < associatedItemsKey.length; i++) {
+          const x = itemCards.filter(
+            item => item.itemKey === associatedItemsKey[i]
+          );
+          associatedItems_temp.push(x);
+        }
+        associatedItems[item.itemKey] = associatedItems_temp;
+      }
+      this.setState({ associatedItemsInPrintCart: associatedItems });
+    }
     this.props.onItemSelection(item);
-    this.handleCountNumberOfItemSelection();
+    this.updateSelectedItemsInState(item);
   };
-  /**
-   * Renders all results to ItemCard view.
-   */
-  renderItemCards(): JSX.Element[] | undefined {
-    let tags: JSX.Element[] | undefined;
 
-    if (this.props.itemCards) {
-      tags = this.props.itemCards.map(digest => (
-        <ItemCard
-          rowData={digest}
-          onRowSelect={this.handleSelectItem}
-          key={`${digest.bankKey} - ${digest.itemKey}`}
-          getSelectedItemCount={this.getSelectedItemCount}
-          showErrorModalOnPrintItemsCountExceeded={
-            this.showErrorModalOnPrintItemsCountExceeded
-          }
-          isPrintLimitEnabled={this.props.isPrintLimitEnabled}
-        />
-      ));
-    }
+  handleSyncSelectedItemsAndItemsinCart = (
+    itemsInPrintCart: ItemCardModel[],
+    isItemsInCartChanged: boolean
+  ) => {
+    if (isItemsInCartChanged === true)
+      this.setState({ selectedItems: itemsInPrintCart });
+  };
 
-    return tags;
-  }
+  updateSelectedItemsInState = (item: ItemCardModel) => {
+    let updatedSelectedItems = getUpdatedSelectedItems(
+      item,
+      this.state.selectedItems.slice()
+    );
+    this.setState({ selectedItems: updatedSelectedItems });
+  };
 
   /**
-   * Depending on what renderType is selected, ItemCards or a table
-   * will be rendered.
+   * Get number of selectedItems
    */
-  renderBody(): JSX.Element {
-    let tag: JSX.Element | JSX.Element[] | undefined;
-    if (this.props.itemCards && this.props.itemCards.length > 0) {
-      if (this.state.renderType === SearchResultType.Table) {
-        tag = (
-          <ItemTableContainer
-            onRowSelection={this.props.onRowSelection}
-            onItemSelection={this.props.onItemSelection}
-            itemCards={this.props.itemCards}
-            item={this.props.item}
-            isLinkTable={this.props.isLinkTable}
-            onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
-            numberOfSelectedItem={this.state.countSelectedItems}
-            showErrorModalOnPrintItemsCountExceeded={
-              this.showErrorModalOnPrintItemsCountExceeded
-            }
-            getSelectedItemCount={this.getSelectedItemCount}
-          />
-        );
-      } else {
-        tag = this.renderItemCards();
-      }
-    } else {
-      if (this.state.loading) {
-        tag = <div className="loader" />;
-      } else {
-        tag = <p>No items found.</p>;
-      }
-    }
 
-    return <div className="search-result-body">{tag}</div>;
-  }
-
-  handleTypeChange = (renderType: SearchResultType): void => {
-    this.setState({ renderType });
+  getSelectedItemsCount = (): number => {
+    return this.state.selectedItems.length;
   };
 
   handleResetItems = (): void => {
     this.props.onResetItems();
+    this.setState({ itemsInPrintCart: [], selectedItems: [] });
     this.handleCountNumberOfItemSelection();
   };
   handleSelectAllItems = (): void => {
@@ -171,8 +185,15 @@ export class SearchResultContainer extends React.Component<
     this.handleCountNumberOfItemSelection();
   };
 
+  handleReorderItemsInPrintCart = (i: number, j: number): void => {
+    const itemsInPrintCart = this.state.itemsInPrintCart.slice();
+    const reOrderedItems = arrayMove(itemsInPrintCart, i, j);
+    this.setState({ itemsInPrintCart: reOrderedItems });
+    this.handleSyncSelectedItemsAndItemsinCart(reOrderedItems, true);
+  };
+
   handleCountNumberOfItemSelection = (): void => {
-    this.setState({ countSelectedItems: this.getSelectedItemCount() });
+    this.setState({ numberOfSelectedItems: this.getSelectedItemCount() });
   };
 
   getSelectedItemCount = (): number => {
@@ -205,6 +226,9 @@ export class SearchResultContainer extends React.Component<
     return areSelectedItemsHaveMath;
   };
 
+  /**
+   * Print items on print btn click
+   */
   handlePrintItemsClick = (
     langCode: string,
     GlossaryRequired: string,
@@ -213,6 +237,47 @@ export class SearchResultContainer extends React.Component<
     this.props.onPrintItems(langCode, GlossaryRequired, IllustrationRequired);
     this.setState({ showModal: false, statusMessage: "" });
   };
+
+  handleTypeChange = (renderType: SearchResultType): void => {
+    this.setState({ renderType });
+  };
+
+  //Fire this event call on adding/removing item from print cart modal view
+  handleUpdateItemsInPrintcart = (item: ItemCardModel) => {
+    const UpdatedItemsInCart: ItemCardModel[] = getUpdatedSelectedItems(
+      item,
+      this.state.itemsInPrintCart
+    );
+    //this.setState({ItemsInPrintCart: UpdatedItemsInCart});
+  };
+
+  /**
+   * Modal on click of print cart btn
+   * set selectedItemsincart same as selectedItems
+   */
+  // handleShowPrintCartModal = (modelState: boolean): void => {
+  //   if(modelState === false) {
+  //     this.setState({
+  //       showModal: modelState,
+  //       ItemsInPrintCart: this.state.selectedItems
+  //     })
+  //   }
+  //   if(this.state.selectedItems && this.state.selectedItems.length > 0 ) {
+  //     const seletedItems = this.state.selectedItems.slice();
+  //     this.setState({
+  //       showModal: modelState,
+  //       ItemsInPrintCart: this.state.selectedItems,
+  //       statusMessage: seletedItems.toString()
+  //     });
+  //   }
+  //   else {
+  //     this.setState({
+  //       showModal: modelState,
+  //       ItemsInPrintCart: this.state.selectedItems
+  //     });
+  //   }
+  //   //this.componentDidMount();
+  // };
 
   handleShowModal = (modelState: boolean): void => {
     //check item selected , if not show error msg popup
@@ -227,24 +292,47 @@ export class SearchResultContainer extends React.Component<
         }
       }
     }
-    //console.log(selectedItemCount);
-    if (selectedItemCount == 0 || selectedItemCount < 0) {
+    if (this.state.selectedItems && this.state.selectedItems.length > 0) {
+      const seletedItems = this.state.selectedItems.slice();
       this.setState({
-        showErrorModal: modelState,
-        statusMessage: "Please select at least one item to print"
+        showModal: modelState,
+        itemsInPrintCart: this.state.selectedItems,
+        statusMessage: seletedItems.toString()
       });
     } else {
       this.setState({
         showModal: modelState,
-        statusMessage: selectedItemCount.toString()
+        itemsInPrintCart: this.state.selectedItems
       });
     }
+    //this.componentDidMount();
+  };
+
+  isSelectedItemsHaveMathItem = (): boolean => {
+    let isSelectedItemsHaveMath: boolean = false;
+    if (
+      this.state.selectedItems !== undefined &&
+      this.getSelectedItemCount() > 0
+    ) {
+      let len = this.state.selectedItems.length;
+      for (let i = 0; i < len; i++) {
+        if (
+          this.state.selectedItems[i].selected === true &&
+          this.state.selectedItems[i].subjectCode === "MATH"
+        ) {
+          isSelectedItemsHaveMath = true;
+          break;
+        }
+      }
+    }
+    return isSelectedItemsHaveMath;
   };
 
   handleHideErrorModal = () => {
     this.setState({ showErrorModal: false, statusMessage: "" });
   };
 
+  /*********************All rendering method starts from here**********************************/
   showErrorModalOnPrintItemsCountExceeded = () => {
     this.setState({
       showErrorModal: true,
@@ -312,18 +400,11 @@ export class SearchResultContainer extends React.Component<
 
   renderPrintButton(viewType: SearchResultType): JSX.Element {
     return (
-      <button
+      <PrintCartButton
+        label="Print Cart"
+        itemsInCart={this.getSelectedItemsCount()}
         onClick={() => this.handleShowModal(true)}
-        aria-label="Print Item"
-        title="Print Items"
-        className={"btn btn-default search-result-container-header-button"}
-      >
-        <i
-          aria-hidden="true"
-          className="glyphicon glyphicon-th-large glyphicon-print"
-        />{" "}
-        Print
-      </button>
+      />
     );
   }
 
@@ -346,9 +427,35 @@ export class SearchResultContainer extends React.Component<
   }
 
   /**
+   * Renders all results to ItemCard view.
+   */
+  renderItemCards(): JSX.Element[] | undefined {
+    let tags: JSX.Element[] | undefined;
+
+    if (this.props.itemCards) {
+      tags = this.props.itemCards.map(digest => (
+        <ItemCard
+          rowData={digest}
+          onRowSelect={this.handleSelectItem}
+          key={`${digest.bankKey} - ${digest.itemKey}`}
+          getSelectedItemCount={this.getSelectedItemCount}
+          showErrorModalOnPrintItemsCountExceeded={
+            this.showErrorModalOnPrintItemsCountExceeded
+          }
+          isPrintLimitEnabled={this.props.isPrintLimitEnabled}
+          associatedItems={this.state.associatedItemsInPrintCart}
+        />
+      ));
+    }
+
+    return tags;
+  }
+
+  /**
    * Renders toggle buttons for changing the layout to table and item card
    */
   renderHeader(): JSX.Element {
+    const toShowModal = true;
     return (
       <div className="row search-result-header-row">
         <div className="col-sm-4 header-grid-div header-print-button-groups">
@@ -358,6 +465,14 @@ export class SearchResultContainer extends React.Component<
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
+        {/* <div className="col-sm-4 header-grid-div">
+          <PrintCartButton
+            // onClick={this.onSelectionAddItemToCart}
+            label="Print Cart"
+            itemsInCart={this.getSelectedItemsCount()}
+            onClick={() => this.handleShowPrintCartModal(true)}
+          /> */}
+
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
@@ -367,24 +482,32 @@ export class SearchResultContainer extends React.Component<
   }
 
   /**
-   * Returns a wrapper of items displayed as a table or card view
-   * @returns default render method
-   */
-
-  /**
    * Renders Print Accessibility model
-   *
    */
   renderPrintAccessibility(): JSX.Element {
-    const { showModal, statusMessage, showErrorModal } = this.state;
+    const {
+      showModal,
+      statusMessage,
+      showErrorModal,
+      associatedItemsInPrintCart
+    } = this.state;
+    const selectedItems = this.state.selectedItems.slice();
     return (
       <>
-        <PrintAccessibilityModal
-          onChangeModelState={this.handleShowModal}
-          onSubmitPrint={this.handlePrintItemsClick}
+        <PrintCartModal
           showModal={showModal}
+          onChangeModelState={this.handleShowModal}
+          itemsInCart={selectedItems}
+          associatedItemsInPrintCart={associatedItemsInPrintCart}
+          onSubmitPrint={this.handlePrintItemsClick}
+          isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
+          syncSelectedItemsAndItemsinCart={
+            this.handleSyncSelectedItemsAndItemsinCart
+          }
+          onUpdateItemsInPrintCart={this.handleSelectItem}
           StatusMessage={statusMessage}
-          areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
+          onItemsReorder={this.handleReorderItemsInPrintCart}
+          //areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -396,8 +519,41 @@ export class SearchResultContainer extends React.Component<
   }
 
   /**
-   * Returns a wrapper of Accessability model View
+   * Depending on what renderType is selected, ItemCards or a table
+   * will be rendered.
    */
+  renderBody(): JSX.Element {
+    let tag: JSX.Element | JSX.Element[] | undefined;
+    if (this.props.itemCards && this.props.itemCards.length > 0) {
+      if (this.state.renderType === SearchResultType.Table) {
+        tag = (
+          <ItemTableContainer
+            onRowSelection={this.props.onRowSelection}
+            onItemSelection={this.handleSelectItem}
+            itemCards={this.props.itemCards}
+            item={this.props.item}
+            isLinkTable={this.props.isLinkTable}
+            onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
+            numberOfSelectedItem={this.state.numberOfSelectedItems}
+            showErrorModalOnPrintItemsCountExceeded={
+              this.showErrorModalOnPrintItemsCountExceeded
+            }
+            getSelectedItemCount={this.getSelectedItemCount}
+            associatedItems={this.state.associatedItemsInPrintCart}
+          />
+        );
+      } else {
+        tag = this.renderItemCards();
+      }
+    } else {
+      if (this.state.loading) {
+        tag = <div className="loader" />;
+      } else {
+        tag = <p>No items found.</p>;
+      }
+    }
+    return <div className="search-result-body">{tag}</div>;
+  }
 
   render() {
     return (
@@ -409,3 +565,34 @@ export class SearchResultContainer extends React.Component<
     );
   }
 }
+
+/**
+ * Depending on what renderType is selected, ItemCards or a table
+ * will be rendered.
+ */
+// renderBody(): JSX.Element {
+//   let tag: JSX.Element | JSX.Element[] | undefined;
+//   if (this.props.itemCards && this.props.itemCards.length > 0) {
+//     if (this.state.renderType === SearchResultType.Table) {
+//       tag = (
+//           <ItemTableContainer
+//             onRowSelection={this.props.onRowSelection}
+//             onItemSelection={this.handleSelectItem}
+//             itemCards={this.props.itemCards}
+//             item={this.props.item}
+//             isLinkTable={this.props.isLinkTable}
+//           />
+//       );
+//     } else {
+//       tag = this.renderItemCards();
+//     }
+//   } else {
+//     if (this.state.loading) {
+//       tag = <div className="loader" />;
+//     } else {
+//       tag = <p>No items found.</p>;
+//     }
+//   }
+
+//   return <div className="search-result-body">{tag}</div>;
+// }

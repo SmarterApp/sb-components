@@ -25,6 +25,7 @@ export interface ItemCardProps {
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
   isPrintLimitEnabled: boolean;
+  associatedItems: any[];
 }
 
 export interface ItemCardState {
@@ -62,6 +63,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     e.stopPropagation();
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
+
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
     if (
@@ -116,6 +118,25 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         ? " btn-selected"
         : " btn-unselected";
     };
+    const shouldBeDisabled = () => {
+      if (
+        this.props.rowData.selected === undefined ||
+        this.props.rowData.selected === false
+      ) {
+        if (this.props.associatedItems !== undefined) {
+          const associatedItems = this.props.associatedItems;
+          const itemKey = this.props.rowData.itemKey;
+          for (const itemKeyInAssociatedItems in associatedItems) {
+            const associatedItemsArray =
+              associatedItems[itemKeyInAssociatedItems];
+            if (associatedItemsArray.includes(itemKey) === true)
+              return "disabled";
+          }
+        }
+      }
+
+      return " ";
+    };
     const selectOrSelectedBtnText = () => {
       return this.props.rowData.selected === true
         ? " Item Selected"
@@ -155,12 +176,27 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: commonCoreStandardId
       });
 
-      const tooltip_printOption = generateTooltip({
-        displayIcon: true,
-        className: "box",
-        helpText: <span>Select to print this item</span>,
-        displayText: ""
-      });
+      const addOrRemoveIcon = () => {
+        return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
+      };
+      const addOrRemoveIconClass = () => {
+        return this.props.rowData.selected === true
+          ? "btn-danger"
+          : "btn-warning";
+      };
+      const getToolTipMsg = () => {
+        if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
+        else return "Remove item from print bucket ";
+      };
+      const iconsAddOrRemove = (
+        <button
+          className={"item-add-remove btn btn-sm btn-default"}
+          onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+          //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+        >
+          <i className={"fa fa-lg " + addOrRemoveIcon()} />
+        </button>
+      );
 
       content = (
         <div
@@ -218,7 +254,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <button
               type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} `}
               onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
               tabIndex={0}
               onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
@@ -228,6 +264,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               {selectOrSelectedBtnText()}
             </button>
           </div>
+          <button
+            type="button"
+            className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+            onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+          >
+            <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+            {selectOrSelectedBtnText()}
+          </button>
         </div>
       );
     }

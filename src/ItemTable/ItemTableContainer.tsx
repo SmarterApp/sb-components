@@ -29,6 +29,7 @@ export interface ItemTableContainerProps {
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
 }
 
 /**
@@ -125,7 +126,7 @@ export class ItemTableContainer extends React.Component<
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
     this.setState({ isItemSelected: this.state.isItemSelected ? false : true });
-    this.props.onCountNumberOfItemSelection();
+    // this.props.onCountNumberOfItemSelection();
   };
   /**
    * Sorts two ItemCardModels on the property specified by the sort parameter
@@ -203,6 +204,7 @@ export class ItemTableContainer extends React.Component<
             showErrorModalOnPrintItemsCountExceeded={
               this.props.showErrorModalOnPrintItemsCountExceeded
             }
+            associatedItems={this.props.associatedItems}
           />
         );
       }
