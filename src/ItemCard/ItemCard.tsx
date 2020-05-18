@@ -264,14 +264,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               {selectOrSelectedBtnText()}
             </button>
           </div>
-          <button
+          {/* <button
             type="button"
             className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
             onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
           >
             <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
             {selectOrSelectedBtnText()}
-          </button>
+          </button> */}
         </div>
       );
     }
