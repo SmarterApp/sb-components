@@ -195,7 +195,7 @@ export function resetFilters(
 ): BothFilterModels {
   if (advancedFilter) {
     advancedFilter.forEach(f =>
-      f.filterOptions.forEach(o => (o.isSelected = false))
+      f.filterOptions.forEach(o => ((o.isSelected = false), (o.key = "")))
     );
   }
   basicFilter.forEach(f => {

@@ -21,7 +21,7 @@ export interface ItemCardModel {
   brailleOnlyItem?: boolean;
   domain?: string;
   depthOfKnowledge?: string;
-  commonCoreStandardId?: string;
+  commonCoreStandardId: string;
   ccssDescription?: string;
   calculator?: boolean;
 }

@@ -133,8 +133,58 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
     );
   }
 
+  searchHandler = (searchText: string) => {
+    const newOption: FilterOptionModel = {
+      label: this.props.label,
+      key: searchText,
+      isSelected: true,
+      filterType: this.props.code
+    };
+
+    this.props.onFilterOptionSelect(newOption);
+  };
+
+  renderSearch(): JSX.Element {
+    const {
+      onFilterOptionSelect,
+      optionType,
+      label,
+      helpText,
+      placeholderText,
+      filterOptions
+    } = this.props;
+    if (optionType == OptionTypeModel.inputBox) {
+      const text = helpText ? <p>{helpText}</p> : undefined;
+      const value =
+        filterOptions && filterOptions.length > 0 ? filterOptions[0].key : "";
+      const tooltip = generateTooltip({
+        helpText: text,
+        displayIcon: text !== undefined,
+        displayText: (
+          <span className="tooltip-label" info-label="true">
+            {label}
+          </span>
+        )
+      });
+
+      return (
+        <div className="input-box">
+          <label>{tooltip}</label>
+          <input
+            className="form-control"
+            type="text"
+            onChange={t => this.searchHandler(t.currentTarget.value)}
+            placeholder={placeholderText}
+            value={value}
+          />
+        </div>
+      );
+    }
+    return <></>;
+  }
+
   render() {
-    const { disabled, label, helpText } = this.props;
+    const { disabled, label, helpText, optionType } = this.props;
     // replace "-" with spaces, replace "." with nothing.
     const id = label.replace(/\ /g, "-").replace(/\./g, "");
     if (disabled) {
@@ -147,8 +197,9 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
         id={`${id}-filter`.toLocaleLowerCase()}
         className={"filter-selection"}
       >
-        {this.renderHeader()}
-        {this.renderBody()}
+        {optionType != OptionTypeModel.inputBox && this.renderHeader()}
+        {optionType != OptionTypeModel.inputBox && this.renderBody()}
+        {optionType === OptionTypeModel.inputBox && this.renderSearch()}
       </div>
     );
   }

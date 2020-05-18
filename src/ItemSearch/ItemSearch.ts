@@ -118,6 +118,8 @@ export class ItemSearch {
       case FilterType.Claim:
         const claimCodes = Filter.getSelectedCodes(category.code, [category]);
         newModel.claims = claimCodes;
+        newModel.coreStandards = undefined;
+        newModel.targets = undefined;
         break;
       case FilterType.InteractionType:
         const itCodes = Filter.getSelectedCodes(category.code, [category]);
@@ -291,7 +293,7 @@ export class ItemSearch {
     if (searchApi === undefined || searchApi.length < 1) {
       selectedCodes = defaultOptionKeys;
     }
-    debugger;
+
     return options.map(o => {
       return {
         filterType,
@@ -466,6 +468,17 @@ export class ItemSearch {
     testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
+
+    //restrict load item until selection of grade and subject
+    if (
+      filter.gradeLevels == undefined ||
+      filter.gradeLevels == GradeLevels.NA ||
+      filter.subjects == undefined ||
+      (filter.subjects !== undefined && filter.subjects.length <= 0)
+    ) {
+      return (results = []);
+    }
+
     // item
     if (filter.itemId && filter.itemId !== "") {
       results = results.filter(i =>
@@ -545,6 +558,14 @@ export class ItemSearch {
       results = results.filter(function(item) {
         return itemsID.find(x => x == item.itemKey);
       });
+    }
+
+    // core Standards
+    if (filter.coreStandards && filter.coreStandards.length > 0) {
+      const { coreStandards } = filter;
+      results = results.filter(
+        i => coreStandards.findIndex(t => t === i.commonCoreStandardId) !== -1
+      );
     }
 
     return results;

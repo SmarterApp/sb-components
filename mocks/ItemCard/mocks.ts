@@ -2,7 +2,6 @@ import { ItemCardModel, ItemTableContainerProps } from "@src/index";
 import { ItemCardProps } from "@src/ItemCard/ItemCard";
 
 export const completeItemCard: ItemCardModel = {
-
   selected: false,
   bankKey: 187,
   itemKey: 3434,
@@ -71,7 +70,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeLabel: "Equation",
     isPerformanceItem: true,
     brailleOnlyItem: false,
-    calculator: true
+    calculator: true,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -91,7 +91,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeLabel: "Multiple Choice",
     isPerformanceItem: true,
     brailleOnlyItem: false,
-    calculator: false
+    calculator: false,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -110,7 +111,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -129,7 +131,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   }
 ];
 
@@ -153,7 +156,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeCode: "EQ",
     interactionTypeLabel: "Equation",
     isPerformanceItem: true,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -172,7 +176,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeCode: "MC",
     interactionTypeLabel: "Multiple Choice",
     isPerformanceItem: true,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -191,7 +196,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   },
   {
     bankKey: 187,
@@ -210,7 +216,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
-    brailleOnlyItem: false
+    brailleOnlyItem: false,
+    commonCoreStandardId: ""
   }
 ];
 

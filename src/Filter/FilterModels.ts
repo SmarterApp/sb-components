@@ -33,11 +33,16 @@ export function advFilterCategorySelect(
   selectedCat: AdvancedFilterCategoryModel,
   option?: FilterOptionModel
 ): AdvancedFilterCategoryModel {
-  const newCategory = { ...selectedCat };
+  let newCategory = { ...selectedCat };
   const options = newCategory.filterOptions.slice();
   const allPressed =
     (option === undefined || option.filterType === undefined) &&
     newCategory.displayAllButton;
+
+  if (option != undefined && option.filterType === "SearchItemId") {
+    newCategory.filterOptions[0] = option;
+    return newCategory;
+  }
 
   if (!newCategory.disabled) {
     if (allPressed) {
@@ -106,6 +111,8 @@ export interface FilterCategoryModel {
 
 export interface AdvancedFilterCategoryModel extends FilterCategoryModel {
   displayAllButton: boolean;
+  optionType: OptionTypeModel;
+  placeholderText?: string;
 }
 
 // tslint:disable-next-line: no-empty-interface

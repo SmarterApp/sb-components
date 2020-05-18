@@ -117,7 +117,18 @@ export const headerColumns: ColumnGroup[] = [
         helpText: card => card.targetDescription
       }
     ],
-    compare: (a, b) => a.targetId.localeCompare(b.targetId)
+
+    compare: (a, b) => {
+      let direction;
+      if (a.targetId < b.targetId) {
+        direction = SortDirection.Ascending;
+      } else if (a.targetId > b.targetId) {
+        direction = SortDirection.Descending;
+      } else {
+        direction = SortDirection.NoSort;
+      }
+      return direction;
+    }
   },
   {
     header: "Standard",
@@ -148,7 +159,6 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => {
-      debugger;
       let direction;
       const commonCoreStandardId_1 = getContentStandard(
         a.ccssDescription,

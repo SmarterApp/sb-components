@@ -47,6 +47,11 @@ export class SearchUrl {
     if (search.calculator !== undefined) {
       pairs.push(`${FilterType.Calculator}=${search.calculator}`);
     }
+    if (search.coreStandards && search.coreStandards.length > 0) {
+      pairs.push(
+        this.encodeFilter(FilterType.CoreStandards, search.coreStandards)
+      );
+    }
     if (
       search.testNames &&
       search.testNames.length > 0 &&

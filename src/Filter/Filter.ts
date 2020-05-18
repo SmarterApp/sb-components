@@ -176,18 +176,22 @@ export class Filter {
     coreStandards: CoreStandardModel[],
     claim: ClaimModel[],
     subject: string,
-    targetCodes: string[] | undefined
+    targetCodes: TargetModel[]
   ): CoreStandardModel[] {
     let filteredCS: CoreStandardModel[] = [];
 
+    //filter by claim and subject
     claim.forEach(cm => {
       let cs = coreStandards.filter(
         t => t.claimId === cm.claimNumber && t.subject === subject
       );
+
       if (cs) {
         if (targetCodes != undefined && targetCodes && targetCodes.length > 0) {
           targetCodes.forEach(std => {
-            let coreStandardByTargets = cs.filter(c => c.target.idLabel == std);
+            let coreStandardByTargets = cs.filter(
+              c => c.target.nameHash == std.nameHash
+            );
 
             if (coreStandardByTargets) {
               filteredCS = filteredCS.concat(coreStandardByTargets);
@@ -320,7 +324,8 @@ export class Filter {
   public static getCurrentTargets(
     targets: TargetModel[],
     searchApiModel: SearchAPIParamsModel,
-    filteredClaims: ClaimModel[]
+    filteredClaims: ClaimModel[],
+    filteredCoreStandards: CoreStandardModel[] | undefined
   ): TargetModel[] | undefined {
     let filteredTargets: TargetModel[] | undefined;
 
@@ -330,7 +335,7 @@ export class Filter {
           /* tslint:disable: no-non-null-assertion */
           searchApiModel.claims!.indexOf(c.code) !== -1
       );
-      const targetCodes = this.getClaimTargetCodes(selectedClaims);
+      let targetCodes = this.getClaimTargetCodes(selectedClaims);
       filteredTargets = this.filterTargets(targets, targetCodes);
     }
 
@@ -345,7 +350,8 @@ export class Filter {
   public static getCurrentCoreStandards(
     coreStandards: CoreStandardModel[],
     searchApiModel: SearchAPIParamsModel,
-    filteredClaims: ClaimModel[]
+    filteredClaims: ClaimModel[],
+    filteredTargets: TargetModel[] | undefined
   ): CoreStandardModel[] | undefined {
     let filteredCoreStandards: CoreStandardModel[] | undefined;
 
@@ -353,7 +359,8 @@ export class Filter {
       searchApiModel.claims &&
       searchApiModel.claims.length > 0 &&
       searchApiModel.subjects &&
-      searchApiModel.subjects.length
+      searchApiModel.subjects.length &&
+      filteredTargets != undefined
     ) {
       //Claim Code
       const selectedClaims = filteredClaims.filter(
@@ -364,11 +371,14 @@ export class Filter {
       //Subject Code
       const subjectCode = searchApiModel.subjects[0].toString();
 
+      // //target Code
+      let selectedTagets: TargetModel[] = [];
+
       filteredCoreStandards = this.filterCoreStandards(
         coreStandards,
         selectedClaims,
         subjectCode,
-        searchApiModel.targets
+        selectedTagets
       );
     }
 
@@ -501,8 +511,12 @@ export class Filter {
       // targets
       if (targetFilterIdx !== -1 && model.targets && filteredClaims) {
         const filteredTargets =
-          this.getCurrentTargets(model.targets, searchAPI, filteredClaims) ||
-          [];
+          this.getCurrentTargets(
+            model.targets,
+            searchAPI,
+            filteredClaims,
+            model.coreStandard
+          ) || [];
         let filterOptions: FilterOptionModel[] = [];
         if (filteredTargets && filteredTargets.length > 0) {
           filterOptions = ItemSearch.searchOptionToFilterTarget(
@@ -525,7 +539,8 @@ export class Filter {
           this.getCurrentCoreStandards(
             model.coreStandard,
             searchAPI,
-            filteredClaims
+            filteredClaims,
+            model.targets
           ) || [];
 
         let filterOptions: FilterOptionModel[] = [];
