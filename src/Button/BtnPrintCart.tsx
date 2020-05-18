@@ -18,9 +18,6 @@ export interface BtnPrintCartProps {
  */
 // tslint:disable-next-line:variable-name
 export const BtnPrintCart: React.SFC<BtnPrintCartProps> = props => {
-
-  
-
   return (
     // <button
     //   className={`btn btn-primary ${className}`}
@@ -33,8 +30,12 @@ export const BtnPrintCart: React.SFC<BtnPrintCartProps> = props => {
     //   {props.label}
     // </button>
 
-    <button type="button" className="btn btn-default btn-sm" onClick={() => props.onClick(true)}>
-      <span className="glyphicon glyphicon-print"></span> {props.label}{" "}
+    <button
+      type="button"
+      className="btn btn-default btn-sm"
+      onClick={() => props.onClick(true)}
+    >
+      <span className="glyphicon glyphicon-print" /> {props.label}{" "}
       <span className="circle">{props.itemsInCart}</span>
     </button>
   );

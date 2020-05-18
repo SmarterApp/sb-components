@@ -24,6 +24,7 @@ export interface ItemCardProps {
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
   isPrintLimitEnabled: boolean;
+  associatedItems: any[];
 }
 
 export interface ItemCardState {
@@ -61,7 +62,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     e.stopPropagation();
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
-/*<<<<<<< HEAD
+    /*<<<<<<< HEAD
     if (item.selected === true) item.selected = false;
     else item.selected = true;
     this.props.onRowSelect(item);
@@ -102,7 +103,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     if (e.keyCode === 13) {
       e.preventDefault();
     }
-/*>>>>>>> dev*/
+    /*>>>>>>> dev*/
   };
 
   handleOnClick = () => {
@@ -127,6 +128,25 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         ? " btn-selected"
         : " btn-unselected";
     };
+    const shouldBeDisabled = () => {
+      if (
+        this.props.rowData.selected === undefined ||
+        this.props.rowData.selected === false
+      ) {
+        if (this.props.associatedItems !== undefined) {
+          const associatedItems = this.props.associatedItems;
+          const itemKey = this.props.rowData.itemKey;
+          for (const itemKeyInAssociatedItems in associatedItems) {
+            const associatedItemsArray =
+              associatedItems[itemKeyInAssociatedItems];
+            if (associatedItemsArray.includes(itemKey) === true)
+              return "disabled";
+          }
+        }
+      }
+
+      return " ";
+    };
     const selectOrSelectedBtnText = () => {
       return this.props.rowData.selected === true
         ? " Item Selected"
@@ -147,7 +167,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
       };
       const addOrRemoveIconClass = () => {
-        return this.props.rowData.selected === true ? "btn-danger" : "btn-warning";
+        return this.props.rowData.selected === true
+          ? "btn-danger"
+          : "btn-warning";
       };
       const getToolTipMsg = () => {
         if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
@@ -159,7 +181,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
           onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
           //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         >
-          <i className={"fa fa-lg " + addOrRemoveIcon()}></i>
+          <i className={"fa fa-lg " + addOrRemoveIcon()} />
         </button>
       );
       const tooltip_addRemovePrintCart = generateTooltip({
@@ -183,17 +205,25 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               <div className="card-icon-container">
                 {/* {tooltip_addRemovePrintCart} */}
                 <span className="card-grade-tag card-icon">
-                  {GradeLevels.GradeLevel.gradeCaseToShortString(this.props.rowData.grade)}
+                  {GradeLevels.GradeLevel.gradeCaseToShortString(
+                    this.props.rowData.grade
+                  )}
                 </span>
               </div>
             </div>
             <p className="card-text grade">
               <span className="card-text-label">Grade:</span>
-              <span className="card-text-value"> {this.props.rowData.gradeLabel}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.gradeLabel}
+              </span>
             </p>
             <p className="card-text claim">
               <span className="card-text-label">Claim:</span>
-              <span className="card-text-value"> {this.props.rowData.claimLabel}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.claimLabel}
+              </span>
             </p>
             <p className="card-text target">
               <span className="card-text-label">Target:</span>
@@ -207,11 +237,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
-              <span className="card-text-value"> {this.props.rowData.itemKey}</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.itemKey}
+              </span>
             </p>
             <button
               type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} `}
               onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
               tabIndex={0}
               onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
@@ -222,13 +255,13 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </button>
           </div>
           <button
-              type="button"
-              className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-            >
-              <i className={"fa  " + onBtnClickChangeIcon()}></i>&nbsp;&nbsp;
-              {selectOrSelectedBtnText()}
-            </button>
+            type="button"
+            className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+            onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+          >
+            <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+            {selectOrSelectedBtnText()}
+          </button>
         </div>
       );
     }

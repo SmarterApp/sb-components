@@ -9,6 +9,7 @@ import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResult
 export interface PrintCartProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
+  onItemsReorder: (i: number, j: number) => void;
   onSubmitPrint: (
     langCode?: string,
     GlossaryRequired?: string,
@@ -20,7 +21,7 @@ export interface PrintCartProps {
     itemsInPrintCart: ItemCardModel[],
     isItemsInCartChanged: boolean
   ) => void;
-  onUpdateItemsInPrintCart:(item:ItemCardModel)=>void;
+  onUpdateItemsInPrintCart: (item: ItemCardModel) => void;
   isSelectedItemsHaveMathItem: boolean;
   associatedItemsInPrintCart?: ItemCardModel[];
 }
@@ -31,7 +32,10 @@ export interface PrintCartState {
   isSelectedItemsHaveMathItem: boolean;
 }
 
-export class PrintCartModal extends React.Component<PrintCartProps, PrintCartState> {
+export class PrintCartModal extends React.Component<
+  PrintCartProps,
+  PrintCartState
+> {
   constructor(props: PrintCartProps) {
     super(props);
     //this.onAddOrRemoveSelectedItems = this.onAddOrRemoveSelectedItems.bind(this);
@@ -44,22 +48,29 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
   }
 
   componentWillReceiveProps(nextProps: PrintCartProps) {
-    if(nextProps.isSelectedItemsHaveMathItem !== this.props.isSelectedItemsHaveMathItem) 
-      this.setState({isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem, itemsInPrintCart: nextProps.itemsInCart});
-    else
-      this.setState({itemsInPrintCart: nextProps.itemsInCart});
-
+    if (
+      nextProps.isSelectedItemsHaveMathItem !==
+      this.props.isSelectedItemsHaveMathItem
+    )
+      this.setState({
+        isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem,
+        itemsInPrintCart: nextProps.itemsInCart
+      });
+    else this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
   // onAddOrRemoveSelectedItems = (item: ItemCardModel) => {
   //   const UpdatedItemsInCart:ItemCardModel[] = getUpdatedSelectedItems(item, this.state.itemsInPrintCart);
-  //   //this.setState({itemsInPrintCart : UpdatedItemsInCart}); 
+  //   //this.setState({itemsInPrintCart : UpdatedItemsInCart});
   // }
 
   handleHideModal = () => {
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
-    this.props.syncSelectedItemsAndItemsinCart(this.state.itemsInPrintCart, true);
+    this.props.syncSelectedItemsAndItemsinCart(
+      this.state.itemsInPrintCart,
+      true
+    );
     // ********set seleteditems state to new one**************************************
   };
 
@@ -94,7 +105,8 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
   };
 
   nextButtonClassName = () => {
-    if (this.state.currentStep === 1 && this.props.itemsInCart.length <= 0) return "disabled";
+    if (this.state.currentStep === 1 && this.props.itemsInCart.length <= 0)
+      return "disabled";
     else return "active";
   };
 
@@ -113,7 +125,8 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
           itemsInCart={this.props.itemsInCart}
           associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
           currentStep={this.state.currentStep}
-          onAddOrRemoveSelectedItems = {this.props.onUpdateItemsInPrintCart}
+          onAddOrRemoveSelectedItems={this.props.onUpdateItemsInPrintCart}
+          onItemsReorder={this.props.onItemsReorder}
         />
 
         <PrintWizardSteps2
@@ -123,7 +136,8 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
           onChangeModelState={this.props.onChangeModelState}
           showModal={this.props.showModal}
           //StatusMessage={statusMessage}
-          isSelectedItemsHaveMathItem = {this.props.isSelectedItemsHaveMathItem}
+          isSelectedItemsHaveMathItem={this.props.isSelectedItemsHaveMathItem}
+          onItemsReorder={this.props.onItemsReorder}
         />
       </>
     );
@@ -133,7 +147,7 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
     const modelState = this.props.showModal;
     return (
       <div className="search-result-container">
-        <ReactModal 
+        <ReactModal
           // isOpen={this.state.showModal}
           isOpen={modelState}
           contentLabel="About This Item Modal"
@@ -142,16 +156,28 @@ export class PrintCartModal extends React.Component<PrintCartProps, PrintCartSta
           className="react-modal-content about-item-modal print-cart-modal"
           ariaHideApp={false}
         >
-          <div className="modal-wrapper" aria-labelledby="About Item Modal" aria-hidden="true">
+          <div
+            className="modal-wrapper"
+            aria-labelledby="About Item Modal"
+            aria-hidden="true"
+          >
             <div className="modal-header">
               <h4 className="modal-title">Print Cart</h4>
-              <button className="close" onClick={this.handleHideModal} aria-label="Close modal">
+              <button
+                className="close"
+                onClick={this.handleHideModal}
+                aria-label="Close modal"
+              >
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
             <div className="modal-body print-cart-modal-body">
               <div className="status-message-print">
-                <strong> Total item(s) selected : {this.props.itemsInCart.length}</strong> <br />
+                <strong>
+                  {" "}
+                  Total item(s) selected : {this.props.itemsInCart.length}
+                </strong>{" "}
+                <br />
               </div>
               <form id="accessibility-form">
                 <div className="accessibility-groups">

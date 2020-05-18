@@ -129,6 +129,7 @@
   },
   "dependencies": {
     "@sbac/sbac-ui-kit": "github:osu-cass/sbac-global-ui-kit#develop",
+    "array-move": "^2.2.1",
     "babel-loader": "^8.0.0",
     "font-awesome": "~4.7.0",
     "jquery": "3.2.1",

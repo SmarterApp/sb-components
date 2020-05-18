@@ -1,5 +1,11 @@
 import * as React from "react";
-import { ItemCardModel, ToolTip, generateTooltip, SortColumnModel, ColumnGroup } from "@src/index";
+import {
+  ItemCardModel,
+  ToolTip,
+  generateTooltip,
+  SortColumnModel,
+  ColumnGroup
+} from "@src/index";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -9,19 +15,24 @@ export interface ItemTableRowProps {
   onRowExpand: (item: ItemCardModel) => void;
   onRowSelect: (item: ItemCardModel) => void;
   isItemSelected: boolean;
-/*<<<<<<< HEAD
-  // numberOfSelectedItem: number;
-=======*/
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
-//>>>>>>> dev
+  associatedItems: any[];
 }
 
-const unChecked = <i className="fa fa-square-o fa-sm table-icon" aria-hidden="true" />;
-const checked = <i className="fa fa-check-square-o fa-sm table-icon" aria-hidden="true" />;
-const collapse = <i className="fa fa-chevron-right fa-sm table-icon" aria-hidden="true" />;
-const expand = <i className="fa fa-chevron-down fa-sm table-icon" aria-hidden="true" />;
+const unChecked = (
+  <i className="fa fa-square-o fa-sm table-icon" aria-hidden="true" />
+);
+const checked = (
+  <i className="fa fa-check-square-o fa-sm table-icon" aria-hidden="true" />
+);
+const collapse = (
+  <i className="fa fa-chevron-right fa-sm table-icon" aria-hidden="true" />
+);
+const expand = (
+  <i className="fa fa-chevron-down fa-sm table-icon" aria-hidden="true" />
+);
 
 export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   constructor(props: ItemTableRowProps) {
@@ -42,7 +53,10 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     this.props.onRowExpand(rowData);
   };
 
-  handleKeyUpEnter = (e: React.KeyboardEvent<HTMLTableRowElement>, rowData: ItemCardModel) => {
+  handleKeyUpEnter = (
+    e: React.KeyboardEvent<HTMLTableRowElement>,
+    rowData: ItemCardModel
+  ) => {
     if (e.keyCode === 13) {
       this.props.onRowExpand(rowData);
     }
@@ -58,7 +72,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-/*<<<<<<< HEAD
+  /*<<<<<<< HEAD
   handleCheckboxClick = (e: React.MouseEvent<HTMLTableDataCellElement>, rowData: ItemCardModel) => {
     if (rowData.selected === true) rowData.selected = false;
     else rowData.selected = true;
@@ -70,7 +84,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel
   ) => {
-//>>>>>>> dev
+    //>>>>>>> dev
     e.stopPropagation();
     let selectedItemsCount = this.props.getSelectedItemCount();
     if (rowData.selected !== true && selectedItemsCount >= 20) {
@@ -108,7 +122,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-/*<<<<<<< HEAD
+  /*<<<<<<< HEAD
   renderColumnGroup(colGroup: ColumnGroup, cellData: ItemCardModel): JSX.Element {
 =======*/
   handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
@@ -119,7 +133,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     colGroup: ColumnGroup,
     cellData: ItemCardModel
   ): JSX.Element {
-//>>>>>>> dev
+    //>>>>>>> dev
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
@@ -154,7 +168,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       );
     } else if (col.className === "subject") {
       content = (
-        <span className={`table-subject-highlight ${cellData.subjectCode.toLowerCase()}`}>
+        <span
+          className={`table-subject-highlight ${cellData.subjectCode.toLowerCase()}`}
+        >
           {columnText}
         </span>
       );
@@ -176,35 +192,55 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   renderControls(): JSX.Element[] | undefined {
     const { rowData, hasControls, isExpanded } = this.props;
 
+    const shouldBeDisabled = () => {
+      if (
+        this.props.rowData.selected === undefined ||
+        this.props.rowData.selected === false
+      ) {
+        if (this.props.associatedItems !== undefined) {
+          const associatedItems = this.props.associatedItems;
+          const itemKey = this.props.rowData.itemKey;
+          for (const itemKeyInAssociatedItems in associatedItems) {
+            const associatedItemsArray =
+              associatedItems[itemKeyInAssociatedItems];
+            if (associatedItemsArray.includes(itemKey) !== -1)
+              return "disabled";
+          }
+        }
+      }
+
+      return " ";
+    };
+
     const addOrRemoveIcon = () => {
       return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
     };
     const addRemoveItemBtnCSSClass = () => {
       return rowData.selected === true ? "btn-red-border" : "btn-blue-border";
-    }
+    };
 
     const getToolTipMsg = () => {
-      if (addOrRemoveIcon() === "fa-plus-circle") return "Add item to print queue";
+      if (addOrRemoveIcon() === "fa-plus-circle")
+        return "Add item to print queue";
       else return "Remove item from print queue ";
     };
 
     const getAddRemoveTextBtn = () => {
       return rowData.selected === true ? " Remove" : " Add";
     };
-    
 
     const iconsAddOrRemove = (
       <td
-        className="item-checkbox item-add-remove"
+        className={`item-checkbox item-add-remove `}
         onClick={e => this.handleCheckboxClick(e, rowData)}
         onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         tabIndex={0}
       >
         <button
           type="button"
-          className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()} }`}  //${this.props.rowData.subjectCode.toLowerCase()
+          className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
         >
-          <i className={"fa fa-2x " + addOrRemoveIcon()}></i>
+          <i className={"fa fa-2x " + addOrRemoveIcon()} />
           {/* {getAddRemoveTextBtn()} */}
         </button>
       </td>
@@ -219,9 +255,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-//<<<<<<< HEAD
+      //<<<<<<< HEAD
       controls = [<>{tooltip}</>];
-//=======
+      //=======
       // controls = [
       //   <td
       //     className="item-checkbox"
@@ -234,7 +270,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       //     {rowData.selected === true ? checked : unChecked}&nbsp;
       //   </td>
       // ];
-//>>>>>>> dev
+      //>>>>>>> dev
     }
 
     return controls;

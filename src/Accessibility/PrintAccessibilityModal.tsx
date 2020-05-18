@@ -14,7 +14,6 @@ export interface PrintAccessibilityContainerProps {
   itemsInCartCount: string;
   StatusMessage: string;
   areSelectedItemsHaveMath: boolean;
-
 }
 export interface pageState {
   selectedLangCode?: string;
@@ -38,7 +37,6 @@ export class PrintAccessibilityModal extends React.Component<
   }
 
   componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
-
     if (
       nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath
     ) {
@@ -192,7 +190,6 @@ export class PrintAccessibilityModal extends React.Component<
       return <></>;
 
       // Please wait while items is converting to pdf<ReactLoading type={"spokes"} color={"#000000"} height={'20%'} width={'20%'} />
-	  
     } else {
       return (
         <div className="accessibility-groups">
@@ -303,15 +300,15 @@ export class PrintAccessibilityModal extends React.Component<
           <div className="accessibility-resource-type section section-light">
             <div className="accessibility-header">
               <h4 className="green-title">
-                <span className="fa fa-tasks" aria-hidden="true"></span>  Universal Tools
+                <span className="fa fa-tasks" aria-hidden="true" /> Universal
+                Tools
               </h4>
             </div>
 
             <div className="accessibility-dropdowns">
               <div className="accessibility-dropdown form-group selection-enabled">
-              {this.renderGlossaryOptions()}
+                {this.renderGlossaryOptions()}
               </div>
-              
             </div>
           </div>
         </div>
@@ -320,5 +317,3 @@ export class PrintAccessibilityModal extends React.Component<
     );
   }
 }
-
-

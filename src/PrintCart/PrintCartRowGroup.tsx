@@ -6,30 +6,31 @@ import { ItemCardModel } from "@src/index";
  * @interface PrintCartButtonProps
  */
 export interface PrintCartRowGroupProps {
-    associatedItemsInPrintCart?: ItemCardModel[];
+  associatedItemsInPrintCart?: ItemCardModel[];
 }
 
 export interface PrintCartRowGroupstate {}
 
-export class PrintCartRowGroup extends React.Component<PrintCartRowGroupProps, PrintCartRowGroupstate> {
-    constructor(props: PrintCartRowGroupProps) {
-        super(props);
-        this.state = {};
-    }
+export class PrintCartRowGroup extends React.Component<
+  PrintCartRowGroupProps,
+  PrintCartRowGroupstate
+> {
+  constructor(props: PrintCartRowGroupProps) {
+    super(props);
+    this.state = {};
+  }
 
-    render() {
-        if(this.props.associatedItemsInPrintCart !== undefined) {
-            return (
-                <div>
-                    {this.props.associatedItemsInPrintCart.map((item, index) => (
-                        <h3 key={index}>{item.itemKey}</h3>
-                    ))}
-                    
-                </div>
-            );
-        }
-        else {
-            return(null);
-        }
+  render() {
+    if (this.props.associatedItemsInPrintCart !== undefined) {
+      return (
+        <div>
+          {this.props.associatedItemsInPrintCart.map((item, index) => (
+            <h3 key={index}>{item.itemKey}</h3>
+          ))}
+        </div>
+      );
+    } else {
+      return null;
     }
+  }
 }

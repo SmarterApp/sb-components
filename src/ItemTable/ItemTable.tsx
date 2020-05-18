@@ -24,10 +24,10 @@ export interface ItemTableProps {
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
   isItemSelected: boolean;
-
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -95,6 +95,7 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         showErrorModalOnPrintItemsCountExceeded={
           this.props.showErrorModalOnPrintItemsCountExceeded
         }
+        associatedItems={this.props.associatedItems}
       />
     );
 

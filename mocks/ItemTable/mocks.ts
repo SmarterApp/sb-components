@@ -31,9 +31,13 @@ export const itemTableProps: ItemTableContainerProps = {
   },
 
   numberOfSelectedItem: 0,
-  getSelectedItemCount: () => {return 0;},
-  showErrorModalOnPrintItemsCountExceeded: () => {return}
-
+  getSelectedItemCount: () => {
+    return 0;
+  },
+  showErrorModalOnPrintItemsCountExceeded: () => {
+    return;
+  },
+  associatedItems: []
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

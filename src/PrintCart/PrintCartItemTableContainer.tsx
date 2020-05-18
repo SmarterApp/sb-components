@@ -10,7 +10,7 @@ import {
   ItemTable,
   Resource,
   ItemCardModel,
-  AboutItemModel,
+  AboutItemModel
 } from "@src/index";
 import { PrintCartButtonProps } from "./PrintCartButton";
 import { PrintCartTable } from "@src/PrintCart/PrintCartTable";
@@ -21,6 +21,7 @@ import { timingSafeEqual } from "crypto";
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
+  onItemsReorder: (i: number, j: number) => void;
   associatedItemsInPrintCart?: any[];
 }
 
@@ -39,7 +40,7 @@ export class PrintCartTableContainer extends React.Component<
     super(props);
     this.state = {
       sorts: [],
-      isItemSelected: false,
+      isItemSelected: false
     };
   }
 
@@ -53,21 +54,21 @@ export class PrintCartTableContainer extends React.Component<
   onClickHeader = (col: ColumnGroup) => {
     const sortCheck = (this.state.sorts || []).slice();
     const unmatchFound = sortCheck.findIndex(
-      (hs) => hs.col.header !== col.header
+      hs => hs.col.header !== col.header
     );
     const newSortModel: HeaderSortModel = {
       col,
       direction: SortDirection.NoSort,
-      resetSortCount: 0,
+      resetSortCount: 0
     };
     if (unmatchFound > -1) {
       this.state = {
         sorts: [newSortModel],
-        isItemSelected: this.state.isItemSelected,
+        isItemSelected: this.state.isItemSelected
       };
     }
     const newSorts = (this.state.sorts || []).slice();
-    const headIdx = newSorts.findIndex((hs) => hs.col.header === col.header);
+    const headIdx = newSorts.findIndex(hs => hs.col.header === col.header);
 
     if (headIdx !== -1) {
       const newSort = { ...newSorts[headIdx] };
@@ -83,7 +84,7 @@ export class PrintCartTableContainer extends React.Component<
       const newSort: HeaderSortModel = {
         col,
         direction: SortDirection.Ascending,
-        resetSortCount: 0,
+        resetSortCount: 0
       };
       newSorts.push(newSort);
     }
@@ -111,7 +112,7 @@ export class PrintCartTableContainer extends React.Component<
   getTableData = (): ItemCardModel[] | undefined => {
     const sorts = this.state.sorts || [];
     let itemsInPrintCart = (this.props.ItemsInPrintCart || []).slice();
-    sorts.forEach((sort) => {
+    sorts.forEach(sort => {
       itemsInPrintCart = itemsInPrintCart.sort((lhs, rhs) =>
         this.invokeMultiSort(sort, lhs, rhs)
       );
@@ -142,7 +143,7 @@ export class PrintCartTableContainer extends React.Component<
         No item found in Print Cart.
       </span>
     );
-    if(itemCards !== undefined && itemCards.length !== 0) {
+    if (itemCards !== undefined && itemCards.length !== 0) {
       content = (
         <PrintCartTable
           itemsInPrintCart={itemCards}
@@ -152,20 +153,19 @@ export class PrintCartTableContainer extends React.Component<
           columns={this.pageHeaderColumns}
           isItemSelected={this.state.isItemSelected}
           isLinkTable={false}
+          onItemsReorder={this.props.onItemsReorder}
         />
       );
     }
     return content;
   }
 
-
-
   render() {
     return (
       <div className="section item-table-container">
         <table className="item-table">
           {this.renderTableHeader()}
-          {this.renderTable()}    
+          {this.renderTable()}
         </table>
       </div>
     );

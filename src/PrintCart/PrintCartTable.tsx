@@ -11,7 +11,7 @@ import {
   Resource,
   HeaderSortModel,
   SortColumnModel,
-  ColumnGroup,
+  ColumnGroup
 } from "@src/index";
 import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
 
@@ -20,6 +20,7 @@ export interface PrintCartTableProps {
   associatedItemsInPrintCart?: ItemCardModel[];
   sort: HeaderSortModel[];
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
+  onItemsReorder: (i: number, j: number) => void;
   columns: ColumnGroup[];
   isLinkTable: boolean;
   isItemSelected: boolean;
@@ -36,9 +37,13 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
   }
 
   renderAllRows(): JSX.Element[] {
-    return this.props.itemsInPrintCart.map((item) => {
-      if (item.isPerformanceItem === true && this.props.associatedItemsInPrintCart != undefined) {
-        const associatedItemsInPrintCart = this.props.associatedItemsInPrintCart[item.itemKey];
+    return this.props.itemsInPrintCart.map((item, index) => {
+      if (
+        item.isPerformanceItem === true &&
+        this.props.associatedItemsInPrintCart != undefined
+      ) {
+        const associatedItemsInPrintCart = this.props
+          .associatedItemsInPrintCart[item.itemKey];
         return (
           <PrintCartItemTableRow
             ItemCard={item}
@@ -47,6 +52,8 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
+            index={index}
+            onItemsReorder={this.props.onItemsReorder}
           />
         );
       } else {
@@ -57,27 +64,29 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
+            index={index}
+            onItemsReorder={this.props.onItemsReorder}
           />
         );
       }
     });
   }
 
-//   renderExpandedRow(item: Resource<AboutItemModel>): JSX.Element | undefined {
-//     let result: JSX.Element | undefined;
-//     const itemContent = getResourceContent(item);
-//     if (itemContent) {
-//       result = (
-//         <tr key="item-card-viewer">
-//           <td colSpan={7}>
-//             <ItemCardViewer item={itemContent} />
-//           </td>
-//         </tr>
-//       );
-//     }
+  //   renderExpandedRow(item: Resource<AboutItemModel>): JSX.Element | undefined {
+  //     let result: JSX.Element | undefined;
+  //     const itemContent = getResourceContent(item);
+  //     if (itemContent) {
+  //       result = (
+  //         <tr key="item-card-viewer">
+  //           <td colSpan={7}>
+  //             <ItemCardViewer item={itemContent} />
+  //           </td>
+  //         </tr>
+  //       );
+  //     }
 
-//     return result;
-//   }
+  //     return result;
+  //   }
 
   //   renderRow(rowData: ItemCardModel): JSX.Element[] {
   //     const {
