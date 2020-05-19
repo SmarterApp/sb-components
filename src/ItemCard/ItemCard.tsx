@@ -139,8 +139,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
           for (const itemKeyInAssociatedItems in associatedItems) {
             const associatedItemsArray =
               associatedItems[itemKeyInAssociatedItems];
-            if (associatedItemsArray.includes(itemKey) === true)
-              return "disabled";
+            for (let i = 0; i < associatedItemsArray.length; i++) {
+              console.log(associatedItemsArray[i][0].itemKey);
+              if (associatedItemsArray[i][0].itemKey === itemKey)
+                return "disabled";
+            }
           }
         }
       }
@@ -231,9 +234,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <p className="card-text interaction-type">
               <span className="card-text-label">Item Type:</span>
-              <span className="card-text-value">
-                {` ${this.props.rowData.interactionTypeLabel}`}
-              </span>
+              <span className="card-text-value">{` ${
+                this.props.rowData.interactionTypeLabel
+              }`}</span>
             </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
@@ -244,24 +247,25 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <button
               type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} `}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${shouldBeDisabled()}`}
               onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
               tabIndex={0}
               onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
               onKeyDown={e => this.handleEnterKeyDown(e)}
             >
-              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
+              <i className={"fa  " + onBtnClickChangeIcon()} />
+              &nbsp;&nbsp;
               {selectOrSelectedBtnText()}
             </button>
           </div>
-          <button
+          {/* <button
             type="button"
             className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
             onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
           >
             <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
             {selectOrSelectedBtnText()}
-          </button>
+          </button> */}
         </div>
       );
     }
