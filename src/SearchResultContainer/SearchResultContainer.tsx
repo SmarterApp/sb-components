@@ -150,6 +150,12 @@ export class SearchResultContainer extends React.Component<
     this.updateSelectedItemsInState(item);
   };
 
+  // handleSyncPrintcartItemsWithToSelectedItems = (
+  //   itemsInPrintCart: ItemCardModel[],
+  // ) => {
+  //     this.setState({ itemsInPrintCart: selct });
+  // };
+
   handleSyncSelectedItemsAndItemsinCart = (
     itemsInPrintCart: ItemCardModel[],
     isItemsInCartChanged: boolean
@@ -163,7 +169,10 @@ export class SearchResultContainer extends React.Component<
       item,
       this.state.selectedItems.slice()
     );
-    this.setState({ selectedItems: updatedSelectedItems });
+    this.setState({
+      selectedItems: updatedSelectedItems,
+      itemsInPrintCart: updatedSelectedItems
+    });
   };
 
   /**
@@ -195,8 +204,10 @@ export class SearchResultContainer extends React.Component<
       old_index,
       new_index
     );
-    this.setState({ itemsInPrintCart: reOrderedItems });
-    this.handleSyncSelectedItemsAndItemsinCart(reOrderedItems, true);
+    this.setState({
+      itemsInPrintCart: reOrderedItems,
+      selectedItems: reOrderedItems
+    });
   };
 
   handleCountNumberOfItemSelection = (): void => {
@@ -499,12 +510,13 @@ export class SearchResultContainer extends React.Component<
       associatedItemsInPrintCart
     } = this.state;
     const selectedItems = this.state.selectedItems.slice();
+    const itemsInPrintCart = this.state.itemsInPrintCart.slice();
     return (
       <>
         <PrintCartModal
           showModal={showModal}
           onChangeModelState={this.handleShowModal}
-          itemsInCart={selectedItems}
+          itemsInCart={itemsInPrintCart}
           associatedItemsInPrintCart={associatedItemsInPrintCart}
           onSubmitPrint={this.handlePrintItemsClick}
           isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}

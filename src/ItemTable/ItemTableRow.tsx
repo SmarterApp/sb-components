@@ -203,8 +203,11 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           for (const itemKeyInAssociatedItems in associatedItems) {
             const associatedItemsArray =
               associatedItems[itemKeyInAssociatedItems];
-            if (associatedItemsArray.includes(itemKey) !== -1)
-              return "disabled";
+            for (let i = 0; i < associatedItemsArray.length; i++) {
+              console.log(associatedItemsArray[i][0].itemKey);
+              if (associatedItemsArray[i][0].itemKey === itemKey)
+                return "disabled";
+            }
           }
         }
       }
@@ -231,7 +234,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     const iconsAddOrRemove = (
       <td
-        className={`item-checkbox item-add-remove `}
+        className={`item-checkbox item-add-remove ${shouldBeDisabled()}`}
         onClick={e => this.handleCheckboxClick(e, rowData)}
         onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         tabIndex={0}
