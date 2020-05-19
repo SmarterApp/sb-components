@@ -13,9 +13,9 @@ import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
 import { PrintCartButton } from "@src/PrintCart/PrintCartButton";
 import {
   getUpdatedSelectedItems,
-  shouldUpdateSelectedItemsInState
+  shouldUpdateSelectedItemsInState,
+  moveArrayItemToNewIndex
 } from "./SearchResultContainerHelper";
-import * as arrayMove from "array-move";
 
 /**
  * SearchResultType enum
@@ -185,9 +185,16 @@ export class SearchResultContainer extends React.Component<
     this.handleCountNumberOfItemSelection();
   };
 
-  handleReorderItemsInPrintCart = (i: number, j: number): void => {
+  handleReorderItemsInPrintCart = (
+    old_index: number,
+    new_index: number
+  ): void => {
     const itemsInPrintCart = this.state.itemsInPrintCart.slice();
-    const reOrderedItems = arrayMove(itemsInPrintCart, i, j);
+    const reOrderedItems = moveArrayItemToNewIndex(
+      itemsInPrintCart,
+      old_index,
+      new_index
+    );
     this.setState({ itemsInPrintCart: reOrderedItems });
     this.handleSyncSelectedItemsAndItemsinCart(reOrderedItems, true);
   };
