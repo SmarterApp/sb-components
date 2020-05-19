@@ -3,7 +3,8 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
-import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
+import { getContentStandardCode } from "./ItemContentStandardHelper";
+
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
   MATH1: require("@sbac/sbac-ui-kit/src/images/math-1.svg"),
@@ -158,6 +159,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
     const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
+
     if (!this.state.redirect) {
       const tooltip = generateTooltip({
         displayIcon: true,
@@ -194,6 +196,34 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         className: "",
         helpText: <span>{getToolTipMsg()}</span>,
         displayText: iconsAddOrRemove
+      });
+      // Tooltip for content standard
+      const subjectCode = this.props.rowData.subjectCode;
+      const claimCode = this.props.rowData.claimCode;
+      let commonCoreStandardId = this.props.rowData.commonCoreStandardId;
+      let ccssDescription = this.props.rowData.ccssDescription;
+      //get the new and logically updated commonCoreStandardId, ccssDescription value
+      const standard = getContentStandardCode(
+        subjectCode,
+        claimCode,
+        commonCoreStandardId,
+        ccssDescription
+      );
+      commonCoreStandardId = standard["commonCoreStandardId"];
+      ccssDescription = standard["ccssDescription"];
+
+      const tooltipCcontentStandard = generateTooltip({
+        displayIcon: true,
+        className: "box",
+        helpText: <span>{ccssDescription}</span>,
+        displayText: commonCoreStandardId
+      });
+
+      const tooltip_printOption = generateTooltip({
+        displayIcon: true,
+        className: "box",
+        helpText: <span>Select to print this item</span>,
+        displayText: ""
       });
 
       content = (
@@ -233,6 +263,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             <p className="card-text target">
               <span className="card-text-label">Target:</span>
               <span className="card-text-value">{tooltip}</span>
+            </p>
+            <p className="card-text target">
+              <span className="card-text-label">Standard:</span>
+              <span className="card-text-value">{tooltipCcontentStandard}</span>
             </p>
             <p className="card-text interaction-type">
               <span className="card-text-label">Item Type:</span>
