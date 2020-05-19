@@ -15,6 +15,7 @@ import {
 import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
+  TotalItemsCard: ItemCardModel[];
   associatedItemsInPrintCart?: any;
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   onItemsReorder: (i: number, j: number) => void;
@@ -72,7 +73,6 @@ export class PrintCartItemTableRow extends React.Component<
             interactionTypeLabel: any;
           }[]
         ) => {
-          console.log(item[0].itemKey);
           return (
             <tr key={item[0].itemKey} className="table-row-associated-item">
               <td />
@@ -93,6 +93,20 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   render() {
+    const shouldReorderingButtonBeDisabled = (arrowButtonaName: string) => {
+      const currentItemIndex = this.props.index;
+      const TotalItemsCard_length = this.props.TotalItemsCard.length;
+      if (arrowButtonaName === "UpArrowButton" && currentItemIndex === 0) {
+        return "disabled";
+      }
+      if (
+        arrowButtonaName === "DownArrowButton" &&
+        currentItemIndex === TotalItemsCard_length - 1
+      ) {
+        return "disabled";
+      }
+      return "";
+    };
     const item = this.props.ItemCard;
     return (
       <>
@@ -106,6 +120,30 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{this.renderActionButton(item)}</td>
           <td>
             <div className="btn-group">
+              <button
+                type="button"
+                className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
+                  "UpArrowButton"
+                )}`}
+              >
+                <i
+                  className="fa fa-arrow-up"
+                  onClick={this.handleOnUpArrowClick}
+                />
+              </button>
+              <button
+                type="button"
+                className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
+                  "DownArrowButton"
+                )}`}
+              >
+                <i
+                  className="fa fa-arrow-down"
+                  onClick={this.handleOnDownArrowClick}
+                />
+              </button>
+            </div>
+            {/* <div className="btn-group">
               <i
                 className="fa fa-arrow-up"
                 onClick={this.handleOnUpArrowClick}
@@ -114,7 +152,7 @@ export class PrintCartItemTableRow extends React.Component<
                 className="fa fa-arrow-down"
                 onClick={this.handleOnDownArrowClick}
               />
-            </div>
+            </div> */}
           </td>
         </tr>
         {this.renderAssociatedItemsInGroup()}

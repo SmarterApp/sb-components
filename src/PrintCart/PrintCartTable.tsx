@@ -47,6 +47,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
         return (
           <PrintCartItemTableRow
             ItemCard={item}
+            TotalItemsCard={this.props.itemsInPrintCart}
             associatedItemsInPrintCart={associatedItemsInPrintCart}
             onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
             columns={this.props.columns}
@@ -60,6 +61,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
         return (
           <PrintCartItemTableRow
             ItemCard={item}
+            TotalItemsCard={this.props.itemsInPrintCart}
             onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
