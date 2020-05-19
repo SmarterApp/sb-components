@@ -24,6 +24,7 @@ export interface PrintCartProps {
   onUpdateItemsInPrintCart: (item: ItemCardModel) => void;
   isSelectedItemsHaveMathItem: boolean;
   associatedItemsInPrintCart?: ItemCardModel[];
+  totalSelectedItemsCount: number;
 }
 export interface PrintCartState {
   isChanged: boolean;
@@ -175,7 +176,7 @@ export class PrintCartModal extends React.Component<
               <div className="status-message-print">
                 <strong>
                   {" "}
-                  Total item(s) selected : {this.props.itemsInCart.length}
+                  Total item(s) selected : {this.props.totalSelectedItemsCount}
                 </strong>{" "}
                 <br />
               </div>

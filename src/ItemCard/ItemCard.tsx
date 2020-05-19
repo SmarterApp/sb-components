@@ -58,27 +58,27 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     }
   };
 
-  handleCheckBoxChange = (item: ItemCardModel, e: React.SyntheticEvent) => {
+  handleCheckBoxChange = (
+    item: ItemCardModel,
+    e: React.SyntheticEvent,
+    shouldBeDisabled: string
+  ) => {
     e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+    if (
+      shouldBeDisabled == "disabled" &&
+      (item.selected === undefined || item.selected === false)
+    ) {
+      return;
+    }
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    /*<<<<<<< HEAD
-    if (item.selected === true) item.selected = false;
-    else item.selected = true;
-    this.props.onRowSelect(item);
-    //this.props.onItemSelection(item);
-    e.stopPropagation();
-    this.setState({
-      isChecked: value === true,
-      isCheckBoxChanged: true
-    });
-=======*/
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
     if (
       item.selected !== true &&
       this.props.isPrintLimitEnabled == true &&
-      selectedItemsCount >= 20
+      this.props.getSelectedItemCount() > 50
     ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
@@ -181,7 +181,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       const iconsAddOrRemove = (
         <button
           className={"item-add-remove btn btn-sm btn-default"}
-          onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+          onClick={e =>
+            this.handleCheckBoxChange(this.props.rowData, e, shouldBeDisabled())
+          }
           //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         >
           <i className={"fa fa-lg " + addOrRemoveIcon()} />
@@ -247,8 +249,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <button
               type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${shouldBeDisabled()}`}
-              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e =>
+                this.handleCheckBoxChange(
+                  this.props.rowData,
+                  e,
+                  shouldBeDisabled()
+                )
+              }
               tabIndex={0}
               onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
               onKeyDown={e => this.handleEnterKeyDown(e)}
