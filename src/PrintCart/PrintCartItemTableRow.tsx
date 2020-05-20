@@ -13,6 +13,9 @@ import {
   AboutItemModel
 } from "@src/index";
 import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
+import { ToolTip, generateTooltip } from "../index";
+import { getContentStandardCode } from "@src/ItemCard/ItemContentStandardHelper";
+
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
   TotalItemsCard: ItemCardModel[];
@@ -52,14 +55,55 @@ export class PrintCartItemTableRow extends React.Component<
   renderActionButton = (item: ItemCardModel) => {
     return (
       <button
-        className="btn btn-sm btn-danger"
+        className="btn btn-sm btn-danger btn-remove-item-print-cart"
         onClick={() => this.onAddOrRemoveSelectedItems(item)}
       >
-        Remove
+        X
       </button>
     );
   };
   renderTableHeader() {}
+
+  getContentStandardToolTip(
+    subjectCode: any,
+    claimCode: any,
+    commonCoreStandardId: any,
+    ccssDescription: any
+  ) {
+    //get the new and logically updated commonCoreStandardId, ccssDescription value
+    const standard = getContentStandardCode(
+      subjectCode,
+      claimCode,
+      commonCoreStandardId,
+      ccssDescription
+    );
+    commonCoreStandardId = standard["commonCoreStandardId"];
+    ccssDescription = standard["ccssDescription"];
+    const tooltipCcontentStandard = generateTooltip({
+      displayIcon: true,
+      className: "box",
+      helpText: <span>{ccssDescription}</span>,
+      displayText: ""
+    });
+    return (
+      <>
+        <span>{commonCoreStandardId} </span>
+        <span>{tooltipCcontentStandard}</span>
+      </>
+    );
+  }
+
+  getToolTipForAssociatedGroupItems() {
+    const MsgForAssociatedItems =
+      "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
+    const tooltipCcontentStandard = generateTooltip({
+      displayIcon: true,
+      className: "box",
+      helpText: <span>{MsgForAssociatedItems}</span>,
+      displayText: ""
+    });
+    return tooltipCcontentStandard;
+  }
 
   renderAssociatedItemsInGroup() {
     if (this.props.associatedItemsInPrintCart !== undefined) {
@@ -71,17 +115,29 @@ export class PrintCartItemTableRow extends React.Component<
             gradeLabel: any;
             claimLabel: any;
             interactionTypeLabel: any;
+            subjectCode: any;
+            claimCode: any;
+            commonCoreStandardId: any;
+            ccssDescription: any;
           }[]
         ) => {
           return (
             <tr key={item[0].itemKey} className="table-row-associated-item">
-              <td />
+              {/* <td>{this.renderActionButton()}</td> */}
+              <td>{this.getToolTipForAssociatedGroupItems()}</td>
               <td>{item[0].itemKey}</td>
               <td>{item[0].subjectLabel}</td>
-              <td>{item[0].gradeLabel}</td>
+              <td>{item[0].gradeLabel.split(" ")[1]}</td>
               <td>{item[0].claimLabel}</td>
+              <td>
+                {this.getContentStandardToolTip(
+                  item[0].subjectCode,
+                  item[0].claimCode,
+                  item[0].commonCoreStandardId,
+                  item[0].ccssDescription
+                )}
+              </td>
               <td>{item[0].interactionTypeLabel}</td>
-              <td />
               <td />
             </tr>
           );
@@ -111,48 +167,42 @@ export class PrintCartItemTableRow extends React.Component<
     return (
       <>
         <tr key={item.itemKey} className={""}>
-          <td />
+          <td>{this.renderActionButton(item)}</td>
           <td>{item.itemKey}</td>
           <td>{item.subjectLabel}</td>
-          <td>{item.gradeLabel}</td>
+          <td>{item.gradeLabel.split(" ")[1]}</td>
           <td>{item.claimLabel}</td>
+          <td>
+            {this.getContentStandardToolTip(
+              item.subjectCode,
+              item.claimCode,
+              item.commonCoreStandardId,
+              item.ccssDescription
+            )}
+          </td>
           <td>{item.interactionTypeLabel}</td>
-          <td>{this.renderActionButton(item)}</td>
+
           <td>
             <div className="btn-group">
               <button
                 type="button"
+                onClick={this.handleOnUpArrowClick}
                 className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
                   "UpArrowButton"
                 )}`}
               >
-                <i
-                  className="fa fa-arrow-up"
-                  onClick={this.handleOnUpArrowClick}
-                />
+                <i className="fa fa-arrow-up" />
               </button>
               <button
                 type="button"
+                onClick={this.handleOnDownArrowClick}
                 className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
                   "DownArrowButton"
                 )}`}
               >
-                <i
-                  className="fa fa-arrow-down"
-                  onClick={this.handleOnDownArrowClick}
-                />
+                <i className="fa fa-arrow-down" />
               </button>
             </div>
-            {/* <div className="btn-group">
-              <i
-                className="fa fa-arrow-up"
-                onClick={this.handleOnUpArrowClick}
-              />
-              <i
-                className="fa fa-arrow-down"
-                onClick={this.handleOnDownArrowClick}
-              />
-            </div> */}
           </td>
         </tr>
         {this.renderAssociatedItemsInGroup()}

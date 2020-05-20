@@ -1,5 +1,9 @@
 import { SearchResultContainerProps, SearchResultType } from "@src/index";
-import { itemCardList, totalItemsCardList, performanceTaskAssociatedItems } from "@mocks/index";
+import {
+  itemCardList,
+  totalItemsCardList,
+  performanceTaskAssociatedItems
+} from "@mocks/index";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
@@ -12,6 +16,9 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   onItemSelection: () => {
     return;
   },
+  // onItemSelectionUpdateSelectedItems : () => {
+  //   return
+  // },
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();
@@ -42,7 +49,9 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     kind: "none"
   },
   defaultRenderType: SearchResultType.ItemCard,
-  performanceTaskAssociatedItems: performanceTaskAssociatedItems
+  performanceTaskAssociatedItems: performanceTaskAssociatedItems,
+  associatedItemsInPrintCart: [],
+  selectedItemsInPrintCart_props: []
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {
@@ -58,5 +67,3 @@ export const mockSearchResultEmptyProps: SearchResultContainerProps = {
   },
   defaultRenderType: SearchResultType.ItemCard
 };
-
-
