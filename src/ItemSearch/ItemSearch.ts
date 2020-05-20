@@ -16,7 +16,8 @@ import {
   ItemsSearchFilterModel,
   ClaimModel,
   TestNameItemsPoolModel,
-  CoreStandardModel
+  CoreStandardModel,
+  ReleaseDateModel
 } from "../ItemSearch/ItemSearchModels";
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
 import { GradeLevels, GradeLevel } from "../GradeLevels/GradeLevels";
@@ -63,6 +64,8 @@ export class ItemSearch {
 
     const targets = Filter.getSelectedTargets(filterModels);
     const coreStandards = Filter.getSelectedTargets(filterModels);
+    const releaseDates = Filter.getSelectedReleaseDates(filterModels);
+
     return {
       subjects,
       gradeLevels,
@@ -73,7 +76,8 @@ export class ItemSearch {
       performanceOnly,
       calculator,
       testNames,
-      coreStandards
+      coreStandards,
+      releaseDates
     };
   }
 
@@ -146,6 +150,10 @@ export class ItemSearch {
       case FilterType.CoreStandards:
         const CoreStandardsCodes = Filter.getSelectedCoreStandards([category]);
         newModel.coreStandards = CoreStandardsCodes;
+        break;
+      case FilterType.ReleaseDate:
+        const releaseDates = Filter.getSelectedCodes(category.code, [category]);
+        newModel.releaseDates = releaseDates;
         break;
       default:
     }
@@ -225,7 +233,6 @@ export class ItemSearch {
     if (searchApi === undefined || searchApi.length < 1) {
       selectedCodes = defaultOptionKeys;
     }
-
     return options.map(o => {
       return {
         filterType,
@@ -306,6 +313,27 @@ export class ItemSearch {
     });
   }
 
+  public static searchOptionToFilterReleaseDates(
+    options: SearchFilterStringTypes[],
+    filterType: FilterType,
+    defaultOptionKeys?: string[],
+    searchApi?: string[]
+  ): FilterOptionModel[] {
+    let selectedCodes = searchApi;
+    if (searchApi === undefined || searchApi.length < 1) {
+      selectedCodes = defaultOptionKeys;
+    }
+
+    return options.map(o => {
+      return {
+        filterType,
+        label: o.label,
+        key: o.code,
+        isSelected: (selectedCodes || []).some(s => s === o.code)
+      };
+    });
+  }
+
   public static searchOptionToFilterClaim(
     options: ClaimModel[],
     filterType: FilterType,
@@ -333,7 +361,6 @@ export class ItemSearch {
     defaultOptionKeys?: string[]
   ): FilterOptionModel[] {
     let options: FilterOptionModel[] = [];
-
     switch (filter.code) {
       case FilterType.Claim:
         options = this.searchOptionToFilterClaim(
@@ -413,6 +440,14 @@ export class ItemSearch {
           filter.code,
           defaultOptionKeys,
           searchApi.coreStandards
+        );
+        break;
+      case FilterType.ReleaseDate:
+        options = this.searchOptionToFilterReleaseDates(
+          filter.filterOptions,
+          filter.code,
+          defaultOptionKeys,
+          searchApi.releaseDates
         );
         break;
       default:
@@ -565,6 +600,18 @@ export class ItemSearch {
       const { coreStandards } = filter;
       results = results.filter(
         i => coreStandards.findIndex(t => t === i.commonCoreStandardId) !== -1
+      );
+    }
+
+    // release dates
+    if (
+      filter.releaseDates &&
+      filter.releaseDates.length > 0 &&
+      filter.releaseDates[0] !== "0"
+    ) {
+      const { releaseDates } = filter;
+      results = results.filter(
+        i => releaseDates.findIndex(t => t === i.releaseDate) !== -1
       );
     }
 
