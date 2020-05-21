@@ -148,6 +148,21 @@ export class Filter {
   }
 
   /**
+   * Gets selected release date
+   * @param  {FilterCategoryModel[]} filterModels
+   */
+  public static getSelectedReleaseDates(
+    filterModels: FilterCategoryModel[]
+  ): string[] | undefined {
+    const selectedCodes = this.getSelectedCodes(
+      FilterType.ReleaseDate,
+      filterModels
+    );
+
+    return selectedCodes ? selectedCodes.map(s => s) : undefined;
+  }
+
+  /**
    * Filters targets with the given codes
    * @param  {TargetModel[]} targets
    * @param  {number[]} targetCodes
@@ -461,6 +476,9 @@ export class Filter {
         }
       }
 
+      const releaseDateFilterIdx = filters.findIndex(
+        f => f.code === FilterType.ReleaseDate
+      );
       // TestNames
       if (testNameFilterIdx !== -1 && model.testNames) {
         const selectedTestName = filters[testNameFilterIdx].filterOptions

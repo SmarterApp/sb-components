@@ -6,7 +6,8 @@ import {
   FilterType,
   BtnGroupOption,
   ToolTip,
-  generateTooltip
+  generateTooltip,
+  Select
 } from "../index";
 
 export interface AdvancedFilterProps extends AdvancedFilterCategoryModel {
@@ -144,6 +145,77 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
     this.props.onFilterOptionSelect(newOption);
   };
 
+  findFilterOption(key: string) {
+    return this.props.filterOptions.find(fil => fil.key === key);
+  }
+
+  /**
+   * Renders Select list for the category with default option
+   * @returns {JSX.Element} Select React component
+   */
+  renderDropDown(): JSX.Element {
+    const {
+      onFilterOptionSelect,
+      optionType,
+      filterOptions,
+      disabled,
+      label,
+      code,
+      emptyOptionsText
+    } = this.props;
+    const defaultValue = "default";
+    const selected = filterOptions.find(fil => fil.isSelected === true);
+    const selectedValue = selected ? selected.key : defaultValue;
+
+    const selectOptions = filterOptions.map(fo => {
+      return {
+        disabled,
+        selected: selectedValue === fo.key,
+        label: fo.label,
+        value: fo.key
+      };
+    });
+
+    if (!this.props.hideSelectMessage) {
+      selectOptions.splice(0, 0, {
+        disabled,
+        selected: selectedValue === defaultValue,
+        label: `Select ${label}`,
+        value: defaultValue
+      });
+    }
+
+    if (filterOptions != undefined && filterOptions.length > 0) {
+      return (
+        <Select
+          disabled={disabled}
+          label={label}
+          selected={selectedValue}
+          options={selectOptions}
+          onChange={val => onFilterOptionSelect(this.findFilterOption(val))}
+          key={code}
+          className={"input-sm"}
+        />
+      );
+    } else {
+      return (
+        <div>
+          <label>
+            <span className="">{label}</span>
+          </label>
+          <div
+            className="nested-btn-group btn-group-sm toggle-group vertical"
+            data-toggle="buttons"
+          >
+            <div className="btn-group filter-btn-group">
+              <div>{emptyOptionsText}</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
   renderSearch(): JSX.Element {
     const {
       onFilterOptionSelect,
@@ -197,9 +269,14 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
         id={`${id}-filter`.toLocaleLowerCase()}
         className={"filter-selection"}
       >
-        {optionType != OptionTypeModel.inputBox && this.renderHeader()}
-        {optionType != OptionTypeModel.inputBox && this.renderBody()}
+        {optionType != OptionTypeModel.inputBox &&
+          optionType != OptionTypeModel.DropDown &&
+          this.renderHeader()}
+        {optionType != OptionTypeModel.inputBox &&
+          optionType != OptionTypeModel.DropDown &&
+          this.renderBody()}
         {optionType === OptionTypeModel.inputBox && this.renderSearch()}
+        {optionType === OptionTypeModel.DropDown && this.renderDropDown()}
       </div>
     );
   }
