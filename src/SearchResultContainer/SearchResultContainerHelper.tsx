@@ -30,6 +30,26 @@ export function shouldUpdateSelectedItemsInState(
   return { selectedItems, shouldUpdateSelectedItemsState };
 }
 
+export function areSelectedItemsHaveMath(
+  totalSelectedItemsCount: number,
+  totalItemsCard?: ItemCardModel[]
+) {
+  let areSelectedItemsHaveMath: boolean = false;
+  if (totalItemsCard !== undefined && totalSelectedItemsCount > 0) {
+    let len = totalItemsCard.length;
+    for (let i = 0; i < len; i++) {
+      if (
+        totalItemsCard[i].selected === true &&
+        totalItemsCard[i].subjectCode === "MATH"
+      ) {
+        areSelectedItemsHaveMath = true;
+        break;
+      }
+    }
+  }
+  return areSelectedItemsHaveMath;
+}
+
 export function moveArrayItemToNewIndex(
   array: ItemCardModel[],
   oldIndex: number,

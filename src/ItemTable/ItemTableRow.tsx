@@ -82,12 +82,18 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 =======*/
   handleCheckboxClick = (
     e: React.MouseEvent<HTMLTableDataCellElement>,
-    rowData: ItemCardModel
+    rowData: ItemCardModel,
+    shouldBeDisabled: string
   ) => {
-    //>>>>>>> dev
     e.stopPropagation();
+    if (
+      shouldBeDisabled == "disabled" &&
+      (rowData.selected === undefined || rowData.selected === false)
+    ) {
+      return;
+    }
     let selectedItemsCount = this.props.getSelectedItemCount();
-    if (rowData.selected !== true && selectedItemsCount >= 20) {
+    if (rowData.selected !== true && this.props.getSelectedItemCount() > 50) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -214,6 +220,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
       return " ";
     };
+    const shouldBeDisabledResult = shouldBeDisabled();
 
     const addOrRemoveIcon = () => {
       return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
@@ -223,6 +230,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     };
 
     const getToolTipMsg = () => {
+      if (shouldBeDisabledResult === "disabled")
+        return "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
       if (addOrRemoveIcon() === "fa-plus-circle")
         return "Add item to print queue";
       else return "Remove item from print queue ";
@@ -234,8 +243,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     const iconsAddOrRemove = (
       <td
-        className={`item-checkbox item-add-remove ${shouldBeDisabled()}`}
-        onClick={e => this.handleCheckboxClick(e, rowData)}
+        className={`item-checkbox item-add-remove`}
+        onClick={e => this.handleCheckboxClick(e, rowData, shouldBeDisabled())}
         onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         tabIndex={0}
       >

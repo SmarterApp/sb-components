@@ -16,6 +16,9 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   onItemSelection: () => {
     return;
   },
+  // onItemSelectionUpdateSelectedItems : () => {
+  //   return
+  // },
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();
@@ -47,6 +50,8 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   },
   defaultRenderType: SearchResultType.ItemCard,
   performanceTaskAssociatedItems: performanceTaskAssociatedItems
+  // associatedItemsInPrintCart: [],
+  // selectedItemsInPrintCart_props: []
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {

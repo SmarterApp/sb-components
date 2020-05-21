@@ -59,8 +59,19 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     }
   };
 
-  handleCheckBoxChange = (item: ItemCardModel, e: React.SyntheticEvent) => {
+  handleCheckBoxChange = (
+    item: ItemCardModel,
+    e: React.SyntheticEvent,
+    shouldBeDisabled: string
+  ) => {
     e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+    if (
+      shouldBeDisabled == "disabled" &&
+      (item.selected === undefined || item.selected === false)
+    ) {
+      return;
+    }
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
 
@@ -69,7 +80,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     if (
       item.selected !== true &&
       this.props.isPrintLimitEnabled == true &&
-      selectedItemsCount >= 20
+      this.props.getSelectedItemCount() > 50
     ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
@@ -157,6 +168,35 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: this.props.rowData.targetId
       });
 
+      const addOrRemoveIcon = () => {
+        return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
+      };
+      const addOrRemoveIconClass = () => {
+        return this.props.rowData.selected === true
+          ? "btn-danger"
+          : "btn-warning";
+      };
+      const getToolTipMsg = () => {
+        if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
+        else return "Remove item from print bucket ";
+      };
+      const iconsAddOrRemove = (
+        <button
+          className={"item-add-remove btn btn-sm btn-default"}
+          onClick={e =>
+            this.handleCheckBoxChange(this.props.rowData, e, shouldBeDisabled())
+          }
+          //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+        >
+          <i className={"fa fa-lg " + addOrRemoveIcon()} />
+        </button>
+      );
+      const tooltip_addRemovePrintCart = generateTooltip({
+        displayIcon: false,
+        className: "",
+        helpText: <span>{getToolTipMsg()}</span>,
+        displayText: iconsAddOrRemove
+      });
       // Tooltip for content standard
       const subjectCode = this.props.rowData.subjectCode;
       const claimCode = this.props.rowData.claimCode;
@@ -179,27 +219,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: commonCoreStandardId
       });
 
-      const addOrRemoveIcon = () => {
-        return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
-      };
-      const addOrRemoveIconClass = () => {
-        return this.props.rowData.selected === true
-          ? "btn-danger"
-          : "btn-warning";
-      };
-      const getToolTipMsg = () => {
-        if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
-        else return "Remove item from print bucket ";
-      };
-      const iconsAddOrRemove = (
-        <button
-          className={"item-add-remove btn btn-sm btn-default"}
-          onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-          //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-        >
-          <i className={"fa fa-lg " + addOrRemoveIcon()} />
-        </button>
-      );
+      const tooltip_printOption = generateTooltip({
+        displayIcon: true,
+        className: "box",
+        helpText: <span>Select to print this item</span>,
+        displayText: ""
+      });
 
       content = (
         <div
@@ -257,8 +282,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             </p>
             <button
               type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${shouldBeDisabled()}`}
-              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
+              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
+              onClick={e =>
+                this.handleCheckBoxChange(
+                  this.props.rowData,
+                  e,
+                  shouldBeDisabled()
+                )
+              }
               tabIndex={0}
               onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
               onKeyDown={e => this.handleEnterKeyDown(e)}
