@@ -173,7 +173,7 @@ export class Filter {
   ): TargetModel[] {
     const filteredTargets: TargetModel[] = [];
     targetCodes.forEach(tc => {
-      const target = targets.find(t => t.idLabel === tc);
+      const target = targets.find(t => t.idLabel == tc);
       if (target) {
         filteredTargets.push(target);
       }
@@ -198,7 +198,7 @@ export class Filter {
     //filter by claim and subject
     claim.forEach(cm => {
       let cs = coreStandards.filter(
-        t => t.claimId === cm.claimNumber && t.subject === subject
+        t => t.claimId == cm.claimNumber && t.subject == subject
       );
 
       if (cs) {
