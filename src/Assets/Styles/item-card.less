@@ -6,7 +6,7 @@
   border: 2px solid;
   border-radius: 6px;
   background-color: @sb-white;
-  color: #444444;
+  color: hsl(0, 0%, 27%);
   width: 300px;
   -webkit-transition-duration: 0.2s; // Safari
   transition-duration: 0.2s;
@@ -133,6 +133,9 @@
 .card-contents p:first-of-type {
   padding-top: @spacing-item;
 }
+.card-contents p:last-of-type {
+  margin-bottom: 80px;
+}
 
 /* container - checkbox  */
 .custom-checkbox {
@@ -205,17 +208,23 @@
 }
 
 .btn-add-remove-print-selection {
-  margin: 8px;
-  width: 270px;
+  // margin: 8px;
+  width: 90%;
   border-radius: 6px;
   font-family: PTSans-Bold;
   font-size: 17px;
   text-align: center;
-  margin-left: 13px;
-  margin-right: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  // margin-left: 15px;
+  // margin-right: 15px;
+  // margin-bottom: 15px;
+  // display:inline-block;
   position: absolute;
-
-  bottom: 0;
+  bottom: 5px;
+  right: 15px;
+  left: 13px;
+  float: bottom;
 }
 
 .btn.math {
