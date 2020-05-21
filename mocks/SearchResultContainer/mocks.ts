@@ -49,9 +49,9 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     kind: "none"
   },
   defaultRenderType: SearchResultType.ItemCard,
-  performanceTaskAssociatedItems: performanceTaskAssociatedItems,
-  associatedItemsInPrintCart: [],
-  selectedItemsInPrintCart_props: []
+  performanceTaskAssociatedItems: performanceTaskAssociatedItems
+  // associatedItemsInPrintCart: [],
+  // selectedItemsInPrintCart_props: []
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {

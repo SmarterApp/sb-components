@@ -41,7 +41,9 @@ export interface SearchResultContainerProps {
   onPrintItems: (
     langCode: string,
     GlossaryRequired: string,
-    IllustrationRequired: string
+    IllustrationRequired: string,
+    itemsInPrintCart: ItemCardModel[],
+    associateditemsInPrintCart: ItemCardModel[]
   ) => void;
   onResetItems: () => void;
   onSelectAll: () => void;
@@ -121,6 +123,33 @@ export class SearchResultContainer extends React.Component<
     if (shouldUpdateSelectedItemsState === 1)
       this.setState({ selectedItems: selectedItems, loading });
     else this.setState({ loading });
+  }
+
+  componentDidMount() {
+    const itemsInPrintCart = this.state.itemsInPrintCart;
+    itemsInPrintCart.forEach(item => {
+      if (item.isPerformanceItem && item.selected === true) {
+        const associatedItemsKey: any = this.props
+          .performanceTaskAssociatedItems[item.itemKey];
+        const itemCards =
+          this.props.totalItemCards !== undefined
+            ? this.props.totalItemCards.slice()
+            : undefined;
+        let associatedItems = this.state.associatedItemsInPrintCart;
+        if (itemCards) {
+          // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+          let associatedItems_temp = [];
+          for (let i = 0; i < associatedItemsKey.length; i++) {
+            const x = itemCards.filter(
+              item => item.itemKey === associatedItemsKey[i]
+            );
+            associatedItems_temp.push(x);
+          }
+          associatedItems[item.itemKey] = associatedItems_temp;
+        }
+        this.setState({ associatedItemsInPrintCart: associatedItems });
+      }
+    });
   }
 
   /**
@@ -262,7 +291,14 @@ export class SearchResultContainer extends React.Component<
     GlossaryRequired: string,
     IllustrationRequired: string
   ): void => {
-    this.props.onPrintItems(langCode, GlossaryRequired, IllustrationRequired);
+    const { itemsInPrintCart, associatedItemsInPrintCart } = this.state;
+    this.props.onPrintItems(
+      langCode,
+      GlossaryRequired,
+      IllustrationRequired,
+      itemsInPrintCart,
+      associatedItemsInPrintCart
+    );
     this.setState({ showModal: false, statusMessage: "" });
   };
 
@@ -368,7 +404,8 @@ export class SearchResultContainer extends React.Component<
   }
 
   renderResetButton(): JSX.Element {
-    if (this.state.numberOfSelectedItems <= 0) {
+    const { selectedItems } = this.state;
+    if (selectedItems.length <= 0) {
       return (
         <button
           onClick={this.handleResetItems}
