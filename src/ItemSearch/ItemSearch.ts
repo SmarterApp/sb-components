@@ -16,7 +16,8 @@ import {
   ItemsSearchFilterModel,
   ClaimModel,
   TestNameItemsPoolModel,
-  CoreStandardModel
+  CoreStandardModel,
+  ReleaseDateModel
 } from "../ItemSearch/ItemSearchModels";
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
 import { GradeLevels, GradeLevel } from "../GradeLevels/GradeLevels";
@@ -27,13 +28,15 @@ export class ItemSearch {
   public static filterToSearchApiModel(
     filterModels: FilterCategoryModel[]
   ): SearchAPIParamsModel {
+    const gradeLevels = Filter.getSelectedGrade(filterModels);
+
     const subjects = Filter.getSelectedCodes(FilterType.Subject, filterModels);
 
     const testNames = Filter.getSelectedCodes(
       FilterType.TestNames,
       filterModels
     );
-    const gradeLevels = Filter.getSelectedGrade(filterModels);
+
     const claims = Filter.getSelectedCodes(FilterType.Claim, filterModels);
     const interactionTypes = Filter.getSelectedCodes(
       FilterType.InteractionType,
@@ -63,6 +66,8 @@ export class ItemSearch {
 
     const targets = Filter.getSelectedTargets(filterModels);
     const coreStandards = Filter.getSelectedTargets(filterModels);
+    const releaseDates = Filter.getSelectedReleaseDates(filterModels);
+
     return {
       subjects,
       gradeLevels,
@@ -73,7 +78,8 @@ export class ItemSearch {
       performanceOnly,
       calculator,
       testNames,
-      coreStandards
+      coreStandards,
+      releaseDates
     };
   }
 
@@ -94,6 +100,8 @@ export class ItemSearch {
     switch (category.code) {
       case FilterType.Grade:
         newModel.gradeLevels = Filter.getSelectedGrade([category]);
+        if (newModel.gradeLevels == GradeLevels.NA)
+          newModel.subjects = undefined;
         break;
       case FilterType.Calculator:
         const calculatorCodes = Filter.getSelectedCodes(FilterType.Calculator, [
@@ -146,6 +154,10 @@ export class ItemSearch {
       case FilterType.CoreStandards:
         const CoreStandardsCodes = Filter.getSelectedCoreStandards([category]);
         newModel.coreStandards = CoreStandardsCodes;
+        break;
+      case FilterType.ReleaseDate:
+        const releaseDates = Filter.getSelectedCodes(category.code, [category]);
+        newModel.releaseDates = releaseDates;
         break;
       default:
     }
@@ -225,7 +237,6 @@ export class ItemSearch {
     if (searchApi === undefined || searchApi.length < 1) {
       selectedCodes = defaultOptionKeys;
     }
-
     return options.map(o => {
       return {
         filterType,
@@ -297,11 +308,35 @@ export class ItemSearch {
     return options.map(o => {
       return {
         filterType,
-        label: o.commonCoreStandardsId,
+        label:
+          o.commonCoreStandardsId.toLowerCase() == "na"
+            ? "Math Practice"
+            : o.commonCoreStandardsId,
         key: o.commonCoreStandardsId,
         isSelected: (selectedCodes || []).some(
           s => s === o.commonCoreStandardsId
         )
+      };
+    });
+  }
+
+  public static searchOptionToFilterReleaseDates(
+    options: SearchFilterStringTypes[],
+    filterType: FilterType,
+    defaultOptionKeys?: string[],
+    searchApi?: string[]
+  ): FilterOptionModel[] {
+    let selectedCodes = searchApi;
+    if (searchApi === undefined || searchApi.length < 1) {
+      selectedCodes = defaultOptionKeys;
+    }
+
+    return options.map(o => {
+      return {
+        filterType,
+        label: o.label,
+        key: o.code,
+        isSelected: (selectedCodes || []).some(s => s === o.code)
       };
     });
   }
@@ -333,7 +368,6 @@ export class ItemSearch {
     defaultOptionKeys?: string[]
   ): FilterOptionModel[] {
     let options: FilterOptionModel[] = [];
-
     switch (filter.code) {
       case FilterType.Claim:
         options = this.searchOptionToFilterClaim(
@@ -415,6 +449,14 @@ export class ItemSearch {
           searchApi.coreStandards
         );
         break;
+      case FilterType.ReleaseDate:
+        options = this.searchOptionToFilterReleaseDates(
+          filter.filterOptions,
+          filter.code,
+          defaultOptionKeys,
+          searchApi.releaseDates
+        );
+        break;
       default:
     }
 
@@ -468,7 +510,7 @@ export class ItemSearch {
     testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
-
+    debugger;
     //restrict load item until selection of grade and subject
     if (
       filter.gradeLevels == undefined ||
@@ -565,6 +607,18 @@ export class ItemSearch {
       const { coreStandards } = filter;
       results = results.filter(
         i => coreStandards.findIndex(t => t === i.commonCoreStandardId) !== -1
+      );
+    }
+
+    // release dates
+    if (
+      filter.releaseDates &&
+      filter.releaseDates.length > 0 &&
+      filter.releaseDates[0] !== "0"
+    ) {
+      const { releaseDates } = filter;
+      results = results.filter(
+        i => releaseDates.findIndex(t => t === i.releaseDate) !== -1
       );
     }
 

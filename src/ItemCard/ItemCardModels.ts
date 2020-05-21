@@ -24,6 +24,7 @@ export interface ItemCardModel {
   commonCoreStandardId: string;
   ccssDescription?: string;
   calculator?: boolean;
+  releaseDate?: string;
 }
 
 export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {

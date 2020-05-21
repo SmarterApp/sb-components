@@ -148,6 +148,21 @@ export class Filter {
   }
 
   /**
+   * Gets selected release date
+   * @param  {FilterCategoryModel[]} filterModels
+   */
+  public static getSelectedReleaseDates(
+    filterModels: FilterCategoryModel[]
+  ): string[] | undefined {
+    const selectedCodes = this.getSelectedCodes(
+      FilterType.ReleaseDate,
+      filterModels
+    );
+
+    return selectedCodes ? selectedCodes.map(s => s) : undefined;
+  }
+
+  /**
    * Filters targets with the given codes
    * @param  {TargetModel[]} targets
    * @param  {number[]} targetCodes
@@ -407,6 +422,10 @@ export class Filter {
 
       let filteredTestNames: TestNameModel[] | undefined;
 
+      const subjectFilterIdx = filters.findIndex(
+        f => f.code === FilterType.Subject
+      );
+
       const claimFilterIdx = filters.findIndex(
         f => f.code === FilterType.Claim
       );
@@ -429,6 +448,37 @@ export class Filter {
         f => f.code === FilterType.Grade
       );
 
+      if (gradeFilterIdx !== -1) {
+        let selectedGrade =
+          filters[gradeFilterIdx].filterOptions.filter(
+            x => x.isSelected === true
+          )[0] || undefined;
+
+        if (subjectFilterIdx !== -1) {
+          if (selectedGrade == undefined || selectedGrade.key == "0") {
+            filters[subjectFilterIdx].filterOptions = [];
+          } else {
+            var type = FilterType.Subject;
+            var selectedSubject =
+              searchAPI.subjects == undefined ? "0" : searchAPI.subjects[0];
+            var subjectOptions = this.filterStringTypes(model.subjects);
+
+            var subjects = subjectOptions.map(o => {
+              return {
+                type,
+                label: o.label,
+                key: o.code,
+                isSelected: o.code == selectedSubject ? true : false
+              };
+            });
+            filters[subjectFilterIdx].filterOptions = subjects;
+          }
+        }
+      }
+
+      const releaseDateFilterIdx = filters.findIndex(
+        f => f.code === FilterType.ReleaseDate
+      );
       // TestNames
       if (testNameFilterIdx !== -1 && model.testNames) {
         const selectedTestName = filters[testNameFilterIdx].filterOptions

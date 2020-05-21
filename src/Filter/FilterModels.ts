@@ -81,7 +81,8 @@ export enum FilterType {
   TechnologyType = "TechnologyType", // Contains Performance and CAT
   SearchItemId = "SearchItemId",
   TestNames = "TestNames",
-  CoreStandards = "CoreStandards"
+  CoreStandards = "CoreStandards",
+  ReleaseDate = "ReleaseDate"
 }
 
 export interface FilterOptionModel {
@@ -111,8 +112,9 @@ export interface FilterCategoryModel {
 
 export interface AdvancedFilterCategoryModel extends FilterCategoryModel {
   displayAllButton: boolean;
-  optionType: OptionTypeModel;
+  optionType?: OptionTypeModel;
   placeholderText?: string;
+  hideSelectMessage?: boolean;
 }
 
 // tslint:disable-next-line: no-empty-interface
