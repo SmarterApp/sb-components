@@ -109,7 +109,7 @@ export class AdvancedFilterContainer extends React.Component<
     this.props.filterCategories.forEach(cat => {
       if (!cat.disabled && cat.optionType !== OptionTypeModel.inputBox) {
         cat.filterOptions.forEach(opt => {
-          if (opt.isSelected) {
+          if (opt.key !== "0" && opt.isSelected) {
             tags.push(
               <SelectedFilterIndicator
                 key={cat.label + opt.key}
