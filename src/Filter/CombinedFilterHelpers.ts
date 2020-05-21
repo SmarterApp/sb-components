@@ -195,7 +195,8 @@ export function resetFilters(
 ): BothFilterModels {
   if (advancedFilter) {
     advancedFilter.forEach(f =>
-      f.filterOptions.forEach(o => ((o.isSelected = false), (o.key = "")))
+      // f.filterOptions.forEach(o => ((o.isSelected = false), (o.key = "")))
+      f.filterOptions.forEach(o => (o.isSelected = false))
     );
   }
   basicFilter.forEach(f => {
@@ -203,19 +204,12 @@ export function resetFilters(
       f.filterOptions = [];
     }
     if (
-      f.isMultiSelect === true &&
+      // f.isMultiSelect === true &&
       f.filterOptions !== undefined &&
       f.filterOptions[0] !== undefined &&
       f.filterOptions[0].filterType !== undefined &&
+      f.filterOptions[0].filterType !== FilterType.Grade &&
       f.filterOptions[0].filterType !== FilterType.Subject
-    ) {
-      f.filterOptions = [];
-    }
-    if (
-      f.filterOptions !== undefined &&
-      f.filterOptions[0] !== undefined &&
-      f.filterOptions[0].filterType !== undefined &&
-      f.filterOptions[0].filterType == FilterType.TestNames
     ) {
       f.filterOptions = [];
     }
