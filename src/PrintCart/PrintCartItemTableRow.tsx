@@ -119,6 +119,7 @@ export class PrintCartItemTableRow extends React.Component<
             claimCode: any;
             commonCoreStandardId: any;
             ccssDescription: any;
+            targetId: any;
           }[]
         ) => {
           return (
@@ -129,6 +130,7 @@ export class PrintCartItemTableRow extends React.Component<
               <td>{item[0].subjectLabel}</td>
               <td>{item[0].gradeLabel.split(" ")[1]}</td>
               <td>{item[0].claimLabel}</td>
+              <td>{item[0].targetId}</td>
               <td>
                 {this.getContentStandardToolTip(
                   item[0].subjectCode,
@@ -172,6 +174,7 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{item.subjectLabel}</td>
           <td>{item.gradeLabel.split(" ")[1]}</td>
           <td>{item.claimLabel}</td>
+          <td>{item.targetId}</td>
           <td>
             {this.getContentStandardToolTip(
               item.subjectCode,
