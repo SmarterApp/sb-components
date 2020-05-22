@@ -124,6 +124,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         ? "fa-check-square"
         : "fa-plus-square";
     };
+    const cssForDisabledButton = () => {
+      const _shouldBeDisabled = shouldBeDisabled();
+      if (_shouldBeDisabled == "disabled") {
+        return "btn-add-remove-disabled-print-selection";
+      } else return "";
+    };
     const onBtnClickChangeBtnStyleCss = () => {
       return this.props.rowData.selected === true
         ? " btn-selected"
@@ -226,6 +232,36 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: ""
       });
 
+      const addRemoveButton = (
+        <button
+          type="button"
+          className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${cssForDisabledButton()}`}
+          onClick={e =>
+            this.handleCheckBoxChange(this.props.rowData, e, shouldBeDisabled())
+          }
+          tabIndex={0}
+          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+          onKeyDown={e => this.handleEnterKeyDown(e)}
+        >
+          <i className={"fa  " + onBtnClickChangeIcon()} />
+          &nbsp;&nbsp;
+          {selectOrSelectedBtnText()}
+        </button>
+      );
+
+      const displaytestForDisabledButton = (shouldBeDisabled: string) => {
+        if (shouldBeDisabled === "disabled")
+          return "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
+        else return "";
+      };
+
+      const toolTipButton_AddRemoveItemFromPrintCart = generateTooltip({
+        displayIcon: false,
+        className: "",
+        helpText: <>{displaytestForDisabledButton(shouldBeDisabled())}</>,
+        displayText: addRemoveButton
+      });
+
       content = (
         <div
           role="link"
@@ -280,24 +316,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            <button
-              type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-              onClick={e =>
-                this.handleCheckBoxChange(
-                  this.props.rowData,
-                  e,
-                  shouldBeDisabled()
-                )
-              }
-              tabIndex={0}
-              onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-              onKeyDown={e => this.handleEnterKeyDown(e)}
-            >
-              <i className={"fa  " + onBtnClickChangeIcon()} />
-              &nbsp;&nbsp;
-              {selectOrSelectedBtnText()}
-            </button>
+            {toolTipButton_AddRemoveItemFromPrintCart}
           </div>
           {/* <button
             type="button"
