@@ -68,10 +68,11 @@ export interface SearchResultContainerState {
   showModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
-  selectedItems: ItemCardModel[];
+  // selectedItems: ItemCardModel[];
   hasReceiveNewProps: number;
   itemsInPrintCart: ItemCardModel[];
-  numberOfSelectedItems: number;
+  ItemsCountInPrintCart: number;
+  currentSelectedItemIndex: number;
   associatedItemsInPrintCart: any;
 }
 
@@ -97,60 +98,91 @@ export class SearchResultContainer extends React.Component<
       showModal: false,
       showErrorModal: false,
       statusMessage: "",
-      selectedItems: [],
+      // selectedItems: [],
       hasReceiveNewProps: 0,
       itemsInPrintCart: [],
-      numberOfSelectedItems: 0,
+      ItemsCountInPrintCart: 0,
+      currentSelectedItemIndex: -1,
       associatedItemsInPrintCart: {}
     };
   }
 
   componentWillReceiveProps(nextProps: SearchResultContainerProps) {
-    let shouldUpdateSelectedItemsState = 0;
+    let shouldUpdateSelectedItemsState = false;
     let loading = true;
     if (nextProps.itemCards) {
       loading = false;
     }
 
     let selectedItems: ItemCardModel[] | undefined;
+    let associatedItems: any;
     ({
       selectedItems,
+      associatedItems,
       shouldUpdateSelectedItemsState
     } = shouldUpdateSelectedItemsInState(
       nextProps,
       shouldUpdateSelectedItemsState
     ));
-    if (shouldUpdateSelectedItemsState === 1)
-      this.setState({ selectedItems: selectedItems, loading });
-    else this.setState({ loading });
+    if (shouldUpdateSelectedItemsState === true) {
+      //*****************update items in pint cart in same order it has been selected
+      this.setState({
+        itemsInPrintCart: selectedItems,
+        associatedItemsInPrintCart: associatedItems,
+        loading
+      });
+    } else this.setState({ loading });
   }
 
-  componentDidMount() {
-    const itemsInPrintCart = this.state.itemsInPrintCart;
-    itemsInPrintCart.forEach(item => {
-      if (item.isPerformanceItem && item.selected === true) {
-        const associatedItemsKey: any = this.props
-          .performanceTaskAssociatedItems[item.itemKey];
-        const itemCards =
-          this.props.totalItemCards !== undefined
-            ? this.props.totalItemCards.slice()
-            : undefined;
-        let associatedItems = this.state.associatedItemsInPrintCart;
-        if (itemCards) {
-          // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
-          let associatedItems_temp = [];
-          for (let i = 0; i < associatedItemsKey.length; i++) {
-            const x = itemCards.filter(
-              item => item.itemKey === associatedItemsKey[i]
-            );
-            associatedItems_temp.push(x);
-          }
-          associatedItems[item.itemKey] = associatedItems_temp;
+  componentWillUnmount() {
+    const itemsInPrintcart = this.state.itemsInPrintCart;
+    if (this.props.totalItemCards) {
+      console.log("items in cart before unmount ", itemsInPrintcart);
+      itemsInPrintcart.forEach((itemInCart, index) => {
+        if (this.props.totalItemCards) {
+          this.props.totalItemCards.forEach(item => {
+            //item.selectionIndex = undefined;
+            if (item.itemKey === itemInCart.itemKey) {
+              item.selectionIndex = index;
+            }
+          });
         }
-        this.setState({ associatedItemsInPrintCart: associatedItems });
+      });
+      if (this.props.totalItemCards) {
+        this.props.totalItemCards.forEach(item => {
+          if (item.selected == true)
+            console.log("total items cart before unmont : ", item);
+        });
       }
-    });
+    }
   }
+
+  // componentDidMount() {
+  //   const itemsInPrintCart = this.state.itemsInPrintCart;
+  //   itemsInPrintCart.forEach(item => {
+  //     if (item.isPerformanceItem && item.selected === true) {
+  //       const associatedItemsKey: any = this.props
+  //         .performanceTaskAssociatedItems[item.itemKey];
+  //       const itemCards =
+  //         this.props.totalItemCards !== undefined
+  //           ? this.props.totalItemCards.slice()
+  //           : undefined;
+  //       let associatedItems = this.state.associatedItemsInPrintCart;
+  //       if (itemCards) {
+  //         // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+  //         let associatedItems_temp = [];
+  //         for (let i = 0; i < associatedItemsKey.length; i++) {
+  //           const x = itemCards.filter(
+  //             item => item.itemKey === associatedItemsKey[i]
+  //           );
+  //           associatedItems_temp.push(x);
+  //         }
+  //         associatedItems[item.itemKey] = associatedItems_temp;
+  //       }
+  //       this.setState({ associatedItemsInPrintCart: associatedItems });
+  //     }
+  //   });
+  // }
 
   /**
    * Event handling method on selection and deselection of an item
@@ -184,9 +216,21 @@ export class SearchResultContainer extends React.Component<
       delete associatedItems[item.itemKey];
       this.setState({ associatedItemsInPrintCart: associatedItems });
     }
+
+    //update selected item index
+    let currentSelectedItemIndex = this.state.currentSelectedItemIndex;
+    if (item.selected === true) {
+      currentSelectedItemIndex = currentSelectedItemIndex + 1;
+      item.selectionIndex = currentSelectedItemIndex;
+    } else if (item.selected === false) {
+      currentSelectedItemIndex = currentSelectedItemIndex - 1;
+      item.selectionIndex = -999;
+    }
+    this.setState({ currentSelectedItemIndex: currentSelectedItemIndex });
+
     console.log(this.state.associatedItemsInPrintCart);
+    this.updateItemsInPrintCart(item);
     this.props.onItemSelection(item);
-    this.updateSelectedItemsInState(item);
   };
 
   // handleUpdateAssociatedItems = (item:ItemCardModel) {
@@ -204,16 +248,16 @@ export class SearchResultContainer extends React.Component<
     isItemsInCartChanged: boolean
   ) => {
     if (isItemsInCartChanged === true)
-      this.setState({ selectedItems: itemsInPrintCart });
+      this.setState({ itemsInPrintCart: itemsInPrintCart });
   };
 
-  updateSelectedItemsInState = (item: ItemCardModel) => {
+  updateItemsInPrintCart = (item: ItemCardModel) => {
     let updatedSelectedItems = getUpdatedSelectedItems(
       item,
-      this.state.selectedItems.slice()
+      this.state.itemsInPrintCart.slice()
     );
     this.setState({
-      selectedItems: updatedSelectedItems,
+      //selectedItems: updatedSelectedItems,
       itemsInPrintCart: updatedSelectedItems
     });
   };
@@ -222,7 +266,7 @@ export class SearchResultContainer extends React.Component<
     this.props.onResetItems();
     this.setState({
       itemsInPrintCart: [],
-      selectedItems: [],
+      //selectedItems: [],
       associatedItemsInPrintCart: {}
     });
     this.handleCountNumberOfItemSelection();
@@ -232,7 +276,7 @@ export class SearchResultContainer extends React.Component<
     // this.props.onResetItems();
     if (
       this.props.itemCards !== undefined &&
-      this.getSelectedItemCount() + this.props.itemCards.length > 50
+      this.getTotalSelectedItemCount() + this.props.itemCards.length > 50
     ) {
       this.showErrorModalOnPrintItemsCountExceeded();
       return;
@@ -247,29 +291,43 @@ export class SearchResultContainer extends React.Component<
     new_index: number
   ): void => {
     const itemsInPrintCart = this.state.itemsInPrintCart.slice();
+    const totalItemsCard = this.props.totalItemCards;
     const reOrderedItems = moveArrayItemToNewIndex(
       itemsInPrintCart,
       old_index,
-      new_index
+      new_index,
+      totalItemsCard
     );
     this.setState({
-      itemsInPrintCart: reOrderedItems,
-      selectedItems: reOrderedItems
+      itemsInPrintCart: reOrderedItems
+      // selectedItems: reOrderedItems
     });
   };
 
   handleCountNumberOfItemSelection = (): void => {
-    this.setState({ numberOfSelectedItems: this.getSelectedItemCount() });
+    this.setState({ ItemsCountInPrintCart: this.getTotalSelectedItemCount() });
   };
-  getSelectedItemCount = (): number => {
-    let selectedItemCount = 0;
-    if (this.props.totalItemCards !== undefined) {
-      selectedItemCount = this.props.totalItemCards.filter(
-        it => it.selected === true
-      ).length;
-    }
-    selectedItemCount += this.getSelectedAssociatedItemsCount();
-    return selectedItemCount;
+
+  //Get total number selected items along with associated items
+  getTotalSelectedItemCount = (): number => {
+    // let selectedItemCount = 0;
+    // if (this.props.totalItemCards !== undefined) {
+    //   selectedItemCount = this.props.totalItemCards.filter(
+    //     it => it.selected === true
+    //   ).length;
+    // }
+    // selectedItemCount += this.getSelectedAssociatedItemsCount();
+    // return selectedItemCount;
+    let selectedItemsCount = 0;
+    let selectedAssociatedItemsCount = 0;
+    if (this.state.itemsInPrintCart && this.state.itemsInPrintCart.length > 0)
+      selectedItemsCount = this.state.itemsInPrintCart.length;
+    if (
+      this.state.associatedItemsInPrintCart &&
+      this.state.associatedItemsInPrintCart.length > 0
+    )
+      selectedAssociatedItemsCount = this.getSelectedAssociatedItemsCount();
+    return selectedItemsCount + selectedAssociatedItemsCount;
   };
   getSelectedAssociatedItemsCount() {
     let count = 0;
@@ -317,24 +375,24 @@ export class SearchResultContainer extends React.Component<
 
   handleShowModal = (modelState: boolean): void => {
     //check item selected , if not show error msg popup
-    const totalSelectedItemsCount = this.getSelectedItemCount();
+    const totalSelectedItemsCount = this.getTotalSelectedItemCount();
     areSelectedItemsHaveMath(
       totalSelectedItemsCount,
       this.props.totalItemCards
     );
     const totalItemCards = this.props.totalItemCards;
 
-    if (this.state.selectedItems && this.state.selectedItems.length > 0) {
-      const seletedItems = this.state.selectedItems.slice();
+    if (this.state.itemsInPrintCart && this.state.itemsInPrintCart.length > 0) {
+      const itemsInPrintCart = this.state.itemsInPrintCart.slice();
       this.setState({
         showModal: modelState,
-        itemsInPrintCart: this.state.selectedItems,
+        itemsInPrintCart: this.state.itemsInPrintCart,
         statusMessage: totalSelectedItemsCount.toString()
       });
     } else {
       this.setState({
         showModal: modelState,
-        itemsInPrintCart: this.state.selectedItems
+        itemsInPrintCart: this.state.itemsInPrintCart
       });
     }
     //this.componentDidMount();
@@ -343,14 +401,14 @@ export class SearchResultContainer extends React.Component<
   isSelectedItemsHaveMathItem = (): boolean => {
     let isSelectedItemsHaveMath: boolean = false;
     if (
-      this.state.selectedItems !== undefined &&
-      this.state.numberOfSelectedItems > 0
+      this.state.itemsInPrintCart !== undefined &&
+      this.state.ItemsCountInPrintCart > 0
     ) {
-      let len = this.state.selectedItems.length;
+      let len = this.state.itemsInPrintCart.length;
       for (let i = 0; i < len; i++) {
         if (
-          this.state.selectedItems[i].selected === true &&
-          this.state.selectedItems[i].subjectCode === "MATH"
+          this.state.itemsInPrintCart[i].selected === true &&
+          this.state.itemsInPrintCart[i].subjectCode === "MATH"
         ) {
           isSelectedItemsHaveMath = true;
           break;
@@ -404,8 +462,8 @@ export class SearchResultContainer extends React.Component<
   }
 
   renderResetButton(): JSX.Element {
-    const { selectedItems } = this.state;
-    if (selectedItems.length <= 0) {
+    const { itemsInPrintCart } = this.state;
+    if (itemsInPrintCart.length <= 0) {
       return (
         <button
           onClick={this.handleResetItems}
@@ -435,7 +493,7 @@ export class SearchResultContainer extends React.Component<
     return (
       <PrintCartButton
         label="Print Cart"
-        itemsInCart={this.getSelectedItemCount()}
+        itemsInCart={this.getTotalSelectedItemCount()}
         onClick={() => this.handleShowModal(true)}
       />
     );
@@ -471,7 +529,7 @@ export class SearchResultContainer extends React.Component<
           rowData={digest}
           onRowSelect={this.handleSelectItem}
           key={`${digest.bankKey} - ${digest.itemKey}`}
-          getSelectedItemCount={this.getSelectedItemCount}
+          getSelectedItemCount={this.getTotalSelectedItemCount}
           showErrorModalOnPrintItemsCountExceeded={
             this.showErrorModalOnPrintItemsCountExceeded
           }
@@ -524,7 +582,6 @@ export class SearchResultContainer extends React.Component<
       showErrorModal,
       associatedItemsInPrintCart
     } = this.state;
-    const selectedItems = this.state.selectedItems.slice();
     const itemsInPrintCart = this.state.itemsInPrintCart.slice();
     return (
       <>
@@ -540,7 +597,7 @@ export class SearchResultContainer extends React.Component<
           }
           onUpdateItemsInPrintCart={this.handleSelectItem}
           StatusMessage={statusMessage}
-          totalSelectedItemsCount={this.getSelectedItemCount()}
+          totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
           //areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
         />
@@ -569,11 +626,11 @@ export class SearchResultContainer extends React.Component<
             item={this.props.item}
             isLinkTable={this.props.isLinkTable}
             onCountNumberOfItemSelection={this.handleCountNumberOfItemSelection}
-            numberOfSelectedItem={this.state.numberOfSelectedItems}
+            numberOfSelectedItem={this.state.ItemsCountInPrintCart}
             showErrorModalOnPrintItemsCountExceeded={
               this.showErrorModalOnPrintItemsCountExceeded
             }
-            getSelectedItemCount={this.getSelectedItemCount}
+            getSelectedItemCount={this.getTotalSelectedItemCount}
             associatedItems={this.state.associatedItemsInPrintCart}
           />
         );
