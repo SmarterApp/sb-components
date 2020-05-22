@@ -105,6 +105,16 @@ export class PrintCartItemTableRow extends React.Component<
     return tooltipCcontentStandard;
   }
 
+  getToolTipForTarget(targetId: string, targetDescription: string) {
+    const tooltipCcontentStandard = generateTooltip({
+      displayIcon: true,
+      className: "box",
+      helpText: <span>{targetDescription}</span>,
+      displayText: targetId
+    });
+    return tooltipCcontentStandard;
+  }
+
   renderAssociatedItemsInGroup() {
     if (this.props.associatedItemsInPrintCart !== undefined) {
       return this.props.associatedItemsInPrintCart.map(
@@ -120,6 +130,7 @@ export class PrintCartItemTableRow extends React.Component<
             commonCoreStandardId: any;
             ccssDescription: any;
             targetId: any;
+            targetDescription: any;
           }[]
         ) => {
           return (
@@ -128,9 +139,14 @@ export class PrintCartItemTableRow extends React.Component<
               <td>{this.getToolTipForAssociatedGroupItems()}</td>
               <td>{item[0].itemKey}</td>
               <td>{item[0].subjectLabel}</td>
-              <td>{item[0].gradeLabel.split(" ")[1]}</td>
+              <td>{item[0].gradeLabel}</td>
               <td>{item[0].claimLabel}</td>
-              <td>{item[0].targetId}</td>
+              <td>
+                {this.getToolTipForTarget(
+                  item[0].targetId,
+                  item[0].targetDescription
+                )}
+              </td>
               <td>
                 {this.getContentStandardToolTip(
                   item[0].subjectCode,
@@ -172,9 +188,11 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{this.renderActionButton(item)}</td>
           <td>{item.itemKey}</td>
           <td>{item.subjectLabel}</td>
-          <td>{item.gradeLabel.split(" ")[1]}</td>
+          <td>{item.gradeLabel}</td>
           <td>{item.claimLabel}</td>
-          <td>{item.targetId}</td>
+          <td>
+            {this.getToolTipForTarget(item.targetId, item.targetDescription)}
+          </td>
           <td>
             {this.getContentStandardToolTip(
               item.subjectCode,
