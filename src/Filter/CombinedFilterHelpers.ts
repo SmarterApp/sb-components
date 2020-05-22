@@ -208,8 +208,7 @@ export function resetFilters(
       f.filterOptions !== undefined &&
       f.filterOptions[0] !== undefined &&
       f.filterOptions[0].filterType !== undefined &&
-      f.filterOptions[0].filterType !== FilterType.Grade &&
-      f.filterOptions[0].filterType !== FilterType.Subject
+      f.filterOptions[0].filterType !== FilterType.Grade
     ) {
       f.filterOptions = [];
     }
