@@ -448,6 +448,10 @@ export class Filter {
         f => f.code === FilterType.Grade
       );
 
+      const releaseDateFilterIdx = filters.findIndex(
+        f => f.code === FilterType.ReleaseDate
+      );
+
       if (gradeFilterIdx !== -1) {
         let selectedGrade =
           filters[gradeFilterIdx].filterOptions.filter(
@@ -458,14 +462,14 @@ export class Filter {
           if (selectedGrade == undefined || selectedGrade.key == "0") {
             filters[subjectFilterIdx].filterOptions = [];
           } else {
-            var type = FilterType.Subject;
+            var filterType = FilterType.Subject;
             var selectedSubject =
               searchAPI.subjects == undefined ? "0" : searchAPI.subjects[0];
             var subjectOptions = this.filterStringTypes(model.subjects);
 
             var subjects = subjectOptions.map(o => {
               return {
-                type,
+                filterType,
                 label: o.label,
                 key: o.code,
                 isSelected: o.code == selectedSubject ? true : false
