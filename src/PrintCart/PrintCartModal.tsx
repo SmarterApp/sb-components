@@ -30,7 +30,7 @@ export interface PrintCartState {
   isChanged: boolean;
   currentStep: number;
   itemsInPrintCart: ItemCardModel[];
-  isSelectedItemsHaveMathItem: boolean;
+  // isSelectedItemsHaveMathItem: boolean;
 }
 
 export class PrintCartModal extends React.Component<
@@ -43,8 +43,8 @@ export class PrintCartModal extends React.Component<
     this.state = {
       isChanged: false,
       currentStep: 1,
-      itemsInPrintCart: [],
-      isSelectedItemsHaveMathItem: false
+      itemsInPrintCart: []
+      //isSelectedItemsHaveMathItem: false
     };
   }
 
@@ -54,7 +54,7 @@ export class PrintCartModal extends React.Component<
       this.props.isSelectedItemsHaveMathItem
     )
       this.setState({
-        isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem,
+        // isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem,
         itemsInPrintCart: nextProps.itemsInCart
       });
     else this.setState({ itemsInPrintCart: nextProps.itemsInCart });

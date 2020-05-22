@@ -398,24 +398,43 @@ export class SearchResultContainer extends React.Component<
     //this.componentDidMount();
   };
 
-  isSelectedItemsHaveMathItem = (): boolean => {
-    let isSelectedItemsHaveMath: boolean = false;
+  // isSelectedItemsHaveMathItem = (): boolean => {
+  //   let isSelectedItemsHaveMath: boolean = false;
+  //   if (
+  //     this.state.itemsInPrintCart !== undefined &&
+  //     this.state.ItemsCountInPrintCart > 0
+  //   ) {
+  //     let len = this.state.itemsInPrintCart.length;
+  //     for (let i = 0; i < len; i++) {
+  //       if (
+  //         this.state.itemsInPrintCart[i].selected === true &&
+  //         this.state.itemsInPrintCart[i].subjectCode === "MATH"
+  //       ) {
+  //         isSelectedItemsHaveMath = true;
+  //         break;
+  //       }
+  //     }
+  //   }
+  //   return isSelectedItemsHaveMath;
+  // };
+  areSelectedItemsHaveMath = (): boolean => {
+    let areSelectedItemsHaveMath: boolean = false;
     if (
-      this.state.itemsInPrintCart !== undefined &&
-      this.state.ItemsCountInPrintCart > 0
+      this.props.totalItemCards !== undefined &&
+      this.getTotalSelectedItemCount() > 0
     ) {
-      let len = this.state.itemsInPrintCart.length;
+      let len = this.props.totalItemCards.length;
       for (let i = 0; i < len; i++) {
         if (
-          this.state.itemsInPrintCart[i].selected === true &&
-          this.state.itemsInPrintCart[i].subjectCode === "MATH"
+          this.props.totalItemCards[i].selected === true &&
+          this.props.totalItemCards[i].subjectCode === "MATH"
         ) {
-          isSelectedItemsHaveMath = true;
+          areSelectedItemsHaveMath = true;
           break;
         }
       }
     }
-    return isSelectedItemsHaveMath;
+    return areSelectedItemsHaveMath;
   };
 
   handleHideErrorModal = () => {
@@ -591,7 +610,7 @@ export class SearchResultContainer extends React.Component<
           itemsInCart={itemsInPrintCart}
           associatedItemsInPrintCart={associatedItemsInPrintCart}
           onSubmitPrint={this.handlePrintItemsClick}
-          isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
+          // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
           syncSelectedItemsAndItemsinCart={
             this.handleSyncSelectedItemsAndItemsinCart
           }
@@ -599,7 +618,7 @@ export class SearchResultContainer extends React.Component<
           StatusMessage={statusMessage}
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
-          //areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
+          isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
