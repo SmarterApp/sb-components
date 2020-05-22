@@ -71,7 +71,7 @@ export interface TargetModel {
 
 export interface CoreStandardModel {
   commonCoreStandardsId: string;
-  commonCoreStandardsDescription: number;
+  commonCoreStandardsDescription: string;
   claimId: string;
   subject: string;
   target: TargetModel;

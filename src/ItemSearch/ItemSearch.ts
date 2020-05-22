@@ -28,13 +28,15 @@ export class ItemSearch {
   public static filterToSearchApiModel(
     filterModels: FilterCategoryModel[]
   ): SearchAPIParamsModel {
+    const gradeLevels = Filter.getSelectedGrade(filterModels);
+
     const subjects = Filter.getSelectedCodes(FilterType.Subject, filterModels);
 
     const testNames = Filter.getSelectedCodes(
       FilterType.TestNames,
       filterModels
     );
-    const gradeLevels = Filter.getSelectedGrade(filterModels);
+
     const claims = Filter.getSelectedCodes(FilterType.Claim, filterModels);
     const interactionTypes = Filter.getSelectedCodes(
       FilterType.InteractionType,
@@ -98,6 +100,8 @@ export class ItemSearch {
     switch (category.code) {
       case FilterType.Grade:
         newModel.gradeLevels = Filter.getSelectedGrade([category]);
+        if (newModel.gradeLevels == GradeLevels.NA)
+          newModel.subjects = undefined;
         break;
       case FilterType.Calculator:
         const calculatorCodes = Filter.getSelectedCodes(FilterType.Calculator, [
@@ -304,7 +308,10 @@ export class ItemSearch {
     return options.map(o => {
       return {
         filterType,
-        label: o.commonCoreStandardsId,
+        label:
+          o.commonCoreStandardsId.toLowerCase() == "na"
+            ? "Math Practice"
+            : o.commonCoreStandardsId,
         key: o.commonCoreStandardsId,
         isSelected: (selectedCodes || []).some(
           s => s === o.commonCoreStandardsId
@@ -503,7 +510,7 @@ export class ItemSearch {
     testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
-
+    debugger;
     //restrict load item until selection of grade and subject
     if (
       filter.gradeLevels == undefined ||
