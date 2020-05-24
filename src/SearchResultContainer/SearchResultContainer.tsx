@@ -88,9 +88,7 @@ export class SearchResultContainer extends React.Component<
 > {
   constructor(props: SearchResultContainerProps) {
     super(props);
-    this.handleUpdateItemsInPrintcart = this.handleUpdateItemsInPrintcart.bind(
-      this
-    );
+    //this.handleUpdateItemsInPrintcart = this.handleUpdateItemsInPrintcart.bind(this);
     // this.shouldAddToCartButtonBeDisabled = this.shouldAddToCartButtonBeDisabled.bind(this);
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
@@ -135,53 +133,75 @@ export class SearchResultContainer extends React.Component<
   }
 
   componentWillUnmount() {
-    const itemsInPrintcart = this.state.itemsInPrintCart;
-    if (this.props.totalItemCards) {
-      console.log("items in cart before unmount ", itemsInPrintcart);
-      itemsInPrintcart.forEach((itemInCart, index) => {
-        if (this.props.totalItemCards) {
-          this.props.totalItemCards.forEach(item => {
-            //item.selectionIndex = undefined;
-            if (item.itemKey === itemInCart.itemKey) {
-              item.selectionIndex = index;
-            }
-          });
-        }
-      });
-      if (this.props.totalItemCards) {
-        this.props.totalItemCards.forEach(item => {
-          if (item.selected == true)
-            console.log("total items cart before unmont : ", item);
-        });
-      }
-    }
+    const itemsInPrintCart = this.state.itemsInPrintCart.slice();
+    if (itemsInPrintCart !== undefined)
+      this.handleUpdateSelectionIndex(itemsInPrintCart);
   }
 
-  // componentDidMount() {
-  //   const itemsInPrintCart = this.state.itemsInPrintCart;
-  //   itemsInPrintCart.forEach(item => {
-  //     if (item.isPerformanceItem && item.selected === true) {
-  //       const associatedItemsKey: any = this.props
-  //         .performanceTaskAssociatedItems[item.itemKey];
-  //       const itemCards =
-  //         this.props.totalItemCards !== undefined
-  //           ? this.props.totalItemCards.slice()
-  //           : undefined;
-  //       let associatedItems = this.state.associatedItemsInPrintCart;
-  //       if (itemCards) {
-  //         // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
-  //         let associatedItems_temp = [];
-  //         for (let i = 0; i < associatedItemsKey.length; i++) {
-  //           const x = itemCards.filter(
-  //             item => item.itemKey === associatedItemsKey[i]
-  //           );
-  //           associatedItems_temp.push(x);
-  //         }
-  //         associatedItems[item.itemKey] = associatedItems_temp;
+  /**
+   * Reset selectionIndex in all items
+   * And update selectionIndex according to index of items in print cart
+   */
+  handleUpdateSelectionIndex = (updatedItemsInPrintcart: ItemCardModel[]) => {
+    if (this.props.totalItemCards) {
+      this.props.totalItemCards.forEach(item => {
+        if (item.selectionIndex) {
+          delete item.selectionIndex;
+        }
+        updatedItemsInPrintcart.forEach((itemFromPrintCart, index) => {
+          if (item.itemKey === itemFromPrintCart.itemKey)
+            item.selectionIndex = index;
+        });
+      });
+    }
+  };
+
+  getUpdatedAssociatedItems = (updatedItemsInPrintCart: ItemCardModel[]) => {
+    let updatedAssociatedItems = this.state.associatedItemsInPrintCart;
+    if (
+      updatedItemsInPrintCart !== undefined &&
+      this.props.performanceTaskAssociatedItems &&
+      updatedItemsInPrintCart.length > 0
+    ) {
+      updatedItemsInPrintCart.forEach(item => {
+        const associatedItemsKey: any = this.props
+          .performanceTaskAssociatedItems[item.itemKey];
+        const itemCards =
+          this.props.totalItemCards !== undefined
+            ? this.props.totalItemCards.slice()
+            : undefined;
+        if (itemCards) {
+          // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+          let associatedItems_temp = [];
+          for (let i = 0; i < associatedItemsKey.length; i++) {
+            const x = itemCards.filter(
+              item => item.itemKey === associatedItemsKey[i]
+            );
+            associatedItems_temp.push(x);
+          }
+          updatedAssociatedItems[item.itemKey] = associatedItems_temp;
+        }
+      });
+      return updatedAssociatedItems;
+    } else return {};
+  };
+
+  /**
+   * Sync the updated or reordered items in print cart with total items card
+   */
+  // SyncChangedPrintCartItemsState = (itemsInPrintcart: ItemCardModel[]) => {
+  //   if (this.props.totalItemCards) {
+  //     console.log("items in cart before unmount ", itemsInPrintcart);
+  //     itemsInPrintcart.forEach((itemInCart, index) => {
+  //       if (this.props.totalItemCards) {
+  //         this.props.totalItemCards.forEach(item => {
+  //           if (item.itemKey === itemInCart.itemKey) {
+  //             item.selectionIndex = index;
+  //           }
+  //         });
   //       }
-  //       this.setState({ associatedItemsInPrintCart: associatedItems });
-  //     }
-  //   });
+  //     });
+  //   }
   // }
 
   /**
@@ -189,66 +209,55 @@ export class SearchResultContainer extends React.Component<
    * If selected item is PT then update its associated items also in state, else remove corrosponding associated items
    */
   handleSelectItem = (item: ItemCardModel) => {
+    /**
+     * If item is selected and is a performance item
+     * add its associated items and get updated associatedItemsInPrintCart and update the state
+     */
     if (item.isPerformanceItem && item.selected === true) {
-      const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[
-        item.itemKey
-      ];
-      const itemCards =
-        this.props.totalItemCards !== undefined
-          ? this.props.totalItemCards.slice()
-          : undefined;
-      let associatedItems = this.state.associatedItemsInPrintCart;
-      if (itemCards) {
-        // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
-        let associatedItems_temp = [];
-        for (let i = 0; i < associatedItemsKey.length; i++) {
-          const x = itemCards.filter(
-            item => item.itemKey === associatedItemsKey[i]
-          );
-          associatedItems_temp.push(x);
-        }
-        associatedItems[item.itemKey] = associatedItems_temp;
-      }
+      let associatedItems = this.getUpdatedAssociatedItemsOnSingleItemSelection(
+        item
+      );
       this.setState({ associatedItemsInPrintCart: associatedItems });
     }
+
+    /**
+     * If item is un-selected and is a performance item,
+     * remove its associated items from associatedItemsInPrintCart and update the state
+     */
     if (item.isPerformanceItem && item.selected === false) {
       let associatedItems = this.state.associatedItemsInPrintCart;
       delete associatedItems[item.itemKey];
       this.setState({ associatedItemsInPrintCart: associatedItems });
     }
 
-    //update selected item index
+    /**
+     * If item is selected, increase current index from state and assign to selectionIndex to item
+     * If item is un-selected, decrease current index from state and remove selectionIndex attribute from item,
+     * to indicate it is no more in print cart
+     */
     let currentSelectedItemIndex = this.state.currentSelectedItemIndex;
     if (item.selected === true) {
       currentSelectedItemIndex = currentSelectedItemIndex + 1;
       item.selectionIndex = currentSelectedItemIndex;
     } else if (item.selected === false) {
       currentSelectedItemIndex = currentSelectedItemIndex - 1;
-      item.selectionIndex = -999;
+      delete item.selectionIndex;
     }
     this.setState({ currentSelectedItemIndex: currentSelectedItemIndex });
 
-    console.log(this.state.associatedItemsInPrintCart);
+    // Update selected items in print cart *********************************************** doubt below*********
     this.updateItemsInPrintCart(item);
     this.props.onItemSelection(item);
   };
 
-  // handleUpdateAssociatedItems = (item:ItemCardModel) {
-
-  // }
-
-  // handleSyncPrintcartItemsWithToSelectedItems = (
-  //   itemsInPrintCart: ItemCardModel[],
-  // ) => {
-  //     this.setState({ itemsInPrintCart: selct });
-  // };
-
-  handleSyncSelectedItemsAndItemsinCart = (
+  handleUpdateItemsinPrintCart = (
     itemsInPrintCart: ItemCardModel[],
     isItemsInCartChanged: boolean
   ) => {
-    if (isItemsInCartChanged === true)
+    if (isItemsInCartChanged === true) {
       this.setState({ itemsInPrintCart: itemsInPrintCart });
+      this.handleUpdateSelectionIndex(itemsInPrintCart);
+    }
   };
 
   updateItemsInPrintCart = (item: ItemCardModel) => {
@@ -266,7 +275,6 @@ export class SearchResultContainer extends React.Component<
     this.props.onResetItems();
     this.setState({
       itemsInPrintCart: [],
-      //selectedItems: [],
       associatedItemsInPrintCart: {}
     });
     this.handleCountNumberOfItemSelection();
@@ -280,10 +288,10 @@ export class SearchResultContainer extends React.Component<
     ) {
       this.showErrorModalOnPrintItemsCountExceeded();
       return;
+    } else {
+      this.props.onSelectAll();
+      this.handleCountNumberOfItemSelection();
     }
-
-    this.props.onSelectAll();
-    this.handleCountNumberOfItemSelection();
   };
 
   handleReorderItemsInPrintCart = (
@@ -302,6 +310,7 @@ export class SearchResultContainer extends React.Component<
       itemsInPrintCart: reOrderedItems
       // selectedItems: reOrderedItems
     });
+    this.handleUpdateSelectionIndex(reOrderedItems);
   };
 
   handleCountNumberOfItemSelection = (): void => {
@@ -329,6 +338,7 @@ export class SearchResultContainer extends React.Component<
       selectedAssociatedItemsCount = this.getSelectedAssociatedItemsCount();
     return selectedItemsCount + selectedAssociatedItemsCount;
   };
+
   getSelectedAssociatedItemsCount() {
     let count = 0;
     if (this.state.associatedItemsInPrintCart !== undefined) {
@@ -339,6 +349,29 @@ export class SearchResultContainer extends React.Component<
       }
     }
     return count;
+  }
+
+  private getUpdatedAssociatedItemsOnSingleItemSelection(item: ItemCardModel) {
+    const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[
+      item.itemKey
+    ];
+    const itemCards =
+      this.props.totalItemCards !== undefined
+        ? this.props.totalItemCards.slice()
+        : undefined;
+    let associatedItems = this.state.associatedItemsInPrintCart;
+    if (itemCards) {
+      // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+      let associatedItems_temp = [];
+      for (let i = 0; i < associatedItemsKey.length; i++) {
+        const x = itemCards.filter(
+          item => item.itemKey === associatedItemsKey[i]
+        );
+        associatedItems_temp.push(x);
+      }
+      associatedItems[item.itemKey] = associatedItems_temp;
+    }
+    return associatedItems;
   }
 
   /**
@@ -365,15 +398,17 @@ export class SearchResultContainer extends React.Component<
   };
 
   //Fire this event call on adding/removing item from print cart modal view
-  handleUpdateItemsInPrintcart = (item: ItemCardModel) => {
-    const UpdatedItemsInCart: ItemCardModel[] = getUpdatedSelectedItems(
-      item,
-      this.state.itemsInPrintCart
-    );
-    //this.setState({ItemsInPrintCart: UpdatedItemsInCart});
-  };
+  // handleUpdateItemsInPrintcart = (item: ItemCardModel) => {
+  //   const UpdatedItemsInCart: ItemCardModel[] = getUpdatedSelectedItems(
+  //     item,
+  //     this.state.itemsInPrintCart
+  //   );
+  //   //this.setState({ItemsInPrintCart: UpdatedItemsInCart});
+  // };
 
   handleShowModal = (modelState: boolean): void => {
+    // if(modelState === false) {
+    // }
     //check item selected , if not show error msg popup
     const totalSelectedItemsCount = this.getTotalSelectedItemCount();
     areSelectedItemsHaveMath(
@@ -398,24 +433,24 @@ export class SearchResultContainer extends React.Component<
     //this.componentDidMount();
   };
 
-  isSelectedItemsHaveMathItem = (): boolean => {
-    let isSelectedItemsHaveMath: boolean = false;
+  areSelectedItemsHaveMath = (): boolean => {
+    let areSelectedItemsHaveMath: boolean = false;
     if (
-      this.state.itemsInPrintCart !== undefined &&
-      this.state.ItemsCountInPrintCart > 0
+      this.props.totalItemCards !== undefined &&
+      this.getTotalSelectedItemCount() > 0
     ) {
-      let len = this.state.itemsInPrintCart.length;
+      let len = this.props.totalItemCards.length;
       for (let i = 0; i < len; i++) {
         if (
-          this.state.itemsInPrintCart[i].selected === true &&
-          this.state.itemsInPrintCart[i].subjectCode === "MATH"
+          this.props.totalItemCards[i].selected === true &&
+          this.props.totalItemCards[i].subjectCode === "MATH"
         ) {
-          isSelectedItemsHaveMath = true;
+          areSelectedItemsHaveMath = true;
           break;
         }
       }
     }
-    return isSelectedItemsHaveMath;
+    return areSelectedItemsHaveMath;
   };
 
   handleHideErrorModal = () => {
@@ -591,15 +626,13 @@ export class SearchResultContainer extends React.Component<
           itemsInCart={itemsInPrintCart}
           associatedItemsInPrintCart={associatedItemsInPrintCart}
           onSubmitPrint={this.handlePrintItemsClick}
-          isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
-          syncSelectedItemsAndItemsinCart={
-            this.handleSyncSelectedItemsAndItemsinCart
-          }
+          // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
+          handleUpdateItemsinPrintCart={this.handleUpdateItemsinPrintCart}
           onUpdateItemsInPrintCart={this.handleSelectItem}
           StatusMessage={statusMessage}
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
-          //areSelectedItemsHaveMath={this.areSelectedItemsHaveMath()}
+          isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}

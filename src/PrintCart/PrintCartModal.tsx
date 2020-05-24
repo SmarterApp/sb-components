@@ -17,7 +17,7 @@ export interface PrintCartProps {
   ) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
-  syncSelectedItemsAndItemsinCart: (
+  handleUpdateItemsinPrintCart: (
     itemsInPrintCart: ItemCardModel[],
     isItemsInCartChanged: boolean
   ) => void;
@@ -68,10 +68,7 @@ export class PrintCartModal extends React.Component<
   handleHideModal = () => {
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
-    this.props.syncSelectedItemsAndItemsinCart(
-      this.state.itemsInPrintCart,
-      true
-    );
+    this.props.handleUpdateItemsinPrintCart(this.state.itemsInPrintCart, true);
     // ********set seleteditems state to new one**************************************
   };
 
@@ -128,6 +125,7 @@ export class PrintCartModal extends React.Component<
           currentStep={this.state.currentStep}
           onAddOrRemoveSelectedItems={this.props.onUpdateItemsInPrintCart}
           onItemsReorder={this.props.onItemsReorder}
+          handleUpdateItemsinPrintCart={this.props.handleUpdateItemsinPrintCart}
         />
 
         <PrintWizardSteps2

@@ -18,7 +18,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
   }
 
   handleHideModal = () => {
-    this.props.onResetItems();
+    //this.props.onResetItems();
     this.props.onChangeDownloadPdfModelState();
   };
 

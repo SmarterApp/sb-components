@@ -23,6 +23,10 @@ export interface PrintCartItemTableContainerProps {
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   onItemsReorder: (i: number, j: number) => void;
   associatedItemsInPrintCart?: any[];
+  handleUpdateItemsinPrintCart: (
+    itemsInPrintCart: ItemCardModel[],
+    isItemsInCartChanged: boolean
+  ) => void;
 }
 
 export interface PrintCartItemTableContainerState {
@@ -117,7 +121,15 @@ export class PrintCartTableContainer extends React.Component<
         this.invokeMultiSort(sort, lhs, rhs)
       );
     });
-
+    if (
+      JSON.stringify(this.props.ItemsInPrintCart) ===
+      JSON.stringify(itemsInPrintCart)
+    ) {
+      console.log("Both are equal");
+    } else {
+      this.props.handleUpdateItemsinPrintCart(itemsInPrintCart, true);
+      console.log("Both are not equal");
+    }
     return itemsInPrintCart;
   };
 
@@ -138,6 +150,7 @@ export class PrintCartTableContainer extends React.Component<
 
   renderTable() {
     const itemCards = this.getTableData();
+
     let content = (
       <span className="placeholder-text" role="alert">
         No item found in Print Cart.
