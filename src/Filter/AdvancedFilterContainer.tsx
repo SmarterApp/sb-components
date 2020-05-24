@@ -132,13 +132,15 @@ export class AdvancedFilterContainer extends React.Component<
   renderFilterCategories() {
     const { filterCategories } = this.props;
     const filterCats = filterCategories.map((category, i) => {
-      return (
-        <AdvancedFilter
-          key={i}
-          {...category}
-          onFilterOptionSelect={opt => this.handleFilterSelect(category, opt)}
-        />
-      );
+      if (category.show == true) {
+        return (
+          <AdvancedFilter
+            key={i}
+            {...category}
+            onFilterOptionSelect={opt => this.handleFilterSelect(category, opt)}
+          />
+        );
+      }
     });
 
     return (
