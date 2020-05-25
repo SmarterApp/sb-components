@@ -12,10 +12,7 @@ export interface PrintWizardSteps1_Props {
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   associatedItemsInPrintCart?: ItemCardModel[];
   onItemsReorder: (i: number, j: number) => void;
-  handleUpdateItemsinPrintCart: (
-    itemsInPrintCart: ItemCardModel[],
-    isItemsInCartChanged: boolean
-  ) => void;
+  handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
 }
 
 export interface PrintWizardSteps2_Props {

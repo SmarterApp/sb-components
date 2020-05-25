@@ -138,6 +138,13 @@ export class SearchResultContainer extends React.Component<
       this.handleUpdateSelectionIndex(itemsInPrintCart);
   }
 
+  handleUpdateItemsinPrintCart = (itemsInPrintCart: ItemCardModel[]) => {
+    this.handleUpdateSelectionIndex(itemsInPrintCart);
+    // const updatedAssociatedItems = this.getUpdatedAssociatedItems(itemsInPrintCart);
+    this.setState({ itemsInPrintCart: itemsInPrintCart });
+    this.handleCountNumberOfItemSelection();
+  };
+
   /**
    * Reset selectionIndex in all items
    * And update selectionIndex according to index of items in print cart
@@ -155,54 +162,6 @@ export class SearchResultContainer extends React.Component<
       });
     }
   };
-
-  getUpdatedAssociatedItems = (updatedItemsInPrintCart: ItemCardModel[]) => {
-    let updatedAssociatedItems = this.state.associatedItemsInPrintCart;
-    if (
-      updatedItemsInPrintCart !== undefined &&
-      this.props.performanceTaskAssociatedItems &&
-      updatedItemsInPrintCart.length > 0
-    ) {
-      updatedItemsInPrintCart.forEach(item => {
-        const associatedItemsKey: any = this.props
-          .performanceTaskAssociatedItems[item.itemKey];
-        const itemCards =
-          this.props.totalItemCards !== undefined
-            ? this.props.totalItemCards.slice()
-            : undefined;
-        if (itemCards) {
-          // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
-          let associatedItems_temp = [];
-          for (let i = 0; i < associatedItemsKey.length; i++) {
-            const x = itemCards.filter(
-              item => item.itemKey === associatedItemsKey[i]
-            );
-            associatedItems_temp.push(x);
-          }
-          updatedAssociatedItems[item.itemKey] = associatedItems_temp;
-        }
-      });
-      return updatedAssociatedItems;
-    } else return {};
-  };
-
-  /**
-   * Sync the updated or reordered items in print cart with total items card
-   */
-  // SyncChangedPrintCartItemsState = (itemsInPrintcart: ItemCardModel[]) => {
-  //   if (this.props.totalItemCards) {
-  //     console.log("items in cart before unmount ", itemsInPrintcart);
-  //     itemsInPrintcart.forEach((itemInCart, index) => {
-  //       if (this.props.totalItemCards) {
-  //         this.props.totalItemCards.forEach(item => {
-  //           if (item.itemKey === itemInCart.itemKey) {
-  //             item.selectionIndex = index;
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
 
   /**
    * Event handling method on selection and deselection of an item
@@ -243,32 +202,18 @@ export class SearchResultContainer extends React.Component<
       currentSelectedItemIndex = currentSelectedItemIndex - 1;
       delete item.selectionIndex;
     }
-    this.setState({ currentSelectedItemIndex: currentSelectedItemIndex });
 
-    // Update selected items in print cart *********************************************** doubt below*********
-    this.updateItemsInPrintCart(item);
-    this.props.onItemSelection(item);
-  };
-
-  handleUpdateItemsinPrintCart = (
-    itemsInPrintCart: ItemCardModel[],
-    isItemsInCartChanged: boolean
-  ) => {
-    if (isItemsInCartChanged === true) {
-      this.setState({ itemsInPrintCart: itemsInPrintCart });
-      this.handleUpdateSelectionIndex(itemsInPrintCart);
-    }
-  };
-
-  updateItemsInPrintCart = (item: ItemCardModel) => {
+    // Update selected item in print cart
     let updatedSelectedItems = getUpdatedSelectedItems(
       item,
       this.state.itemsInPrintCart.slice()
     );
     this.setState({
-      //selectedItems: updatedSelectedItems,
-      itemsInPrintCart: updatedSelectedItems
+      itemsInPrintCart: updatedSelectedItems,
+      currentSelectedItemIndex: currentSelectedItemIndex
     });
+    this.handleCountNumberOfItemSelection();
+    this.props.onItemSelection(item);
   };
 
   handleResetItems = (): void => {
@@ -306,11 +251,11 @@ export class SearchResultContainer extends React.Component<
       new_index,
       totalItemsCard
     );
-    this.setState({
-      itemsInPrintCart: reOrderedItems
-      // selectedItems: reOrderedItems
-    });
-    this.handleUpdateSelectionIndex(reOrderedItems);
+    // this.setState({
+    //   itemsInPrintCart: reOrderedItems
+    //   // selectedItems: reOrderedItems
+    // });
+    this.handleUpdateItemsinPrintCart(reOrderedItems);
   };
 
   handleCountNumberOfItemSelection = (): void => {
@@ -407,15 +352,11 @@ export class SearchResultContainer extends React.Component<
   // };
 
   handleShowModal = (modelState: boolean): void => {
-    // if(modelState === false) {
-    // }
-    //check item selected , if not show error msg popup
     const totalSelectedItemsCount = this.getTotalSelectedItemCount();
     areSelectedItemsHaveMath(
       totalSelectedItemsCount,
       this.props.totalItemCards
     );
-    const totalItemCards = this.props.totalItemCards;
 
     if (this.state.itemsInPrintCart && this.state.itemsInPrintCart.length > 0) {
       const itemsInPrintCart = this.state.itemsInPrintCart.slice();
@@ -457,7 +398,7 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showErrorModal: false, statusMessage: "" });
   };
 
-  /*********************All rendering method starts from here**********************************/
+  /*********************All rendering methods starts from here**********************************/
   showErrorModalOnPrintItemsCountExceeded = () => {
     this.setState({
       showErrorModal: true,
@@ -591,13 +532,6 @@ export class SearchResultContainer extends React.Component<
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
         </div>
-        {/* <div className="col-sm-4 header-grid-div">
-          <PrintCartButton
-            // onClick={this.onSelectionAddItemToCart}
-            label="Print Cart"
-            itemsInCart={this.getSelectedItemsCount()}
-            onClick={() => this.handleShowPrintCartModal(true)}
-          /> */}
 
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
@@ -628,7 +562,7 @@ export class SearchResultContainer extends React.Component<
           onSubmitPrint={this.handlePrintItemsClick}
           // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
           handleUpdateItemsinPrintCart={this.handleUpdateItemsinPrintCart}
-          onUpdateItemsInPrintCart={this.handleSelectItem}
+          onAddOrRemoveSelectedItems={this.handleSelectItem}
           StatusMessage={statusMessage}
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
@@ -748,4 +682,34 @@ export class SearchResultContainer extends React.Component<
 //     });
 //   }
 //   //this.componentDidMount();
+// };
+
+// getUpdatedAssociatedItems = (updatedItemsInPrintCart: ItemCardModel[]) => {
+//   let updatedAssociatedItems = this.state.associatedItemsInPrintCart;
+//   if (
+//     updatedItemsInPrintCart !== undefined &&
+//     this.props.performanceTaskAssociatedItems &&
+//     updatedItemsInPrintCart.length > 0
+//   ) {
+//     updatedItemsInPrintCart.forEach(item => {
+//       const associatedItemsKey: any = this.props
+//         .performanceTaskAssociatedItems[item.itemKey];
+//       const itemCards =
+//         this.props.totalItemCards !== undefined
+//           ? this.props.totalItemCards.slice()
+//           : undefined;
+//       if (itemCards) {
+//         // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+//         let associatedItems_temp = [];
+//         for (let i = 0; i < associatedItemsKey.length; i++) {
+//           const x = itemCards.filter(
+//             item => item.itemKey === associatedItemsKey[i]
+//           );
+//           associatedItems_temp.push(x);
+//         }
+//         updatedAssociatedItems[item.itemKey] = associatedItems_temp;
+//       }
+//     });
+//     return updatedAssociatedItems;
+//   } else return {};
 // };

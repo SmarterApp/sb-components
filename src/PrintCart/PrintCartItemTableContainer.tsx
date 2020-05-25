@@ -23,10 +23,7 @@ export interface PrintCartItemTableContainerProps {
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   onItemsReorder: (i: number, j: number) => void;
   associatedItemsInPrintCart?: any[];
-  handleUpdateItemsinPrintCart: (
-    itemsInPrintCart: ItemCardModel[],
-    isItemsInCartChanged: boolean
-  ) => void;
+  handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
 }
 
 export interface PrintCartItemTableContainerState {
@@ -127,7 +124,7 @@ export class PrintCartTableContainer extends React.Component<
     ) {
       console.log("Both are equal");
     } else {
-      this.props.handleUpdateItemsinPrintCart(itemsInPrintCart, true);
+      this.props.handleUpdateItemsinPrintCart(itemsInPrintCart);
       console.log("Both are not equal");
     }
     return itemsInPrintCart;
