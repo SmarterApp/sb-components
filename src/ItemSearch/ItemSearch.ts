@@ -102,6 +102,7 @@ export class ItemSearch {
         newModel.gradeLevels = Filter.getSelectedGrade([category]);
         if (newModel.gradeLevels == GradeLevels.NA)
           newModel.subjects = undefined;
+        newModel.testNames = undefined;
         break;
       case FilterType.Calculator:
         const calculatorCodes = Filter.getSelectedCodes(FilterType.Calculator, [
@@ -136,6 +137,7 @@ export class ItemSearch {
       case FilterType.Subject:
         const subjectCodes = Filter.getSelectedCodes(category.code, [category]);
         newModel.subjects = subjectCodes;
+        newModel.testNames = undefined;
         break;
       case FilterType.Target:
         const targetCodes = Filter.getSelectedTargets([category]);
