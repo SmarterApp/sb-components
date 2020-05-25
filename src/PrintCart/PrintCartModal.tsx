@@ -17,11 +17,8 @@ export interface PrintCartProps {
   ) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
-  syncSelectedItemsAndItemsinCart: (
-    itemsInPrintCart: ItemCardModel[],
-    isItemsInCartChanged: boolean
-  ) => void;
-  onUpdateItemsInPrintCart: (item: ItemCardModel) => void;
+  handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
+  onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   isSelectedItemsHaveMathItem: boolean;
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
@@ -68,10 +65,7 @@ export class PrintCartModal extends React.Component<
   handleHideModal = () => {
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
-    this.props.syncSelectedItemsAndItemsinCart(
-      this.state.itemsInPrintCart,
-      true
-    );
+    this.props.handleUpdateItemsinPrintCart(this.state.itemsInPrintCart);
     // ********set seleteditems state to new one**************************************
   };
 
@@ -126,8 +120,9 @@ export class PrintCartModal extends React.Component<
           itemsInCart={this.props.itemsInCart}
           associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
           currentStep={this.state.currentStep}
-          onAddOrRemoveSelectedItems={this.props.onUpdateItemsInPrintCart}
+          onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
           onItemsReorder={this.props.onItemsReorder}
+          handleUpdateItemsinPrintCart={this.props.handleUpdateItemsinPrintCart}
         />
 
         <PrintWizardSteps2

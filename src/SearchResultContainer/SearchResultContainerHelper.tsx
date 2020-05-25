@@ -35,10 +35,9 @@ export function shouldUpdateSelectedItemsInState(
 
     if (selectedItems !== undefined && selectedItems.length > 0) {
       selectedItems.sort(function(a, b) {
-        return (
-          (a.selectionIndex !== undefined ? a.selectionIndex : -666) -
-          (b.selectionIndex !== undefined ? b.selectionIndex : -665)
-        );
+        if (a.selectionIndex !== undefined && b.selectionIndex !== undefined)
+          return a.selectionIndex - b.selectionIndex;
+        else return 0 - 0;
       });
     }
     selectedItems.forEach(item => {

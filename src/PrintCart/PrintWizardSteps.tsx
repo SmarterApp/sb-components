@@ -12,6 +12,7 @@ export interface PrintWizardSteps1_Props {
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
   associatedItemsInPrintCart?: ItemCardModel[];
   onItemsReorder: (i: number, j: number) => void;
+  handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
 }
 
 export interface PrintWizardSteps2_Props {
@@ -47,6 +48,9 @@ export class PrintWizardSteps1 extends React.Component<
               ItemsInPrintCart={this.props.itemsInCart}
               associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
               onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
+              handleUpdateItemsinPrintCart={
+                this.props.handleUpdateItemsinPrintCart
+              }
             />
           </div>
         );
