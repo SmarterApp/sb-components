@@ -264,23 +264,11 @@ export class SearchResultContainer extends React.Component<
 
   //Get total number selected items along with associated items
   getTotalSelectedItemCount = (): number => {
-    // let selectedItemCount = 0;
-    // if (this.props.totalItemCards !== undefined) {
-    //   selectedItemCount = this.props.totalItemCards.filter(
-    //     it => it.selected === true
-    //   ).length;
-    // }
-    // selectedItemCount += this.getSelectedAssociatedItemsCount();
-    // return selectedItemCount;
     let selectedItemsCount = 0;
     let selectedAssociatedItemsCount = 0;
     if (this.state.itemsInPrintCart && this.state.itemsInPrintCart.length > 0)
       selectedItemsCount = this.state.itemsInPrintCart.length;
-    if (
-      this.state.associatedItemsInPrintCart &&
-      this.state.associatedItemsInPrintCart.length > 0
-    )
-      selectedAssociatedItemsCount = this.getSelectedAssociatedItemsCount();
+    selectedAssociatedItemsCount = this.getSelectedAssociatedItemsCount();
     return selectedItemsCount + selectedAssociatedItemsCount;
   };
 
@@ -352,7 +340,8 @@ export class SearchResultContainer extends React.Component<
   // };
 
   handleShowModal = (modelState: boolean): void => {
-    const totalSelectedItemsCount = this.getTotalSelectedItemCount();
+    const { ItemsCountInPrintCart, itemsInPrintCart } = this.state;
+    const totalSelectedItemsCount = ItemsCountInPrintCart;
     areSelectedItemsHaveMath(
       totalSelectedItemsCount,
       this.props.totalItemCards

@@ -130,6 +130,11 @@ export class PrintCartTableContainer extends React.Component<
     return itemsInPrintCart;
   };
 
+  onItemsReorder = (i: number, j: number) => {
+    this.setState({ sorts: [] });
+    this.props.onItemsReorder(i, j);
+  };
+
   renderTableHeader() {
     // const header = ["Item", "Subject", "Grade", "Claim/Target", "Item Type", "Action"];
     // return header.map((key, index) => {
@@ -163,7 +168,7 @@ export class PrintCartTableContainer extends React.Component<
           columns={this.pageHeaderColumns}
           isItemSelected={this.state.isItemSelected}
           isLinkTable={false}
-          onItemsReorder={this.props.onItemsReorder}
+          onItemsReorder={this.onItemsReorder}
         />
       );
     }
