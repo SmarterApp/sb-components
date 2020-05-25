@@ -54,12 +54,17 @@ export class PrintCartItemTableRow extends React.Component<
 
   renderActionButton = (item: ItemCardModel) => {
     return (
-      <button
-        className="btn btn-sm btn-danger btn-remove-item-print-cart"
-        onClick={() => this.onAddOrRemoveSelectedItems(item)}
-      >
-        X
-      </button>
+      <>
+        <button
+          className="btn btn-sm btn-danger btn-remove-item-print-cart"
+          onClick={() => this.onAddOrRemoveSelectedItems(item)}
+        >
+          X
+        </button>
+        <span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.index + 1}
+        </span>
+      </>
     );
   };
   renderTableHeader() {}
@@ -186,6 +191,7 @@ export class PrintCartItemTableRow extends React.Component<
       <>
         <tr key={item.itemKey} className={""}>
           <td>{this.renderActionButton(item)}</td>
+          {/* <td>{this.props.index}</td> */}
           <td>{item.itemKey}</td>
           <td>{item.subjectLabel}</td>
           <td>{item.gradeLabel}</td>
