@@ -5,20 +5,25 @@ import { SelectOptionProps, Select } from "@src/index";
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
-  onSubmitPrint: (
-    langCode?: string,
-    GlossaryRequired?: string,
-    IllustrationRequired?: string
-  ) => void;
-
+  // onSubmitPrint: (
+  //   langCode?: string,
+  //   GlossaryRequired?: string,
+  //   IllustrationRequired?: string
+  // ) => void;
+  handleLanguageChange: (newLangCode: string) => void;
+  handleIllustrationChange: (newIllustration: string) => void;
+  handleGlossaryOptionChange: (newGlossaryOption: string) => void;
+  selectedLangCode: string;
+  selectedIllustration: string;
+  selectedGlossary: string;
   itemsInCartCount: string;
   StatusMessage: string;
   areSelectedItemsHaveMath: boolean;
 }
 export interface pageState {
-  selectedLangCode?: string;
-  selectedIllustration?: string;
-  selectedGlossary?: string;
+  // selectedLangCode?: string;
+  // selectedIllustration?: string;
+  // selectedGlossary?: string;
   areSelectedItemsHaveMath: boolean;
 }
 
@@ -29,71 +34,70 @@ export class PrintAccessibilityModal extends React.Component<
   constructor(props: PrintAccessibilityContainerProps) {
     super(props);
     this.state = {
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true",
+      // selectedLangCode: "ENU",
+      // selectedIllustration: "false",
+      // selectedGlossary: "true",
       areSelectedItemsHaveMath: props.areSelectedItemsHaveMath
     };
   }
 
   componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
-    if (
-      nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath
-    ) {
-      this.setState({
-        areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath
-      });
-    }
+    // if (nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath ) {
+    this.setState({
+      areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath
+    });
+    // }
   }
 
-  handleHideModal = () => {
-    this.setState({
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true"
-    });
-    this.props.onChangeModelState(false);
-  };
+  // ****************************************************************check thix************
+  // handleHideModal = () => {
+  //   this.setState({
+  //     selectedLangCode: "ENU",
+  //     selectedIllustration: "false",
+  //     selectedGlossary: "true"
+  //   });
+  //   this.props.onChangeModelState(false);
+  // };
 
-  handlePrintItems = () => {
-    this.props.onSubmitPrint(
-      this.state.selectedLangCode,
-      this.state.selectedGlossary,
-      this.state.selectedIllustration
-    );
-    this.setState({
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true"
-    });
-  };
+  // handlePrintItems = () => {
+  //   this.props.onSubmitPrint(
+  //     this.state.selectedLangCode,
+  //     this.state.selectedGlossary,
+  //     this.state.selectedIllustration
+  //   );
+  //   this.setState({
+  //     selectedLangCode: "ENU",
+  //     selectedIllustration: "false",
+  //     selectedGlossary: "true"
+  //   });
+  // };
 
-  handleLanguageChange = (newLangCode: string) => {
-    if (newLangCode !== this.state.selectedLangCode) {
-      this.setState({
-        selectedLangCode: newLangCode
-      });
-    }
-  };
+  // handleLanguageChange = (newLangCode: string) => {
+  //   if (newLangCode !== this.state.selectedLangCode) {
+  //     this.setState({
+  //       selectedLangCode: newLangCode
+  //     });
+  //   }
+  // };
 
-  handleIllustrationChange = (newIllustration: string) => {
-    if (newIllustration !== this.state.selectedIllustration) {
-      this.setState({
-        selectedIllustration: newIllustration
-      });
-    }
-  };
+  // handleIllustrationChange = (newIllustration: string) => {
+  //   if (newIllustration !== this.state.selectedIllustration) {
+  //     this.setState({
+  //       selectedIllustration: newIllustration
+  //     });
+  //   }
+  // };
 
-  handleGlossaryOptionChange = (newGlossaryOption: string) => {
-    if (newGlossaryOption !== this.state.selectedGlossary) {
-      this.setState({
-        selectedGlossary: newGlossaryOption
-      });
-    }
-  };
+  // handleGlossaryOptionChange = (newGlossaryOption: string) => {
+  //   if (newGlossaryOption !== this.state.selectedGlossary) {
+  //     this.setState({
+  //       selectedGlossary: newGlossaryOption
+  //     });
+  //   }
+  // };
 
   renderTranslationLanguages(): JSX.Element {
-    const selectedLanguageCode = this.state.selectedLangCode;
+    const selectedLanguageCode = this.props.selectedLangCode;
 
     const selectOptions: SelectOptionProps[] = [];
 
@@ -119,14 +123,14 @@ export class PrintAccessibilityModal extends React.Component<
           // labelClass="hidden"
           selected={selectedLanguageCode || ""}
           options={selectOptions}
-          onChange={this.handleLanguageChange}
+          onChange={this.props.handleLanguageChange}
         />
       </>
     );
   }
 
   renderIllustrationOptions(): JSX.Element {
-    const selectedIllustration = this.state.selectedIllustration;
+    const selectedIllustration = this.props.selectedIllustration;
     const selectOptions: SelectOptionProps[] = [];
     selectOptions.push({
       label: "Illustration Glossary off",
@@ -149,13 +153,13 @@ export class PrintAccessibilityModal extends React.Component<
         //labelClass="hidden"
         selected={selectedIllustration || ""}
         options={selectOptions}
-        onChange={this.handleIllustrationChange}
+        onChange={this.props.handleIllustrationChange}
       />
     );
   }
 
   renderGlossaryOptions(): JSX.Element {
-    const selectedGlossary = this.state.selectedGlossary;
+    const selectedGlossary = this.props.selectedGlossary;
     const selectOptions: SelectOptionProps[] = [];
 
     selectOptions.push({
@@ -179,7 +183,7 @@ export class PrintAccessibilityModal extends React.Component<
           //labelClass="hidden"
           selected={selectedGlossary || ""}
           options={selectOptions}
-          onChange={this.handleGlossaryOptionChange}
+          onChange={this.props.handleGlossaryOptionChange}
         />
       </>
     );

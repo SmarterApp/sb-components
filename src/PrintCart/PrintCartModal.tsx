@@ -28,6 +28,11 @@ export interface PrintCartState {
   currentStep: number;
   itemsInPrintCart: ItemCardModel[];
   isSelectedItemsHaveMathItem: boolean;
+  selectedLangCode: string;
+  selectedIllustration: string;
+  selectedGlossary: string;
+
+  // isSelectedItemsHaveMathItem: boolean;
 }
 
 export class PrintCartModal extends React.Component<
@@ -41,7 +46,11 @@ export class PrintCartModal extends React.Component<
       isChanged: false,
       currentStep: 1,
       itemsInPrintCart: [],
-      isSelectedItemsHaveMathItem: false
+      isSelectedItemsHaveMathItem: false,
+      selectedLangCode: "ENU",
+      selectedIllustration: "false",
+      selectedGlossary: "true"
+      //isSelectedItemsHaveMathItem: false
     };
   }
 
@@ -62,7 +71,49 @@ export class PrintCartModal extends React.Component<
   //   //this.setState({itemsInPrintCart : UpdatedItemsInCart});
   // }
 
+  handlePrintItems = () => {
+    this.props.onSubmitPrint(
+      this.state.selectedLangCode,
+      this.state.selectedGlossary,
+      this.state.selectedIllustration
+    );
+    this.setState({
+      selectedLangCode: "ENU",
+      selectedIllustration: "false",
+      selectedGlossary: "true"
+    });
+  };
+
+  handleLanguageChange = (newLangCode: string) => {
+    if (newLangCode !== this.state.selectedLangCode) {
+      this.setState({
+        selectedLangCode: newLangCode
+      });
+    }
+  };
+
+  handleIllustrationChange = (newIllustration: string) => {
+    if (newIllustration !== this.state.selectedIllustration) {
+      this.setState({
+        selectedIllustration: newIllustration
+      });
+    }
+  };
+
+  handleGlossaryOptionChange = (newGlossaryOption: string) => {
+    if (newGlossaryOption !== this.state.selectedGlossary) {
+      this.setState({
+        selectedGlossary: newGlossaryOption
+      });
+    }
+  };
+
   handleHideModal = () => {
+    this.setState({
+      selectedLangCode: "ENU",
+      selectedIllustration: "false",
+      selectedGlossary: "true"
+    });
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
     this.props.handleUpdateItemsinPrintCart(this.state.itemsInPrintCart);
@@ -108,7 +159,7 @@ export class PrintCartModal extends React.Component<
   nextOrPrintBtnFunctin = () => {
     if (this.state.currentStep === 1) this._next();
     else {
-      this.props.onSubmitPrint();
+      this.handlePrintItems();
       this.setState({ currentStep: 1 });
     }
   };
@@ -127,7 +178,13 @@ export class PrintCartModal extends React.Component<
 
         <PrintWizardSteps2
           itemsInCart={this.props.itemsInCart}
-          onSubmitPrint={this.props.onSubmitPrint}
+          // onSubmitPrint={this.handlePrintItems}
+          handleLanguageChange={this.handleLanguageChange}
+          handleIllustrationChange={this.handleIllustrationChange}
+          handleGlossaryOptionChange={this.handleGlossaryOptionChange}
+          selectedLangCode={this.state.selectedLangCode}
+          selectedIllustration={this.state.selectedIllustration}
+          selectedGlossary={this.state.selectedGlossary}
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           showModal={this.props.showModal}

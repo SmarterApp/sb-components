@@ -16,11 +16,17 @@ export interface PrintWizardSteps1_Props {
 }
 
 export interface PrintWizardSteps2_Props {
-  onSubmitPrint: (
-    langCode?: string,
-    GlossaryRequired?: string,
-    IllustrationRequired?: string
-  ) => void;
+  // onSubmitPrint: (
+  //   langCode?: string,
+  //   GlossaryRequired?: string,
+  //   IllustrationRequired?: string
+  // ) => void;
+  handleLanguageChange: (newLangCode: string) => void;
+  handleIllustrationChange: (newIllustration: string) => void;
+  handleGlossaryOptionChange: (newGlossaryOption: string) => void;
+  selectedLangCode: string;
+  selectedIllustration: string;
+  selectedGlossary: string;
   itemsInCart: ItemCardModel[];
   currentStep: number;
   onChangeModelState: (modelShowState: boolean) => void;
@@ -78,7 +84,13 @@ export class PrintWizardSteps2 extends React.Component<
       return (
         <>
           <PrintAccessibilityModal
-            onSubmitPrint={this.props.onSubmitPrint}
+            // onSubmitPrint={this.props.onSubmitPrint}
+            handleLanguageChange={this.props.handleLanguageChange}
+            handleIllustrationChange={this.props.handleIllustrationChange}
+            handleGlossaryOptionChange={this.props.handleGlossaryOptionChange}
+            selectedLangCode={this.props.selectedLangCode}
+            selectedIllustration={this.props.selectedIllustration}
+            selectedGlossary={this.props.selectedGlossary}
             onChangeModelState={this.props.onChangeModelState}
             showModal={this.props.showModal}
             itemsInCartCount={this.props.itemsInCart.length.toString()}
