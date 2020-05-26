@@ -53,6 +53,7 @@ export class PrintCartItemTableRow extends React.Component<
   };
 
   renderActionButton = (item: ItemCardModel) => {
+    let sequence = this.props.index;
     return (
       <>
         <button
@@ -61,8 +62,8 @@ export class PrintCartItemTableRow extends React.Component<
         >
           X
         </button>
-        <span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.props.index + 1}
+        <span className="item-sequence">
+          {item.isPerformanceItem ? "-" : sequence}
         </span>
       </>
     );
@@ -98,6 +99,17 @@ export class PrintCartItemTableRow extends React.Component<
     );
   }
 
+  renderToolTipForAssociatedGroupItems = (item: any, sequence: number) => {
+    return (
+      <>
+        {this.getToolTipForAssociatedGroupItems()}
+        <span className="item-sequence">
+          {!item.isPerformanceItem ? "-" : sequence}
+        </span>
+      </>
+    );
+  };
+
   getToolTipForAssociatedGroupItems() {
     const MsgForAssociatedItems =
       "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
@@ -121,6 +133,7 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   renderAssociatedItemsInGroup() {
+    let itemSequence = this.props.index;
     if (this.props.associatedItemsInPrintCart !== undefined) {
       return this.props.associatedItemsInPrintCart.map(
         (
@@ -136,12 +149,19 @@ export class PrintCartItemTableRow extends React.Component<
             ccssDescription: any;
             targetId: any;
             targetDescription: any;
+            isPerformanceItem: any;
           }[]
         ) => {
           return (
             <tr key={item[0].itemKey} className="table-row-associated-item">
               {/* <td>{this.renderActionButton()}</td> */}
-              <td>{this.getToolTipForAssociatedGroupItems()}</td>
+              <td>
+                {this.renderToolTipForAssociatedGroupItems(
+                  item[0],
+                  itemSequence++
+                )}
+              </td>
+
               <td>{item[0].itemKey}</td>
               <td>{item[0].subjectLabel}</td>
               <td>{item[0].gradeLabel}</td>

@@ -36,14 +36,29 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
     super(props);
   }
 
+  getLengthOfItemAssociatedItems = (associatedItems: any) => {
+    let length = 0;
+    if (associatedItems) {
+      associatedItems.map((_item: { itemKey: any }) => {
+        length = length + 1;
+      });
+    }
+    return length;
+  };
+
   renderAllRows(): JSX.Element[] {
+    let nextSequenceIndex = 1;
     return this.props.itemsInPrintCart.map((item, index) => {
+      const sequenceIndex = nextSequenceIndex;
       if (
         item.isPerformanceItem === true &&
         this.props.associatedItemsInPrintCart != undefined
       ) {
         const associatedItemsInPrintCart = this.props
           .associatedItemsInPrintCart[item.itemKey];
+        nextSequenceIndex =
+          nextSequenceIndex +
+          this.getLengthOfItemAssociatedItems(associatedItemsInPrintCart);
         return (
           <PrintCartItemTableRow
             ItemCard={item}
@@ -53,11 +68,12 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
-            index={index}
+            index={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
           />
         );
       } else {
+        nextSequenceIndex = nextSequenceIndex + 1;
         return (
           <PrintCartItemTableRow
             ItemCard={item}
@@ -66,7 +82,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
-            index={index}
+            index={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
           />
         );
