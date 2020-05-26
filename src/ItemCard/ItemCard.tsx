@@ -3,7 +3,10 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
-import { getContentStandardCode } from "./ItemContentStandardHelper";
+import {
+  getContentStandardCode,
+  countNumberOfItemsAfterSelection
+} from "./ItemCardHelperFunction";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -62,12 +65,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   handleCheckBoxChange = (
     item: ItemCardModel,
     e: React.SyntheticEvent,
-    shouldBeDisabled: string
+    shouldButtonBeDisabled: boolean
   ) => {
     e.stopPropagation();
     e.nativeEvent.stopImmediatePropagation();
     if (
-      shouldBeDisabled == "disabled" &&
+      shouldButtonBeDisabled &&
       (item.selected === undefined || item.selected === false)
     ) {
       return;
@@ -77,11 +80,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if (
-      item.selected !== true &&
-      this.props.isPrintLimitEnabled == true &&
-      this.props.getSelectedItemCount() > 50
-    ) {
+    let currentItems: ItemCardModel[] = [];
+    currentItems[0] = item;
+    const ItemsSelectionCountInAdvance = countNumberOfItemsAfterSelection(
+      currentItems,
+      selectedItemsCount,
+      this.props.associatedItems
+    );
+    if (item.selected !== true && ItemsSelectionCountInAdvance > 50) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -125,8 +131,8 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         : "fa-plus-square";
     };
     const cssForDisabledButton = () => {
-      const _shouldBeDisabled = shouldBeDisabled();
-      if (_shouldBeDisabled == "disabled") {
+      const _shouldBeDisabled = shouldButtonBeDisabled();
+      if (_shouldBeDisabled) {
         return "btn-add-remove-disabled-print-selection";
       } else return "";
     };
@@ -135,7 +141,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         ? " btn-selected"
         : " btn-unselected";
     };
-    const shouldBeDisabled = () => {
+    const shouldButtonBeDisabled = () => {
       if (
         this.props.rowData.selected === undefined ||
         this.props.rowData.selected === false
@@ -148,15 +154,24 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               associatedItems[itemKeyInAssociatedItems];
             for (let i = 0; i < associatedItemsArray.length; i++) {
               console.log(associatedItemsArray[i][0].itemKey);
-              if (associatedItemsArray[i][0].itemKey === itemKey)
-                return "disabled";
+              if (associatedItemsArray[i][0].itemKey === itemKey) return true;
             }
           }
         }
       }
-
-      return " ";
+      return false;
     };
+
+    const shouldShowButtonToolTip = () => {
+      if (
+        (this.props.rowData.selected === undefined ||
+          this.props.rowData.selected === false) &&
+        this.props.rowData.isPerformanceItem === false
+      )
+        return false;
+      else return true;
+    };
+
     const selectOrSelectedBtnText = () => {
       return this.props.rowData.selected === true
         ? " Item Selected"
@@ -190,7 +205,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         <button
           className={"item-add-remove btn btn-sm btn-default"}
           onClick={e =>
-            this.handleCheckBoxChange(this.props.rowData, e, shouldBeDisabled())
+            this.handleCheckBoxChange(
+              this.props.rowData,
+              e,
+              shouldButtonBeDisabled()
+            )
           }
           //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
         >
@@ -237,7 +256,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
           type="button"
           className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${cssForDisabledButton()}`}
           onClick={e =>
-            this.handleCheckBoxChange(this.props.rowData, e, shouldBeDisabled())
+            this.handleCheckBoxChange(
+              this.props.rowData,
+              e,
+              shouldButtonBeDisabled()
+            )
           }
           tabIndex={0}
           onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
@@ -249,8 +272,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         </button>
       );
 
-      const displaytestForDisabledButton = (shouldBeDisabled: string) => {
-        if (shouldBeDisabled === "disabled")
+      const noteForDisabledAssocitedItemsButton = (
+        shouldBeDisabled: boolean
+      ) => {
+        if (shouldBeDisabled)
           return "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
         else return "";
       };
@@ -258,7 +283,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       const toolTipButton_AddRemoveItemFromPrintCart = generateTooltip({
         displayIcon: false,
         className: "",
-        helpText: <>{displaytestForDisabledButton(shouldBeDisabled())}</>,
+        helpText: (
+          <>{noteForDisabledAssocitedItemsButton(shouldButtonBeDisabled())}</>
+        ),
         displayText: addRemoveButton
       });
 
@@ -316,16 +343,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            {toolTipButton_AddRemoveItemFromPrintCart}
+            {shouldButtonBeDisabled()
+              ? toolTipButton_AddRemoveItemFromPrintCart
+              : addRemoveButton}
           </div>
-          {/* <button
-            type="button"
-            className={`btn btn-default btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-            onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-          >
-            <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
-            {selectOrSelectedBtnText()}
-          </button> */}
         </div>
       );
     }

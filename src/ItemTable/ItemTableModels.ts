@@ -1,5 +1,5 @@
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
-import { getContentStandardCode } from "../ItemCard/ItemContentStandardHelper";
+import { getContentStandardCode } from "../ItemCard/ItemCardHelperFunction";
 
 export type HeaderType =
   | "Item"

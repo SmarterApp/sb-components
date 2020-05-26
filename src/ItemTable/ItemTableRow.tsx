@@ -6,6 +6,7 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
+import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -85,6 +86,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     rowData: ItemCardModel,
     shouldBeDisabled: string
   ) => {
+    let currentItems: ItemCardModel[] = [];
+    currentItems[0] = rowData;
     e.stopPropagation();
     if (
       shouldBeDisabled == "disabled" &&
@@ -93,7 +96,14 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       return;
     }
     let selectedItemsCount = this.props.getSelectedItemCount();
-    if (rowData.selected !== true && this.props.getSelectedItemCount() > 50) {
+    if (
+      rowData.selected !== true &&
+      countNumberOfItemsAfterSelection(
+        currentItems,
+        selectedItemsCount,
+        this.props.associatedItems
+      ) > 50
+    ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {

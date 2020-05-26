@@ -87,6 +87,33 @@ export function shouldUpdateSelectedItemsInState(
   return { selectedItems, associatedItems, shouldUpdateSelectedItemsState };
 }
 
+export function getAssociatedItemCards(
+  item: ItemCardModel,
+  performanceTaskAssociatedItems: any[],
+  totalItemCards?: ItemCardModel[]
+) {
+  let associatedItems: any = {};
+  if (totalItemCards && item.itemKey in performanceTaskAssociatedItems) {
+    const associatedItemsKey: any =
+      performanceTaskAssociatedItems[item.itemKey];
+    const itemCards =
+      totalItemCards !== undefined ? totalItemCards.slice() : undefined;
+    if (itemCards) {
+      // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
+      let associatedItems_temp = [];
+      for (let i = 0; i < associatedItemsKey.length; i++) {
+        const x = itemCards.filter(
+          item => item.itemKey === associatedItemsKey[i]
+        );
+        associatedItems_temp.push(x);
+      }
+      associatedItems[item.itemKey] = associatedItems_temp;
+      return associatedItems[item.itemKey];
+    }
+  }
+  return {};
+}
+
 export function areSelectedItemsHaveMath(
   totalSelectedItemsCount: number,
   totalItemsCard?: ItemCardModel[]
