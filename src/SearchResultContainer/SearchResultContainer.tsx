@@ -15,8 +15,10 @@ import {
   getUpdatedSelectedItems,
   shouldUpdateSelectedItemsInState,
   moveArrayItemToNewIndex,
-  areSelectedItemsHaveMath
+  areSelectedItemsHaveMath,
+  getAssociatedItemCards
 } from "./SearchResultContainerHelper";
+import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 
 /**
  * SearchResultType enum
@@ -46,7 +48,7 @@ export interface SearchResultContainerProps {
     associateditemsInPrintCart: ItemCardModel[]
   ) => void;
   onResetItems: () => void;
-  onSelectAll: () => void;
+  onSelectAll: (itemCards?: ItemCardModel[]) => void;
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   defaultRenderType?: SearchResultType;
@@ -127,6 +129,7 @@ export class SearchResultContainer extends React.Component<
       this.setState({
         itemsInPrintCart: selectedItems,
         associatedItemsInPrintCart: associatedItems,
+        ItemsCountInPrintCart: this.getTotalSelectedItemCount(),
         loading
       });
     } else this.setState({ loading });
@@ -213,7 +216,7 @@ export class SearchResultContainer extends React.Component<
       currentSelectedItemIndex: currentSelectedItemIndex
     });
     this.handleCountNumberOfItemSelection();
-    this.props.onItemSelection(item);
+    //this.props.onItemSelection(item);
   };
 
   handleResetItems = (): void => {
@@ -226,16 +229,88 @@ export class SearchResultContainer extends React.Component<
   };
 
   handleSelectAllItems = (): void => {
+    let itemsInPrintcart = this.state.itemsInPrintCart.slice();
+    let associatedItemsInPrintcart = this.state.associatedItemsInPrintCart;
+    let itemSelectionIndex = this.state.ItemsCountInPrintCart - 1;
+    let itemsToExclude: number[] = [];
+    const PTassociatedItems = this.props.performanceTaskAssociatedItems;
     // this.props.onResetItems();
+
     if (
       this.props.itemCards !== undefined &&
-      this.getTotalSelectedItemCount() + this.props.itemCards.length > 50
+      countNumberOfItemsAfterSelection(
+        this.props.itemCards,
+        this.getTotalSelectedItemCount(),
+        this.props.performanceTaskAssociatedItems
+      ) > 50
     ) {
       this.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
-      this.props.onSelectAll();
-      this.handleCountNumberOfItemSelection();
+      let shouldUpdateItemsInPrintCart = false;
+      let shouldUpdateAssociatedItemsInCart = false;
+      if (this.props.itemCards) {
+        let visibleItemCards = this.props.itemCards.slice();
+
+        visibleItemCards.forEach(element => {
+          //If item is already selected and item is PT items then add associated items in exclude list
+          if (element.selected && element.isPerformanceItem) {
+            if (PTassociatedItems && element.itemKey in PTassociatedItems)
+              itemsToExclude.push(...PTassociatedItems[element.itemKey]);
+          } else if (!element.selected && element.isPerformanceItem) {
+            //if item is not selected and is PT items, then
+            if (itemsToExclude.indexOf(element.itemKey) !== -1) {
+            } else {
+              if (element.itemKey in PTassociatedItems)
+                itemsToExclude.push(...PTassociatedItems[element.itemKey]);
+              element.selected = true;
+              itemSelectionIndex = itemSelectionIndex + 1;
+              element.selectionIndex = itemSelectionIndex;
+              itemsInPrintcart.push(element);
+              const associatedItemCard = getAssociatedItemCards(
+                element,
+                PTassociatedItems,
+                this.props.totalItemCards
+              );
+              if (associatedItemCard.length > 0) {
+                associatedItemsInPrintcart[
+                  element.itemKey
+                ] = associatedItemCard;
+                shouldUpdateAssociatedItemsInCart = true;
+              }
+              shouldUpdateItemsInPrintCart = true;
+              // this.handleSelectItem(element);
+            }
+          } else if (!element.selected && !element.isPerformanceItem) {
+            element.selected = true;
+            itemSelectionIndex = itemSelectionIndex + 1;
+            element.selectionIndex = itemSelectionIndex;
+            itemsInPrintcart.push(element);
+            const associatedItemCard = getAssociatedItemCards(
+              element,
+              PTassociatedItems,
+              this.props.totalItemCards
+            );
+            if (associatedItemCard.length > 0) {
+              associatedItemsInPrintcart[element.itemKey] = associatedItemCard;
+              shouldUpdateAssociatedItemsInCart = true;
+            }
+            shouldUpdateItemsInPrintCart = true;
+            // this.handleSelectItem(element);
+          }
+        });
+      }
+      if (shouldUpdateAssociatedItemsInCart) {
+        this.setState({
+          associatedItemsInPrintCart: associatedItemsInPrintcart
+        });
+      }
+      if (shouldUpdateItemsInPrintCart) {
+        this.handleUpdateItemsinPrintCart(itemsInPrintcart);
+      }
+
+      // this.props.onSelectAll(this.props.itemCards);
+      // this.handleCountNumberOfItemSelection();
     }
   };
 
@@ -466,13 +541,27 @@ export class SearchResultContainer extends React.Component<
 
   /*To select all visible items to print when testname dropdown is selected */
   renderSelectAllButton(visible: boolean): JSX.Element {
+    let disableCssClass = "disabled";
+    if (this.props.itemCards) {
+      const itemCards = this.props.itemCards;
+      const itemcardsLength = this.props.itemCards.length;
+      for (let i = 0; i < itemcardsLength; i++) {
+        if (itemCards[i].selected === true) {
+          continue;
+        } else {
+          disableCssClass = "";
+          break;
+        }
+      }
+    }
+
     if (visible) {
       return (
         <button
           onClick={this.handleSelectAllItems}
           aria-label="Clear Selection"
           title="Clear Selection"
-          className={"btn btn-default search-result-container-header-button"}
+          className={`btn btn-default search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
         </button>

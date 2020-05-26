@@ -14,7 +14,7 @@ import {
 } from "@src/index";
 import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
 import { ToolTip, generateTooltip } from "../index";
-import { getContentStandardCode } from "@src/ItemCard/ItemContentStandardHelper";
+import { getContentStandardCode } from "@src/ItemCard/ItemCardHelperFunction";
 
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;

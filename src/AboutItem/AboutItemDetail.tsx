@@ -1,6 +1,6 @@
 import * as React from "react";
 import { AboutItemModel } from "./AboutItemModels";
-import { getContentStandardCode } from "@src/ItemCard/ItemContentStandardHelper";
+import { getContentStandardCode } from "@src/ItemCard/ItemCardHelperFunction";
 
 export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
   renderField(
