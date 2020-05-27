@@ -37,7 +37,10 @@ export const itemTableProps: ItemTableContainerProps = {
   showErrorModalOnPrintItemsCountExceeded: () => {
     return;
   },
-  associatedItems: []
+  associatedItems: [],
+  countNumberOfItemsAfterSelection: () => {
+    return 0;
+  }
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

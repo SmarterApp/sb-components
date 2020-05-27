@@ -16,7 +16,8 @@ import {
   shouldUpdateSelectedItemsInState,
   moveArrayItemToNewIndex,
   areSelectedItemsHaveMath,
-  getAssociatedItemCards
+  getAssociatedItemCards,
+  isPTAssociatedItemsInCart
 } from "./SearchResultContainerHelper";
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 
@@ -359,6 +360,18 @@ export class SearchResultContainer extends React.Component<
     return count;
   }
 
+  countNumberOfItemsAfterSelection = (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => {
+    const result = countNumberOfItemsAfterSelection(
+      currentItems,
+      selectedItemsCount,
+      this.props.performanceTaskAssociatedItems
+    );
+    return result;
+  };
+
   private getUpdatedAssociatedItemsOnSingleItemSelection(item: ItemCardModel) {
     const associatedItemsKey: any = this.props.performanceTaskAssociatedItems[
       item.itemKey
@@ -548,6 +561,15 @@ export class SearchResultContainer extends React.Component<
       for (let i = 0; i < itemcardsLength; i++) {
         if (itemCards[i].selected === true) {
           continue;
+        } else if (itemCards[i].isPerformanceItem) {
+          const isPTAssociatedItemIncart: boolean = isPTAssociatedItemsInCart(
+            itemCards[0],
+            this.state.associatedItemsInPrintCart
+          );
+          if (!isPTAssociatedItemIncart) {
+            disableCssClass = "";
+            break;
+          }
         } else {
           disableCssClass = "";
           break;
@@ -559,8 +581,8 @@ export class SearchResultContainer extends React.Component<
       return (
         <button
           onClick={this.handleSelectAllItems}
-          aria-label="Clear Selection"
-          title="Clear Selection"
+          aria-label="Select All"
+          title="Select All"
           className={`btn btn-default search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
@@ -589,6 +611,9 @@ export class SearchResultContainer extends React.Component<
           }
           isPrintLimitEnabled={this.props.isPrintLimitEnabled}
           associatedItems={this.state.associatedItemsInPrintCart}
+          countNumberOfItemsAfterSelection={
+            this.countNumberOfItemsAfterSelection
+          }
         />
       ));
     }
@@ -677,6 +702,9 @@ export class SearchResultContainer extends React.Component<
             }
             getSelectedItemCount={this.getTotalSelectedItemCount}
             associatedItems={this.state.associatedItemsInPrintCart}
+            countNumberOfItemsAfterSelection={
+              this.countNumberOfItemsAfterSelection
+            }
           />
         );
       } else {

@@ -8,7 +8,7 @@ import {
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
   totalItemCards: totalItemsCardList,
-  showSelectAllButton: false,
+  showSelectAllButton: true,
   isPrintLimitEnabled: true,
   onRowSelection: () => {
     return;

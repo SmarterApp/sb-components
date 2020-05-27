@@ -30,6 +30,10 @@ export interface ItemTableContainerProps {
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
   associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
 }
 
 /**
@@ -205,6 +209,9 @@ export class ItemTableContainer extends React.Component<
               this.props.showErrorModalOnPrintItemsCountExceeded
             }
             associatedItems={this.props.associatedItems}
+            countNumberOfItemsAfterSelection={
+              this.props.countNumberOfItemsAfterSelection
+            }
           />
         );
       }

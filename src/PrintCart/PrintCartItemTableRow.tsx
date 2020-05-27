@@ -24,6 +24,7 @@ export interface PrintCartItemTableRowProps {
   onItemsReorder: (i: number, j: number) => void;
   columns: ColumnGroup[];
   isLinkTable: boolean;
+  itemSequence: number;
   index: number;
 }
 
@@ -53,7 +54,7 @@ export class PrintCartItemTableRow extends React.Component<
   };
 
   renderActionButton = (item: ItemCardModel) => {
-    let sequence = this.props.index;
+    let sequence = this.props.itemSequence;
     return (
       <>
         <button
@@ -62,9 +63,9 @@ export class PrintCartItemTableRow extends React.Component<
         >
           X
         </button>
-        <span className="item-sequence">
+        {/* <span className="item-sequence">
           {item.isPerformanceItem ? "-" : sequence}
-        </span>
+        </span> */}
       </>
     );
   };
@@ -99,15 +100,8 @@ export class PrintCartItemTableRow extends React.Component<
     );
   }
 
-  renderToolTipForAssociatedGroupItems = (item: any, sequence: number) => {
-    return (
-      <>
-        {this.getToolTipForAssociatedGroupItems()}
-        <span className="item-sequence">
-          {!item.isPerformanceItem ? "-" : sequence}
-        </span>
-      </>
-    );
+  renderToolTipForAssociatedGroupItems = (item: any) => {
+    return <>{this.getToolTipForAssociatedGroupItems()}</>;
   };
 
   getToolTipForAssociatedGroupItems() {
@@ -117,7 +111,8 @@ export class PrintCartItemTableRow extends React.Component<
       displayIcon: true,
       className: "box",
       helpText: <span>{MsgForAssociatedItems}</span>,
-      displayText: ""
+      displayText: "",
+      position: "top"
     });
     return tooltipCcontentStandard;
   }
@@ -133,7 +128,7 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   renderAssociatedItemsInGroup() {
-    let itemSequence = this.props.index;
+    let itemSequence = this.props.itemSequence;
     if (this.props.associatedItemsInPrintCart !== undefined) {
       return this.props.associatedItemsInPrintCart.map(
         (
@@ -155,13 +150,8 @@ export class PrintCartItemTableRow extends React.Component<
           return (
             <tr key={item[0].itemKey} className="table-row-associated-item">
               {/* <td>{this.renderActionButton()}</td> */}
-              <td>
-                {this.renderToolTipForAssociatedGroupItems(
-                  item[0],
-                  itemSequence++
-                )}
-              </td>
-
+              <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
+              <td>{!item[0].isPerformanceItem ? "-" : itemSequence++}</td>
               <td>{item[0].itemKey}</td>
               <td>{item[0].subjectLabel}</td>
               <td>{item[0].gradeLabel}</td>
@@ -211,6 +201,7 @@ export class PrintCartItemTableRow extends React.Component<
       <>
         <tr key={item.itemKey} className={""}>
           <td>{this.renderActionButton(item)}</td>
+          <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
           {/* <td>{this.props.index}</td> */}
           <td>{item.itemKey}</td>
           <td>{item.subjectLabel}</td>

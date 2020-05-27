@@ -6,7 +6,6 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
-import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -20,6 +19,10 @@ export interface ItemTableRowProps {
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
   associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
 }
 
 const unChecked = (
@@ -98,10 +101,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     let selectedItemsCount = this.props.getSelectedItemCount();
     if (
       rowData.selected !== true &&
-      countNumberOfItemsAfterSelection(
+      this.props.countNumberOfItemsAfterSelection(
         currentItems,
-        selectedItemsCount,
-        this.props.associatedItems
+        selectedItemsCount
       ) > 50
     ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
@@ -220,7 +222,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
             const associatedItemsArray =
               associatedItems[itemKeyInAssociatedItems];
             for (let i = 0; i < associatedItemsArray.length; i++) {
-              console.log(associatedItemsArray[i][0].itemKey);
               if (associatedItemsArray[i][0].itemKey === itemKey)
                 return "disabled";
             }

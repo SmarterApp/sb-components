@@ -43,7 +43,7 @@ export function countNumberOfItemsAfterSelection(
       count = count + 1;
     } else {
       if (item.itemKey in totalAssociatedItems) {
-        if (itemsToExcludeCounting.indexOf(item.itemKey) !== -1) {
+        if (itemsToExcludeCounting.indexOf(item.itemKey) === -1) {
           itemsToExcludeCounting.push(...totalAssociatedItems[item.itemKey]);
           const associatedItemsCount =
             totalAssociatedItems[item.itemKey].length;

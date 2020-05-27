@@ -66,25 +66,38 @@ export function shouldUpdateSelectedItemsInState(
 
     if (nextProps.totalItemCards) {
       nextProps.totalItemCards.forEach(item => {
-        if (item.selected == true)
-          console.log(
-            "total items cart after mount before setting  state : ",
-            item
-          );
+        if (item.selected == true) {
+        }
       });
     }
   }
   if (nextProps.totalItemCards) {
     nextProps.totalItemCards.forEach(item => {
-      if (item.selected == true)
-        console.log(
-          "total items cart after mount before setting  state : ",
-          item
-        );
+      if (item.selected == true) {
+      }
     });
   }
 
   return { selectedItems, associatedItems, shouldUpdateSelectedItemsState };
+}
+
+export function isPTAssociatedItemsInCart(
+  item: ItemCardModel,
+  associatedItemsInPrintCart: any
+) {
+  let result = false;
+  const associatedItemKeyArray: any[] = Object.keys(associatedItemsInPrintCart);
+
+  associatedItemKeyArray.forEach(itemKey_string => {
+    const associateditems =
+      associatedItemsInPrintCart[parseInt(itemKey_string)];
+    associateditems.forEach((element: { itemKey: number }[]) => {
+      if (element[0].itemKey === item.itemKey) {
+        result = true;
+      }
+    });
+  });
+  return result;
 }
 
 export function getAssociatedItemCards(
