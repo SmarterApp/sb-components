@@ -60,14 +60,14 @@ export const itemCardList: ItemCardModel[] = [
     subjectCode: "MATH",
     subjectLabel: "Math",
     claimCode: "MATH1",
-    claimLabel: "Concepts and Procedures",
+    claimLabel: "Concepts and Procedures and Logical",
     targetHash: 100,
     targetId: "A",
     targetDescription:
       "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
     targetShortName: "",
     interactionTypeCode: "EQ",
-    interactionTypeLabel: "Equation",
+    interactionTypeLabel: "Equation Multiple Choice choice",
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: true
@@ -225,7 +225,10 @@ export const itemCardProps: ItemCardProps = {
     return;
   },
   isPrintLimitEnabled: true,
-  associatedItems: []
+  associatedItems: [],
+  countNumberOfItemsAfterSelection: () => {
+    return 0;
+  }
 };
 
 //PerformanceTaskAssociatedItems mockup data

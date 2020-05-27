@@ -3,10 +3,7 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
-import {
-  getContentStandardCode,
-  countNumberOfItemsAfterSelection
-} from "./ItemCardHelperFunction";
+import { getContentStandardCode } from "./ItemCardHelperFunction";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -29,6 +26,10 @@ export interface ItemCardProps {
   showErrorModalOnPrintItemsCountExceeded: () => void;
   isPrintLimitEnabled: boolean;
   associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
 }
 
 export interface ItemCardState {
@@ -81,10 +82,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     //check if selection items count exceed the limits
     let currentItems: ItemCardModel[] = [];
     currentItems[0] = item;
-    const ItemsSelectionCountInAdvance = countNumberOfItemsAfterSelection(
+    const ItemsSelectionCountInAdvance = this.props.countNumberOfItemsAfterSelection(
       currentItems,
-      selectedItemsCount,
-      this.props.associatedItems
+      selectedItemsCount
     );
     if (item.selected !== true && ItemsSelectionCountInAdvance > 50) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
@@ -153,7 +153,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             const associatedItemsArray =
               associatedItems[itemKeyInAssociatedItems];
             for (let i = 0; i < associatedItemsArray.length; i++) {
-              console.log(associatedItemsArray[i][0].itemKey);
               if (associatedItemsArray[i][0].itemKey === itemKey) return true;
             }
           }
@@ -276,18 +275,41 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         shouldBeDisabled: boolean
       ) => {
         if (shouldBeDisabled)
-          return "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
-        else return "";
+          return (
+            <>
+              {"This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to" +
+                " measure a student’s ability to demonstrate critical-thinking," +
+                " problem-solving skills and/or complex analysis, and writing and" +
+                " research skills."}
+            </>
+          );
+        else return <></>;
       };
 
-      const toolTipButton_AddRemoveItemFromPrintCart = generateTooltip({
-        displayIcon: false,
-        className: "",
-        helpText: (
-          <>{noteForDisabledAssocitedItemsButton(shouldButtonBeDisabled())}</>
-        ),
-        displayText: addRemoveButton
-      });
+      // const toolTipButton_AddRemoveItemFromPrintCart = generateTooltip({
+      //   displayIcon: false,
+      //   className: "",
+      //   helpText: (
+      //     <>{noteForDisabledAssocitedItemsButton(shouldButtonBeDisabled())}</>
+      //   ),
+      //   displayText: addRemoveButton
+      // });
+      const toolTipWithText_AddRemoveItemFromPrintCart = (
+        <ToolTip
+          className="tooltip-item-card-button"
+          helpText={noteForDisabledAssocitedItemsButton(
+            shouldButtonBeDisabled()
+          )}
+          position="top"
+        >
+          {addRemoveButton}
+        </ToolTip>
+      );
+      const toolTipNoText_AddRemoveItemFromPrintCart = (
+        <ToolTip className="tooltip-item-card-button">
+          {addRemoveButton}
+        </ToolTip>
+      );
 
       content = (
         <div
@@ -345,8 +367,8 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               </span>
             </p>
             {shouldButtonBeDisabled()
-              ? toolTipButton_AddRemoveItemFromPrintCart
-              : addRemoveButton}
+              ? toolTipWithText_AddRemoveItemFromPrintCart
+              : toolTipNoText_AddRemoveItemFromPrintCart}
           </div>
         </div>
       );

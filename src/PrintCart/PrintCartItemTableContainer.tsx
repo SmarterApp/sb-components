@@ -17,6 +17,7 @@ import { PrintCartTable } from "@src/PrintCart/PrintCartTable";
 import { PrintAccessibilityContainerProps } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
 import { timingSafeEqual } from "crypto";
+import { PrintcartHeaderTable } from "./PrintcartHeaderTable";
 
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
@@ -122,10 +123,8 @@ export class PrintCartTableContainer extends React.Component<
       JSON.stringify(this.props.ItemsInPrintCart) ===
       JSON.stringify(itemsInPrintCart)
     ) {
-      console.log("Both are equal");
     } else {
       this.props.handleUpdateItemsinPrintCart(itemsInPrintCart);
-      console.log("Both are not equal");
     }
     return itemsInPrintCart;
   };
@@ -141,7 +140,7 @@ export class PrintCartTableContainer extends React.Component<
     //   return <th key={index}>{key.toUpperCase()}</th>;
     // });
     return (
-      <HeaderTable
+      <PrintcartHeaderTable
         sorts={this.state.sorts}
         onHeaderClick={this.onClickHeader}
         columns={this.pageHeaderColumns}

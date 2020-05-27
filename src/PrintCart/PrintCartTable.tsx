@@ -68,7 +68,8 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
-            index={sequenceIndex}
+            index={index}
+            itemSequence={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
           />
         );
@@ -82,7 +83,8 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             columns={this.props.columns}
             //   isItemSelected={this.state.isItemSelected}
             isLinkTable={false}
-            index={sequenceIndex}
+            index={index}
+            itemSequence={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
           />
         );
