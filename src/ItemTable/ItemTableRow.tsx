@@ -272,6 +272,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const tooltip = generateTooltip({
       displayIcon: false,
       className: "",
+      position: "top",
       helpText: <label>{getToolTipMsg()}</label>,
       displayText: iconsAddOrRemove
     });
