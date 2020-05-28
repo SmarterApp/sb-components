@@ -65,14 +65,3 @@ export class PrintCartButton extends React.Component<
     );
   }
 }
-
-// <button
-//   className={`btn btn-primary ${className}`}
-//   role="switch"
-//   aria-checked={props.selected}
-//   disabled={props.disabled}
-//   onClick={props.onClick}
-//   aria-label={ariaLabel}
-// >
-//   {props.label}
-// </button>

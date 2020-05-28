@@ -91,8 +91,6 @@ export class SearchResultContainer extends React.Component<
 > {
   constructor(props: SearchResultContainerProps) {
     super(props);
-    //this.handleUpdateItemsInPrintcart = this.handleUpdateItemsInPrintcart.bind(this);
-    // this.shouldAddToCartButtonBeDisabled = this.shouldAddToCartButtonBeDisabled.bind(this);
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
@@ -382,7 +380,6 @@ export class SearchResultContainer extends React.Component<
         : undefined;
     let associatedItems = this.state.associatedItemsInPrintCart;
     if (itemCards) {
-      // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
       let associatedItems_temp = [];
       for (let i = 0; i < associatedItemsKey.length; i++) {
         const x = itemCards.filter(
@@ -417,15 +414,6 @@ export class SearchResultContainer extends React.Component<
   handleTypeChange = (renderType: SearchResultType): void => {
     this.setState({ renderType });
   };
-
-  //Fire this event call on adding/removing item from print cart modal view
-  // handleUpdateItemsInPrintcart = (item: ItemCardModel) => {
-  //   const UpdatedItemsInCart: ItemCardModel[] = getUpdatedSelectedItems(
-  //     item,
-  //     this.state.itemsInPrintCart
-  //   );
-  //   //this.setState({ItemsInPrintCart: UpdatedItemsInCart});
-  // };
 
   handleShowModal = (modelState: boolean): void => {
     const { ItemsCountInPrintCart, itemsInPrintCart } = this.state;
@@ -730,92 +718,3 @@ export class SearchResultContainer extends React.Component<
     );
   }
 }
-
-/**
- * Depending on what renderType is selected, ItemCards or a table
- * will be rendered.
- */
-// renderBody(): JSX.Element {
-//   let tag: JSX.Element | JSX.Element[] | undefined;
-//   if (this.props.itemCards && this.props.itemCards.length > 0) {
-//     if (this.state.renderType === SearchResultType.Table) {
-//       tag = (
-//           <ItemTableContainer
-//             onRowSelection={this.props.onRowSelection}
-//             onItemSelection={this.handleSelectItem}
-//             itemCards={this.props.itemCards}
-//             item={this.props.item}
-//             isLinkTable={this.props.isLinkTable}
-//           />
-//       );
-//     } else {
-//       tag = this.renderItemCards();
-//     }
-//   } else {
-//     if (this.state.loading) {
-//       tag = <div className="loader" />;
-//     } else {
-//       tag = <p>No items found.</p>;
-//     }
-//   }
-
-//   return <div className="search-result-body">{tag}</div>;
-// }
-
-/**
- * Modal on click of print cart btn
- * set selectedItemsincart same as selectedItems
- */
-// handleShowPrintCartModal = (modelState: boolean): void => {
-//   if(modelState === false) {
-//     this.setState({
-//       showModal: modelState,
-//       ItemsInPrintCart: this.state.selectedItems
-//     })
-//   }
-//   if(this.state.selectedItems && this.state.selectedItems.length > 0 ) {
-//     const seletedItems = this.state.selectedItems.slice();
-//     this.setState({
-//       showModal: modelState,
-//       ItemsInPrintCart: this.state.selectedItems,
-//       statusMessage: seletedItems.toString()
-//     });
-//   }
-//   else {
-//     this.setState({
-//       showModal: modelState,
-//       ItemsInPrintCart: this.state.selectedItems
-//     });
-//   }
-//   //this.componentDidMount();
-// };
-
-// getUpdatedAssociatedItems = (updatedItemsInPrintCart: ItemCardModel[]) => {
-//   let updatedAssociatedItems = this.state.associatedItemsInPrintCart;
-//   if (
-//     updatedItemsInPrintCart !== undefined &&
-//     this.props.performanceTaskAssociatedItems &&
-//     updatedItemsInPrintCart.length > 0
-//   ) {
-//     updatedItemsInPrintCart.forEach(item => {
-//       const associatedItemsKey: any = this.props
-//         .performanceTaskAssociatedItems[item.itemKey];
-//       const itemCards =
-//         this.props.totalItemCards !== undefined
-//           ? this.props.totalItemCards.slice()
-//           : undefined;
-//       if (itemCards) {
-//         // associatedItems[item.itemKey] = itemCards.filter(item => associatedItems.includes(item.itemKey));
-//         let associatedItems_temp = [];
-//         for (let i = 0; i < associatedItemsKey.length; i++) {
-//           const x = itemCards.filter(
-//             item => item.itemKey === associatedItemsKey[i]
-//           );
-//           associatedItems_temp.push(x);
-//         }
-//         updatedAssociatedItems[item.itemKey] = associatedItems_temp;
-//       }
-//     });
-//     return updatedAssociatedItems;
-//   } else return {};
-// };

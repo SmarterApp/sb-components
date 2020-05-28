@@ -7,20 +7,34 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
   onClick={[Function]}
   onKeyUp={[Function]}
 >
-  <td
-    className="item-checkbox"
-    key="checkbox-control"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    tabIndex={0}
-  >
-    <i
-      aria-hidden="true"
-      className="fa fa-square-o fa-sm table-icon"
+  <React.Fragment>
+    <ToolTip
+      className=""
+      displayIcon={false}
+      displayText={
+        <td
+          className="item-checkbox item-add-remove"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          tabIndex={0}
+        >
+          <button
+            className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+            type="button"
+          >
+            <i
+              className="fa fa-2x fa-plus-circle"
+            />
+          </button>
+        </td>
+      }
+      helpText={
+        <label>
+          Add item to print queue
+        </label>
+      }
     />
-     
-  </td>
+  </React.Fragment>
   <td
     className="item"
     key="item-187-3206"
@@ -74,7 +88,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
       key="claim"
     >
       <span>
-        Concepts and Procedures
+        Concepts and Procedures and Logical
       </span>
     </span>
     <span
@@ -94,6 +108,34 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
     </span>
   </td>
   <td
+    className="standard"
+    key="standard-187-3206"
+    role="gridcell"
+  >
+    <span
+      key="standard"
+    >
+      <span>
+        Not Available
+      </span>
+    </span>
+    <span
+      key="standard"
+    >
+      <ToolTip
+        className="box"
+        displayIcon={true}
+        displayText=""
+        helpText={
+          <p>
+            Content Standard information is currently unavailable for this item.
+          </p>
+        }
+        position="bottom"
+      />
+    </span>
+  </td>
+  <td
     className="item-type"
     key="item-type-187-3206"
     role="gridcell"
@@ -102,7 +144,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
       key="item-type"
     >
       <span>
-        Equation
+        Equation Multiple Choice choice
       </span>
     </span>
   </td>
@@ -168,6 +210,22 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
+                "className": "standard",
+              },
+              Object {
+                "accessor": [Function],
+                "className": "standard",
+                "helpText": [Function],
+              },
+            ],
+            "compare": [Function],
+            "header": "Standard",
+            "headerClassName": "standard",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
                 "className": "item-type",
               },
             ],
@@ -187,11 +245,11 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures",
+          "claimLabel": "Concepts and Procedures and Logical",
           "grade": 8,
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "EQ",
-          "interactionTypeLabel": "Equation",
+          "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
           "subjectCode": "MATH",
@@ -210,20 +268,69 @@ exports[`ItemTableRow matches snapshot 1`] = `
         onClick={[Function]}
         onKeyUp={[Function]}
       >
-        <td
-          className="item-checkbox"
-          key="checkbox-control"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          tabIndex={0}
+        <ToolTip
+          className=""
+          displayIcon={false}
+          displayText={
+            <td
+              className="item-checkbox item-add-remove"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <button
+                className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                type="button"
+              >
+                <i
+                  className="fa fa-2x fa-plus-circle"
+                />
+              </button>
+            </td>
+          }
+          helpText={
+            <label>
+              Add item to print queue
+            </label>
+          }
         >
-          <i
-            aria-hidden="true"
-            className="fa fa-square-o fa-sm table-icon"
-          />
-           
-        </td>
+          <span
+            className="tool-tip-links "
+            tabIndex={0}
+          >
+            <span
+              className="tool-tip-hoverable"
+            >
+              <td
+                className="item-checkbox item-add-remove"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              </td>
+               
+            </span>
+            <span
+              className="tool-tip-details"
+            >
+              <span
+                className="tool-tip-message  "
+              >
+                <label>
+                  Add item to print queue
+                </label>
+              </span>
+            </span>
+          </span>
+        </ToolTip>
         <td
           className="item"
           key="item-187-3206"
@@ -277,7 +384,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             key="claim"
           >
             <span>
-              Concepts and Procedures
+              Concepts and Procedures and Logical
             </span>
           </span>
           <span
@@ -324,6 +431,60 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td
+          className="standard"
+          key="standard-187-3206"
+          role="gridcell"
+        >
+          <span
+            key="standard"
+          >
+            <span>
+              Not Available
+            </span>
+          </span>
+          <span
+            key="standard"
+          >
+            <ToolTip
+              className="box"
+              displayIcon={true}
+              displayText=""
+              helpText={
+                <p>
+                  Content Standard information is currently unavailable for this item.
+                </p>
+              }
+              position="bottom"
+            >
+              <span
+                className="tool-tip-links box"
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                   
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-info-circle fa-sm"
+                  />
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message bottom "
+                  >
+                    <p>
+                      Content Standard information is currently unavailable for this item.
+                    </p>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </span>
+        </td>
+        <td
           className="item-type"
           key="item-type-187-3206"
           role="gridcell"
@@ -332,7 +493,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             key="item-type"
           >
             <span>
-              Equation
+              Equation Multiple Choice choice
             </span>
           </span>
         </td>

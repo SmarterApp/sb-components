@@ -154,6 +154,30 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </div>
             </th>
             <th
+              className="standard"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="standard"
+              >
+                <span>
+                  Standard
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
               className="item-type"
               onClick={[Function]}
               onKeyUp={[Function]}
@@ -185,19 +209,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -272,6 +319,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -287,19 +372,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -374,6 +482,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -389,19 +535,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -476,6 +645,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -491,19 +698,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -578,6 +808,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -593,19 +861,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -680,6 +971,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -695,19 +1024,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -782,6 +1134,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -797,19 +1187,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -884,6 +1297,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -899,19 +1350,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -986,6 +1460,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1001,19 +1513,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1088,6 +1623,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1103,19 +1676,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1190,6 +1786,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1205,19 +1839,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1292,6 +1949,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1307,19 +2002,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1394,6 +2112,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1409,19 +2165,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1496,6 +2275,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1511,19 +2328,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1598,6 +2438,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1613,19 +2491,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1700,6 +2601,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1715,19 +2654,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1802,6 +2764,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1817,19 +2817,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -1904,6 +2927,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -1919,19 +2980,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2006,6 +3090,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2021,19 +3143,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2108,6 +3253,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2123,19 +3306,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2210,6 +3416,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2225,19 +3469,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2312,6 +3579,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2327,19 +3632,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2414,6 +3742,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2429,19 +3795,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2516,6 +3905,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2531,19 +3958,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2618,6 +4068,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2633,19 +4121,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2720,6 +4231,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2735,19 +4284,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2822,6 +4394,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2837,19 +4447,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -2924,6 +4557,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -2939,19 +4610,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3026,6 +4720,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3041,19 +4773,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3128,6 +4883,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3143,19 +4936,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3230,6 +5046,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3245,19 +5099,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3332,6 +5209,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3347,19 +5262,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3434,6 +5372,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3449,19 +5425,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3536,6 +5535,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3551,19 +5588,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3638,6 +5698,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3653,19 +5751,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3740,6 +5861,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3755,19 +5914,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3842,6 +6024,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3857,19 +6077,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -3944,6 +6187,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -3959,19 +6240,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4046,6 +6350,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4061,19 +6403,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4148,6 +6513,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4163,19 +6566,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4250,6 +6676,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4265,19 +6729,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4352,6 +6839,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4367,19 +6892,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4454,6 +7002,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4469,19 +7055,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4556,6 +7165,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4571,19 +7218,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4658,6 +7328,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4673,19 +7381,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4760,6 +7491,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4775,19 +7544,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4862,6 +7654,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4877,19 +7707,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -4964,6 +7817,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -4979,19 +7870,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -5066,6 +7980,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -5081,19 +8033,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -5168,6 +8143,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
               className="item-type"
               role="gridcell"
             >
@@ -5183,19 +8196,42 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <td
-              className="item-checkbox"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
+            <span
+              className="tool-tip-links "
               tabIndex={0}
             >
-              <i
-                aria-hidden="true"
-                className="fa fa-square-o fa-sm table-icon"
-              />
-               
-            </td>
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
             <td
               className="item"
               role="gridcell"
@@ -5263,6 +8299,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                     >
                       <p>
                         target description right here
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </td>
+            <td
+              className="standard"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  AB-123
+                </span>
+              </span>
+              <span>
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        this is the common core description
                       </p>
                     </span>
                   </span>

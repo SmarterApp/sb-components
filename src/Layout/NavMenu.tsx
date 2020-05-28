@@ -28,7 +28,6 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
 
   renderLoggedInUserProfileMenu() {
     let content: JSX.Element | undefined;
-    console.log(this.props.isInterimSite);
     if (
       this.props.isInterimSite !== undefined &&
       this.props.isInterimSite === true

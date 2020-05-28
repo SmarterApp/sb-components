@@ -76,14 +76,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-  /*<<<<<<< HEAD
-  handleCheckboxClick = (e: React.MouseEvent<HTMLTableDataCellElement>, rowData: ItemCardModel) => {
-    if (rowData.selected === true) rowData.selected = false;
-    else rowData.selected = true;
-    //e.stopPropagation();
-    this.props.onRowSelect(rowData);
-    //this.props.onRowExpand(rowData);
-=======*/
   handleCheckboxClick = (
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel,
@@ -140,9 +132,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-  /*<<<<<<< HEAD
-  renderColumnGroup(colGroup: ColumnGroup, cellData: ItemCardModel): JSX.Element {
-=======*/
   handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
     e.stopPropagation();
   };
@@ -151,7 +140,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     colGroup: ColumnGroup,
     cellData: ItemCardModel
   ): JSX.Element {
-    //>>>>>>> dev
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
@@ -278,22 +266,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-      //<<<<<<< HEAD
       controls = [<>{tooltip}</>];
-      //=======
-      // controls = [
-      //   <td
-      //     className="item-checkbox"
-      //     key="checkbox-control"
-      //     onClick={e => this.handleCheckboxClick(e, rowData)}
-      //     onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-      //     onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-      //     tabIndex={0}
-      //   >
-      //     {rowData.selected === true ? checked : unChecked}&nbsp;
-      //   </td>
-      // ];
-      //>>>>>>> dev
     }
 
     return controls;
@@ -316,7 +289,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   }
 }
 
-// for expand...  deprecitd... after addremove icon
+// for expand...  deprecitd... after addremove icon... leaving code for future refrence if required
 // <td className="arrow-indicator" tabIndex={0} key="expand-control">
 //   {isExpanded ? expand : collapse}
 // </td>
