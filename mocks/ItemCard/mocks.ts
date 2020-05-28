@@ -237,3 +237,211 @@ export const performanceTaskAssociatedItems: any = {
   3163: [3163, 3206, 3615],
   3615: [3163, 3206, 3615]
 };
+
+//PerformanceTaskAssociatedItems details data mockup
+export const PTassociatedItems: any = {
+  3206: [
+    [
+      {
+        bankKey: 187,
+        itemKey: 3163,
+        title: "ELA/ literacy Grade 3 Claim 1",
+        grade: 1,
+        gradeLabel: "Grade 3",
+        subjectCode: "ELA",
+        subjectLabel: "ELA/literacy",
+        claimCode: "ELA1",
+        claimLabel: "Reading",
+        targetHash: 1039,
+        targetId: "B",
+        targetDescription: "Target B description",
+        targetShortName: "Key Details",
+        interactionTypeCode: "MC",
+        interactionTypeLabel: "Multiple Choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: false
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3206,
+        title: "Math Grade 6 Claim 1",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH1",
+        claimLabel: "Concepts and Procedures and Logical",
+        targetHash: 100,
+        targetId: "A",
+        targetDescription:
+          "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        targetShortName: "",
+        interactionTypeCode: "EQ",
+        interactionTypeLabel: "Equation Multiple Choice choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: true
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3615,
+        title: "Math Grade 6 Claim 4",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH4",
+        claimLabel: "Modeling/Data Analysis",
+        targetHash: 0,
+        targetId: "C",
+        targetDescription: "target C description",
+        targetShortName: "",
+        interactionTypeCode: "MS",
+        interactionTypeLabel: "Multi Select",
+        isPerformanceItem: true,
+        brailleOnlyItem: false
+      }
+    ]
+  ],
+  3163: [
+    [
+      {
+        bankKey: 187,
+        itemKey: 3163,
+        title: "ELA/ literacy Grade 3 Claim 1",
+        grade: 1,
+        gradeLabel: "Grade 3",
+        subjectCode: "ELA",
+        subjectLabel: "ELA/literacy",
+        claimCode: "ELA1",
+        claimLabel: "Reading",
+        targetHash: 1039,
+        targetId: "B",
+        targetDescription: "Target B description",
+        targetShortName: "Key Details",
+        interactionTypeCode: "MC",
+        interactionTypeLabel: "Multiple Choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: false
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3206,
+        title: "Math Grade 6 Claim 1",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH1",
+        claimLabel: "Concepts and Procedures and Logical",
+        targetHash: 100,
+        targetId: "A",
+        targetDescription:
+          "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        targetShortName: "",
+        interactionTypeCode: "EQ",
+        interactionTypeLabel: "Equation Multiple Choice choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: true
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3615,
+        title: "Math Grade 6 Claim 4",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH4",
+        claimLabel: "Modeling/Data Analysis",
+        targetHash: 0,
+        targetId: "C",
+        targetDescription: "target C description",
+        targetShortName: "",
+        interactionTypeCode: "MS",
+        interactionTypeLabel: "Multi Select",
+        isPerformanceItem: true,
+        brailleOnlyItem: false
+      }
+    ]
+  ],
+  3615: [
+    [
+      {
+        bankKey: 187,
+        itemKey: 3163,
+        title: "ELA/ literacy Grade 3 Claim 1",
+        grade: 1,
+        gradeLabel: "Grade 3",
+        subjectCode: "ELA",
+        subjectLabel: "ELA/literacy",
+        claimCode: "ELA1",
+        claimLabel: "Reading",
+        targetHash: 1039,
+        targetId: "B",
+        targetDescription: "Target B description",
+        targetShortName: "Key Details",
+        interactionTypeCode: "MC",
+        interactionTypeLabel: "Multiple Choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: false
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3206,
+        title: "Math Grade 6 Claim 1",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH1",
+        claimLabel: "Concepts and Procedures and Logical",
+        targetHash: 100,
+        targetId: "A",
+        targetDescription:
+          "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        targetShortName: "",
+        interactionTypeCode: "EQ",
+        interactionTypeLabel: "Equation Multiple Choice choice",
+        isPerformanceItem: true,
+        brailleOnlyItem: false,
+        calculator: true
+      }
+    ],
+    [
+      {
+        bankKey: 187,
+        itemKey: 3615,
+        title: "Math Grade 6 Claim 4",
+        grade: 8,
+        gradeLabel: "Grade 6",
+        subjectCode: "MATH",
+        subjectLabel: "Math",
+        claimCode: "MATH4",
+        claimLabel: "Modeling/Data Analysis",
+        targetHash: 0,
+        targetId: "C",
+        targetDescription: "target C description",
+        targetShortName: "",
+        interactionTypeCode: "MS",
+        interactionTypeLabel: "Multi Select",
+        isPerformanceItem: true,
+        brailleOnlyItem: false
+      }
+    ]
+  ]
+};

@@ -5,7 +5,13 @@ import * as TestUtils from "react-dom/test-utils";
 import { shallow, mount, render } from "enzyme";
 import { tabClassNames } from "@mocks/ItemTable/mocks";
 import { aboutItemMockModel, itemCardList } from "@mocks/index";
-import { itemHandler } from "./mocks";
+import {
+  itemHandler,
+  getSelectedItemCount,
+  countNumberOfItemsAfterSelection,
+  showErrorModal,
+  onCountNumberOfItemSelection
+} from "./mocks";
 
 import {
   GradeLevels,
@@ -17,6 +23,7 @@ import {
   ItemTableContainer,
   ItemCardViewer
 } from "@src/index";
+import { PTassociatedItems } from "@mocks/ItemCard/mocks";
 
 describe("ItemPageTable", () => {
   const selectedItem = itemCardList[0];
@@ -26,11 +33,17 @@ describe("ItemPageTable", () => {
   };
 
   const props: ItemTableContainerProps = {
-    item,
+    item: item,
     itemCards: itemCardList,
     onRowSelection: itemHandler,
     onItemSelection: itemHandler,
-    isLinkTable: false
+    isLinkTable: false,
+    onCountNumberOfItemSelection: onCountNumberOfItemSelection,
+    getSelectedItemCount: getSelectedItemCount,
+    numberOfSelectedItem: 3,
+    countNumberOfItemsAfterSelection: countNumberOfItemsAfterSelection,
+    showErrorModalOnPrintItemsCountExceeded: showErrorModal,
+    associatedItems: PTassociatedItems
   };
 
   const wrapper = mount(<ItemTableContainer {...props} />);
@@ -38,14 +51,13 @@ describe("ItemPageTable", () => {
   it("matches snapshot", () => {
     expect(wrapper).toMatchSnapshot();
   });
-  /*
+
   it("sorts list on header click", () => {
     tabClassNames.forEach(tab => {
       wrapper.find(`th.${tab}`).simulate("click");
       expect(wrapper).toMatchSnapshot();
     });
-  }
-*/
+  });
 
   it("calls onRowSelection()", () => {
     const items = wrapper.find("td.item");
@@ -56,15 +68,13 @@ describe("ItemPageTable", () => {
     });
   });
 
-  /*
-  it("expands", () => {
-    const item = wrapper.find("td.item").at(0);
-    item.simulate("click");
-    expect(wrapper).toMatchSnapshot();
-    const itemCardViewer = wrapper.findWhere(
-      node => node.type() === ItemCardViewer
-    );
-    expect(itemCardViewer).toBeDefined();
-  });
-  */
+  // it("expands", () => {
+  //   const item = wrapper.find("td.item").at(0);
+  //   item.simulate("click");
+  //   expect(wrapper).toMatchSnapshot();
+  //   const itemCardViewer = wrapper.findWhere(
+  //     node => node.type() === ItemCardViewer
+  //   );
+  //   expect(itemCardViewer).toBeDefined();
+  // });
 });

@@ -135,10 +135,6 @@ export class PrintCartTableContainer extends React.Component<
   };
 
   renderTableHeader() {
-    // const header = ["Item", "Subject", "Grade", "Claim/Target", "Item Type", "Action"];
-    // return header.map((key, index) => {
-    //   return <th key={index}>{key.toUpperCase()}</th>;
-    // });
     return (
       <PrintcartHeaderTable
         sorts={this.state.sorts}

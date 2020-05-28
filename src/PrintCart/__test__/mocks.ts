@@ -1,4 +1,5 @@
 import { ItemCardModel } from "@src/index";
+import { currentId } from "async_hooks";
 
 export const itemHandler = jest.fn((item: ItemCardModel) => {
   return undefined;
@@ -14,10 +15,10 @@ export const countNumberOfItemsAfterSelection = jest.fn(
   }
 );
 
-export const showErrorModal = jest.fn(() => {
-  return undefined;
+export const onAddOrRemoveSelectedItems = jest.fn((item: ItemCardModel) => {
+  return;
 });
 
-export const onCountNumberOfItemSelection = jest.fn(() => {
-  return undefined;
+export const onItemsReorder = jest.fn((i: number, j: number) => {
+  return;
 });

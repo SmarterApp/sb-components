@@ -27,7 +27,6 @@ export function shouldUpdateSelectedItemsInState(
   ) {
     nextProps.totalItemCards.forEach(item => {
       if (item.selected === true) {
-        console.log(item.selectionIndex);
         selectedItems.push(item);
         shouldUpdateSelectedItemsState = true;
       }
@@ -153,12 +152,6 @@ export function moveArrayItemToNewIndex(
   newIndex: number,
   totalItemsCard?: ItemCardModel[]
 ) {
-  // if (newIndex >= array.length) {
-  //   var k = newIndex - array.length + 1;
-  //   while (k--) {
-  //     array.push(undefined);
-  //   }
-  // }
   //reorder selectedItemIndex in original item list
   const oldIndexedItemSelectedIndex = array[oldIndex].selectionIndex;
   array[oldIndex].selectionIndex = array[newIndex].selectionIndex;

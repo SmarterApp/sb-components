@@ -6,7 +6,7 @@ import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityMo
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
 
-export interface PrintCartProps {
+export interface PrintCartModalProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
   onItemsReorder: (i: number, j: number) => void;
@@ -23,7 +23,7 @@ export interface PrintCartProps {
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
 }
-export interface PrintCartState {
+export interface PrintCartModalState {
   isChanged: boolean;
   currentStep: number;
   itemsInPrintCart: ItemCardModel[];
@@ -36,10 +36,10 @@ export interface PrintCartState {
 }
 
 export class PrintCartModal extends React.Component<
-  PrintCartProps,
-  PrintCartState
+  PrintCartModalProps,
+  PrintCartModalState
 > {
-  constructor(props: PrintCartProps) {
+  constructor(props: PrintCartModalProps) {
     super(props);
     //this.onAddOrRemoveSelectedItems = this.onAddOrRemoveSelectedItems.bind(this);
     this.state = {
@@ -54,7 +54,7 @@ export class PrintCartModal extends React.Component<
     };
   }
 
-  componentWillReceiveProps(nextProps: PrintCartProps) {
+  componentWillReceiveProps(nextProps: PrintCartModalProps) {
     if (
       nextProps.isSelectedItemsHaveMathItem !==
       this.props.isSelectedItemsHaveMathItem
@@ -271,38 +271,3 @@ export class PrintCartModal extends React.Component<
     );
   }
 }
-
-//Modal for print - old**
-// handleShowModal = (modelState: boolean): void => {
-//   let visibleItems = this.props.itemCards;
-//   let selectedItemCount = 0;
-//   if (visibleItems !== undefined) {
-//     for (let i = 0; i < visibleItems.length; i++) {
-//       if (visibleItems[i].selected === true) {
-//         selectedItemCount = selectedItemCount + 1;
-//       }
-//     }
-//   }
-//   if (selectedItemCount == 0 || selectedItemCount < 0) {
-//     this.setState({
-//       showErrorModal: modelState,
-//       statusMessage: "Please select at least one item to print"
-//     });
-//   } else {
-//     this.setState({
-//       showModal: modelState,
-//       statusMessage: selectedItemCount.toString()
-//     });
-//   }
-// };
-
-// renderPrintAccessibility(): JSX.Element {
-//   return(
-//     <PrintAccessibilityModal
-//       onChangeModelState={this.handleShowModal}
-//       onSubmitPrint={this.handlePrintItemsClick}
-//       showModal={showModal}
-//       StatusMessage={statusMessage}
-//     />
-//   );
-// }

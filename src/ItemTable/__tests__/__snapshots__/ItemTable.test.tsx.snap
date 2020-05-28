@@ -1,2300 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ItemTable expands matches snapshot 1`] = `
-<table>
-  <ItemTable
-    cardRows={
-      Array [
-        Object {
-          "bankKey": 187,
-          "brailleOnlyItem": false,
-          "calculator": true,
-          "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures",
-          "grade": 8,
-          "gradeLabel": "Grade 6",
-          "interactionTypeCode": "EQ",
-          "interactionTypeLabel": "Equation",
-          "isPerformanceItem": true,
-          "itemKey": 3206,
-          "subjectCode": "MATH",
-          "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-          "targetHash": 100,
-          "targetId": "A",
-          "targetShortName": "",
-          "title": "Math Grade 6 Claim 1",
-        },
-        Object {
-          "bankKey": 187,
-          "brailleOnlyItem": false,
-          "calculator": false,
-          "claimCode": "ELA1",
-          "claimLabel": "Reading",
-          "grade": 1,
-          "gradeLabel": "Grade 3",
-          "interactionTypeCode": "MC",
-          "interactionTypeLabel": "Multiple Choice",
-          "isPerformanceItem": true,
-          "itemKey": 3163,
-          "subjectCode": "ELA",
-          "subjectLabel": "ELA/literacy",
-          "targetDescription": "Target B description",
-          "targetHash": 1039,
-          "targetId": "B",
-          "targetShortName": "Key Details",
-          "title": "ELA/ literacy Grade 3 Claim 1",
-        },
-        Object {
-          "bankKey": 187,
-          "brailleOnlyItem": false,
-          "claimCode": "MATH4",
-          "claimLabel": "Modeling/Data Analysis",
-          "grade": 8,
-          "gradeLabel": "Grade 6",
-          "interactionTypeCode": "MS",
-          "interactionTypeLabel": "Multi Select",
-          "isPerformanceItem": false,
-          "itemKey": 3615,
-          "subjectCode": "MATH",
-          "subjectLabel": "Math",
-          "targetDescription": "target C description",
-          "targetHash": 0,
-          "targetId": "C",
-          "targetShortName": "",
-          "title": "Math Grade 6 Claim 4",
-        },
-        Object {
-          "bankKey": 187,
-          "brailleOnlyItem": false,
-          "claimCode": "ELA4",
-          "claimLabel": "Research/Inquiry",
-          "grade": 2,
-          "gradeLabel": "Grade 4",
-          "interactionTypeCode": "MS",
-          "interactionTypeLabel": "Multi Select",
-          "isPerformanceItem": false,
-          "itemKey": 2928,
-          "subjectCode": "ELA",
-          "subjectLabel": "ELA/literacy",
-          "targetDescription": "target D description",
-          "targetHash": 2832,
-          "targetId": "D",
-          "targetShortName": "Evaluate Information/ sources",
-          "title": "ELA/ literacy Grade 4 Claim 4",
-        },
-      ]
-    }
-    columns={
-      Array [
-        Object {
-          "cols": Array [
-            Object {
-              "accessor": [Function],
-              "className": "item",
-            },
-          ],
-          "compare": [Function],
-          "header": "Item",
-          "headerClassName": "item",
-        },
-        Object {
-          "cols": Array [
-            Object {
-              "accessor": [Function],
-              "className": "subject",
-            },
-          ],
-          "compare": [Function],
-          "header": "Subject",
-          "headerClassName": "subject",
-        },
-        Object {
-          "cols": Array [
-            Object {
-              "accessor": [Function],
-              "className": "grade",
-            },
-          ],
-          "compare": [Function],
-          "header": "Grade",
-          "headerClassName": "grade",
-        },
-        Object {
-          "cols": Array [
-            Object {
-              "accessor": [Function],
-              "className": "claim",
-            },
-            Object {
-              "accessor": [Function],
-              "className": "target",
-              "helpText": [Function],
-            },
-          ],
-          "compare": [Function],
-          "header": "Claim/Target",
-          "headerClassName": "claimAndTarget",
-        },
-        Object {
-          "cols": Array [
-            Object {
-              "accessor": [Function],
-              "className": "item-type",
-            },
-          ],
-          "compare": [Function],
-          "header": "Item Type",
-          "headerClassName": "item-type",
-        },
-      ]
-    }
-    expandedRow={
-      Object {
-        "bankKey": 187,
-        "brailleOnlyItem": false,
-        "calculator": true,
-        "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures",
-        "grade": 8,
-        "gradeLabel": "Grade 6",
-        "interactionTypeCode": "EQ",
-        "interactionTypeLabel": "Equation",
-        "isPerformanceItem": true,
-        "itemKey": 3206,
-        "subjectCode": "MATH",
-        "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-        "targetHash": 100,
-        "targetId": "A",
-        "targetShortName": "",
-        "title": "Math Grade 6 Claim 1",
-      }
-    }
-    isLinkTable={false}
-    item={
-      Object {
-        "content": Object {
-          "commonCoreStandardsDescription": "A-123-BC",
-          "depthOfKnowledge": "3",
-          "educationalDifficulty": "5",
-          "evidenceStatement": "This is a sample evidence statement",
-          "itemCardViewModel": Object {
-            "bankKey": 187,
-            "brailleOnlyItem": false,
-            "calculator": true,
-            "claimCode": "MATH1",
-            "claimLabel": "Concepts and Procedures",
-            "grade": 8,
-            "gradeLabel": "Grade 6",
-            "interactionTypeCode": "EQ",
-            "interactionTypeLabel": "Equation",
-            "isPerformanceItem": true,
-            "itemKey": 3206,
-            "subjectCode": "MATH",
-            "subjectLabel": "Math",
-            "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-            "targetHash": 100,
-            "targetId": "A",
-            "targetShortName": "",
-            "title": "Math Grade 6 Claim 1",
-          },
-          "sampleItemScoring": Object {
-            "answerKey": "x = 5",
-            "hasMachineRubric": false,
-            "rubrics": Array [
-              Object {
-                "language": "en-us",
-                "rubricEntries": Array [
-                  Object {
-                    "name": "No points",
-                    "scorepoint": "0",
-                    "value": "Student did not do the problem",
-                  },
-                  Object {
-                    "name": "Half points",
-                    "scorepoint": "1",
-                    "value": "Student tried to do the problem, but got it wrong",
-                  },
-                  Object {
-                    "name": "No points",
-                    "scorepoint": "2",
-                    "value": "Student did the problem correctly",
-                  },
-                ],
-                "samples": Array [
-                  Object {
-                    "maxValue": "0",
-                    "minValue": "0",
-                    "sampleResponses": Array [
-                      Object {
-                        "name": "0pts",
-                        "purpose": "idk",
-                        "sampleContent": "x = _",
-                        "scorePoint": "0",
-                      },
-                    ],
-                  },
-                  Object {
-                    "maxValue": "1",
-                    "minValue": "1",
-                    "sampleResponses": Array [
-                      Object {
-                        "name": "1pt",
-                        "purpose": "idk",
-                        "sampleContent": "x = 10 + 5 = 15",
-                        "scorePoint": "1",
-                      },
-                      Object {
-                        "name": "1pt",
-                        "purpose": "idk",
-                        "sampleContent": "x = 10 - 5 = a million",
-                        "scorePoint": "1",
-                      },
-                    ],
-                  },
-                  Object {
-                    "maxValue": "2",
-                    "minValue": "2",
-                    "sampleResponses": Array [
-                      Object {
-                        "name": "2pts",
-                        "purpose": "idk",
-                        "sampleContent": "x = 10 - 5 = 5",
-                        "scorePoint": "2",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-            "scoringOptions": Array [],
-          },
-          "targetDescription": "Solve equations",
-        },
-        "kind": "success",
-      }
-    }
-    onRowExpand={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "calculator": true,
-              "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures",
-              "grade": 8,
-              "gradeLabel": "Grade 6",
-              "interactionTypeCode": "EQ",
-              "interactionTypeLabel": "Equation",
-              "isPerformanceItem": true,
-              "itemKey": 3206,
-              "subjectCode": "MATH",
-              "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-              "targetHash": 100,
-              "targetId": "A",
-              "targetShortName": "",
-              "title": "Math Grade 6 Claim 1",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "calculator": false,
-              "claimCode": "ELA1",
-              "claimLabel": "Reading",
-              "grade": 1,
-              "gradeLabel": "Grade 3",
-              "interactionTypeCode": "MC",
-              "interactionTypeLabel": "Multiple Choice",
-              "isPerformanceItem": true,
-              "itemKey": 3163,
-              "subjectCode": "ELA",
-              "subjectLabel": "ELA/literacy",
-              "targetDescription": "Target B description",
-              "targetHash": 1039,
-              "targetId": "B",
-              "targetShortName": "Key Details",
-              "title": "ELA/ literacy Grade 3 Claim 1",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
-              "grade": 8,
-              "gradeLabel": "Grade 6",
-              "interactionTypeCode": "MS",
-              "interactionTypeLabel": "Multi Select",
-              "isPerformanceItem": false,
-              "itemKey": 3615,
-              "subjectCode": "MATH",
-              "subjectLabel": "Math",
-              "targetDescription": "target C description",
-              "targetHash": 0,
-              "targetId": "C",
-              "targetShortName": "",
-              "title": "Math Grade 6 Claim 4",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
-              "grade": 2,
-              "gradeLabel": "Grade 4",
-              "interactionTypeCode": "MS",
-              "interactionTypeLabel": "Multi Select",
-              "isPerformanceItem": false,
-              "itemKey": 2928,
-              "subjectCode": "ELA",
-              "subjectLabel": "ELA/literacy",
-              "targetDescription": "target D description",
-              "targetHash": 2832,
-              "targetId": "D",
-              "targetShortName": "Evaluate Information/ sources",
-              "title": "ELA/ literacy Grade 4 Claim 4",
-            },
-          ],
-        ],
-      }
-    }
-    onRowSelect={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "calculator": true,
-              "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures",
-              "grade": 8,
-              "gradeLabel": "Grade 6",
-              "interactionTypeCode": "EQ",
-              "interactionTypeLabel": "Equation",
-              "isPerformanceItem": true,
-              "itemKey": 3206,
-              "subjectCode": "MATH",
-              "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-              "targetHash": 100,
-              "targetId": "A",
-              "targetShortName": "",
-              "title": "Math Grade 6 Claim 1",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "calculator": false,
-              "claimCode": "ELA1",
-              "claimLabel": "Reading",
-              "grade": 1,
-              "gradeLabel": "Grade 3",
-              "interactionTypeCode": "MC",
-              "interactionTypeLabel": "Multiple Choice",
-              "isPerformanceItem": true,
-              "itemKey": 3163,
-              "subjectCode": "ELA",
-              "subjectLabel": "ELA/literacy",
-              "targetDescription": "Target B description",
-              "targetHash": 1039,
-              "targetId": "B",
-              "targetShortName": "Key Details",
-              "title": "ELA/ literacy Grade 3 Claim 1",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
-              "grade": 8,
-              "gradeLabel": "Grade 6",
-              "interactionTypeCode": "MS",
-              "interactionTypeLabel": "Multi Select",
-              "isPerformanceItem": false,
-              "itemKey": 3615,
-              "subjectCode": "MATH",
-              "subjectLabel": "Math",
-              "targetDescription": "target C description",
-              "targetHash": 0,
-              "targetId": "C",
-              "targetShortName": "",
-              "title": "Math Grade 6 Claim 4",
-            },
-          ],
-          Array [
-            Object {
-              "bankKey": 187,
-              "brailleOnlyItem": false,
-              "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
-              "grade": 2,
-              "gradeLabel": "Grade 4",
-              "interactionTypeCode": "MS",
-              "interactionTypeLabel": "Multi Select",
-              "isPerformanceItem": false,
-              "itemKey": 2928,
-              "subjectCode": "ELA",
-              "subjectLabel": "ELA/literacy",
-              "targetDescription": "target D description",
-              "targetHash": 2832,
-              "targetId": "D",
-              "targetShortName": "Evaluate Information/ sources",
-              "title": "ELA/ literacy Grade 4 Claim 4",
-            },
-          ],
-        ],
-      }
-    }
-    sort={Array []}
-  >
-    <tbody>
-      <ItemTableRow
-        columns={
-          Array [
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item",
-              "headerClassName": "item",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "subject",
-                },
-              ],
-              "compare": [Function],
-              "header": "Subject",
-              "headerClassName": "subject",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "grade",
-                },
-              ],
-              "compare": [Function],
-              "header": "Grade",
-              "headerClassName": "grade",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "claim",
-                },
-                Object {
-                  "accessor": [Function],
-                  "className": "target",
-                  "helpText": [Function],
-                },
-              ],
-              "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item-type",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item Type",
-              "headerClassName": "item-type",
-            },
-          ]
-        }
-        hasControls={true}
-        isExpanded={true}
-        key="187-3206"
-        onRowExpand={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        onRowSelect={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        rowData={
-          Object {
-            "bankKey": 187,
-            "brailleOnlyItem": false,
-            "calculator": true,
-            "claimCode": "MATH1",
-            "claimLabel": "Concepts and Procedures",
-            "grade": 8,
-            "gradeLabel": "Grade 6",
-            "interactionTypeCode": "EQ",
-            "interactionTypeLabel": "Equation",
-            "isPerformanceItem": true,
-            "itemKey": 3206,
-            "subjectCode": "MATH",
-            "subjectLabel": "Math",
-            "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-            "targetHash": 100,
-            "targetId": "A",
-            "targetShortName": "",
-            "title": "Math Grade 6 Claim 1",
-          }
-        }
-      >
-        <tr
-          className="selected"
-          key="187-3206"
-          onClick={[Function]}
-          onKeyUp={[Function]}
-        >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
-          <td
-            className="item"
-            key="item-187-3206"
-            role="gridcell"
-          >
-            <span
-              key="item"
-            >
-              <a
-                role="link"
-                tabIndex={0}
-              >
-                3206
-              </a>
-            </span>
-          </td>
-          <td
-            className="subject"
-            key="subject-187-3206"
-            role="gridcell"
-          >
-            <span
-              key="subject"
-            >
-              <span
-                className="table-subject-highlight math"
-              >
-                Math
-              </span>
-            </span>
-          </td>
-          <td
-            className="grade"
-            key="grade-187-3206"
-            role="gridcell"
-          >
-            <span
-              key="grade"
-            >
-              <span>
-                Grade 6
-              </span>
-            </span>
-          </td>
-          <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3206"
-            role="gridcell"
-          >
-            <span
-              key="claim"
-            >
-              <span>
-                Concepts and Procedures
-              </span>
-            </span>
-            <span
-              key="target"
-            >
-              <ToolTip
-                className="box"
-                displayIcon={true}
-                displayText="A"
-                helpText={
-                  <p>
-                    Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
-                  </p>
-                }
-                position="bottom"
-              >
-                <span
-                  className="tool-tip-links box"
-                  tabIndex={0}
-                >
-                  <span
-                    className="tool-tip-hoverable"
-                  >
-                    A
-                     
-                    <span
-                      aria-hidden="true"
-                      className="fa fa-info-circle fa-sm"
-                    />
-                  </span>
-                  <span
-                    className="tool-tip-details"
-                  >
-                    <span
-                      className="tool-tip-message bottom "
-                    >
-                      <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
-                      </p>
-                    </span>
-                  </span>
-                </span>
-              </ToolTip>
-            </span>
-          </td>
-          <td
-            className="item-type"
-            key="item-type-187-3206"
-            role="gridcell"
-          >
-            <span
-              key="item-type"
-            >
-              <span>
-                Equation
-              </span>
-            </span>
-          </td>
-        </tr>
-      </ItemTableRow>
-      <tr
-        key="item-card-viewer"
-      >
-        <td
-          colSpan={7}
-        >
-          <ItemCardViewer
-            item={
-              Object {
-                "commonCoreStandardsDescription": "A-123-BC",
-                "depthOfKnowledge": "3",
-                "educationalDifficulty": "5",
-                "evidenceStatement": "This is a sample evidence statement",
-                "itemCardViewModel": Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-                "sampleItemScoring": Object {
-                  "answerKey": "x = 5",
-                  "hasMachineRubric": false,
-                  "rubrics": Array [
-                    Object {
-                      "language": "en-us",
-                      "rubricEntries": Array [
-                        Object {
-                          "name": "No points",
-                          "scorepoint": "0",
-                          "value": "Student did not do the problem",
-                        },
-                        Object {
-                          "name": "Half points",
-                          "scorepoint": "1",
-                          "value": "Student tried to do the problem, but got it wrong",
-                        },
-                        Object {
-                          "name": "No points",
-                          "scorepoint": "2",
-                          "value": "Student did the problem correctly",
-                        },
-                      ],
-                      "samples": Array [
-                        Object {
-                          "maxValue": "0",
-                          "minValue": "0",
-                          "sampleResponses": Array [
-                            Object {
-                              "name": "0pts",
-                              "purpose": "idk",
-                              "sampleContent": "x = _",
-                              "scorePoint": "0",
-                            },
-                          ],
-                        },
-                        Object {
-                          "maxValue": "1",
-                          "minValue": "1",
-                          "sampleResponses": Array [
-                            Object {
-                              "name": "1pt",
-                              "purpose": "idk",
-                              "sampleContent": "x = 10 + 5 = 15",
-                              "scorePoint": "1",
-                            },
-                            Object {
-                              "name": "1pt",
-                              "purpose": "idk",
-                              "sampleContent": "x = 10 - 5 = a million",
-                              "scorePoint": "1",
-                            },
-                          ],
-                        },
-                        Object {
-                          "maxValue": "2",
-                          "minValue": "2",
-                          "sampleResponses": Array [
-                            Object {
-                              "name": "2pts",
-                              "purpose": "idk",
-                              "sampleContent": "x = 10 - 5 = 5",
-                              "scorePoint": "2",
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                  "scoringOptions": Array [],
-                },
-                "targetDescription": "Solve equations",
-              }
-            }
-          >
-            <div
-              className="item-card"
-            >
-              <ItemTabs
-                changedTab={[Function]}
-                selectedTab="viewer"
-                showRubricTab={true}
-              >
-                <ul
-                  className="nav nav-tabs"
-                >
-                  <li
-                    className="nav-item active"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    <a
-                      className="nav-link"
-                    >
-                      Item Viewer
-                    </a>
-                  </li>
-                  <li
-                    className="nav-item"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    <a
-                      className="nav-link"
-                    >
-                      Rubric and Exemplar
-                    </a>
-                  </li>
-                  <li
-                    className="nav-item"
-                    onClick={[Function]}
-                    role="button"
-                  >
-                    <a
-                      className="nav-link"
-                    >
-                      Item Information
-                    </a>
-                  </li>
-                </ul>
-              </ItemTabs>
-              <div>
-                 
-                <div
-                  className="item-content"
-                >
-                  <ItemViewerFrame
-                    url="http://ivs.smarterbalanced.org/items?ids=187-3206"
-                  >
-                    <div
-                      className="itemViewerFrame"
-                      tabIndex={0}
-                    >
-                      <div
-                        className="loader-icon"
-                      >
-                        <div
-                          className="loader"
-                        />
-                      </div>
-                      <iframe
-                        className="itemviewer-iframe"
-                        id="itemviewer-iframe"
-                        onLoad={[Function]}
-                        onLoadStart={[Function]}
-                        scrolling="no"
-                        src="http://ivs.smarterbalanced.org/items?ids=187-3206"
-                        title=""
-                      />
-                    </div>
-                  </ItemViewerFrame>
-                </div>
-                 
-              </div>
-            </div>
-          </ItemCardViewer>
-        </td>
-      </tr>
-      <ItemTableRow
-        columns={
-          Array [
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item",
-              "headerClassName": "item",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "subject",
-                },
-              ],
-              "compare": [Function],
-              "header": "Subject",
-              "headerClassName": "subject",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "grade",
-                },
-              ],
-              "compare": [Function],
-              "header": "Grade",
-              "headerClassName": "grade",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "claim",
-                },
-                Object {
-                  "accessor": [Function],
-                  "className": "target",
-                  "helpText": [Function],
-                },
-              ],
-              "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item-type",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item Type",
-              "headerClassName": "item-type",
-            },
-          ]
-        }
-        hasControls={true}
-        isExpanded={false}
-        key="187-3163"
-        onRowExpand={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        onRowSelect={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        rowData={
-          Object {
-            "bankKey": 187,
-            "brailleOnlyItem": false,
-            "calculator": false,
-            "claimCode": "ELA1",
-            "claimLabel": "Reading",
-            "grade": 1,
-            "gradeLabel": "Grade 3",
-            "interactionTypeCode": "MC",
-            "interactionTypeLabel": "Multiple Choice",
-            "isPerformanceItem": true,
-            "itemKey": 3163,
-            "subjectCode": "ELA",
-            "subjectLabel": "ELA/literacy",
-            "targetDescription": "Target B description",
-            "targetHash": 1039,
-            "targetId": "B",
-            "targetShortName": "Key Details",
-            "title": "ELA/ literacy Grade 3 Claim 1",
-          }
-        }
-      >
-        <tr
-          className=""
-          key="187-3163"
-          onClick={[Function]}
-          onKeyUp={[Function]}
-        >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
-          <td
-            className="item"
-            key="item-187-3163"
-            role="gridcell"
-          >
-            <span
-              key="item"
-            >
-              <a
-                role="link"
-                tabIndex={0}
-              >
-                3163
-              </a>
-            </span>
-          </td>
-          <td
-            className="subject"
-            key="subject-187-3163"
-            role="gridcell"
-          >
-            <span
-              key="subject"
-            >
-              <span
-                className="table-subject-highlight ela"
-              >
-                ELA/literacy
-              </span>
-            </span>
-          </td>
-          <td
-            className="grade"
-            key="grade-187-3163"
-            role="gridcell"
-          >
-            <span
-              key="grade"
-            >
-              <span>
-                Grade 3
-              </span>
-            </span>
-          </td>
-          <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3163"
-            role="gridcell"
-          >
-            <span
-              key="claim"
-            >
-              <span>
-                Reading
-              </span>
-            </span>
-            <span
-              key="target"
-            >
-              <ToolTip
-                className="box"
-                displayIcon={true}
-                displayText="B"
-                helpText={
-                  <p>
-                    Target B description
-                  </p>
-                }
-                position="bottom"
-              >
-                <span
-                  className="tool-tip-links box"
-                  tabIndex={0}
-                >
-                  <span
-                    className="tool-tip-hoverable"
-                  >
-                    B
-                     
-                    <span
-                      aria-hidden="true"
-                      className="fa fa-info-circle fa-sm"
-                    />
-                  </span>
-                  <span
-                    className="tool-tip-details"
-                  >
-                    <span
-                      className="tool-tip-message bottom "
-                    >
-                      <p>
-                        Target B description
-                      </p>
-                    </span>
-                  </span>
-                </span>
-              </ToolTip>
-            </span>
-          </td>
-          <td
-            className="item-type"
-            key="item-type-187-3163"
-            role="gridcell"
-          >
-            <span
-              key="item-type"
-            >
-              <span>
-                Multiple Choice
-              </span>
-            </span>
-          </td>
-        </tr>
-      </ItemTableRow>
-      <ItemTableRow
-        columns={
-          Array [
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item",
-              "headerClassName": "item",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "subject",
-                },
-              ],
-              "compare": [Function],
-              "header": "Subject",
-              "headerClassName": "subject",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "grade",
-                },
-              ],
-              "compare": [Function],
-              "header": "Grade",
-              "headerClassName": "grade",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "claim",
-                },
-                Object {
-                  "accessor": [Function],
-                  "className": "target",
-                  "helpText": [Function],
-                },
-              ],
-              "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item-type",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item Type",
-              "headerClassName": "item-type",
-            },
-          ]
-        }
-        hasControls={true}
-        isExpanded={false}
-        key="187-3615"
-        onRowExpand={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        onRowSelect={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        rowData={
-          Object {
-            "bankKey": 187,
-            "brailleOnlyItem": false,
-            "claimCode": "MATH4",
-            "claimLabel": "Modeling/Data Analysis",
-            "grade": 8,
-            "gradeLabel": "Grade 6",
-            "interactionTypeCode": "MS",
-            "interactionTypeLabel": "Multi Select",
-            "isPerformanceItem": false,
-            "itemKey": 3615,
-            "subjectCode": "MATH",
-            "subjectLabel": "Math",
-            "targetDescription": "target C description",
-            "targetHash": 0,
-            "targetId": "C",
-            "targetShortName": "",
-            "title": "Math Grade 6 Claim 4",
-          }
-        }
-      >
-        <tr
-          className=""
-          key="187-3615"
-          onClick={[Function]}
-          onKeyUp={[Function]}
-        >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
-          <td
-            className="item"
-            key="item-187-3615"
-            role="gridcell"
-          >
-            <span
-              key="item"
-            >
-              <a
-                role="link"
-                tabIndex={0}
-              >
-                3615
-              </a>
-            </span>
-          </td>
-          <td
-            className="subject"
-            key="subject-187-3615"
-            role="gridcell"
-          >
-            <span
-              key="subject"
-            >
-              <span
-                className="table-subject-highlight math"
-              >
-                Math
-              </span>
-            </span>
-          </td>
-          <td
-            className="grade"
-            key="grade-187-3615"
-            role="gridcell"
-          >
-            <span
-              key="grade"
-            >
-              <span>
-                Grade 6
-              </span>
-            </span>
-          </td>
-          <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3615"
-            role="gridcell"
-          >
-            <span
-              key="claim"
-            >
-              <span>
-                Modeling/Data Analysis
-              </span>
-            </span>
-            <span
-              key="target"
-            >
-              <ToolTip
-                className="box"
-                displayIcon={true}
-                displayText="C"
-                helpText={
-                  <p>
-                    target C description
-                  </p>
-                }
-                position="bottom"
-              >
-                <span
-                  className="tool-tip-links box"
-                  tabIndex={0}
-                >
-                  <span
-                    className="tool-tip-hoverable"
-                  >
-                    C
-                     
-                    <span
-                      aria-hidden="true"
-                      className="fa fa-info-circle fa-sm"
-                    />
-                  </span>
-                  <span
-                    className="tool-tip-details"
-                  >
-                    <span
-                      className="tool-tip-message bottom "
-                    >
-                      <p>
-                        target C description
-                      </p>
-                    </span>
-                  </span>
-                </span>
-              </ToolTip>
-            </span>
-          </td>
-          <td
-            className="item-type"
-            key="item-type-187-3615"
-            role="gridcell"
-          >
-            <span
-              key="item-type"
-            >
-              <span>
-                Multi Select
-              </span>
-            </span>
-          </td>
-        </tr>
-      </ItemTableRow>
-      <ItemTableRow
-        columns={
-          Array [
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item",
-              "headerClassName": "item",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "subject",
-                },
-              ],
-              "compare": [Function],
-              "header": "Subject",
-              "headerClassName": "subject",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "grade",
-                },
-              ],
-              "compare": [Function],
-              "header": "Grade",
-              "headerClassName": "grade",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "claim",
-                },
-                Object {
-                  "accessor": [Function],
-                  "className": "target",
-                  "helpText": [Function],
-                },
-              ],
-              "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
-            },
-            Object {
-              "cols": Array [
-                Object {
-                  "accessor": [Function],
-                  "className": "item-type",
-                },
-              ],
-              "compare": [Function],
-              "header": "Item Type",
-              "headerClassName": "item-type",
-            },
-          ]
-        }
-        hasControls={true}
-        isExpanded={false}
-        key="187-2928"
-        onRowExpand={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        onRowSelect={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": true,
-                  "claimCode": "MATH1",
-                  "claimLabel": "Concepts and Procedures",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "EQ",
-                  "interactionTypeLabel": "Equation",
-                  "isPerformanceItem": true,
-                  "itemKey": 3206,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
-                  "targetHash": 100,
-                  "targetId": "A",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "calculator": false,
-                  "claimCode": "ELA1",
-                  "claimLabel": "Reading",
-                  "grade": 1,
-                  "gradeLabel": "Grade 3",
-                  "interactionTypeCode": "MC",
-                  "interactionTypeLabel": "Multiple Choice",
-                  "isPerformanceItem": true,
-                  "itemKey": 3163,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "Target B description",
-                  "targetHash": 1039,
-                  "targetId": "B",
-                  "targetShortName": "Key Details",
-                  "title": "ELA/ literacy Grade 3 Claim 1",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "MATH4",
-                  "claimLabel": "Modeling/Data Analysis",
-                  "grade": 8,
-                  "gradeLabel": "Grade 6",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 3615,
-                  "subjectCode": "MATH",
-                  "subjectLabel": "Math",
-                  "targetDescription": "target C description",
-                  "targetHash": 0,
-                  "targetId": "C",
-                  "targetShortName": "",
-                  "title": "Math Grade 6 Claim 4",
-                },
-              ],
-              Array [
-                Object {
-                  "bankKey": 187,
-                  "brailleOnlyItem": false,
-                  "claimCode": "ELA4",
-                  "claimLabel": "Research/Inquiry",
-                  "grade": 2,
-                  "gradeLabel": "Grade 4",
-                  "interactionTypeCode": "MS",
-                  "interactionTypeLabel": "Multi Select",
-                  "isPerformanceItem": false,
-                  "itemKey": 2928,
-                  "subjectCode": "ELA",
-                  "subjectLabel": "ELA/literacy",
-                  "targetDescription": "target D description",
-                  "targetHash": 2832,
-                  "targetId": "D",
-                  "targetShortName": "Evaluate Information/ sources",
-                  "title": "ELA/ literacy Grade 4 Claim 4",
-                },
-              ],
-            ],
-          }
-        }
-        rowData={
-          Object {
-            "bankKey": 187,
-            "brailleOnlyItem": false,
-            "claimCode": "ELA4",
-            "claimLabel": "Research/Inquiry",
-            "grade": 2,
-            "gradeLabel": "Grade 4",
-            "interactionTypeCode": "MS",
-            "interactionTypeLabel": "Multi Select",
-            "isPerformanceItem": false,
-            "itemKey": 2928,
-            "subjectCode": "ELA",
-            "subjectLabel": "ELA/literacy",
-            "targetDescription": "target D description",
-            "targetHash": 2832,
-            "targetId": "D",
-            "targetShortName": "Evaluate Information/ sources",
-            "title": "ELA/ literacy Grade 4 Claim 4",
-          }
-        }
-      >
-        <tr
-          className=""
-          key="187-2928"
-          onClick={[Function]}
-          onKeyUp={[Function]}
-        >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
-          >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
-          <td
-            className="item"
-            key="item-187-2928"
-            role="gridcell"
-          >
-            <span
-              key="item"
-            >
-              <a
-                role="link"
-                tabIndex={0}
-              >
-                2928
-              </a>
-            </span>
-          </td>
-          <td
-            className="subject"
-            key="subject-187-2928"
-            role="gridcell"
-          >
-            <span
-              key="subject"
-            >
-              <span
-                className="table-subject-highlight ela"
-              >
-                ELA/literacy
-              </span>
-            </span>
-          </td>
-          <td
-            className="grade"
-            key="grade-187-2928"
-            role="gridcell"
-          >
-            <span
-              key="grade"
-            >
-              <span>
-                Grade 4
-              </span>
-            </span>
-          </td>
-          <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-2928"
-            role="gridcell"
-          >
-            <span
-              key="claim"
-            >
-              <span>
-                Research/Inquiry
-              </span>
-            </span>
-            <span
-              key="target"
-            >
-              <ToolTip
-                className="box"
-                displayIcon={true}
-                displayText="D"
-                helpText={
-                  <p>
-                    target D description
-                  </p>
-                }
-                position="bottom"
-              >
-                <span
-                  className="tool-tip-links box"
-                  tabIndex={0}
-                >
-                  <span
-                    className="tool-tip-hoverable"
-                  >
-                    D
-                     
-                    <span
-                      aria-hidden="true"
-                      className="fa fa-info-circle fa-sm"
-                    />
-                  </span>
-                  <span
-                    className="tool-tip-details"
-                  >
-                    <span
-                      className="tool-tip-message bottom "
-                    >
-                      <p>
-                        target D description
-                      </p>
-                    </span>
-                  </span>
-                </span>
-              </ToolTip>
-            </span>
-          </td>
-          <td
-            className="item-type"
-            key="item-type-187-2928"
-            role="gridcell"
-          >
-            <span
-              key="item-type"
-            >
-              <span>
-                Multi Select
-              </span>
-            </span>
-          </td>
-        </tr>
-      </ItemTableRow>
-    </tbody>
-  </ItemTable>
-</table>
-`;
-
 exports[`ItemTable matches snapshot 1`] = `
 <table>
   <ItemTable
+    associatedItems={Array []}
     cardRows={
       Array [
         Object {
@@ -2302,11 +11,11 @@ exports[`ItemTable matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures",
+          "claimLabel": "Concepts and Procedures and Logical",
           "grade": 8,
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "EQ",
-          "interactionTypeLabel": "Equation",
+          "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
           "subjectCode": "MATH",
@@ -2346,7 +55,7 @@ exports[`ItemTable matches snapshot 1`] = `
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "MS",
           "interactionTypeLabel": "Multi Select",
-          "isPerformanceItem": false,
+          "isPerformanceItem": true,
           "itemKey": 3615,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
@@ -2432,6 +141,22 @@ exports[`ItemTable matches snapshot 1`] = `
           "cols": Array [
             Object {
               "accessor": [Function],
+              "className": "standard",
+            },
+            Object {
+              "accessor": [Function],
+              "className": "standard",
+              "helpText": [Function],
+            },
+          ],
+          "compare": [Function],
+          "header": "Standard",
+          "headerClassName": "standard",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
               "className": "item-type",
             },
           ],
@@ -2441,13 +166,19 @@ exports[`ItemTable matches snapshot 1`] = `
         },
       ]
     }
+    countNumberOfItemsAfterSelection={[MockFunction]}
+    getSelectedItemCount={[MockFunction]}
+    isItemSelected={false}
     isLinkTable={false}
+    numberOfSelectedItem={0}
     onRowExpand={[MockFunction]}
     onRowSelect={[MockFunction]}
+    showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
     sort={Array []}
   >
     <tbody>
       <ItemTableRow
+        associatedItems={Array []}
         columns={
           Array [
             Object {
@@ -2503,6 +234,22 @@ exports[`ItemTable matches snapshot 1`] = `
               "cols": Array [
                 Object {
                   "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
                   "className": "item-type",
                 },
               ],
@@ -2512,9 +259,13 @@ exports[`ItemTable matches snapshot 1`] = `
             },
           ]
         }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
         hasControls={true}
         isExpanded={false}
+        isItemSelected={false}
         key="187-3206"
+        numberOfSelectedItem={0}
         onRowExpand={[MockFunction]}
         onRowSelect={[MockFunction]}
         rowData={
@@ -2523,11 +274,11 @@ exports[`ItemTable matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "calculator": true,
             "claimCode": "MATH1",
-            "claimLabel": "Concepts and Procedures",
+            "claimLabel": "Concepts and Procedures and Logical",
             "grade": 8,
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "EQ",
-            "interactionTypeLabel": "Equation",
+            "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
             "itemKey": 3206,
             "subjectCode": "MATH",
@@ -2539,6 +290,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "title": "Math Grade 6 Claim 1",
           }
         }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
       >
         <tr
           className=""
@@ -2546,20 +298,69 @@ exports[`ItemTable matches snapshot 1`] = `
           onClick={[Function]}
           onKeyUp={[Function]}
         >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
+          <ToolTip
+            className=""
+            displayIcon={false}
+            displayText={
+              <td
+                className="item-checkbox item-add-remove"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              </td>
+            }
+            helpText={
+              <label>
+                Add item to print queue
+              </label>
+            }
           >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
+            <span
+              className="tool-tip-links "
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
           <td
             className="item"
             key="item-187-3206"
@@ -2613,7 +414,7 @@ exports[`ItemTable matches snapshot 1`] = `
               key="claim"
             >
               <span>
-                Concepts and Procedures
+                Concepts and Procedures and Logical
               </span>
             </span>
             <span
@@ -2660,6 +461,60 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
+            className="standard"
+            key="standard-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                Not Available
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
             className="item-type"
             key="item-type-187-3206"
             role="gridcell"
@@ -2668,13 +523,14 @@ exports[`ItemTable matches snapshot 1`] = `
               key="item-type"
             >
               <span>
-                Equation
+                Equation Multiple Choice choice
               </span>
             </span>
           </td>
         </tr>
       </ItemTableRow>
       <ItemTableRow
+        associatedItems={Array []}
         columns={
           Array [
             Object {
@@ -2730,6 +586,22 @@ exports[`ItemTable matches snapshot 1`] = `
               "cols": Array [
                 Object {
                   "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
                   "className": "item-type",
                 },
               ],
@@ -2739,9 +611,13 @@ exports[`ItemTable matches snapshot 1`] = `
             },
           ]
         }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
         hasControls={true}
         isExpanded={false}
+        isItemSelected={false}
         key="187-3163"
+        numberOfSelectedItem={0}
         onRowExpand={[MockFunction]}
         onRowSelect={[MockFunction]}
         rowData={
@@ -2766,6 +642,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "title": "ELA/ literacy Grade 3 Claim 1",
           }
         }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
       >
         <tr
           className=""
@@ -2773,20 +650,69 @@ exports[`ItemTable matches snapshot 1`] = `
           onClick={[Function]}
           onKeyUp={[Function]}
         >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
+          <ToolTip
+            className=""
+            displayIcon={false}
+            displayText={
+              <td
+                className="item-checkbox item-add-remove"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              </td>
+            }
+            helpText={
+              <label>
+                Add item to print queue
+              </label>
+            }
           >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
+            <span
+              className="tool-tip-links "
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
           <td
             className="item"
             key="item-187-3163"
@@ -2887,6 +813,60 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
+            className="standard"
+            key="standard-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                Not Available
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
             className="item-type"
             key="item-type-187-3163"
             role="gridcell"
@@ -2902,6 +882,7 @@ exports[`ItemTable matches snapshot 1`] = `
         </tr>
       </ItemTableRow>
       <ItemTableRow
+        associatedItems={Array []}
         columns={
           Array [
             Object {
@@ -2957,6 +938,22 @@ exports[`ItemTable matches snapshot 1`] = `
               "cols": Array [
                 Object {
                   "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
                   "className": "item-type",
                 },
               ],
@@ -2966,9 +963,13 @@ exports[`ItemTable matches snapshot 1`] = `
             },
           ]
         }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
         hasControls={true}
         isExpanded={false}
+        isItemSelected={false}
         key="187-3615"
+        numberOfSelectedItem={0}
         onRowExpand={[MockFunction]}
         onRowSelect={[MockFunction]}
         rowData={
@@ -2981,7 +982,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
-            "isPerformanceItem": false,
+            "isPerformanceItem": true,
             "itemKey": 3615,
             "subjectCode": "MATH",
             "subjectLabel": "Math",
@@ -2992,6 +993,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "title": "Math Grade 6 Claim 4",
           }
         }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
       >
         <tr
           className=""
@@ -2999,20 +1001,69 @@ exports[`ItemTable matches snapshot 1`] = `
           onClick={[Function]}
           onKeyUp={[Function]}
         >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
+          <ToolTip
+            className=""
+            displayIcon={false}
+            displayText={
+              <td
+                className="item-checkbox item-add-remove"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              </td>
+            }
+            helpText={
+              <label>
+                Add item to print queue
+              </label>
+            }
           >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
+            <span
+              className="tool-tip-links "
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
           <td
             className="item"
             key="item-187-3615"
@@ -3113,6 +1164,60 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
+            className="standard"
+            key="standard-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                Math Practice
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
             className="item-type"
             key="item-type-187-3615"
             role="gridcell"
@@ -3128,6 +1233,7 @@ exports[`ItemTable matches snapshot 1`] = `
         </tr>
       </ItemTableRow>
       <ItemTableRow
+        associatedItems={Array []}
         columns={
           Array [
             Object {
@@ -3183,6 +1289,22 @@ exports[`ItemTable matches snapshot 1`] = `
               "cols": Array [
                 Object {
                   "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
                   "className": "item-type",
                 },
               ],
@@ -3192,9 +1314,13 @@ exports[`ItemTable matches snapshot 1`] = `
             },
           ]
         }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
         hasControls={true}
         isExpanded={false}
+        isItemSelected={false}
         key="187-2928"
+        numberOfSelectedItem={0}
         onRowExpand={[MockFunction]}
         onRowSelect={[MockFunction]}
         rowData={
@@ -3218,6 +1344,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "title": "ELA/ literacy Grade 4 Claim 4",
           }
         }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
       >
         <tr
           className=""
@@ -3225,20 +1352,69 @@ exports[`ItemTable matches snapshot 1`] = `
           onClick={[Function]}
           onKeyUp={[Function]}
         >
-          <td
-            className="item-checkbox"
-            key="checkbox-control"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
+          <ToolTip
+            className=""
+            displayIcon={false}
+            displayText={
+              <td
+                className="item-checkbox item-add-remove"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              </td>
+            }
+            helpText={
+              <label>
+                Add item to print queue
+              </label>
+            }
           >
-            <i
-              aria-hidden="true"
-              className="fa fa-square-o fa-sm table-icon"
-            />
-             
-          </td>
+            <span
+              className="tool-tip-links "
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                <td
+                  className="item-checkbox item-add-remove"
+                  onClick={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                </td>
+                 
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <label>
+                    Add item to print queue
+                  </label>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
           <td
             className="item"
             key="item-187-2928"
@@ -3331,6 +1507,60 @@ exports[`ItemTable matches snapshot 1`] = `
                     >
                       <p>
                         target D description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="standard"
+            key="standard-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                Not Available
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
                       </p>
                     </span>
                   </span>

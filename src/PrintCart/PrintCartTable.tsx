@@ -91,72 +91,8 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
       }
     });
   }
-
-  //   renderExpandedRow(item: Resource<AboutItemModel>): JSX.Element | undefined {
-  //     let result: JSX.Element | undefined;
-  //     const itemContent = getResourceContent(item);
-  //     if (itemContent) {
-  //       result = (
-  //         <tr key="item-card-viewer">
-  //           <td colSpan={7}>
-  //             <ItemCardViewer item={itemContent} />
-  //           </td>
-  //         </tr>
-  //       );
-  //     }
-
-  //     return result;
-  //   }
-
-  //   renderRow(rowData: ItemCardModel): JSX.Element[] {
-  //     const {
-  //       expandedRow,
-  //       columns,
-  //       item,
-  //       isLinkTable,
-  //       onRowExpand,
-  //       onRowSelect
-  //     } = this.props;
-  //     const rows: JSX.Element[] = [];
-  //     const isExpanded =
-  //       expandedRow && itemIdEqual(expandedRow, rowData) ? true : false;
-
-  //     rows.push(
-  //       <ItemTableRow
-  //         key={`${rowData.bankKey}-${rowData.itemKey}`}
-  //         rowData={rowData}
-  //         hasControls={!isLinkTable}
-  //         columns={columns}
-  //         isExpanded={isExpanded}
-  //         onRowExpand={onRowExpand}
-  //         onRowSelect={onRowSelect}
-  //         isItemSelected={this.props.isItemSelected}
-  //         // numberOfSelectedItem = {this.props.numberOfSelectedItem}
-  //         numberOfSelectedItem={this.props.numberOfSelectedItem}
-  //         getSelectedItemCount={this.props.getSelectedItemCount}
-  //         showErrorModalOnPrintItemsCountExceeded={
-  //           this.props.showErrorModalOnPrintItemsCountExceeded
-  //         }
-  //       />
-  //     );
-
-  //     if (isExpanded && item) {
-  //       const expandContent = this.renderExpandedRow(item);
-  //       if (expandContent) {
-  //         rows.push(expandContent);
-  //       }
-  //     }
-
-  //     return rows;
-  //   }
-
   render() {
-    // const { cardRows } = this.props;
-    // let content = <div>No Items.</div>;
-    // if (cardRows) {
     let content = <tbody>{this.renderAllRows()}</tbody>;
-    // }
-
     return content;
   }
 }

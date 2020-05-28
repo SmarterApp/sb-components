@@ -10,7 +10,7 @@ import {
  * Properties for HeaderTable component
  * @interface HeaderTableProps
  */
-export interface HeaderTableProps {
+export interface PrintCartHeaderTableProps {
   columns: ColumnGroup[];
   onHeaderClick: (header: ColumnGroup) => void;
   sorts: HeaderSortModel[];
@@ -36,13 +36,13 @@ const noSort = <span style={style} className="fa fa-sort" aria-hidden="true" />;
 /**
  * HeaderTable creates a table header based on the passed in columns
  * The HeaderTable, when clicked, will add the clicked column header
- * the parent, ItemTableContainer, state, sorting the table
+ * the parent, PrintCartItemTableContainer, state, sorting the table
  */
 export class PrintcartHeaderTable extends React.Component<
-  HeaderTableProps,
+  PrintCartHeaderTableProps,
   {}
 > {
-  constructor(props: HeaderTableProps) {
+  constructor(props: PrintCartHeaderTableProps) {
     super(props);
   }
   /**

@@ -286,14 +286,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         else return <></>;
       };
 
-      // const toolTipButton_AddRemoveItemFromPrintCart = generateTooltip({
-      //   displayIcon: false,
-      //   className: "",
-      //   helpText: (
-      //     <>{noteForDisabledAssocitedItemsButton(shouldButtonBeDisabled())}</>
-      //   ),
-      //   displayText: addRemoveButton
-      // });
       const toolTipWithText_AddRemoveItemFromPrintCart = (
         <ToolTip
           className="tooltip-item-card-button"
@@ -374,11 +366,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       );
     }
 
-    return (
-      <>
-        {/* {this.renderErrorModal()} */}
-        {content}
-      </>
-    );
+    return <>{content}</>;
   }
 }
