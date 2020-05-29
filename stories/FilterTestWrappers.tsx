@@ -160,6 +160,7 @@ export class SIWFilterContainerTestWrapper extends React.Component<
           return;
         }}
         searchAPI={mockSIWSeachAPI}
+        IsInterimSite={false}
       />
     );
   }

@@ -124,7 +124,7 @@ export class SearchResultContainer extends React.Component<
       shouldUpdateSelectedItemsState
     ));
     if (shouldUpdateSelectedItemsState === true) {
-      //*****************update items in pint cart in same order it has been selected
+      //update items in pint cart in same order it has been selected
       this.setState({
         itemsInPrintCart: selectedItems,
         associatedItemsInPrintCart: associatedItems,
