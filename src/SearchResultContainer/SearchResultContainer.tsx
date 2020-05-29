@@ -71,7 +71,6 @@ export interface SearchResultContainerState {
   showModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
-  // selectedItems: ItemCardModel[];
   hasReceiveNewProps: number;
   itemsInPrintCart: ItemCardModel[];
   ItemsCountInPrintCart: number;
@@ -97,7 +96,6 @@ export class SearchResultContainer extends React.Component<
       showModal: false,
       showErrorModal: false,
       statusMessage: "",
-      // selectedItems: [],
       hasReceiveNewProps: 0,
       itemsInPrintCart: [],
       ItemsCountInPrintCart: 0,
@@ -142,7 +140,6 @@ export class SearchResultContainer extends React.Component<
 
   handleUpdateItemsinPrintCart = (itemsInPrintCart: ItemCardModel[]) => {
     this.handleUpdateSelectionIndex(itemsInPrintCart);
-    // const updatedAssociatedItems = this.getUpdatedAssociatedItems(itemsInPrintCart);
     this.setState({ itemsInPrintCart: itemsInPrintCart });
     this.handleCountNumberOfItemSelection();
   };
@@ -215,7 +212,6 @@ export class SearchResultContainer extends React.Component<
       currentSelectedItemIndex: currentSelectedItemIndex
     });
     this.handleCountNumberOfItemSelection();
-    //this.props.onItemSelection(item);
   };
 
   handleResetItems = (): void => {
@@ -233,7 +229,6 @@ export class SearchResultContainer extends React.Component<
     let itemSelectionIndex = this.state.ItemsCountInPrintCart - 1;
     let itemsToExclude: number[] = [];
     const PTassociatedItems = this.props.performanceTaskAssociatedItems;
-    // this.props.onResetItems();
 
     if (
       this.props.itemCards !== undefined &&
@@ -278,7 +273,6 @@ export class SearchResultContainer extends React.Component<
                 shouldUpdateAssociatedItemsInCart = true;
               }
               shouldUpdateItemsInPrintCart = true;
-              // this.handleSelectItem(element);
             }
           } else if (!element.selected && !element.isPerformanceItem) {
             element.selected = true;
@@ -295,7 +289,6 @@ export class SearchResultContainer extends React.Component<
               shouldUpdateAssociatedItemsInCart = true;
             }
             shouldUpdateItemsInPrintCart = true;
-            // this.handleSelectItem(element);
           }
         });
       }
@@ -307,9 +300,6 @@ export class SearchResultContainer extends React.Component<
       if (shouldUpdateItemsInPrintCart) {
         this.handleUpdateItemsinPrintCart(itemsInPrintcart);
       }
-
-      // this.props.onSelectAll(this.props.itemCards);
-      // this.handleCountNumberOfItemSelection();
     }
   };
 
@@ -325,10 +315,6 @@ export class SearchResultContainer extends React.Component<
       new_index,
       totalItemsCard
     );
-    // this.setState({
-    //   itemsInPrintCart: reOrderedItems
-    //   // selectedItems: reOrderedItems
-    // });
     this.handleUpdateItemsinPrintCart(reOrderedItems);
   };
 
@@ -436,7 +422,6 @@ export class SearchResultContainer extends React.Component<
         itemsInPrintCart: this.state.itemsInPrintCart
       });
     }
-    //this.componentDidMount();
   };
 
   areSelectedItemsHaveMath = (): boolean => {
@@ -651,7 +636,6 @@ export class SearchResultContainer extends React.Component<
           itemsInCart={itemsInPrintCart}
           associatedItemsInPrintCart={associatedItemsInPrintCart}
           onSubmitPrint={this.handlePrintItemsClick}
-          // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
           handleUpdateItemsinPrintCart={this.handleUpdateItemsinPrintCart}
           onAddOrRemoveSelectedItems={this.handleSelectItem}
           StatusMessage={statusMessage}

@@ -16,11 +16,6 @@ export interface PrintWizardSteps1_Props {
 }
 
 export interface PrintWizardSteps2_Props {
-  // onSubmitPrint: (
-  //   langCode?: string,
-  //   GlossaryRequired?: string,
-  //   IllustrationRequired?: string
-  // ) => void;
   handleLanguageChange: (newLangCode: string) => void;
   handleIllustrationChange: (newIllustration: string) => void;
   handleGlossaryOptionChange: (newGlossaryOption: string) => void;

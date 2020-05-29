@@ -70,12 +70,4 @@ describe("ItemTable", () => {
       // expect(props.onRowExpand).toHaveBeenCalled();
     });
   });
-
-  // it("expands matches snapshot", () => {
-  //   expect(wrapperExpanded).toMatchSnapshot();
-  //   const itemCardViewer = wrapperExpanded.findWhere(
-  //     node => node.type() === ItemCardViewer
-  //   );
-  //   expect(itemCardViewer).toBeDefined();
-  // });
 });

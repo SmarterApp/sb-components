@@ -67,14 +67,4 @@ describe("ItemPageTable", () => {
       expect(props.onRowSelection).toHaveBeenCalled();
     });
   });
-
-  // it("expands", () => {
-  //   const item = wrapper.find("td.item").at(0);
-  //   item.simulate("click");
-  //   expect(wrapper).toMatchSnapshot();
-  //   const itemCardViewer = wrapper.findWhere(
-  //     node => node.type() === ItemCardViewer
-  //   );
-  //   expect(itemCardViewer).toBeDefined();
-  // });
 });
