@@ -101,17 +101,41 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </div>
           </th>
           <th
-            className="claimAndTarget"
+            className="claim"
             onClick={[Function]}
             onKeyUp={[Function]}
             scope="col"
             tabIndex={0}
           >
             <div
-              className="claimAndTarget"
+              className="claim"
             >
               <span>
-                Claim/Target
+                Claim
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="Target"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="Target"
+            >
+              <span>
+                Target
               </span>
               <span
                 aria-hidden="true"
@@ -252,7 +276,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -260,6 +284,11 @@ exports[`Storyshots Item Table Container normal render 1`] = `
                 Concepts and Procedures and Logical
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -295,7 +324,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
           >
             <span>
               <span>
-                Not Available
+                6.M.1a
               </span>
             </span>
             <span>
@@ -415,7 +444,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -423,6 +452,11 @@ exports[`Storyshots Item Table Container normal render 1`] = `
                 Reading
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -458,7 +492,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
           >
             <span>
               <span>
-                Not Available
+                3.R.2a
               </span>
             </span>
             <span>
@@ -578,7 +612,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -586,6 +620,11 @@ exports[`Storyshots Item Table Container normal render 1`] = `
                 Modeling/Data Analysis
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -741,7 +780,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -749,6 +788,11 @@ exports[`Storyshots Item Table Container normal render 1`] = `
                 Research/Inquiry
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -784,7 +828,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
           >
             <span>
               <span>
-                Not Available
+                4.E.4a
               </span>
             </span>
             <span>
@@ -931,17 +975,41 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </div>
           </th>
           <th
-            className="claimAndTarget"
+            className="claim"
             onClick={[Function]}
             onKeyUp={[Function]}
             scope="col"
             tabIndex={0}
           >
             <div
-              className="claimAndTarget"
+              className="claim"
             >
               <span>
-                Claim/Target
+                Claim
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="Target"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="Target"
+            >
+              <span>
+                Target
               </span>
               <span
                 aria-hidden="true"
@@ -1046,7 +1114,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1054,6 +1122,11 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
                 Concepts and Procedures and Logical
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1089,7 +1162,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
           >
             <span>
               <span>
-                Not Available
+                6.M.1a
               </span>
             </span>
             <span>
@@ -1173,7 +1246,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1181,6 +1254,11 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
                 Reading
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1216,7 +1294,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
           >
             <span>
               <span>
-                Not Available
+                3.R.2a
               </span>
             </span>
             <span>
@@ -1300,7 +1378,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1308,6 +1386,11 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
                 Modeling/Data Analysis
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1427,7 +1510,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1435,6 +1518,11 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
                 Research/Inquiry
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1470,7 +1558,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
           >
             <span>
               <span>
-                Not Available
+                4.E.4a
               </span>
             </span>
             <span>
@@ -1620,17 +1708,41 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </div>
           </th>
           <th
-            className="claimAndTarget"
+            className="claim"
             onClick={[Function]}
             onKeyUp={[Function]}
             scope="col"
             tabIndex={0}
           >
             <div
-              className="claimAndTarget"
+              className="claim"
             >
               <span>
-                Claim/Target
+                Claim
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="Target"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="Target"
+            >
+              <span>
+                Target
               </span>
               <span
                 aria-hidden="true"
@@ -1771,7 +1883,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1779,6 +1891,11 @@ exports[`Storyshots Item Table Container selected item 1`] = `
                 Concepts and Procedures and Logical
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1814,7 +1931,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
           >
             <span>
               <span>
-                Not Available
+                6.M.1a
               </span>
             </span>
             <span>
@@ -1934,7 +2051,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -1942,6 +2059,11 @@ exports[`Storyshots Item Table Container selected item 1`] = `
                 Reading
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -1977,7 +2099,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
           >
             <span>
               <span>
-                Not Available
+                3.R.2a
               </span>
             </span>
             <span>
@@ -2097,7 +2219,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -2105,6 +2227,11 @@ exports[`Storyshots Item Table Container selected item 1`] = `
                 Modeling/Data Analysis
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -2260,7 +2387,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -2268,6 +2395,11 @@ exports[`Storyshots Item Table Container selected item 1`] = `
                 Research/Inquiry
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -2303,7 +2435,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
           >
             <span>
               <span>
-                Not Available
+                4.E.4a
               </span>
             </span>
             <span>
@@ -2453,17 +2585,41 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </div>
           </th>
           <th
-            className="claimAndTarget"
+            className="claim"
             onClick={[Function]}
             onKeyUp={[Function]}
             scope="col"
             tabIndex={0}
           >
             <div
-              className="claimAndTarget"
+              className="claim"
             >
               <span>
-                Claim/Target
+                Claim
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="Target"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="Target"
+            >
+              <span>
+                Target
               </span>
               <span
                 aria-hidden="true"
@@ -2604,7 +2760,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -2612,6 +2768,11 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
                 Alpha
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -2647,7 +2808,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
           >
             <span>
               <span>
-                Not Available
+                
               </span>
             </span>
             <span>
@@ -2767,7 +2928,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -2775,6 +2936,11 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
                 Bravo
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -2810,7 +2976,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
           >
             <span>
               <span>
-                Not Available
+                
               </span>
             </span>
             <span>
@@ -2930,7 +3096,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -2938,6 +3104,11 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
                 Charlie
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -3093,7 +3264,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
+            className="claim"
             role="gridcell"
           >
             <span>
@@ -3101,6 +3272,11 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
                 Delta
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            role="gridcell"
+          >
             <span>
               <span
                 className="tool-tip-links box"
@@ -3136,7 +3312,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
           >
             <span>
               <span>
-                Not Available
+                
               </span>
             </span>
             <span>

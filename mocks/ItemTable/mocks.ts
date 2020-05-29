@@ -8,10 +8,12 @@ import { itemCardList, sortableItemCards } from "@mocks/index";
 
 export const tabClassNames = [
   "item",
-  "claimAndTarget",
+  "claim",
+  "standard",
   "subject",
   "grade",
-  "item-type"
+  "item-type",
+  "Target"
 ];
 
 export const itemTableProps: ItemTableContainerProps = {

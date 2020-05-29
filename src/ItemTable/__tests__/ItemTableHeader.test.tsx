@@ -39,7 +39,9 @@ describe("ItemTableHeader", () => {
 
   it("calls onHeaderClick", () => {
     tabClassNames.forEach(tab => {
+      console.log("Classname header before clicked : ", tab);
       wrapper.find(`th.${tab}`).simulate("click");
+      console.log("Classname header after clicked : ", tab);
       expect(props.onHeaderClick).toHaveBeenCalled();
     });
   });

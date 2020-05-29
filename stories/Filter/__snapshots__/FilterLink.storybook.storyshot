@@ -130,17 +130,41 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </div>
             </th>
             <th
-              className="claimAndTarget"
+              className="claim"
               onClick={[Function]}
               onKeyUp={[Function]}
               scope="col"
               tabIndex={0}
             >
               <div
-                className="claimAndTarget"
+                className="claim"
               >
                 <span>
-                  Claim/Target
+                  Claim
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="Target"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="Target"
+              >
+                <span>
+                  Target
                 </span>
                 <span
                   aria-hidden="true"
@@ -281,7 +305,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -289,6 +313,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -444,7 +473,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -452,6 +481,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -607,7 +641,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -615,6 +649,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -770,7 +809,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -778,6 +817,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -933,7 +977,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -941,6 +985,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1096,7 +1145,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1104,6 +1153,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1259,7 +1313,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1267,6 +1321,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1422,7 +1481,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1430,6 +1489,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1585,7 +1649,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1593,6 +1657,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1748,7 +1817,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1756,6 +1825,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -1911,7 +1985,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -1919,6 +1993,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2074,7 +2153,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2082,6 +2161,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2237,7 +2321,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2245,6 +2329,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2400,7 +2489,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2408,6 +2497,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2563,7 +2657,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2571,6 +2665,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2726,7 +2825,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2734,6 +2833,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -2889,7 +2993,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -2897,6 +3001,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3052,7 +3161,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3060,6 +3169,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3215,7 +3329,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3223,6 +3337,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3378,7 +3497,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3386,6 +3505,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3541,7 +3665,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3549,6 +3673,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3704,7 +3833,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3712,6 +3841,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -3867,7 +4001,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -3875,6 +4009,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4030,7 +4169,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4038,6 +4177,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4193,7 +4337,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4201,6 +4345,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4356,7 +4505,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4364,6 +4513,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4519,7 +4673,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4527,6 +4681,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4682,7 +4841,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4690,6 +4849,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -4845,7 +5009,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -4853,6 +5017,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5008,7 +5177,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5016,6 +5185,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5171,7 +5345,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5179,6 +5353,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5334,7 +5513,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5342,6 +5521,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5497,7 +5681,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5505,6 +5689,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5660,7 +5849,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5668,6 +5857,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5823,7 +6017,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5831,6 +6025,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -5986,7 +6185,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -5994,6 +6193,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6149,7 +6353,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6157,6 +6361,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6312,7 +6521,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6320,6 +6529,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6475,7 +6689,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6483,6 +6697,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6638,7 +6857,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6646,6 +6865,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6801,7 +7025,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6809,6 +7033,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -6964,7 +7193,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -6972,6 +7201,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7127,7 +7361,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7135,6 +7369,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7290,7 +7529,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7298,6 +7537,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7453,7 +7697,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7461,6 +7705,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7616,7 +7865,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7624,6 +7873,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7779,7 +8033,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7787,6 +8041,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -7942,7 +8201,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -7950,6 +8209,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -8105,7 +8369,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -8113,6 +8377,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"
@@ -8268,7 +8537,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
-              className="claimAndTarget"
+              className="claim"
               role="gridcell"
             >
               <span>
@@ -8276,6 +8545,11 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                   Claim
                 </span>
               </span>
+            </td>
+            <td
+              className="Target"
+              role="gridcell"
+            >
               <span>
                 <span
                   className="tool-tip-links box"

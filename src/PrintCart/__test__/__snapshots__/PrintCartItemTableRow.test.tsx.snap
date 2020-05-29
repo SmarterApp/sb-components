@@ -11,6 +11,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "calculator": false,
           "claimCode": "ELA1",
           "claimLabel": "Reading",
+          "commonCoreStandardId": "3.R.2a",
           "grade": 1,
           "gradeLabel": "Grade 3",
           "interactionTypeCode": "MC",
@@ -34,6 +35,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "calculator": true,
             "claimCode": "MATH1",
             "claimLabel": "Concepts and Procedures and Logical",
+            "commonCoreStandardId": "6.M.1a",
             "grade": 8,
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "EQ",
@@ -54,6 +56,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "calculator": false,
             "claimCode": "ELA1",
             "claimLabel": "Reading",
+            "commonCoreStandardId": "3.R.2a",
             "grade": 1,
             "gradeLabel": "Grade 3",
             "interactionTypeCode": "MC",
@@ -73,6 +76,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "claimCode": "MATH4",
             "claimLabel": "Modeling/Data Analysis",
+            "commonCoreStandardId": "6.M.2b",
             "grade": 8,
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "MS",
@@ -92,6 +96,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
             "claimLabel": "Research/Inquiry",
+            "commonCoreStandardId": "4.E.4a",
             "grade": 2,
             "gradeLabel": "Grade 4",
             "interactionTypeCode": "MS",
@@ -218,6 +223,13 @@ exports[`ItemTableRow matches snapshot 1`] = `
                 "accessor": [Function],
                 "className": "claim",
               },
+            ],
+            "compare": [Function],
+            "header": "Claim",
+            "headerClassName": "claim",
+          },
+          Object {
+            "cols": Array [
               Object {
                 "accessor": [Function],
                 "className": "target",
@@ -225,8 +237,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
               },
             ],
             "compare": [Function],
-            "header": "Claim/Target",
-            "headerClassName": "claimAndTarget",
+            "header": "Target",
+            "headerClassName": "Target",
           },
           Object {
             "cols": Array [
@@ -331,7 +343,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
         </td>
         <td>
           <span>
-            Not Available
+            3.R.2a
              
           </span>
           <span>

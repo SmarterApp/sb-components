@@ -80,8 +80,8 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
     </span>
   </td>
   <td
-    className="claimAndTarget"
-    key="claimAndTarget-187-3206"
+    className="claim"
+    key="claim-187-3206"
     role="gridcell"
   >
     <span
@@ -91,6 +91,12 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
         Concepts and Procedures and Logical
       </span>
     </span>
+  </td>
+  <td
+    className="Target"
+    key="Target-187-3206"
+    role="gridcell"
+  >
     <span
       key="target"
     >
@@ -116,7 +122,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
       key="standard"
     >
       <span>
-        Not Available
+        6.M.1a
       </span>
     </span>
     <span
@@ -196,6 +202,13 @@ exports[`ItemTableRow matches snapshot 1`] = `
                 "accessor": [Function],
                 "className": "claim",
               },
+            ],
+            "compare": [Function],
+            "header": "Claim",
+            "headerClassName": "claim",
+          },
+          Object {
+            "cols": Array [
               Object {
                 "accessor": [Function],
                 "className": "target",
@@ -203,8 +216,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
               },
             ],
             "compare": [Function],
-            "header": "Claim/Target",
-            "headerClassName": "claimAndTarget",
+            "header": "Target",
+            "headerClassName": "Target",
           },
           Object {
             "cols": Array [
@@ -246,6 +259,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "calculator": true,
           "claimCode": "MATH1",
           "claimLabel": "Concepts and Procedures and Logical",
+          "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "EQ",
@@ -376,8 +390,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td
-          className="claimAndTarget"
-          key="claimAndTarget-187-3206"
+          className="claim"
+          key="claim-187-3206"
           role="gridcell"
         >
           <span
@@ -387,6 +401,12 @@ exports[`ItemTableRow matches snapshot 1`] = `
               Concepts and Procedures and Logical
             </span>
           </span>
+        </td>
+        <td
+          className="Target"
+          key="Target-187-3206"
+          role="gridcell"
+        >
           <span
             key="target"
           >
@@ -439,7 +459,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             key="standard"
           >
             <span>
-              Not Available
+              6.M.1a
             </span>
           </span>
           <span

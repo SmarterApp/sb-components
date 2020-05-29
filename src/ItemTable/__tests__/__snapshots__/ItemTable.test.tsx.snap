@@ -12,6 +12,7 @@ exports[`ItemTable matches snapshot 1`] = `
           "calculator": true,
           "claimCode": "MATH1",
           "claimLabel": "Concepts and Procedures and Logical",
+          "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "EQ",
@@ -32,6 +33,7 @@ exports[`ItemTable matches snapshot 1`] = `
           "calculator": false,
           "claimCode": "ELA1",
           "claimLabel": "Reading",
+          "commonCoreStandardId": "3.R.2a",
           "grade": 1,
           "gradeLabel": "Grade 3",
           "interactionTypeCode": "MC",
@@ -51,6 +53,7 @@ exports[`ItemTable matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "claimCode": "MATH4",
           "claimLabel": "Modeling/Data Analysis",
+          "commonCoreStandardId": "6.M.2b",
           "grade": 8,
           "gradeLabel": "Grade 6",
           "interactionTypeCode": "MS",
@@ -70,6 +73,7 @@ exports[`ItemTable matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "claimCode": "ELA4",
           "claimLabel": "Research/Inquiry",
+          "commonCoreStandardId": "4.E.4a",
           "grade": 2,
           "gradeLabel": "Grade 4",
           "interactionTypeCode": "MS",
@@ -127,6 +131,13 @@ exports[`ItemTable matches snapshot 1`] = `
               "accessor": [Function],
               "className": "claim",
             },
+          ],
+          "compare": [Function],
+          "header": "Claim",
+          "headerClassName": "claim",
+        },
+        Object {
+          "cols": Array [
             Object {
               "accessor": [Function],
               "className": "target",
@@ -134,8 +145,8 @@ exports[`ItemTable matches snapshot 1`] = `
             },
           ],
           "compare": [Function],
-          "header": "Claim/Target",
-          "headerClassName": "claimAndTarget",
+          "header": "Target",
+          "headerClassName": "Target",
         },
         Object {
           "cols": Array [
@@ -220,6 +231,13 @@ exports[`ItemTable matches snapshot 1`] = `
                   "accessor": [Function],
                   "className": "claim",
                 },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
                 Object {
                   "accessor": [Function],
                   "className": "target",
@@ -227,8 +245,8 @@ exports[`ItemTable matches snapshot 1`] = `
                 },
               ],
               "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
+              "header": "Target",
+              "headerClassName": "Target",
             },
             Object {
               "cols": Array [
@@ -275,6 +293,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "calculator": true,
             "claimCode": "MATH1",
             "claimLabel": "Concepts and Procedures and Logical",
+            "commonCoreStandardId": "6.M.1a",
             "grade": 8,
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "EQ",
@@ -406,8 +425,8 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3206"
+            className="claim"
+            key="claim-187-3206"
             role="gridcell"
           >
             <span
@@ -417,6 +436,12 @@ exports[`ItemTable matches snapshot 1`] = `
                 Concepts and Procedures and Logical
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3206"
+            role="gridcell"
+          >
             <span
               key="target"
             >
@@ -469,7 +494,7 @@ exports[`ItemTable matches snapshot 1`] = `
               key="standard"
             >
               <span>
-                Not Available
+                6.M.1a
               </span>
             </span>
             <span
@@ -572,6 +597,13 @@ exports[`ItemTable matches snapshot 1`] = `
                   "accessor": [Function],
                   "className": "claim",
                 },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
                 Object {
                   "accessor": [Function],
                   "className": "target",
@@ -579,8 +611,8 @@ exports[`ItemTable matches snapshot 1`] = `
                 },
               ],
               "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
+              "header": "Target",
+              "headerClassName": "Target",
             },
             Object {
               "cols": Array [
@@ -627,6 +659,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "calculator": false,
             "claimCode": "ELA1",
             "claimLabel": "Reading",
+            "commonCoreStandardId": "3.R.2a",
             "grade": 1,
             "gradeLabel": "Grade 3",
             "interactionTypeCode": "MC",
@@ -758,8 +791,8 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3163"
+            className="claim"
+            key="claim-187-3163"
             role="gridcell"
           >
             <span
@@ -769,6 +802,12 @@ exports[`ItemTable matches snapshot 1`] = `
                 Reading
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3163"
+            role="gridcell"
+          >
             <span
               key="target"
             >
@@ -821,7 +860,7 @@ exports[`ItemTable matches snapshot 1`] = `
               key="standard"
             >
               <span>
-                Not Available
+                3.R.2a
               </span>
             </span>
             <span
@@ -924,6 +963,13 @@ exports[`ItemTable matches snapshot 1`] = `
                   "accessor": [Function],
                   "className": "claim",
                 },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
                 Object {
                   "accessor": [Function],
                   "className": "target",
@@ -931,8 +977,8 @@ exports[`ItemTable matches snapshot 1`] = `
                 },
               ],
               "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
+              "header": "Target",
+              "headerClassName": "Target",
             },
             Object {
               "cols": Array [
@@ -978,6 +1024,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "claimCode": "MATH4",
             "claimLabel": "Modeling/Data Analysis",
+            "commonCoreStandardId": "6.M.2b",
             "grade": 8,
             "gradeLabel": "Grade 6",
             "interactionTypeCode": "MS",
@@ -1109,8 +1156,8 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-3615"
+            className="claim"
+            key="claim-187-3615"
             role="gridcell"
           >
             <span
@@ -1120,6 +1167,12 @@ exports[`ItemTable matches snapshot 1`] = `
                 Modeling/Data Analysis
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3615"
+            role="gridcell"
+          >
             <span
               key="target"
             >
@@ -1275,6 +1328,13 @@ exports[`ItemTable matches snapshot 1`] = `
                   "accessor": [Function],
                   "className": "claim",
                 },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
                 Object {
                   "accessor": [Function],
                   "className": "target",
@@ -1282,8 +1342,8 @@ exports[`ItemTable matches snapshot 1`] = `
                 },
               ],
               "compare": [Function],
-              "header": "Claim/Target",
-              "headerClassName": "claimAndTarget",
+              "header": "Target",
+              "headerClassName": "Target",
             },
             Object {
               "cols": Array [
@@ -1329,6 +1389,7 @@ exports[`ItemTable matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
             "claimLabel": "Research/Inquiry",
+            "commonCoreStandardId": "4.E.4a",
             "grade": 2,
             "gradeLabel": "Grade 4",
             "interactionTypeCode": "MS",
@@ -1460,8 +1521,8 @@ exports[`ItemTable matches snapshot 1`] = `
             </span>
           </td>
           <td
-            className="claimAndTarget"
-            key="claimAndTarget-187-2928"
+            className="claim"
+            key="claim-187-2928"
             role="gridcell"
           >
             <span
@@ -1471,6 +1532,12 @@ exports[`ItemTable matches snapshot 1`] = `
                 Research/Inquiry
               </span>
             </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-2928"
+            role="gridcell"
+          >
             <span
               key="target"
             >
@@ -1523,7 +1590,7 @@ exports[`ItemTable matches snapshot 1`] = `
               key="standard"
             >
               <span>
-                Not Available
+                4.E.4a
               </span>
             </span>
             <span

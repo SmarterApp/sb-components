@@ -71,7 +71,7 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: true,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "6.M.1a"
   },
   {
     bankKey: 187,
@@ -92,7 +92,7 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "3.R.2a"
   },
   {
     bankKey: 187,
@@ -110,9 +110,9 @@ export const itemCardList: ItemCardModel[] = [
     targetShortName: "",
     interactionTypeCode: "MS",
     interactionTypeLabel: "Multi Select",
-    isPerformanceItem: false,
+    isPerformanceItem: true,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "6.M.2b"
   },
   {
     bankKey: 187,
@@ -132,7 +132,7 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "4.E.4a"
   }
 ];
 
