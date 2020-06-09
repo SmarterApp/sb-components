@@ -6,7 +6,8 @@ import {
   ItemTableContainer,
   ItemModel,
   ItemCard,
-  IframeModal
+  IframeModal,
+  SearchAPIParamsModel
 } from "@src/index";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
@@ -17,7 +18,10 @@ import {
   moveArrayItemToNewIndex,
   areSelectedItemsHaveMath,
   getAssociatedItemCards,
-  isPTAssociatedItemsInCart
+  isPTAssociatedItemsInCart,
+  deleteTestNameDetails,
+  addTestNameDetails,
+  addTestName_associatedItems
 } from "./SearchResultContainerHelper";
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 
@@ -48,6 +52,7 @@ export interface SearchResultContainerProps {
     itemsInPrintCart: ItemCardModel[],
     associateditemsInPrintCart: ItemCardModel[]
   ) => void;
+  searchAPI: SearchAPIParamsModel;
   onResetItems: () => void;
   onSelectAll: (itemCards?: ItemCardModel[]) => void;
   itemCards?: ItemCardModel[];
@@ -187,6 +192,10 @@ export class SearchResultContainer extends React.Component<
      */
     if (item.isPerformanceItem && item.selected === false) {
       let associatedItems = this.state.associatedItemsInPrintCart;
+      deleteTestNameDetails(
+        associatedItems[item.itemKey],
+        this.props.totalItemCards
+      );
       delete associatedItems[item.itemKey];
       this.setState({ associatedItemsInPrintCart: associatedItems });
     }
@@ -203,6 +212,22 @@ export class SearchResultContainer extends React.Component<
     } else if (item.selected === false) {
       currentSelectedItemIndex = currentSelectedItemIndex - 1;
       delete item.selectionIndex;
+    }
+
+    //Update test name in item if test name is selected by user
+    if (
+      this.props.searchAPI.testNames &&
+      this.props.searchAPI.testNames.length > 0 &&
+      this.props.searchAPI.testNames[0] !== "0"
+    ) {
+      if (item.selected === undefined || item.selected === false) {
+        delete item.testNameInPrintCart;
+        delete item.testOrderInPrintCart;
+      } else if (item.selected === true) {
+        item.testNameInPrintCart = this.props.searchAPI.testNames[0];
+        item.testOrderInPrintCart =
+          item.testOrder === undefined ? undefined : item.testOrder;
+      }
     }
 
     // Update selected item in print cart
@@ -263,6 +288,7 @@ export class SearchResultContainer extends React.Component<
               if (element.itemKey in PTassociatedItems)
                 itemsToExclude.push(...PTassociatedItems[element.itemKey]);
               element.selected = true;
+
               itemSelectionIndex = itemSelectionIndex + 1;
               element.selectionIndex = itemSelectionIndex;
               itemsInPrintcart.push(element);
@@ -271,6 +297,20 @@ export class SearchResultContainer extends React.Component<
                 PTassociatedItems,
                 this.props.totalItemCards
               );
+              //add test name details also if test name is selected
+              if (
+                this.props.searchAPI.testNames &&
+                this.props.searchAPI.testNames.length > 0 &&
+                this.props.searchAPI.testNames[0] !== "0"
+              ) {
+                addTestNameDetails(element, this.props.searchAPI.testNames[0]);
+                addTestName_associatedItems(
+                  associatedItemCard,
+                  this.props.searchAPI.testNames[0],
+                  this.props.totalItemCards
+                );
+              }
+
               if (associatedItemCard.length > 0) {
                 associatedItemsInPrintcart[
                   element.itemKey
@@ -278,10 +318,17 @@ export class SearchResultContainer extends React.Component<
                 shouldUpdateAssociatedItemsInCart = true;
               }
               shouldUpdateItemsInPrintCart = true;
-              // this.handleSelectItem(element);
             }
           } else if (!element.selected && !element.isPerformanceItem) {
             element.selected = true;
+            if (
+              this.props.searchAPI.testNames &&
+              this.props.searchAPI.testNames.length > 0 &&
+              this.props.searchAPI.testNames[0] !== "0"
+            ) {
+              addTestNameDetails(element, this.props.searchAPI.testNames[0]);
+              // addTestName_associatedItems(associatedItemCard, this.props.searchAPI.testNames[0], this.props.totalItemCards);
+            }
             itemSelectionIndex = itemSelectionIndex + 1;
             element.selectionIndex = itemSelectionIndex;
             itemsInPrintcart.push(element);
@@ -295,7 +342,6 @@ export class SearchResultContainer extends React.Component<
               shouldUpdateAssociatedItemsInCart = true;
             }
             shouldUpdateItemsInPrintCart = true;
-            // this.handleSelectItem(element);
           }
         });
       }
@@ -307,9 +353,6 @@ export class SearchResultContainer extends React.Component<
       if (shouldUpdateItemsInPrintCart) {
         this.handleUpdateItemsinPrintCart(itemsInPrintcart);
       }
-
-      // this.props.onSelectAll(this.props.itemCards);
-      // this.handleCountNumberOfItemSelection();
     }
   };
 
@@ -325,10 +368,6 @@ export class SearchResultContainer extends React.Component<
       new_index,
       totalItemsCard
     );
-    // this.setState({
-    //   itemsInPrintCart: reOrderedItems
-    //   // selectedItems: reOrderedItems
-    // });
     this.handleUpdateItemsinPrintCart(reOrderedItems);
   };
 
@@ -382,10 +421,27 @@ export class SearchResultContainer extends React.Component<
     if (itemCards) {
       let associatedItems_temp = [];
       for (let i = 0; i < associatedItemsKey.length; i++) {
-        const x = itemCards.filter(
+        let associatedItems = itemCards.filter(
           item => item.itemKey === associatedItemsKey[i]
         );
-        associatedItems_temp.push(x);
+
+        //also update test name and order if test name is selected by user
+        if (
+          this.props.searchAPI.testNames &&
+          this.props.searchAPI.testNames.length > 0 &&
+          this.props.searchAPI.testNames[0] !== "0"
+        ) {
+          const testName = this.props.searchAPI.testNames[0];
+          associatedItems.forEach(item => {
+            item.testNameInPrintCart = testName;
+            item.testOrderInPrintCart =
+              item.testOrder === undefined ? undefined : item.testOrder;
+            console.log("Test Name : ", item.testNameInPrintCart);
+            console.log("Test Order : ", item.testOrderInPrintCart);
+          });
+        }
+        associatedItems_temp.push(associatedItems);
+        console.log(associatedItems_temp);
       }
       associatedItems[item.itemKey] = associatedItems_temp;
     }

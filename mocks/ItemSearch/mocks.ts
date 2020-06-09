@@ -159,7 +159,8 @@ export const mockSeachAPI: SearchAPIParamsModel = {
   interactionTypes: ["t1", "t2"],
   performanceOnly: true,
   catOnly: true,
-  targets: ["A","B"]
+  targets: ["A", "B"],
+  testNames: ["SBAC-Practice-ELA-PRAC-3"]
 };
 
 export const resultFilterOptionModelClaim: FilterOptionModel[] = [

@@ -126,6 +126,44 @@ export function getAssociatedItemCards(
   return {};
 }
 
+export function deleteTestNameDetails(
+  associatedItems: any,
+  totalItemCards?: ItemCardModel[]
+) {
+  if (totalItemCards && totalItemCards.length > 0) {
+    associatedItems.forEach((element: { itemKey: number }[]) => {
+      let item = totalItemCards.filter(x => x.itemKey === element[0].itemKey);
+      delete item[0].testNameInPrintCart;
+      delete item[0].testOrderInPrintCart;
+    });
+  }
+}
+
+export function addTestNameDetails(
+  item: ItemCardModel,
+  testName: string,
+  totalItemCards?: ItemCardModel[]
+) {
+  item.testNameInPrintCart = testName;
+  item.testOrderInPrintCart =
+    item.testOrder === undefined ? undefined : item.testOrder;
+}
+
+export function addTestName_associatedItems(
+  associatedItems: any,
+  testName: string,
+  totalItemCards?: ItemCardModel[]
+) {
+  if (totalItemCards && totalItemCards.length > 0) {
+    associatedItems.forEach((element: { itemKey: number }[]) => {
+      let item = totalItemCards.filter(x => x.itemKey === element[0].itemKey);
+      item[0].testNameInPrintCart = testName;
+      item[0].testOrderInPrintCart =
+        item[0].testOrder === undefined ? undefined : item[0].testOrder;
+    });
+  }
+}
+
 export function areSelectedItemsHaveMath(
   totalSelectedItemsCount: number,
   totalItemsCard?: ItemCardModel[]

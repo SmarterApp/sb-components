@@ -329,6 +329,27 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.gradeLabel}
               </span>
             </p>
+            <p className="card-text test-name">
+              <span className="card-text-label">Test Name:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.testName}
+              </span>
+            </p>
+            <p className="card-text item-position-in-test">
+              <span className="card-text-label">Item position in test:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.testOrder}
+              </span>
+            </p>
+            <p className="card-text stimulusid">
+              <span className="card-text-label">Stimulus ID:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.stimulusKey}
+              </span>
+            </p>
             <p className="card-text claim">
               <span className="card-text-label">Claim:</span>
               <span className="card-text-value">

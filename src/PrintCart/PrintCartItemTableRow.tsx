@@ -145,6 +145,9 @@ export class PrintCartItemTableRow extends React.Component<
             targetId: any;
             targetDescription: any;
             isPerformanceItem: any;
+            testNameInPrintCart: string;
+            testOrderInPrintCart: number;
+            stimulusKey: number;
           }[]
         ) => {
           return (
@@ -153,9 +156,12 @@ export class PrintCartItemTableRow extends React.Component<
               <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
               <td>{!item[0].isPerformanceItem ? "-" : itemSequence++}</td>
               <td>{item[0].itemKey}</td>
-              <td>{item[0].subjectLabel}</td>
-              <td>{item[0].gradeLabel}</td>
-              <td>{item[0].claimLabel}</td>
+              <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
+              <td>{mapItemGrade(item[0].gradeLabel)}</td>
+              <td>{item[0].testNameInPrintCart}</td>
+              <td>{item[0].testOrderInPrintCart}</td>
+              <td>{item[0].stimulusKey}</td>
+              <td>{mapItemClaim(item[0].claimLabel)}</td>
               <td>
                 {this.getToolTipForTarget(
                   item[0].targetId,
@@ -204,9 +210,12 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
           {/* <td>{this.props.index}</td> */}
           <td>{item.itemKey}</td>
-          <td>{item.subjectLabel}</td>
-          <td>{item.gradeLabel}</td>
-          <td>{item.claimLabel}</td>
+          <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
+          <td>{mapItemGrade(item.gradeLabel)}</td>
+          <td>{item.testNameInPrintCart}</td>
+          <td>{item.testOrderInPrintCart}</td>
+          <td>{item.stimulusKey}</td>
+          <td>{mapItemClaim(item.claimLabel)}</td>
           <td>
             {this.getToolTipForTarget(item.targetId, item.targetDescription)}
           </td>
@@ -247,4 +256,21 @@ export class PrintCartItemTableRow extends React.Component<
       </>
     );
   }
+}
+
+export function mapItemClaim(claimLabel: string): React.ReactNode {
+  const code = claimLabel.match(/(\d+)/);
+  return code !== null ? code[0] : claimLabel;
+}
+
+export function mapItemGrade(gradeLabel: string): React.ReactNode {
+  if (gradeLabel.toLowerCase() === "high school") {
+    return gradeLabel;
+  } else {
+    return gradeLabel.split(" ")[1];
+  }
+}
+
+export function mapItemSubjectlabel(subjectLabel: string): React.ReactNode {
+  return subjectLabel.toLowerCase() === "ela/literacy" ? "ELA" : subjectLabel;
 }

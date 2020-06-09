@@ -3,6 +3,9 @@ import { getContentStandardCode } from "../ItemCard/ItemCardHelperFunction";
 
 export type HeaderType =
   | "Item"
+  | "Test Name"
+  | "Item position in test"
+  | "Stimulus ID"
   | "Claim"
   | "Standard"
   | "Subject"
@@ -84,6 +87,48 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.grade - b.grade
+  },
+  {
+    header: "Test Name",
+    headerClassName: "testname",
+    cols: [
+      {
+        accessor: label => (label.testName !== undefined ? label.testName : ""),
+        className: "testname"
+      }
+    ],
+    compare: (a, b) =>
+      (a.testName !== undefined ? a.testName : "").localeCompare(
+        b.testName !== undefined ? b.testName : ""
+      )
+  },
+  {
+    header: "Item position in test",
+    headerClassName: "item-position-in-test",
+    cols: [
+      {
+        accessor: label =>
+          label.testOrder !== undefined ? label.testOrder : "",
+        className: "item-position-in-test"
+      }
+    ],
+    compare: (a, b) =>
+      (a.testOrder !== undefined ? a.testOrder : 0) -
+      (b.testOrder !== undefined ? b.testOrder : 0)
+  },
+  {
+    header: "Stimulus ID",
+    headerClassName: "stimulus",
+    cols: [
+      {
+        accessor: label =>
+          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
+        className: "stimulus"
+      }
+    ],
+    compare: (a, b) =>
+      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
+      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
   },
   {
     header: "Claim",

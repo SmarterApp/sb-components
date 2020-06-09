@@ -163,5 +163,10 @@ export interface FilterSearchClaimModel extends FilterSearchModel {
 
 export interface TestNameItemsPoolModel {
   code: string;
+  itemKeys: Array<itemKeys>;
+}
+
+export interface itemKeys {
   itemKey: number;
+  itemPosition: number;
 }

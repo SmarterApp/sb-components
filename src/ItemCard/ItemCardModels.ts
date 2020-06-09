@@ -5,11 +5,16 @@ export interface ItemCardModel {
   selectionIndex?: number;
   bankKey: number;
   itemKey: number;
+  stimulusKey?: number;
   title: string;
   grade: GradeLevels;
   gradeLabel: string;
   subjectCode: string;
   subjectLabel: string;
+  testName?: string;
+  testOrder?: number;
+  testNameInPrintCart?: string;
+  testOrderInPrintCart?: number;
   claimCode: string;
   claimLabel: string;
   targetHash: number;

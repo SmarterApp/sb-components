@@ -1,9 +1,14 @@
-import { SearchResultContainerProps, SearchResultType } from "@src/index";
+import {
+  SearchResultContainerProps,
+  SearchResultType,
+  SearchAPIParamsModel
+} from "@src/index";
 import {
   itemCardList,
   totalItemsCardList,
   performanceTaskAssociatedItems
 } from "@mocks/index";
+import { mockSeachAPI } from "@mocks/ItemSearch/mocks";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
@@ -16,9 +21,7 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   onItemSelection: () => {
     return;
   },
-  // onItemSelectionUpdateSelectedItems : () => {
-  //   return
-  // },
+
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();
@@ -41,9 +44,9 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     return;
   },
   onPrintItems: () => {
-    //console.log("Base method");
     return "";
   },
+  searchAPI: mockSeachAPI,
   itemCards: itemCardList,
   item: {
     kind: "none"

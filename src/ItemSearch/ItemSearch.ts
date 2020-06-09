@@ -593,15 +593,27 @@ export class ItemSearch {
       testItemsPool !== undefined &&
       testItemsPool.length > 0
     ) {
-      const testName = filter.testNames[0];
-      var itemsID = Array<number>();
-      var itemsID = testItemsPool
-        .filter(x => x.code == testName)
-        .map(y => y.itemKey);
-
+      const testName = filter.testNames;
+      // var itemsID = Array<number>();
+      var itemsID = Array<TestNameItemsPoolModel>();
+      // var itemsID = this.state.testItemsPool.filter(x => x.code == testName[0])
+      //   .map(y => y.itemKey);
+      var itemsID = testItemsPool.filter(x => x.code == testName[0]);
+      var testNameKeys = itemsID[0].itemKeys;
       results = results.filter(function(item) {
-        return itemsID.find(x => x == item.itemKey);
+        return testNameKeys.find(x => x.itemKey == item.itemKey);
       });
+
+      //old implmentation
+      // const testName = filter.testNames[0];
+      // var itemsID = Array<number>();
+      // var itemsID = testItemsPool
+      //   .filter(x => x.code == testName)
+      //   .map(y => y.itemKey);
+
+      // results = results.filter(function(item) {
+      //   return itemsID.find(x => x == item.itemKey);
+      // });
     }
 
     // core Standards
