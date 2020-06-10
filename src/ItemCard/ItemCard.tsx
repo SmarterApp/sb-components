@@ -330,7 +330,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               </span>
             </p>
             <p className="card-text test-name">
-              <span className="card-text-label">Test Name:</span>
+              <span className="card-text-label">Test name:</span>
               <span className="card-text-value">
                 {" "}
                 {this.props.rowData.testName}

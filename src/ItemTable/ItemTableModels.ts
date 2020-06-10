@@ -3,7 +3,7 @@ import { getContentStandardCode } from "../ItemCard/ItemCardHelperFunction";
 
 export type HeaderType =
   | "Item"
-  | "Test Name"
+  | "Test name"
   | "Item position in test"
   | "Stimulus ID"
   | "Claim"
@@ -105,7 +105,7 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) => a.grade - b.grade
   },
   {
-    header: "Test Name",
+    header: "Test name",
     headerClassName: "testname",
     cols: [
       {
@@ -288,6 +288,20 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.grade - b.grade
+  },
+  {
+    header: "Stimulus ID",
+    headerClassName: "stimulus",
+    cols: [
+      {
+        accessor: label =>
+          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
+        className: "stimulus"
+      }
+    ],
+    compare: (a, b) =>
+      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
+      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
   },
   {
     header: "Claim",

@@ -138,7 +138,6 @@ export class PrintCartItemTableRow extends React.Component<
         <>
           <td>{testNameInPrintCart}</td>
           <td>{testOrderInPrintCart}</td>
-          <td>{stimulusKey}</td>
         </>
       );
     }
@@ -180,7 +179,7 @@ export class PrintCartItemTableRow extends React.Component<
                 item[0].testOrderInPrintCart,
                 item[0].stimulusKey
               )}
-
+              <td>{item[0].stimulusKey}</td>
               <td>{mapItemClaim(item[0].claimLabel)}</td>
               <td>
                 {this.getToolTipForTarget(
@@ -213,7 +212,6 @@ export class PrintCartItemTableRow extends React.Component<
         <>
           <td>{item.testNameInPrintCart}</td>
           <td>{item.testOrderInPrintCart}</td>
-          <td>{item.stimulusKey}</td>
         </>
       );
     }
@@ -245,6 +243,7 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
           <td>{mapItemGrade(item.gradeLabel)}</td>
           {this.renderTestNameDetails(item)}
+          <td>{item.stimulusKey}</td>
           <td>{mapItemClaim(item.claimLabel)}</td>
           <td>
             {this.getToolTipForTarget(item.targetId, item.targetDescription)}
