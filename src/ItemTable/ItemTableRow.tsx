@@ -23,6 +23,7 @@ export interface ItemTableRowProps {
     currentItems: ItemCardModel[],
     selectedItemsCount: number
   ) => number;
+  isInterimSite: boolean;
 }
 
 const unChecked = (

@@ -32,6 +32,7 @@ export interface ItemTableProps {
     currentItems: ItemCardModel[],
     selectedItemsCount: number
   ) => number;
+  isInterimSite: boolean;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -103,6 +104,7 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         countNumberOfItemsAfterSelection={
           this.props.countNumberOfItemsAfterSelection
         }
+        isInterimSite={this.props.isInterimSite}
       />
     );
 

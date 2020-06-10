@@ -13,6 +13,7 @@ import {
   AboutItemModel
 } from "@src/index";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import { headerColumns_nonInterimSite } from "./ItemTableModels";
 
 /**
  * Properties for ItemTableContainer
@@ -25,6 +26,7 @@ export interface ItemTableContainerProps {
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
+  isInterimSite: boolean;
   onCountNumberOfItemSelection: () => void;
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
@@ -53,7 +55,9 @@ export class ItemTableContainer extends React.Component<
   ItemTableContainerProps,
   ItemTableContainerState
 > {
-  private pageHeaderColumns = headerColumns;
+  private pageHeaderColumns = this.props.isInterimSite
+    ? headerColumns
+    : headerColumns_nonInterimSite;
 
   constructor(props: ItemTableContainerProps) {
     super(props);
@@ -211,6 +215,7 @@ export class ItemTableContainer extends React.Component<
             countNumberOfItemsAfterSelection={
               this.props.countNumberOfItemsAfterSelection
             }
+            isInterimSite={this.props.isInterimSite}
           />
         );
       }

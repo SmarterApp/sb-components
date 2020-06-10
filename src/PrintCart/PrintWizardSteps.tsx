@@ -13,6 +13,7 @@ export interface PrintWizardSteps1_Props {
   associatedItemsInPrintCart?: ItemCardModel[];
   onItemsReorder: (i: number, j: number) => void;
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
+  isInterimSite: boolean;
 }
 
 export interface PrintWizardSteps2_Props {
@@ -57,6 +58,7 @@ export class PrintWizardSteps1 extends React.Component<
               handleUpdateItemsinPrintCart={
                 this.props.handleUpdateItemsinPrintCart
               }
+              isInterimSite={this.props.isInterimSite}
             />
           </div>
         );

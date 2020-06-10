@@ -26,6 +26,7 @@ export interface PrintCartItemTableRowProps {
   isLinkTable: boolean;
   itemSequence: number;
   index: number;
+  isInterimSite: boolean;
 }
 
 export interface PrintCartItemTableRowState {}
@@ -127,6 +128,22 @@ export class PrintCartItemTableRow extends React.Component<
     return tooltipCcontentStandard;
   }
 
+  renderPTassociatedItemsTestDeatils(
+    testNameInPrintCart: {} | null | undefined,
+    testOrderInPrintCart: {} | null | undefined,
+    stimulusKey: {} | null | undefined
+  ) {
+    if (this.props.isInterimSite) {
+      return (
+        <>
+          <td>{testNameInPrintCart}</td>
+          <td>{testOrderInPrintCart}</td>
+          <td>{stimulusKey}</td>
+        </>
+      );
+    }
+  }
+
   renderAssociatedItemsInGroup() {
     let itemSequence = this.props.itemSequence;
     if (this.props.associatedItemsInPrintCart !== undefined) {
@@ -158,9 +175,12 @@ export class PrintCartItemTableRow extends React.Component<
               <td>{item[0].itemKey}</td>
               <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
               <td>{mapItemGrade(item[0].gradeLabel)}</td>
-              <td>{item[0].testNameInPrintCart}</td>
-              <td>{item[0].testOrderInPrintCart}</td>
-              <td>{item[0].stimulusKey}</td>
+              {this.renderPTassociatedItemsTestDeatils(
+                item[0].testNameInPrintCart,
+                item[0].testOrderInPrintCart,
+                item[0].stimulusKey
+              )}
+
               <td>{mapItemClaim(item[0].claimLabel)}</td>
               <td>
                 {this.getToolTipForTarget(
@@ -184,6 +204,18 @@ export class PrintCartItemTableRow extends React.Component<
       );
     } else {
       return null;
+    }
+  }
+
+  renderTestNameDetails(item: ItemCardModel) {
+    if (this.props.isInterimSite) {
+      return (
+        <>
+          <td>{item.testNameInPrintCart}</td>
+          <td>{item.testOrderInPrintCart}</td>
+          <td>{item.stimulusKey}</td>
+        </>
+      );
     }
   }
 
@@ -212,9 +244,7 @@ export class PrintCartItemTableRow extends React.Component<
           <td>{item.itemKey}</td>
           <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
           <td>{mapItemGrade(item.gradeLabel)}</td>
-          <td>{item.testNameInPrintCart}</td>
-          <td>{item.testOrderInPrintCart}</td>
-          <td>{item.stimulusKey}</td>
+          {this.renderTestNameDetails(item)}
           <td>{mapItemClaim(item.claimLabel)}</td>
           <td>
             {this.getToolTipForTarget(item.targetId, item.targetDescription)}

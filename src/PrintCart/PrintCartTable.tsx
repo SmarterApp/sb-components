@@ -24,6 +24,7 @@ export interface PrintCartTableProps {
   columns: ColumnGroup[];
   isLinkTable: boolean;
   isItemSelected: boolean;
+  isInterimSite: boolean;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -71,6 +72,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             index={index}
             itemSequence={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
+            isInterimSite={this.props.isInterimSite}
           />
         );
       } else {
@@ -86,6 +88,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             index={index}
             itemSequence={sequenceIndex}
             onItemsReorder={this.props.onItemsReorder}
+            isInterimSite={this.props.isInterimSite}
           />
         );
       }

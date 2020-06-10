@@ -22,6 +22,7 @@ export interface PrintCartModalProps {
   isSelectedItemsHaveMathItem: boolean;
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
+  isInterimSite: boolean;
 }
 export interface PrintCartModalState {
   isChanged: boolean;
@@ -174,6 +175,7 @@ export class PrintCartModal extends React.Component<
           onAddOrRemoveSelectedItems={this.props.onAddOrRemoveSelectedItems}
           onItemsReorder={this.props.onItemsReorder}
           handleUpdateItemsinPrintCart={this.props.handleUpdateItemsinPrintCart}
+          isInterimSite={this.props.isInterimSite}
         />
 
         <PrintWizardSteps2

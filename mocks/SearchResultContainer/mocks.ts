@@ -12,6 +12,7 @@ import { mockSeachAPI } from "@mocks/ItemSearch/mocks";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
+  isInterimSite: true,
   totalItemCards: totalItemsCardList,
   showSelectAllButton: true,
   isPrintLimitEnabled: true,

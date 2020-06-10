@@ -49,10 +49,10 @@ export interface SearchResultContainerProps {
     langCode: string,
     GlossaryRequired: string,
     IllustrationRequired: string,
-    itemsInPrintCart: ItemCardModel[],
-    associateditemsInPrintCart: ItemCardModel[]
+    itemsInPrintCart: ItemCardModel[]
   ) => void;
   searchAPI: SearchAPIParamsModel;
+  isInterimSite: boolean;
   onResetItems: () => void;
   onSelectAll: (itemCards?: ItemCardModel[]) => void;
   itemCards?: ItemCardModel[];
@@ -461,8 +461,7 @@ export class SearchResultContainer extends React.Component<
       langCode,
       GlossaryRequired,
       IllustrationRequired,
-      itemsInPrintCart,
-      associatedItemsInPrintCart
+      itemsInPrintCart
     );
     this.setState({ showModal: false, statusMessage: "" });
   };
@@ -714,6 +713,7 @@ export class SearchResultContainer extends React.Component<
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
           isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
+          isInterimSite={this.props.isInterimSite}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -749,6 +749,7 @@ export class SearchResultContainer extends React.Component<
             countNumberOfItemsAfterSelection={
               this.countNumberOfItemsAfterSelection
             }
+            isInterimSite={this.props.isInterimSite}
           />
         );
       } else {

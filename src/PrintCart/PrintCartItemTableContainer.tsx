@@ -18,6 +18,7 @@ import { PrintAccessibilityContainerProps } from "@src/Accessibility/PrintAccess
 import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
 import { timingSafeEqual } from "crypto";
 import { PrintcartHeaderTable } from "./PrintcartHeaderTable";
+import { headerColumns_nonInterimSite } from "@src/ItemTable/ItemTableModels";
 
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
@@ -25,6 +26,7 @@ export interface PrintCartItemTableContainerProps {
   onItemsReorder: (i: number, j: number) => void;
   associatedItemsInPrintCart?: any[];
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
+  isInterimSite: boolean;
 }
 
 export interface PrintCartItemTableContainerState {
@@ -36,7 +38,9 @@ export class PrintCartTableContainer extends React.Component<
   PrintCartItemTableContainerProps,
   PrintCartItemTableContainerState
 > {
-  private pageHeaderColumns = headerColumns;
+  private pageHeaderColumns = this.props.isInterimSite
+    ? headerColumns
+    : headerColumns_nonInterimSite;
 
   constructor(props: PrintCartItemTableContainerProps) {
     super(props);
@@ -164,6 +168,7 @@ export class PrintCartTableContainer extends React.Component<
           isItemSelected={this.state.isItemSelected}
           isLinkTable={false}
           onItemsReorder={this.onItemsReorder}
+          isInterimSite={this.props.isInterimSite}
         />
       );
     }

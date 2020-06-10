@@ -13,6 +13,15 @@ export type HeaderType =
   | "Item Type"
   | "Target";
 
+export type HeaderType_NonInterimSite =
+  | "Item"
+  | "Claim"
+  | "Standard"
+  | "Subject"
+  | "Grade"
+  | "Item Type"
+  | "Target";
+
 export enum SortDirection {
   NoSort = 0,
   Ascending = 1,
@@ -33,6 +42,13 @@ export interface SortColumnModel {
 
 export interface ColumnGroup {
   header: HeaderType;
+  headerClassName: string;
+  cols: SortColumnModel[];
+  compare: (a: ItemCardModel, b: ItemCardModel) => number;
+  headerHelp?: string;
+}
+export interface ColumnGroup_NonInterimSite {
+  header: HeaderType_NonInterimSite;
   headerClassName: string;
   cols: SortColumnModel[];
   compare: (a: ItemCardModel, b: ItemCardModel) => number;
@@ -129,6 +145,149 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) =>
       (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
       (b.stimulusKey !== undefined ? b.stimulusKey : 0)
+  },
+  {
+    header: "Claim",
+    headerClassName: "claim",
+    cols: [
+      {
+        accessor: card => card.claimLabel,
+        className: "claim"
+      }
+    ],
+    compare: (a, b) => {
+      let direction;
+      if (a.claimCode < b.claimCode) {
+        direction = SortDirection.Ascending;
+      } else if (a.claimCode > b.claimCode) {
+        direction = SortDirection.Descending;
+      } else {
+        direction = SortDirection.NoSort;
+      }
+
+      return direction;
+    }
+  },
+  {
+    header: "Target",
+    headerClassName: "Target",
+    cols: [
+      {
+        accessor: label => label.targetId,
+        className: "target",
+        helpText: card => card.targetDescription
+      }
+    ],
+
+    compare: (a, b) => {
+      let direction;
+      if (a.targetId < b.targetId) {
+        direction = SortDirection.Ascending;
+      } else if (a.targetId > b.targetId) {
+        direction = SortDirection.Descending;
+      } else {
+        direction = SortDirection.NoSort;
+      }
+      return direction;
+    }
+  },
+  {
+    header: "Standard",
+    headerClassName: "standard",
+    cols: [
+      {
+        accessor: label =>
+          getContentStandard(
+            label.ccssDescription,
+            label.commonCoreStandardId,
+            label.subjectCode,
+            label.claimCode,
+            true
+          ),
+        className: "standard"
+      },
+      {
+        accessor: label => "",
+        className: "standard",
+        helpText: label =>
+          getContentStandard(
+            label.ccssDescription,
+            label.commonCoreStandardId,
+            label.subjectCode,
+            label.claimCode,
+            false
+          )
+      }
+    ],
+    compare: (a, b) => {
+      let direction;
+      const commonCoreStandardId_1 = getContentStandard(
+        a.ccssDescription,
+        a.commonCoreStandardId,
+        a.subjectCode,
+        a.claimCode,
+        true
+      );
+      const commonCoreStandardId_2 = getContentStandard(
+        b.ccssDescription,
+        b.commonCoreStandardId,
+        b.subjectCode,
+        b.claimCode,
+        true
+      );
+      if (commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Ascending;
+      } else if (commonCoreStandardId_1 < commonCoreStandardId_2) {
+        direction = SortDirection.Descending;
+      } else {
+        direction = SortDirection.NoSort;
+      }
+      return direction;
+    }
+  },
+  {
+    header: "Item Type",
+    headerClassName: "item-type",
+    cols: [
+      {
+        accessor: label => label.interactionTypeLabel,
+        className: "item-type"
+      }
+    ],
+    compare: (a, b) =>
+      a.interactionTypeCode.localeCompare(b.interactionTypeCode)
+  }
+];
+
+//For Non interim site
+export const headerColumns_nonInterimSite: ColumnGroup[] = [
+  {
+    header: "Item",
+    headerClassName: "item",
+    compare: (a, b) => a.itemKey - b.itemKey,
+    cols: [
+      {
+        accessor: label => label.itemKey,
+        className: "item"
+      }
+    ]
+  },
+  {
+    header: "Subject",
+    headerClassName: "subject",
+    cols: [{ accessor: label => label.subjectLabel, className: "subject" }],
+    compare: (a, b) => a.subjectCode.localeCompare(b.subjectCode)
+  },
+  {
+    header: "Grade",
+    headerClassName: "grade",
+    cols: [
+      {
+        accessor: label => label.gradeLabel,
+        className: "grade"
+      }
+    ],
+    compare: (a, b) => a.grade - b.grade
   },
   {
     header: "Claim",
