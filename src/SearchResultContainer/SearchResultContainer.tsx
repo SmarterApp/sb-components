@@ -436,12 +436,9 @@ export class SearchResultContainer extends React.Component<
             item.testNameInPrintCart = testName;
             item.testOrderInPrintCart =
               item.testOrder === undefined ? undefined : item.testOrder;
-            console.log("Test Name : ", item.testNameInPrintCart);
-            console.log("Test Order : ", item.testOrderInPrintCart);
           });
         }
         associatedItems_temp.push(associatedItems);
-        console.log(associatedItems_temp);
       }
       associatedItems[item.itemKey] = associatedItems_temp;
     }
@@ -657,6 +654,7 @@ export class SearchResultContainer extends React.Component<
           countNumberOfItemsAfterSelection={
             this.countNumberOfItemsAfterSelection
           }
+          isInterimSite={this.props.isInterimSite}
         />
       ));
     }

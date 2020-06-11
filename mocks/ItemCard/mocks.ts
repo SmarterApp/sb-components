@@ -237,6 +237,7 @@ export const itemCardProps: ItemCardProps = {
   onRowSelect: () => {
     return;
   },
+  isInterimSite: true,
   getSelectedItemCount: () => {
     return 0;
   },

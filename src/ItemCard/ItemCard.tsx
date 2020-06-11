@@ -30,6 +30,7 @@ export interface ItemCardProps {
     currentItems: ItemCardModel[],
     selectedItemsCount: number
   ) => number;
+  isInterimSite: boolean;
 }
 
 export interface ItemCardState {
@@ -122,6 +123,29 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   render() {
+    const testNameDetails_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
+            <p className="card-text test-name">
+              <span className="card-text-label">Test name:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.testName}
+              </span>
+            </p>
+            <p className="card-text item-position-in-test">
+              <span className="card-text-label">Item position in test:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.testOrder}
+              </span>
+            </p>
+          </>
+        );
+      }
+    };
+
     /**
      * Function related to print button view
      */
@@ -329,20 +353,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.gradeLabel}
               </span>
             </p>
-            <p className="card-text test-name">
-              <span className="card-text-label">Test name:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.testName}
-              </span>
-            </p>
-            <p className="card-text item-position-in-test">
-              <span className="card-text-label">Item position in test:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.testOrder}
-              </span>
-            </p>
+            {testNameDetails_tsx()}
             <p className="card-text stimulusid">
               <span className="card-text-label">Stimulus ID:</span>
               <span className="card-text-value">
