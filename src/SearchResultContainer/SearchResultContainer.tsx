@@ -433,7 +433,8 @@ export class SearchResultContainer extends React.Component<
         ) {
           const testName = this.props.searchAPI.testNames[0];
           associatedItems.forEach(item => {
-            item.testNameInPrintCart = testName;
+            item.testNameInPrintCart =
+              item.testName === undefined ? undefined : item.testName;
             item.testOrderInPrintCart =
               item.testOrder === undefined ? undefined : item.testOrder;
           });

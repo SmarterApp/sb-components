@@ -144,7 +144,8 @@ export function addTestNameDetails(
   testName: string,
   totalItemCards?: ItemCardModel[]
 ) {
-  item.testNameInPrintCart = testName;
+  item.testNameInPrintCart =
+    item.testName === undefined ? undefined : item.testName;
   item.testOrderInPrintCart =
     item.testOrder === undefined ? undefined : item.testOrder;
 }
@@ -157,7 +158,8 @@ export function addTestName_associatedItems(
   if (totalItemCards && totalItemCards.length > 0) {
     associatedItems.forEach((element: { itemKey: number }[]) => {
       let item = totalItemCards.filter(x => x.itemKey === element[0].itemKey);
-      item[0].testNameInPrintCart = testName;
+      item[0].testNameInPrintCart =
+        item[0].testName === undefined ? undefined : item[0].testName;
       item[0].testOrderInPrintCart =
         item[0].testOrder === undefined ? undefined : item[0].testOrder;
     });
