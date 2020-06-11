@@ -24,6 +24,12 @@ table.item-table th {
   white-space: nowrap;
   border: 0;
   padding: 4px 8px;
+
+  // make sticky table header
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: @grey-border-color;
 }
 
 table.link-table td,
@@ -135,4 +141,12 @@ table.item-table.table-icon {
 
 .th-arrrow-button {
   min-width: 110px !important;
+}
+
+//Make sticky table header
+.td-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: @grey-border-color;
 }
