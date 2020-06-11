@@ -129,7 +129,12 @@ export class PrintcartHeaderTable extends React.Component<
           {this.props.isLinkTable ? undefined : <th colSpan={1} />}
           <th colSpan={1} tabIndex={0} scope="col" />
           {this.props.columns.map(col => this.renderHeader(col))}
-          <th colSpan={1} tabIndex={0} scope="col" />
+          <th
+            className="th-arrrow-button"
+            colSpan={1}
+            tabIndex={0}
+            scope="col"
+          />
         </tr>
       </thead>
     );
