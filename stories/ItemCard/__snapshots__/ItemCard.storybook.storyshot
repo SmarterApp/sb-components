@@ -59,6 +59,48 @@ exports[`Storyshots Item Card Item Card 1`] = `
         </span>
       </p>
       <p
+        className="card-text test-name"
+      >
+        <span
+          className="card-text-label"
+        >
+          Test name:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+        </span>
+      </p>
+      <p
+        className="card-text item-position-in-test"
+      >
+        <span
+          className="card-text-label"
+        >
+          Item position in test:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+        </span>
+      </p>
+      <p
+        className="card-text stimulusid"
+      >
+        <span
+          className="card-text-label"
+        >
+          Stimulus ID:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+        </span>
+      </p>
+      <p
         className="card-text claim"
       >
         <span

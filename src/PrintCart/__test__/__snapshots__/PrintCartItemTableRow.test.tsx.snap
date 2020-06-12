@@ -10,7 +10,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "calculator": false,
           "claimCode": "ELA1",
-          "claimLabel": "Reading",
+          "claimLabel": "1.Reading",
           "commonCoreStandardId": "3.R.2a",
           "grade": 1,
           "gradeLabel": "Grade 3",
@@ -18,12 +18,15 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "interactionTypeLabel": "Multiple Choice",
           "isPerformanceItem": true,
           "itemKey": 3163,
+          "stimulusKey": 58679,
           "subjectCode": "ELA",
           "subjectLabel": "ELA/literacy",
           "targetDescription": "Target B description",
           "targetHash": 1039,
           "targetId": "B",
           "targetShortName": "Key Details",
+          "testName": "Test-Name-1",
+          "testOrder": 2,
           "title": "ELA/ literacy Grade 3 Claim 1",
         }
       }
@@ -34,7 +37,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "calculator": true,
             "claimCode": "MATH1",
-            "claimLabel": "Concepts and Procedures and Logical",
+            "claimLabel": "1.Concepts and Procedures and Logical",
             "commonCoreStandardId": "6.M.1a",
             "grade": 8,
             "gradeLabel": "Grade 6",
@@ -42,12 +45,15 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
             "itemKey": 3206,
+            "stimulusKey": 56900,
             "subjectCode": "MATH",
             "subjectLabel": "Math",
-            "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+            "targetDescription": "Target A description with extra text for testing",
             "targetHash": 100,
             "targetId": "A",
             "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 1,
             "title": "Math Grade 6 Claim 1",
           },
           Object {
@@ -55,7 +61,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "brailleOnlyItem": false,
             "calculator": false,
             "claimCode": "ELA1",
-            "claimLabel": "Reading",
+            "claimLabel": "1.Reading",
             "commonCoreStandardId": "3.R.2a",
             "grade": 1,
             "gradeLabel": "Grade 3",
@@ -63,19 +69,22 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeLabel": "Multiple Choice",
             "isPerformanceItem": true,
             "itemKey": 3163,
+            "stimulusKey": 58679,
             "subjectCode": "ELA",
             "subjectLabel": "ELA/literacy",
             "targetDescription": "Target B description",
             "targetHash": 1039,
             "targetId": "B",
             "targetShortName": "Key Details",
+            "testName": "Test-Name-1",
+            "testOrder": 2,
             "title": "ELA/ literacy Grade 3 Claim 1",
           },
           Object {
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "MATH4",
-            "claimLabel": "Modeling/Data Analysis",
+            "claimLabel": "3.Modeling/Data Analysis",
             "commonCoreStandardId": "6.M.2b",
             "grade": 8,
             "gradeLabel": "Grade 6",
@@ -83,19 +92,22 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": true,
             "itemKey": 3615,
+            "stimulusKey": 23461,
             "subjectCode": "MATH",
             "subjectLabel": "Math",
             "targetDescription": "target C description",
             "targetHash": 0,
             "targetId": "C",
             "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 3,
             "title": "Math Grade 6 Claim 4",
           },
           Object {
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
-            "claimLabel": "Research/Inquiry",
+            "claimLabel": "4.Research/Inquiry",
             "commonCoreStandardId": "4.E.4a",
             "grade": 2,
             "gradeLabel": "Grade 4",
@@ -103,12 +115,15 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": false,
             "itemKey": 2928,
+            "stimulusKey": 87679,
             "subjectCode": "ELA",
             "subjectLabel": "ELA/literacy",
             "targetDescription": "target D description",
             "targetHash": 2832,
             "targetId": "D",
             "targetShortName": "Evaluate Information/ sources",
+            "testName": "Test-Name-123",
+            "testOrder": 2,
             "title": "ELA/ literacy Grade 4 Claim 4",
           },
         ]
@@ -221,6 +236,39 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
+                "className": "testname",
+              },
+            ],
+            "compare": [Function],
+            "header": "Test name",
+            "headerClassName": "testname",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "item-position-in-test",
+              },
+            ],
+            "compare": [Function],
+            "header": "Item position in test",
+            "headerClassName": "item-position-in-test",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "stimulus",
+              },
+            ],
+            "compare": [Function],
+            "header": "Stimulus ID",
+            "headerClassName": "stimulus",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
                 "className": "claim",
               },
             ],
@@ -270,6 +318,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
         ]
       }
       index={1}
+      isInterimSite={true}
       isLinkTable={false}
       itemSequence={2}
       onAddOrRemoveSelectedItems={[MockFunction]}
@@ -294,13 +343,18 @@ exports[`ItemTableRow matches snapshot 1`] = `
           3163
         </td>
         <td>
-          ELA/literacy
+          ELA
         </td>
         <td>
-          Grade 3
+          3
+        </td>
+        <td />
+        <td />
+        <td>
+          58679
         </td>
         <td>
-          Reading
+          1
         </td>
         <td>
           <ToolTip
@@ -463,11 +517,14 @@ exports[`ItemTableRow matches snapshot 1`] = `
           3163
         </td>
         <td>
-          ELA/literacy
+          ELA
         </td>
         <td>
-          Grade 3
+          3
         </td>
+        <td />
+        <td />
+        <td />
         <td>
           Reading
         </td>
@@ -612,8 +669,11 @@ exports[`ItemTableRow matches snapshot 1`] = `
           Math
         </td>
         <td>
-          Grade 6
+          6
         </td>
+        <td />
+        <td />
+        <td />
         <td>
           Concepts and Procedures and Logical
         </td>
@@ -758,8 +818,11 @@ exports[`ItemTableRow matches snapshot 1`] = `
           Math
         </td>
         <td>
-          Grade 6
+          6
         </td>
+        <td />
+        <td />
+        <td />
         <td>
           Modeling/Data Analysis
         </td>

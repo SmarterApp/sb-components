@@ -26,6 +26,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
           className="primary"
         >
           <td
+            className="td-header"
             colSpan={1}
           />
           <th
@@ -88,6 +89,30 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             >
               <span>
                 Grade
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="stimulus"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="stimulus"
+            >
+              <span>
+                Stimulus ID
               </span>
               <span
                 aria-hidden="true"
@@ -276,12 +301,22 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                56900
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Concepts and Procedures and Logical
+                1.Concepts and Procedures and Logical
               </span>
             </span>
           </td>
@@ -311,7 +346,7 @@ exports[`Storyshots Item Table Container normal render 1`] = `
                     className="tool-tip-message bottom "
                   >
                     <p>
-                      Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                      Target A description with extra text for testing
                     </p>
                   </span>
                 </span>
@@ -444,12 +479,22 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                58679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Reading
+                1.Reading
               </span>
             </span>
           </td>
@@ -612,12 +657,22 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                23461
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Modeling/Data Analysis
+                3.Modeling/Data Analysis
               </span>
             </span>
           </td>
@@ -780,12 +835,22 @@ exports[`Storyshots Item Table Container normal render 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                87679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Research/Inquiry
+                4.Research/Inquiry
               </span>
             </span>
           </td>
@@ -975,6 +1040,30 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </div>
           </th>
           <th
+            className="stimulus"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="stimulus"
+            >
+              <span>
+                Stimulus ID
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
             className="claim"
             onClick={[Function]}
             onKeyUp={[Function]}
@@ -1114,12 +1203,22 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                56900
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Concepts and Procedures and Logical
+                1.Concepts and Procedures and Logical
               </span>
             </span>
           </td>
@@ -1149,7 +1248,7 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
                     className="tool-tip-message bottom "
                   >
                     <p>
-                      Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                      Target A description with extra text for testing
                     </p>
                   </span>
                 </span>
@@ -1246,12 +1345,22 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                58679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Reading
+                1.Reading
               </span>
             </span>
           </td>
@@ -1378,12 +1487,22 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                23461
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Modeling/Data Analysis
+                3.Modeling/Data Analysis
               </span>
             </span>
           </td>
@@ -1510,12 +1629,22 @@ exports[`Storyshots Item Table Container render without chevron and checkbox 1`]
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                87679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Research/Inquiry
+                4.Research/Inquiry
               </span>
             </span>
           </td>
@@ -1633,6 +1762,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
           className="primary"
         >
           <td
+            className="td-header"
             colSpan={1}
           />
           <th
@@ -1695,6 +1825,30 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             >
               <span>
                 Grade
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="stimulus"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="stimulus"
+            >
+              <span>
+                Stimulus ID
               </span>
               <span
                 aria-hidden="true"
@@ -1883,12 +2037,22 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                56900
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Concepts and Procedures and Logical
+                1.Concepts and Procedures and Logical
               </span>
             </span>
           </td>
@@ -1918,7 +2082,7 @@ exports[`Storyshots Item Table Container selected item 1`] = `
                     className="tool-tip-message bottom "
                   >
                     <p>
-                      Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                      Target A description with extra text for testing
                     </p>
                   </span>
                 </span>
@@ -2051,12 +2215,22 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                58679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Reading
+                1.Reading
               </span>
             </span>
           </td>
@@ -2219,12 +2393,22 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                23461
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Modeling/Data Analysis
+                3.Modeling/Data Analysis
               </span>
             </span>
           </td>
@@ -2387,12 +2571,22 @@ exports[`Storyshots Item Table Container selected item 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                87679
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
             <span>
               <span>
-                Research/Inquiry
+                4.Research/Inquiry
               </span>
             </span>
           </td>
@@ -2510,6 +2704,7 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
           className="primary"
         >
           <td
+            className="td-header"
             colSpan={1}
           />
           <th
@@ -2572,6 +2767,30 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             >
               <span>
                 Grade
+              </span>
+              <span
+                aria-hidden="true"
+                className="fa fa-sort"
+                style={
+                  Object {
+                    "color": "gray",
+                  }
+                }
+              />
+            </div>
+          </th>
+          <th
+            className="stimulus"
+            onClick={[Function]}
+            onKeyUp={[Function]}
+            scope="col"
+            tabIndex={0}
+          >
+            <div
+              className="stimulus"
+            >
+              <span>
+                Stimulus ID
               </span>
               <span
                 aria-hidden="true"
@@ -2760,6 +2979,16 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                NA
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
@@ -2924,6 +3153,16 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             <span>
               <span>
                 Grade 4
+              </span>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                NA
               </span>
             </span>
           </td>
@@ -3096,6 +3335,16 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             </span>
           </td>
           <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                NA
+              </span>
+            </span>
+          </td>
+          <td
             className="claim"
             role="gridcell"
           >
@@ -3260,6 +3509,16 @@ exports[`Storyshots Item Table Container verify sort order 1`] = `
             <span>
               <span>
                 Grade 2
+              </span>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            role="gridcell"
+          >
+            <span>
+              <span>
+                NA
               </span>
             </span>
           </td>

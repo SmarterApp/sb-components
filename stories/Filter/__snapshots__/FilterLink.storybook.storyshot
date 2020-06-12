@@ -55,6 +55,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -117,6 +118,30 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -305,6 +330,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -469,6 +504,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -641,6 +686,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -805,6 +860,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -977,6 +1042,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -1141,6 +1216,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -1313,6 +1398,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -1477,6 +1572,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -1649,6 +1754,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -1813,6 +1928,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -1985,6 +2110,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -2149,6 +2284,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -2321,6 +2466,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -2485,6 +2640,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -2657,6 +2822,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -2821,6 +2996,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -2993,6 +3178,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -3157,6 +3352,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -3329,6 +3534,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -3493,6 +3708,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -3665,6 +3890,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -3829,6 +4064,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -4001,6 +4246,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -4165,6 +4420,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -4337,6 +4602,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -4501,6 +4776,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -4673,6 +4958,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -4837,6 +5132,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -5009,6 +5314,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -5173,6 +5488,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -5345,6 +5670,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -5509,6 +5844,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -5681,6 +6026,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -5845,6 +6200,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -6017,6 +6382,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -6181,6 +6556,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -6353,6 +6738,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -6517,6 +6912,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -6689,6 +7094,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -6853,6 +7268,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -7025,6 +7450,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -7189,6 +7624,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -7361,6 +7806,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -7525,6 +7980,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -7697,6 +8162,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -7861,6 +8336,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -8033,6 +8518,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -8197,6 +8692,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>
@@ -8369,6 +8874,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               </span>
             </td>
             <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
+                </span>
+              </span>
+            </td>
+            <td
               className="claim"
               role="gridcell"
             >
@@ -8533,6 +9048,16 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span>
                   Grade 4
+                </span>
+              </span>
+            </td>
+            <td
+              className="stimulus"
+              role="gridcell"
+            >
+              <span>
+                <span>
+                  NA
                 </span>
               </span>
             </td>

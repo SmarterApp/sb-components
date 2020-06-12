@@ -80,6 +80,45 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
     </span>
   </td>
   <td
+    className="testname"
+    key="testname-187-3206"
+    role="gridcell"
+  >
+    <span
+      key="testname"
+    >
+      <span>
+        Test-Name-1
+      </span>
+    </span>
+  </td>
+  <td
+    className="item-position-in-test"
+    key="item-position-in-test-187-3206"
+    role="gridcell"
+  >
+    <span
+      key="item-position-in-test"
+    >
+      <span>
+        1
+      </span>
+    </span>
+  </td>
+  <td
+    className="stimulus"
+    key="stimulus-187-3206"
+    role="gridcell"
+  >
+    <span
+      key="stimulus"
+    >
+      <span>
+        56900
+      </span>
+    </span>
+  </td>
+  <td
     className="claim"
     key="claim-187-3206"
     role="gridcell"
@@ -88,7 +127,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
       key="claim"
     >
       <span>
-        Concepts and Procedures and Logical
+        1.Concepts and Procedures and Logical
       </span>
     </span>
   </td>
@@ -106,7 +145,7 @@ exports[`ItemTableRow matches expand snapshot 1`] = `
         displayText="A"
         helpText={
           <p>
-            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+            Target A description with extra text for testing
           </p>
         }
         position="bottom"
@@ -200,6 +239,39 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
+                "className": "testname",
+              },
+            ],
+            "compare": [Function],
+            "header": "Test name",
+            "headerClassName": "testname",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "item-position-in-test",
+              },
+            ],
+            "compare": [Function],
+            "header": "Item position in test",
+            "headerClassName": "item-position-in-test",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "stimulus",
+              },
+            ],
+            "compare": [Function],
+            "header": "Stimulus ID",
+            "headerClassName": "stimulus",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
                 "className": "claim",
               },
             ],
@@ -258,7 +330,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -266,12 +338,15 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         }
       }
@@ -390,6 +465,45 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td
+          className="testname"
+          key="testname-187-3206"
+          role="gridcell"
+        >
+          <span
+            key="testname"
+          >
+            <span>
+              Test-Name-1
+            </span>
+          </span>
+        </td>
+        <td
+          className="item-position-in-test"
+          key="item-position-in-test-187-3206"
+          role="gridcell"
+        >
+          <span
+            key="item-position-in-test"
+          >
+            <span>
+              1
+            </span>
+          </span>
+        </td>
+        <td
+          className="stimulus"
+          key="stimulus-187-3206"
+          role="gridcell"
+        >
+          <span
+            key="stimulus"
+          >
+            <span>
+              56900
+            </span>
+          </span>
+        </td>
+        <td
           className="claim"
           key="claim-187-3206"
           role="gridcell"
@@ -398,7 +512,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             key="claim"
           >
             <span>
-              Concepts and Procedures and Logical
+              1.Concepts and Procedures and Logical
             </span>
           </span>
         </td>
@@ -416,7 +530,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
               displayText="A"
               helpText={
                 <p>
-                  Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                  Target A description with extra text for testing
                 </p>
               }
               position="bottom"
@@ -442,7 +556,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
                     className="tool-tip-message bottom "
                   >
                     <p>
-                      Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                      Target A description with extra text for testing
                     </p>
                   </span>
                 </span>

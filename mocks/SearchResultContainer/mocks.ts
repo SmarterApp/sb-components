@@ -16,6 +16,7 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   totalItemCards: totalItemsCardList,
   showSelectAllButton: true,
   isPrintLimitEnabled: true,
+  testItemsPool: [],
   onRowSelection: () => {
     return;
   },

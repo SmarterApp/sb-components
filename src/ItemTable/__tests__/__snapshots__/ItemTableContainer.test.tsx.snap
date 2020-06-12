@@ -222,7 +222,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -230,12 +230,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -321,7 +324,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -329,12 +332,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -342,7 +348,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -350,19 +356,22 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -370,19 +379,22 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -390,12 +402,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -447,6 +462,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -509,6 +535,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -574,6 +601,31 @@ exports[`ItemPageTable matches snapshot 1`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -902,7 +954,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -910,12 +962,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
@@ -923,7 +978,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -931,19 +986,22 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -951,19 +1009,22 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -971,12 +1032,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
           ]
@@ -1015,6 +1079,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -1084,7 +1159,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -1092,12 +1167,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -1428,6 +1506,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -1491,7 +1580,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -1499,12 +1588,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -1624,6 +1716,19 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -1632,7 +1737,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -1650,7 +1755,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -1676,7 +1781,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -1998,6 +2103,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -2061,7 +2177,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -2069,12 +2185,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -2194,6 +2313,19 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -2202,7 +2334,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -2568,6 +2700,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -2630,7 +2773,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -2638,12 +2781,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -2763,6 +2909,19 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -2771,7 +2930,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -3137,6 +3296,17 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -3199,7 +3369,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -3207,12 +3377,15 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -3332,6 +3505,19 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -3340,7 +3526,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -3690,7 +3876,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -3698,12 +3884,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -3789,7 +3978,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -3797,12 +3986,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -3810,7 +4002,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -3818,19 +4010,22 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -3838,19 +4033,22 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -3858,12 +4056,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -3915,6 +4116,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -3995,6 +4207,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -4060,6 +4273,31 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -4387,7 +4625,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -4395,12 +4633,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
             Object {
@@ -4408,7 +4649,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -4416,12 +4657,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
@@ -4429,7 +4673,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -4437,19 +4681,22 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -4457,12 +4704,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
           ]
@@ -4501,6 +4751,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -4570,7 +4831,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -4578,12 +4839,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -4932,6 +5196,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -4994,7 +5269,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -5002,12 +5277,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -5127,6 +5405,19 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -5135,7 +5426,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -5501,6 +5792,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -5564,7 +5866,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -5572,12 +5874,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -5697,6 +6002,19 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -5705,7 +6023,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -6071,6 +6389,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -6134,7 +6463,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -6142,12 +6471,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -6267,6 +6599,19 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -6275,7 +6620,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -6293,7 +6638,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -6319,7 +6664,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -6641,6 +6986,17 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -6703,7 +7059,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -6711,12 +7067,15 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -6836,6 +7195,19 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -6844,7 +7216,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -7194,7 +7566,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -7202,12 +7574,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -7293,7 +7668,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -7301,12 +7676,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -7314,7 +7692,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -7322,19 +7700,22 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -7342,19 +7723,22 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -7362,12 +7746,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -7419,6 +7806,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -7499,6 +7897,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -7564,6 +7963,31 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -7891,7 +8315,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -7899,12 +8323,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
             Object {
@@ -7912,7 +8339,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -7920,19 +8347,22 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -7940,12 +8370,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
             Object {
@@ -7953,7 +8386,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -7961,12 +8394,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
           ]
@@ -8005,6 +8441,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -8074,7 +8521,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -8082,12 +8529,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -8436,6 +8886,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -8498,7 +8959,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -8506,12 +8967,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -8631,6 +9095,19 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -8639,7 +9116,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -9005,6 +9482,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -9068,7 +9556,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -9076,12 +9564,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -9201,6 +9692,19 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -9209,7 +9713,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -9227,7 +9731,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -9253,7 +9757,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -9575,6 +10079,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -9637,7 +10152,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -9645,12 +10160,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -9770,6 +10288,19 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -9778,7 +10309,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -10144,6 +10675,17 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -10207,7 +10749,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -10215,12 +10757,15 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -10340,6 +10885,19 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -10348,7 +10906,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -10698,7 +11256,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -10706,12 +11264,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -10797,7 +11358,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -10805,12 +11366,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -10818,7 +11382,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -10826,19 +11390,22 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -10846,19 +11413,22 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -10866,12 +11436,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -10923,6 +11496,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -11008,6 +11592,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -11073,6 +11658,31 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -11401,7 +12011,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -11409,12 +12019,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
@@ -11422,7 +12035,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -11430,19 +12043,22 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -11450,19 +12066,22 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -11470,12 +12089,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
           ]
@@ -11514,6 +12136,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -11583,7 +12216,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -11591,12 +12224,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -11950,6 +12586,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -12013,7 +12660,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -12021,12 +12668,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -12146,6 +12796,19 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -12154,7 +12817,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -12172,7 +12835,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -12198,7 +12861,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -12520,6 +13183,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -12583,7 +13257,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -12591,12 +13265,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -12716,6 +13393,19 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -12724,7 +13414,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -13090,6 +13780,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -13152,7 +13853,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -13160,12 +13861,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -13285,6 +13989,19 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -13293,7 +14010,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -13659,6 +14376,17 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -13721,7 +14449,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -13729,12 +14457,15 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -13854,6 +14585,19 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -13862,7 +14606,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -14212,7 +14956,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -14220,12 +14964,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -14311,7 +15058,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -14319,12 +15066,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -14332,7 +15082,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -14340,19 +15090,22 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -14360,19 +15113,22 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -14380,12 +15136,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -14437,6 +15196,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -14517,6 +15287,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -14582,6 +15353,31 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -14910,7 +15706,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -14918,19 +15714,22 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -14938,12 +15737,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
             Object {
@@ -14951,7 +15753,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -14959,19 +15761,22 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -14979,12 +15784,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
           ]
@@ -15023,6 +15831,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -15092,7 +15911,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -15100,12 +15919,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -15454,6 +16276,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -15517,7 +16350,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -15525,12 +16358,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -15650,6 +16486,19 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -15658,7 +16507,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -16024,6 +16873,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -16086,7 +16946,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -16094,12 +16954,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -16219,6 +17082,19 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -16227,7 +17103,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -16593,6 +17469,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -16656,7 +17543,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -16664,12 +17551,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -16789,6 +17679,19 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -16797,7 +17700,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -16815,7 +17718,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -16841,7 +17744,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -17163,6 +18066,17 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -17225,7 +18139,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -17233,12 +18147,15 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -17358,6 +18275,19 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -17366,7 +18296,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -17716,7 +18646,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -17724,12 +18654,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -17815,7 +18748,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -17823,12 +18756,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -17836,7 +18772,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -17844,19 +18780,22 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -17864,19 +18803,22 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -17884,12 +18826,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -17941,6 +18886,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -18021,6 +18977,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -18090,6 +19047,31 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 <span
                   aria-hidden="true"
                   className="fa fa-sort-asc"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
                   style={
                     Object {
                       "color": "gray",
@@ -18414,7 +19396,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -18422,19 +19404,22 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -18442,12 +19427,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
             Object {
@@ -18455,7 +19443,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -18463,19 +19451,22 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -18483,12 +19474,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
           ]
@@ -18527,6 +19521,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -18596,7 +19601,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -18604,12 +19609,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -18958,6 +19966,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -19021,7 +20040,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -19029,12 +20048,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -19154,6 +20176,19 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -19162,7 +20197,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -19528,6 +20563,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -19590,7 +20636,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -19598,12 +20644,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -19723,6 +20772,19 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -19731,7 +20793,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -20097,6 +21159,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -20160,7 +21233,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -20168,12 +21241,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -20293,6 +21369,19 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -20301,7 +21390,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -20319,7 +21408,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -20345,7 +21434,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -20667,6 +21756,17 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -20729,7 +21829,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -20737,12 +21837,15 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -20862,6 +21965,19 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -20870,7 +21986,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -21220,7 +22336,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -21228,12 +22344,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -21319,7 +22438,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -21327,12 +22446,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -21340,7 +22462,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -21348,19 +22470,22 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -21368,19 +22493,22 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -21388,12 +22516,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -21445,6 +22576,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -21525,6 +22667,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -21590,6 +22733,31 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -21918,7 +23086,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -21926,12 +23094,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
             Object {
@@ -21939,7 +23110,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -21947,19 +23118,22 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -21967,19 +23141,22 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -21987,12 +23164,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
           ]
@@ -22031,6 +23211,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -22100,7 +23291,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -22108,12 +23299,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -22462,6 +23656,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -22525,7 +23730,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -22533,12 +23738,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -22658,6 +23866,19 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -22666,7 +23887,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -22684,7 +23905,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -22710,7 +23931,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>
@@ -23032,6 +24253,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -23095,7 +24327,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -23103,12 +24335,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -23228,6 +24463,19 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -23236,7 +24484,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -23602,6 +24850,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -23664,7 +24923,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -23672,12 +24931,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -23797,6 +25059,19 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -23805,7 +25080,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -24171,6 +25446,17 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -24233,7 +25519,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -24241,12 +25527,15 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -24366,6 +25655,19 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -24374,7 +25676,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -24724,7 +26026,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
           "brailleOnlyItem": false,
           "calculator": true,
           "claimCode": "MATH1",
-          "claimLabel": "Concepts and Procedures and Logical",
+          "claimLabel": "1.Concepts and Procedures and Logical",
           "commonCoreStandardId": "6.M.1a",
           "grade": 8,
           "gradeLabel": "Grade 6",
@@ -24732,12 +26034,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
           "itemKey": 3206,
+          "stimulusKey": 56900,
           "subjectCode": "MATH",
           "subjectLabel": "Math",
-          "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+          "targetDescription": "Target A description with extra text for testing",
           "targetHash": 100,
           "targetId": "A",
           "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
           "title": "Math Grade 6 Claim 1",
         },
         "sampleItemScoring": Object {
@@ -24823,7 +26128,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "brailleOnlyItem": false,
         "calculator": true,
         "claimCode": "MATH1",
-        "claimLabel": "Concepts and Procedures and Logical",
+        "claimLabel": "1.Concepts and Procedures and Logical",
         "commonCoreStandardId": "6.M.1a",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -24831,12 +26136,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
         "itemKey": 3206,
+        "stimulusKey": 56900,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
-        "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+        "targetDescription": "Target A description with extra text for testing",
         "targetHash": 100,
         "targetId": "A",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 1,
         "title": "Math Grade 6 Claim 1",
       },
       Object {
@@ -24844,7 +26152,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "brailleOnlyItem": false,
         "calculator": false,
         "claimCode": "ELA1",
-        "claimLabel": "Reading",
+        "claimLabel": "1.Reading",
         "commonCoreStandardId": "3.R.2a",
         "grade": 1,
         "gradeLabel": "Grade 3",
@@ -24852,19 +26160,22 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
         "itemKey": 3163,
+        "stimulusKey": 58679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "Target B description",
         "targetHash": 1039,
         "targetId": "B",
         "targetShortName": "Key Details",
+        "testName": "Test-Name-1",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 3 Claim 1",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "MATH4",
-        "claimLabel": "Modeling/Data Analysis",
+        "claimLabel": "3.Modeling/Data Analysis",
         "commonCoreStandardId": "6.M.2b",
         "grade": 8,
         "gradeLabel": "Grade 6",
@@ -24872,19 +26183,22 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
         "itemKey": 3615,
+        "stimulusKey": 23461,
         "subjectCode": "MATH",
         "subjectLabel": "Math",
         "targetDescription": "target C description",
         "targetHash": 0,
         "targetId": "C",
         "targetShortName": "",
+        "testName": "Test-Name-1",
+        "testOrder": 3,
         "title": "Math Grade 6 Claim 4",
       },
       Object {
         "bankKey": 187,
         "brailleOnlyItem": false,
         "claimCode": "ELA4",
-        "claimLabel": "Research/Inquiry",
+        "claimLabel": "4.Research/Inquiry",
         "commonCoreStandardId": "4.E.4a",
         "grade": 2,
         "gradeLabel": "Grade 4",
@@ -24892,12 +26206,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
         "itemKey": 2928,
+        "stimulusKey": 87679,
         "subjectCode": "ELA",
         "subjectLabel": "ELA/literacy",
         "targetDescription": "target D description",
         "targetHash": 2832,
         "targetId": "D",
         "targetShortName": "Evaluate Information/ sources",
+        "testName": "Test-Name-123",
+        "testOrder": 2,
         "title": "ELA/ literacy Grade 4 Claim 4",
       },
     ]
@@ -24949,6 +26266,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -25030,6 +26358,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
             className="primary"
           >
             <td
+              className="td-header"
               colSpan={1}
             />
             <th
@@ -25095,6 +26424,31 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               >
                 <span>
                   Grade
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="fa fa-sort"
+                  style={
+                    Object {
+                      "color": "gray",
+                    }
+                  }
+                />
+              </div>
+            </th>
+            <th
+              className="stimulus"
+              key="Stimulus ID"
+              onClick={[Function]}
+              onKeyUp={[Function]}
+              scope="col"
+              tabIndex={0}
+            >
+              <div
+                className="stimulus"
+              >
+                <span>
+                  Stimulus ID
                 </span>
                 <span
                   aria-hidden="true"
@@ -25422,7 +26776,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "ELA4",
-              "claimLabel": "Research/Inquiry",
+              "claimLabel": "4.Research/Inquiry",
               "commonCoreStandardId": "4.E.4a",
               "grade": 2,
               "gradeLabel": "Grade 4",
@@ -25430,19 +26784,22 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
               "itemKey": 2928,
+              "stimulusKey": 87679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "target D description",
               "targetHash": 2832,
               "targetId": "D",
               "targetShortName": "Evaluate Information/ sources",
+              "testName": "Test-Name-123",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 4 Claim 4",
             },
             Object {
               "bankKey": 187,
               "brailleOnlyItem": false,
               "claimCode": "MATH4",
-              "claimLabel": "Modeling/Data Analysis",
+              "claimLabel": "3.Modeling/Data Analysis",
               "commonCoreStandardId": "6.M.2b",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -25450,12 +26807,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
               "itemKey": 3615,
+              "stimulusKey": 23461,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
               "targetDescription": "target C description",
               "targetHash": 0,
               "targetId": "C",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
               "title": "Math Grade 6 Claim 4",
             },
             Object {
@@ -25463,7 +26823,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "brailleOnlyItem": false,
               "calculator": false,
               "claimCode": "ELA1",
-              "claimLabel": "Reading",
+              "claimLabel": "1.Reading",
               "commonCoreStandardId": "3.R.2a",
               "grade": 1,
               "gradeLabel": "Grade 3",
@@ -25471,12 +26831,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
               "itemKey": 3163,
+              "stimulusKey": 58679,
               "subjectCode": "ELA",
               "subjectLabel": "ELA/literacy",
               "targetDescription": "Target B description",
               "targetHash": 1039,
               "targetId": "B",
               "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
               "title": "ELA/ literacy Grade 3 Claim 1",
             },
             Object {
@@ -25484,7 +26847,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "brailleOnlyItem": false,
               "calculator": true,
               "claimCode": "MATH1",
-              "claimLabel": "Concepts and Procedures and Logical",
+              "claimLabel": "1.Concepts and Procedures and Logical",
               "commonCoreStandardId": "6.M.1a",
               "grade": 8,
               "gradeLabel": "Grade 6",
@@ -25492,12 +26855,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
               "itemKey": 3206,
+              "stimulusKey": 56900,
               "subjectCode": "MATH",
               "subjectLabel": "Math",
-              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetDescription": "Target A description with extra text for testing",
               "targetHash": 100,
               "targetId": "A",
               "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
               "title": "Math Grade 6 Claim 1",
             },
           ]
@@ -25536,6 +26902,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "compare": [Function],
               "header": "Grade",
               "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
             },
             Object {
               "cols": Array [
@@ -25605,7 +26982,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -25613,12 +26990,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               },
               "sampleItemScoring": Object {
@@ -25968,6 +27348,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -26030,7 +27421,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "ELA4",
-                "claimLabel": "Research/Inquiry",
+                "claimLabel": "4.Research/Inquiry",
                 "commonCoreStandardId": "4.E.4a",
                 "grade": 2,
                 "gradeLabel": "Grade 4",
@@ -26038,12 +27429,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
                 "itemKey": 2928,
+                "stimulusKey": 87679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "target D description",
                 "targetHash": 2832,
                 "targetId": "D",
                 "targetShortName": "Evaluate Information/ sources",
+                "testName": "Test-Name-123",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 4 Claim 4",
               }
             }
@@ -26163,6 +27557,19 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-2928"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-2928"
                 role="gridcell"
@@ -26171,7 +27578,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="claim"
                 >
                   <span>
-                    Research/Inquiry
+                    4.Research/Inquiry
                   </span>
                 </span>
               </td>
@@ -26537,6 +27944,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -26599,7 +28017,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
-                "claimLabel": "Modeling/Data Analysis",
+                "claimLabel": "3.Modeling/Data Analysis",
                 "commonCoreStandardId": "6.M.2b",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -26607,12 +28025,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
                 "itemKey": 3615,
+                "stimulusKey": 23461,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
                 "targetDescription": "target C description",
                 "targetHash": 0,
                 "targetId": "C",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 3,
                 "title": "Math Grade 6 Claim 4",
               }
             }
@@ -26732,6 +28153,19 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3615"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3615"
                 role="gridcell"
@@ -26740,7 +28174,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="claim"
                 >
                   <span>
-                    Modeling/Data Analysis
+                    3.Modeling/Data Analysis
                   </span>
                 </span>
               </td>
@@ -27106,6 +28540,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -27169,7 +28614,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "brailleOnlyItem": false,
                 "calculator": false,
                 "claimCode": "ELA1",
-                "claimLabel": "Reading",
+                "claimLabel": "1.Reading",
                 "commonCoreStandardId": "3.R.2a",
                 "grade": 1,
                 "gradeLabel": "Grade 3",
@@ -27177,12 +28622,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
                 "itemKey": 3163,
+                "stimulusKey": 58679,
                 "subjectCode": "ELA",
                 "subjectLabel": "ELA/literacy",
                 "targetDescription": "Target B description",
                 "targetHash": 1039,
                 "targetId": "B",
                 "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testOrder": 2,
                 "title": "ELA/ literacy Grade 3 Claim 1",
               }
             }
@@ -27302,6 +28750,19 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3163"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3163"
                 role="gridcell"
@@ -27310,7 +28771,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="claim"
                 >
                   <span>
-                    Reading
+                    1.Reading
                   </span>
                 </span>
               </td>
@@ -27676,6 +29137,17 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   "cols": Array [
                     Object {
                       "accessor": [Function],
+                      "className": "stimulus",
+                    },
+                  ],
+                  "compare": [Function],
+                  "header": "Stimulus ID",
+                  "headerClassName": "stimulus",
+                },
+                Object {
+                  "cols": Array [
+                    Object {
+                      "accessor": [Function],
                       "className": "claim",
                     },
                   ],
@@ -27739,7 +29211,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "brailleOnlyItem": false,
                 "calculator": true,
                 "claimCode": "MATH1",
-                "claimLabel": "Concepts and Procedures and Logical",
+                "claimLabel": "1.Concepts and Procedures and Logical",
                 "commonCoreStandardId": "6.M.1a",
                 "grade": 8,
                 "gradeLabel": "Grade 6",
@@ -27747,12 +29219,15 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
                 "itemKey": 3206,
+                "stimulusKey": 56900,
                 "subjectCode": "MATH",
                 "subjectLabel": "Math",
-                "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+                "targetDescription": "Target A description with extra text for testing",
                 "targetHash": 100,
                 "targetId": "A",
                 "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testOrder": 1,
                 "title": "Math Grade 6 Claim 1",
               }
             }
@@ -27872,6 +29347,19 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                key="stimulus-187-3206"
+                role="gridcell"
+              >
+                <span
+                  key="stimulus"
+                >
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
                 className="claim"
                 key="claim-187-3206"
                 role="gridcell"
@@ -27880,7 +29368,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="claim"
                 >
                   <span>
-                    Concepts and Procedures and Logical
+                    1.Concepts and Procedures and Logical
                   </span>
                 </span>
               </td>
@@ -27898,7 +29386,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                     displayText="A"
                     helpText={
                       <p>
-                        Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                        Target A description with extra text for testing
                       </p>
                     }
                     position="bottom"
@@ -27924,7 +29412,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                           className="tool-tip-message bottom "
                         >
                           <p>
-                            Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                            Target A description with extra text for testing
                           </p>
                         </span>
                       </span>

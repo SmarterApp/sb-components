@@ -21,9 +21,14 @@ import {
   isPTAssociatedItemsInCart,
   deleteTestNameDetails,
   addTestNameDetails,
-  addTestName_associatedItems
+  addTestName_associatedItems,
+  getItemPositionInTest
 } from "./SearchResultContainerHelper";
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
+import {
+  TestNameItemsPoolModel,
+  itemKeys
+} from "@src/ItemSearch/ItemSearchModels";
 
 /**
  * SearchResultType enum
@@ -63,6 +68,7 @@ export interface SearchResultContainerProps {
   isPrintLimitEnabled: boolean;
   totalItemCards?: ItemCardModel[];
   performanceTaskAssociatedItems: any[];
+  testItemsPool: TestNameItemsPoolModel[];
 }
 
 /**
@@ -307,6 +313,7 @@ export class SearchResultContainer extends React.Component<
                 addTestName_associatedItems(
                   associatedItemCard,
                   this.props.searchAPI.testNames[0],
+                  this.props.testItemsPool,
                   this.props.totalItemCards
                 );
               }
@@ -432,11 +439,28 @@ export class SearchResultContainer extends React.Component<
           this.props.searchAPI.testNames[0] !== "0"
         ) {
           const testName = this.props.searchAPI.testNames[0];
+          const itemDetailsInTest = this.props.testItemsPool.filter(
+            x => x.code === testName
+          );
+          const itemListInTest: itemKeys[] = itemDetailsInTest[0].itemKeys;
           associatedItems.forEach(item => {
-            item.testNameInPrintCart =
-              item.testName === undefined ? undefined : item.testName;
-            item.testOrderInPrintCart =
-              item.testOrder === undefined ? undefined : item.testOrder;
+            const itemKeyAndPosition = getItemPositionInTest(
+              item,
+              itemListInTest
+            );
+            if (itemKeyAndPosition !== null) {
+              item.testNameInPrintCart = testName;
+              item.testOrderInPrintCart = itemKeyAndPosition.itemPosition;
+            } else {
+              item.testNameInPrintCart =
+                item.testName === undefined ? undefined : item.testName;
+              item.testOrderInPrintCart =
+                item.testOrder === undefined ? undefined : item.testOrder;
+            }
+            // item.testNameInPrintCart =
+            //   item.testName === undefined ? undefined : item.testName;
+            // item.testOrderInPrintCart =
+            //   item.testOrder === undefined ? undefined : item.testOrder;
           });
         }
         associatedItems_temp.push(associatedItems);

@@ -1,4 +1,6 @@
 import { ItemCardModel, SearchResultContainerProps } from "..";
+import { TestNameItemsPoolModel } from "@src/ItemSearch/ItemSearchModels";
+import { itemKeys } from "lib/src/ItemSearch/ItemSearchModels";
 
 export function getUpdatedSelectedItems(
   item: ItemCardModel,
@@ -150,18 +152,41 @@ export function addTestNameDetails(
     item.testOrder === undefined ? undefined : item.testOrder;
 }
 
+export function getItemPositionInTest(
+  item: ItemCardModel,
+  itemListInTest: itemKeys[]
+) {
+  for (let i = 0; i < itemListInTest.length; i++) {
+    if (itemListInTest[i].itemKey === item.itemKey) {
+      return itemListInTest[i];
+    }
+  }
+  return null;
+}
+
 export function addTestName_associatedItems(
   associatedItems: any,
   testName: string,
+  testItemsPool: TestNameItemsPoolModel[],
   totalItemCards?: ItemCardModel[]
 ) {
+  const itemDetailsInTest = testItemsPool.filter(x => x.code === testName);
+  const itemListInTest: itemKeys[] = itemDetailsInTest[0].itemKeys;
   if (totalItemCards && totalItemCards.length > 0) {
     associatedItems.forEach((element: { itemKey: number }[]) => {
-      let item = totalItemCards.filter(x => x.itemKey === element[0].itemKey);
-      item[0].testNameInPrintCart =
-        item[0].testName === undefined ? undefined : item[0].testName;
-      item[0].testOrderInPrintCart =
-        item[0].testOrder === undefined ? undefined : item[0].testOrder;
+      let item = totalItemCards.filter(
+        x => x.itemKey === element[0].itemKey
+      )[0];
+      const itemKeyAndPosition = getItemPositionInTest(item, itemListInTest);
+      if (itemKeyAndPosition !== null) {
+        item.testNameInPrintCart = testName;
+        item.testOrderInPrintCart = itemKeyAndPosition.itemPosition;
+      } else {
+        item.testNameInPrintCart =
+          item.testName === undefined ? undefined : item.testName;
+        item.testOrderInPrintCart =
+          item.testOrder === undefined ? undefined : item.testOrder;
+      }
     });
   }
 }
