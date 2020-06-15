@@ -155,12 +155,12 @@ export const mockSeachAPI: SearchAPIParamsModel = {
   // tslint:disable-next-line:no-bitwise
   gradeLevels: GradeLevels.Grade3 | GradeLevels.Grade4,
   subjects: ["t1", "t2"],
+  testNames: ["Test-Name-1"],
   claims: ["t1", "t2"],
   interactionTypes: ["t1", "t2"],
   performanceOnly: true,
   catOnly: true,
-  targets: ["A", "B"],
-  testNames: ["SBAC-Practice-ELA-PRAC-3"]
+  targets: ["A", "B"]
 };
 
 export const resultFilterOptionModelClaim: FilterOptionModel[] = [

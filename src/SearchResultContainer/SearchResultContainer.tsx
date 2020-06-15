@@ -457,10 +457,6 @@ export class SearchResultContainer extends React.Component<
               item.testOrderInPrintCart =
                 item.testOrder === undefined ? undefined : item.testOrder;
             }
-            // item.testNameInPrintCart =
-            //   item.testName === undefined ? undefined : item.testName;
-            // item.testOrderInPrintCart =
-            //   item.testOrder === undefined ? undefined : item.testOrder;
           });
         }
         associatedItems_temp.push(associatedItems);
