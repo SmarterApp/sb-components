@@ -603,17 +603,6 @@ export class ItemSearch {
       results = results.filter(function(item) {
         return testNameKeys.find(x => x.itemKey == item.itemKey);
       });
-
-      //old implmentation
-      // const testName = filter.testNames[0];
-      // var itemsID = Array<number>();
-      // var itemsID = testItemsPool
-      //   .filter(x => x.code == testName)
-      //   .map(y => y.itemKey);
-
-      // results = results.filter(function(item) {
-      //   return itemsID.find(x => x == item.itemKey);
-      // });
     }
 
     // core Standards
