@@ -7,7 +7,9 @@ import {
   ItemModel,
   ItemCard,
   IframeModal,
-  SearchAPIParamsModel
+  SearchAPIParamsModel,
+  AccResourceGroupModel,
+  DropDownSelectionModel
 } from "@src/index";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
@@ -54,9 +56,11 @@ export interface SearchResultContainerProps {
     langCode: string,
     GlossaryRequired: string,
     IllustrationRequired: string,
+    TranslationGlossary: string,
     itemsInPrintCart: ItemCardModel[]
   ) => void;
   searchAPI: SearchAPIParamsModel;
+  translationAccessibility?: DropDownSelectionModel[];
   isInterimSite: boolean;
   onResetItems: () => void;
   onSelectAll: (itemCards?: ItemCardModel[]) => void;
@@ -472,13 +476,15 @@ export class SearchResultContainer extends React.Component<
   handlePrintItemsClick = (
     langCode: string,
     GlossaryRequired: string,
-    IllustrationRequired: string
+    IllustrationRequired: string,
+    TranslationGlossary: string
   ): void => {
     const { itemsInPrintCart, associatedItemsInPrintCart } = this.state;
     this.props.onPrintItems(
       langCode,
       GlossaryRequired,
       IllustrationRequired,
+      TranslationGlossary,
       itemsInPrintCart
     );
     this.setState({ showModal: false, statusMessage: "" });
@@ -733,6 +739,7 @@ export class SearchResultContainer extends React.Component<
           onItemsReorder={this.handleReorderItemsInPrintCart}
           isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
           isInterimSite={this.props.isInterimSite}
+          translationAccessibility={this.props.translationAccessibility}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}

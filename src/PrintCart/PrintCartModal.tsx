@@ -1,10 +1,11 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
+import { SelectOptionProps, Select, AccResourceGroupModel } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
+import { DropDownSelectionModel } from "@src/DropDown/DropDownModels";
 
 export interface PrintCartModalProps {
   showModal: boolean;
@@ -13,7 +14,8 @@ export interface PrintCartModalProps {
   onSubmitPrint: (
     langCode?: string,
     GlossaryRequired?: string,
-    IllustrationRequired?: string
+    IllustrationRequired?: string,
+    TranslationGlossary?: string
   ) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
@@ -23,6 +25,7 @@ export interface PrintCartModalProps {
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
   isInterimSite: boolean;
+  translationAccessibility?: DropDownSelectionModel[];
 }
 export interface PrintCartModalState {
   isChanged: boolean;
@@ -32,8 +35,7 @@ export interface PrintCartModalState {
   selectedLangCode: string;
   selectedIllustration: string;
   selectedGlossary: string;
-
-  // isSelectedItemsHaveMathItem: boolean;
+  selectedTranslationGlossary: string;
 }
 
 export class PrintCartModal extends React.Component<
@@ -42,7 +44,6 @@ export class PrintCartModal extends React.Component<
 > {
   constructor(props: PrintCartModalProps) {
     super(props);
-    //this.onAddOrRemoveSelectedItems = this.onAddOrRemoveSelectedItems.bind(this);
     this.state = {
       isChanged: false,
       currentStep: 1,
@@ -50,8 +51,8 @@ export class PrintCartModal extends React.Component<
       isSelectedItemsHaveMathItem: false,
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
-      //isSelectedItemsHaveMathItem: false
+      selectedGlossary: "true",
+      selectedTranslationGlossary: "None"
     };
   }
 
@@ -61,27 +62,24 @@ export class PrintCartModal extends React.Component<
       this.props.isSelectedItemsHaveMathItem
     )
       this.setState({
-        // isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem,
         itemsInPrintCart: nextProps.itemsInCart
       });
     else this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
-  // onAddOrRemoveSelectedItems = (item: ItemCardModel) => {
-  //   const UpdatedItemsInCart:ItemCardModel[] = getUpdatedSelectedItems(item, this.state.itemsInPrintCart);
-  //   //this.setState({itemsInPrintCart : UpdatedItemsInCart});
-  // }
-
+  // After printing, reset accessibility options
   handlePrintItems = () => {
     this.props.onSubmitPrint(
       this.state.selectedLangCode,
       this.state.selectedGlossary,
-      this.state.selectedIllustration
+      this.state.selectedIllustration,
+      this.state.selectedTranslationGlossary
     );
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
+      selectedGlossary: "true",
+      selectedTranslationGlossary: "None"
     });
   };
 
@@ -103,8 +101,18 @@ export class PrintCartModal extends React.Component<
 
   handleGlossaryOptionChange = (newGlossaryOption: string) => {
     if (newGlossaryOption !== this.state.selectedGlossary) {
+      console.log(newGlossaryOption);
       this.setState({
         selectedGlossary: newGlossaryOption
+      });
+    }
+  };
+
+  //on transaltion glossary change
+  handleTranslationGlossaryChange = (newTranslationGlossary: string) => {
+    if (newTranslationGlossary !== this.state.selectedTranslationGlossary) {
+      this.setState({
+        selectedTranslationGlossary: newTranslationGlossary
       });
     }
   };
@@ -184,15 +192,18 @@ export class PrintCartModal extends React.Component<
           handleLanguageChange={this.handleLanguageChange}
           handleIllustrationChange={this.handleIllustrationChange}
           handleGlossaryOptionChange={this.handleGlossaryOptionChange}
+          handleTranslationGlossaryChange={this.handleTranslationGlossaryChange}
           selectedLangCode={this.state.selectedLangCode}
           selectedIllustration={this.state.selectedIllustration}
           selectedGlossary={this.state.selectedGlossary}
+          selectedTranslationGlossary={this.state.selectedTranslationGlossary}
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           showModal={this.props.showModal}
           //StatusMessage={statusMessage}
           isSelectedItemsHaveMathItem={this.props.isSelectedItemsHaveMathItem}
           onItemsReorder={this.props.onItemsReorder}
+          translationAccessibility={this.props.translationAccessibility}
         />
       </>
     );

@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
+import { SelectOptionProps, Select, AccResourceGroupModel } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintCartTableContainer } from "./PrintCartItemTableContainer";
+import { DropDownSelectionModel } from "lib/src";
 
 export interface PrintWizardSteps1_Props {
   itemsInCart: ItemCardModel[];
@@ -17,17 +18,14 @@ export interface PrintWizardSteps1_Props {
 }
 
 export interface PrintWizardSteps2_Props {
-  // onSubmitPrint: (
-  //   langCode?: string,
-  //   GlossaryRequired?: string,
-  //   IllustrationRequired?: string
-  // ) => void;
   handleLanguageChange: (newLangCode: string) => void;
   handleIllustrationChange: (newIllustration: string) => void;
   handleGlossaryOptionChange: (newGlossaryOption: string) => void;
+  handleTranslationGlossaryChange: (newTranslationGlossary: string) => void;
   selectedLangCode: string;
   selectedIllustration: string;
   selectedGlossary: string;
+  selectedTranslationGlossary: string;
   itemsInCart: ItemCardModel[];
   currentStep: number;
   onChangeModelState: (modelShowState: boolean) => void;
@@ -35,6 +33,7 @@ export interface PrintWizardSteps2_Props {
   showModal: boolean;
   //StatusMessage: string
   isSelectedItemsHaveMathItem: boolean;
+  translationAccessibility?: DropDownSelectionModel[];
 }
 
 export class PrintWizardSteps1 extends React.Component<
@@ -90,14 +89,19 @@ export class PrintWizardSteps2 extends React.Component<
             handleLanguageChange={this.props.handleLanguageChange}
             handleIllustrationChange={this.props.handleIllustrationChange}
             handleGlossaryOptionChange={this.props.handleGlossaryOptionChange}
+            handleTranslationGlossaryChange={
+              this.props.handleTranslationGlossaryChange
+            }
             selectedLangCode={this.props.selectedLangCode}
             selectedIllustration={this.props.selectedIllustration}
             selectedGlossary={this.props.selectedGlossary}
+            selectedTranslationGlossary={this.props.selectedTranslationGlossary}
             onChangeModelState={this.props.onChangeModelState}
             showModal={this.props.showModal}
             itemsInCartCount={this.props.itemsInCart.length.toString()}
             areSelectedItemsHaveMath={this.props.isSelectedItemsHaveMathItem}
-            StatusMessage={"Check it........"}
+            StatusMessage={""}
+            translationAccessibility={this.props.translationAccessibility}
           />
         </>
       );

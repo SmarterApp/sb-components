@@ -6,9 +6,15 @@ import {
 import {
   itemCardList,
   totalItemsCardList,
-  performanceTaskAssociatedItems
+  performanceTaskAssociatedItems,
+  allAccessibilityResourceGroups
 } from "@mocks/index";
 import { mockSeachAPI } from "@mocks/ItemSearch/mocks";
+import {
+  accessibilityEnglishGlossary,
+  accessibilityManyOptionsMock
+} from "lib/mocks/Accessibility/mocks";
+import { translationAccessibilityDropDown } from "@mocks/Accessibility/mocks";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
@@ -72,9 +78,8 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     kind: "none"
   },
   defaultRenderType: SearchResultType.ItemCard,
-  performanceTaskAssociatedItems: performanceTaskAssociatedItems
-  // associatedItemsInPrintCart: [],
-  // selectedItemsInPrintCart_props: []
+  performanceTaskAssociatedItems: performanceTaskAssociatedItems,
+  translationAccessibility: translationAccessibilityDropDown
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {
