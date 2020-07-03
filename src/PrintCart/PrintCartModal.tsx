@@ -121,7 +121,8 @@ export class PrintCartModal extends React.Component<
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
+      selectedGlossary: "true",
+      selectedTranslationGlossary: "None"
     });
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
