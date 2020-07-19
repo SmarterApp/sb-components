@@ -19,6 +19,7 @@ import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
 import { timingSafeEqual } from "crypto";
 import { PrintcartHeaderTable } from "./PrintcartHeaderTable";
 import { headerColumns_nonInterimSite } from "@src/ItemTable/ItemTableModels";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
@@ -27,6 +28,7 @@ export interface PrintCartItemTableContainerProps {
   associatedItemsInPrintCart?: any[];
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 export interface PrintCartItemTableContainerState {
@@ -169,6 +171,7 @@ export class PrintCartTableContainer extends React.Component<
           isLinkTable={false}
           onItemsReorder={this.onItemsReorder}
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
         />
       );
     }

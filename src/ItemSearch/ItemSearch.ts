@@ -512,7 +512,6 @@ export class ItemSearch {
     testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
-    debugger;
     //restrict load item until selection of grade and subject
     if (
       filter.gradeLevels == undefined ||

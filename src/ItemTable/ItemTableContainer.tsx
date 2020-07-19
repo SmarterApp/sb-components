@@ -14,6 +14,7 @@ import {
 } from "@src/index";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import { headerColumns_nonInterimSite } from "./ItemTableModels";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 /**
  * Properties for ItemTableContainer
@@ -36,6 +37,7 @@ export interface ItemTableContainerProps {
     currentItems: ItemCardModel[],
     selectedItemsCount: number
   ) => number;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 /**
@@ -216,6 +218,7 @@ export class ItemTableContainer extends React.Component<
               this.props.countNumberOfItemsAfterSelection
             }
             isInterimSite={this.props.isInterimSite}
+            testCodeToLabelMap={this.props.testCodeToLabelMap}
           />
         );
       }

@@ -6,6 +6,7 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -24,6 +25,7 @@ export interface ItemTableRowProps {
     selectedItemsCount: number
   ) => number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 const unChecked = (
@@ -181,6 +183,12 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
           {columnText}
         </span>
       );
+    } else if (col.className === "testname") {
+      let testLabel = "";
+      if (columnText !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[columnText];
+      }
+      content = <span>{testLabel}</span>;
     } else {
       if (col.className === "item") {
         content = (

@@ -27,7 +27,8 @@ import {
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 import {
   TestNameItemsPoolModel,
-  itemKeys
+  itemKeys,
+  TestCodeToLabel
 } from "@src/ItemSearch/ItemSearchModels";
 
 /**
@@ -69,6 +70,7 @@ export interface SearchResultContainerProps {
   totalItemCards?: ItemCardModel[];
   performanceTaskAssociatedItems: any[];
   testItemsPool: TestNameItemsPoolModel[];
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 /**
@@ -676,6 +678,7 @@ export class SearchResultContainer extends React.Component<
             this.countNumberOfItemsAfterSelection
           }
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
         />
       ));
     }
@@ -733,6 +736,7 @@ export class SearchResultContainer extends React.Component<
           onItemsReorder={this.handleReorderItemsInPrintCart}
           isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -769,6 +773,7 @@ export class SearchResultContainer extends React.Component<
               this.countNumberOfItemsAfterSelection
             }
             isInterimSite={this.props.isInterimSite}
+            testCodeToLabelMap={this.props.testCodeToLabelMap}
           />
         );
       } else {

@@ -15,6 +15,7 @@ import {
 import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
 import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "@src/ItemCard/ItemCardHelperFunction";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
@@ -27,6 +28,7 @@ export interface PrintCartItemTableRowProps {
   itemSequence: number;
   index: number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 export interface PrintCartItemTableRowState {}
@@ -129,14 +131,18 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   renderPTassociatedItemsTestDeatils(
-    testNameInPrintCart: {} | null | undefined,
-    testOrderInPrintCart: {} | null | undefined,
+    testNameInPrintCart: string | undefined,
+    testOrderInPrintCart: number | undefined,
     stimulusKey: {} | null | undefined
   ) {
     if (this.props.isInterimSite) {
+      let testLabel = "";
+      if (testNameInPrintCart !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[testNameInPrintCart];
+      }
       return (
         <>
-          <td>{testNameInPrintCart}</td>
+          <td>{testLabel}</td>
           <td>{testOrderInPrintCart}</td>
         </>
       );
@@ -208,9 +214,13 @@ export class PrintCartItemTableRow extends React.Component<
 
   renderTestNameDetails(item: ItemCardModel) {
     if (this.props.isInterimSite) {
+      let testLabel = "";
+      if (item.testNameInPrintCart !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[item.testNameInPrintCart];
+      }
       return (
         <>
-          <td>{item.testNameInPrintCart}</td>
+          <td>{testLabel}</td>
           <td>{item.testOrderInPrintCart}</td>
         </>
       );
