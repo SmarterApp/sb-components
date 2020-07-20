@@ -257,7 +257,8 @@ export const itemCardProps: ItemCardProps = {
   associatedItems: [],
   countNumberOfItemsAfterSelection: () => {
     return 0;
-  }
+  },
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
 };
 
 //PerformanceTaskAssociatedItems mockup data

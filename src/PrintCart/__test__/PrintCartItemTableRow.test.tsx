@@ -26,7 +26,8 @@ describe("ItemTableRow", () => {
     columns: headerColumns,
     isLinkTable: false,
     itemSequence: 2,
-    index: 1
+    index: 1,
+    testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
   };
 
   const wrapper = mount(

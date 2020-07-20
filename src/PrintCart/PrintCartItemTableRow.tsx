@@ -15,6 +15,7 @@ import {
 import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
 import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "@src/ItemCard/ItemCardHelperFunction";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
@@ -27,6 +28,7 @@ export interface PrintCartItemTableRowProps {
   itemSequence: number;
   index: number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 export interface PrintCartItemTableRowState {}
@@ -128,21 +130,31 @@ export class PrintCartItemTableRow extends React.Component<
     return tooltipCcontentStandard;
   }
 
+  //Render Test Details of PT associated items
   renderPTassociatedItemsTestDeatils(
-    testNameInPrintCart: {} | null | undefined,
-    testOrderInPrintCart: {} | null | undefined,
+    testNameInPrintCart: string | undefined,
+    testOrderInPrintCart: number | undefined,
     stimulusKey: {} | null | undefined
   ) {
     if (this.props.isInterimSite) {
+      let testLabel = this.getTestNameLabel(testNameInPrintCart);
       return (
         <>
-          <td>{testNameInPrintCart}</td>
           <td>{testOrderInPrintCart}</td>
         </>
       );
     }
   }
 
+  private getTestNameLabel(testNameInPrintCart: string | undefined) {
+    let testLabel = "";
+    if (testNameInPrintCart !== undefined) {
+      testLabel = this.props.testCodeToLabelMap[testNameInPrintCart];
+    }
+    return testLabel;
+  }
+
+  //Render Performance task associated items in a group
   renderAssociatedItemsInGroup() {
     let itemSequence = this.props.itemSequence;
     if (this.props.associatedItemsInPrintCart !== undefined) {
@@ -164,39 +176,14 @@ export class PrintCartItemTableRow extends React.Component<
             testNameInPrintCart: string;
             testOrderInPrintCart: number;
             stimulusKey: number;
+            depthOfKnowledge: string | undefined;
           }[]
         ) => {
           return (
             <tr key={item[0].itemKey} className="table-row-associated-item">
-              {/* <td>{this.renderActionButton()}</td> */}
-              <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
-              <td>{!item[0].isPerformanceItem ? "-" : itemSequence++}</td>
-              <td>{item[0].itemKey}</td>
-              <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
-              <td>{mapItemGrade(item[0].gradeLabel)}</td>
-              {this.renderPTassociatedItemsTestDeatils(
-                item[0].testNameInPrintCart,
-                item[0].testOrderInPrintCart,
-                item[0].stimulusKey
-              )}
-              <td>{item[0].stimulusKey}</td>
-              <td>{mapItemClaim(item[0].claimLabel)}</td>
-              <td>
-                {this.getToolTipForTarget(
-                  item[0].targetId,
-                  item[0].targetDescription
-                )}
-              </td>
-              <td>
-                {this.getContentStandardToolTip(
-                  item[0].subjectCode,
-                  item[0].claimCode,
-                  item[0].commonCoreStandardId,
-                  item[0].ccssDescription
-                )}
-              </td>
-              <td>{item[0].interactionTypeLabel}</td>
-              <td />
+              {this.props.isInterimSite
+                ? this.renderPTitemsForInterim(item, itemSequence++)
+                : this.renderPTitemsForNonInterim(item, itemSequence++)}
             </tr>
           );
         }
@@ -206,15 +193,143 @@ export class PrintCartItemTableRow extends React.Component<
     }
   }
 
-  renderTestNameDetails(item: ItemCardModel) {
+  //Render PT associated items fro Interim in a group
+  renderPTitemsForInterim(item: any, itemSequence: number) {
+    return (
+      <>
+        <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
+        <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
+        <td>{item[0].itemKey}</td>
+        <td>{item[0].stimulusKey}</td>
+        <td>{item[0].testOrderInPrintCart}</td>
+        <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
+        <td>{mapItemGrade(item[0].gradeLabel)}</td>
+        {/* {this.renderPTassociatedItemsTestDeatils(
+        item[0].testNameInPrintCart,
+        item[0].testOrderInPrintCart,
+        item[0].stimulusKey
+      )} */}
+        <td>{this.getTestNameLabel(item[0].testNameInPrintCart)}</td>
+        <td>{mapItemClaim(item[0].claimLabel)}</td>
+        <td>
+          {this.getToolTipForTarget(
+            item[0].targetId,
+            item[0].targetDescription
+          )}
+        </td>
+        <td>
+          {this.getContentStandardToolTip(
+            item[0].subjectCode,
+            item[0].claimCode,
+            item[0].commonCoreStandardId,
+            item[0].ccssDescription
+          )}
+        </td>
+        <td>{item[0].depthOfKnowledge}</td>
+        <td />
+      </>
+    );
+  }
+
+  //Render PT associated items for non-interim in a group
+  renderPTitemsForNonInterim(item: any, itemSequence: number) {
+    return (
+      <>
+        <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
+        <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
+        <td>{item[0].itemKey}</td>
+        <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
+        <td>{mapItemGrade(item[0].gradeLabel)}</td>
+        <td>{item[0].stimulusKey}</td>
+        <td>{mapItemClaim(item[0].claimLabel)}</td>
+        <td>
+          {this.getToolTipForTarget(
+            item[0].targetId,
+            item[0].targetDescription
+          )}
+        </td>
+        <td>
+          {this.getContentStandardToolTip(
+            item[0].subjectCode,
+            item[0].claimCode,
+            item[0].commonCoreStandardId,
+            item[0].ccssDescription
+          )}
+        </td>
+        <td>{item[0].interactionTypeLabel}</td>
+        <td />
+      </>
+    );
+  }
+
+  //Render test name & test order of a item in a table cell
+  renderTestName(item: ItemCardModel) {
     if (this.props.isInterimSite) {
+      let testLabel = "";
+      if (item.testNameInPrintCart !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[item.testNameInPrintCart];
+      }
       return (
         <>
-          <td>{item.testNameInPrintCart}</td>
-          <td>{item.testOrderInPrintCart}</td>
+          <td>{testLabel}</td>
         </>
       );
     }
+  }
+
+  renderTableRowItemsForInterim(item: ItemCardModel) {
+    return (
+      <>
+        <td>{this.renderActionButton(item)}</td>
+        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
+        <td>{item.itemKey}</td>
+        <td>{item.stimulusKey}</td>
+        <td>{item.testOrderInPrintCart}</td>
+        <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
+        <td>{mapItemGrade(item.gradeLabel)}</td>
+        {this.renderTestName(item)}
+        <td>{mapItemClaim(item.claimLabel)}</td>
+        <td>
+          {this.getToolTipForTarget(item.targetId, item.targetDescription)}
+        </td>
+        <td>
+          {this.getContentStandardToolTip(
+            item.subjectCode,
+            item.claimCode,
+            item.commonCoreStandardId,
+            item.ccssDescription
+          )}
+        </td>
+        <td>{item.depthOfKnowledge}</td>
+      </>
+    );
+  }
+
+  renderTableRowItemsForNonInterim(item: ItemCardModel) {
+    return (
+      <>
+        <td>{this.renderActionButton(item)}</td>
+        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
+        {/* <td>{this.props.index}</td> */}
+        <td>{item.itemKey}</td>
+        <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
+        <td>{mapItemGrade(item.gradeLabel)}</td>
+        <td>{item.stimulusKey}</td>
+        <td>{mapItemClaim(item.claimLabel)}</td>
+        <td>
+          {this.getToolTipForTarget(item.targetId, item.targetDescription)}
+        </td>
+        <td>
+          {this.getContentStandardToolTip(
+            item.subjectCode,
+            item.claimCode,
+            item.commonCoreStandardId,
+            item.ccssDescription
+          )}
+        </td>
+        <td>{item.interactionTypeLabel}</td>
+      </>
+    );
   }
 
   render() {
@@ -236,28 +351,9 @@ export class PrintCartItemTableRow extends React.Component<
     return (
       <>
         <tr key={item.itemKey} className={""}>
-          <td>{this.renderActionButton(item)}</td>
-          <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
-          {/* <td>{this.props.index}</td> */}
-          <td>{item.itemKey}</td>
-          <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
-          <td>{mapItemGrade(item.gradeLabel)}</td>
-          {this.renderTestNameDetails(item)}
-          <td>{item.stimulusKey}</td>
-          <td>{mapItemClaim(item.claimLabel)}</td>
-          <td>
-            {this.getToolTipForTarget(item.targetId, item.targetDescription)}
-          </td>
-          <td>
-            {this.getContentStandardToolTip(
-              item.subjectCode,
-              item.claimCode,
-              item.commonCoreStandardId,
-              item.ccssDescription
-            )}
-          </td>
-          <td>{item.interactionTypeLabel}</td>
-
+          {this.props.isInterimSite
+            ? this.renderTableRowItemsForInterim(item)
+            : this.renderTableRowItemsForNonInterim(item)}
           <td>
             <div className="btn-group">
               <button
@@ -294,7 +390,7 @@ export function mapItemClaim(claimLabel: string): React.ReactNode {
 
 export function mapItemGrade(gradeLabel: string): React.ReactNode {
   if (gradeLabel.toLowerCase() === "high school") {
-    return gradeLabel;
+    return "HS";
   } else {
     return gradeLabel.split(" ")[1];
   }
@@ -302,4 +398,9 @@ export function mapItemGrade(gradeLabel: string): React.ReactNode {
 
 export function mapItemSubjectlabel(subjectLabel: string): React.ReactNode {
   return subjectLabel.toLowerCase() === "ela/literacy" ? "ELA" : subjectLabel;
+}
+
+export function getClaimValue(claimLabel: string) {
+  const code = claimLabel.match(/(\d+)/);
+  return code !== null ? code[0] : claimLabel;
 }

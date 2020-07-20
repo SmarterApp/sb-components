@@ -62,6 +62,10 @@ export interface ClaimModel extends SearchBaseModel {
   coreStandardCodes?: string;
 }
 
+export interface TestCodeToLabel {
+  [key: string]: string;
+}
+
 export interface TargetModel {
   name: string;
   nameHash: number;

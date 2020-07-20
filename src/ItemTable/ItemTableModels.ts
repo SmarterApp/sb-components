@@ -1,5 +1,9 @@
 import { ItemCardModel } from "../ItemCard/ItemCardModels";
 import { getContentStandardCode } from "../ItemCard/ItemCardHelperFunction";
+import {
+  mapItemClaim,
+  getClaimValue
+} from "@src/PrintCart/PrintCartItemTableRow";
 
 export type HeaderType =
   | "Item"
@@ -11,6 +15,7 @@ export type HeaderType =
   | "Subject"
   | "Grade"
   | "Item Type"
+  | "DOK"
   | "Target";
 
 export type HeaderType_NonInterimSite =
@@ -88,6 +93,34 @@ export const headerColumns: ColumnGroup[] = [
     ]
   },
   {
+    header: "Stimulus ID",
+    headerClassName: "stimulus",
+    cols: [
+      {
+        accessor: label =>
+          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
+        className: "stimulus"
+      }
+    ],
+    compare: (a, b) =>
+      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
+      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
+  },
+  {
+    header: "Item position in test",
+    headerClassName: "item-position-in-test",
+    cols: [
+      {
+        accessor: label =>
+          label.testOrder !== undefined ? label.testOrder : "",
+        className: "item-position-in-test"
+      }
+    ],
+    compare: (a, b) =>
+      (a.testOrder !== undefined ? a.testOrder : 0) -
+      (b.testOrder !== undefined ? b.testOrder : 0)
+  },
+  {
     header: "Subject",
     headerClassName: "subject",
     cols: [{ accessor: label => label.subjectLabel, className: "subject" }],
@@ -119,40 +152,13 @@ export const headerColumns: ColumnGroup[] = [
       )
   },
   {
-    header: "Item position in test",
-    headerClassName: "item-position-in-test",
-    cols: [
-      {
-        accessor: label =>
-          label.testOrder !== undefined ? label.testOrder : "",
-        className: "item-position-in-test"
-      }
-    ],
-    compare: (a, b) =>
-      (a.testOrder !== undefined ? a.testOrder : 0) -
-      (b.testOrder !== undefined ? b.testOrder : 0)
-  },
-  {
-    header: "Stimulus ID",
-    headerClassName: "stimulus",
-    cols: [
-      {
-        accessor: label =>
-          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
-        className: "stimulus"
-      }
-    ],
-    compare: (a, b) =>
-      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
-      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
-  },
-  {
     header: "Claim",
     headerClassName: "claim",
     cols: [
       {
-        accessor: card => card.claimLabel,
-        className: "claim"
+        accessor: card => getClaimValue(card.claimLabel),
+        className: "claim",
+        helpText: card => card.claimLabel
       }
     ],
     compare: (a, b) => {
@@ -245,17 +251,35 @@ export const headerColumns: ColumnGroup[] = [
       return direction;
     }
   },
+  // {
+  //   header: "Item Type",
+  //   headerClassName: "item-type",
+  //   cols: [
+  //     {
+  //       accessor: label => label.interactionTypeLabel,
+  //       className: "item-type"
+  //     }
+  //   ],
+  //   compare: (a, b) =>
+  //     a.interactionTypeCode.localeCompare(b.interactionTypeCode)
+  // }
   {
-    header: "Item Type",
-    headerClassName: "item-type",
+    header: "DOK",
+    headerClassName: "dok",
     cols: [
       {
-        accessor: label => label.interactionTypeLabel,
-        className: "item-type"
+        accessor: label =>
+          label.depthOfKnowledge === undefined ? "" : label.depthOfKnowledge,
+        className: "dok"
       }
     ],
     compare: (a, b) =>
-      a.interactionTypeCode.localeCompare(b.interactionTypeCode)
+      (a.depthOfKnowledge === undefined
+        ? "-1"
+        : a.depthOfKnowledge
+      ).localeCompare(
+        b.depthOfKnowledge === undefined ? "-1" : b.depthOfKnowledge
+      )
   }
 ];
 

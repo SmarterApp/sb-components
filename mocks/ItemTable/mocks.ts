@@ -43,7 +43,8 @@ export const itemTableProps: ItemTableContainerProps = {
   associatedItems: [],
   countNumberOfItemsAfterSelection: () => {
     return 0;
-  }
+  },
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {
