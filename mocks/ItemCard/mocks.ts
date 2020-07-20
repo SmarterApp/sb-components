@@ -124,7 +124,7 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "6.M.2b",
-    itemDifficulty: "Hard"
+    itemDifficulty: ""
   },
   {
     bankKey: 187,

@@ -8,7 +8,7 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     className: string,
     value?: string | number
   ): JSX.Element | undefined {
-    if (!value) {
+    if (!value && label.toLowerCase() != "item difficulty") {
       return undefined;
     }
 

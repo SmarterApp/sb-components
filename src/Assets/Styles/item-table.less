@@ -25,6 +25,7 @@ table.item-table th {
   white-space: nowrap;
   border: 0;
   padding: 4px 8px;
+  text-align: center !important;
 
   // make sticky table header
   position: sticky;
@@ -157,5 +158,13 @@ table.item-table.table-icon {
 
 //Give space between table header text & sorting icon
 .sort-icon {
-  margin-left: 4px;
+  margin-left: 6px;
+}
+
+.item-position-in-test {
+  white-space: normal !important;
+  max-width: 120px;
+}
+.item-position-in-test > .sort-icon {
+  margin-left: 2px;
 }
