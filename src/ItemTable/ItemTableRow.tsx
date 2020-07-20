@@ -7,6 +7,11 @@ import {
   ColumnGroup
 } from "@src/index";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  mapItemGrade,
+  mapItemSubjectlabel,
+  mapItemClaim
+} from "@src/PrintCart/PrintCartItemTableRow";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -180,7 +185,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         <span
           className={`table-subject-highlight ${cellData.subjectCode.toLowerCase()}`}
         >
-          {columnText}
+          {mapItemSubjectlabel(columnText.toString())}
         </span>
       );
     } else if (col.className === "testname") {
@@ -189,6 +194,9 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         testLabel = this.props.testCodeToLabelMap[columnText];
       }
       content = <span>{testLabel}</span>;
+    } else if (col.className === "grade") {
+      const shortGradeValue = mapItemGrade(columnText.toString());
+      content = <span>{shortGradeValue}</span>;
     } else {
       if (col.className === "item") {
         content = (
