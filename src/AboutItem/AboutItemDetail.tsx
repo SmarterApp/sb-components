@@ -8,7 +8,7 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     className: string,
     value?: string | number
   ): JSX.Element | undefined {
-    if (!value) {
+    if (!value && label.toLowerCase() != "item difficulty") {
       return undefined;
     }
 
@@ -89,7 +89,11 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           "dok",
           this.props.depthOfKnowledge
         )}
-
+        {this.renderField(
+          "Item Difficulty",
+          "item-difficulty",
+          this.props.itemCardViewModel.itemDifficulty
+        )}
         {this.renderField(
           "Educational Difficulty",
           "educational-difficulty",

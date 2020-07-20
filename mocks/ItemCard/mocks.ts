@@ -24,7 +24,8 @@ export const completeItemCard: ItemCardModel = {
   depthOfKnowledge: "2",
   commonCoreStandardId: "AB-123",
   ccssDescription: "this is the common core description",
-  calculator: false
+  calculator: false,
+  itemDifficulty: "Hard"
 
   // selected: false,
   // bankKey: 187,
@@ -73,7 +74,8 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: true,
-    commonCoreStandardId: "6.M.1a"
+    commonCoreStandardId: "6.M.1a",
+    itemDifficulty: "Moderate"
   },
   {
     bankKey: 187,
@@ -97,7 +99,8 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     calculator: false,
-    commonCoreStandardId: "3.R.2a"
+    commonCoreStandardId: "3.R.2a",
+    itemDifficulty: "Easy"
   },
   {
     bankKey: 187,
@@ -120,7 +123,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: true,
     brailleOnlyItem: false,
-    commonCoreStandardId: "6.M.2b"
+    commonCoreStandardId: "6.M.2b",
+    itemDifficulty: ""
   },
   {
     bankKey: 187,
@@ -143,7 +147,8 @@ export const itemCardList: ItemCardModel[] = [
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
     brailleOnlyItem: false,
-    commonCoreStandardId: "4.E.4a"
+    commonCoreStandardId: "4.E.4a",
+    itemDifficulty: "Hard"
   }
 ];
 
@@ -168,7 +173,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeLabel: "Equation",
     isPerformanceItem: true,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "",
+    itemDifficulty: "Easy"
   },
   {
     bankKey: 187,
@@ -188,7 +194,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeLabel: "Multiple Choice",
     isPerformanceItem: true,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "",
+    itemDifficulty: "Moderate"
   },
   {
     bankKey: 187,
@@ -208,7 +215,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "",
+    itemDifficulty: "Hard"
   },
   {
     bankKey: 187,
@@ -228,7 +236,8 @@ export const sortableItemCards: ItemCardModel[] = [
     interactionTypeLabel: "Multi Select",
     isPerformanceItem: false,
     brailleOnlyItem: false,
-    commonCoreStandardId: ""
+    commonCoreStandardId: "",
+    itemDifficulty: "Hard"
   }
 ];
 

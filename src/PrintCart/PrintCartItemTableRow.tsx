@@ -177,6 +177,7 @@ export class PrintCartItemTableRow extends React.Component<
             testOrderInPrintCart: number;
             stimulusKey: number;
             depthOfKnowledge: string | undefined;
+            itemDifficulty: string;
           }[]
         ) => {
           return (
@@ -204,11 +205,6 @@ export class PrintCartItemTableRow extends React.Component<
         <td>{item[0].testOrderInPrintCart}</td>
         <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
         <td>{mapItemGrade(item[0].gradeLabel)}</td>
-        {/* {this.renderPTassociatedItemsTestDeatils(
-        item[0].testNameInPrintCart,
-        item[0].testOrderInPrintCart,
-        item[0].stimulusKey
-      )} */}
         <td>{this.getTestNameLabel(item[0].testNameInPrintCart)}</td>
         <td>{mapItemClaim(item[0].claimLabel)}</td>
         <td>
@@ -226,6 +222,7 @@ export class PrintCartItemTableRow extends React.Component<
           )}
         </td>
         <td>{item[0].depthOfKnowledge}</td>
+        <td>{item[0].itemDifficulty}</td>
         <td />
       </>
     );
@@ -301,6 +298,7 @@ export class PrintCartItemTableRow extends React.Component<
           )}
         </td>
         <td>{item.depthOfKnowledge}</td>
+        <td>{item.itemDifficulty}</td>
       </>
     );
   }

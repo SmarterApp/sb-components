@@ -16,6 +16,7 @@ export type HeaderType =
   | "Grade"
   | "Item Type"
   | "DOK"
+  | "Difficulty"
   | "Target";
 
 export type HeaderType_NonInterimSite =
@@ -280,6 +281,18 @@ export const headerColumns: ColumnGroup[] = [
       ).localeCompare(
         b.depthOfKnowledge === undefined ? "-1" : b.depthOfKnowledge
       )
+  },
+  {
+    header: "Difficulty",
+    headerClassName: "difficulty",
+    cols: [
+      {
+        accessor: label =>
+          label.itemDifficulty === undefined ? "" : label.itemDifficulty,
+        className: "difficulty"
+      }
+    ],
+    compare: (a, b) => a.itemDifficulty.localeCompare(b.itemDifficulty)
   }
 ];
 
