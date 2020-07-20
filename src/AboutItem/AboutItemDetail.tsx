@@ -41,7 +41,8 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
     );
     commonCoreStandardId = standard["commonCoreStandardId"];
     ccssDescription = standard["ccssDescription"];
-
+    const isInterimSite =
+      this.props.isInterimSite !== undefined ? this.props.isInterimSite : false;
     return (
       <div className={"item-details"}>
         {this.renderField(
@@ -89,11 +90,13 @@ export class AboutThisItemDetail extends React.Component<AboutItemModel, {}> {
           "dok",
           this.props.depthOfKnowledge
         )}
-        {this.renderField(
-          "Item Difficulty",
-          "item-difficulty",
-          this.props.itemCardViewModel.itemDifficulty
-        )}
+        {isInterimSite
+          ? this.renderField(
+              "Item Difficulty",
+              "item-difficulty",
+              this.props.itemCardViewModel.itemDifficulty
+            )
+          : null}
         {this.renderField(
           "Educational Difficulty",
           "educational-difficulty",
