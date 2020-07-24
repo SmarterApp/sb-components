@@ -5,7 +5,7 @@ import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
-import { TestCodeToLabel } from "lib/src/ItemSearch/ItemSearchModels";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartModalProps {
   showModal: boolean;
