@@ -17,23 +17,20 @@ export interface PrintWizardSteps1_Props {
 }
 
 export interface PrintWizardSteps2_Props {
-  // onSubmitPrint: (
-  //   langCode?: string,
-  //   GlossaryRequired?: string,
-  //   IllustrationRequired?: string
-  // ) => void;
   handleLanguageChange: (newLangCode: string) => void;
   handleIllustrationChange: (newIllustration: string) => void;
   handleGlossaryOptionChange: (newGlossaryOption: string) => void;
+  handlePrintOptionChange: (newSelectedPrintOption: string) => void;
   selectedLangCode: string;
   selectedIllustration: string;
   selectedGlossary: string;
+  selectedPrintOption: string;
   itemsInCart: ItemCardModel[];
   currentStep: number;
   onChangeModelState: (modelShowState: boolean) => void;
   onItemsReorder: (i: number, j: number) => void;
   showModal: boolean;
-  //StatusMessage: string
+  isInterimSite: boolean;
   isSelectedItemsHaveMathItem: boolean;
 }
 
@@ -90,14 +87,17 @@ export class PrintWizardSteps2 extends React.Component<
             handleLanguageChange={this.props.handleLanguageChange}
             handleIllustrationChange={this.props.handleIllustrationChange}
             handleGlossaryOptionChange={this.props.handleGlossaryOptionChange}
+            handlePrintOptionChange={this.props.handlePrintOptionChange}
             selectedLangCode={this.props.selectedLangCode}
             selectedIllustration={this.props.selectedIllustration}
             selectedGlossary={this.props.selectedGlossary}
+            selectedPrintOption={this.props.selectedPrintOption}
             onChangeModelState={this.props.onChangeModelState}
             showModal={this.props.showModal}
             itemsInCartCount={this.props.itemsInCart.length.toString()}
             areSelectedItemsHaveMath={this.props.isSelectedItemsHaveMathItem}
-            StatusMessage={"Check it........"}
+            StatusMessage={""}
+            isInterimSite={this.props.isInterimSite}
           />
         </>
       );

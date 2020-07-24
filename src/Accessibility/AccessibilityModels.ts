@@ -1,4 +1,5 @@
 import { DropDownSelectionModel } from "../DropDown/DropDownModels";
+import { SelectOptionProps } from "@src/Select/SelectOption";
 
 export interface AccessibilityResourceModel {
   resourceCode: string; // ID for this resource
@@ -163,4 +164,34 @@ export function resetAccessibilityGroups(
   });
 
   return accGroups;
+}
+
+//Render dropdown menu for Print options
+export function getPrintDropdownOptions(
+  selectedPrintOption: string
+): SelectOptionProps[] {
+  const selectOptions: SelectOptionProps[] = [];
+
+  selectOptions.push({
+    label: "Items Only",
+    value: "ITEMS-ONLY",
+    disabled: false,
+    selected: selectedPrintOption === "ITEMS-ONLY"
+  });
+
+  selectOptions.push({
+    label: "Answer Keys Only",
+    value: "ANSWERS-ONLY",
+    disabled: false,
+    selected: selectedPrintOption === "ANSWERS-ONLY"
+  });
+
+  selectOptions.push({
+    label: "Answer Keys and Items",
+    value: "ANSWERS-AND-ITEMS",
+    disabled: false,
+    selected: selectedPrintOption === "ANSWERS-AND-ITEMS"
+  });
+
+  return selectOptions;
 }

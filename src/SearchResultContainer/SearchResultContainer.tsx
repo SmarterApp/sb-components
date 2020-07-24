@@ -54,6 +54,7 @@ export interface SearchResultContainerProps {
     langCode: string,
     GlossaryRequired: string,
     IllustrationRequired: string,
+    pdfContentType: string,
     itemsInPrintCart: ItemCardModel[]
   ) => void;
   searchAPI: SearchAPIParamsModel;
@@ -472,13 +473,15 @@ export class SearchResultContainer extends React.Component<
   handlePrintItemsClick = (
     langCode: string,
     GlossaryRequired: string,
-    IllustrationRequired: string
+    IllustrationRequired: string,
+    pdfContentType: string
   ): void => {
     const { itemsInPrintCart, associatedItemsInPrintCart } = this.state;
     this.props.onPrintItems(
       langCode,
       GlossaryRequired,
       IllustrationRequired,
+      pdfContentType,
       itemsInPrintCart
     );
     this.setState({ showModal: false, statusMessage: "" });

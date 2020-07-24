@@ -1,29 +1,25 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
+import { getPrintDropdownOptions } from "./AccessibilityModels";
 
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
-  // onSubmitPrint: (
-  //   langCode?: string,
-  //   GlossaryRequired?: string,
-  //   IllustrationRequired?: string
-  // ) => void;
   handleLanguageChange: (newLangCode: string) => void;
   handleIllustrationChange: (newIllustration: string) => void;
   handleGlossaryOptionChange: (newGlossaryOption: string) => void;
+  handlePrintOptionChange: (newSelectedPrintOption: string) => void;
   selectedLangCode: string;
   selectedIllustration: string;
   selectedGlossary: string;
+  selectedPrintOption: string;
   itemsInCartCount: string;
   StatusMessage: string;
   areSelectedItemsHaveMath: boolean;
+  isInterimSite: boolean;
 }
 export interface pageState {
-  // selectedLangCode?: string;
-  // selectedIllustration?: string;
-  // selectedGlossary?: string;
   areSelectedItemsHaveMath: boolean;
 }
 
@@ -34,67 +30,15 @@ export class PrintAccessibilityModal extends React.Component<
   constructor(props: PrintAccessibilityContainerProps) {
     super(props);
     this.state = {
-      // selectedLangCode: "ENU",
-      // selectedIllustration: "false",
-      // selectedGlossary: "true",
       areSelectedItemsHaveMath: props.areSelectedItemsHaveMath
     };
   }
 
   componentWillReceiveProps(nextProps: PrintAccessibilityContainerProps) {
-    // if (nextProps.areSelectedItemsHaveMath !== this.props.areSelectedItemsHaveMath ) {
     this.setState({
       areSelectedItemsHaveMath: nextProps.areSelectedItemsHaveMath
     });
-    // }
   }
-
-  // ****************************************************************check thix************
-  // handleHideModal = () => {
-  //   this.setState({
-  //     selectedLangCode: "ENU",
-  //     selectedIllustration: "false",
-  //     selectedGlossary: "true"
-  //   });
-  //   this.props.onChangeModelState(false);
-  // };
-
-  // handlePrintItems = () => {
-  //   this.props.onSubmitPrint(
-  //     this.state.selectedLangCode,
-  //     this.state.selectedGlossary,
-  //     this.state.selectedIllustration
-  //   );
-  //   this.setState({
-  //     selectedLangCode: "ENU",
-  //     selectedIllustration: "false",
-  //     selectedGlossary: "true"
-  //   });
-  // };
-
-  // handleLanguageChange = (newLangCode: string) => {
-  //   if (newLangCode !== this.state.selectedLangCode) {
-  //     this.setState({
-  //       selectedLangCode: newLangCode
-  //     });
-  //   }
-  // };
-
-  // handleIllustrationChange = (newIllustration: string) => {
-  //   if (newIllustration !== this.state.selectedIllustration) {
-  //     this.setState({
-  //       selectedIllustration: newIllustration
-  //     });
-  //   }
-  // };
-
-  // handleGlossaryOptionChange = (newGlossaryOption: string) => {
-  //   if (newGlossaryOption !== this.state.selectedGlossary) {
-  //     this.setState({
-  //       selectedGlossary: newGlossaryOption
-  //     });
-  //   }
-  // };
 
   renderTranslationLanguages(): JSX.Element {
     const selectedLanguageCode = this.props.selectedLangCode;
@@ -120,7 +64,6 @@ export class PrintAccessibilityModal extends React.Component<
         <Select
           className="select-print-accessibility"
           label="Translation (Stacked)"
-          // labelClass="hidden"
           selected={selectedLanguageCode || ""}
           options={selectOptions}
           onChange={this.props.handleLanguageChange}
@@ -150,7 +93,6 @@ export class PrintAccessibilityModal extends React.Component<
       <Select
         className="select-print-accessibility"
         label="Illustration Glossary"
-        //labelClass="hidden"
         selected={selectedIllustration || ""}
         options={selectOptions}
         onChange={this.props.handleIllustrationChange}
@@ -180,7 +122,6 @@ export class PrintAccessibilityModal extends React.Component<
         <Select
           className="select-print-accessibility form-control"
           label="English Glossary"
-          //labelClass="hidden"
           selected={selectedGlossary || ""}
           options={selectOptions}
           onChange={this.props.handleGlossaryOptionChange}
@@ -189,11 +130,26 @@ export class PrintAccessibilityModal extends React.Component<
     );
   }
 
+  //Render dropdown menu for Print options
+  renderPrintDropdownOptions(): JSX.Element {
+    const selectedPrintOption = this.props.selectedPrintOption;
+    const selectOptions = getPrintDropdownOptions(selectedPrintOption);
+    return (
+      <>
+        <Select
+          className="select-print-accessibility form-control"
+          label="PDF Content"
+          selected={selectedPrintOption || ""}
+          options={selectOptions}
+          onChange={this.props.handlePrintOptionChange}
+        />
+      </>
+    );
+  }
+
   renderDesignatedSupport(): JSX.Element {
     if (!this.state.areSelectedItemsHaveMath) {
       return <></>;
-
-      // Please wait while items is converting to pdf<ReactLoading type={"spokes"} color={"#000000"} height={'20%'} width={'20%'} />
     } else {
       return (
         <div className="accessibility-groups">
@@ -220,86 +176,45 @@ export class PrintAccessibilityModal extends React.Component<
     }
   }
 
-  // render() {
-  //   const modelState = this.props.showModal;
-  //   return (
-
-  //     <div className="search-result-container">
-  //       <ReactModal
-  //         // isOpen={this.state.showModal}
-  //         isOpen={modelState}
-  //         contentLabel="About This Item Modal"
-  //         onRequestClose={this.handleHideModal}
-  //         overlayClassName="react-modal-overlay"
-  //         className="react-modal-content about-item-modal"
-  //       >
-  //         <div
-  //           className="modal-wrapper"
-  //           aria-labelledby="About Item Modal"
-  //           aria-hidden="true"
-  //         >
-  //           <div className="modal-header">
-  //             <h4 className="modal-title">
-  //               <h4> Choose Accessibility Options for Printout </h4>
-  //             </h4>
-  //             <button
-  //               className="close"
-  //               onClick={this.handleHideModal}
-  //               aria-label="Close modal"
-  //             >
-  //               <span className="fa fa-times" aria-hidden="true" />
-  //             </button>
-  //           </div>
-  //           <div className="modal-body">
-  //             <div className="status-message-print">
-  //               <h5 className="accessibility-form-heading">
-  //                 {" "}
-  //                 Total Item(s) selected : {this.props.StatusMessage}
-  //               </h5>{" "}
-  //             </div>
-  //             <form id="accessibility-form">
-  //               <div className="accessibility-groups">
-  //                 <div className="accessibility-resource-type section section-light">
-  //                   <h4 className="green-title">
-  //                     <span className="fa fa-tasks" aria-hidden="true" />{" "}
-  //                     Universal Tools
-  //                   </h4>
-  //                   <div className="accessibility-dropdown form-group selection-enabled">
-  //                     {this.renderGlossaryOptions()}
-  //                   </div>
-  //                 </div>
-  //               </div>
-
-  //               {this.renderDesignatedSupport()}
-  //             </form>
-  //           </div>
-  //           <div className="modal-footer">
-  //             <button
-  //               className="btn btn-primary"
-  //               aria-label="Close modal"
-  //               onClick={this.handleHideModal}
-  //             >
-  //               Close
-  //             </button>
-  //             <button
-  //               className="btn btn-primary"
-  //               aria-label="Continue modal"
-  //               onClick={this.handlePrintItems}
-  //             >
-  //               Print Items to PDF
-  //             </button>
-  //           </div>
-  //         </div>
-  //       </ReactModal>
-  //       {this.renderDesignatedSupport()}
-  //     </div>
-  //   );
-  // }
+  //Render Print options
+  renderPrintOptions(): JSX.Element {
+    if (!this.props.isInterimSite) {
+      return <></>;
+    }
+    return (
+      <>
+        <div className="header-message-print-cart header-print-cart">
+          <span> Print Options</span> <br />
+        </div>
+        <form id="accessibility-form">
+          <div className="accessibility-groups">
+            <div className="accessibility-groups">
+              <div className="accessibility-resource-type section section-light">
+                <div className="accessibility-dropdowns">
+                  <div className="accessibility-dropdown form-group selection-enabled">
+                    {this.renderPrintDropdownOptions()}
+                  </div>
+                  <div className="error-msg-print">
+                    <span className="error-msg-print-cart">
+                      Please select any item from a Test Name to continue.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </>
+    );
+  }
 
   render() {
     const modelState = this.props.showModal;
     return (
       <>
+        <div className="header-message-print-cart">
+          <span> Accessibility Options</span> <br />
+        </div>
         <div className="accessibility-groups">
           <div className="accessibility-resource-type section section-light">
             <div className="accessibility-header">
@@ -317,6 +232,7 @@ export class PrintAccessibilityModal extends React.Component<
           </div>
         </div>
         {this.renderDesignatedSupport()}
+        {this.renderPrintOptions()}
       </>
     );
   }

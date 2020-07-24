@@ -13,7 +13,8 @@ export interface PrintCartModalProps {
   onSubmitPrint: (
     langCode?: string,
     GlossaryRequired?: string,
-    IllustrationRequired?: string
+    IllustrationRequired?: string,
+    pdfContentType?: string
   ) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
@@ -32,8 +33,7 @@ export interface PrintCartModalState {
   selectedLangCode: string;
   selectedIllustration: string;
   selectedGlossary: string;
-
-  // isSelectedItemsHaveMathItem: boolean;
+  selectedPrintOption: string;
 }
 
 export class PrintCartModal extends React.Component<
@@ -42,7 +42,6 @@ export class PrintCartModal extends React.Component<
 > {
   constructor(props: PrintCartModalProps) {
     super(props);
-    //this.onAddOrRemoveSelectedItems = this.onAddOrRemoveSelectedItems.bind(this);
     this.state = {
       isChanged: false,
       currentStep: 1,
@@ -50,8 +49,8 @@ export class PrintCartModal extends React.Component<
       isSelectedItemsHaveMathItem: false,
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
-      //isSelectedItemsHaveMathItem: false
+      selectedGlossary: "true",
+      selectedPrintOption: "ITEMS-ONLY"
     };
   }
 
@@ -61,22 +60,17 @@ export class PrintCartModal extends React.Component<
       this.props.isSelectedItemsHaveMathItem
     )
       this.setState({
-        // isSelectedItemsHaveMathItem: nextProps.isSelectedItemsHaveMathItem,
         itemsInPrintCart: nextProps.itemsInCart
       });
     else this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
-  // onAddOrRemoveSelectedItems = (item: ItemCardModel) => {
-  //   const UpdatedItemsInCart:ItemCardModel[] = getUpdatedSelectedItems(item, this.state.itemsInPrintCart);
-  //   //this.setState({itemsInPrintCart : UpdatedItemsInCart});
-  // }
-
   handlePrintItems = () => {
     this.props.onSubmitPrint(
       this.state.selectedLangCode,
       this.state.selectedGlossary,
-      this.state.selectedIllustration
+      this.state.selectedIllustration,
+      this.state.selectedPrintOption
     );
     this.setState({
       selectedLangCode: "ENU",
@@ -109,11 +103,20 @@ export class PrintCartModal extends React.Component<
     }
   };
 
+  handlePrintOptionChange = (newPrintOptionCode: string) => {
+    if (newPrintOptionCode !== this.state.selectedPrintOption) {
+      this.setState({
+        selectedPrintOption: newPrintOptionCode
+      });
+    }
+  };
+
   handleHideModal = () => {
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
+      selectedGlossary: "true",
+      selectedPrintOption: "ITEMS-ONLY"
     });
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
@@ -184,15 +187,18 @@ export class PrintCartModal extends React.Component<
           handleLanguageChange={this.handleLanguageChange}
           handleIllustrationChange={this.handleIllustrationChange}
           handleGlossaryOptionChange={this.handleGlossaryOptionChange}
+          handlePrintOptionChange={this.handlePrintOptionChange}
           selectedLangCode={this.state.selectedLangCode}
           selectedIllustration={this.state.selectedIllustration}
           selectedGlossary={this.state.selectedGlossary}
+          selectedPrintOption={this.state.selectedPrintOption}
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           showModal={this.props.showModal}
           //StatusMessage={statusMessage}
           isSelectedItemsHaveMathItem={this.props.isSelectedItemsHaveMathItem}
           onItemsReorder={this.props.onItemsReorder}
+          isInterimSite={this.props.isInterimSite}
         />
       </>
     );
@@ -228,18 +234,12 @@ export class PrintCartModal extends React.Component<
             </div>
             <div className="modal-body print-cart-modal-body">
               <div className="status-message-print">
-                <strong>
-                  {" "}
-                  Total item(s) selected : {this.props.totalSelectedItemsCount}
-                </strong>{" "}
-                <br />
+                {/* <strong> */} Total item(s) selected :{" "}
+                {this.props.totalSelectedItemsCount}
+                {/* </strong> */} <br />
               </div>
               <form id="accessibility-form">
-                <div className="accessibility-groups">
-                  {/* <div className="accessibility-resource-type section section-light"> */}
-                  {this.renderBody()}
-                  {/* </div> */}
-                </div>
+                <div className="accessibility-groups">{this.renderBody()}</div>
               </form>
             </div>
             <div className="modal-footer">
