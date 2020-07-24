@@ -1,6 +1,8 @@
 import { ItemCardModel, SearchResultContainerProps } from "..";
-import { TestNameItemsPoolModel } from "@src/ItemSearch/ItemSearchModels";
-import { itemKeys } from "lib/src/ItemSearch/ItemSearchModels";
+import {
+  TestNameItemsPoolModel,
+  itemKeys
+} from "@src/ItemSearch/ItemSearchModels";
 
 export function getUpdatedSelectedItems(
   item: ItemCardModel,
