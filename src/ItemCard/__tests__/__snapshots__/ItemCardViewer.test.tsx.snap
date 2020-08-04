@@ -36,6 +36,7 @@ exports[`ItemCardViewer renders information tab 1`] = `
               "interactionTypeCode": "GI",
               "interactionTypeLabel": "Item Type",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 3434,
               "selected": false,
               "subjectCode": "ELA",

@@ -4,7 +4,10 @@ import { SelectOptionProps, Select } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintCartTableContainer } from "./PrintCartItemTableContainer";
-import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap
+} from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintWizardSteps1_Props {
   itemsInCart: ItemCardModel[];
@@ -16,14 +19,10 @@ export interface PrintWizardSteps1_Props {
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 
 export interface PrintWizardSteps2_Props {
-  // onSubmitPrint: (
-  //   langCode?: string,
-  //   GlossaryRequired?: string,
-  //   IllustrationRequired?: string
-  // ) => void;
   handleLanguageChange: (newLangCode: string) => void;
   handleIllustrationChange: (newIllustration: string) => void;
   handleGlossaryOptionChange: (newGlossaryOption: string) => void;
@@ -62,6 +61,7 @@ export class PrintWizardSteps1 extends React.Component<
               }
               isInterimSite={this.props.isInterimSite}
               testCodeToLabelMap={this.props.testCodeToLabelMap}
+              itemIdToTestNameMap={this.props.itemIdToTestNameMap}
             />
           </div>
         );

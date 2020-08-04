@@ -135,7 +135,7 @@ export const itemCardList: ItemCardModel[] = [
     gradeLabel: "Grade 4",
     subjectCode: "ELA",
     subjectLabel: "ELA/literacy",
-    testName: "Test-Name-123",
+    testName: "",
     testOrder: 2,
     claimCode: "ELA4",
     claimLabel: "4.Research/Inquiry",

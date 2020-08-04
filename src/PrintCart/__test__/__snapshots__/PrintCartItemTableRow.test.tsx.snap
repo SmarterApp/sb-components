@@ -17,6 +17,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
           "interactionTypeCode": "MC",
           "interactionTypeLabel": "Multiple Choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Easy",
           "itemKey": 3163,
           "stimulusKey": 58679,
           "subjectCode": "ELA",
@@ -44,6 +45,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeCode": "EQ",
             "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
             "itemKey": 3206,
             "stimulusKey": 56900,
             "subjectCode": "MATH",
@@ -68,6 +70,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeCode": "MC",
             "interactionTypeLabel": "Multiple Choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Easy",
             "itemKey": 3163,
             "stimulusKey": 58679,
             "subjectCode": "ELA",
@@ -91,6 +94,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": true,
+            "itemDifficulty": "",
             "itemKey": 3615,
             "stimulusKey": 23461,
             "subjectCode": "MATH",
@@ -114,6 +118,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
             "itemKey": 2928,
             "stimulusKey": 87679,
             "subjectCode": "ELA",
@@ -214,6 +219,28 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
+                "className": "stimulus",
+              },
+            ],
+            "compare": [Function],
+            "header": "Stimulus ID",
+            "headerClassName": "stimulus",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "item-position-in-test",
+              },
+            ],
+            "compare": [Function],
+            "header": "Item position in test",
+            "headerClassName": "item-position-in-test",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
                 "className": "subject",
               },
             ],
@@ -247,29 +274,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
-                "className": "item-position-in-test",
-              },
-            ],
-            "compare": [Function],
-            "header": "Item position in test",
-            "headerClassName": "item-position-in-test",
-          },
-          Object {
-            "cols": Array [
-              Object {
-                "accessor": [Function],
-                "className": "stimulus",
-              },
-            ],
-            "compare": [Function],
-            "header": "Stimulus ID",
-            "headerClassName": "stimulus",
-          },
-          Object {
-            "cols": Array [
-              Object {
-                "accessor": [Function],
                 "className": "claim",
+                "helpText": [Function],
               },
             ],
             "compare": [Function],
@@ -308,21 +314,58 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "cols": Array [
               Object {
                 "accessor": [Function],
-                "className": "item-type",
+                "className": "dok",
               },
             ],
             "compare": [Function],
-            "header": "Item Type",
-            "headerClassName": "item-type",
+            "header": "DOK",
+            "headerClassName": "dok",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "difficulty",
+              },
+            ],
+            "compare": [Function],
+            "header": "Difficulty",
+            "headerClassName": "difficulty",
           },
         ]
       }
       index={1}
       isInterimSite={true}
       isLinkTable={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemSequence={2}
       onAddOrRemoveSelectedItems={[MockFunction]}
       onItemsReorder={[MockFunction]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     >
       <tr
         className=""
@@ -343,15 +386,19 @@ exports[`ItemTableRow matches snapshot 1`] = `
           3163
         </td>
         <td>
+          58679
+        </td>
+        <td>
           ELA
         </td>
         <td>
           3
         </td>
-        <td />
-        <td />
         <td>
-          58679
+          Test 1
+        </td>
+        <td>
+          2
         </td>
         <td>
           1
@@ -439,8 +486,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
             </ToolTip>
           </span>
         </td>
+        <td />
         <td>
-          Multiple Choice
+          Easy
         </td>
         <td>
           <div
@@ -516,15 +564,19 @@ exports[`ItemTableRow matches snapshot 1`] = `
         <td>
           3163
         </td>
+        <td />
         <td>
           ELA
         </td>
         <td>
           3
         </td>
-        <td />
-        <td />
-        <td />
+        <td>
+          Test 1
+        </td>
+        <td>
+          2
+        </td>
         <td>
           Reading
         </td>
@@ -611,9 +663,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
             </ToolTip>
           </span>
         </td>
-        <td>
-          Multiple Choice
-        </td>
+        <td />
+        <td />
         <td />
       </tr>
       <tr
@@ -665,15 +716,19 @@ exports[`ItemTableRow matches snapshot 1`] = `
         <td>
           3206
         </td>
+        <td />
         <td>
           Math
         </td>
         <td>
           6
         </td>
-        <td />
-        <td />
-        <td />
+        <td>
+          Test 1
+        </td>
+        <td>
+          1
+        </td>
         <td>
           Concepts and Procedures and Logical
         </td>
@@ -760,9 +815,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
             </ToolTip>
           </span>
         </td>
-        <td>
-          Equation Multiple Choice choice
-        </td>
+        <td />
+        <td />
         <td />
       </tr>
       <tr
@@ -814,15 +868,19 @@ exports[`ItemTableRow matches snapshot 1`] = `
         <td>
           3615
         </td>
+        <td />
         <td>
           Math
         </td>
         <td>
           6
         </td>
-        <td />
-        <td />
-        <td />
+        <td>
+          Test 1
+        </td>
+        <td>
+          3
+        </td>
         <td>
           Modeling/Data Analysis
         </td>
@@ -909,9 +967,8 @@ exports[`ItemTableRow matches snapshot 1`] = `
             </ToolTip>
           </span>
         </td>
-        <td>
-          Multi Select
-        </td>
+        <td />
+        <td />
         <td />
       </tr>
     </PrintCartItemTableRow>

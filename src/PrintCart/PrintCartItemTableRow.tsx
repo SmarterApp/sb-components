@@ -1,21 +1,12 @@
 import * as React from "react";
-import {
-  HeaderSortModel,
-  SortColumnModel,
-  SortDirection,
-  headerColumns,
-  ColumnGroup,
-  ItemModel,
-  HeaderTable,
-  ItemTable,
-  Resource,
-  ItemCardModel,
-  AboutItemModel
-} from "@src/index";
-import { PrintCartRowGroup } from "@src/PrintCart/PrintCartRowGroup";
-import { ToolTip, generateTooltip } from "../index";
+import { ColumnGroup, ItemCardModel } from "@src/index";
+import { generateTooltip } from "../index";
 import { getContentStandardCode } from "@src/ItemCard/ItemCardHelperFunction";
-import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap,
+  TestNameAndPosition
+} from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
@@ -29,6 +20,7 @@ export interface PrintCartItemTableRowProps {
   index: number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 
 export interface PrintCartItemTableRowState {}
@@ -130,30 +122,6 @@ export class PrintCartItemTableRow extends React.Component<
     return tooltipCcontentStandard;
   }
 
-  //Render Test Details of PT associated items
-  renderPTassociatedItemsTestDeatils(
-    testNameInPrintCart: string | undefined,
-    testOrderInPrintCart: number | undefined,
-    stimulusKey: {} | null | undefined
-  ) {
-    if (this.props.isInterimSite) {
-      let testLabel = this.getTestNameLabel(testNameInPrintCart);
-      return (
-        <>
-          <td>{testOrderInPrintCart}</td>
-        </>
-      );
-    }
-  }
-
-  private getTestNameLabel(testNameInPrintCart: string | undefined) {
-    let testLabel = "";
-    if (testNameInPrintCart !== undefined) {
-      testLabel = this.props.testCodeToLabelMap[testNameInPrintCart];
-    }
-    return testLabel;
-  }
-
   //Render Performance task associated items in a group
   renderAssociatedItemsInGroup() {
     let itemSequence = this.props.itemSequence;
@@ -196,16 +164,28 @@ export class PrintCartItemTableRow extends React.Component<
 
   //Render PT associated items fro Interim in a group
   renderPTitemsForInterim(item: any, itemSequence: number) {
+    const testNameAndPosition: TestNameAndPosition = getItemTestNameAndPosition(
+      item[0].itemKey,
+      item[0].testNameInPrintCart,
+      item[0].testOrderInPrintCart,
+      this.props.itemIdToTestNameMap,
+      this.props.testCodeToLabelMap
+    );
     return (
       <>
         <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
         <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
         <td>{item[0].itemKey}</td>
         <td>{item[0].stimulusKey}</td>
-        <td>{item[0].testOrderInPrintCart}</td>
         <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
         <td>{mapItemGrade(item[0].gradeLabel)}</td>
-        <td>{this.getTestNameLabel(item[0].testNameInPrintCart)}</td>
+        {/* <td>{this.getTestNameLabel(item[0].testNameInPrintCart)}</td> */}
+        <td>{testNameAndPosition.testName}</td>
+        <td>
+          {testNameAndPosition.testOrder === Number.MIN_VALUE
+            ? ""
+            : testNameAndPosition.testOrder}
+        </td>
         <td>{mapItemClaim(item[0].claimLabel)}</td>
         <td>
           {this.getToolTipForTarget(
@@ -275,16 +255,29 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   renderTableRowItemsForInterim(item: ItemCardModel) {
+    const testNameAndPosition: TestNameAndPosition = getItemTestNameAndPosition(
+      item.itemKey,
+      item.testNameInPrintCart,
+      item.testOrderInPrintCart,
+      this.props.itemIdToTestNameMap,
+      this.props.testCodeToLabelMap
+    );
     return (
       <>
         <td>{this.renderActionButton(item)}</td>
         <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
         <td>{item.itemKey}</td>
         <td>{item.stimulusKey}</td>
-        <td>{item.testOrderInPrintCart}</td>
+        {/* <td>{item.testOrderInPrintCart}</td> */}
         <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
         <td>{mapItemGrade(item.gradeLabel)}</td>
-        {this.renderTestName(item)}
+        {/* {this.renderTestName(item)} */}
+        <td>{testNameAndPosition.testName}</td>
+        <td>
+          {testNameAndPosition.testOrder === Number.MIN_VALUE
+            ? ""
+            : testNameAndPosition.testOrder}
+        </td>
         <td>{mapItemClaim(item.claimLabel)}</td>
         <td>
           {this.getToolTipForTarget(item.targetId, item.targetDescription)}
@@ -401,4 +394,45 @@ export function mapItemSubjectlabel(subjectLabel: string): React.ReactNode {
 export function getClaimValue(claimLabel: string) {
   const code = claimLabel.match(/(\d+)/);
   return code !== null ? code[0] : claimLabel;
+}
+
+export function getItemTestNameAndPosition(
+  itemKey: number,
+  testname: string | undefined | null,
+  testOrder: number | undefined | null,
+  itemIdToTestNameMap: ItemIdToTestNameMap,
+  testCodeToLabelMap: TestCodeToLabel
+) {
+  let testNameAndPosition: TestNameAndPosition = {
+    testName: "",
+    testOrder: Number.MIN_VALUE
+  };
+
+  /**
+   * Check if item has its asscoiated test name selected by user
+   * If yes then just assign the testname label and item order to variable return that variable object
+   * Else assign the very first test name & order that item is associated with
+   */
+  if (
+    testname !== undefined &&
+    testname !== null &&
+    testname !== "" &&
+    testOrder !== undefined &&
+    testOrder !== null
+  ) {
+    //testname comes only with test name code, so bring test name label using code and assign to variable
+    let testLabel = testname;
+    if (testname in testCodeToLabelMap) {
+      testLabel = testCodeToLabelMap[testname];
+    }
+    testNameAndPosition = { testName: testLabel, testOrder: testOrder };
+  } else {
+    if (itemKey in itemIdToTestNameMap) {
+      testNameAndPosition = {
+        testName: itemIdToTestNameMap[itemKey].testName,
+        testOrder: itemIdToTestNameMap[itemKey].testOrder
+      };
+    }
+  }
+  return testNameAndPosition;
 }

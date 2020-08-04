@@ -51,7 +51,6 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
       }
     });
     return;
-    //itemCardList = visibleItemCardCopy;
   },
   onSelectAll: () => {
     let visibleItemCardCopy = [];
@@ -73,7 +72,25 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   },
   defaultRenderType: SearchResultType.ItemCard,
   performanceTaskAssociatedItems: performanceTaskAssociatedItems,
-  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" },
+  itemIdToTestNameMap: {
+    3206: {
+      testName: "Test 1",
+      testOrder: 1
+    },
+    3163: {
+      testName: "Test 1",
+      testOrder: 2
+    },
+    3615: {
+      testName: "Test 1",
+      testOrder: 3
+    },
+    2928: {
+      testName: "Test 2",
+      testOrder: 1
+    }
+  }
 };
 
 export const mockSearchResultTableProps: SearchResultContainerProps = {

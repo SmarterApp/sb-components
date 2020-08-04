@@ -19,7 +19,14 @@ import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
 import { timingSafeEqual } from "crypto";
 import { PrintcartHeaderTable } from "./PrintcartHeaderTable";
 import { headerColumns_nonInterimSite } from "@src/ItemTable/ItemTableModels";
-import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap
+} from "@src/ItemSearch/ItemSearchModels";
+import {
+  printCartColumnsInterim,
+  printCartColumnsNonInterimSite
+} from "./PrintCartModel";
 
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
@@ -29,6 +36,7 @@ export interface PrintCartItemTableContainerProps {
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 
 export interface PrintCartItemTableContainerState {
@@ -41,8 +49,8 @@ export class PrintCartTableContainer extends React.Component<
   PrintCartItemTableContainerState
 > {
   private pageHeaderColumns = this.props.isInterimSite
-    ? headerColumns
-    : headerColumns_nonInterimSite;
+    ? printCartColumnsInterim
+    : printCartColumnsNonInterimSite;
 
   constructor(props: PrintCartItemTableContainerProps) {
     super(props);
@@ -172,6 +180,7 @@ export class PrintCartTableContainer extends React.Component<
           onItemsReorder={this.onItemsReorder}
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
+          itemIdToTestNameMap={this.props.itemIdToTestNameMap}
         />
       );
     }

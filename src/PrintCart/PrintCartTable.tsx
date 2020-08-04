@@ -14,7 +14,10 @@ import {
   ColumnGroup
 } from "@src/index";
 import { PrintCartItemTableRow } from "./PrintCartItemTableRow";
-import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap
+} from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartTableProps {
   itemsInPrintCart: ItemCardModel[];
@@ -27,6 +30,7 @@ export interface PrintCartTableProps {
   isItemSelected: boolean;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -76,6 +80,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             onItemsReorder={this.props.onItemsReorder}
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
+            itemIdToTestNameMap={this.props.itemIdToTestNameMap}
           />
         );
       } else {
@@ -93,6 +98,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             onItemsReorder={this.props.onItemsReorder}
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
+            itemIdToTestNameMap={this.props.itemIdToTestNameMap}
           />
         );
       }
