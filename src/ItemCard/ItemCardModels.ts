@@ -6,6 +6,7 @@ export interface ItemCardModel {
   bankKey: number;
   itemKey: number;
   stimulusKey?: number;
+  itemDifficulty: string;
   title: string;
   grade: GradeLevels;
   gradeLabel: string;

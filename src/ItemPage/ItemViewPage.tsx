@@ -20,6 +20,7 @@ export interface ItemViewPageProps extends RouteComponentProps<ItemModel> {
   showRubrics: boolean;
   appName?: string;
   errorRedirectPath: string;
+  isInterimSite?: boolean;
 }
 
 export class ItemViewPage extends React.Component<ItemViewPageProps, {}> {

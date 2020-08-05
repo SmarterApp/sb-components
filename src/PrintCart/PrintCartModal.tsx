@@ -5,6 +5,10 @@ import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap
+} from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintCartModalProps {
   showModal: boolean;
@@ -24,6 +28,8 @@ export interface PrintCartModalProps {
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 export interface PrintCartModalState {
   isChanged: boolean;
@@ -179,6 +185,8 @@ export class PrintCartModal extends React.Component<
           onItemsReorder={this.props.onItemsReorder}
           handleUpdateItemsinPrintCart={this.props.handleUpdateItemsinPrintCart}
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
+          itemIdToTestNameMap={this.props.itemIdToTestNameMap}
         />
 
         <PrintWizardSteps2

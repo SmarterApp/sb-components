@@ -73,7 +73,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -97,7 +97,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -121,7 +121,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -145,7 +145,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -169,7 +169,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -193,7 +193,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -217,7 +217,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -241,7 +241,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -259,7 +259,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -325,7 +325,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -437,7 +437,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -503,7 +503,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -615,7 +615,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -681,7 +681,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -793,7 +793,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -859,7 +859,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -971,7 +971,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1037,7 +1037,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -1149,7 +1149,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1215,7 +1215,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -1327,7 +1327,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1393,7 +1393,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -1505,7 +1505,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1571,7 +1571,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -1683,7 +1683,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1749,7 +1749,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -1861,7 +1861,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -1927,7 +1927,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2039,7 +2039,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2105,7 +2105,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2217,7 +2217,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2283,7 +2283,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2395,7 +2395,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2461,7 +2461,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2573,7 +2573,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2639,7 +2639,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2751,7 +2751,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2817,7 +2817,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -2929,7 +2929,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -2995,7 +2995,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3107,7 +3107,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -3173,7 +3173,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3285,7 +3285,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -3351,7 +3351,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3463,7 +3463,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -3529,7 +3529,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3641,7 +3641,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -3707,7 +3707,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3819,7 +3819,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -3885,7 +3885,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -3997,7 +3997,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4063,7 +4063,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -4175,7 +4175,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4241,7 +4241,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -4353,7 +4353,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4419,7 +4419,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -4531,7 +4531,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4597,7 +4597,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -4709,7 +4709,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4775,7 +4775,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -4887,7 +4887,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -4953,7 +4953,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5065,7 +5065,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -5131,7 +5131,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5243,7 +5243,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -5309,7 +5309,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5421,7 +5421,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -5487,7 +5487,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5599,7 +5599,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -5665,7 +5665,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5777,7 +5777,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -5843,7 +5843,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -5955,7 +5955,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6021,7 +6021,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -6133,7 +6133,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6199,7 +6199,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -6311,7 +6311,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6377,7 +6377,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -6489,7 +6489,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6555,7 +6555,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -6667,7 +6667,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6733,7 +6733,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -6845,7 +6845,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -6911,7 +6911,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7023,7 +7023,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7089,7 +7089,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7201,7 +7201,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7267,7 +7267,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7379,7 +7379,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7445,7 +7445,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7557,7 +7557,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7623,7 +7623,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7735,7 +7735,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7801,7 +7801,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -7913,7 +7913,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -7979,7 +7979,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8091,7 +8091,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -8157,7 +8157,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8269,7 +8269,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -8335,7 +8335,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8447,7 +8447,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -8513,7 +8513,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8625,7 +8625,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -8691,7 +8691,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8803,7 +8803,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -8869,7 +8869,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>
@@ -8981,7 +8981,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onKeyUp={[Function]}
           >
             <span
-              className="tool-tip-links "
+              className="tool-tip-links btn-table-cell"
               tabIndex={0}
             >
               <span
@@ -9047,7 +9047,7 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             >
               <span>
                 <span>
-                  Grade 4
+                  4
                 </span>
               </span>
             </td>

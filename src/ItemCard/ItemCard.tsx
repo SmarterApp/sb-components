@@ -4,6 +4,7 @@ import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "./ItemCardHelperFunction";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -31,6 +32,7 @@ export interface ItemCardProps {
     selectedItemsCount: number
   ) => number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 export interface ItemCardState {
@@ -123,16 +125,18 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   render() {
+    let testLabel = "";
+    if (this.props.rowData.testName !== undefined) {
+      testLabel = this.props.testCodeToLabelMap[this.props.rowData.testName];
+    }
+
     const testNameDetails_tsx = () => {
       if (this.props.isInterimSite) {
         return (
           <>
             <p className="card-text test-name">
               <span className="card-text-label">Test name:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.testName}
-              </span>
+              <span className="card-text-value"> {testLabel}</span>
             </p>
             <p className="card-text item-position-in-test">
               <span className="card-text-label">Item position in test:</span>

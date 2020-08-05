@@ -27,7 +27,9 @@ import {
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 import {
   TestNameItemsPoolModel,
-  itemKeys
+  itemKeys,
+  TestCodeToLabel,
+  ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 
 /**
@@ -70,6 +72,8 @@ export interface SearchResultContainerProps {
   totalItemCards?: ItemCardModel[];
   performanceTaskAssociatedItems: any[];
   testItemsPool: TestNameItemsPoolModel[];
+  testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 
 /**
@@ -335,7 +339,6 @@ export class SearchResultContainer extends React.Component<
               this.props.searchAPI.testNames[0] !== "0"
             ) {
               addTestNameDetails(element, this.props.searchAPI.testNames[0]);
-              // addTestName_associatedItems(associatedItemCard, this.props.searchAPI.testNames[0], this.props.totalItemCards);
             }
             itemSelectionIndex = itemSelectionIndex + 1;
             element.selectionIndex = itemSelectionIndex;
@@ -679,6 +682,7 @@ export class SearchResultContainer extends React.Component<
             this.countNumberOfItemsAfterSelection
           }
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
         />
       ));
     }
@@ -736,6 +740,8 @@ export class SearchResultContainer extends React.Component<
           onItemsReorder={this.handleReorderItemsInPrintCart}
           isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
           isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
+          itemIdToTestNameMap={this.props.itemIdToTestNameMap}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -772,6 +778,7 @@ export class SearchResultContainer extends React.Component<
               this.countNumberOfItemsAfterSelection
             }
             isInterimSite={this.props.isInterimSite}
+            testCodeToLabelMap={this.props.testCodeToLabelMap}
           />
         );
       } else {

@@ -4,6 +4,10 @@ import { SelectOptionProps, Select } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintCartTableContainer } from "./PrintCartItemTableContainer";
+import {
+  TestCodeToLabel,
+  ItemIdToTestNameMap
+} from "@src/ItemSearch/ItemSearchModels";
 
 export interface PrintWizardSteps1_Props {
   itemsInCart: ItemCardModel[];
@@ -14,6 +18,8 @@ export interface PrintWizardSteps1_Props {
   onItemsReorder: (i: number, j: number) => void;
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
+  itemIdToTestNameMap: ItemIdToTestNameMap;
 }
 
 export interface PrintWizardSteps2_Props {
@@ -56,6 +62,8 @@ export class PrintWizardSteps1 extends React.Component<
                 this.props.handleUpdateItemsinPrintCart
               }
               isInterimSite={this.props.isInterimSite}
+              testCodeToLabelMap={this.props.testCodeToLabelMap}
+              itemIdToTestNameMap={this.props.itemIdToTestNameMap}
             />
           </div>
         );

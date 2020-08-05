@@ -70,6 +70,7 @@ exports[`Storyshots Item Card Item Card 1`] = `
           className="card-text-value"
         >
            
+          
         </span>
       </p>
       <p

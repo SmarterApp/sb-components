@@ -34,6 +34,7 @@ export interface ItemPageContainerProps {
   updateIsaap: (isaap: string) => void;
   updateCookie: (cookieName: string, cookieValue: string) => void;
   errorRedirectPath: string;
+  isInterimSite?: boolean;
 }
 
 export interface ItemPageContainerState {
@@ -259,6 +260,7 @@ export class ItemPageContainer extends React.Component<
           currentItem={itemDetails}
           accResourceGroups={itemAccessibility}
           showRubrics={this.props.showRubrics}
+          isInterimSite={this.props.isInterimSite}
         />
       );
     }

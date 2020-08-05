@@ -23,6 +23,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -51,6 +52,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "selected": true,
                 "selectionIndex": 0,
@@ -80,6 +82,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -101,6 +104,26 @@ exports[`SearchResultContainer card to table transition 1`] = `
       handleUpdateItemsinPrintCart={[Function]}
       isInterimSite={true}
       isSelectedItemsHaveMathItem={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemsInCart={
         Array [
           Object {
@@ -115,6 +138,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
             "interactionTypeCode": "EQ",
             "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
             "itemKey": 3206,
             "selected": true,
             "selectionIndex": 0,
@@ -142,6 +166,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
             "itemKey": 2928,
             "selected": true,
             "selectionIndex": 1,
@@ -165,6 +190,12 @@ exports[`SearchResultContainer card to table transition 1`] = `
       onItemsReorder={[Function]}
       onSubmitPrint={[Function]}
       showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
       totalSelectedItemsCount={4}
     />
     <ErrorMessageModal
@@ -260,6 +291,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -288,6 +320,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "selected": true,
                 "selectionIndex": 0,
@@ -317,6 +350,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -354,6 +388,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "selected": true,
           "selectionIndex": 0,
@@ -372,6 +407,12 @@ exports[`SearchResultContainer card to table transition 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={
@@ -390,6 +431,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -418,6 +460,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "selected": true,
                 "selectionIndex": 0,
@@ -447,6 +490,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -484,6 +528,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "interactionTypeCode": "MC",
           "interactionTypeLabel": "Multiple Choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Easy",
           "itemKey": 3163,
           "stimulusKey": 58679,
           "subjectCode": "ELA",
@@ -500,6 +545,12 @@ exports[`SearchResultContainer card to table transition 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={
@@ -518,6 +569,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -546,6 +598,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "selected": true,
                 "selectionIndex": 0,
@@ -575,6 +628,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -611,6 +665,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "interactionTypeCode": "MS",
           "interactionTypeLabel": "Multi Select",
           "isPerformanceItem": true,
+          "itemDifficulty": "",
           "itemKey": 3615,
           "stimulusKey": 23461,
           "subjectCode": "MATH",
@@ -627,6 +682,12 @@ exports[`SearchResultContainer card to table transition 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={
@@ -645,6 +706,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -673,6 +735,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "selected": true,
                 "selectionIndex": 0,
@@ -702,6 +765,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -738,6 +802,7 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "interactionTypeCode": "MS",
           "interactionTypeLabel": "Multi Select",
           "isPerformanceItem": false,
+          "itemDifficulty": "Hard",
           "itemKey": 2928,
           "selected": true,
           "selectionIndex": 1,
@@ -756,6 +821,12 @@ exports[`SearchResultContainer card to table transition 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
   </div>
 </div>
@@ -772,12 +843,38 @@ exports[`SearchResultContainer empty itemCards 1`] = `
       handleUpdateItemsinPrintCart={[Function]}
       isInterimSite={true}
       isSelectedItemsHaveMathItem={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemsInCart={Array []}
       onAddOrRemoveSelectedItems={[Function]}
       onChangeModelState={[Function]}
       onItemsReorder={[Function]}
       onSubmitPrint={[Function]}
       showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
       totalSelectedItemsCount={0}
     />
     <ErrorMessageModal
@@ -874,12 +971,38 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       handleUpdateItemsinPrintCart={[Function]}
       isInterimSite={true}
       isSelectedItemsHaveMathItem={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemsInCart={Array []}
       onAddOrRemoveSelectedItems={[Function]}
       onChangeModelState={[Function]}
       onItemsReorder={[Function]}
       onSubmitPrint={[Function]}
       showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
       totalSelectedItemsCount={0}
     />
     <ErrorMessageModal
@@ -979,6 +1102,7 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -993,6 +1117,12 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={Object {}}
@@ -1015,6 +1145,7 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
           "interactionTypeCode": "MC",
           "interactionTypeLabel": "Multiple Choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Easy",
           "itemKey": 3163,
           "stimulusKey": 58679,
           "subjectCode": "ELA",
@@ -1029,6 +1160,12 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={Object {}}
@@ -1050,6 +1187,7 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
           "interactionTypeCode": "MS",
           "interactionTypeLabel": "Multi Select",
           "isPerformanceItem": true,
+          "itemDifficulty": "",
           "itemKey": 3615,
           "stimulusKey": 23461,
           "subjectCode": "MATH",
@@ -1064,6 +1202,12 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
     <ItemCard
       associatedItems={Object {}}
@@ -1085,6 +1229,7 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
           "interactionTypeCode": "MS",
           "interactionTypeLabel": "Multi Select",
           "isPerformanceItem": false,
+          "itemDifficulty": "Hard",
           "itemKey": 2928,
           "stimulusKey": 87679,
           "subjectCode": "ELA",
@@ -1099,6 +1244,12 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
         }
       }
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
   </div>
 </div>
@@ -1115,12 +1266,38 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       handleUpdateItemsinPrintCart={[Function]}
       isInterimSite={true}
       isSelectedItemsHaveMathItem={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemsInCart={Array []}
       onAddOrRemoveSelectedItems={[Function]}
       onChangeModelState={[Function]}
       onItemsReorder={[Function]}
       onSubmitPrint={[Function]}
       showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
       totalSelectedItemsCount={0}
     />
     <ErrorMessageModal
@@ -1224,6 +1401,7 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "interactionTypeCode": "EQ",
             "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
             "itemKey": 3206,
             "stimulusKey": 56900,
             "subjectCode": "MATH",
@@ -1248,6 +1426,7 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "interactionTypeCode": "MC",
             "interactionTypeLabel": "Multiple Choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Easy",
             "itemKey": 3163,
             "stimulusKey": 58679,
             "subjectCode": "ELA",
@@ -1271,6 +1450,7 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": true,
+            "itemDifficulty": "",
             "itemKey": 3615,
             "stimulusKey": 23461,
             "subjectCode": "MATH",
@@ -1294,6 +1474,7 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
             "itemKey": 2928,
             "stimulusKey": 87679,
             "subjectCode": "ELA",
@@ -1313,6 +1494,12 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       onItemSelection={[Function]}
       onRowSelection={[Function]}
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
   </div>
 </div>
@@ -1329,12 +1516,38 @@ exports[`SearchResultContainer table to card transition 1`] = `
       handleUpdateItemsinPrintCart={[Function]}
       isInterimSite={true}
       isSelectedItemsHaveMathItem={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
       itemsInCart={Array []}
       onAddOrRemoveSelectedItems={[Function]}
       onChangeModelState={[Function]}
       onItemsReorder={[Function]}
       onSubmitPrint={[Function]}
       showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
       totalSelectedItemsCount={0}
     />
     <ErrorMessageModal
@@ -1438,6 +1651,7 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "interactionTypeCode": "EQ",
             "interactionTypeLabel": "Equation Multiple Choice choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
             "itemKey": 3206,
             "stimulusKey": 56900,
             "subjectCode": "MATH",
@@ -1462,6 +1676,7 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "interactionTypeCode": "MC",
             "interactionTypeLabel": "Multiple Choice",
             "isPerformanceItem": true,
+            "itemDifficulty": "Easy",
             "itemKey": 3163,
             "stimulusKey": 58679,
             "subjectCode": "ELA",
@@ -1485,6 +1700,7 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": true,
+            "itemDifficulty": "",
             "itemKey": 3615,
             "stimulusKey": 23461,
             "subjectCode": "MATH",
@@ -1508,6 +1724,7 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "interactionTypeCode": "MS",
             "interactionTypeLabel": "Multi Select",
             "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
             "itemKey": 2928,
             "stimulusKey": 87679,
             "subjectCode": "ELA",
@@ -1527,6 +1744,12 @@ exports[`SearchResultContainer table to card transition 1`] = `
       onItemSelection={[Function]}
       onRowSelection={[Function]}
       showErrorModalOnPrintItemsCountExceeded={[Function]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
     />
   </div>
 </div>

@@ -5,7 +5,6 @@ import * as React from "react";
  * @interface BtnGroupOptionProps
  */
 export interface BtnPrintCartProps {
-  // handleShowModal: (modelState: boolean) => void;
   label: string;
   itemsInCart: number;
   onClick: (modelState: boolean) => void;
@@ -19,17 +18,6 @@ export interface BtnPrintCartProps {
 // tslint:disable-next-line:variable-name
 export const BtnPrintCart: React.SFC<BtnPrintCartProps> = props => {
   return (
-    // <button
-    //   className={`btn btn-primary ${className}`}
-    //   role="switch"
-    //   aria-checked={props.selected}
-    //   disabled={props.disabled}
-    //   onClick={props.onClick}
-    //   aria-label={ariaLabel}
-    // >
-    //   {props.label}
-    // </button>
-
     <button
       type="button"
       className="btn btn-default btn-sm"

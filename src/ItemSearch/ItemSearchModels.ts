@@ -62,6 +62,14 @@ export interface ClaimModel extends SearchBaseModel {
   coreStandardCodes?: string;
 }
 
+export interface TestCodeToLabel {
+  [key: string]: string;
+}
+
+export interface ItemIdToTestNameMap {
+  [key: number]: TestNameAndPosition;
+}
+
 export interface TargetModel {
   name: string;
   nameHash: number;
@@ -169,4 +177,9 @@ export interface TestNameItemsPoolModel {
 export interface itemKeys {
   itemKey: number;
   itemPosition: number;
+}
+
+export interface TestNameAndPosition {
+  testName: string;
+  testOrder: number;
 }

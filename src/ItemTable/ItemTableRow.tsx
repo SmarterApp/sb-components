@@ -6,6 +6,12 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  mapItemGrade,
+  mapItemSubjectlabel,
+  mapItemClaim
+} from "@src/PrintCart/PrintCartItemTableRow";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -24,6 +30,7 @@ export interface ItemTableRowProps {
     selectedItemsCount: number
   ) => number;
   isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 const unChecked = (
@@ -178,9 +185,18 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         <span
           className={`table-subject-highlight ${cellData.subjectCode.toLowerCase()}`}
         >
-          {columnText}
+          {mapItemSubjectlabel(columnText.toString())}
         </span>
       );
+    } else if (col.className === "testname") {
+      let testLabel = "";
+      if (columnText !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[columnText];
+      }
+      content = <span>{testLabel}</span>;
+    } else if (col.className === "grade") {
+      const shortGradeValue = mapItemGrade(columnText.toString());
+      content = <span>{shortGradeValue}</span>;
     } else {
       if (col.className === "item") {
         content = (
@@ -260,7 +276,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     const tooltip = generateTooltip({
       displayIcon: false,
-      className: "",
+      className: "btn-table-cell",
       helpText: <label>{getToolTipMsg()}</label>,
       displayText: iconsAddOrRemove
     });

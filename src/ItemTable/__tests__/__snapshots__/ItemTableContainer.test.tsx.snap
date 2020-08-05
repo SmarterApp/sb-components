@@ -229,6 +229,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -331,6 +332,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -355,6 +357,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -378,6 +381,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -401,6 +405,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -554,7 +559,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -579,7 +584,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -604,7 +609,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -629,7 +634,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -654,7 +659,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -679,7 +684,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -704,7 +709,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -729,7 +734,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -961,6 +966,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -985,6 +991,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -1008,6 +1015,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -1031,6 +1039,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -1166,6 +1175,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -1587,6 +1597,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -1609,7 +1620,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -1635,7 +1646,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -1711,7 +1722,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -2184,6 +2195,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -2206,7 +2218,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -2232,7 +2244,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -2295,7 +2307,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -2308,7 +2320,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -2780,6 +2792,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -2802,7 +2815,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -2828,7 +2841,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -2904,7 +2917,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -3376,6 +3389,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -3398,7 +3412,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -3424,7 +3438,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -3487,7 +3501,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -3500,7 +3514,7 @@ exports[`ItemPageTable matches snapshot 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -3883,6 +3897,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -3985,6 +4000,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -4009,6 +4025,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -4032,6 +4049,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -4055,6 +4073,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -4226,7 +4245,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4251,7 +4270,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4276,7 +4295,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4301,7 +4320,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4326,7 +4345,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4351,7 +4370,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4376,7 +4395,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4401,7 +4420,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -4632,6 +4651,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -4656,6 +4676,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -4680,6 +4701,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -4703,6 +4725,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -4838,6 +4861,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -5276,6 +5300,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -5298,7 +5323,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -5324,7 +5349,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -5387,7 +5412,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -5400,7 +5425,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -5873,6 +5898,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -5895,7 +5921,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -5921,7 +5947,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -5984,7 +6010,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -5997,7 +6023,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -6470,6 +6496,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -6492,7 +6519,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -6518,7 +6545,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -6594,7 +6621,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -7066,6 +7093,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -7088,7 +7116,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -7114,7 +7142,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -7190,7 +7218,7 @@ exports[`ItemPageTable sorts list on header click 1`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -7573,6 +7601,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -7675,6 +7704,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -7699,6 +7729,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -7722,6 +7753,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -7745,6 +7777,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -7916,7 +7949,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -7941,7 +7974,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -7966,7 +7999,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -7991,7 +8024,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -8016,7 +8049,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -8041,7 +8074,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -8066,7 +8099,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -8091,7 +8124,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -8322,6 +8355,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -8346,6 +8380,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -8369,6 +8404,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -8393,6 +8429,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -8528,6 +8565,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -8966,6 +9004,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -8988,7 +9027,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -9014,7 +9053,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -9090,7 +9129,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -9563,6 +9602,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -9585,7 +9625,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -9611,7 +9651,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -9687,7 +9727,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -10159,6 +10199,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -10181,7 +10222,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -10207,7 +10248,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -10270,7 +10311,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -10283,7 +10324,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -10756,6 +10797,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -10778,7 +10820,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -10804,7 +10846,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -10867,7 +10909,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -10880,7 +10922,7 @@ exports[`ItemPageTable sorts list on header click 2`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -11263,6 +11305,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -11365,6 +11408,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -11389,6 +11433,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -11412,6 +11457,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -11435,6 +11481,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -11611,7 +11658,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11636,7 +11683,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11661,7 +11708,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11686,7 +11733,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11711,7 +11758,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11736,7 +11783,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11761,7 +11808,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -11786,7 +11833,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -12018,6 +12065,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -12042,6 +12090,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -12065,6 +12114,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -12088,6 +12138,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -12223,6 +12274,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -12667,6 +12719,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -12689,7 +12742,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -12715,7 +12768,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -12791,7 +12844,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -13264,6 +13317,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -13286,7 +13340,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -13312,7 +13366,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -13375,7 +13429,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -13388,7 +13442,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -13860,6 +13914,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -13882,7 +13937,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -13908,7 +13963,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -13984,7 +14039,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -14456,6 +14511,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -14478,7 +14534,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -14504,7 +14560,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -14567,7 +14623,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -14580,7 +14636,7 @@ exports[`ItemPageTable sorts list on header click 3`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -14963,6 +15019,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -15065,6 +15122,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -15089,6 +15147,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -15112,6 +15171,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -15135,6 +15195,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -15306,7 +15367,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15331,7 +15392,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15356,7 +15417,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15381,7 +15442,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15406,7 +15467,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15431,7 +15492,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15456,7 +15517,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15481,7 +15542,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -15713,6 +15774,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -15736,6 +15798,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -15760,6 +15823,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -15783,6 +15847,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -15918,6 +15983,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -16357,6 +16423,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -16379,7 +16446,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -16405,7 +16472,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -16468,7 +16535,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -16481,7 +16548,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -16953,6 +17020,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -16975,7 +17043,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -17001,7 +17069,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -17064,7 +17132,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -17077,7 +17145,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -17550,6 +17618,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -17572,7 +17641,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -17598,7 +17667,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -17674,7 +17743,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -18146,6 +18215,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -18168,7 +18238,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -18194,7 +18264,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -18270,7 +18340,7 @@ exports[`ItemPageTable sorts list on header click 4`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -18653,6 +18723,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -18755,6 +18826,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -18779,6 +18851,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -18802,6 +18875,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -18825,6 +18899,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -18996,7 +19071,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19021,7 +19096,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19046,7 +19121,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19071,7 +19146,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19096,7 +19171,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19121,7 +19196,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19146,7 +19221,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19171,7 +19246,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -19403,6 +19478,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -19426,6 +19502,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -19450,6 +19527,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -19473,6 +19551,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -19608,6 +19687,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -20047,6 +20127,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -20069,7 +20150,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -20095,7 +20176,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -20158,7 +20239,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -20171,7 +20252,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -20643,6 +20724,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -20665,7 +20747,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -20691,7 +20773,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -20754,7 +20836,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -20767,7 +20849,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -21240,6 +21322,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -21262,7 +21345,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -21288,7 +21371,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -21364,7 +21447,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -21836,6 +21919,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -21858,7 +21942,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -21884,7 +21968,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -21960,7 +22044,7 @@ exports[`ItemPageTable sorts list on header click 5`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -22343,6 +22427,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -22445,6 +22530,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -22469,6 +22555,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -22492,6 +22579,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -22515,6 +22603,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -22686,7 +22775,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22711,7 +22800,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22736,7 +22825,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22761,7 +22850,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22786,7 +22875,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22811,7 +22900,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22836,7 +22925,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -22861,7 +22950,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -23093,6 +23182,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -23117,6 +23207,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -23140,6 +23231,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -23163,6 +23255,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -23298,6 +23391,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -23737,6 +23831,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -23759,7 +23854,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -23785,7 +23880,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -23861,7 +23956,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -24334,6 +24429,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -24356,7 +24452,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -24382,7 +24478,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -24445,7 +24541,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -24458,7 +24554,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -24930,6 +25026,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -24952,7 +25049,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -24978,7 +25075,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -25054,7 +25151,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -25526,6 +25623,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -25548,7 +25646,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -25574,7 +25672,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -25637,7 +25735,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -25650,7 +25748,7 @@ exports[`ItemPageTable sorts list on header click 6`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -26033,6 +26131,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
           "interactionTypeCode": "EQ",
           "interactionTypeLabel": "Equation Multiple Choice choice",
           "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
           "itemKey": 3206,
           "stimulusKey": 56900,
           "subjectCode": "MATH",
@@ -26135,6 +26234,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeCode": "EQ",
         "interactionTypeLabel": "Equation Multiple Choice choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Moderate",
         "itemKey": 3206,
         "stimulusKey": 56900,
         "subjectCode": "MATH",
@@ -26159,6 +26259,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeCode": "MC",
         "interactionTypeLabel": "Multiple Choice",
         "isPerformanceItem": true,
+        "itemDifficulty": "Easy",
         "itemKey": 3163,
         "stimulusKey": 58679,
         "subjectCode": "ELA",
@@ -26182,6 +26283,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": true,
+        "itemDifficulty": "",
         "itemKey": 3615,
         "stimulusKey": 23461,
         "subjectCode": "MATH",
@@ -26205,6 +26307,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
         "interactionTypeCode": "MS",
         "interactionTypeLabel": "Multi Select",
         "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
         "itemKey": 2928,
         "stimulusKey": 87679,
         "subjectCode": "ELA",
@@ -26377,7 +26480,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26402,7 +26505,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26427,7 +26530,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26452,7 +26555,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26477,7 +26580,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26502,7 +26605,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort-asc"
+                  className="fa fa-sort-asc sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26527,7 +26630,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26552,7 +26655,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 </span>
                 <span
                   aria-hidden="true"
-                  className="fa fa-sort"
+                  className="fa fa-sort sort-icon"
                   style={
                     Object {
                       "color": "gray",
@@ -26783,6 +26886,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 2928,
               "stimulusKey": 87679,
               "subjectCode": "ELA",
@@ -26806,6 +26910,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeCode": "MS",
               "interactionTypeLabel": "Multi Select",
               "isPerformanceItem": true,
+              "itemDifficulty": "",
               "itemKey": 3615,
               "stimulusKey": 23461,
               "subjectCode": "MATH",
@@ -26830,6 +26935,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeCode": "MC",
               "interactionTypeLabel": "Multiple Choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
               "itemKey": 3163,
               "stimulusKey": 58679,
               "subjectCode": "ELA",
@@ -26854,6 +26960,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               "interactionTypeCode": "EQ",
               "interactionTypeLabel": "Equation Multiple Choice choice",
               "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
               "itemKey": 3206,
               "stimulusKey": 56900,
               "subjectCode": "MATH",
@@ -26989,6 +27096,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -27428,6 +27536,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": false,
+                "itemDifficulty": "Hard",
                 "itemKey": 2928,
                 "stimulusKey": 87679,
                 "subjectCode": "ELA",
@@ -27450,7 +27559,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -27476,7 +27585,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -27539,7 +27648,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -27552,7 +27661,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
@@ -28024,6 +28133,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeCode": "MS",
                 "interactionTypeLabel": "Multi Select",
                 "isPerformanceItem": true,
+                "itemDifficulty": "",
                 "itemKey": 3615,
                 "stimulusKey": 23461,
                 "subjectCode": "MATH",
@@ -28046,7 +28156,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -28072,7 +28182,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -28148,7 +28258,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
@@ -28621,6 +28731,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeCode": "MC",
                 "interactionTypeLabel": "Multiple Choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
                 "itemKey": 3163,
                 "stimulusKey": 58679,
                 "subjectCode": "ELA",
@@ -28643,7 +28754,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -28669,7 +28780,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -28732,7 +28843,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -28745,7 +28856,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
@@ -29218,6 +29329,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 "interactionTypeCode": "EQ",
                 "interactionTypeLabel": "Equation Multiple Choice choice",
                 "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
                 "itemKey": 3206,
                 "stimulusKey": 56900,
                 "subjectCode": "MATH",
@@ -29240,7 +29352,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
               onKeyUp={[Function]}
             >
               <ToolTip
-                className=""
+                className="btn-table-cell"
                 displayIcon={false}
                 displayText={
                   <td
@@ -29266,7 +29378,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                 }
               >
                 <span
-                  className="tool-tip-links "
+                  className="tool-tip-links btn-table-cell"
                   tabIndex={0}
                 >
                   <span
@@ -29342,7 +29454,7 @@ exports[`ItemPageTable sorts list on header click 7`] = `
                   key="grade"
                 >
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>

@@ -4,6 +4,11 @@ import {
   mapItemClaim,
   getClaimValue
 } from "@src/PrintCart/PrintCartItemTableRow";
+import {
+  ColumnGroup,
+  SortDirection,
+  getContentStandard
+} from "@src/ItemTable/ItemTableModels";
 
 export type HeaderType =
   | "Item"
@@ -28,60 +33,7 @@ export type HeaderType_NonInterimSite =
   | "Item Type"
   | "Target";
 
-export enum SortDirection {
-  NoSort = 0,
-  Ascending = 1,
-  Descending = -1
-}
-
-export interface HeaderSortModel {
-  col: ColumnGroup;
-  direction: SortDirection;
-  resetSortCount: number;
-}
-
-export interface SortColumnModel {
-  className: string;
-  accessor: (label: ItemCardModel) => string | number;
-  helpText?: (label: ItemCardModel) => string;
-}
-
-export interface ColumnGroup {
-  header: HeaderType;
-  headerClassName: string;
-  cols: SortColumnModel[];
-  compare: (a: ItemCardModel, b: ItemCardModel) => number;
-  headerHelp?: string;
-}
-export interface ColumnGroup_NonInterimSite {
-  header: HeaderType_NonInterimSite;
-  headerClassName: string;
-  cols: SortColumnModel[];
-  compare: (a: ItemCardModel, b: ItemCardModel) => number;
-  headerHelp?: string;
-}
-
-// Logic for content standard
-export function getContentStandard(
-  ccssDescription: any,
-  commonCoreStandardId: any,
-  subjectCode: any,
-  claimCode: any,
-  flag_sendcommonCoreStanrdId: boolean
-) {
-  const standard = getContentStandardCode(
-    subjectCode,
-    claimCode,
-    commonCoreStandardId,
-    ccssDescription
-  );
-  commonCoreStandardId = standard["commonCoreStandardId"];
-  ccssDescription = standard["ccssDescription"];
-  if (flag_sendcommonCoreStanrdId) return commonCoreStandardId;
-  else return ccssDescription;
-}
-
-export const headerColumns: ColumnGroup[] = [
+export const printCartColumnsInterim: ColumnGroup[] = [
   {
     header: "Item",
     headerClassName: "item",
@@ -106,20 +58,6 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) =>
       (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
       (b.stimulusKey !== undefined ? b.stimulusKey : 0)
-  },
-  {
-    header: "Item position in test",
-    headerClassName: "item-position-in-test",
-    cols: [
-      {
-        accessor: label =>
-          label.testOrder !== undefined ? label.testOrder : "",
-        className: "item-position-in-test"
-      }
-    ],
-    compare: (a, b) =>
-      (a.testOrder !== undefined ? a.testOrder : 0) -
-      (b.testOrder !== undefined ? b.testOrder : 0)
   },
   {
     header: "Subject",
@@ -151,6 +89,20 @@ export const headerColumns: ColumnGroup[] = [
       (a.testName !== undefined ? a.testName : "").localeCompare(
         b.testName !== undefined ? b.testName : ""
       )
+  },
+  {
+    header: "Item position in test",
+    headerClassName: "item-position-in-test",
+    cols: [
+      {
+        accessor: label =>
+          label.testOrder !== undefined ? label.testOrder : "",
+        className: "item-position-in-test"
+      }
+    ],
+    compare: (a, b) =>
+      (a.testOrder !== undefined ? a.testOrder : 0) -
+      (b.testOrder !== undefined ? b.testOrder : 0)
   },
   {
     header: "Claim",
@@ -252,18 +204,6 @@ export const headerColumns: ColumnGroup[] = [
       return direction;
     }
   },
-  // {
-  //   header: "Item Type",
-  //   headerClassName: "item-type",
-  //   cols: [
-  //     {
-  //       accessor: label => label.interactionTypeLabel,
-  //       className: "item-type"
-  //     }
-  //   ],
-  //   compare: (a, b) =>
-  //     a.interactionTypeCode.localeCompare(b.interactionTypeCode)
-  // }
   {
     header: "DOK",
     headerClassName: "dok",
@@ -297,7 +237,7 @@ export const headerColumns: ColumnGroup[] = [
 ];
 
 //For Non interim site
-export const headerColumns_nonInterimSite: ColumnGroup[] = [
+export const printCartColumnsNonInterimSite: ColumnGroup[] = [
   {
     header: "Item",
     headerClassName: "item",
