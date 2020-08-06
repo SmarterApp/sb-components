@@ -213,8 +213,8 @@ export class PrintCartModal extends React.Component<
           isOpen={modelState}
           contentLabel="About This Item Modal"
           onRequestClose={this.handleHideModal}
-          overlayClassName="react-modal-overlay"
-          className="react-modal-content about-item-modal print-cart-modal"
+          overlayClassName="react-modal-overlay react-modal-overlay-printcart"
+          className="react-modal-content-printcart"
           ariaHideApp={false}
         >
           <div

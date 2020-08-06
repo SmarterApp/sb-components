@@ -50,6 +50,22 @@
   padding: @spacing-unit;
 }
 
+.react-modal-content-printcart {
+  border: 1px solid rgb(204, 204, 204);
+  background: @sb-white;
+  border-radius: 4px;
+  outline: none;
+  margin-top: @spacing-unit*2;
+  margin-bottom: @spacing-unit*2;
+  padding: @spacing-unit;
+  min-width: 100%;
+  height: 580px;
+}
+.react-modal-overlay-printcart {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .modal-wrapper {
   display: flex;
   flex-direction: column;
@@ -72,6 +88,12 @@
 @media screen and (max-width: @small) {
   .react-modal-content {
     min-width: 95%;
+  }
+}
+
+@media screen and (max-width: @small) {
+  .react-modal-content-printcart {
+    min-width: 100%;
   }
 }
 
@@ -98,11 +120,7 @@
   height: 400px;
   width: 100%;
   padding: 0px !important;
-  // overflow-x: scroll !important;
   padding: auto !important;
-  // display: flex;
-  //  align-items: center;
-  //  justify-content: center;
 }
 
 .react-modal-download-size {

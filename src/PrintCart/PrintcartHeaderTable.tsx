@@ -24,14 +24,20 @@ const style = {
 };
 
 const descendingArrow = (
-  <span style={style} className="fa fa-sort-desc" aria-hidden="true" />
+  <span
+    style={style}
+    className="fa fa-sort-desc sort-icon"
+    aria-hidden="true"
+  />
 );
 
 const ascendingArrow = (
-  <span style={style} className="fa fa-sort-asc" aria-hidden="true" />
+  <span style={style} className="fa fa-sort-asc sort-icon" aria-hidden="true" />
 );
 
-const noSort = <span style={style} className="fa fa-sort" aria-hidden="true" />;
+const noSort = (
+  <span style={style} className="fa fa-sort sort-icon" aria-hidden="true" />
+);
 
 /**
  * HeaderTable creates a table header based on the passed in columns
