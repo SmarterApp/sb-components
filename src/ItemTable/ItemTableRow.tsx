@@ -61,6 +61,12 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     return true;
   }
 
+  //keyboard accessibility handler tooltip: select item on key press on tooltip
+  handleTooltipKeyPress = (e: any) => {
+    const item = this.props.rowData;
+    this.handleCheckboxClick(e, item, this.shouldRowButtonBeDisabled());
+  };
+
   handleRowClick = (rowData: ItemCardModel) => {
     this.props.onRowExpand(rowData);
   };
@@ -72,16 +78,36 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-  handleCheckboxKeyUpEnter = (
-    e: React.KeyboardEvent<HTMLTableDataCellElement>,
-    rowData: ItemCardModel
-  ) => {
-    if (e.keyCode === 13) {
-      e.stopPropagation();
-      this.props.onRowSelect(rowData);
+  //disabled button for an item if it associated PT item is already selected
+  shouldRowButtonBeDisabled = () => {
+    if (
+      this.props.rowData.selected === undefined ||
+      this.props.rowData.selected === false
+    ) {
+      if (this.props.associatedItems !== undefined) {
+        const associatedItems = this.props.associatedItems;
+        const itemKey = this.props.rowData.itemKey;
+        for (const itemKeyInAssociatedItems in associatedItems) {
+          const associatedItemsArray =
+            associatedItems[itemKeyInAssociatedItems];
+          for (let i = 0; i < associatedItemsArray.length; i++) {
+            if (associatedItemsArray[i][0].itemKey === itemKey)
+              return "disabled";
+          }
+        }
+      }
     }
+
+    return " ";
   };
 
+  /**
+   * @param e
+   * @param rowData
+   * @param shouldBeDisabled
+   * Select/deselect item on checkbox click
+   * Dot not perform any operation if item is PT item and any of its assocaited item is already selected
+   */
   handleCheckboxClick = (
     e: React.MouseEvent<HTMLTableDataCellElement>,
     rowData: ItemCardModel,
@@ -111,39 +137,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       else rowData.selected = true;
       this.props.onRowSelect(rowData);
       e.stopPropagation();
-    }
-  };
-
-  handleKeyUpSpacebar = (e: React.KeyboardEvent<HTMLTableDataCellElement>) => {
-    const rowData = this.props.rowData;
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      return;
-    }
-    if (e.keyCode === 32) {
-      e.preventDefault();
-      let selectedItemsCount = this.props.getSelectedItemCount();
-
-      if (rowData.selected !== true && selectedItemsCount >= 20) {
-        this.props.showErrorModalOnPrintItemsCountExceeded();
-        return;
-      } else {
-        if (rowData.selected === true) rowData.selected = false;
-        else rowData.selected = true;
-        this.props.onRowSelect(rowData);
-      }
-      e.preventDefault();
-    }
-  };
-
-  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
-    e.stopPropagation();
-  };
-
-  handleEnterKeyDown = (e: React.KeyboardEvent) => {
-    //if enter key is press prevent its default behaviour from selecting/clicking on elements
-    if (e.keyCode === 13) {
-      e.preventDefault();
     }
   };
 
@@ -218,28 +211,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
   renderControls(): JSX.Element[] | undefined {
     const { rowData, hasControls, isExpanded } = this.props;
 
-    const shouldBeDisabled = () => {
-      if (
-        this.props.rowData.selected === undefined ||
-        this.props.rowData.selected === false
-      ) {
-        if (this.props.associatedItems !== undefined) {
-          const associatedItems = this.props.associatedItems;
-          const itemKey = this.props.rowData.itemKey;
-          for (const itemKeyInAssociatedItems in associatedItems) {
-            const associatedItemsArray =
-              associatedItems[itemKeyInAssociatedItems];
-            for (let i = 0; i < associatedItemsArray.length; i++) {
-              if (associatedItemsArray[i][0].itemKey === itemKey)
-                return "disabled";
-            }
-          }
-        }
-      }
-
-      return " ";
-    };
-    const shouldBeDisabledResult = shouldBeDisabled();
+    const shouldBeDisabledResult = this.shouldRowButtonBeDisabled();
 
     const addOrRemoveIcon = () => {
       return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
@@ -256,48 +228,38 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       else return "Remove item from print queue ";
     };
 
-    const iconsAddOrRemove = (
-      // <td
-      //   className={`item-checkbox item-add-remove`}
-      //   onClick={e => this.handleCheckboxClick(e, rowData, shouldBeDisabled())}
-      //   onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-      //   tabIndex={0}
-      // >
+    const buttonAddOrRemove = (
       <button
         type="button"
         tabIndex={-1}
         className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
       >
         <i className={"fa fa-2x " + addOrRemoveIcon()} />
-        {/* {getAddRemoveTextBtn()} */}
       </button>
-      // </td>
     );
 
     const tooltip = generateTooltip({
       displayIcon: false,
       className: "btn-table-cell",
       helpText: <label>{getToolTipMsg()}</label>,
-      displayText: iconsAddOrRemove,
-      includeTabindex: false
+      displayText: buttonAddOrRemove,
+      onKeyPress: this.handleTooltipKeyPress
     });
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-      // controls = [<>{tooltip}</>];
       controls = [
         <td
           className="item-checkbox"
           key="checkbox-control"
           onClick={e =>
-            this.handleCheckboxClick(e, rowData, shouldBeDisabled())
+            this.handleCheckboxClick(
+              e,
+              rowData,
+              this.shouldRowButtonBeDisabled()
+            )
           }
-          // onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-          // onKeyUp={e =>  this.handleKeyUpEnterStopPropogation(e)}
           aria-label="Select item to print cart"
-          tabIndex={0}
-          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-          onKeyDown={e => this.handleEnterKeyDown(e)}
         >
           {tooltip}
         </td>

@@ -9,6 +9,7 @@ export interface ToolTipProps {
   side?: "left" | "right";
   className?: string;
   includeTabindex?: boolean;
+  onKeyPress?: (e: React.SyntheticEvent) => void;
 }
 
 /**
@@ -61,6 +62,17 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
     }
   }
 
+  handleKeyboardAccessibility = (
+    event: any,
+    keyboardEvent: React.KeyboardEvent
+  ) => {
+    if (keyboardEvent.keyCode === 13 || keyboardEvent.keyCode === 32) {
+      if (this.props.onKeyPress) {
+        this.props.onKeyPress(event);
+      }
+    }
+  };
+
   render() {
     const tabIndex: number =
       this.props.includeTabindex === undefined ||
@@ -71,6 +83,7 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
       <span
         className={`tool-tip-links ${this.props.className || ""}`}
         tabIndex={tabIndex}
+        onKeyUp={e => this.handleKeyboardAccessibility(e, e)}
       >
         {this.renderToolTipVisibleText()}
         <span className="tool-tip-details">{this.renderToolTipHelpText()}</span>
