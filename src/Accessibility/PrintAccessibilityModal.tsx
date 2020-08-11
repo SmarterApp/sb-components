@@ -62,7 +62,7 @@ export class PrintAccessibilityModal extends React.Component<
         <Select
           className="select-print-accessibility"
           label="Translation (Stacked)"
-          // labelClass="hidden"
+          aria-label="Translation (Stacked)"
           selected={selectedLanguageCode || ""}
           options={selectOptions}
           onChange={this.props.handleLanguageChange}
@@ -92,7 +92,7 @@ export class PrintAccessibilityModal extends React.Component<
       <Select
         className="select-print-accessibility"
         label="Illustration Glossary"
-        //labelClass="hidden"
+        aria-label="Illustration Glossary"
         selected={selectedIllustration || ""}
         options={selectOptions}
         onChange={this.props.handleIllustrationChange}
@@ -122,7 +122,8 @@ export class PrintAccessibilityModal extends React.Component<
         <Select
           className="select-print-accessibility form-control"
           label="English Glossary"
-          //labelClass="hidden"
+          aria-label="English Glossary"
+          tabIndex={0}
           selected={selectedGlossary || ""}
           options={selectOptions}
           onChange={this.props.handleGlossaryOptionChange}
@@ -170,8 +171,13 @@ export class PrintAccessibilityModal extends React.Component<
           <div className="accessibility-resource-type section section-light">
             <div className="accessibility-header">
               <h4 className="green-title">
-                <span className="fa fa-tasks" aria-hidden="true" /> Universal
-                Tools
+                <span
+                  className="fa fa-tasks"
+                  aria-hidden="true"
+                  aria-label="Universal Tools"
+                  // tabIndex={0}
+                />
+                Universal Tools
               </h4>
             </div>
 

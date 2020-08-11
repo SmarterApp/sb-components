@@ -54,6 +54,7 @@ export class PrintCartItemTableRow extends React.Component<
       <>
         <button
           className="btn btn-sm btn-danger btn-remove-item-print-cart"
+          aria-label="Remove selected item from print cart"
           onClick={() => this.onAddOrRemoveSelectedItems(item)}
         >
           X
@@ -350,6 +351,7 @@ export class PrintCartItemTableRow extends React.Component<
               <button
                 type="button"
                 onClick={this.handleOnUpArrowClick}
+                aria-label="Move item up"
                 className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
                   "UpArrowButton"
                 )}`}
@@ -359,6 +361,7 @@ export class PrintCartItemTableRow extends React.Component<
               <button
                 type="button"
                 onClick={this.handleOnDownArrowClick}
+                aria-label="Move item down"
                 className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
                   "DownArrowButton"
                 )}`}

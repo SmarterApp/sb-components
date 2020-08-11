@@ -271,13 +271,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: commonCoreStandardId
       });
 
-      const tooltip_printOption = generateTooltip({
-        displayIcon: true,
-        className: "box",
-        helpText: <span>Select to print this item</span>,
-        displayText: ""
-      });
-
       const addRemoveButton = (
         <button
           type="button"
@@ -320,13 +313,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
           helpText={noteForDisabledAssocitedItemsButton(
             shouldButtonBeDisabled()
           )}
+          includeTabindex={true}
           position="top"
         >
           {addRemoveButton}
         </ToolTip>
       );
       const toolTipNoText_AddRemoveItemFromPrintCart = (
-        <ToolTip className="tooltip-item-card-button">
+        <ToolTip className="tooltip-item-card-button" includeTabindex={true}>
           {addRemoveButton}
         </ToolTip>
       );

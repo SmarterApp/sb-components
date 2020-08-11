@@ -30,13 +30,14 @@ export const Select: React.SFC<SelectProps> = props => {
 
   return (
     <div className={props.wrapperClass || ""}>
-      <label>
+      <label htmlFor={props.label}>
         <span className={props.labelClass || ""}>{props.label}</span>
       </label>
       <select
         className={`form-control ${props.className || ""}`}
         onChange={e => props.onChange(e.target.value)}
         value={props.selected}
+        id={props.label}
         disabled={props.disabled}
         tabIndex={props.tabIndex}
       >

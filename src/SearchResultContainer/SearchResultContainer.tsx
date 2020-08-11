@@ -31,6 +31,7 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
+import { ToolTip } from "@src/ToolTip/ToolTip";
 
 /**
  * SearchResultType enum
@@ -692,10 +693,23 @@ export class SearchResultContainer extends React.Component<
    */
   renderHeader(): JSX.Element {
     const toShowModal = true;
+    const helptest = <span>this is helper text</span>;
     return (
       <div className="row search-result-header-row">
         <div className="col-sm-4 header-grid-div header-print-button-groups">
           {this.renderSelectAllButton(this.props.showSelectAllButton)}
+          <button
+            type="button"
+            // className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${cssForDisabledButton()}`}
+
+            tabIndex={0}
+            // onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+            // onKeyDown={e => this.handleEnterKeyDown(e)}
+          >
+            <i className={"fa  "} />
+            &nbsp;&nbsp;
+            <ToolTip helpText={helptest} displayText="hiiiii" />
+          </button>
         </div>
         <div className="col-sm-3 header-grid-div  ">
           {this.renderToggle(SearchResultType.Table)}

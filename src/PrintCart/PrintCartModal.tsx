@@ -169,6 +169,13 @@ export class PrintCartModal extends React.Component<
     }
   };
 
+  nextOrPrintBtnAriaLabel = () => {
+    if (this.state.currentStep === 1) return "Go Next wizard";
+    else {
+      return "Print items in cart to pdf";
+    }
+  };
+
   renderBody(): JSX.Element {
     return (
       <>
@@ -209,27 +216,25 @@ export class PrintCartModal extends React.Component<
     return (
       <div className="search-result-container">
         <ReactModal
-          // isOpen={this.state.showModal}
           isOpen={modelState}
-          contentLabel="About This Item Modal"
+          contentLabel="Print cart modal open"
           onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay react-modal-overlay-printcart"
           className="react-modal-content-printcart"
-          ariaHideApp={false}
         >
           <div
             className="modal-wrapper"
-            aria-labelledby="About Item Modal"
-            aria-hidden="true"
+            aria-labelledby="Print Cart"
+            // aria-hidden="true"
           >
             <div className="modal-header">
               <h4 className="modal-title">Print Cart</h4>
               <button
                 className="close"
                 onClick={this.handleHideModal}
-                aria-label="Close modal"
+                aria-label="Close print cart popup"
               >
-                <span className="fa fa-times" aria-hidden="true" />
+                <span className="fa fa-times" />
               </button>
             </div>
             <div className="modal-body print-cart-modal-body">
@@ -251,7 +256,7 @@ export class PrintCartModal extends React.Component<
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
-                aria-label="Close modal"
+                aria-label="Close print cart popup"
                 onClick={this.handleHideModal}
               >
                 Close
@@ -259,7 +264,7 @@ export class PrintCartModal extends React.Component<
 
               <button
                 className={"btn btn-primary " + this.previousButtonClassName()}
-                aria-label="Previous Btn Modal"
+                aria-label="Go to previous wizard"
                 onClick={this._previous}
               >
                 Previous
@@ -267,7 +272,7 @@ export class PrintCartModal extends React.Component<
 
               <button
                 className={"btn btn-primary " + this.nextButtonClassName()}
-                aria-label="Continue modal"
+                aria-label={this.nextOrPrintBtnAriaLabel()}
                 onClick={this.nextOrPrintBtnFunctin}
               >
                 {this.nextOrPrintButtonText()}

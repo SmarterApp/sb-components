@@ -8,6 +8,7 @@ export interface ToolTipProps {
   position?: "top" | "bottom";
   side?: "left" | "right";
   className?: string;
+  includeTabindex?: boolean;
 }
 
 /**
@@ -61,10 +62,15 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
   }
 
   render() {
+    const tabIndex: number =
+      this.props.includeTabindex === undefined ||
+      this.props.includeTabindex === true
+        ? 0
+        : -1;
     return (
       <span
         className={`tool-tip-links ${this.props.className || ""}`}
-        tabIndex={0}
+        tabIndex={tabIndex}
       >
         {this.renderToolTipVisibleText()}
         <span className="tool-tip-details">{this.renderToolTipHelpText()}</span>

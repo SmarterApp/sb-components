@@ -65,10 +65,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     this.props.onRowExpand(rowData);
   };
 
-  handleKeyUpEnter = (
-    e: React.KeyboardEvent<HTMLTableRowElement>,
-    rowData: ItemCardModel
-  ) => {
+  handleKeyUpEnter = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+    const rowData = this.props.rowData;
     if (e.keyCode === 13) {
       this.props.onRowExpand(rowData);
     }
@@ -116,10 +114,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   };
 
-  handleKeyUpSpacebar = (
-    e: React.KeyboardEvent<HTMLTableDataCellElement>,
-    rowData: ItemCardModel
-  ) => {
+  handleKeyUpSpacebar = (e: React.KeyboardEvent<HTMLTableDataCellElement>) => {
+    const rowData = this.props.rowData;
     if (e.keyCode === 13) {
       e.preventDefault();
       return;
@@ -142,6 +138,13 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
     e.stopPropagation();
+  };
+
+  handleEnterKeyDown = (e: React.KeyboardEvent) => {
+    //if enter key is press prevent its default behaviour from selecting/clicking on elements
+    if (e.keyCode === 13) {
+      e.preventDefault();
+    }
   };
 
   renderColumnGroup(
@@ -253,37 +256,52 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       else return "Remove item from print queue ";
     };
 
-    const getAddRemoveTextBtn = () => {
-      return rowData.selected === true ? " Remove" : " Add";
-    };
-
     const iconsAddOrRemove = (
-      <td
-        className={`item-checkbox item-add-remove`}
-        onClick={e => this.handleCheckboxClick(e, rowData, shouldBeDisabled())}
-        onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-        tabIndex={0}
+      // <td
+      //   className={`item-checkbox item-add-remove`}
+      //   onClick={e => this.handleCheckboxClick(e, rowData, shouldBeDisabled())}
+      //   onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
+      //   tabIndex={0}
+      // >
+      <button
+        type="button"
+        tabIndex={-1}
+        className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
       >
-        <button
-          type="button"
-          className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
-        >
-          <i className={"fa fa-2x " + addOrRemoveIcon()} />
-          {/* {getAddRemoveTextBtn()} */}
-        </button>
-      </td>
+        <i className={"fa fa-2x " + addOrRemoveIcon()} />
+        {/* {getAddRemoveTextBtn()} */}
+      </button>
+      // </td>
     );
 
     const tooltip = generateTooltip({
       displayIcon: false,
       className: "btn-table-cell",
       helpText: <label>{getToolTipMsg()}</label>,
-      displayText: iconsAddOrRemove
+      displayText: iconsAddOrRemove,
+      includeTabindex: false
     });
 
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
-      controls = [<>{tooltip}</>];
+      // controls = [<>{tooltip}</>];
+      controls = [
+        <td
+          className="item-checkbox"
+          key="checkbox-control"
+          onClick={e =>
+            this.handleCheckboxClick(e, rowData, shouldBeDisabled())
+          }
+          // onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
+          // onKeyUp={e =>  this.handleKeyUpEnterStopPropogation(e)}
+          aria-label="Select item to print cart"
+          tabIndex={0}
+          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+          onKeyDown={e => this.handleEnterKeyDown(e)}
+        >
+          {tooltip}
+        </td>
+      ];
     }
 
     return controls;
@@ -297,7 +315,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         key={`${rowData.bankKey}-${rowData.itemKey}`}
         className={isExpanded ? "selected" : ""}
         onClick={() => this.handleRowClick(rowData)}
-        onKeyUp={e => this.handleKeyUpEnter(e, rowData)}
+        onKeyUp={e => this.handleKeyUpEnter(e)}
       >
         {this.renderControls()}
         {columns.map(col => this.renderColumnGroup(col, rowData))}
