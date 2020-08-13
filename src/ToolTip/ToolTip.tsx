@@ -62,14 +62,26 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
     }
   }
 
+  handleKeyDown = (keyboardEvent: React.KeyboardEvent) => {
+    if (keyboardEvent.keyCode === 32) {
+      keyboardEvent.preventDefault();
+    }
+  };
+
   handleKeyboardAccessibility = (
     event: any,
     keyboardEvent: React.KeyboardEvent
   ) => {
-    if (keyboardEvent.keyCode === 13 || keyboardEvent.keyCode === 32) {
-      if (this.props.onKeyPress) {
-        this.props.onKeyPress(event);
-      }
+    let callOnKeyPressProps = false;
+    if (keyboardEvent.keyCode === 32) {
+      keyboardEvent.preventDefault();
+      callOnKeyPressProps = true;
+    }
+    if (keyboardEvent.keyCode === 13) {
+      callOnKeyPressProps = true;
+    }
+    if (this.props.onKeyPress && callOnKeyPressProps) {
+      this.props.onKeyPress(event);
     }
   };
 
@@ -84,6 +96,7 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
         className={`tool-tip-links ${this.props.className || ""}`}
         tabIndex={tabIndex}
         onKeyUp={e => this.handleKeyboardAccessibility(e, e)}
+        onKeyDown={e => this.handleKeyDown(e)}
       >
         {this.renderToolTipVisibleText()}
         <span className="tool-tip-details">{this.renderToolTipHelpText()}</span>

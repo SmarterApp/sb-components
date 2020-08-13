@@ -38,6 +38,7 @@ export const Select: React.SFC<SelectProps> = props => {
         onChange={e => props.onChange(e.target.value)}
         value={props.selected}
         id={props.label}
+        aria-label={props.label}
         disabled={props.disabled}
         tabIndex={props.tabIndex}
       >

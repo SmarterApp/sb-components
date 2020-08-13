@@ -170,7 +170,7 @@ export class PrintCartModal extends React.Component<
   };
 
   nextOrPrintBtnAriaLabel = () => {
-    if (this.state.currentStep === 1) return "Go Next wizard";
+    if (this.state.currentStep === 1) return "Go to next wizard";
     else {
       return "Print items in cart to pdf";
     }
@@ -217,10 +217,12 @@ export class PrintCartModal extends React.Component<
       <div className="search-result-container">
         <ReactModal
           isOpen={modelState}
-          contentLabel="Print cart modal open"
+          contentLabel="Print cart modal opened"
           onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay react-modal-overlay-printcart"
           className="react-modal-content-printcart"
+          shouldCloseOnEsc={false}
+          shouldCloseOnOverlayClick={false}
         >
           <div
             className="modal-wrapper"
@@ -232,17 +234,26 @@ export class PrintCartModal extends React.Component<
               <button
                 className="close"
                 onClick={this.handleHideModal}
-                aria-label="Close print cart popup"
+                aria-label="Close print cart modal"
               >
                 <span className="fa fa-times" />
               </button>
             </div>
             <div className="modal-body print-cart-modal-body">
-              <div className="status-message-print">
-                <strong>
+              <div
+                className="status-message-print"
+                role="dialog"
+                aria-labelledby="printCartItemsCount"
+                aria-describedby="printCartItemsCount"
+                tabIndex={0}
+              >
+                <strong id="">
                   {" "}
                   Total item(s) selected : {this.props.totalSelectedItemsCount}
                 </strong>{" "}
+                <h5 hidden id="printCartItemsCount">
+                  Total items selected : {this.props.totalSelectedItemsCount}
+                </h5>
                 <br />
               </div>
               <form id="accessibility-form">
@@ -256,16 +267,26 @@ export class PrintCartModal extends React.Component<
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
-                aria-label="Close print cart popup"
+                aria-label="Close print cart modal"
                 onClick={this.handleHideModal}
               >
                 Close
               </button>
 
               <button
-                className={"btn btn-primary " + this.previousButtonClassName()}
+                className={
+                  "btn btn-primary btn-wizard " + this.previousButtonClassName()
+                }
                 aria-label="Go to previous wizard"
+                aria-disabled={
+                  this.previousButtonClassName() === "disabled" ? true : false
+                }
                 onClick={this._previous}
+                id={
+                  this.previousButtonClassName() === "disabled"
+                    ? "disabled-wizard-btn"
+                    : "active-wizard-btn"
+                }
               >
                 Previous
               </button>

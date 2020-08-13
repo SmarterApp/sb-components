@@ -162,6 +162,8 @@ export class BasicFilterContainer extends React.Component<
             <button
               className="btn btn-default filter-button"
               onClick={this.props.resetHandler}
+              tabIndex={1}
+              aria-label="Reset filters"
             >
               Reset
             </button>
@@ -170,6 +172,8 @@ export class BasicFilterContainer extends React.Component<
             <button
               className="btn btn-default filter-button af-expand"
               onClick={this.handleClick}
+              tabIndex={1}
+              aria-label="Advanced filters"
             >
               Advanced Filters&nbsp;
               <span

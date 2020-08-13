@@ -39,7 +39,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
         <button
           className="close"
           onClick={this.handleHideModal}
-          aria-label="Close modal"
+          aria-label="Close PDF modal"
         >
           <span className="fa fa-times" aria-hidden="true" />
         </button>
@@ -52,7 +52,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
       <div className="modal-footer">
         <button
           className="btn btn-primary"
-          aria-label="Close modal"
+          aria-label="Download PDF"
           onClick={this.downloadPDF}
         >
           <i className="fa fa-download" />
@@ -61,7 +61,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 
         <button
           className="btn btn-primary"
-          aria-label="Close modal"
+          aria-label="Close PDF modal"
           onClick={this.handleHideModal}
         >
           Close
@@ -72,14 +72,10 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 
   renderModalWrapper() {
     return (
-      <div
-        className="modal-wrapper"
-        aria-labelledby={`${this.props.title} Modal`}
-        aria-hidden="true"
-      >
+      <div className="modal-wrapper" aria-labelledby={`PDF Modal`}>
         {this.renderHeader()}
-        <div className="modal-body">
-          <ItemViewerFrame {...this.props} />
+        <div className="modal-body" tabIndex={-1} aria-hidden="true">
+          <ItemViewerFrame {...this.props} tabIndex={-1} ariaHidden={true} />
         </div>
         {this.renderFooter()}
       </div>
@@ -92,7 +88,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
       <div className="search-result-container">
         <ReactModal
           isOpen={modelState}
-          contentLabel="About This Item Modal"
+          contentLabel="PDF modal opened"
           onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay"
           className="react-modal-content iframe-modal"

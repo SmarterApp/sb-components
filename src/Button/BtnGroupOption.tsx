@@ -25,6 +25,7 @@ export const BtnGroupOption: React.SFC<BtnGroupOptionProps> = props => {
   return (
     <button
       className={`btn btn-primary ${className}`}
+      id="btn-group-filter"
       role="switch"
       aria-checked={props.selected}
       disabled={props.disabled}

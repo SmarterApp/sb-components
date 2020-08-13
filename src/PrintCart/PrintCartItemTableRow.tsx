@@ -325,7 +325,7 @@ export class PrintCartItemTableRow extends React.Component<
   }
 
   render() {
-    const shouldReorderingButtonBeDisabled = (arrowButtonaName: string) => {
+    const shouldOrderingButtonBeDisabled = (arrowButtonaName: string) => {
       const currentItemIndex = this.props.index;
       const TotalItemsCard_length = this.props.TotalItemsCard.length;
       if (arrowButtonaName === "UpArrowButton" && currentItemIndex === 0) {
@@ -352,9 +352,19 @@ export class PrintCartItemTableRow extends React.Component<
                 type="button"
                 onClick={this.handleOnUpArrowClick}
                 aria-label="Move item up"
-                className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
+                aria-disabled={
+                  shouldOrderingButtonBeDisabled("UpArrowButton") === "disabled"
+                    ? true
+                    : false
+                }
+                className={`btn btn-sm btn-primary ${shouldOrderingButtonBeDisabled(
                   "UpArrowButton"
                 )}`}
+                id={
+                  shouldOrderingButtonBeDisabled("UpArrowButton") === "disabled"
+                    ? "disabled-move-item-btn"
+                    : "move-item-btn"
+                }
               >
                 <i className="fa fa-arrow-up" />
               </button>
@@ -362,9 +372,21 @@ export class PrintCartItemTableRow extends React.Component<
                 type="button"
                 onClick={this.handleOnDownArrowClick}
                 aria-label="Move item down"
-                className={`btn btn-sm btn-primary ${shouldReorderingButtonBeDisabled(
+                aria-disabled={
+                  shouldOrderingButtonBeDisabled("DownArrowButton") ===
+                  "disabled"
+                    ? true
+                    : false
+                }
+                className={`btn btn-sm btn-primary ${shouldOrderingButtonBeDisabled(
                   "DownArrowButton"
                 )}`}
+                id={
+                  shouldOrderingButtonBeDisabled("DownArrowButton") ===
+                  "disabled"
+                    ? "disabled-move-item-btn"
+                    : "move-item-btn"
+                }
               >
                 <i className="fa fa-arrow-down" />
               </button>
