@@ -170,7 +170,7 @@ export class PrintCartModal extends React.Component<
   };
 
   nextOrPrintBtnAriaLabel = () => {
-    if (this.state.currentStep === 1) return "Go to next wizard";
+    if (this.state.currentStep === 1) return "Go to next";
     else {
       return "Print items in cart to pdf";
     }
@@ -277,7 +277,7 @@ export class PrintCartModal extends React.Component<
                 className={
                   "btn btn-primary btn-wizard " + this.previousButtonClassName()
                 }
-                aria-label="Go to previous wizard"
+                aria-label="Go to previous"
                 aria-disabled={
                   this.previousButtonClassName() === "disabled" ? true : false
                 }
