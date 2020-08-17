@@ -31,6 +31,7 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
+import { ToolTip } from "@src/ToolTip/ToolTip";
 
 /**
  * SearchResultType enum
@@ -587,8 +588,8 @@ export class SearchResultContainer extends React.Component<
       return (
         <button
           onClick={this.handleResetItems}
-          aria-label="Clear Selection"
-          title="Clear Selection"
+          aria-label="Clear items from print cart"
+          title="Clear items from print cart"
           className={
             "btn btn-default search-result-container-header-button disabled"
           }
@@ -600,8 +601,8 @@ export class SearchResultContainer extends React.Component<
       return (
         <button
           onClick={this.handleResetItems}
-          aria-label="Clear Selection"
-          title="Clear Selection"
+          aria-label="Clear items from print cart"
+          title="Clear items from print cart"
           className={"btn btn-default search-result-container-header-button"}
         >
           <i aria-hidden="true" className="fa fa-eraser" /> Clear
@@ -648,8 +649,8 @@ export class SearchResultContainer extends React.Component<
       return (
         <button
           onClick={this.handleSelectAllItems}
-          aria-label="Select All"
-          title="Select All"
+          aria-label="Select all to print"
+          title="Select all to print"
           className={`btn btn-default search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
@@ -695,6 +696,7 @@ export class SearchResultContainer extends React.Component<
    */
   renderHeader(): JSX.Element {
     const toShowModal = true;
+    const helptest = <span>this is helper text</span>;
     return (
       <div className="row search-result-header-row">
         <div className="col-sm-4 header-grid-div header-print-button-groups">

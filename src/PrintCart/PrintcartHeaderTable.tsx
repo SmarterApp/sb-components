@@ -24,14 +24,20 @@ const style = {
 };
 
 const descendingArrow = (
-  <span style={style} className="fa fa-sort-desc" aria-hidden="true" />
+  <span
+    style={style}
+    className="fa fa-sort-desc sort-icon"
+    aria-hidden="true"
+  />
 );
 
 const ascendingArrow = (
-  <span style={style} className="fa fa-sort-asc" aria-hidden="true" />
+  <span style={style} className="fa fa-sort-asc sort-icon" aria-hidden="true" />
 );
 
-const noSort = <span style={style} className="fa fa-sort" aria-hidden="true" />;
+const noSort = (
+  <span style={style} className="fa fa-sort sort-icon" aria-hidden="true" />
+);
 
 /**
  * HeaderTable creates a table header based on the passed in columns
@@ -127,14 +133,9 @@ export class PrintcartHeaderTable extends React.Component<
       <thead>
         <tr className="primary">
           {this.props.isLinkTable ? undefined : <th colSpan={1} />}
-          <th colSpan={1} tabIndex={0} scope="col" />
+          <th colSpan={1} scope="col" />
           {this.props.columns.map(col => this.renderHeader(col))}
-          <th
-            className="th-arrrow-button"
-            colSpan={1}
-            tabIndex={0}
-            scope="col"
-          />
+          <th className="th-arrrow-button" colSpan={1} scope="col" />
         </tr>
       </thead>
     );

@@ -56,6 +56,7 @@ export class PrintCartButton extends React.Component<
     return (
       <button
         type="button"
+        aria-label="Open print cart popup"
         className="btn btn-default btn-sm btn-print-cart"
         onClick={() => this.props.onClick(true)}
       >

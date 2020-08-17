@@ -109,22 +109,19 @@ export class SIWFilter extends React.Component<SIWFilterProps, SIWFilterState> {
         />
       );
     }
+    const interimAlertHeader =
+      "Access interim assessment test questions by selecting a grade, subject, and either a test name or content area.";
+    const interimAlertMsg =
+      "These are the same interim items available to you in your test delivery system, but this site is designed to support more flexible uses of interim items for classroom instruction. Use the site to view individual items and answers, or select items to create a PDF you can download and print.";
 
     return (
       <div className="filter-component-wrapper">
         {this.props.IsInterimSite && (
           <div>
             <div className="alert alert-info" role="alert">
-              <strong>
-                Access interim assessment test questions by selecting a grade,
-                subject, and either a test name or content area.
-              </strong>
+              <strong>{interimAlertHeader}</strong>
               <br />
-              These are the same interim items available to you in your test
-              delivery system, but this site is designed to support more
-              flexible uses of interim items for classroom instruction. Use the
-              site to view individual items and answers, or select items to
-              create a PDF you can download and print.
+              {interimAlertMsg}
             </div>
           </div>
         )}

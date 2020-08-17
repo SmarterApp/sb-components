@@ -8,6 +8,8 @@ export interface ToolTipProps {
   position?: "top" | "bottom";
   side?: "left" | "right";
   className?: string;
+  includeTabindex?: boolean;
+  onKeyPress?: (e: React.SyntheticEvent) => void;
 }
 
 /**
@@ -60,11 +62,41 @@ export class ToolTip extends React.Component<ToolTipProps, {}> {
     }
   }
 
+  handleKeyDown = (keyboardEvent: React.KeyboardEvent) => {
+    if (keyboardEvent.keyCode === 32) {
+      keyboardEvent.preventDefault();
+    }
+  };
+
+  handleKeyboardAccessibility = (
+    event: any,
+    keyboardEvent: React.KeyboardEvent
+  ) => {
+    let callOnKeyPressProps = false;
+    if (keyboardEvent.keyCode === 32) {
+      keyboardEvent.preventDefault();
+      callOnKeyPressProps = true;
+    }
+    if (keyboardEvent.keyCode === 13) {
+      callOnKeyPressProps = true;
+    }
+    if (this.props.onKeyPress && callOnKeyPressProps) {
+      this.props.onKeyPress(event);
+    }
+  };
+
   render() {
+    const tabIndex: number =
+      this.props.includeTabindex === undefined ||
+      this.props.includeTabindex === true
+        ? 0
+        : -1;
     return (
       <span
         className={`tool-tip-links ${this.props.className || ""}`}
-        tabIndex={0}
+        tabIndex={tabIndex}
+        onKeyUp={e => this.handleKeyboardAccessibility(e, e)}
+        onKeyDown={e => this.handleKeyDown(e)}
       >
         {this.renderToolTipVisibleText()}
         <span className="tool-tip-details">{this.renderToolTipHelpText()}</span>

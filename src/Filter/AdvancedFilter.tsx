@@ -84,6 +84,7 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
             selected={t.isSelected}
             label={t.label}
             key={t.key}
+            ariaLabel={`Select ${this.props.label} ${t.label}`}
           />
         );
       });
@@ -109,7 +110,7 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
 
     return (
       <div className="filter-container-header">
-        <label>{tooltip}</label>
+        <label htmlFor="btn-group-filter">{tooltip}</label>
       </div>
     );
   }
@@ -233,9 +234,13 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
         helpText: text,
         displayIcon: text !== undefined,
         displayText: (
-          <span className="tooltip-label" info-label="true">
+          <label
+            className="tooltip-label"
+            info-label="true"
+            htmlFor="search-filter"
+          >
             {label}
-          </span>
+          </label>
         )
       });
 
@@ -245,6 +250,7 @@ export class AdvancedFilter extends React.Component<AdvancedFilterProps, {}> {
           <input
             className="form-control"
             type="text"
+            id="search-filter"
             onChange={t => this.searchHandler(t.currentTarget.value)}
             placeholder={placeholderText}
             value={value}

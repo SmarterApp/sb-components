@@ -55,6 +55,31 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     };
   }
 
+  shouldButtonBeDisabled = () => {
+    if (
+      this.props.rowData.selected === undefined ||
+      this.props.rowData.selected === false
+    ) {
+      if (this.props.associatedItems !== undefined) {
+        const associatedItems = this.props.associatedItems;
+        const itemKey = this.props.rowData.itemKey;
+        for (const itemKeyInAssociatedItems in associatedItems) {
+          const associatedItemsArray =
+            associatedItems[itemKeyInAssociatedItems];
+          for (let i = 0; i < associatedItemsArray.length; i++) {
+            if (associatedItemsArray[i][0].itemKey === itemKey) return true;
+          }
+        }
+      }
+    }
+    return false;
+  };
+
+  handleTooltipKeyPress = (e: React.SyntheticEvent) => {
+    const item = this.props.rowData;
+    this.handleCheckBoxChange(item, e, this.shouldButtonBeDisabled());
+  };
+
   shouldComponentUpdate(nextProps: ItemCardProps, nextState: ItemCardState) {
     // return nextState.redirect || nextState.isCheckBoxChanged;
     return true;
@@ -159,7 +184,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         : "fa-plus-square";
     };
     const cssForDisabledButton = () => {
-      const _shouldBeDisabled = shouldButtonBeDisabled();
+      const _shouldBeDisabled = this.shouldButtonBeDisabled();
       if (_shouldBeDisabled) {
         return "btn-add-remove-disabled-print-selection";
       } else return "";
@@ -168,35 +193,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       return this.props.rowData.selected === true
         ? " btn-selected"
         : " btn-unselected";
-    };
-    const shouldButtonBeDisabled = () => {
-      if (
-        this.props.rowData.selected === undefined ||
-        this.props.rowData.selected === false
-      ) {
-        if (this.props.associatedItems !== undefined) {
-          const associatedItems = this.props.associatedItems;
-          const itemKey = this.props.rowData.itemKey;
-          for (const itemKeyInAssociatedItems in associatedItems) {
-            const associatedItemsArray =
-              associatedItems[itemKeyInAssociatedItems];
-            for (let i = 0; i < associatedItemsArray.length; i++) {
-              if (associatedItemsArray[i][0].itemKey === itemKey) return true;
-            }
-          }
-        }
-      }
-      return false;
-    };
-
-    const shouldShowButtonToolTip = () => {
-      if (
-        (this.props.rowData.selected === undefined ||
-          this.props.rowData.selected === false) &&
-        this.props.rowData.isPerformanceItem === false
-      )
-        return false;
-      else return true;
     };
 
     const selectOrSelectedBtnText = () => {
@@ -219,36 +215,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       const addOrRemoveIcon = () => {
         return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
       };
-      const addOrRemoveIconClass = () => {
-        return this.props.rowData.selected === true
-          ? "btn-danger"
-          : "btn-warning";
-      };
       const getToolTipMsg = () => {
-        if (addOrRemoveIcon() === "fa-plus") return "Add item to print bucket";
-        else return "Remove item from print bucket ";
+        if (addOrRemoveIcon() === "fa-plus") return "Add item to print queue";
+        else return "Remove item from print queue ";
       };
-      const iconsAddOrRemove = (
-        <button
-          className={"item-add-remove btn btn-sm btn-default"}
-          onClick={e =>
-            this.handleCheckBoxChange(
-              this.props.rowData,
-              e,
-              shouldButtonBeDisabled()
-            )
-          }
-          //onKeyUp={e => this.handleCheckboxKeyUpEnter(e, rowData)}
-        >
-          <i className={"fa fa-lg " + addOrRemoveIcon()} />
-        </button>
-      );
-      const tooltip_addRemovePrintCart = generateTooltip({
-        displayIcon: false,
-        className: "",
-        helpText: <span>{getToolTipMsg()}</span>,
-        displayText: iconsAddOrRemove
-      });
+
       // Tooltip for content standard
       const subjectCode = this.props.rowData.subjectCode;
       const claimCode = this.props.rowData.claimCode;
@@ -271,13 +242,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: commonCoreStandardId
       });
 
-      const tooltip_printOption = generateTooltip({
-        displayIcon: true,
-        className: "box",
-        helpText: <span>Select to print this item</span>,
-        displayText: ""
-      });
-
       const addRemoveButton = (
         <button
           type="button"
@@ -286,12 +250,13 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             this.handleCheckBoxChange(
               this.props.rowData,
               e,
-              shouldButtonBeDisabled()
+              this.shouldButtonBeDisabled()
             )
           }
-          tabIndex={0}
-          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-          onKeyDown={e => this.handleEnterKeyDown(e)}
+          aria-hidden={true}
+          tabIndex={-1}
+          // onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+          // onKeyDown={e => this.handleEnterKeyDown(e)}
         >
           <i className={"fa  " + onBtnClickChangeIcon()} />
           &nbsp;&nbsp;
@@ -314,19 +279,26 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         else return <></>;
       };
 
-      const toolTipWithText_AddRemoveItemFromPrintCart = (
+      const AddRemoveButtonDisabled = (
         <ToolTip
           className="tooltip-item-card-button"
           helpText={noteForDisabledAssocitedItemsButton(
-            shouldButtonBeDisabled()
+            this.shouldButtonBeDisabled()
           )}
+          includeTabindex={true}
+          onKeyPress={this.handleTooltipKeyPress}
           position="top"
         >
           {addRemoveButton}
         </ToolTip>
       );
-      const toolTipNoText_AddRemoveItemFromPrintCart = (
-        <ToolTip className="tooltip-item-card-button">
+      const AddRemoveButtonActive = (
+        <ToolTip
+          className="tooltip-item-card-button"
+          helpText={<span>{getToolTipMsg()}</span>}
+          includeTabindex={true}
+          onKeyPress={this.handleTooltipKeyPress}
+        >
           {addRemoveButton}
         </ToolTip>
       );
@@ -393,9 +365,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            {shouldButtonBeDisabled()
-              ? toolTipWithText_AddRemoveItemFromPrintCart
-              : toolTipNoText_AddRemoveItemFromPrintCart}
+            {this.shouldButtonBeDisabled()
+              ? AddRemoveButtonDisabled
+              : AddRemoveButtonActive}
           </div>
         </div>
       );

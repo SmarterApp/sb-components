@@ -4,6 +4,8 @@ import { LoadingOverlay } from "../Layout/LoadingOverlay";
 export interface FrameProps {
   url?: string;
   title?: string;
+  tabIndex?: number;
+  ariaHidden?: boolean;
 }
 
 export interface FrameState {
@@ -53,8 +55,16 @@ export class ItemViewerFrame extends React.Component<FrameProps, FrameState> {
   }
 
   renderItem() {
+    const tabIndex =
+      this.props.tabIndex === undefined ? 0 : this.props.tabIndex;
+    const ariaHidden =
+      this.props.ariaHidden === undefined ? false : this.props.ariaHidden;
     return (
-      <div className="itemViewerFrame" tabIndex={0}>
+      <div
+        className="itemViewerFrame"
+        tabIndex={tabIndex}
+        aria-hidden={ariaHidden}
+      >
         {this.renderProgressBar()}
         <iframe
           // tslint:disable-next-line:react-iframe-missing-sandbox
