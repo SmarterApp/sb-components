@@ -21,7 +21,7 @@ import {
   ResourceSelectionsModel
 } from "@src/index";
 
-const calculatorURL = "http://calculator.smarterbalanced.org";
+const calculatorURL = "https://calculator.smarterbalanced.org";
 export interface ItemViewerContainerProps extends ItemPageModels.ItemPageModel {
   onSave: (accGroups: AccResourceGroupModel[]) => void;
   onReset: () => void;
