@@ -114,15 +114,12 @@ export class PrintcartHeaderTable extends React.Component<
     return (
       <th
         key={col.header}
-        className={col.headerClassName}
-        onClick={() => this.headerClickHandler(col, headerSort)}
-        onKeyUp={e => this.headerKeyUpHandler(e, col, headerSort)}
+        className={col.headerClassName}        
         tabIndex={0}
         scope="col"
       >
         <div className={col.headerClassName}>
-          <span>{col.header}</span>
-          {this.setDirElem(headerSort)}
+          <span>{col.header}</span>          
         </div>
       </th>
     );
