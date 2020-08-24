@@ -198,11 +198,6 @@ export class PrintAccessibilityModal extends React.Component<
                   <div className="accessibility-dropdown form-group selection-enabled">
                     {this.renderPrintDropdownOptions()}
                   </div>
-                  <div className="error-msg-print">
-                    <span className="error-msg-print-cart">
-                      Please select any item from a Test Name to continue.
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>

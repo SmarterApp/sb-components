@@ -81,7 +81,8 @@ export class PrintCartModal extends React.Component<
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
-      selectedGlossary: "true"
+      selectedGlossary: "true",
+      selectedPrintOption: "ITEMS-ONLY"
     });
   };
 
