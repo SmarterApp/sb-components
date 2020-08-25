@@ -10,6 +10,7 @@ export interface DownloadPDFModalProps {
   btnText?: string;
   btnClass?: string;
   btnIcon?: string;
+  pdfContentType: string;
 }
 
 export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
@@ -26,7 +27,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
     var a = document.createElement("a");
     document.body.appendChild(a);
     a.href = this.props.url;
-    const fileName = getFileNameAsPerDate();
+    const fileName = getFileNameAsPerDate(this.props.pdfContentType);
     a.download = fileName;
     a.click();
     //window.URL.revokeObjectURL(this.props.downloadPDFUrl);
@@ -102,7 +103,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
   }
 }
 
-function getFileNameAsPerDate() {
+function getFileNameAsPerDate(pdfContentType: string) {
   const currentdatatime = new Date();
   const day = currentdatatime.getDate();
   const month = currentdatatime.getMonth() + 1;
@@ -113,7 +114,19 @@ function getFileNameAsPerDate() {
   const hour = currentdatatime.getHours();
   const min = currentdatatime.getMinutes();
   const sec = currentdatatime.getSeconds();
-  const fileName =
-    "Sample Items Printout-" + day + "-" + month + "-" + year + ".pdf";
-  return fileName;
+  if (pdfContentType == "ANSWERS-AND-ITEMS") {
+    return (
+      "Sample Items and Answer Keys Printout-" +
+      day +
+      "-" +
+      month +
+      "-" +
+      year +
+      ".pdf"
+    );
+  } else if (pdfContentType == "ANSWERS-ONLY") {
+    return "Answer Keys Printout-" + day + "-" + month + "-" + year + ".pdf";
+  } else {
+    return "Sample Items Printout-" + day + "-" + month + "-" + year + ".pdf";
+  }
 }
