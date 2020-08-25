@@ -173,14 +173,14 @@ export function getPrintDropdownOptions(
   const selectOptions: SelectOptionProps[] = [];
 
   selectOptions.push({
-    label: "Items Only",
+    label: "Items only",
     value: "ITEMS-ONLY",
     disabled: false,
     selected: selectedPrintOption === "ITEMS-ONLY"
   });
 
   selectOptions.push({
-    label: "Answer Keys Only",
+    label: "Answer Keys only",
     value: "ANSWERS-ONLY",
     disabled: false,
     selected: selectedPrintOption === "ANSWERS-ONLY"

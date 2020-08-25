@@ -193,7 +193,7 @@ export class PrintAccessibilityModal extends React.Component<
         <form id="accessibility-form">
           <div className="accessibility-groups">
             <div className="accessibility-groups">
-              <div className="accessibility-resource-type section section-light">
+              <div className="accessibility-resource-type section section-light pdf-option">
                 <div className="accessibility-dropdowns">
                   <div className="accessibility-dropdown form-group selection-enabled">
                     {this.renderPrintDropdownOptions()}
