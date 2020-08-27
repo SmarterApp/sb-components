@@ -42,6 +42,10 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     return;
   },
 
+  onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => {
+    return;
+  },
+
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();

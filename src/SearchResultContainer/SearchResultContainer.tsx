@@ -60,6 +60,7 @@ export interface SearchResultContainerProps {
     IllustrationRequired: string,
     itemsInPrintCart: ItemCardModel[]
   ) => void;
+  onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => void;
   searchAPI: SearchAPIParamsModel;
   isInterimSite: boolean;
   onResetItems: () => void;
@@ -491,6 +492,17 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showModal: false, statusMessage: "" });
   };
 
+  /**
+   *
+   * @param itemsBrailleToDownload
+   * call downloadbraille method from props
+   */
+  onDownloadBraille = (itemsBrailleToDownload: {
+    [key: number]: string[];
+  }): void => {
+    this.props.onDownloadBraille(itemsBrailleToDownload);
+  };
+
   handleTypeChange = (renderType: SearchResultType): void => {
     this.setState({ renderType });
   };
@@ -802,14 +814,13 @@ export class SearchResultContainer extends React.Component<
           onChangeModelState={this.handleShowBrailleCartModal}
           itemsInCart={itemsInPrintCart}
           associatedItemsInPrintCart={associatedItemsInPrintCart}
-          onSubmitPrint={this.handlePrintItemsClick}
+          onDownloadBraille={this.onDownloadBraille}
           // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
           handleUpdateItemsinPrintCart={this.handleUpdateItemsinPrintCart}
           onAddOrRemoveSelectedItems={this.handleSelectItem}
           StatusMessage={statusMessage}
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
-          isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}

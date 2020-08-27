@@ -1,12 +1,15 @@
 import * as React from "react";
 import { SelectOption, SelectOptionProps } from "./SelectOption";
+import { ItemCard } from "@src/ItemCard/ItemCard";
+import { ItemCardModel } from "@src/ItemCard/ItemCardModels";
 
 /**
  * Select tag properties
  * @interface SelectProps
  */
 export interface SelectProps {
-  onChange: (val: string) => void;
+  onChange: (val: string, item?: ItemCardModel) => void;
+  // onChangeWithItem: (item: ItemCard, val: string) => void;
   label: string;
   selected: string;
   disabled?: boolean;
@@ -15,6 +18,7 @@ export interface SelectProps {
   labelClass?: string;
   wrapperClass?: string;
   tabIndex?: number;
+  forItem?: ItemCardModel;
 }
 
 /**
@@ -35,7 +39,12 @@ export const Select: React.SFC<SelectProps> = props => {
       </label>
       <select
         className={`form-control ${props.className || ""}`}
-        onChange={e => props.onChange(e.target.value)}
+        onChange={e =>
+          props.onChange(
+            e.target.value,
+            props.forItem !== undefined ? props.forItem : undefined
+          )
+        }
         value={props.selected}
         id={props.label}
         aria-label={props.label}

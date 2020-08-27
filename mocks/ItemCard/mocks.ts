@@ -25,7 +25,8 @@ export const completeItemCard: ItemCardModel = {
   commonCoreStandardId: "AB-123",
   ccssDescription: "this is the common core description",
   calculator: false,
-  itemDifficulty: "Hard"
+  itemDifficulty: "Hard",
+  availableBrailleTypes: ["EABE", "BAET"]
 
   // selected: false,
   // bankKey: 187,
@@ -75,7 +76,8 @@ export const itemCardList: ItemCardModel[] = [
     brailleOnlyItem: false,
     calculator: true,
     commonCoreStandardId: "6.M.1a",
-    itemDifficulty: "Moderate"
+    itemDifficulty: "Moderate",
+    availableBrailleTypes: ["No Braille", "UEB", "UCB", "XYZ"]
   },
   {
     bankKey: 187,
@@ -100,7 +102,8 @@ export const itemCardList: ItemCardModel[] = [
     brailleOnlyItem: false,
     calculator: false,
     commonCoreStandardId: "3.R.2a",
-    itemDifficulty: "Easy"
+    itemDifficulty: "Easy",
+    availableBrailleTypes: ["No Braille", "UEB", "UCB", "XYZ"]
   },
   {
     bankKey: 187,
@@ -124,7 +127,8 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "6.M.2b",
-    itemDifficulty: ""
+    itemDifficulty: "",
+    availableBrailleTypes: ["No Braille", "UEB", "UCB", "XYZ"]
   },
   {
     bankKey: 187,
@@ -148,7 +152,8 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "4.E.4a",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: ["No Braille", "EABE", "BAET", "ABC"]
   }
 ];
 
@@ -174,7 +179,8 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Easy"
+    itemDifficulty: "Easy",
+    availableBrailleTypes: ["UEB", "UCB"]
   },
   {
     bankKey: 187,
@@ -195,7 +201,8 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Moderate"
+    itemDifficulty: "Moderate",
+    availableBrailleTypes: ["UEB", "UCB"]
   },
   {
     bankKey: 187,
@@ -216,7 +223,8 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: ["UEB", "UCB"]
   },
   {
     bankKey: 187,
@@ -237,7 +245,8 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: ["EABE", "BAET"]
   }
 ];
 

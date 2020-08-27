@@ -10,21 +10,17 @@ import {
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleOptionsWizard } from "./BrailleOptionsWizard";
+import { getItemsWithSelectedBraille } from "./BrailleCart";
 
 export interface BrailleCartModalProps {
   showModal: boolean;
   onChangeModelState: (modelShowState: boolean) => void;
   onItemsReorder: (i: number, j: number) => void;
-  onSubmitPrint: (
-    langCode?: string,
-    GlossaryRequired?: string,
-    IllustrationRequired?: string
-  ) => void;
+  onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
   handleUpdateItemsinPrintCart: (itemsInPrintCart: ItemCardModel[]) => void;
   onAddOrRemoveSelectedItems: (item: ItemCardModel) => void;
-  isSelectedItemsHaveMathItem: boolean;
   associatedItemsInPrintCart?: ItemCardModel[];
   totalSelectedItemsCount: number;
   isInterimSite: boolean;
@@ -35,10 +31,6 @@ export interface BrailleCartModalState {
   isChanged: boolean;
   currentStep: number;
   itemsInPrintCart: ItemCardModel[];
-  isSelectedItemsHaveMathItem: boolean;
-  selectedLangCode: string;
-  selectedIllustration: string;
-  selectedGlossary: string;
 }
 
 export class BrailleCartModal extends React.Component<
@@ -47,76 +39,29 @@ export class BrailleCartModal extends React.Component<
 > {
   constructor(props: BrailleCartModalProps) {
     super(props);
-    //this.onAddOrRemoveSelectedItems = this.onAddOrRemoveSelectedItems.bind(this);
     this.state = {
       isChanged: false,
       currentStep: 1,
-      itemsInPrintCart: [],
-      isSelectedItemsHaveMathItem: false,
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true"
-      //isSelectedItemsHaveMathItem: false
+      itemsInPrintCart: []
     };
   }
 
   componentWillReceiveProps(nextProps: BrailleCartModalProps) {
-    if (
-      nextProps.isSelectedItemsHaveMathItem !==
-      this.props.isSelectedItemsHaveMathItem
-    )
-      this.setState({
-        itemsInPrintCart: nextProps.itemsInCart
-      });
-    else this.setState({ itemsInPrintCart: nextProps.itemsInCart });
+    this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
-  handlePrintItems = () => {
-    this.props.onSubmitPrint(
-      this.state.selectedLangCode,
-      this.state.selectedGlossary,
-      this.state.selectedIllustration
+  handleDownloadBraille = () => {
+    const itemsBrailleToDownload = getItemsWithSelectedBraille(
+      this.props.itemsInCart,
+      this.props.associatedItemsInPrintCart
     );
-    this.setState({
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true"
-    });
-  };
-
-  handleLanguageChange = (newLangCode: string) => {
-    if (newLangCode !== this.state.selectedLangCode) {
-      this.setState({
-        selectedLangCode: newLangCode
-      });
-    }
-  };
-
-  handleIllustrationChange = (newIllustration: string) => {
-    if (newIllustration !== this.state.selectedIllustration) {
-      this.setState({
-        selectedIllustration: newIllustration
-      });
-    }
-  };
-
-  handleGlossaryOptionChange = (newGlossaryOption: string) => {
-    if (newGlossaryOption !== this.state.selectedGlossary) {
-      this.setState({
-        selectedGlossary: newGlossaryOption
-      });
-    }
+    this.props.onDownloadBraille(itemsBrailleToDownload);
   };
 
   handleHideModal = () => {
-    this.setState({
-      selectedLangCode: "ENU",
-      selectedIllustration: "false",
-      selectedGlossary: "true"
-    });
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
-    this.props.handleUpdateItemsinPrintCart(this.state.itemsInPrintCart);
+    // this.props.handleUpdateItemsinPrintCart(this.state.itemsInPrintCart);
   };
 
   activeOrDisabled = () => {
@@ -146,7 +91,7 @@ export class BrailleCartModal extends React.Component<
 
   nextOrPrintButtonText = () => {
     if (this.state.currentStep === 1) return "Next";
-    else return "Print To PDF";
+    else return "Download Braille";
   };
 
   nextButtonClassName = () => {
@@ -158,7 +103,7 @@ export class BrailleCartModal extends React.Component<
   nextOrPrintBtnFunctin = () => {
     if (this.state.currentStep === 1) this._next();
     else {
-      this.handlePrintItems();
+      this.handleDownloadBraille();
       this.setState({ currentStep: 1 });
     }
   };
