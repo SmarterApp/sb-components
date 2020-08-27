@@ -32,6 +32,8 @@ export interface ItemCardModel {
   ccssDescription?: string;
   calculator?: boolean;
   releaseDate?: string;
+  selectedBrailleTypes?: string[];
+  // availableBrailleTypes: string[];
 }
 
 export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {
