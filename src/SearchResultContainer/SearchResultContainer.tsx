@@ -229,6 +229,13 @@ export class SearchResultContainer extends React.Component<
       delete item.selectionIndex;
     }
 
+    //Also reset the selected braille types of item, if item is unselected
+    if (item.selected === undefined || item.selected === false) {
+      if (item.selectedBrailleTypes !== undefined) {
+        item.selectedBrailleTypes = undefined;
+      }
+    }
+
     //Update test name in item if test name is selected by user
     if (
       this.props.searchAPI.testNames &&
