@@ -71,7 +71,7 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
 
   render() {
     return (
-      <header role="navigation">        
+      <header role="navigation">
         <nav className="nav-container" role="navigation">
           <div className="nav-content container">
             <div className="nav-titleGroup">
@@ -82,9 +82,10 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
                   href="https://smartertoolsforteachers.org/"
                   title="Smarter Balanced Tools For Teachers"
                 >
-                  <img 
-                    alt="Smarter Balanced Tools for Teachers Logo" 
-                    src={sbLogo} />
+                  <img
+                    alt="Smarter Balanced Tools for Teachers Logo"
+                    src={sbLogo}
+                  />
                 </a>
               </div>
               <div className="nav-titleGroup-item">
