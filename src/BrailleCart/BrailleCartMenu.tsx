@@ -4,11 +4,13 @@ import "@src/Assets/Styles/braille-cart.less";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import {
   brailleDropdownOptions,
-  getBrailleDowndrownOptions
+  getBrailleDowndrownOptions,
+  getAssociatedItems
 } from "./BrailleCart";
 
 export interface BrailleCartMenuProps {
   item: ItemCardModel;
+  associatedItemsInPrintCart?: ItemCardModel[];
 }
 
 export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
@@ -49,30 +51,55 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
     }
   };
 
+  renderSelectedBrailleForPtItems = () => {
+    const item = this.props.item;
+    let jsxForAssociatedItems: any;
+    if (item.isPerformanceItem) {
+      const associatedItems = getAssociatedItems(
+        item,
+        this.props.associatedItemsInPrintCart
+      );
+      if (associatedItems.length > 0) {
+        jsxForAssociatedItems = associatedItems.map(element => (
+          <>
+            <tr className="pt-items-row">
+              <td>{element.itemKey}</td>
+              <td />
+            </tr>
+          </>
+        ));
+      }
+    }
+    return jsxForAssociatedItems;
+  };
+
   renderBrailleMenu = () => {
     const item = this.props.item;
     return (
-      <tr>
-        <td>{item.itemKey}</td>
-        <td>
-          <label htmlFor="" />
-          <Multiselect
-            multiple
-            data={getBrailleDowndrownOptions(
-              brailleDropdownOptions,
-              item.availableBrailleTypes,
-              item.selectedBrailleTypes !== undefined
-                ? item.selectedBrailleTypes
-                : []
-            )}
-            numberDisplayed={1}
-            onChange={this.handleChangedBrailleType}
-            buttonWidth="150px"
-            aria-optionLabel={`Braille Option for ${item.itemKey}`}
-            tabIndex={0}
-          />
-        </td>
-      </tr>
+      <>
+        <tr>
+          <td>{item.itemKey}</td>
+          <td>
+            <label htmlFor="" />
+            <Multiselect
+              multiple
+              data={getBrailleDowndrownOptions(
+                brailleDropdownOptions,
+                item.availableBrailleTypes,
+                item.selectedBrailleTypes !== undefined
+                  ? item.selectedBrailleTypes
+                  : []
+              )}
+              numberDisplayed={1}
+              onChange={this.handleChangedBrailleType}
+              buttonWidth="150px"
+              aria-optionLabel={`Braille Option for ${item.itemKey}`}
+              tabIndex={0}
+            />
+          </td>
+        </tr>
+        {this.renderSelectedBrailleForPtItems()}
+      </>
     );
   };
 

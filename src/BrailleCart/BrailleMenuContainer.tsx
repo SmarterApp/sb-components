@@ -2,6 +2,7 @@ import * as React from "react";
 import { ItemCardModel } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import { BrailleCartMenu } from "./BrailleCartMenu";
+import { getBrailleLabelFromCode, getAssociatedItems } from "./BrailleCart";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
@@ -26,7 +27,13 @@ export class BrailleMenuContainer extends React.Component<
   renderBrailleMenu = () => {
     const itemsInCart = this.props.itemsInCart;
     let brailleMenu = null;
-    brailleMenu = itemsInCart.map(item => <BrailleCartMenu item={item} />);
+    brailleMenu = itemsInCart.map(item => (
+      <BrailleCartMenu
+        item={item}
+        associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
+      />
+    ));
+
     return brailleMenu;
   };
 

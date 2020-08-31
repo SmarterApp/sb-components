@@ -19,9 +19,11 @@ export const brailleDropdownOptions = [
 export function getBrailleDowndrownOptions(
   brailleTotalDropdownOptions: any[],
   availableBrailleValue: string[],
-  selectedBrailleValue: string[]
+  selectedBrailleValue: string[],
+  enableAllOptions: boolean = false
 ) {
   let brailleDropdownOptions: any[] = [];
+
   brailleTotalDropdownOptions.forEach(option => {
     if (availableBrailleValue.indexOf(option.value) !== -1) {
       brailleDropdownOptions.push({
