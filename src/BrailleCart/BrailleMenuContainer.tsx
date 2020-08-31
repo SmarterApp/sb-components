@@ -5,7 +5,9 @@ import { BrailleCartMenu } from "./BrailleCartMenu";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import {
   getBrailleDowndrownOptions,
-  brailleDropdownOptions
+  brailleDropdownOptions,
+  getBrailleLabelFromCode,
+  getAssociatedItems
 } from "./BrailleCart";
 
 export interface BrailleMenuContainerProps {
@@ -33,7 +35,13 @@ export class BrailleMenuContainer extends React.Component<
   renderBrailleMenu = () => {
     const itemsInCart = this.props.itemsInCart;
     let brailleMenu = null;
-    brailleMenu = itemsInCart.map(item => <BrailleCartMenu item={item} />);
+    brailleMenu = itemsInCart.map(item => (
+      <BrailleCartMenu
+        item={item}
+        associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
+      />
+    ));
+
     return brailleMenu;
   };
 
