@@ -114,12 +114,12 @@ export class PrintcartHeaderTable extends React.Component<
     return (
       <th
         key={col.header}
-        className={col.headerClassName}        
+        className={col.headerClassName}
         tabIndex={0}
         scope="col"
       >
         <div className={col.headerClassName}>
-          <span>{col.header}</span>          
+          <span>{col.header}</span>
         </div>
       </th>
     );

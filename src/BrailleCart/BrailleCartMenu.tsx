@@ -69,7 +69,6 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
             onChange={this.handleChangedBrailleType}
             // selectAllText="Select all"
             buttonWidth="200px"
-            numberDisplayed={1}
             // allSelectedText="All Selected"
             // includeSelectAllOption={true}
             aria-optionLabel={`Braille Option for ${item.itemKey}`}
