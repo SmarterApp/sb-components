@@ -55,6 +55,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
       <tr>
         <td>{item.itemKey}</td>
         <td>
+          <label htmlFor="" />
           <Multiselect
             multiple
             data={getBrailleDowndrownOptions(
@@ -66,7 +67,13 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
             )}
             numberDisplayed={1}
             onChange={this.handleChangedBrailleType}
-            selectAllText="Select all"
+            // selectAllText="Select all"
+            buttonWidth="200px"
+            numberDisplayed={1}
+            // allSelectedText="All Selected"
+            // includeSelectAllOption={true}
+            aria-optionLabel={`Braille Option for ${item.itemKey}`}
+            tabIndex={0}
           />
         </td>
       </tr>
