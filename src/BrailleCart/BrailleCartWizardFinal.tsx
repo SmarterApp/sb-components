@@ -36,8 +36,10 @@ export class BrailleCartWizardFinal extends React.Component<
         jsxForAssociatedItems = associatedItems.map(element => (
           <>
             <tr className="pt-items-row">
-              <td>{element.itemKey}</td>
-              <td>{this.renderSelectedBrailleInTag(item)}</td>
+              <td tabIndex={0}>{element.itemKey}</td>
+              <td className="braille-td-value" tabIndex={0}>
+                {this.renderSelectedBrailleInTag(item)}
+              </td>
             </tr>
           </>
         ));
@@ -68,8 +70,8 @@ export class BrailleCartWizardFinal extends React.Component<
     selectedBrailleListTableValue = itemsInCart.map(item => (
       <>
         <tr>
-          <td>{item.itemKey}</td>
-          <td className="braille-table-row-selected">
+          <td tabIndex={0}>{item.itemKey}</td>
+          <td className="braille-td-value" tabIndex={0}>
             {this.renderSelectedBrailleInTag(item)}
           </td>
         </tr>
@@ -88,10 +90,10 @@ export class BrailleCartWizardFinal extends React.Component<
             <table className="braille-menu-table braille-selected-confirmation-table">
               <thead>
                 <tr className="primary braille-cart-table-header">
-                  <td className="td-header" colSpan={1}>
+                  <td className="braille-cart-td-itemid" colSpan={1}>
                     Item Id
                   </td>
-                  <td className="td-header" colSpan={1}>
+                  <td className="braille-cart-td-selected" colSpan={1}>
                     Selected Braille Types
                   </td>
                 </tr>

@@ -53,7 +53,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
     const item = this.props.item;
     return (
       <tr>
-        <td>{item.itemKey}</td>
+        <td tabIndex={0}>{item.itemKey}</td>
         <td>
           <label htmlFor="" />
           <Multiselect

@@ -106,9 +106,14 @@ export class BrailleCartModal extends React.Component<
   };
 
   nextButtonClassName = () => {
-    if (this.state.currentStep === 3 && this.props.itemsInCart.length <= 0)
+    if (this.props.itemsInCart.length <= 0) {
       return "disabled";
-    else return "active";
+    } else {
+      return "active";
+    }
+    // if (this.state.currentStep === 3 && this.props.itemsInCart.length <= 0)
+    //   return "disabled";
+    // else return "active";
   };
 
   nextOrPrintBtnFunctin = () => {
@@ -240,7 +245,15 @@ export class BrailleCartModal extends React.Component<
               </button>
 
               <button
-                className={"btn btn-primary " + this.nextButtonClassName()}
+                className={
+                  "btn btn-primary btn-wizard-next-download " +
+                  this.nextButtonClassName()
+                }
+                id={
+                  this.nextButtonClassName() === "disabled"
+                    ? "disabled-wizard-btn"
+                    : "active-wizard-btn"
+                }
                 aria-label={this.nextOrPrintBtnAriaLabel()}
                 onClick={this.nextOrPrintBtnFunctin}
               >
