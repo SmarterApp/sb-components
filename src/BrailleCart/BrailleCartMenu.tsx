@@ -64,6 +64,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
                 ? item.selectedBrailleTypes
                 : []
             )}
+            numberDisplayed={1}
             onChange={this.handleChangedBrailleType}
             selectAllText="Select all"
           />

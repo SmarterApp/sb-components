@@ -628,7 +628,7 @@ export class SearchResultContainer extends React.Component<
           aria-label="Clear items from print cart"
           title="Clear items from print cart"
           className={
-            "btn btn-default search-result-container-header-button disabled"
+            "btn btn-default search-result-container-header-button disabled btn-sm"
           }
         >
           <i aria-hidden="true" className="fa fa-eraser" /> Clear
@@ -640,7 +640,9 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleResetItems}
           aria-label="Clear items from print cart"
           title="Clear items from print cart"
-          className={"btn btn-default search-result-container-header-button"}
+          className={
+            "btn btn-default search-result-container-header-button btn-sm"
+          }
         >
           <i aria-hidden="true" className="fa fa-eraser" /> Clear
         </button>
@@ -663,7 +665,7 @@ export class SearchResultContainer extends React.Component<
         onClick={() => this.handleShowBrailleCartModal(true)}
         aria-label="Open barille cart modal"
         title="Open barille cart modal"
-        className={"btn btn-default search-result-container-header-button"}
+        className={"btn btn-default btn-sm "}
       >
         <i aria-hidden="true" className="fa fa-braille" /> Braille Cart
       </button>

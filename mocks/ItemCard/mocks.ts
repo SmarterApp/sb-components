@@ -77,7 +77,13 @@ export const itemCardList: ItemCardModel[] = [
     calculator: true,
     commonCoreStandardId: "6.M.1a",
     itemDifficulty: "Moderate",
-    availableBrailleTypes: ["No Braille", "TDS_BT_ECN", "UCB", "TDS_BT_ECL"]
+    availableBrailleTypes: [
+      "No Braille",
+      "TDS_BT_ECN",
+      "TDS_BT_UCB",
+      "TDS_BT_ECL",
+      "TDS_BT_EXN"
+    ]
   },
   {
     bankKey: 187,
@@ -103,7 +109,13 @@ export const itemCardList: ItemCardModel[] = [
     calculator: false,
     commonCoreStandardId: "3.R.2a",
     itemDifficulty: "Easy",
-    availableBrailleTypes: ["No Braille", "TDS_BT_ECN", "UCB", "TDS_BT_ECL"]
+    availableBrailleTypes: [
+      "No Braille",
+      "TDS_BT_ECN",
+      "TDS_BT_UCB",
+      "TDS_BT_ECL",
+      "TDS_BT_EXN"
+    ]
   },
   {
     bankKey: 187,
