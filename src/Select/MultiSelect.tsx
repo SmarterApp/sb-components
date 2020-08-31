@@ -28,17 +28,23 @@ export class MultiSelect extends React.Component<
     this.setState({ isDisplayOn: isDisplayOn });
   };
 
-  shiftFocus = (e: React.KeyboardEvent<HTMLElement>) => {
+  shiftFocus = (e: React.KeyboardEvent<HTMLElement>, idx: number) => {
     if (e.keyCode == 40) {
-      $(".move:focus")
-        .next()
-        .focus();
+      idx = idx + 1;
+      const ids = idx.toString();
+      const dom = document.getElementById(ids);
+      if (dom !== null) {
+        dom.focus();
+      }
     }
-
+    //down
     if (e.keyCode == 38) {
-      $(".move:focus")
-        .prev()
-        .focus();
+      idx = idx - 1;
+      const ids = idx.toString();
+      const dom = document.getElementById(ids);
+      if (dom !== null) {
+        dom.focus();
+      }
     }
   };
 
@@ -58,32 +64,41 @@ export class MultiSelect extends React.Component<
             Dropdown button
           </button>
           <form className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <label className="dropdown-item">
+            <label className="dropdown-item" htmlFor="1">
               <input
                 tabIndex={0}
-                onKeyDown={e => this.shiftFocus(e)}
+                onKeyDown={e => this.shiftFocus(e, 1)}
                 type="checkbox"
+                aria-aria-label="checkbox 1"
                 name=""
                 value="one"
+                id="1"
               />First checkbox
             </label>
-            <label className="dropdown-item">
+            <label
+              className="dropdown-item"
+              htmlFor="2"
+              aria-aria-label="checkbox 1"
+            >
               <input
                 tabIndex={0}
-                onKeyDown={e => this.shiftFocus(e)}
-                disabled
+                onKeyDown={e => this.shiftFocus(e, 2)}
+                aria-aria-label="checkbox 2"
                 type="checkbox"
                 name=""
                 value="two"
+                id="2"
               />Second checkbox
             </label>
-            <label className="dropdown-item">
+            <label className="dropdown-item" htmlFor="3">
               <input
                 tabIndex={0}
-                onKeyDown={e => this.shiftFocus(e)}
+                onKeyDown={e => this.shiftFocus(e, 3)}
+                aria-aria-label="checkbox 3"
                 type="checkbox"
                 name=""
                 value="three"
+                id="3"
               />Third checkbox
             </label>
           </form>
