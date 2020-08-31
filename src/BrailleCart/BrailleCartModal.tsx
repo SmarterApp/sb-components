@@ -11,6 +11,7 @@ import {
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleOptionsWizard } from "./BrailleOptionsWizard";
 import { getItemsWithSelectedBraille } from "./BrailleCart";
+import { BrailleCartWizardFinal } from "./BrailleCartWizardFinal";
 
 export interface BrailleCartModalProps {
   showModal: boolean;
@@ -76,32 +77,43 @@ export class BrailleCartModal extends React.Component<
 
   _previous = () => {
     let currentStep = this.state.currentStep;
-    currentStep = currentStep === 2 ? 1 : 1;
+    if (currentStep === 3) currentStep = 2;
+    else if (currentStep === 2) currentStep = 1;
+    else currentStep = 1;
     this.setState({
       currentStep: currentStep
     });
   };
-  _next = () => {
+  _next_selectBraille = () => {
     let currentStep = this.state.currentStep;
     currentStep = currentStep === 1 ? 2 : 0;
     this.setState({
       currentStep: currentStep
     });
   };
+  _next_displayFinalSelection = () => {
+    let currentStep = this.state.currentStep;
+    currentStep = currentStep === 2 ? 3 : 0;
+    this.setState({
+      currentStep: currentStep
+    });
+  };
 
   nextOrPrintButtonText = () => {
-    if (this.state.currentStep === 1) return "Next";
+    if (this.state.currentStep === 1 || this.state.currentStep === 2)
+      return "Next";
     else return "Download Braille";
   };
 
   nextButtonClassName = () => {
-    if (this.state.currentStep === 1 && this.props.itemsInCart.length <= 0)
+    if (this.state.currentStep === 3 && this.props.itemsInCart.length <= 0)
       return "disabled";
     else return "active";
   };
 
   nextOrPrintBtnFunctin = () => {
-    if (this.state.currentStep === 1) this._next();
+    if (this.state.currentStep === 1) this._next_selectBraille();
+    else if (this.state.currentStep === 2) this._next_displayFinalSelection();
     else {
       this.handleDownloadBraille();
       this.setState({ currentStep: 1 });
@@ -131,6 +143,13 @@ export class BrailleCartModal extends React.Component<
         />
 
         <BrailleOptionsWizard
+          itemsInCart={this.props.itemsInCart}
+          currentStep={this.state.currentStep}
+          onChangeModelState={this.props.onChangeModelState}
+          associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
+        />
+
+        <BrailleCartWizardFinal
           itemsInCart={this.props.itemsInCart}
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}

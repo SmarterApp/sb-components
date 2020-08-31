@@ -82,3 +82,32 @@ export function getItemsWithSelectedBraille(
   });
   return itemsWithSelectedBraille;
 }
+
+export function getBrailleLabelFromCode(brailleShortCode: string) {
+  let brailleFullName: string | null = null;
+  const brailleOptions = brailleDropdownOptions;
+  for (let i = 0; i < brailleOptions.length; i++) {
+    if (brailleOptions[i].value === brailleShortCode) {
+      brailleFullName = brailleOptions[i].label;
+    }
+  }
+  return brailleFullName;
+}
+
+//Get associated items for a PT item in form of array of type - ItemCardModel[]
+//return empty arrays if associated items not found
+export function getAssociatedItems(
+  item: ItemCardModel,
+  associatedItems?: any[]
+) {
+  let associatedPtItems: ItemCardModel[] = [];
+  if (item.isPerformanceItem && associatedItems !== undefined) {
+    if (item.itemKey in associatedItems) {
+      const associatedItemsArray = associatedItems[item.itemKey];
+      for (let i = 0; i < associatedItemsArray.length; i++) {
+        associatedPtItems.push(associatedItemsArray[i][0]);
+      }
+    }
+  }
+  return associatedPtItems;
+}

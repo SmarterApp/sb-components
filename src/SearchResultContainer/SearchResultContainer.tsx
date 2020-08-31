@@ -508,6 +508,7 @@ export class SearchResultContainer extends React.Component<
     [key: number]: string[];
   }): void => {
     this.props.onDownloadBraille(itemsBrailleToDownload);
+    this.setState({ showBrailleModal: false, statusMessage: "" });
   };
 
   handleTypeChange = (renderType: SearchResultType): void => {
