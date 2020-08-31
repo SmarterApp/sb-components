@@ -1,14 +1,13 @@
 import * as React from "react";
-import { ItemCardModel } from "@src/index";
+import { ItemCardModel, ToolTip } from "@src/index";
 import "bootstrap";
 import "@src/Assets/Styles/braille-cart.less";
-import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import {
-  TestCodeToLabel,
-  ItemIdToTestNameMap
-} from "@src/ItemSearch/ItemSearchModels";
-import { BrailleMenuContainer } from "./BrailleMenuContainer";
-import { getBrailleLabelFromCode, getAssociatedItems } from "./BrailleCart";
+  getBrailleLabelFromCode,
+  getAssociatedItems,
+  ptItemsToolTipMessage,
+  isAnyBrailleOptionSelected
+} from "./BrailleCart";
 
 export interface BrailleOptionsWizardProps {
   itemsInCart: ItemCardModel[];
@@ -25,6 +24,10 @@ export class BrailleCartWizardFinal extends React.Component<
     super(props);
   }
 
+  ptItemsToolTipMessage = () => {
+    return <span>{ptItemsToolTipMessage}</span>;
+  };
+
   renderSelectedBrailleForPtItems = (item: ItemCardModel) => {
     let jsxForAssociatedItems: any;
     if (item.isPerformanceItem) {
@@ -36,7 +39,15 @@ export class BrailleCartWizardFinal extends React.Component<
         jsxForAssociatedItems = associatedItems.map(element => (
           <>
             <tr className="pt-items-row">
-              <td tabIndex={0}>{element.itemKey}</td>
+              {/* <td tabIndex={0}>{element.itemKey}</td> */}
+              <td>
+                <ToolTip
+                  helpText={this.ptItemsToolTipMessage()}
+                  displayText={item.itemKey}
+                  position="bottom"
+                  displayIcon={true}
+                />
+              </td>
               <td className="braille-td-value" tabIndex={0}>
                 {this.renderSelectedBrailleInTag(item)}
               </td>
@@ -86,6 +97,15 @@ export class BrailleCartWizardFinal extends React.Component<
     else {
       return (
         <>
+          <div
+            tabIndex={0}
+            className="alert alert-danger"
+            hidden={isAnyBrailleOptionSelected(this.props.itemsInCart)}
+          >
+            <strong /> Please select a braille option of any item to download
+            the Braille file.
+          </div>
+
           <div className="section item-table-container">
             <table className="braille-menu-table braille-selected-confirmation-table">
               <thead>

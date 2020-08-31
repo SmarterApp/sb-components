@@ -10,7 +10,10 @@ import {
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleOptionsWizard } from "./BrailleOptionsWizard";
-import { getItemsWithSelectedBraille } from "./BrailleCart";
+import {
+  getItemsWithSelectedBraille,
+  isAnyBrailleOptionSelected
+} from "./BrailleCart";
 import { BrailleCartWizardFinal } from "./BrailleCartWizardFinal";
 
 export interface BrailleCartModalProps {
@@ -108,7 +111,12 @@ export class BrailleCartModal extends React.Component<
   nextButtonClassName = () => {
     if (this.props.itemsInCart.length <= 0) {
       return "disabled";
-    } else {
+    } else if (
+      this.state.currentStep === 3 &&
+      isAnyBrailleOptionSelected(this.props.itemsInCart) === false
+    )
+      return "disabled";
+    else {
       return "active";
     }
     // if (this.state.currentStep === 3 && this.props.itemsInCart.length <= 0)

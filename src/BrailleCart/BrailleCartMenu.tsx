@@ -1,11 +1,12 @@
 import * as React from "react";
-import { ItemCardModel } from "@src/index";
+import { ItemCardModel, ToolTip } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import {
   brailleDropdownOptions,
   getBrailleDowndrownOptions,
-  getAssociatedItems
+  getAssociatedItems,
+  ptItemsToolTipMessage
 } from "./BrailleCart";
 
 export interface BrailleCartMenuProps {
@@ -51,6 +52,10 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
     }
   };
 
+  ptItemsToolTipMessage = () => {
+    return <span>{ptItemsToolTipMessage}</span>;
+  };
+
   renderSelectedBrailleForPtItems = () => {
     const item = this.props.item;
     let jsxForAssociatedItems: any;
@@ -63,7 +68,14 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
         jsxForAssociatedItems = associatedItems.map(element => (
           <>
             <tr className="pt-items-row">
-              <td>{element.itemKey}</td>
+              <td>
+                <ToolTip
+                  helpText={this.ptItemsToolTipMessage()}
+                  displayText={item.itemKey}
+                  position="bottom"
+                  displayIcon={true}
+                />
+              </td>
               <td />
             </tr>
           </>

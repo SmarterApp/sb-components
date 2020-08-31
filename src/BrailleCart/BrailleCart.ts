@@ -126,3 +126,16 @@ export function getAssociatedItems(
   }
   return associatedPtItems;
 }
+
+export function isAnyBrailleOptionSelected(itemsInCart: ItemCardModel[]) {
+  let isAnyBrailleOptionSelected: boolean = false;
+  itemsInCart.forEach(item => {
+    if (item.selectedBrailleTypes && item.selectedBrailleTypes.length > 0) {
+      isAnyBrailleOptionSelected = true;
+    }
+  });
+  return isAnyBrailleOptionSelected;
+}
+
+export const ptItemsToolTipMessage =
+  "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
