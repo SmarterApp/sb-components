@@ -69,7 +69,9 @@ export class BrailleCartWizardFinal extends React.Component<
       <>
         <tr>
           <td>{item.itemKey}</td>
-          <td>{this.renderSelectedBrailleInTag(item)}</td>
+          <td className="braille-table-row-selected">
+            {this.renderSelectedBrailleInTag(item)}
+          </td>
         </tr>
         {this.renderSelectedBrailleForPtItems(item)}
       </>
@@ -83,9 +85,9 @@ export class BrailleCartWizardFinal extends React.Component<
       return (
         <>
           <div className="section item-table-container">
-            <table className="braille-menu-table">
+            <table className="braille-menu-table braille-selected-confirmation-table">
               <thead>
-                <tr className="primary">
+                <tr className="primary braille-cart-table-header">
                   <td className="td-header" colSpan={1}>
                     Item Id
                   </td>

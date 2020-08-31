@@ -20,27 +20,40 @@ export function getBrailleDowndrownOptions(
   brailleTotalDropdownOptions: any[],
   availableBrailleValue: string[],
   selectedBrailleValue: string[],
-  enableAllOptions: boolean = false
+  enableAllOptions?: boolean
 ) {
   let brailleDropdownOptions: any[] = [];
 
-  brailleTotalDropdownOptions.forEach(option => {
-    if (availableBrailleValue.indexOf(option.value) !== -1) {
+  //enable all options if parameter is provided for that
+  if (enableAllOptions !== undefined && enableAllOptions === true) {
+    brailleTotalDropdownOptions.forEach(option => {
       brailleDropdownOptions.push({
         label: option.label,
-        value: option.value,
-        selected:
-          selectedBrailleValue.indexOf(option.value) !== -1 ? true : false
+        value: option.value
       });
-    } else {
-      brailleDropdownOptions.push({
-        label: option.label,
-        value: option.value,
-        selected: false,
-        disabled: true
-      });
-    }
-  });
+    });
+  } else {
+    //Enable only avaialble options and assign true to selected if option is already selected
+    //and is already attached with item property - selectedBrailleValue
+    brailleTotalDropdownOptions.forEach(option => {
+      if (availableBrailleValue.indexOf(option.value) !== -1) {
+        brailleDropdownOptions.push({
+          label: option.label,
+          value: option.value,
+          selected:
+            selectedBrailleValue.indexOf(option.value) !== -1 ? true : false
+        });
+      } else {
+        brailleDropdownOptions.push({
+          label: option.label,
+          value: option.value,
+          selected: false,
+          disabled: true
+        });
+      }
+    });
+  }
+
   return brailleDropdownOptions;
 }
 
