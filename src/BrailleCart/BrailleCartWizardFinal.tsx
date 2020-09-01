@@ -100,8 +100,7 @@ export class BrailleCartWizardFinal extends React.Component<
             className="alert alert-danger braille-alert-msg"
             hidden={isAnyBrailleOptionSelected(this.props.itemsInCart)}
           >
-            <strong /> Please select a braille option of any item to download
-            the Braille file.
+            <strong /> Please select a braille option for at least one item. .
           </div>
 
           <div className="section item-table-container">

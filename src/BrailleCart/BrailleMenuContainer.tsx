@@ -86,7 +86,7 @@ export class BrailleMenuContainer extends React.Component<
     this.props.itemsInCart.forEach(item => {
       let applicableBraille: string[] = [];
 
-      this.props.universalSelectedBraille.forEach(brailleToApply => {
+      this.state.universalSelectedBraille.forEach(brailleToApply => {
         item.availableBrailleTypes.forEach(option => {
           if (
             option.selectionCode == brailleToApply &&
@@ -132,8 +132,8 @@ export class BrailleMenuContainer extends React.Component<
           className="alert alert-warning braille-alert-msg"
           hidden={this.state.showAlertMsg === true ? false : true}
         >
-          <strong /> Some Braille from selected option is/are not applicable for
-          some of the item.
+          <strong /> Some of the items in the cart does not have the selected
+          Braille options.
         </div>
 
         <table className="braille-menu-table">
