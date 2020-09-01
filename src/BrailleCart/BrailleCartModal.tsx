@@ -54,29 +54,6 @@ export class BrailleCartModal extends React.Component<
     this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
-  handleUpdateUniversalSelectedBraille = (
-    operation: string,
-    selectedBraille: string
-  ) => {
-    let univeralSelectedBraille = this.state.universalSelectedBraille.slice();
-
-    if (operation === "ADD") {
-      if (univeralSelectedBraille.indexOf(selectedBraille) === -1) {
-        univeralSelectedBraille.push(selectedBraille);
-      }
-    }
-
-    if (operation === "REMOVE") {
-      if (univeralSelectedBraille.indexOf(selectedBraille) !== -1) {
-        univeralSelectedBraille = univeralSelectedBraille.filter(
-          x => x !== selectedBraille
-        );
-      }
-    }
-
-    this.setState({ universalSelectedBraille: univeralSelectedBraille });
-  };
-
   handleDownloadBraille = () => {
     const itemsBrailleToDownload = getItemsWithSelectedBraille(
       this.props.itemsInCart,
@@ -183,10 +160,6 @@ export class BrailleCartModal extends React.Component<
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
-          onUpdateUniversalSelectedBraille={
-            this.handleUpdateUniversalSelectedBraille
-          }
-          universalSelectedBraille={this.state.universalSelectedBraille}
         />
 
         <BrailleCartWizardFinal
