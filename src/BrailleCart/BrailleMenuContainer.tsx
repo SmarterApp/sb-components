@@ -14,16 +14,12 @@ import {
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
   associatedItemsInPrintCart?: ItemCardModel[];
-  onUpdateUniversalSelectedBraille: (
-    operation: string,
-    selectedBraille: string
-  ) => void;
-  universalSelectedBraille: string[];
 }
 
 export interface BrailleMenuContainerState {
   isSelectedValueChanged: boolean;
   showAlertMsg: boolean;
+  universalSelectedBraille: string[];
 }
 
 export class BrailleMenuContainer extends React.Component<
@@ -34,21 +30,41 @@ export class BrailleMenuContainer extends React.Component<
     super(props);
     this.state = {
       isSelectedValueChanged: false,
-      showAlertMsg: false
+      showAlertMsg: false,
+      universalSelectedBraille: []
     };
     this.handleApplyAll = this.handleApplyAll.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps: BrailleMenuContainerProps) {
-  //   this.setState({selectedBrailleTypes: this.props.universalSelectedBraille});
-  // }
+  handleUpdateUniversalSelectedBraille = (
+    operation: string,
+    selectedBraille: string
+  ) => {
+    let univeralSelectedBraille = this.state.universalSelectedBraille.slice();
+
+    if (operation === "ADD") {
+      if (univeralSelectedBraille.indexOf(selectedBraille) === -1) {
+        univeralSelectedBraille.push(selectedBraille);
+      }
+    }
+
+    if (operation === "REMOVE") {
+      if (univeralSelectedBraille.indexOf(selectedBraille) !== -1) {
+        univeralSelectedBraille = univeralSelectedBraille.filter(
+          x => x !== selectedBraille
+        );
+      }
+    }
+
+    this.setState({ universalSelectedBraille: univeralSelectedBraille });
+  };
 
   handleApplyAll = (v: MultiselectValue[]) => {
     //Check if option get selected
     if (v[0].selected && v[0].selected === true) {
-      this.props.onUpdateUniversalSelectedBraille("ADD", v[0].value);
+      this.handleUpdateUniversalSelectedBraille("ADD", v[0].value);
     } else {
-      this.props.onUpdateUniversalSelectedBraille("REMOVE", v[0].value);
+      this.handleUpdateUniversalSelectedBraille("REMOVE", v[0].value);
     }
   };
 
@@ -66,21 +82,10 @@ export class BrailleMenuContainer extends React.Component<
   };
 
   applyBrailleTypeToAll = () => {
-    // this.props.itemsInCart.forEach(element => {
-    //   element.selectedBrailleTypes = this.state.selectedBrailleTypes;
-    // });
-    // this.forceUpdate();
-
-    // this.props.itemsInCart.forEach(item => {
-    //   if(item.selectedBrailleTypes === undefined)
-    //       item.selectedBrailleTypes = [];
-    //   item.selectedBrailleTypes = this.props.universalSelectedBraille;
-    // })
-
     let showAlertMsg = false;
     this.props.itemsInCart.forEach(item => {
       let applicableBraille: string[] = [];
-      this.props.universalSelectedBraille.forEach(brailleToApply => {
+      this.state.universalSelectedBraille.forEach(brailleToApply => {
         if (item.availableBrailleTypes.indexOf(brailleToApply) !== -1) {
           applicableBraille.push(brailleToApply);
         } else {
@@ -104,7 +109,7 @@ export class BrailleMenuContainer extends React.Component<
             multiple
             data={getBrailleUniversalOptions(
               brailleDropdownOptions,
-              this.props.universalSelectedBraille
+              this.state.universalSelectedBraille
             )}
             numberDisplayed={1}
             onChange={this.handleApplyAll}

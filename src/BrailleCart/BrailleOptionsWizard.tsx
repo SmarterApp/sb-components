@@ -13,11 +13,6 @@ export interface BrailleOptionsWizardProps {
   StatusMessage?: string;
   currentStep: number;
   associatedItemsInPrintCart?: ItemCardModel[];
-  onUpdateUniversalSelectedBraille: (
-    operation: string,
-    selectedBraille: string
-  ) => void;
-  universalSelectedBraille: string[];
 }
 
 export class BrailleOptionsWizard extends React.Component<
@@ -35,10 +30,6 @@ export class BrailleOptionsWizard extends React.Component<
           <BrailleMenuContainer
             itemsInCart={this.props.itemsInCart}
             associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
-            onUpdateUniversalSelectedBraille={
-              this.props.onUpdateUniversalSelectedBraille
-            }
-            universalSelectedBraille={this.props.universalSelectedBraille}
           />
         </>
       );
