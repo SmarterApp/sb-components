@@ -161,20 +161,33 @@ export function getBrailleOptions(itemModel: ItemCardModel) {
   });
   return _options;
 }
+
 //get universal braille selection options
 export function getBrailleUniversalOptions(
-  brailleTotalDropdownOptions: any[],
+  itemsInCart: ItemCardModel[],
   selectedBrailleValue: string[]
 ) {
+  debugger;
   let brailleDropdownOptions: any[] = [];
 
-  brailleTotalDropdownOptions.forEach(option => {
-    const isSelected =
-      selectedBrailleValue.indexOf(option.value) !== -1 ? true : false;
-    brailleDropdownOptions.push({
-      label: option.label,
-      value: option.value,
-      selected: isSelected
+  itemsInCart.forEach(option => {
+    option.availableBrailleTypes.forEach(bt => {
+      if (bt.selectionCode !== "TDS_BT0") {
+        if (
+          brailleDropdownOptions.filter(bo => bo.value == bt.selectionCode)
+            .length == 0
+        ) {
+          const isSelected =
+            selectedBrailleValue.indexOf(bt.selectionCode) !== -1
+              ? true
+              : false;
+          brailleDropdownOptions.push({
+            label: bt.label,
+            value: bt.selectionCode,
+            selected: isSelected
+          });
+        }
+      }
     });
   });
   return brailleDropdownOptions;

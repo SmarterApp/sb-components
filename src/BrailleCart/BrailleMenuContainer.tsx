@@ -66,26 +66,20 @@ export class BrailleMenuContainer extends React.Component<
   };
 
   applyBrailleTypeToAll = () => {
-    // this.props.itemsInCart.forEach(element => {
-    //   element.selectedBrailleTypes = this.state.selectedBrailleTypes;
-    // });
-    // this.forceUpdate();
-
-    // this.props.itemsInCart.forEach(item => {
-    //   if(item.selectedBrailleTypes === undefined)
-    //       item.selectedBrailleTypes = [];
-    //   item.selectedBrailleTypes = this.props.universalSelectedBraille;
-    // })
-
     let showAlertMsg = false;
     this.props.itemsInCart.forEach(item => {
       let applicableBraille: string[] = [];
       this.props.universalSelectedBraille.forEach(brailleToApply => {
-        if (item.availableBrailleTypes.indexOf(brailleToApply) !== -1) {
-          applicableBraille.push(brailleToApply);
-        } else {
-          showAlertMsg = true;
-        }
+        item.availableBrailleTypes.forEach(option => {
+          if (
+            option.selectionCode == brailleToApply &&
+            option.disabled == false
+          ) {
+            applicableBraille.push(brailleToApply);
+          } else {
+            showAlertMsg = true;
+          }
+        });
       });
       if (item.selectedBrailleTypes === undefined)
         item.selectedBrailleTypes = [];
@@ -103,7 +97,7 @@ export class BrailleMenuContainer extends React.Component<
           <Multiselect
             multiple
             data={getBrailleUniversalOptions(
-              brailleDropdownOptions,
+              this.props.itemsInCart,
               this.props.universalSelectedBraille
             )}
             numberDisplayed={1}
