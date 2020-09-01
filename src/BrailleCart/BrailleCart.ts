@@ -139,3 +139,26 @@ export function isAnyBrailleOptionSelected(itemsInCart: ItemCardModel[]) {
 
 export const ptItemsToolTipMessage =
   "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
+
+export function getBrailleOptions(itemModel: ItemCardModel) {
+  debugger;
+  let _options: any[] = [];
+
+  itemModel.availableBrailleTypes.forEach(option => {
+    if (option.selectionCode !== "TDS_BT0") {
+      _options.push({
+        label: option.label,
+        value: option.selectionCode,
+        selected:
+          itemModel.selectedBrailleTypes !== undefined
+            ? itemModel.selectedBrailleTypes.indexOf(option.selectionCode) !==
+              -1
+              ? true
+              : false
+            : false,
+        disabled: option.disabled
+      });
+    }
+  });
+  return _options;
+}
