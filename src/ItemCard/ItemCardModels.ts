@@ -33,7 +33,7 @@ export interface ItemCardModel {
   calculator?: boolean;
   releaseDate?: string;
   selectedBrailleTypes?: string[];
-  availableBrailleTypes: string[];
+  availableBrailleTypes: any[];
 }
 
 export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {

@@ -6,7 +6,8 @@ import {
   brailleDropdownOptions,
   getBrailleDowndrownOptions,
   getAssociatedItems,
-  ptItemsToolTipMessage
+  ptItemsToolTipMessage,
+  getBrailleOptions
 } from "./BrailleCart";
 
 export interface BrailleCartMenuProps {
@@ -95,13 +96,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
             <label htmlFor="" />
             <Multiselect
               multiple
-              data={getBrailleDowndrownOptions(
-                brailleDropdownOptions,
-                item.availableBrailleTypes,
-                item.selectedBrailleTypes !== undefined
-                  ? item.selectedBrailleTypes
-                  : []
-              )}
+              data={getBrailleOptions(item)}
               numberDisplayed={1}
               onChange={this.handleChangedBrailleType}
               buttonWidth="200px"
