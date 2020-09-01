@@ -1,10 +1,8 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
-import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
-import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
+import { ItemCardModel } from "@src/index";
 import { PrintWizardSteps1 } from "@src/PrintCart/PrintWizardSteps";
-import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
+import "bootstrap";
 import {
   TestCodeToLabel,
   ItemIdToTestNameMap
@@ -35,6 +33,7 @@ export interface BrailleCartModalState {
   isChanged: boolean;
   currentStep: number;
   itemsInPrintCart: ItemCardModel[];
+  universalSelectedBraille: string[];
 }
 
 export class BrailleCartModal extends React.Component<
@@ -46,13 +45,37 @@ export class BrailleCartModal extends React.Component<
     this.state = {
       isChanged: false,
       currentStep: 1,
-      itemsInPrintCart: []
+      itemsInPrintCart: [],
+      universalSelectedBraille: []
     };
   }
 
   componentWillReceiveProps(nextProps: BrailleCartModalProps) {
     this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
+
+  handleUpdateUniversalSelectedBraille = (
+    operation: string,
+    selectedBraille: string
+  ) => {
+    let univeralSelectedBraille = this.state.universalSelectedBraille.slice();
+
+    if (operation === "ADD") {
+      if (univeralSelectedBraille.indexOf(selectedBraille) === -1) {
+        univeralSelectedBraille.push(selectedBraille);
+      }
+    }
+
+    if (operation === "REMOVE") {
+      if (univeralSelectedBraille.indexOf(selectedBraille) !== -1) {
+        univeralSelectedBraille = univeralSelectedBraille.filter(
+          x => x !== selectedBraille
+        );
+      }
+    }
+
+    this.setState({ universalSelectedBraille: univeralSelectedBraille });
+  };
 
   handleDownloadBraille = () => {
     const itemsBrailleToDownload = getItemsWithSelectedBraille(
@@ -160,6 +183,10 @@ export class BrailleCartModal extends React.Component<
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
+          onUpdateUniversalSelectedBraille={
+            this.handleUpdateUniversalSelectedBraille
+          }
+          universalSelectedBraille={this.state.universalSelectedBraille}
         />
 
         <BrailleCartWizardFinal
@@ -219,15 +246,15 @@ export class BrailleCartModal extends React.Component<
               </div>
               <form id="accessibility-form">
                 <div className="accessibility-groups">
-                  {/* <div className="accessibility-resource-type section section-light"> */}
-                  {this.renderBody()}
-                  {/* </div> */}
+                  <div className="accessibility-resource-type section section-light">
+                    {this.renderBody()}
+                  </div>
                 </div>
               </form>
             </div>
             <div className="modal-footer">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary btn-sm "
                 aria-label="Close braille Cart modal"
                 onClick={this.handleHideModal}
               >
@@ -236,7 +263,8 @@ export class BrailleCartModal extends React.Component<
 
               <button
                 className={
-                  "btn btn-primary btn-wizard " + this.previousButtonClassName()
+                  "btn btn-primary btn-wizard btn-sm " +
+                  this.previousButtonClassName()
                 }
                 aria-label="Go to previous"
                 aria-disabled={
@@ -254,7 +282,7 @@ export class BrailleCartModal extends React.Component<
 
               <button
                 className={
-                  "btn btn-primary btn-wizard-next-download " +
+                  "btn btn-primary btn-wizard-next-download btn-sm " +
                   this.nextButtonClassName()
                 }
                 id={

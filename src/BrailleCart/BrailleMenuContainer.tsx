@@ -7,17 +7,23 @@ import {
   getBrailleDowndrownOptions,
   brailleDropdownOptions,
   getBrailleLabelFromCode,
-  getAssociatedItems
+  getAssociatedItems,
+  getBrailleUniversalOptions
 } from "./BrailleCart";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
   associatedItemsInPrintCart?: ItemCardModel[];
+  onUpdateUniversalSelectedBraille: (
+    operation: string,
+    selectedBraille: string
+  ) => void;
+  universalSelectedBraille: string[];
 }
 
 export interface BrailleMenuContainerState {
-  selectedBrailleType: { [key: number]: string[] };
-  selectedBrailleTypes?: string[];
+  isSelectedValueChanged: boolean;
+  showAlertMsg: boolean;
 }
 
 export class BrailleMenuContainer extends React.Component<
@@ -27,36 +33,22 @@ export class BrailleMenuContainer extends React.Component<
   constructor(props: BrailleMenuContainerProps) {
     super(props);
     this.state = {
-      selectedBrailleType: {},
-      selectedBrailleTypes: []
+      isSelectedValueChanged: false,
+      showAlertMsg: false
     };
+    this.handleApplyAll = this.handleApplyAll.bind(this);
   }
 
-  handleApplyAll = (v: MultiselectValue[]) => {
-    debugger;
+  // componentWillReceiveProps(nextProps: BrailleMenuContainerProps) {
+  //   this.setState({selectedBrailleTypes: this.props.universalSelectedBraille});
+  // }
 
+  handleApplyAll = (v: MultiselectValue[]) => {
     //Check if option get selected
     if (v[0].selected && v[0].selected === true) {
-      if (this.state.selectedBrailleTypes === undefined)
-        this.setState({ selectedBrailleTypes: [] });
-      else if (this.state.selectedBrailleTypes.indexOf(v[0].value) === -1) {
-        this.state.selectedBrailleTypes.push(v[0].value);
-      }
+      this.props.onUpdateUniversalSelectedBraille("ADD", v[0].value);
     } else {
-      //else - option is unselected
-      if (this.state.selectedBrailleTypes !== undefined) {
-        if (this.state.selectedBrailleTypes.indexOf(v[0].value) !== -1) {
-          const filteredSelectedBrailleType = this.state.selectedBrailleTypes.filter(
-            option => option != v[0].value
-          );
-          this.setState({ selectedBrailleTypes: filteredSelectedBrailleType });
-        }
-        //check if selected Braille array for an item is empty,
-        // make it undefined if it is empty
-        if (this.state.selectedBrailleTypes.length <= 0) {
-          this.setState({ selectedBrailleTypes: undefined });
-        }
-      }
+      this.props.onUpdateUniversalSelectedBraille("REMOVE", v[0].value);
     }
   };
 
@@ -74,11 +66,33 @@ export class BrailleMenuContainer extends React.Component<
   };
 
   applyBrailleTypeToAll = () => {
-    debugger;
-    this.props.itemsInCart.forEach(element => {
-      element.selectedBrailleTypes = this.state.selectedBrailleTypes;
+    // this.props.itemsInCart.forEach(element => {
+    //   element.selectedBrailleTypes = this.state.selectedBrailleTypes;
+    // });
+    // this.forceUpdate();
+
+    // this.props.itemsInCart.forEach(item => {
+    //   if(item.selectedBrailleTypes === undefined)
+    //       item.selectedBrailleTypes = [];
+    //   item.selectedBrailleTypes = this.props.universalSelectedBraille;
+    // })
+
+    let showAlertMsg = false;
+    this.props.itemsInCart.forEach(item => {
+      let applicableBraille: string[] = [];
+      this.props.universalSelectedBraille.forEach(brailleToApply => {
+        if (item.availableBrailleTypes.indexOf(brailleToApply) !== -1) {
+          applicableBraille.push(brailleToApply);
+        } else {
+          showAlertMsg = true;
+        }
+      });
+      if (item.selectedBrailleTypes === undefined)
+        item.selectedBrailleTypes = [];
+      item.selectedBrailleTypes = applicableBraille;
+      console.log("checking*******", item);
     });
-    this.forceUpdate();
+    this.setState({ isSelectedValueChanged: true, showAlertMsg: showAlertMsg });
   };
 
   render() {
@@ -88,11 +102,9 @@ export class BrailleMenuContainer extends React.Component<
           <b>Braille Options : </b>
           <Multiselect
             multiple
-            data={getBrailleDowndrownOptions(
+            data={getBrailleUniversalOptions(
               brailleDropdownOptions,
-              [],
-              [],
-              true
+              this.props.universalSelectedBraille
             )}
             numberDisplayed={1}
             onChange={this.handleApplyAll}
@@ -103,6 +115,14 @@ export class BrailleMenuContainer extends React.Component<
           <a className="" onClick={this.applyBrailleTypeToAll}>
             Apply to all
           </a>
+        </div>
+
+        <div
+          className="alert alert-warning braille-alert-msg"
+          hidden={this.state.showAlertMsg === true ? false : true}
+        >
+          <strong /> Some Braille from selected option is/are not applicable for
+          some of the item.
         </div>
 
         <table className="braille-menu-table">

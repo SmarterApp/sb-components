@@ -39,7 +39,6 @@ export class BrailleCartWizardFinal extends React.Component<
         jsxForAssociatedItems = associatedItems.map(element => (
           <>
             <tr className="pt-items-row">
-              {/* <td tabIndex={0}>{element.itemKey}</td> */}
               <td>
                 <ToolTip
                   helpText={this.ptItemsToolTipMessage()}
@@ -76,7 +75,6 @@ export class BrailleCartWizardFinal extends React.Component<
 
   renderFinalBrailleSelection = () => {
     const itemsInCart = this.props.itemsInCart;
-    const associatedItemsInCart = this.props.associatedItemsInPrintCart;
     let selectedBrailleListTableValue: any;
     selectedBrailleListTableValue = itemsInCart.map(item => (
       <>
@@ -99,7 +97,7 @@ export class BrailleCartWizardFinal extends React.Component<
         <>
           <div
             tabIndex={0}
-            className="alert alert-danger"
+            className="alert alert-danger braille-alert-msg"
             hidden={isAnyBrailleOptionSelected(this.props.itemsInCart)}
           >
             <strong /> Please select a braille option of any item to download

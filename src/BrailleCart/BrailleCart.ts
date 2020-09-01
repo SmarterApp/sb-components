@@ -143,7 +143,6 @@ export const ptItemsToolTipMessage =
 export function getBrailleOptions(itemModel: ItemCardModel) {
   debugger;
   let _options: any[] = [];
-
   itemModel.availableBrailleTypes.forEach(option => {
     if (option.selectionCode !== "TDS_BT0") {
       _options.push({
@@ -161,4 +160,22 @@ export function getBrailleOptions(itemModel: ItemCardModel) {
     }
   });
   return _options;
+}
+//get universal braille selection options
+export function getBrailleUniversalOptions(
+  brailleTotalDropdownOptions: any[],
+  selectedBrailleValue: string[]
+) {
+  let brailleDropdownOptions: any[] = [];
+
+  brailleTotalDropdownOptions.forEach(option => {
+    const isSelected =
+      selectedBrailleValue.indexOf(option.value) !== -1 ? true : false;
+    brailleDropdownOptions.push({
+      label: option.label,
+      value: option.value,
+      selected: isSelected
+    });
+  });
+  return brailleDropdownOptions;
 }

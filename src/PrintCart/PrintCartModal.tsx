@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactModal from "react-modal";
 import { SelectOptionProps, Select } from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
-import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
+import "bootstrap";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
 import {
@@ -266,7 +266,7 @@ export class PrintCartModal extends React.Component<
             </div>
             <div className="modal-footer">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary btn-sm "
                 aria-label="Close print cart modal"
                 onClick={this.handleHideModal}
               >
@@ -275,7 +275,8 @@ export class PrintCartModal extends React.Component<
 
               <button
                 className={
-                  "btn btn-primary btn-wizard " + this.previousButtonClassName()
+                  "btn btn-primary btn-wizard btn-sm " +
+                  this.previousButtonClassName()
                 }
                 aria-label="Go to previous"
                 aria-disabled={
@@ -292,7 +293,9 @@ export class PrintCartModal extends React.Component<
               </button>
 
               <button
-                className={"btn btn-primary " + this.nextButtonClassName()}
+                className={
+                  "btn btn-primary btn-sm " + this.nextButtonClassName()
+                }
                 aria-label={this.nextOrPrintBtnAriaLabel()}
                 onClick={this.nextOrPrintBtnFunctin}
               >
