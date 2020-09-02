@@ -2,10 +2,10 @@ import * as React from "react";
 import { ItemCardModel, ToolTip } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import {
-  getBrailleLabelFromCode,
   getAssociatedItems,
   ptItemsToolTipMessage,
-  isAnyBrailleOptionSelected
+  isAnyBrailleOptionSelected,
+  getBrailleLabelFromCode
 } from "./BrailleCart";
 
 export interface BrailleOptionsWizardProps {
@@ -65,7 +65,7 @@ export class BrailleCartWizardFinal extends React.Component<
     ) {
       selectedBrailleTag = item.selectedBrailleTypes.map(brailleType => (
         <span className="label label-success selected-braille">
-          {getBrailleLabelFromCode(brailleType)}
+          {getBrailleLabelFromCode(item.availableBrailleTypes, brailleType)}
         </span>
       ));
     }

@@ -1,19 +1,5 @@
-import { ItemCardModel } from "@src/ItemCard/ItemCardModels";
+import { ItemCardModel, BrailleTypeModel } from "@src/ItemCard/ItemCardModels";
 import { SelectOptionProps } from "@src/Select/SelectOption";
-
-export const brailleDropdownOptions = [
-  // { label: "No Braille", value: "TDS_BT0" },
-  { label: "EBAE Contracted", value: "TDS_BT_ECL" },
-  { label: "EBAE Uncontracted", value: "TDS_BT_EXL" },
-  { label: "EBAE with Nemeth Contracted", value: "TDS_BT_ECN" },
-  { label: "EBAE with Nemeth Uncontracted", value: "TDS_BT_EXN" },
-  { label: "UEB Contracted", value: "TDS_BT_UCL" },
-  { label: "UEB Uncontracted", value: "TDS_BT_UXL" },
-  { label: "UEB with Nemeth Contracted", value: "TDS_BT_UCN" },
-  { label: "UEB with Nemeth Uncontracted", value: "TDS_BT_UXN" },
-  { label: "UEB with UEB Technical Contracted", value: "TDS_BT_UCT" },
-  { label: "UEB with UEB Technical Uncontracted", value: "TDS_BT_UXT" }
-];
 
 //get dropdown options for available braille types for an specific item
 export function getBrailleDowndrownOptions(
@@ -98,12 +84,25 @@ export function getItemsWithSelectedBraille(
   return itemsWithSelectedBraille;
 }
 
-export function getBrailleLabelFromCode(brailleShortCode: string) {
+// export function getBrailleLabelFromCode(brailleShortCode: string) {
+//   let brailleFullName: string | null = null;
+//   const brailleOptions = brailleDropdownOptions;
+//   for (let i = 0; i < brailleOptions.length; i++) {
+//     if (brailleOptions[i].value === brailleShortCode) {
+//       brailleFullName = brailleOptions[i].label;
+//     }
+//   }
+//   return brailleFullName;
+// }
+
+export function getBrailleLabelFromCode(
+  availableBrailleTypes: BrailleTypeModel[],
+  brailleShortCode: string
+) {
   let brailleFullName: string | null = null;
-  const brailleOptions = brailleDropdownOptions;
-  for (let i = 0; i < brailleOptions.length; i++) {
-    if (brailleOptions[i].value === brailleShortCode) {
-      brailleFullName = brailleOptions[i].label;
+  for (let i = 0; i < availableBrailleTypes.length; i++) {
+    if (availableBrailleTypes[i].selectionCode === brailleShortCode) {
+      brailleFullName = availableBrailleTypes[i].label;
     }
   }
   return brailleFullName;
