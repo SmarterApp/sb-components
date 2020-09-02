@@ -84,16 +84,16 @@ export function getItemsWithSelectedBraille(
     if (item.selectedBrailleTypes !== undefined) {
       itemsWithSelectedBraille[item.itemKey] = item.selectedBrailleTypes;
     }
-    if (item.isPerformanceItem && associatedItems) {
-      if (item.itemKey in associatedItems) {
-        const associatedItemsArray = associatedItems[item.itemKey];
-        for (let i = 0; i < associatedItemsArray.length; i++) {
-          if (item.selectedBrailleTypes)
-            itemsWithSelectedBraille[associatedItemsArray[i][0].itemKey] =
-              item.selectedBrailleTypes;
-        }
-      }
-    }
+    // if (item.isPerformanceItem && associatedItems) {
+    //   if (item.itemKey in associatedItems) {
+    //     const associatedItemsArray = associatedItems[item.itemKey];
+    //     for (let i = 0; i < associatedItemsArray.length; i++) {
+    //       if (item.selectedBrailleTypes)
+    //         itemsWithSelectedBraille[associatedItemsArray[i][0].itemKey] =
+    //           item.selectedBrailleTypes;
+    //     }
+    //   }
+    // }
   });
   return itemsWithSelectedBraille;
 }
