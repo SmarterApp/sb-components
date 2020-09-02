@@ -101,7 +101,6 @@ export class BrailleMenuContainer extends React.Component<
       if (item.selectedBrailleTypes === undefined)
         item.selectedBrailleTypes = [];
       item.selectedBrailleTypes = applicableBraille;
-      console.log("checking*******", item);
     });
     this.setState({ isSelectedValueChanged: true, showAlertMsg: showAlertMsg });
   };
@@ -110,7 +109,9 @@ export class BrailleMenuContainer extends React.Component<
     return (
       <div>
         <div className="brailleOptionContainer">
-          <b>Braille Options : </b>
+          <label htmlFor="">
+            <b>Braille Options : </b>
+          </label>
           <Multiselect
             multiple
             data={getBrailleUniversalOptions(
@@ -123,7 +124,12 @@ export class BrailleMenuContainer extends React.Component<
             tabIndex={0}
           />{" "}
           &nbsp;
-          <a className="" onClick={this.applyBrailleTypeToAll}>
+          <a
+            tabIndex={0}
+            aria-label="Apply to all"
+            className=""
+            onClick={this.applyBrailleTypeToAll}
+          >
             Apply to all
           </a>
         </div>

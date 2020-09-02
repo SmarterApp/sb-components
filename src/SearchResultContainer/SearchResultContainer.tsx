@@ -31,7 +31,6 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
-import { ToolTip } from "@src/ToolTip/ToolTip";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 
 /**
@@ -763,7 +762,7 @@ export class SearchResultContainer extends React.Component<
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
-          {this.renderBrailleCartButton()}
+          {this.props.isInterimSite ? this.renderBrailleCartButton() : null}
         </div>
       </div>
     );

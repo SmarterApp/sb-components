@@ -33,9 +33,17 @@ export interface ItemCardModel {
   calculator?: boolean;
   releaseDate?: string;
   selectedBrailleTypes?: string[];
-  availableBrailleTypes: any[];
+  availableBrailleTypes: BrailleTypeModel[];
 }
 
 export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {
   return a.itemKey === b.itemKey && a.bankKey === b.bankKey;
+}
+
+export interface BrailleTypeModel {
+  selectionCode: string;
+  label: string;
+  // value: string,
+  disabled: boolean;
+  hidden: boolean;
 }

@@ -102,7 +102,7 @@ export class BrailleCartModal extends React.Component<
     });
   };
 
-  nextOrPrintButtonText = () => {
+  nextOrDownloadButtonText = () => {
     if (this.state.currentStep === 1 || this.state.currentStep === 2)
       return "Next";
     else return "Download Braille";
@@ -124,7 +124,7 @@ export class BrailleCartModal extends React.Component<
     // else return "active";
   };
 
-  nextOrPrintBtnFunctin = () => {
+  nextOrDownloadBtnFunctin = () => {
     if (this.state.currentStep === 1) this._next_selectBraille();
     else if (this.state.currentStep === 2) this._next_displayFinalSelection();
     else {
@@ -133,10 +133,11 @@ export class BrailleCartModal extends React.Component<
     }
   };
 
-  nextOrPrintBtnAriaLabel = () => {
-    if (this.state.currentStep === 1) return "Go to next";
+  nextOrDownloadBtnAriaLabel = () => {
+    if (this.state.currentStep === 1 || this.state.currentStep === 2)
+      return "Go to next";
     else {
-      return "Print items in cart to pdf";
+      return "Download Braille";
     }
   };
 
@@ -263,10 +264,10 @@ export class BrailleCartModal extends React.Component<
                     ? "disabled-wizard-btn"
                     : "active-wizard-btn"
                 }
-                aria-label={this.nextOrPrintBtnAriaLabel()}
-                onClick={this.nextOrPrintBtnFunctin}
+                aria-label={this.nextOrDownloadBtnAriaLabel()}
+                onClick={this.nextOrDownloadBtnFunctin}
               >
-                {this.nextOrPrintButtonText()}
+                {this.nextOrDownloadButtonText()}
               </button>
             </div>
           </div>
