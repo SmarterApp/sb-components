@@ -184,11 +184,26 @@ export function getBrailleUniversalOptions(
           brailleDropdownOptions.push({
             label: bt.label,
             value: bt.selectionCode,
-            selected: isSelected
+            selected: isSelected,
+            disabled: true
           });
         }
       }
     });
+
+    if (
+      brailleDropdownOptions != undefined &&
+      brailleDropdownOptions.length > 0
+    )
+      option.availableBrailleTypes.forEach(bt => {
+        var brailleIndex = brailleDropdownOptions.findIndex(
+          obj => obj.value == bt.selectionCode && obj.disabled == true
+        );
+        if (brailleIndex !== -1) {
+          brailleDropdownOptions[brailleIndex].disabled =
+            bt.disabled == false ? false : true;
+        }
+      });
   });
   return brailleDropdownOptions;
 }

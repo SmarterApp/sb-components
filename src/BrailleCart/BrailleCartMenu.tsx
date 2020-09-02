@@ -72,7 +72,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
               <td>
                 <ToolTip
                   helpText={this.ptItemsToolTipMessage()}
-                  displayText={item.itemKey}
+                  displayText={element.itemKey}
                   position="bottom"
                   displayIcon={true}
                 />
