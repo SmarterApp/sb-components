@@ -124,14 +124,15 @@ export class BrailleMenuContainer extends React.Component<
             tabIndex={0}
           />{" "}
           &nbsp;
-          <a
+          <button
+            onClick={this.applyBrailleTypeToAll}
             tabIndex={0}
             aria-label="Apply to all"
-            className=""
-            onClick={this.applyBrailleTypeToAll}
+            type="button"
+            className="btn btn-link"
           >
             Apply to all
-          </a>
+          </button>
         </div>
 
         <div
