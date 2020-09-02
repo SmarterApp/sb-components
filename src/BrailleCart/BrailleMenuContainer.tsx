@@ -3,13 +3,7 @@ import { ItemCardModel } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import { BrailleCartMenu } from "./BrailleCartMenu";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
-import {
-  getBrailleDowndrownOptions,
-  brailleDropdownOptions,
-  getBrailleLabelFromCode,
-  getAssociatedItems,
-  getBrailleUniversalOptions
-} from "./BrailleCart";
+import { getBrailleUniversalOptions } from "./BrailleCart";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];

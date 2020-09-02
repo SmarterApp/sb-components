@@ -1,10 +1,7 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
-import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
-import "bootstrap";
+import { ItemCardModel } from "@src/index";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
-import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
 import {
   TestCodeToLabel,
   ItemIdToTestNameMap

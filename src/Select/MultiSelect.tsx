@@ -1,6 +1,5 @@
 import * as React from "react";
 import "../Assets/Styles/multi-select.less";
-import "bootstrap";
 
 export interface MultiSelectProps {
   message: string;

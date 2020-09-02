@@ -1,10 +1,5 @@
 import * as React from "react";
 import { ItemCardModel } from "@src/index";
-import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
-import {
-  TestCodeToLabel,
-  ItemIdToTestNameMap
-} from "@src/ItemSearch/ItemSearchModels";
 import { BrailleMenuContainer } from "./BrailleMenuContainer";
 
 export interface BrailleOptionsWizardProps {

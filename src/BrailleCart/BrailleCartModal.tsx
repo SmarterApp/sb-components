@@ -2,7 +2,6 @@ import * as React from "react";
 import * as ReactModal from "react-modal";
 import { ItemCardModel } from "@src/index";
 import { PrintWizardSteps1 } from "@src/PrintCart/PrintWizardSteps";
-import "bootstrap";
 import {
   TestCodeToLabel,
   ItemIdToTestNameMap

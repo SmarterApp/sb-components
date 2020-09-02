@@ -3,8 +3,6 @@ import { ItemCardModel, ToolTip } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import {
-  brailleDropdownOptions,
-  getBrailleDowndrownOptions,
   getAssociatedItems,
   ptItemsToolTipMessage,
   getBrailleOptions

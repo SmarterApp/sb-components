@@ -43,7 +43,6 @@ export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {
 export interface BrailleTypeModel {
   selectionCode: string;
   label: string;
-  // value: string,
   disabled: boolean;
   hidden: boolean;
 }

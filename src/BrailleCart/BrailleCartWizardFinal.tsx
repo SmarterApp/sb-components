@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ItemCardModel, ToolTip } from "@src/index";
-import "bootstrap";
 import "@src/Assets/Styles/braille-cart.less";
 import {
   getBrailleLabelFromCode,
