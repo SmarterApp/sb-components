@@ -321,7 +321,9 @@ exports[`ItemBankContainer default wrapper 1`] = `
                   <div
                     className="select-dd"
                   >
-                    <label>
+                    <label
+                      htmlFor="Items"
+                    >
                       <span
                         className="display-none"
                       >
@@ -329,7 +331,9 @@ exports[`ItemBankContainer default wrapper 1`] = `
                       </span>
                     </label>
                     <select
+                      aria-label="Items"
                       className="form-control item-dropdown"
+                      id="Items"
                       onChange={[Function]}
                       value="3000-187"
                     >
@@ -411,6 +415,7 @@ exports[`ItemBankContainer default wrapper 1`] = `
               url="hello"
             >
               <div
+                aria-hidden={false}
                 className="itemViewerFrame"
                 tabIndex={0}
               >
@@ -567,7 +572,9 @@ exports[`ItemBankContainer has item bank viewer 1`] = `
             <div
               className="select-dd"
             >
-              <label>
+              <label
+                htmlFor="Items"
+              >
                 <span
                   className="display-none"
                 >
@@ -575,7 +582,9 @@ exports[`ItemBankContainer has item bank viewer 1`] = `
                 </span>
               </label>
               <select
+                aria-label="Items"
                 className="form-control item-dropdown"
+                id="Items"
                 onChange={[Function]}
                 value="3000-187"
               >
@@ -657,6 +666,7 @@ exports[`ItemBankContainer has item bank viewer 1`] = `
         url="hello"
       >
         <div
+          aria-hidden={false}
           className="itemViewerFrame"
           tabIndex={0}
         >

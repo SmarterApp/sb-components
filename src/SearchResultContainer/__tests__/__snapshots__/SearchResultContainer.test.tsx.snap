@@ -12,6 +12,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "3206": Array [
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": false,
@@ -41,6 +67,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": true,
@@ -72,6 +124,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
@@ -107,19 +185,19 @@ exports[`SearchResultContainer card to table transition 1`] = `
       itemIdToTestNameMap={
         Object {
           "2928": Object {
-            "testName": "Test 2",
+            "testName": "Test-Name-2",
             "testOrder": 1,
           },
           "3163": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 2,
           },
           "3206": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 1,
           },
           "3615": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 3,
           },
         }
@@ -127,6 +205,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
       itemsInCart={
         Array [
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "calculator": true,
@@ -156,6 +260,26 @@ exports[`SearchResultContainer card to table transition 1`] = `
             "title": "Math Grade 6 Claim 1",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
@@ -177,8 +301,8 @@ exports[`SearchResultContainer card to table transition 1`] = `
             "targetHash": 2832,
             "targetId": "D",
             "targetShortName": "Evaluate Information/ sources",
-            "testName": "Test-Name-123",
-            "testNameInPrintCart": "Test-Name-123",
+            "testName": "",
+            "testNameInPrintCart": "",
             "testOrder": 2,
             "testOrderInPrintCart": 2,
             "title": "ELA/ literacy Grade 4 Claim 4",
@@ -204,6 +328,329 @@ exports[`SearchResultContainer card to table transition 1`] = `
       showModal={false}
     />
   </React.Fragment>
+  <React.Fragment>
+    <BrailleCartModal
+      StatusMessage=""
+      associatedItemsInPrintCart={
+        Object {
+          "3206": Array [
+            Array [
+              Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
+                "bankKey": 187,
+                "brailleOnlyItem": false,
+                "calculator": false,
+                "claimCode": "ELA1",
+                "claimLabel": "1.Reading",
+                "commonCoreStandardId": "3.R.2a",
+                "grade": 1,
+                "gradeLabel": "Grade 3",
+                "interactionTypeCode": "MC",
+                "interactionTypeLabel": "Multiple Choice",
+                "isPerformanceItem": true,
+                "itemDifficulty": "Easy",
+                "itemKey": 3163,
+                "stimulusKey": 58679,
+                "subjectCode": "ELA",
+                "subjectLabel": "ELA/literacy",
+                "targetDescription": "Target B description",
+                "targetHash": 1039,
+                "targetId": "B",
+                "targetShortName": "Key Details",
+                "testName": "Test-Name-1",
+                "testNameInPrintCart": "Test-Name-1",
+                "testOrder": 2,
+                "testOrderInPrintCart": 2,
+                "title": "ELA/ literacy Grade 3 Claim 1",
+              },
+            ],
+            Array [
+              Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
+                "bankKey": 187,
+                "brailleOnlyItem": false,
+                "calculator": true,
+                "claimCode": "MATH1",
+                "claimLabel": "1.Concepts and Procedures and Logical",
+                "commonCoreStandardId": "6.M.1a",
+                "grade": 8,
+                "gradeLabel": "Grade 6",
+                "interactionTypeCode": "EQ",
+                "interactionTypeLabel": "Equation Multiple Choice choice",
+                "isPerformanceItem": true,
+                "itemDifficulty": "Moderate",
+                "itemKey": 3206,
+                "selected": true,
+                "selectionIndex": 0,
+                "stimulusKey": 56900,
+                "subjectCode": "MATH",
+                "subjectLabel": "Math",
+                "targetDescription": "Target A description with extra text for testing",
+                "targetHash": 100,
+                "targetId": "A",
+                "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testNameInPrintCart": "Test-Name-1",
+                "testOrder": 1,
+                "testOrderInPrintCart": 1,
+                "title": "Math Grade 6 Claim 1",
+              },
+            ],
+            Array [
+              Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
+                "bankKey": 187,
+                "brailleOnlyItem": false,
+                "claimCode": "MATH4",
+                "claimLabel": "3.Modeling/Data Analysis",
+                "commonCoreStandardId": "6.M.2b",
+                "grade": 8,
+                "gradeLabel": "Grade 6",
+                "interactionTypeCode": "MS",
+                "interactionTypeLabel": "Multi Select",
+                "isPerformanceItem": true,
+                "itemDifficulty": "",
+                "itemKey": 3615,
+                "stimulusKey": 23461,
+                "subjectCode": "MATH",
+                "subjectLabel": "Math",
+                "targetDescription": "target C description",
+                "targetHash": 0,
+                "targetId": "C",
+                "targetShortName": "",
+                "testName": "Test-Name-1",
+                "testNameInPrintCart": "Test-Name-1",
+                "testOrder": 3,
+                "testOrderInPrintCart": 3,
+                "title": "Math Grade 6 Claim 4",
+              },
+            ],
+          ],
+        }
+      }
+      handleUpdateItemsinPrintCart={[Function]}
+      isInterimSite={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test-Name-2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemsInCart={
+        Array [
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "calculator": true,
+            "claimCode": "MATH1",
+            "claimLabel": "1.Concepts and Procedures and Logical",
+            "commonCoreStandardId": "6.M.1a",
+            "grade": 8,
+            "gradeLabel": "Grade 6",
+            "interactionTypeCode": "EQ",
+            "interactionTypeLabel": "Equation Multiple Choice choice",
+            "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
+            "itemKey": 3206,
+            "selected": true,
+            "selectionIndex": 0,
+            "stimulusKey": 56900,
+            "subjectCode": "MATH",
+            "subjectLabel": "Math",
+            "targetDescription": "Target A description with extra text for testing",
+            "targetHash": 100,
+            "targetId": "A",
+            "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testNameInPrintCart": "Test-Name-1",
+            "testOrder": 1,
+            "testOrderInPrintCart": 1,
+            "title": "Math Grade 6 Claim 1",
+          },
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "claimCode": "ELA4",
+            "claimLabel": "4.Research/Inquiry",
+            "commonCoreStandardId": "4.E.4a",
+            "grade": 2,
+            "gradeLabel": "Grade 4",
+            "interactionTypeCode": "MS",
+            "interactionTypeLabel": "Multi Select",
+            "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
+            "itemKey": 2928,
+            "selected": true,
+            "selectionIndex": 1,
+            "stimulusKey": 87679,
+            "subjectCode": "ELA",
+            "subjectLabel": "ELA/literacy",
+            "targetDescription": "target D description",
+            "targetHash": 2832,
+            "targetId": "D",
+            "targetShortName": "Evaluate Information/ sources",
+            "testName": "",
+            "testNameInPrintCart": "",
+            "testOrder": 2,
+            "testOrderInPrintCart": 2,
+            "title": "ELA/ literacy Grade 4 Claim 4",
+          },
+        ]
+      }
+      onAddOrRemoveSelectedItems={[Function]}
+      onChangeModelState={[Function]}
+      onDownloadBraille={[Function]}
+      onItemsReorder={[Function]}
+      showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+      totalSelectedItemsCount={4}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
     className="row search-result-header-row"
   >
@@ -211,10 +658,10 @@ exports[`SearchResultContainer card to table transition 1`] = `
       className="col-sm-4 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Select All"
+        aria-label="Select all to print"
         className="btn btn-default search-result-container-header-button disabled "
         onClick={[Function]}
-        title="Select All"
+        title="Select all to print"
       >
         <i
           aria-hidden="true"
@@ -253,10 +700,10 @@ exports[`SearchResultContainer card to table transition 1`] = `
       className="col-sm-5 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Clear Selection"
-        className="btn btn-default search-result-container-header-button"
+        aria-label="Clear items from print cart"
+        className="btn btn-default search-result-container-header-button btn-sm"
         onClick={[Function]}
-        title="Clear Selection"
+        title="Clear items from print cart"
       >
         <i
           aria-hidden="true"
@@ -269,6 +716,18 @@ exports[`SearchResultContainer card to table transition 1`] = `
         label="Print Cart"
         onClick={[Function]}
       />
+      <button
+        aria-label="Open barille cart modal"
+        className="btn btn-default btn-sm "
+        onClick={[Function]}
+        title="Open barille cart modal"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-braille"
+        />
+         Braille Cart
+      </button>
     </div>
   </div>
   <div
@@ -280,6 +739,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "3206": Array [
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": false,
@@ -309,6 +794,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": true,
@@ -340,6 +851,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
@@ -377,6 +914,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "calculator": true,
@@ -420,6 +983,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "3206": Array [
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": false,
@@ -449,6 +1038,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": true,
@@ -480,6 +1095,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
@@ -517,6 +1158,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "calculator": false,
@@ -558,6 +1225,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "3206": Array [
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": false,
@@ -587,6 +1280,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": true,
@@ -618,6 +1337,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
@@ -655,6 +1400,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "claimCode": "MATH4",
@@ -695,6 +1466,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "3206": Array [
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": false,
@@ -724,6 +1521,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "calculator": true,
@@ -755,6 +1578,32 @@ exports[`SearchResultContainer card to table transition 1`] = `
             ],
             Array [
               Object {
+                "availableBrailleTypes": Array [
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECN__",
+                    "selectionCode": "TDS_BT_ECN",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__DS_BT_UCB__",
+                    "selectionCode": "TDS_BT_UCB",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TDS_BT_ECL__",
+                    "selectionCode": "TDS_BT_ECL",
+                  },
+                  Object {
+                    "disabled": false,
+                    "hidden": false,
+                    "label": "__TTDS_BT_EXN__",
+                    "selectionCode": "TTDS_BT_EXN",
+                  },
+                ],
                 "bankKey": 187,
                 "brailleOnlyItem": false,
                 "claimCode": "MATH4",
@@ -792,6 +1641,26 @@ exports[`SearchResultContainer card to table transition 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "claimCode": "ELA4",
@@ -813,8 +1682,8 @@ exports[`SearchResultContainer card to table transition 1`] = `
           "targetHash": 2832,
           "targetId": "D",
           "targetShortName": "Evaluate Information/ sources",
-          "testName": "Test-Name-123",
-          "testNameInPrintCart": "Test-Name-123",
+          "testName": "",
+          "testNameInPrintCart": "",
           "testOrder": 2,
           "testOrderInPrintCart": 2,
           "title": "ELA/ literacy Grade 4 Claim 4",
@@ -846,19 +1715,19 @@ exports[`SearchResultContainer empty itemCards 1`] = `
       itemIdToTestNameMap={
         Object {
           "2928": Object {
-            "testName": "Test 2",
+            "testName": "Test-Name-2",
             "testOrder": 1,
           },
           "3163": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 2,
           },
           "3206": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 1,
           },
           "3615": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 3,
           },
         }
@@ -883,6 +1752,52 @@ exports[`SearchResultContainer empty itemCards 1`] = `
       showModal={false}
     />
   </React.Fragment>
+  <React.Fragment>
+    <BrailleCartModal
+      StatusMessage=""
+      associatedItemsInPrintCart={Object {}}
+      handleUpdateItemsinPrintCart={[Function]}
+      isInterimSite={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test-Name-2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemsInCart={Array []}
+      onAddOrRemoveSelectedItems={[Function]}
+      onChangeModelState={[Function]}
+      onDownloadBraille={[Function]}
+      onItemsReorder={[Function]}
+      showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+      totalSelectedItemsCount={0}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
     className="row search-result-header-row"
   >
@@ -890,10 +1805,10 @@ exports[`SearchResultContainer empty itemCards 1`] = `
       className="col-sm-4 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Select All"
+        aria-label="Select all to print"
         className="btn btn-default search-result-container-header-button disabled "
         onClick={[Function]}
-        title="Select All"
+        title="Select all to print"
       >
         <i
           aria-hidden="true"
@@ -932,10 +1847,10 @@ exports[`SearchResultContainer empty itemCards 1`] = `
       className="col-sm-5 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Clear Selection"
-        className="btn btn-default search-result-container-header-button disabled"
+        aria-label="Clear items from print cart"
+        className="btn btn-default search-result-container-header-button disabled btn-sm"
         onClick={[Function]}
-        title="Clear Selection"
+        title="Clear items from print cart"
       >
         <i
           aria-hidden="true"
@@ -948,6 +1863,18 @@ exports[`SearchResultContainer empty itemCards 1`] = `
         label="Print Cart"
         onClick={[Function]}
       />
+      <button
+        aria-label="Open barille cart modal"
+        className="btn btn-default btn-sm "
+        onClick={[Function]}
+        title="Open barille cart modal"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-braille"
+        />
+         Braille Cart
+      </button>
     </div>
   </div>
   <div
@@ -974,19 +1901,19 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       itemIdToTestNameMap={
         Object {
           "2928": Object {
-            "testName": "Test 2",
+            "testName": "Test-Name-2",
             "testOrder": 1,
           },
           "3163": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 2,
           },
           "3206": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 1,
           },
           "3615": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 3,
           },
         }
@@ -1011,6 +1938,52 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       showModal={false}
     />
   </React.Fragment>
+  <React.Fragment>
+    <BrailleCartModal
+      StatusMessage=""
+      associatedItemsInPrintCart={Object {}}
+      handleUpdateItemsinPrintCart={[Function]}
+      isInterimSite={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test-Name-2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemsInCart={Array []}
+      onAddOrRemoveSelectedItems={[Function]}
+      onChangeModelState={[Function]}
+      onDownloadBraille={[Function]}
+      onItemsReorder={[Function]}
+      showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+      totalSelectedItemsCount={0}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
     className="row search-result-header-row"
   >
@@ -1018,10 +1991,10 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       className="col-sm-4 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Select All"
+        aria-label="Select all to print"
         className="btn btn-default search-result-container-header-button  "
         onClick={[Function]}
-        title="Select All"
+        title="Select all to print"
       >
         <i
           aria-hidden="true"
@@ -1060,10 +2033,10 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       className="col-sm-5 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Clear Selection"
-        className="btn btn-default search-result-container-header-button disabled"
+        aria-label="Clear items from print cart"
+        className="btn btn-default search-result-container-header-button disabled btn-sm"
         onClick={[Function]}
-        title="Clear Selection"
+        title="Clear items from print cart"
       >
         <i
           aria-hidden="true"
@@ -1076,6 +2049,18 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
         label="Print Cart"
         onClick={[Function]}
       />
+      <button
+        aria-label="Open barille cart modal"
+        className="btn btn-default btn-sm "
+        onClick={[Function]}
+        title="Open barille cart modal"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-braille"
+        />
+         Braille Cart
+      </button>
     </div>
   </div>
   <div
@@ -1091,6 +2076,32 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "calculator": true,
@@ -1134,6 +2145,32 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "calculator": false,
@@ -1177,6 +2214,32 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TTDS_BT_EXN__",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "claimCode": "MATH4",
@@ -1219,6 +2282,26 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
       onRowSelect={[Function]}
       rowData={
         Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECN__",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__DS_BT_UCB__",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "__TDS_BT_ECL__",
+              "selectionCode": "TDS_BT_ECL",
+            },
+          ],
           "bankKey": 187,
           "brailleOnlyItem": false,
           "claimCode": "ELA4",
@@ -1238,7 +2321,7 @@ exports[`SearchResultContainer onload matches snapshot ItemCards 1`] = `
           "targetHash": 2832,
           "targetId": "D",
           "targetShortName": "Evaluate Information/ sources",
-          "testName": "Test-Name-123",
+          "testName": "",
           "testOrder": 2,
           "title": "ELA/ literacy Grade 4 Claim 4",
         }
@@ -1269,19 +2352,19 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       itemIdToTestNameMap={
         Object {
           "2928": Object {
-            "testName": "Test 2",
+            "testName": "Test-Name-2",
             "testOrder": 1,
           },
           "3163": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 2,
           },
           "3206": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 1,
           },
           "3615": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 3,
           },
         }
@@ -1306,6 +2389,52 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       showModal={false}
     />
   </React.Fragment>
+  <React.Fragment>
+    <BrailleCartModal
+      StatusMessage=""
+      associatedItemsInPrintCart={Object {}}
+      handleUpdateItemsinPrintCart={[Function]}
+      isInterimSite={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test-Name-2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemsInCart={Array []}
+      onAddOrRemoveSelectedItems={[Function]}
+      onChangeModelState={[Function]}
+      onDownloadBraille={[Function]}
+      onItemsReorder={[Function]}
+      showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+      totalSelectedItemsCount={0}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
     className="row search-result-header-row"
   >
@@ -1313,10 +2442,10 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       className="col-sm-4 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Select All"
+        aria-label="Select all to print"
         className="btn btn-default search-result-container-header-button  "
         onClick={[Function]}
-        title="Select All"
+        title="Select all to print"
       >
         <i
           aria-hidden="true"
@@ -1355,10 +2484,10 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       className="col-sm-5 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Clear Selection"
-        className="btn btn-default search-result-container-header-button disabled"
+        aria-label="Clear items from print cart"
+        className="btn btn-default search-result-container-header-button disabled btn-sm"
         onClick={[Function]}
-        title="Clear Selection"
+        title="Clear items from print cart"
       >
         <i
           aria-hidden="true"
@@ -1371,6 +2500,18 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
         label="Print Cart"
         onClick={[Function]}
       />
+      <button
+        aria-label="Open barille cart modal"
+        className="btn btn-default btn-sm "
+        onClick={[Function]}
+        title="Open barille cart modal"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-braille"
+        />
+         Braille Cart
+      </button>
     </div>
   </div>
   <div
@@ -1390,6 +2531,32 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
       itemCards={
         Array [
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "calculator": true,
@@ -1415,6 +2582,32 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "title": "Math Grade 6 Claim 1",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "calculator": false,
@@ -1440,6 +2633,32 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "title": "ELA/ literacy Grade 3 Claim 1",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "MATH4",
@@ -1464,6 +2683,26 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "title": "Math Grade 6 Claim 4",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
@@ -1483,7 +2722,7 @@ exports[`SearchResultContainer onload matches snapshot table 1`] = `
             "targetHash": 2832,
             "targetId": "D",
             "targetShortName": "Evaluate Information/ sources",
-            "testName": "Test-Name-123",
+            "testName": "",
             "testOrder": 2,
             "title": "ELA/ literacy Grade 4 Claim 4",
           },
@@ -1519,19 +2758,19 @@ exports[`SearchResultContainer table to card transition 1`] = `
       itemIdToTestNameMap={
         Object {
           "2928": Object {
-            "testName": "Test 2",
+            "testName": "Test-Name-2",
             "testOrder": 1,
           },
           "3163": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 2,
           },
           "3206": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 1,
           },
           "3615": Object {
-            "testName": "Test 1",
+            "testName": "Test-Name-1",
             "testOrder": 3,
           },
         }
@@ -1556,6 +2795,52 @@ exports[`SearchResultContainer table to card transition 1`] = `
       showModal={false}
     />
   </React.Fragment>
+  <React.Fragment>
+    <BrailleCartModal
+      StatusMessage=""
+      associatedItemsInPrintCart={Object {}}
+      handleUpdateItemsinPrintCart={[Function]}
+      isInterimSite={true}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test-Name-2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemsInCart={Array []}
+      onAddOrRemoveSelectedItems={[Function]}
+      onChangeModelState={[Function]}
+      onDownloadBraille={[Function]}
+      onItemsReorder={[Function]}
+      showModal={false}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+      totalSelectedItemsCount={0}
+    />
+    <ErrorMessageModal
+      StatusMessage=""
+      onChangeErrorModelState={[Function]}
+      showModal={false}
+    />
+  </React.Fragment>
   <div
     className="row search-result-header-row"
   >
@@ -1563,10 +2848,10 @@ exports[`SearchResultContainer table to card transition 1`] = `
       className="col-sm-4 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Select All"
+        aria-label="Select all to print"
         className="btn btn-default search-result-container-header-button  "
         onClick={[Function]}
-        title="Select All"
+        title="Select all to print"
       >
         <i
           aria-hidden="true"
@@ -1605,10 +2890,10 @@ exports[`SearchResultContainer table to card transition 1`] = `
       className="col-sm-5 header-grid-div header-print-button-groups"
     >
       <button
-        aria-label="Clear Selection"
-        className="btn btn-default search-result-container-header-button disabled"
+        aria-label="Clear items from print cart"
+        className="btn btn-default search-result-container-header-button disabled btn-sm"
         onClick={[Function]}
-        title="Clear Selection"
+        title="Clear items from print cart"
       >
         <i
           aria-hidden="true"
@@ -1621,6 +2906,18 @@ exports[`SearchResultContainer table to card transition 1`] = `
         label="Print Cart"
         onClick={[Function]}
       />
+      <button
+        aria-label="Open barille cart modal"
+        className="btn btn-default btn-sm "
+        onClick={[Function]}
+        title="Open barille cart modal"
+      >
+        <i
+          aria-hidden="true"
+          className="fa fa-braille"
+        />
+         Braille Cart
+      </button>
     </div>
   </div>
   <div
@@ -1640,6 +2937,32 @@ exports[`SearchResultContainer table to card transition 1`] = `
       itemCards={
         Array [
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "calculator": true,
@@ -1665,6 +2988,32 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "title": "Math Grade 6 Claim 1",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "calculator": false,
@@ -1690,6 +3039,32 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "title": "ELA/ literacy Grade 3 Claim 1",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TTDS_BT_EXN__",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "MATH4",
@@ -1714,6 +3089,26 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "title": "Math Grade 6 Claim 4",
           },
           Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECN__",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__DS_BT_UCB__",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "__TDS_BT_ECL__",
+                "selectionCode": "TDS_BT_ECL",
+              },
+            ],
             "bankKey": 187,
             "brailleOnlyItem": false,
             "claimCode": "ELA4",
@@ -1733,7 +3128,7 @@ exports[`SearchResultContainer table to card transition 1`] = `
             "targetHash": 2832,
             "targetId": "D",
             "targetShortName": "Evaluate Information/ sources",
-            "testName": "Test-Name-123",
+            "testName": "",
             "testOrder": 2,
             "title": "ELA/ literacy Grade 4 Claim 4",
           },

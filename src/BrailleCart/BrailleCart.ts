@@ -140,7 +140,6 @@ export const ptItemsToolTipMessage =
   "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
 
 export function getBrailleOptions(itemModel: ItemCardModel) {
-  debugger;
   let _options: any[] = [];
   itemModel.availableBrailleTypes.forEach(option => {
     if (option.selectionCode !== "TDS_BT0") {
@@ -166,7 +165,6 @@ export function getBrailleUniversalOptions(
   itemsInCart: ItemCardModel[],
   selectedBrailleValue: string[]
 ) {
-  debugger;
   let brailleDropdownOptions: any[] = [];
 
   itemsInCart.forEach(option => {

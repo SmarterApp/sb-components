@@ -4,7 +4,9 @@ exports[`Select handles on change event 1`] = `
 <div
   className=""
 >
-  <label>
+  <label
+    htmlFor="select"
+  >
     <span
       className=""
     >
@@ -12,7 +14,9 @@ exports[`Select handles on change event 1`] = `
     </span>
   </label>
   <select
+    aria-label="select"
     className="form-control "
+    id="select"
     onChange={[Function]}
     value="default"
   >
@@ -36,7 +40,9 @@ exports[`Select handles on change event 2`] = `
 <div
   className=""
 >
-  <label>
+  <label
+    htmlFor="select"
+  >
     <span
       className=""
     >
@@ -44,7 +50,9 @@ exports[`Select handles on change event 2`] = `
     </span>
   </label>
   <select
+    aria-label="select"
     className="form-control "
+    id="select"
     onChange={[Function]}
     value="default"
   >

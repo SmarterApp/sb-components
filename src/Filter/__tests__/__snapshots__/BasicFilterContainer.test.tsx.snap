@@ -572,15 +572,19 @@ exports[`BasicFilterContainer expands the advanced filter 1`] = `
   >
     <span>
       <button
+        aria-label="Reset filters"
         className="btn btn-default filter-button"
+        tabIndex={1}
       >
         Reset
       </button>
     </span>
     <span>
       <button
+        aria-label="Advanced filters"
         className="btn btn-default filter-button af-expand"
         onClick={[Function]}
+        tabIndex={1}
       >
         Advanced Filters 
         <span
@@ -690,15 +694,19 @@ exports[`BasicFilterContainer expands the advanced filter 2`] = `
   >
     <span>
       <button
+        aria-label="Reset filters"
         className="btn btn-default filter-button"
+        tabIndex={1}
       >
         Reset
       </button>
     </span>
     <span>
       <button
+        aria-label="Advanced filters"
         className="btn btn-default filter-button af-expand"
         onClick={[Function]}
+        tabIndex={1}
       >
         Advanced Filters 
         <span
@@ -808,15 +816,19 @@ exports[`BasicFilterContainer expands the advanced filter 3`] = `
   >
     <span>
       <button
+        aria-label="Reset filters"
         className="btn btn-default filter-button"
+        tabIndex={1}
       >
         Reset
       </button>
     </span>
     <span>
       <button
+        aria-label="Advanced filters"
         className="btn btn-default filter-button af-expand"
         onClick={[Function]}
+        tabIndex={1}
       >
         Advanced Filters 
         <span
@@ -833,7 +845,6 @@ exports[`BasicFilterContainer hide select message if disabled 1`] = `
 <div
   className="bf-selection"
   id="grade-bf"
-  tabIndex={0}
   title=""
 >
   <Component

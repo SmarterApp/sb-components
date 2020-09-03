@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Select MultiSelect Dropdown 1`] = `
+<div
+  className="section section-dark"
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexFlow": "column nowrap",
+      "height": "100%",
+      "justifyContent": "center",
+      "paddingTop": "300px",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="dropdown"
+  >
+    <button
+      aria-expanded="false"
+      aria-haspopup="true"
+      className="btn btn-primary dropdown-toggle"
+      data-toggle="dropdown"
+      id="dropdownMenuButton"
+      type="button"
+    >
+      Dropdown button
+    </button>
+    <form
+      aria-labelledby="dropdownMenuButton"
+      className="dropdown-menu"
+    >
+      <label
+        className="dropdown-item"
+        htmlFor="1"
+      >
+        <input
+          aria-aria-label="checkbox 1"
+          id="1"
+          name=""
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="checkbox"
+          value="one"
+        />
+        First checkbox
+      </label>
+      <label
+        aria-aria-label="checkbox 1"
+        className="dropdown-item"
+        htmlFor="2"
+      >
+        <input
+          aria-aria-label="checkbox 2"
+          id="2"
+          name=""
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="checkbox"
+          value="two"
+        />
+        Second checkbox
+      </label>
+      <label
+        className="dropdown-item"
+        htmlFor="3"
+      >
+        <input
+          aria-aria-label="checkbox 3"
+          id="3"
+          name=""
+          onKeyDown={[Function]}
+          tabIndex={0}
+          type="checkbox"
+          value="three"
+        />
+        Third checkbox
+      </label>
+    </form>
+  </div>
+  <button>
+    hiii
+  </button>
+  <button
+    className="btn btn-success"
+    type="button"
+  >
+    Success
+  </button>
+</div>
+`;

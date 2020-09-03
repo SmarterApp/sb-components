@@ -14,13 +14,14 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
       <div
         className="bf-selection"
         id="grade-bf"
-        tabIndex={0}
         title=""
       >
         <div
           className=""
         >
-          <label>
+          <label
+            htmlFor="Grade"
+          >
             <span
               className=""
             >
@@ -28,8 +29,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </span>
           </label>
           <select
+            aria-label="Grade"
             className="form-control input-sm"
             disabled={false}
+            id="Grade"
             onChange={[Function]}
             tabIndex={undefined}
             value="default"
@@ -76,7 +79,9 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         <div
           className="filter-container-header"
         >
-          <label>
+          <label
+            htmlFor="btn-group-filter"
+          >
             <span
               className="tooltip-label"
               info-label="true"
@@ -94,6 +99,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             aria-label="Select All Subjects"
             className="btn btn-primary active"
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -104,9 +110,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
           >
             <button
               aria-checked={false}
-              aria-label="English Literacy/ Arts"
+              aria-label="Select Subjects English Literacy/ Arts"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -114,9 +121,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </button>
             <button
               aria-checked={false}
-              aria-label="Mathematics"
+              aria-label="Select Subjects Mathematics"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -128,13 +136,14 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
       <div
         className="bf-selection"
         id="test-name-bf"
-        tabIndex={0}
         title=""
       >
         <div
           className=""
         >
-          <label>
+          <label
+            htmlFor="Test Name"
+          >
             <span
               className=""
             >
@@ -142,8 +151,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </span>
           </label>
           <select
+            aria-label="Test Name"
             className="form-control input-sm"
             disabled={false}
+            id="Test Name"
             onChange={[Function]}
             tabIndex={undefined}
             value="default"
@@ -182,7 +193,9 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         <div
           className="filter-container-header"
         >
-          <label>
+          <label
+            htmlFor="btn-group-filter"
+          >
             <span
               className="tooltip-label"
               info-label="true"
@@ -200,6 +213,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             aria-label="Select All Claims"
             className="btn btn-primary active"
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -210,9 +224,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
           >
             <button
               aria-checked={false}
-              aria-label="Problem Solving"
+              aria-label="Select Claims Problem Solving"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -220,9 +235,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </button>
             <button
               aria-checked={false}
-              aria-label="Concepts and Procedures"
+              aria-label="Select Claims Concepts and Procedures"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -238,7 +254,9 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         <div
           className="filter-container-header"
         >
-          <label>
+          <label
+            htmlFor="btn-group-filter"
+          >
             <span
               className="tooltip-label"
               info-label="true"
@@ -256,6 +274,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             aria-label="Select All Item Types"
             className="btn btn-primary active"
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -266,9 +285,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
           >
             <button
               aria-checked={false}
-              aria-label="Equation"
+              aria-label="Select Item Types Equation"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -276,9 +296,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </button>
             <button
               aria-checked={false}
-              aria-label="Grid Item"
+              aria-label="Select Item Types Grid Item"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -290,13 +311,14 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
       <div
         className="bf-selection"
         id="techtype-bf"
-        tabIndex={0}
         title=""
       >
         <div
           className=""
         >
-          <label>
+          <label
+            htmlFor="TechType"
+          >
             <span
               className=""
             >
@@ -304,8 +326,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </span>
           </label>
           <select
+            aria-label="TechType"
             className="form-control input-sm"
             disabled={false}
+            id="TechType"
             onChange={[Function]}
             tabIndex={undefined}
             value="default"
@@ -344,7 +368,9 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
         <div
           className="filter-container-header"
         >
-          <label>
+          <label
+            htmlFor="btn-group-filter"
+          >
             <span
               className="tooltip-label"
               info-label="true"
@@ -362,6 +388,7 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             aria-label="Select All Targets"
             className="btn btn-primary active"
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -372,9 +399,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
           >
             <button
               aria-checked={false}
-              aria-label="t1"
+              aria-label="Select Targets t1"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -382,9 +410,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </button>
             <button
               aria-checked={false}
-              aria-label="t2"
+              aria-label="Select Targets t2"
               className="btn btn-primary "
               disabled={false}
+              id="btn-group-filter"
               onClick={[Function]}
               role="switch"
             >
@@ -396,13 +425,14 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
       <div
         className="bf-selection"
         id="calculator-bf"
-        tabIndex={0}
         title=""
       >
         <div
           className=""
         >
-          <label>
+          <label
+            htmlFor="Calculator"
+          >
             <span
               className=""
             >
@@ -410,8 +440,10 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
             </span>
           </label>
           <select
+            aria-label="Calculator"
             className="form-control input-sm"
             disabled={false}
+            id="Calculator"
             onChange={[Function]}
             tabIndex={undefined}
             value="default"
@@ -449,16 +481,20 @@ exports[`Storyshots SIW-Filter Container Default 1`] = `
     >
       <span>
         <button
+          aria-label="Reset filters"
           className="btn btn-default filter-button"
           onClick={[Function]}
+          tabIndex={1}
         >
           Reset
         </button>
       </span>
       <span>
         <button
+          aria-label="Advanced filters"
           className="btn btn-default filter-button af-expand"
           onClick={[Function]}
+          tabIndex={1}
         >
           Advanced Filters 
           <span

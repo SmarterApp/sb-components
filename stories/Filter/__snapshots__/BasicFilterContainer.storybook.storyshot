@@ -11,13 +11,14 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
     <div
       className="bf-selection"
       id="grade-bf"
-      tabIndex={0}
       title=""
     >
       <div
         className=""
       >
-        <label>
+        <label
+          htmlFor="Grade"
+        >
           <span
             className=""
           >
@@ -25,8 +26,10 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
           </span>
         </label>
         <select
+          aria-label="Grade"
           className="form-control input-sm"
           disabled={false}
+          id="Grade"
           onChange={[Function]}
           tabIndex={undefined}
           value="default"
@@ -69,10 +72,11 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
     <div
       className="bf-selection"
       id="subjects-bf"
-      tabIndex={0}
       title=""
     >
-      <label>
+      <label
+        htmlFor="basic-filter-checkbox"
+      >
         Subjects
         <div
           className="radio"
@@ -80,9 +84,12 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
           <label>
             <input
               aria-checked={false}
+              aria-label="Select Subjects ELA"
               checked={false}
+              id="basic-filter-checkbox"
               name="Subjects"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="ELA"
             />
@@ -95,9 +102,12 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
           <label>
             <input
               aria-checked={false}
+              aria-label="Select Subjects Math"
               checked={false}
+              id="basic-filter-checkbox"
               name="Subjects"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="Math"
             />
@@ -113,7 +123,9 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
       <div
         className="filter-container-header"
       >
-        <label>
+        <label
+          htmlFor="btn-group-filter"
+        >
           <span
             className="tooltip-label"
             info-label="true"
@@ -131,6 +143,7 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
           aria-label="Select All TechType"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -141,9 +154,10 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
         >
           <button
             aria-checked={false}
-            aria-label="tech2"
+            aria-label="Select TechType tech2"
             className="btn btn-primary "
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -151,9 +165,10 @@ exports[`Storyshots Basic Filter Container Basic Filter only 1`] = `
           </button>
           <button
             aria-checked={false}
-            aria-label="tech1"
+            aria-label="Select TechType tech1"
             className="btn btn-primary "
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -177,13 +192,14 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
     <div
       className="bf-selection"
       id="grade-bf"
-      tabIndex={0}
       title=""
     >
       <div
         className=""
       >
-        <label>
+        <label
+          htmlFor="Grade"
+        >
           <span
             className=""
           >
@@ -191,8 +207,10 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
           </span>
         </label>
         <select
+          aria-label="Grade"
           className="form-control input-sm"
           disabled={false}
+          id="Grade"
           onChange={[Function]}
           tabIndex={undefined}
           value="default"
@@ -235,10 +253,11 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
     <div
       className="bf-selection"
       id="subjects-bf"
-      tabIndex={0}
       title=""
     >
-      <label>
+      <label
+        htmlFor="basic-filter-checkbox"
+      >
         Subjects
         <div
           className="radio"
@@ -246,9 +265,12 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
           <label>
             <input
               aria-checked={false}
+              aria-label="Select Subjects ELA"
               checked={false}
+              id="basic-filter-checkbox"
               name="Subjects"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="ELA"
             />
@@ -261,9 +283,12 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
           <label>
             <input
               aria-checked={false}
+              aria-label="Select Subjects Math"
               checked={false}
+              id="basic-filter-checkbox"
               name="Subjects"
               onChange={[Function]}
+              tabIndex={0}
               type="radio"
               value="Math"
             />
@@ -279,7 +304,9 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
       <div
         className="filter-container-header"
       >
-        <label>
+        <label
+          htmlFor="btn-group-filter"
+        >
           <span
             className="tooltip-label"
             info-label="true"
@@ -297,6 +324,7 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
           aria-label="Select All TechType"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -307,9 +335,10 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
         >
           <button
             aria-checked={false}
-            aria-label="tech2"
+            aria-label="Select TechType tech2"
             className="btn btn-primary "
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -317,9 +346,10 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
           </button>
           <button
             aria-checked={false}
-            aria-label="tech1"
+            aria-label="Select TechType tech1"
             className="btn btn-primary "
             disabled={false}
+            id="btn-group-filter"
             onClick={[Function]}
             role="switch"
           >
@@ -334,16 +364,20 @@ exports[`Storyshots Basic Filter Container Basic Filter with Advanced filter exp
   >
     <span>
       <button
+        aria-label="Reset filters"
         className="btn btn-default filter-button"
         onClick={undefined}
+        tabIndex={1}
       >
         Reset
       </button>
     </span>
     <span>
       <button
+        aria-label="Advanced filters"
         className="btn btn-default filter-button af-expand"
         onClick={[Function]}
+        tabIndex={1}
       >
         Advanced Filters 
         <span

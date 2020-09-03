@@ -32,7 +32,8 @@ export class BrailleMenuContainer extends React.Component<
 
   handleUpdateUniversalSelectedBraille = (
     operation: string,
-    selectedBraille: string
+    selectedBraille: string,
+    selectedHtmlDom?: HTMLElement
   ) => {
     let univeralSelectedBraille = this.state.universalSelectedBraille.slice();
 
@@ -59,6 +60,19 @@ export class BrailleMenuContainer extends React.Component<
       this.handleUpdateUniversalSelectedBraille("ADD", v[0].value);
     } else {
       this.handleUpdateUniversalSelectedBraille("REMOVE", v[0].value);
+    }
+
+    //Bring the focus back to the current selected/unselected dropdown option
+    const inputTagElement = document.getElementsByTagName("input");
+
+    for (let i = 0; i < inputTagElement.length; i++) {
+      if (
+        inputTagElement[i].type === "checkbox" &&
+        inputTagElement[i].value == v[0].value
+      ) {
+        inputTagElement[i].parentElement!.parentElement!.focus();
+        break;
+      }
     }
   };
 
@@ -116,6 +130,7 @@ export class BrailleMenuContainer extends React.Component<
             onChange={this.handleApplyAll}
             buttonWidth="150px"
             tabIndex={0}
+            className="apply-all-multiselect"
           />{" "}
           &nbsp;
           <button
@@ -124,6 +139,7 @@ export class BrailleMenuContainer extends React.Component<
             aria-label="Apply to all"
             type="button"
             className="btn btn-link"
+            id="apply_all"
           >
             Apply to all
           </button>

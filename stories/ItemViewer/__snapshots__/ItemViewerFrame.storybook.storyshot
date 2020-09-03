@@ -2,6 +2,7 @@
 
 exports[`Storyshots Item Viewer Frame with an item 1`] = `
 <div
+  aria-hidden={false}
   className="itemViewerFrame"
   tabIndex={0}
 >
