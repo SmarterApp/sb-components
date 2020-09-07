@@ -374,6 +374,7 @@ export { ScoringOptions } from "./Rubric/ScoringOptionsTable";
 //
 export { Select, SelectProps } from "./Select/Select";
 export { SelectOption, SelectOptionProps } from "./Select/SelectOption";
+export { MultiSelectValue } from "./Select/SelectModel";
 
 //
 // ToolTip

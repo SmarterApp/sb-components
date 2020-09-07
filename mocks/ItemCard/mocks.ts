@@ -92,25 +92,25 @@ export const itemCardList: ItemCardModel[] = [
     itemDifficulty: "Moderate",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -143,25 +143,25 @@ export const itemCardList: ItemCardModel[] = [
     itemDifficulty: "Easy",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -193,25 +193,25 @@ export const itemCardList: ItemCardModel[] = [
     itemDifficulty: "",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -289,25 +289,25 @@ export const sortableItemCards: ItemCardModel[] = [
     itemDifficulty: "Easy",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -336,25 +336,25 @@ export const sortableItemCards: ItemCardModel[] = [
     itemDifficulty: "Moderate",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -383,25 +383,25 @@ export const sortableItemCards: ItemCardModel[] = [
     itemDifficulty: "Hard",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false
@@ -430,25 +430,25 @@ export const sortableItemCards: ItemCardModel[] = [
     itemDifficulty: "Hard",
     availableBrailleTypes: [
       {
-        label: "__TDS_BT_ECN__",
+        label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
         disabled: false,
         hidden: false
       },
       {
-        label: "__DS_BT_UCB__",
+        label: "DS BT UCB Label",
         selectionCode: "TDS_BT_UCB",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TDS_BT_ECL__",
+        label: "TDS BT ECL label",
         selectionCode: "TDS_BT_ECL",
         disabled: false,
         hidden: false
       },
       {
-        label: "__TTDS_BT_EXN__",
+        label: "TTDS BT EXN Label",
         selectionCode: "TTDS_BT_EXN",
         disabled: false,
         hidden: false

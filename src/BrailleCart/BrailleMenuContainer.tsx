@@ -4,6 +4,8 @@ import "@src/Assets/Styles/braille-cart.less";
 import { BrailleCartMenu } from "./BrailleCartMenu";
 import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import { getBrailleUniversalOptions } from "./BrailleCart";
+import { MultiSelect } from "@src/Select/MultiSelect";
+import { multiSelectOptions } from "@src/Select/SelectModel";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
@@ -132,6 +134,13 @@ export class BrailleMenuContainer extends React.Component<
             tabIndex={0}
             className="apply-all-multiselect"
           />{" "}
+          {/* <MultiSelect
+            options={getBrailleUniversalOptions(
+              this.props.itemsInCart,
+              this.state.universalSelectedBraille
+            )}
+            onChange={this.handleApplyAll}
+          /> */}
           &nbsp;
           <button
             onClick={this.applyBrailleTypeToAll}
