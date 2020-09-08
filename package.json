@@ -133,7 +133,6 @@
     "font-awesome": "~4.7.0",
     "jquery": "3.2.1",
     "moment": "^2.22.1",
-    "react-bootstrap-multiselect-ts": "^1.0.8",
     "react-loader-advanced": "^1.7.1",
     "typeface-pt-sans-caption": "0.0.44",
     "typeface-pt-serif": "0.0.44",

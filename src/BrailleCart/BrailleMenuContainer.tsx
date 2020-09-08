@@ -2,10 +2,9 @@ import * as React from "react";
 import { ItemCardModel } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
 import { BrailleCartMenu } from "./BrailleCartMenu";
-import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import { getBrailleUniversalOptions } from "./BrailleCart";
 import { MultiSelect } from "@src/Select/MultiSelect";
-import { multiSelectOptions } from "@src/Select/SelectModel";
+import { multiSelectOptions, MultiSelectValue } from "@src/Select/SelectModel";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
@@ -56,7 +55,7 @@ export class BrailleMenuContainer extends React.Component<
     this.setState({ universalSelectedBraille: univeralSelectedBraille });
   };
 
-  handleApplyAll = (v: MultiselectValue[]) => {
+  handleApplyAll = (v: MultiSelectValue[]) => {
     //Check if option get selected
     if (v[0].selected && v[0].selected === true) {
       this.handleUpdateUniversalSelectedBraille("ADD", v[0].value);
@@ -81,10 +80,12 @@ export class BrailleMenuContainer extends React.Component<
   renderBrailleMenu = () => {
     const itemsInCart = this.props.itemsInCart;
     let brailleMenu = null;
-    brailleMenu = itemsInCart.map(item => (
+    brailleMenu = itemsInCart.map((item, index) => (
       <BrailleCartMenu
+        key={item.itemKey}
         item={item}
         associatedItemsInPrintCart={this.props.associatedItemsInPrintCart}
+        index={index}
       />
     ));
 
@@ -119,28 +120,18 @@ export class BrailleMenuContainer extends React.Component<
     return (
       <div>
         <div className="brailleOptionContainer">
-          <label htmlFor="">
+          <label htmlFor={"dropdownMenuButton" + "9501"}>
             <b>Braille Options : </b>
           </label>
-          <Multiselect
-            multiple
-            data={getBrailleUniversalOptions(
-              this.props.itemsInCart,
-              this.state.universalSelectedBraille
-            )}
-            numberDisplayed={1}
-            onChange={this.handleApplyAll}
-            buttonWidth="150px"
-            tabIndex={0}
-            className="apply-all-multiselect"
-          />{" "}
-          {/* <MultiSelect
+          <span className="multiselect-native-select" />
+          <MultiSelect
             options={getBrailleUniversalOptions(
               this.props.itemsInCart,
               this.state.universalSelectedBraille
             )}
             onChange={this.handleApplyAll}
-          /> */}
+            uniqueId={9501}
+          />
           &nbsp;
           <button
             onClick={this.applyBrailleTypeToAll}

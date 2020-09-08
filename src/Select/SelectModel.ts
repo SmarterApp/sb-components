@@ -10,11 +10,16 @@ export interface MultiSelectValue {
 export const UP_KEY = 38;
 export const DOWN_KEY = 40;
 
+export interface MultiSelectToggle {
+  selectedItemsCount: number;
+  isAllSelected: boolean;
+}
+
 export const multiSelectOptions: MultiSelectValue[] = [
   {
     value: "tb_in",
     label: "EBAE Contracted",
-    disabled: false,
+    disabled: true,
     selected: false
   },
   {
@@ -91,4 +96,34 @@ export const getFirstEnabledItem = (itemArray: MultiSelectValue[]) => {
     }
   }
   return -1;
+};
+
+export const getButtonTextDetails = (
+  itemArray: MultiSelectValue[]
+): MultiSelectToggle => {
+  let selectedItemsCount: number = 0;
+  let isAllSelected: boolean = true;
+  itemArray.forEach(item => {
+    if (item.disabled !== undefined && item.disabled === false) {
+      if (item.selected) {
+        selectedItemsCount++;
+      } else {
+        isAllSelected = false;
+      }
+    }
+  });
+  return { isAllSelected, selectedItemsCount };
+};
+
+export const getFirstSelectedItem = (itemArray: MultiSelectValue[]) => {
+  for (let i = 0; i < itemArray.length; i++) {
+    if (
+      itemArray[i].disabled !== undefined &&
+      itemArray[i].disabled === false &&
+      itemArray[i].selected === true
+    ) {
+      return itemArray[i].label;
+    }
+  }
+  return null;
 };

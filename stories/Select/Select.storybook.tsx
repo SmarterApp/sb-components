@@ -14,5 +14,12 @@ const handleValueChange = (v: MultiSelectValue[]) => {
 storiesOf("Select", module)
   .addDecorator(centerDecorator)
   .add("MultiSelect Dropdown", () => (
-    <MultiSelect options={multiSelectOptions} onChange={handleValueChange} />
+    <>
+      <MultiSelect
+        options={multiSelectOptions}
+        onChange={handleValueChange}
+        uniqueId={6000}
+      />
+    </>
+    // <MultiSelect options={multiSelectOptions} onChange={handleValueChange} uniqueId={6010}/></>
   ));

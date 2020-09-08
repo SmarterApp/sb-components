@@ -1,16 +1,18 @@
 import * as React from "react";
-import { ItemCardModel, ToolTip } from "@src/index";
+import { ItemCardModel, ToolTip, MultiSelectValue } from "@src/index";
 import "@src/Assets/Styles/braille-cart.less";
-import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
+// import { Multiselect, MultiselectValue } from "react-bootstrap-multiselect-ts";
 import {
   getAssociatedItems,
   ptItemsToolTipMessage,
   getBrailleOptions
 } from "./BrailleCart";
+import { MultiSelect } from "@src/Select/MultiSelect";
 
 export interface BrailleCartMenuProps {
   item: ItemCardModel;
   associatedItemsInPrintCart?: ItemCardModel[];
+  index: number;
 }
 
 export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
@@ -21,7 +23,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
     };
   }
 
-  handleChangedBrailleType = (v: MultiselectValue[]) => {
+  handleChangedBrailleType = (v: MultiSelectValue[]) => {
     //Check if option get selected
     if (v[0].selected && v[0].selected === true) {
       if (this.props.item !== undefined) {
@@ -73,6 +75,7 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
                   displayText={element.itemKey}
                   position="bottom"
                   displayIcon={true}
+                  key={element.itemKey}
                 />
               </td>
               <td />
@@ -91,15 +94,11 @@ export class BrailleCartMenu extends React.Component<BrailleCartMenuProps> {
         <tr>
           <td tabIndex={0}>{item.itemKey}</td>
           <td>
-            <label htmlFor="" />
-            <Multiselect
-              multiple
-              data={getBrailleOptions(item)}
-              numberDisplayed={1}
+            {/* <label htmlFor={"dropdownMenuButton" + this.props.index} /> */}
+            <MultiSelect
+              options={getBrailleOptions(item)}
               onChange={this.handleChangedBrailleType}
-              buttonWidth="200px"
-              aria-optionLabel={`Braille Option for ${item.itemKey}`}
-              tabIndex={0}
+              uniqueId={this.props.index}
             />
           </td>
         </tr>

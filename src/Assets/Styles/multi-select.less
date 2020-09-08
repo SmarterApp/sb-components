@@ -45,14 +45,42 @@ h1 {
 
 ul {
   list-style-type: none;
-  margin: 2px;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown-menu {
+  padding: 0px;
 }
 
 .checkbox-multi-select {
-  margin-right: 5px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.dropdown-toggle-btn {
+  width: 160px;
+}
+
+.disabled {
+  background-color: #e9eaeb;
+  color: grey;
+}
+.dropdown-menu label {
+  font-size: 15px;
+}
+
+.checkbox-multi-select:focus {
+  outline: 1px dashed !important;
+  outline-offset: 3px;
+  background-color: white;
+  color: black;
+}
+
+label:focus:not(:hover) {
+  background-color: white;
 }
 
 .multiselect-option-label {
-  margin: 8px;
+  margin-bottom: 0px;
 }

@@ -53,6 +53,16 @@ export class BrailleCartModal extends React.Component<
     this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
+  // componentDidMount() {
+  //   if(this.props.showModal){
+  //     document.body.style.overflow = 'hidden';
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //     document.body.style.overflow = 'unset';
+  // }
+
   handleDownloadBraille = () => {
     const itemsBrailleToDownload = getItemsWithSelectedBraille(
       this.props.itemsInCart,
@@ -217,13 +227,13 @@ export class BrailleCartModal extends React.Component<
                 </h5>
                 <br />
               </div>
-              <form id="accessibility-form">
-                <div className="accessibility-groups">
-                  <div className="accessibility-resource-type section section-light">
-                    {this.renderBody()}
-                  </div>
+              {/* <form id="accessibility-form"> */}
+              <div className="accessibility-groups">
+                <div className="accessibility-resource-type section section-light">
+                  {this.renderBody()}
                 </div>
-              </form>
+              </div>
+              {/* </form> */}
             </div>
             <div className="modal-footer">
               <button
