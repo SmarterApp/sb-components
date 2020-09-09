@@ -23,11 +23,27 @@ export class CheckBox extends React.Component<
     };
   }
 
+  handleUpdateOption = () => {
+    console.log("Key down code");
+    console.log("Before updating state ", this.props.option.selected);
+    this.props.option.selected = this.props.option.selected ? false : true;
+
+    this.setState({ isChecked: this.props.option.selected ? false : true });
+    console.log("After updating state ", this.props.option.selected);
+    this.props.onValueChange(this.props.option);
+  };
+
   handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    console.log("Key down");
     if (e.keyCode === 13 || e.keyCode === 32) {
-      const currentFocus = document.activeElement;
-      if (currentFocus !== null)
-        document.getElementById(currentFocus.id)!.click();
+      e.stopPropagation();
+      e.preventDefault();
+      if (
+        this.props.option.disabled !== undefined &&
+        this.props.option.disabled === true
+      )
+        return;
+      this.handleUpdateOption();
     }
   };
 
@@ -35,14 +51,34 @@ export class CheckBox extends React.Component<
     e: React.SyntheticEvent,
     option: MultiSelectValue
   ) => {
-    const target = e.target as HTMLInputElement;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    // option.selected = value === true;
-    option.selected = this.state.isChecked ? false : true;
-    this.setState({ isChecked: this.state.isChecked ? false : true });
-    this.props.onValueChange(option);
     e.stopPropagation();
     e.preventDefault();
+    if (
+      this.props.option.disabled !== undefined &&
+      this.props.option.disabled === true
+    )
+      return;
+    this.handleUpdateOption();
+  };
+
+  ariaLabelText = () => {
+    let ariaLabel: string;
+    if (
+      this.props.option.disabled !== undefined &&
+      this.props.option.disabled === true
+    )
+      ariaLabel = this.props.option.label + " disabled";
+    else ariaLabel = this.props.option.label;
+    return ariaLabel;
+  };
+
+  shouldDisabled = () => {
+    if (
+      this.props.option.disabled !== undefined &&
+      this.props.option.disabled === true
+    )
+      return true;
+    else return false;
   };
 
   render() {
@@ -50,11 +86,14 @@ export class CheckBox extends React.Component<
       <label
         style={{ textAlign: "left" }}
         tabIndex={-1}
+        aria-disabled={this.shouldDisabled() ? true : false}
         role="checkbox"
-        aria-checked={this.state.isChecked}
-        aria-label={this.props.option.label}
+        aria-checked={this.props.option.selected}
+        aria-label={this.ariaLabelText()}
         id={`${this.props.option.value}${this.props.uniqueId}`}
-        className={`checkbox-multi-select btn `}
+        className={`checkbox-multi-select btn ${
+          this.shouldDisabled() ? " disabled" : " "
+        }`}
         onClick={e => this.handleCheckBoxChange(e, this.props.option)}
         onKeyDown={e => {
           this.handleKeyDown(e);

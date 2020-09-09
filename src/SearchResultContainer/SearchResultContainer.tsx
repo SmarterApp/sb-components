@@ -266,6 +266,12 @@ export class SearchResultContainer extends React.Component<
 
   handleResetItems = (): void => {
     this.props.onResetItems();
+    const itemsInPrintCart = this.state.itemsInPrintCart;
+    itemsInPrintCart.forEach(item => {
+      if (item.selectedBrailleTypes) {
+        delete item.selectedBrailleTypes;
+      }
+    });
     this.setState({
       itemsInPrintCart: [],
       associatedItemsInPrintCart: {}

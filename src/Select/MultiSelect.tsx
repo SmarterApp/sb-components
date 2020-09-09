@@ -117,7 +117,8 @@ export class MultiSelect extends React.Component<
       this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
     }
 
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
       const currentFocus = document.activeElement;
       if (currentFocus !== null)
         document.getElementById(currentFocus.id)!.click();
