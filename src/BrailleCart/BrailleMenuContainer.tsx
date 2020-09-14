@@ -116,6 +116,15 @@ export class BrailleMenuContainer extends React.Component<
     this.setState({ isSelectedValueChanged: true, showAlertMsg: showAlertMsg });
   };
 
+  resetBrailleSelection = () => {
+    this.props.itemsInCart.forEach(item => {
+      if (item.selectedBrailleTypes !== undefined) {
+        delete item.selectedBrailleTypes;
+      }
+    });
+    this.setState({ isSelectedValueChanged: true, showAlertMsg: false });
+  };
+
   render() {
     return (
       <div>
@@ -141,7 +150,20 @@ export class BrailleMenuContainer extends React.Component<
             className="btn btn-link"
             id="apply_all"
           >
+            <i className="fa fa-check" />
             Apply to all
+          </button>
+          &nbsp;
+          <button
+            onClick={this.resetBrailleSelection}
+            tabIndex={0}
+            aria-label="Clear all braille selection"
+            type="button"
+            className="btn btn-link"
+            id="clear_all"
+          >
+            <i className="fa fa-eraser" />
+            Clear selection
           </button>
         </div>
 
