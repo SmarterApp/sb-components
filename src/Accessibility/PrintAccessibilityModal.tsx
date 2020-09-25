@@ -1,7 +1,11 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
+import { SelectOptionProps, Select, DropDownSelectionModel } from "@src/index";
 import { getPrintDropdownOptions } from "./AccessibilityModels";
+import {
+  AccResourceGroupModel,
+  mapTranslationGlossaryOptions
+} from "./AccessibilityModels";
 
 export interface PrintAccessibilityContainerProps {
   showModal: boolean;
@@ -18,6 +22,9 @@ export interface PrintAccessibilityContainerProps {
   StatusMessage: string;
   areSelectedItemsHaveMath: boolean;
   isInterimSite: boolean;
+  handleTranslationGlossaryChange: (newTranslationGlossary: string) => void;
+  selectedTranslationGlossary: string;
+  translationAccessibility?: DropDownSelectionModel[];
 }
 export interface pageState {
   areSelectedItemsHaveMath: boolean;
@@ -102,6 +109,35 @@ export class PrintAccessibilityModal extends React.Component<
     );
   }
 
+  //Render dropdown for translation glossary under designated support section
+  renderTranslationGlossary(): JSX.Element {
+    const transalatedGlossary = this.props.selectedTranslationGlossary;
+    // const selectOptions = translationGlossaryOptions(transalatedGlossary);
+    let selectOptions: SelectOptionProps[] = [];
+    if (this.props.translationAccessibility) {
+      // const designatedAccessibility = this.props.accessibility.filter(x => x.label === "Designated Supports");
+      // const designatedAccessibilitySelection = designatedAccessibility[0].accessibilityResources.filter(x => x.resourceCode === "Translation")[0].selections;
+      selectOptions = mapTranslationGlossaryOptions(
+        transalatedGlossary,
+        this.props.translationAccessibility
+      );
+    }
+
+    return (
+      <>
+        <Select
+          className="select-print-accessibility form-control"
+          label="Translations (Glossaries)"
+          //labelClass="hidden"
+          selected={transalatedGlossary || ""}
+          disabled={selectOptions.length > 0 ? false : true}
+          options={selectOptions}
+          onChange={this.props.handleTranslationGlossaryChange}
+        />
+      </>
+    );
+  }
+
   renderGlossaryOptions(): JSX.Element {
     const selectedGlossary = this.props.selectedGlossary;
     const selectOptions: SelectOptionProps[] = [];
@@ -169,6 +205,9 @@ export class PrintAccessibilityModal extends React.Component<
             <div className="accessibility-dropdowns">
               <div className="accessibility-dropdown form-group selection-enabled">
                 {this.renderTranslationLanguages()}
+              </div>
+              <div className="accessibility-dropdown form-group selection-enabled">
+                {this.renderTranslationGlossary()}
               </div>
               <div className="accessibility-dropdown form-group selection-enabled">
                 {this.renderIllustrationOptions()}
