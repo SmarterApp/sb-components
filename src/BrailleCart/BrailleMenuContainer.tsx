@@ -122,7 +122,11 @@ export class BrailleMenuContainer extends React.Component<
         delete item.selectedBrailleTypes;
       }
     });
-    this.setState({ isSelectedValueChanged: true, showAlertMsg: false });
+    this.setState({
+      universalSelectedBraille: [],
+      isSelectedValueChanged: true,
+      showAlertMsg: false
+    });
   };
 
   render() {
@@ -171,7 +175,7 @@ export class BrailleMenuContainer extends React.Component<
           className="alert alert-warning braille-alert-msg"
           hidden={this.state.showAlertMsg === true ? false : true}
         >
-          <strong /> Some of the items in the cart does not have the selected
+          <strong /> Some of the items in the cart do not have the selected
           Braille options.
         </div>
 
