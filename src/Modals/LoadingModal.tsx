@@ -19,7 +19,7 @@ export class LoadingModal extends React.Component<ErrorMessageModalProps> {
     return (
       <ReactModal
         isOpen={modelState}
-        contentLabel="Please wait while PDF is being generated"
+        contentLabel={this.props.LoadingStatusMessage}
         overlayClassName="react-modal-overlay"
         className="react-modal-content about-item-modal react-modal-loading-size react-modal-loading-msg"
         shouldCloseOnEsc={false}

@@ -72,17 +72,6 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
   render() {
     return (
       <header role="navigation">
-        <div id="skip-main">
-          <NavLink
-            to="/BrowseItems"
-            exact
-            activeClassName="active"
-            className="skip-link"
-            onKeyUp={this.handleKeyDown}
-          >
-            Skip to main content
-          </NavLink>
-        </div>
         <nav className="nav-container" role="navigation">
           <div className="nav-content container">
             <div className="nav-titleGroup">
@@ -90,10 +79,13 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
-                  href="http://www.smarterbalanced.org/"
-                  title="Smarter Balanced Home"
+                  href="https://smartertoolsforteachers.org/"
+                  title="Smarter Balanced Tools For Teachers"
                 >
-                  <img alt="Smarter Balanced Logo" src={sbLogo} />
+                  <img
+                    alt="Smarter Balanced Tools for Teachers Logo"
+                    src={sbLogo}
+                  />
                 </a>
               </div>
               <div className="nav-titleGroup-item">

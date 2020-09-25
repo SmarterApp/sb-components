@@ -25,16 +25,22 @@ exports[`Storyshots Search Result Container normal render 1`] = `
       className="search-result-container"
     />
     <div
+      className="search-result-container"
+    />
+    <div
+      className="search-result-container"
+    />
+    <div
       className="row search-result-header-row"
     >
       <div
         className="col-sm-4 header-grid-div header-print-button-groups"
       >
         <button
-          aria-label="Select All"
+          aria-label="Select all to print"
           className="btn btn-default search-result-container-header-button  "
           onClick={[Function]}
-          title="Select All"
+          title="Select all to print"
         >
           <i
             aria-hidden="true"
@@ -73,10 +79,10 @@ exports[`Storyshots Search Result Container normal render 1`] = `
         className="col-sm-5 header-grid-div header-print-button-groups"
       >
         <button
-          aria-label="Clear Selection"
-          className="btn btn-default search-result-container-header-button disabled"
+          aria-label="Clear items from print cart"
+          className="btn btn-default search-result-container-header-button disabled btn-sm"
           onClick={[Function]}
-          title="Clear Selection"
+          title="Clear items from print cart"
         >
           <i
             aria-hidden="true"
@@ -85,6 +91,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
            Clear
         </button>
         <button
+          aria-label="Open print cart popup"
           className="btn btn-default btn-sm btn-print-cart"
           onClick={[Function]}
           type="button"
@@ -100,6 +107,18 @@ exports[`Storyshots Search Result Container normal render 1`] = `
           >
             0
           </span>
+        </button>
+        <button
+          aria-label="Open barille cart modal"
+          className="btn btn-default btn-sm "
+          onClick={[Function]}
+          title="Open barille cart modal"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-braille"
+          />
+           Braille Cart
         </button>
       </div>
     </div>
@@ -392,42 +411,44 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onClick={[Function]}
               onKeyUp={[Function]}
             >
-              <span
-                className="tool-tip-links btn-table-cell"
-                tabIndex={0}
+              <td
+                aria-label="Select item to print cart"
+                className="item-checkbox"
+                onClick={[Function]}
               >
                 <span
-                  className="tool-tip-hoverable"
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
                 >
-                  <td
-                    className="item-checkbox item-add-remove"
-                    onClick={[Function]}
-                    onKeyUp={[Function]}
-                    tabIndex={0}
+                  <span
+                    className="tool-tip-hoverable"
                   >
                     <button
                       className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
                       type="button"
                     >
                       <i
                         className="fa fa-2x fa-plus-circle"
                       />
                     </button>
-                  </td>
-                   
-                </span>
-                <span
-                  className="tool-tip-details"
-                >
+                     
+                  </span>
                   <span
-                    className="tool-tip-message  "
+                    className="tool-tip-details"
                   >
-                    <label>
-                      Add item to print queue
-                    </label>
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
                   </span>
                 </span>
-              </span>
+              </td>
               <td
                 className="item"
                 role="gridcell"
@@ -500,6 +521,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -533,6 +556,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -571,6 +596,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -623,42 +650,44 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onClick={[Function]}
               onKeyUp={[Function]}
             >
-              <span
-                className="tool-tip-links btn-table-cell"
-                tabIndex={0}
+              <td
+                aria-label="Select item to print cart"
+                className="item-checkbox"
+                onClick={[Function]}
               >
                 <span
-                  className="tool-tip-hoverable"
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
                 >
-                  <td
-                    className="item-checkbox item-add-remove"
-                    onClick={[Function]}
-                    onKeyUp={[Function]}
-                    tabIndex={0}
+                  <span
+                    className="tool-tip-hoverable"
                   >
                     <button
                       className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
                       type="button"
                     >
                       <i
                         className="fa fa-2x fa-plus-circle"
                       />
                     </button>
-                  </td>
-                   
-                </span>
-                <span
-                  className="tool-tip-details"
-                >
+                     
+                  </span>
                   <span
-                    className="tool-tip-message  "
+                    className="tool-tip-details"
                   >
-                    <label>
-                      Add item to print queue
-                    </label>
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
                   </span>
                 </span>
-              </span>
+              </td>
               <td
                 className="item"
                 role="gridcell"
@@ -731,6 +760,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -764,6 +795,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -802,6 +835,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -854,42 +889,44 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onClick={[Function]}
               onKeyUp={[Function]}
             >
-              <span
-                className="tool-tip-links btn-table-cell"
-                tabIndex={0}
+              <td
+                aria-label="Select item to print cart"
+                className="item-checkbox"
+                onClick={[Function]}
               >
                 <span
-                  className="tool-tip-hoverable"
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
                 >
-                  <td
-                    className="item-checkbox item-add-remove"
-                    onClick={[Function]}
-                    onKeyUp={[Function]}
-                    tabIndex={0}
+                  <span
+                    className="tool-tip-hoverable"
                   >
                     <button
                       className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
                       type="button"
                     >
                       <i
                         className="fa fa-2x fa-plus-circle"
                       />
                     </button>
-                  </td>
-                   
-                </span>
-                <span
-                  className="tool-tip-details"
-                >
+                     
+                  </span>
                   <span
-                    className="tool-tip-message  "
+                    className="tool-tip-details"
                   >
-                    <label>
-                      Add item to print queue
-                    </label>
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
                   </span>
                 </span>
-              </span>
+              </td>
               <td
                 className="item"
                 role="gridcell"
@@ -962,6 +999,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -995,6 +1034,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1033,6 +1074,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1085,42 +1128,44 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onClick={[Function]}
               onKeyUp={[Function]}
             >
-              <span
-                className="tool-tip-links btn-table-cell"
-                tabIndex={0}
+              <td
+                aria-label="Select item to print cart"
+                className="item-checkbox"
+                onClick={[Function]}
               >
                 <span
-                  className="tool-tip-hoverable"
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
                 >
-                  <td
-                    className="item-checkbox item-add-remove"
-                    onClick={[Function]}
-                    onKeyUp={[Function]}
-                    tabIndex={0}
+                  <span
+                    className="tool-tip-hoverable"
                   >
                     <button
                       className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
                       type="button"
                     >
                       <i
                         className="fa fa-2x fa-plus-circle"
                       />
                     </button>
-                  </td>
-                   
-                </span>
-                <span
-                  className="tool-tip-details"
-                >
+                     
+                  </span>
                   <span
-                    className="tool-tip-message  "
+                    className="tool-tip-details"
                   >
-                    <label>
-                      Add item to print queue
-                    </label>
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
                   </span>
                 </span>
-              </span>
+              </td>
               <td
                 className="item"
                 role="gridcell"
@@ -1191,6 +1236,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1224,6 +1271,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -1262,6 +1311,8 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span

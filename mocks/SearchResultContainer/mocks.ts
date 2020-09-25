@@ -42,6 +42,10 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
     return;
   },
 
+  onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => {
+    return;
+  },
+
   onResetItems: () => {
     let visibleItemCardCopy = [];
     visibleItemCardCopy = itemCardList.slice();
@@ -75,19 +79,19 @@ export const mockSearchResultCardProps: SearchResultContainerProps = {
   testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" },
   itemIdToTestNameMap: {
     3206: {
-      testName: "Test 1",
+      testName: "Test-Name-1",
       testOrder: 1
     },
     3163: {
-      testName: "Test 1",
+      testName: "Test-Name-1",
       testOrder: 2
     },
     3615: {
-      testName: "Test 1",
+      testName: "Test-Name-1",
       testOrder: 3
     },
     2928: {
-      testName: "Test 2",
+      testName: "Test-Name-2",
       testOrder: 1
     }
   }

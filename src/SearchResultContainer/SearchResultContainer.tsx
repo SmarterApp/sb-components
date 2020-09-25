@@ -31,7 +31,7 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
-import { ToolTip } from "@src/ToolTip/ToolTip";
+import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 
 /**
  * SearchResultType enum
@@ -60,6 +60,7 @@ export interface SearchResultContainerProps {
     pdfContentType: string,
     itemsInPrintCart: ItemCardModel[]
   ) => void;
+  onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => void;
   searchAPI: SearchAPIParamsModel;
   isInterimSite: boolean;
   onResetItems: () => void;
@@ -86,6 +87,7 @@ export interface SearchResultContainerState {
   renderType: SearchResultType;
   loading: boolean;
   showModal: boolean;
+  showBrailleModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
   // selectedItems: ItemCardModel[];
@@ -112,6 +114,7 @@ export class SearchResultContainer extends React.Component<
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
       showModal: false,
+      showBrailleModal: false,
       showErrorModal: false,
       statusMessage: "",
       // selectedItems: [],
@@ -226,6 +229,13 @@ export class SearchResultContainer extends React.Component<
       delete item.selectionIndex;
     }
 
+    //Also reset the selected braille types of item, if item is unselected
+    if (item.selected === undefined || item.selected === false) {
+      if (item.selectedBrailleTypes !== undefined) {
+        item.selectedBrailleTypes = undefined;
+      }
+    }
+
     //Update test name in item if test name is selected by user
     if (
       this.props.searchAPI.testNames &&
@@ -257,6 +267,12 @@ export class SearchResultContainer extends React.Component<
 
   handleResetItems = (): void => {
     this.props.onResetItems();
+    const itemsInPrintCart = this.state.itemsInPrintCart;
+    itemsInPrintCart.forEach(item => {
+      if (item.selectedBrailleTypes) {
+        delete item.selectedBrailleTypes;
+      }
+    });
     this.setState({
       itemsInPrintCart: [],
       associatedItemsInPrintCart: {}
@@ -491,6 +507,18 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showModal: false, statusMessage: "" });
   };
 
+  /**
+   *
+   * @param itemsBrailleToDownload
+   * call downloadbraille method from props
+   */
+  onDownloadBraille = (itemsBrailleToDownload: {
+    [key: number]: string[];
+  }): void => {
+    this.props.onDownloadBraille(itemsBrailleToDownload);
+    this.setState({ showBrailleModal: false, statusMessage: "" });
+  };
+
   handleTypeChange = (renderType: SearchResultType): void => {
     this.setState({ renderType });
   };
@@ -516,7 +544,25 @@ export class SearchResultContainer extends React.Component<
         itemsInPrintCart: this.state.itemsInPrintCart
       });
     }
-    //this.componentDidMount();
+  };
+
+  //Toggle Braille cart modal
+  handleShowBrailleCartModal = (brailleCartModalState: boolean): void => {
+    const { ItemsCountInPrintCart, itemsInPrintCart } = this.state;
+    const totalSelectedItemsCount = ItemsCountInPrintCart;
+    if (this.state.itemsInPrintCart && this.state.itemsInPrintCart.length > 0) {
+      const itemsInPrintCart = this.state.itemsInPrintCart.slice();
+      this.setState({
+        showBrailleModal: brailleCartModalState,
+        itemsInPrintCart: this.state.itemsInPrintCart,
+        statusMessage: totalSelectedItemsCount.toString()
+      });
+    } else {
+      this.setState({
+        showBrailleModal: brailleCartModalState,
+        itemsInPrintCart: this.state.itemsInPrintCart
+      });
+    }
   };
 
   areSelectedItemsHaveMath = (): boolean => {
@@ -591,7 +637,7 @@ export class SearchResultContainer extends React.Component<
           aria-label="Clear items from print cart"
           title="Clear items from print cart"
           className={
-            "btn btn-default search-result-container-header-button disabled"
+            "btn btn-default search-result-container-header-button disabled btn-sm"
           }
         >
           <i aria-hidden="true" className="fa fa-eraser" /> Clear
@@ -603,7 +649,9 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleResetItems}
           aria-label="Clear items from print cart"
           title="Clear items from print cart"
-          className={"btn btn-default search-result-container-header-button"}
+          className={
+            "btn btn-default search-result-container-header-button btn-sm"
+          }
         >
           <i aria-hidden="true" className="fa fa-eraser" /> Clear
         </button>
@@ -617,6 +665,19 @@ export class SearchResultContainer extends React.Component<
         itemsInCart={this.getTotalSelectedItemCount()}
         onClick={() => this.handleShowModal(true)}
       />
+    );
+  }
+
+  renderBrailleCartButton(): JSX.Element {
+    return (
+      <button
+        onClick={() => this.handleShowBrailleCartModal(true)}
+        aria-label="Open barille cart modal"
+        title="Open barille cart modal"
+        className={"btn btn-default btn-sm "}
+      >
+        <i aria-hidden="true" className="fa fa-braille" /> Braille Cart
+      </button>
     );
   }
 
@@ -710,6 +771,7 @@ export class SearchResultContainer extends React.Component<
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
+          {this.props.isInterimSite ? this.renderBrailleCartButton() : null}
         </div>
       </div>
     );
@@ -741,6 +803,42 @@ export class SearchResultContainer extends React.Component<
           totalSelectedItemsCount={this.getTotalSelectedItemCount()}
           onItemsReorder={this.handleReorderItemsInPrintCart}
           isSelectedItemsHaveMathItem={this.areSelectedItemsHaveMath()}
+          isInterimSite={this.props.isInterimSite}
+          testCodeToLabelMap={this.props.testCodeToLabelMap}
+          itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+        />
+        <ErrorMessageModal
+          StatusMessage={statusMessage}
+          showModal={showErrorModal}
+          onChangeErrorModelState={this.handleHideErrorModal}
+        />
+      </>
+    );
+  }
+
+  //Render Braille Cart Modal
+  renderBrailleCartModal(): JSX.Element {
+    const {
+      showBrailleModal,
+      statusMessage,
+      showErrorModal,
+      associatedItemsInPrintCart
+    } = this.state;
+    const itemsInPrintCart = this.state.itemsInPrintCart.slice();
+    return (
+      <>
+        <BrailleCartModal
+          showModal={showBrailleModal}
+          onChangeModelState={this.handleShowBrailleCartModal}
+          itemsInCart={itemsInPrintCart}
+          associatedItemsInPrintCart={associatedItemsInPrintCart}
+          onDownloadBraille={this.onDownloadBraille}
+          // isSelectedItemsHaveMathItem={this.isSelectedItemsHaveMathItem()}
+          handleUpdateItemsinPrintCart={this.handleUpdateItemsinPrintCart}
+          onAddOrRemoveSelectedItems={this.handleSelectItem}
+          StatusMessage={statusMessage}
+          totalSelectedItemsCount={this.getTotalSelectedItemCount()}
+          onItemsReorder={this.handleReorderItemsInPrintCart}
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
@@ -800,6 +898,7 @@ export class SearchResultContainer extends React.Component<
     return (
       <div className="search-result-container">
         {this.renderPrintAccessibility()}
+        {this.renderBrailleCartModal()}
         {this.renderHeader()}
         {this.renderBody()}
       </div>

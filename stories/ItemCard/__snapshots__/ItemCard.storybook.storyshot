@@ -129,6 +129,8 @@ exports[`Storyshots Item Card Item Card 1`] = `
         >
           <span
             className="tool-tip-links box"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
             tabIndex={0}
           >
             <span
@@ -168,6 +170,8 @@ exports[`Storyshots Item Card Item Card 1`] = `
         >
           <span
             className="tool-tip-links box"
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
             tabIndex={0}
           >
             <span
@@ -225,17 +229,18 @@ exports[`Storyshots Item Card Item Card 1`] = `
       </p>
       <span
         className="tool-tip-links tooltip-item-card-button"
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
         tabIndex={0}
       >
         <span
           className="tool-tip-hoverable"
         >
           <button
+            aria-hidden={true}
             className="btn btn-add-remove-print-selection ela  btn-unselected "
             onClick={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             <i
@@ -248,7 +253,15 @@ exports[`Storyshots Item Card Item Card 1`] = `
         </span>
         <span
           className="tool-tip-details"
-        />
+        >
+          <span
+            className="tool-tip-message  "
+          >
+            <span>
+              Add item to print queue
+            </span>
+          </span>
+        </span>
       </span>
     </div>
   </div>

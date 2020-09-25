@@ -54,6 +54,9 @@ exports[`Storyshots Layout Footer default footer 1`] = `
           </div>
         </div>
       </div>
+      <div>
+        IAIP v1.0.0
+      </div>
     </div>
   </footer>
 </div>

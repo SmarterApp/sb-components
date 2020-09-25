@@ -25,7 +25,21 @@ export const completeItemCard: ItemCardModel = {
   commonCoreStandardId: "AB-123",
   ccssDescription: "this is the common core description",
   calculator: false,
-  itemDifficulty: "Hard"
+  itemDifficulty: "Hard",
+  availableBrailleTypes: [
+    {
+      label: "EBAE-Contracted",
+      selectionCode: "EABE",
+      disabled: false,
+      hidden: false
+    },
+    {
+      label: "BAET-Contracted",
+      selectionCode: "BAET",
+      disabled: false,
+      hidden: false
+    }
+  ]
 
   // selected: false,
   // bankKey: 187,
@@ -75,7 +89,33 @@ export const itemCardList: ItemCardModel[] = [
     brailleOnlyItem: false,
     calculator: true,
     commonCoreStandardId: "6.M.1a",
-    itemDifficulty: "Moderate"
+    itemDifficulty: "Moderate",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -100,7 +140,33 @@ export const itemCardList: ItemCardModel[] = [
     brailleOnlyItem: false,
     calculator: false,
     commonCoreStandardId: "3.R.2a",
-    itemDifficulty: "Easy"
+    itemDifficulty: "Easy",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -124,7 +190,33 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "6.M.2b",
-    itemDifficulty: ""
+    itemDifficulty: "",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -148,7 +240,33 @@ export const itemCardList: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "4.E.4a",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   }
 ];
 
@@ -174,7 +292,33 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Easy"
+    itemDifficulty: "Easy",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -195,7 +339,33 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: true,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Moderate"
+    itemDifficulty: "Moderate",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -216,7 +386,33 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   },
   {
     bankKey: 187,
@@ -237,7 +433,33 @@ export const sortableItemCards: ItemCardModel[] = [
     isPerformanceItem: false,
     brailleOnlyItem: false,
     commonCoreStandardId: "",
-    itemDifficulty: "Hard"
+    itemDifficulty: "Hard",
+    availableBrailleTypes: [
+      {
+        label: "TDS BT ECN",
+        selectionCode: "TDS_BT_ECN",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "DS BT UCB Label",
+        selectionCode: "TDS_BT_UCB",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TDS BT ECL label",
+        selectionCode: "TDS_BT_ECL",
+        disabled: false,
+        hidden: false
+      },
+      {
+        label: "TTDS BT EXN Label",
+        selectionCode: "TTDS_BT_EXN",
+        disabled: false,
+        hidden: false
+      }
+    ]
   }
 ];
 

@@ -18,13 +18,14 @@ exports[`Storyshots Basic Filter DropDown: multiple filter items 1`] = `
   <div
     className="bf-selection"
     id="grade-bf"
-    tabIndex={0}
     title=""
   >
     <div
       className=""
     >
-      <label>
+      <label
+        htmlFor="Grade"
+      >
         <span
           className=""
         >
@@ -32,8 +33,10 @@ exports[`Storyshots Basic Filter DropDown: multiple filter items 1`] = `
         </span>
       </label>
       <select
+        aria-label="Grade"
         className="form-control input-sm"
         disabled={false}
+        id="Grade"
         onChange={[Function]}
         tabIndex={undefined}
         value="default"
@@ -102,13 +105,14 @@ exports[`Storyshots Basic Filter DropDown: one filter item 1`] = `
   <div
     className="bf-selection"
     id="grade-bf"
-    tabIndex={0}
     title=""
   >
     <div
       className=""
     >
-      <label>
+      <label
+        htmlFor="Grade"
+      >
         <span
           className=""
         >
@@ -116,8 +120,10 @@ exports[`Storyshots Basic Filter DropDown: one filter item 1`] = `
         </span>
       </label>
       <select
+        aria-label="Grade"
         className="form-control input-sm"
         disabled={false}
+        id="Grade"
         onChange={[Function]}
         tabIndex={undefined}
         value="default"
@@ -162,10 +168,11 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
   <div
     className="bf-selection"
     id="grade-bf"
-    tabIndex={0}
     title=""
   >
-    <label>
+    <label
+      htmlFor="basic-filter-checkbox"
+    >
       Grade
       <div
         className="radio"
@@ -173,9 +180,12 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
         <label>
           <input
             aria-checked={false}
+            aria-label="Select Grade 12346"
             checked={false}
+            id="basic-filter-checkbox"
             name="Grade"
             onChange={[Function]}
+            tabIndex={0}
             type="radio"
             value="12346"
           />
@@ -188,9 +198,12 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
         <label>
           <input
             aria-checked={false}
+            aria-label="Select Grade 12347"
             checked={false}
+            id="basic-filter-checkbox"
             name="Grade"
             onChange={[Function]}
+            tabIndex={0}
             type="radio"
             value="12347"
           />
@@ -203,9 +216,12 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
         <label>
           <input
             aria-checked={false}
+            aria-label="Select Grade 12345"
             checked={false}
+            id="basic-filter-checkbox"
             name="Grade"
             onChange={[Function]}
+            tabIndex={0}
             type="radio"
             value="12345"
           />
@@ -218,9 +234,12 @@ exports[`Storyshots Basic Filter RadioBtn: multiple filter items 1`] = `
         <label>
           <input
             aria-checked={false}
+            aria-label="Select Grade 12348"
             checked={false}
+            id="basic-filter-checkbox"
             name="Grade"
             onChange={[Function]}
+            tabIndex={0}
             type="radio"
             value="12348"
           />
@@ -250,10 +269,11 @@ exports[`Storyshots Basic Filter RadioBtn: one filter item 1`] = `
   <div
     className="bf-selection"
     id="grade-bf"
-    tabIndex={0}
     title=""
   >
-    <label>
+    <label
+      htmlFor="basic-filter-checkbox"
+    >
       Grade
       <div
         className="radio"
@@ -261,9 +281,12 @@ exports[`Storyshots Basic Filter RadioBtn: one filter item 1`] = `
         <label>
           <input
             aria-checked={false}
+            aria-label="Select Grade 12345"
             checked={false}
+            id="basic-filter-checkbox"
             name="Grade"
             onChange={[Function]}
+            tabIndex={0}
             type="radio"
             value="12345"
           />

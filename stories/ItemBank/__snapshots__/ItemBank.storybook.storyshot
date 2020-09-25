@@ -8,20 +8,6 @@ exports[`Storyshots Item Bank default 1`] = `
   <header
     role="navigation"
   >
-    <div
-      id="skip-main"
-    >
-      <a
-        aria-current={false}
-        className="skip-link"
-        href="/BrowseItems"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        style={undefined}
-      >
-        Skip to main content
-      </a>
-    </div>
     <nav
       className="nav-container"
       role="navigation"
@@ -36,13 +22,13 @@ exports[`Storyshots Item Bank default 1`] = `
             className="nav-titleGroup-item"
           >
             <a
-              href="http://www.smarterbalanced.org/"
+              href="https://smartertoolsforteachers.org/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Smarter Balanced Home"
+              title="Smarter Balanced Tools For Teachers"
             >
               <img
-                alt="Smarter Balanced Logo"
+                alt="Smarter Balanced Tools for Teachers Logo"
                 src="test-file-stub"
               />
             </a>
@@ -162,7 +148,9 @@ exports[`Storyshots Item Bank default 1`] = `
                 <div
                   className="select-dd"
                 >
-                  <label>
+                  <label
+                    htmlFor="Items"
+                  >
                     <span
                       className="display-none"
                     >
@@ -170,8 +158,10 @@ exports[`Storyshots Item Bank default 1`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Items"
                     className="form-control item-dropdown"
                     disabled={undefined}
+                    id="Items"
                     onChange={[Function]}
                     tabIndex={undefined}
                     value="187-1111"
@@ -245,6 +235,7 @@ exports[`Storyshots Item Bank default 1`] = `
               />
             </div>
             <div
+              aria-hidden={false}
               className="itemViewerFrame"
               tabIndex={0}
             >
@@ -309,6 +300,9 @@ exports[`Storyshots Item Bank default 1`] = `
           </div>
         </div>
       </div>
+      <div>
+        IAIP v1.0.0
+      </div>
     </div>
   </footer>
 </div>
@@ -322,20 +316,6 @@ exports[`Storyshots Item Bank default error client 1`] = `
   <header
     role="navigation"
   >
-    <div
-      id="skip-main"
-    >
-      <a
-        aria-current={false}
-        className="skip-link"
-        href="/BrowseItems"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        style={undefined}
-      >
-        Skip to main content
-      </a>
-    </div>
     <nav
       className="nav-container"
       role="navigation"
@@ -350,13 +330,13 @@ exports[`Storyshots Item Bank default error client 1`] = `
             className="nav-titleGroup-item"
           >
             <a
-              href="http://www.smarterbalanced.org/"
+              href="https://smartertoolsforteachers.org/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Smarter Balanced Home"
+              title="Smarter Balanced Tools For Teachers"
             >
               <img
-                alt="Smarter Balanced Logo"
+                alt="Smarter Balanced Tools for Teachers Logo"
                 src="test-file-stub"
               />
             </a>
@@ -476,7 +456,9 @@ exports[`Storyshots Item Bank default error client 1`] = `
                 <div
                   className="select-dd"
                 >
-                  <label>
+                  <label
+                    htmlFor="Items"
+                  >
                     <span
                       className="display-none"
                     >
@@ -484,8 +466,10 @@ exports[`Storyshots Item Bank default error client 1`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Items"
                     className="form-control item-dropdown"
                     disabled={undefined}
+                    id="Items"
                     onChange={[Function]}
                     tabIndex={undefined}
                     value="187-1111"
@@ -600,6 +584,9 @@ exports[`Storyshots Item Bank default error client 1`] = `
             </button>
           </div>
         </div>
+      </div>
+      <div>
+        IAIP v1.0.0
       </div>
     </div>
   </footer>

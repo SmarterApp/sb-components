@@ -181,13 +181,19 @@ exports[`ItemCard renders correctly 1`] = `
       </p>
       <ToolTip
         className="tooltip-item-card-button"
+        helpText={
+          <span>
+            Add item to print queue
+          </span>
+        }
+        includeTabindex={true}
+        onKeyPress={[Function]}
       >
         <button
+          aria-hidden={true}
           className="btn btn-add-remove-print-selection ela  btn-unselected "
           onClick={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          tabIndex={0}
+          tabIndex={-1}
           type="button"
         >
           <i

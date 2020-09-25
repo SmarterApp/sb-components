@@ -144,34 +144,34 @@
 }
 
 a.skip-link {
-  padding: 6px;
+  padding: 15px;
   position: absolute;
   top: -40px;
   left: 0px;
-  color: @text-color-light;
-  border-right: 1px solid @sb-white;
-  border-bottom: 1px solid @sb-white;
+  background: #005f7b;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
   border-bottom-right-radius: 8px;
   background: transparent;
-  -webkit-transition: top 1s ease-out, background 1s linear;
-  transition: top 1s ease-out, background 1s linear;
+  -webkit-transition: top 0.1s ease-out, background 0.1s linear;
+  transition: top 0.1s ease-out, background 0.1s linear;
 
   &:focus,
   &:active {
     position: absolute;
-    left: 0px;
-    top: 0px;
-    background: #bf1722;
+    left: 0;
+    top: 0;
+    background: #005f7b;
     outline: 0;
-    -webkit-transition: top 0.1s ease-in, background 0.5s linear;
-    transition: top 0.1s ease-in, background 0.5s linear;
+    -webkit-transition: top 0.1s ease-in, background 0.1s linear;
+    transition: top 0.1s ease-in, background 0.1s linear;
     z-index: 3;
   }
 }
 
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -191,7 +191,7 @@ a.skip-link {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -204,7 +204,9 @@ a.skip-link {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {

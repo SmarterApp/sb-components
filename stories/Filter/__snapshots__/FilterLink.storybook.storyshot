@@ -258,42 +258,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -356,6 +358,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -394,6 +398,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -436,42 +442,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -534,6 +542,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -572,6 +582,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -614,42 +626,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -712,6 +726,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -750,6 +766,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -792,42 +810,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -890,6 +910,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -928,6 +950,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -970,42 +994,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1068,6 +1094,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1106,6 +1134,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1148,42 +1178,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1246,6 +1278,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1284,6 +1318,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1326,42 +1362,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1424,6 +1462,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1462,6 +1502,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1504,42 +1546,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1602,6 +1646,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1640,6 +1686,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1682,42 +1730,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1780,6 +1830,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1818,6 +1870,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1860,42 +1914,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -1958,6 +2014,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -1996,6 +2054,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2038,42 +2098,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -2136,6 +2198,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2174,6 +2238,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2216,42 +2282,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -2314,6 +2382,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2352,6 +2422,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2394,42 +2466,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -2492,6 +2566,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2530,6 +2606,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2572,42 +2650,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -2670,6 +2750,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2708,6 +2790,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2750,42 +2834,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -2848,6 +2934,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2886,6 +2974,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -2928,42 +3018,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3026,6 +3118,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3064,6 +3158,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3106,42 +3202,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3204,6 +3302,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3242,6 +3342,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3284,42 +3386,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3382,6 +3486,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3420,6 +3526,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3462,42 +3570,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3560,6 +3670,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3598,6 +3710,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3640,42 +3754,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3738,6 +3854,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3776,6 +3894,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3818,42 +3938,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -3916,6 +4038,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3954,6 +4078,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -3996,42 +4122,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4094,6 +4222,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4132,6 +4262,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4174,42 +4306,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4272,6 +4406,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4310,6 +4446,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4352,42 +4490,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4450,6 +4590,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4488,6 +4630,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4530,42 +4674,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4628,6 +4774,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4666,6 +4814,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4708,42 +4858,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4806,6 +4958,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4844,6 +4998,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -4886,42 +5042,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -4984,6 +5142,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5022,6 +5182,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5064,42 +5226,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -5162,6 +5326,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5200,6 +5366,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5242,42 +5410,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -5340,6 +5510,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5378,6 +5550,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5420,42 +5594,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -5518,6 +5694,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5556,6 +5734,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5598,42 +5778,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -5696,6 +5878,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5734,6 +5918,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5776,42 +5962,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -5874,6 +6062,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5912,6 +6102,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -5954,42 +6146,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6052,6 +6246,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6090,6 +6286,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6132,42 +6330,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6230,6 +6430,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6268,6 +6470,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6310,42 +6514,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6408,6 +6614,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6446,6 +6654,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6488,42 +6698,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6586,6 +6798,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6624,6 +6838,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6666,42 +6882,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6764,6 +6982,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6802,6 +7022,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6844,42 +7066,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -6942,6 +7166,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -6980,6 +7206,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7022,42 +7250,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -7120,6 +7350,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7158,6 +7390,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7200,42 +7434,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -7298,6 +7534,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7336,6 +7574,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7378,42 +7618,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -7476,6 +7718,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7514,6 +7758,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7556,42 +7802,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -7654,6 +7902,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7692,6 +7942,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7734,42 +7986,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -7832,6 +8086,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7870,6 +8126,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -7912,42 +8170,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8010,6 +8270,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8048,6 +8310,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8090,42 +8354,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8188,6 +8454,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8226,6 +8494,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8268,42 +8538,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8366,6 +8638,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8404,6 +8678,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8446,42 +8722,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8544,6 +8822,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8582,6 +8862,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8624,42 +8906,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8722,6 +9006,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8760,6 +9046,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8802,42 +9090,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -8900,6 +9190,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8938,6 +9230,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -8980,42 +9274,44 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
             onClick={[Function]}
             onKeyUp={[Function]}
           >
-            <span
-              className="tool-tip-links btn-table-cell"
-              tabIndex={0}
+            <td
+              aria-label="Select item to print cart"
+              className="item-checkbox"
+              onClick={[Function]}
             >
               <span
-                className="tool-tip-hoverable"
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
               >
-                <td
-                  className="item-checkbox item-add-remove"
-                  onClick={[Function]}
-                  onKeyUp={[Function]}
-                  tabIndex={0}
+                <span
+                  className="tool-tip-hoverable"
                 >
                   <button
                     className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
                     type="button"
                   >
                     <i
                       className="fa fa-2x fa-plus-circle"
                     />
                   </button>
-                </td>
-                 
-              </span>
-              <span
-                className="tool-tip-details"
-              >
+                   
+                </span>
                 <span
-                  className="tool-tip-message  "
+                  className="tool-tip-details"
                 >
-                  <label>
-                    Add item to print queue
-                  </label>
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
                 </span>
               </span>
-            </span>
+            </td>
             <td
               className="item"
               role="gridcell"
@@ -9078,6 +9374,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
@@ -9116,6 +9414,8 @@ exports[`Storyshots Filter Link remains a fixed footer on scroll 1`] = `
               <span>
                 <span
                   className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
                   tabIndex={0}
                 >
                   <span
