@@ -1,11 +1,15 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { ItemCardModel } from "@src/index";
 import { PrintWizardSteps1, PrintWizardSteps2 } from "./PrintWizardSteps";
 import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
+import { SelectOptionProps, Select, AccResourceGroupModel } from "@src/index";
+import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
+import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
+import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
+import { DropDownSelectionModel } from "@src/DropDown/DropDownModels";
 
 export interface PrintCartModalProps {
   showModal: boolean;
@@ -15,7 +19,8 @@ export interface PrintCartModalProps {
     langCode?: string,
     GlossaryRequired?: string,
     IllustrationRequired?: string,
-    pdfContentType?: string
+    pdfContentType?: string,
+    TranslationGlossary?: string
   ) => void;
   itemsInCart: ItemCardModel[];
   StatusMessage?: string;
@@ -27,6 +32,7 @@ export interface PrintCartModalProps {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  translationAccessibility?: DropDownSelectionModel[];
 }
 export interface PrintCartModalState {
   isChanged: boolean;
@@ -37,6 +43,7 @@ export interface PrintCartModalState {
   selectedIllustration: string;
   selectedGlossary: string;
   selectedPrintOption: string;
+  selectedTranslationGlossary: string;
 }
 
 export class PrintCartModal extends React.Component<
@@ -53,7 +60,8 @@ export class PrintCartModal extends React.Component<
       selectedLangCode: "ENU",
       selectedIllustration: "false",
       selectedGlossary: "true",
-      selectedPrintOption: "ITEMS-ONLY"
+      selectedPrintOption: "ITEMS-ONLY",
+      selectedTranslationGlossary: "None"
     };
   }
 
@@ -68,18 +76,21 @@ export class PrintCartModal extends React.Component<
     else this.setState({ itemsInPrintCart: nextProps.itemsInCart });
   }
 
+  // After printing, reset accessibility options
   handlePrintItems = () => {
     this.props.onSubmitPrint(
       this.state.selectedLangCode,
       this.state.selectedGlossary,
       this.state.selectedIllustration,
-      this.state.selectedPrintOption
+      this.state.selectedPrintOption,
+      this.state.selectedTranslationGlossary
     );
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
       selectedGlossary: "true",
-      selectedPrintOption: "ITEMS-ONLY"
+      selectedPrintOption: "ITEMS-ONLY",
+      selectedTranslationGlossary: "None"
     });
   };
 
@@ -101,6 +112,7 @@ export class PrintCartModal extends React.Component<
 
   handleGlossaryOptionChange = (newGlossaryOption: string) => {
     if (newGlossaryOption !== this.state.selectedGlossary) {
+      console.log(newGlossaryOption);
       this.setState({
         selectedGlossary: newGlossaryOption
       });
@@ -114,13 +126,22 @@ export class PrintCartModal extends React.Component<
       });
     }
   };
+  //on transaltion glossary change
+  handleTranslationGlossaryChange = (newTranslationGlossary: string) => {
+    if (newTranslationGlossary !== this.state.selectedTranslationGlossary) {
+      this.setState({
+        selectedTranslationGlossary: newTranslationGlossary
+      });
+    }
+  };
 
   handleHideModal = () => {
     this.setState({
       selectedLangCode: "ENU",
       selectedIllustration: "false",
       selectedGlossary: "true",
-      selectedPrintOption: "ITEMS-ONLY"
+      selectedPrintOption: "ITEMS-ONLY",
+      selectedTranslationGlossary: "None"
     });
     this.props.onChangeModelState(false);
     this.setState({ currentStep: 1 });
@@ -205,6 +226,8 @@ export class PrintCartModal extends React.Component<
           selectedIllustration={this.state.selectedIllustration}
           selectedGlossary={this.state.selectedGlossary}
           selectedPrintOption={this.state.selectedPrintOption}
+          handleTranslationGlossaryChange={this.handleTranslationGlossaryChange}
+          selectedTranslationGlossary={this.state.selectedTranslationGlossary}
           currentStep={this.state.currentStep}
           onChangeModelState={this.props.onChangeModelState}
           showModal={this.props.showModal}
@@ -212,6 +235,7 @@ export class PrintCartModal extends React.Component<
           isSelectedItemsHaveMathItem={this.props.isSelectedItemsHaveMathItem}
           onItemsReorder={this.props.onItemsReorder}
           isInterimSite={this.props.isInterimSite}
+          translationAccessibility={this.props.translationAccessibility}
         />
       </>
     );

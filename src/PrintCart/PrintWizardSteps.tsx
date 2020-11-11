@@ -1,6 +1,11 @@
 import * as React from "react";
 import * as ReactModal from "react-modal";
-import { SelectOptionProps, Select } from "@src/index";
+import {
+  SelectOptionProps,
+  Select,
+  AccResourceGroupModel,
+  DropDownSelectionModel
+} from "@src/index";
 import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { PrintCartTableContainer } from "./PrintCartItemTableContainer";
@@ -31,6 +36,8 @@ export interface PrintWizardSteps2_Props {
   selectedIllustration: string;
   selectedGlossary: string;
   selectedPrintOption: string;
+  handleTranslationGlossaryChange: (newTranslationGlossary: string) => void;
+  selectedTranslationGlossary: string;
   itemsInCart: ItemCardModel[];
   currentStep: number;
   onChangeModelState: (modelShowState: boolean) => void;
@@ -38,6 +45,7 @@ export interface PrintWizardSteps2_Props {
   showModal: boolean;
   isInterimSite: boolean;
   isSelectedItemsHaveMathItem: boolean;
+  translationAccessibility?: DropDownSelectionModel[];
 }
 
 export class PrintWizardSteps1 extends React.Component<
@@ -100,12 +108,17 @@ export class PrintWizardSteps2 extends React.Component<
             selectedIllustration={this.props.selectedIllustration}
             selectedGlossary={this.props.selectedGlossary}
             selectedPrintOption={this.props.selectedPrintOption}
+            handleTranslationGlossaryChange={
+              this.props.handleTranslationGlossaryChange
+            }
+            selectedTranslationGlossary={this.props.selectedTranslationGlossary}
             onChangeModelState={this.props.onChangeModelState}
             showModal={this.props.showModal}
             itemsInCartCount={this.props.itemsInCart.length.toString()}
             areSelectedItemsHaveMath={this.props.isSelectedItemsHaveMathItem}
             StatusMessage={""}
             isInterimSite={this.props.isInterimSite}
+            translationAccessibility={this.props.translationAccessibility}
           />
         </>
       );

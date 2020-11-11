@@ -741,6 +741,86 @@ export const allAccessibilityResourceGroups: AccResourceGroupModel[] = [
   }
 ];
 
+export const translationAccessibilityDropDown: DropDownSelectionModel[] = [
+  {
+    selectionCode: "DISABLED",
+    label: "None",
+    order: 1,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_ArabicGloss",
+    label: "Arabic",
+    order: 2,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_CantoneseGloss",
+    label: "Cantonese",
+    order: 3,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_ESNGlossary",
+    label: "Spanish",
+    order: 4,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_KoreanGloss",
+    label: "Korean",
+    order: 5,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_MandarinGloss",
+    label: "Mandarin",
+    order: 6,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_PunjabiGloss",
+    label: "Punjabi",
+    order: 7,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_RussianGloss",
+    label: "Russian",
+    order: 8,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_TagalGloss",
+    label: "Filipino (Ilokano and Tagalog)",
+    order: 9,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_UkrainianGloss",
+    label: "Ukrainian",
+    order: 10,
+    disabled: true,
+    hidden: false
+  },
+  {
+    selectionCode: "TDS_WL_VietnameseGloss",
+    label: "Vietnamese",
+    order: 11,
+    disabled: true,
+    hidden: false
+  }
+];
+
 const accessibilityManyOptions: AccResourceGroupModel[] = [];
 allAccessibilityResourceGroups.forEach(s => {
   accessibilityManyOptions.push(s);

@@ -7,7 +7,9 @@ import {
   ItemModel,
   ItemCard,
   IframeModal,
-  SearchAPIParamsModel
+  SearchAPIParamsModel,
+  AccResourceGroupModel,
+  DropDownSelectionModel
 } from "@src/index";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
@@ -58,10 +60,12 @@ export interface SearchResultContainerProps {
     GlossaryRequired: string,
     IllustrationRequired: string,
     pdfContentType: string,
+    TranslationGlossary: string,
     itemsInPrintCart: ItemCardModel[]
   ) => void;
   onDownloadBraille: (selectedBrailleType: { [key: number]: string[] }) => void;
   searchAPI: SearchAPIParamsModel;
+  translationAccessibility?: DropDownSelectionModel[];
   isInterimSite: boolean;
   onResetItems: () => void;
   onSelectAll: (itemCards?: ItemCardModel[]) => void;
@@ -494,7 +498,8 @@ export class SearchResultContainer extends React.Component<
     langCode: string,
     GlossaryRequired: string,
     IllustrationRequired: string,
-    pdfContentType: string
+    pdfContentType: string,
+    TranslationGlossary: string
   ): void => {
     const { itemsInPrintCart, associatedItemsInPrintCart } = this.state;
     this.props.onPrintItems(
@@ -502,6 +507,7 @@ export class SearchResultContainer extends React.Component<
       GlossaryRequired,
       IllustrationRequired,
       pdfContentType,
+      TranslationGlossary,
       itemsInPrintCart
     );
     this.setState({ showModal: false, statusMessage: "" });
@@ -842,6 +848,7 @@ export class SearchResultContainer extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          // translationAccessibility={this.props.translationAccessibility}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
