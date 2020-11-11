@@ -812,6 +812,7 @@ export class SearchResultContainer extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          translationAccessibility={this.props.translationAccessibility}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -848,7 +849,6 @@ export class SearchResultContainer extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
-          // translationAccessibility={this.props.translationAccessibility}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
