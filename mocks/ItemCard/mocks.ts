@@ -245,7 +245,7 @@ export const itemCardList: ItemCardModel[] = [
       {
         label: "TDS BT ECN",
         selectionCode: "TDS_BT_ECN",
-        disabled: false,
+        disabled: true,
         hidden: false
       },
       {

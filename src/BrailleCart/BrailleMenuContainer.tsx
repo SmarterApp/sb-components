@@ -98,16 +98,20 @@ export class BrailleMenuContainer extends React.Component<
       let applicableBraille: string[] = [];
 
       this.state.universalSelectedBraille.forEach(brailleToApply => {
+        let isBrailleCodeApplied = false;
         item.availableBrailleTypes.forEach(option => {
           if (
             option.selectionCode == brailleToApply &&
             option.disabled == false
           ) {
             applicableBraille.push(brailleToApply);
-          } else {
-            showAlertMsg = true;
+            isBrailleCodeApplied = true;
           }
+          // else {
+          //   showAlertMsg = true;
+          // }
         });
+        if (isBrailleCodeApplied == false) showAlertMsg = true;
       });
       if (item.selectedBrailleTypes === undefined)
         item.selectedBrailleTypes = [];
