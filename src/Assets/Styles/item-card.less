@@ -10,15 +10,15 @@
   width: 300px;
   -webkit-transition-duration: 0.2s; // Safari
   transition-duration: 0.2s;
-  cursor: pointer;
+  // cursor: pointer;
   margin: 26px;
   font-size: @font-size-base;
   box-shadow: @card-shadow;
 
-  &:focus,
-  &:hover {
-    box-shadow: 0 0px 20px #959595;
-  }
+  // &:focus,
+  // &:hover {
+  //   box-shadow: 0 0px 20px #959595;
+  // }
 }
 
 .card.math {
@@ -95,6 +95,13 @@
   }
   .ela & {
     background-color: @sb-blue;
+  }
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0px 20px #959595;
   }
 }
 
