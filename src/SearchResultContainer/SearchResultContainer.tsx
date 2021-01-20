@@ -34,6 +34,7 @@ import {
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
+import { FieldFilterModal } from "@src/Modals/FieldFilterModal";
 
 /**
  * SearchResultType enum
@@ -92,6 +93,7 @@ export interface SearchResultContainerState {
   loading: boolean;
   showModal: boolean;
   showBrailleModal: boolean;
+  showFieldFilterModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
   // selectedItems: ItemCardModel[];
@@ -119,6 +121,7 @@ export class SearchResultContainer extends React.Component<
       loading: true,
       showModal: false,
       showBrailleModal: false,
+      showFieldFilterModal: false,
       showErrorModal: false,
       statusMessage: "",
       // selectedItems: [],
@@ -603,6 +606,14 @@ export class SearchResultContainer extends React.Component<
     });
   };
 
+  openFieldFilterModal = () => {
+    this.setState({ showFieldFilterModal: true });
+  };
+
+  onHideFieldFilterModal = () => {
+    this.setState({ showFieldFilterModal: false });
+  };
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -683,6 +694,21 @@ export class SearchResultContainer extends React.Component<
         className={"btn btn-default btn-sm "}
       >
         <i aria-hidden="true" className="fa fa-braille" /> Braille Cart
+      </button>
+    );
+  }
+
+  // Render button for table customizable
+  renderFieldCustomizeButton(): JSX.Element {
+    return (
+      <button
+        onClick={this.openFieldFilterModal}
+        id="btn_customize_item_field"
+        aria-label="Customize grid and card fields"
+        title="Customize grid and card fields"
+        className={`btn btn-default search-result-container-header-button  `}
+      >
+        <i className="fa fa-table" aria-hidden="true" />
       </button>
     );
   }
@@ -768,7 +794,9 @@ export class SearchResultContainer extends React.Component<
       <div className="row search-result-header-row">
         <div className="col-sm-4 header-grid-div header-print-button-groups">
           {this.renderSelectAllButton(this.props.showSelectAllButton)}
+          {this.renderFieldCustomizeButton()}
         </div>
+
         <div className="col-sm-3 header-grid-div  ">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
@@ -859,6 +887,16 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
+  //Render ....
+  renderFieldFilterModal = () => {
+    return (
+      <FieldFilterModal
+        shouldOpenModal={this.state.showFieldFilterModal}
+        handleHideFieldFilterModal={this.onHideFieldFilterModal}
+      />
+    );
+  };
+
   /**
    * Depending on what renderType is selected, ItemCards or a table
    * will be rendered.
@@ -906,6 +944,7 @@ export class SearchResultContainer extends React.Component<
       <div className="search-result-container">
         {this.renderPrintAccessibility()}
         {this.renderBrailleCartModal()}
+        {this.renderFieldFilterModal()}
         {this.renderHeader()}
         {this.renderBody()}
       </div>

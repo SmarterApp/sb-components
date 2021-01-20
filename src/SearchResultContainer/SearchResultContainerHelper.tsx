@@ -3,6 +3,7 @@ import {
   TestNameItemsPoolModel,
   itemKeys
 } from "@src/ItemSearch/ItemSearchModels";
+import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
 
 export function getUpdatedSelectedItems(
   item: ItemCardModel,
@@ -226,3 +227,20 @@ export function moveArrayItemToNewIndex(
   array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
   return array;
 }
+
+// Function to return defualt table header fields config model
+export const getColumnsHeaderConfig = () => {
+  const headerModel: ItemColumnHeadersConfig[] = [];
+  let i = 0;
+  const itemsHeaderName = itemColumnsName;
+  itemsHeaderName.forEach(element => {
+    let column: ItemColumnHeadersConfig = {
+      headerName: element,
+      columnIndex: ++i,
+      isHidden: false,
+      isSortable: true
+    };
+    headerModel.push(column);
+  });
+  return headerModel;
+};
