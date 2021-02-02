@@ -34,7 +34,9 @@ import {
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
-import { FieldFilterModal } from "@src/Modals/FieldFilterModal";
+import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
+import { dataFieldsDummyData } from "@src/DataFields/DummyData";
+import { MultiSelectValue } from "lib/src";
 
 /**
  * SearchResultType enum
@@ -102,6 +104,8 @@ export interface SearchResultContainerState {
   ItemsCountInPrintCart: number;
   currentSelectedItemIndex: number;
   associatedItemsInPrintCart: any;
+  fieldCustomizeBtnPositionX: number;
+  fieldCustomizeBtnPositionY: number;
 }
 
 /**
@@ -114,8 +118,11 @@ export class SearchResultContainer extends React.Component<
   SearchResultContainerProps,
   SearchResultContainerState
 > {
+  // private fieldCustomizeBtnReference = React.createRef<HTMLButtonElement>();
+  private fieldCustomizeBtnReference: HTMLButtonElement | null;
   constructor(props: SearchResultContainerProps) {
     super(props);
+    // this.fieldCustomizeBtnReference = React.createRef();
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
@@ -129,7 +136,9 @@ export class SearchResultContainer extends React.Component<
       itemsInPrintCart: [],
       ItemsCountInPrintCart: 0,
       currentSelectedItemIndex: -1,
-      associatedItemsInPrintCart: {}
+      associatedItemsInPrintCart: {},
+      fieldCustomizeBtnPositionX: 0,
+      fieldCustomizeBtnPositionY: 0
     };
   }
 
@@ -614,6 +623,8 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showFieldFilterModal: false });
   };
 
+  handleApplyFieldFilters = (v: MultiSelectValue[]) => {};
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -701,15 +712,11 @@ export class SearchResultContainer extends React.Component<
   // Render button for table customizable
   renderFieldCustomizeButton(): JSX.Element {
     return (
-      <button
-        onClick={this.openFieldFilterModal}
-        id="btn_customize_item_field"
-        aria-label="Customize grid and card fields"
-        title="Customize grid and card fields"
-        className={`btn btn-default search-result-container-header-button  `}
-      >
-        <i className="fa fa-table" aria-hidden="true" />
-      </button>
+      <DataFieldMultiSelect
+        options={dataFieldsDummyData}
+        onChange={this.handleApplyFieldFilters}
+        uniqueId={9502}
+      />
     );
   }
 
@@ -887,16 +894,6 @@ export class SearchResultContainer extends React.Component<
     );
   }
 
-  //Render ....
-  renderFieldFilterModal = () => {
-    return (
-      <FieldFilterModal
-        shouldOpenModal={this.state.showFieldFilterModal}
-        handleHideFieldFilterModal={this.onHideFieldFilterModal}
-      />
-    );
-  };
-
   /**
    * Depending on what renderType is selected, ItemCards or a table
    * will be rendered.
@@ -944,7 +941,6 @@ export class SearchResultContainer extends React.Component<
       <div className="search-result-container">
         {this.renderPrintAccessibility()}
         {this.renderBrailleCartModal()}
-        {this.renderFieldFilterModal()}
         {this.renderHeader()}
         {this.renderBody()}
       </div>

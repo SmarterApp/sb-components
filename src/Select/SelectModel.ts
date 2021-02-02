@@ -15,33 +15,6 @@ export interface MultiSelectToggle {
   isAllSelected: boolean;
 }
 
-export const multiSelectOptions: MultiSelectValue[] = [
-  {
-    value: "tb_in",
-    label: "EBAE Contracted",
-    disabled: true,
-    selected: false
-  },
-  {
-    value: "xy_zb",
-    label: "EBAE with Nemeth Uncontracted",
-    disabled: false,
-    selected: false
-  },
-  {
-    value: "op_gh",
-    label: "EBAE with Nemeth Contracted",
-    disabled: true,
-    selected: false
-  },
-  {
-    value: "xy_zb_2",
-    label: "EBAE with Nemeth Uncontracted",
-    disabled: false,
-    selected: false
-  }
-];
-
 export const getItemIndexInDirection = (
   itemArray: MultiSelectValue[],
   currentIndex: number,
