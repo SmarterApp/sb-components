@@ -5,6 +5,7 @@ export interface MultiSelectValue {
   label: string;
   selected: boolean;
   disabled?: boolean;
+  isDefault?: boolean;
 }
 
 export const UP_KEY = 38;

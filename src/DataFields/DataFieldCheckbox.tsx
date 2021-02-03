@@ -98,7 +98,7 @@ export class DataFieldCheckBox extends React.Component<
         <i
           style={{ marginRight: "4px" }}
           className={
-            this.props.option.selected || this.props.option.disabled
+            this.props.option.selected || this.props.option.isDefault
               ? "fa fa-check-square-o checkbox-fields-customize-checked"
               : "fa fa-square-o checkbox-fields-customize-unchecked"
           }

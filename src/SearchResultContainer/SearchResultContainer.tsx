@@ -9,7 +9,8 @@ import {
   IframeModal,
   SearchAPIParamsModel,
   AccResourceGroupModel,
-  DropDownSelectionModel
+  DropDownSelectionModel,
+  MultiSelectValue
 } from "@src/index";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
@@ -24,7 +25,9 @@ import {
   deleteTestNameDetails,
   addTestNameDetails,
   addTestName_associatedItems,
-  getItemPositionInTest
+  getItemPositionInTest,
+  getcolumnsHeaderMultiSelectOptions,
+  getUpdatedItemColumnsHeaderConfig
 } from "./SearchResultContainerHelper";
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 import {
@@ -35,8 +38,6 @@ import {
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
-import { dataFieldsDummyData } from "@src/DataFields/DummyData";
-import { MultiSelectValue } from "@src/index";
 import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
 
 /**
@@ -181,7 +182,7 @@ export class SearchResultContainer extends React.Component<
       .itemColumnHeaderConfig;
     if (
       itemColumnHeaderConfig !== undefined &&
-      itemColumnHeaderConfig.length >= 0
+      itemColumnHeaderConfig.length > 0
     ) {
       return itemColumnHeaderConfig;
     }
@@ -649,6 +650,12 @@ export class SearchResultContainer extends React.Component<
 
   handleApplyTableFieldFilters = (v: MultiSelectValue[]) => {
     console.log(v);
+    const newItemColumnHeaderConfig = getUpdatedItemColumnsHeaderConfig(
+      v,
+      this.getColumnsHeaderConfig()
+    );
+    this.setState({ itemColumnHeaderConfig: newItemColumnHeaderConfig });
+    console.log(newItemColumnHeaderConfig);
   };
 
   /**
@@ -739,7 +746,9 @@ export class SearchResultContainer extends React.Component<
   renderFieldCustomizeButton(): JSX.Element {
     return (
       <DataFieldMultiSelect
-        options={dataFieldsDummyData}
+        options={getcolumnsHeaderMultiSelectOptions(
+          this.getColumnsHeaderConfig()
+        )}
         onChange={this.handleApplyTableFieldFilters}
         uniqueId={9502}
       />

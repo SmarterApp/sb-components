@@ -21,4 +21,5 @@ export interface ItemColumnHeadersConfig {
   isHidden: boolean;
   isSortable?: boolean;
   columnIndex: number;
+  isDefault?: boolean;
 }

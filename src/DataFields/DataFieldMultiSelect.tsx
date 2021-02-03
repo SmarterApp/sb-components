@@ -21,6 +21,7 @@ export interface MultiSelectProps {
 
 export interface MultiSelectState {
   toggleChange: number;
+  multiSelectOptionsTemp: MultiSelectValue[];
 }
 
 export class DataFieldMultiSelect extends React.Component<
@@ -38,7 +39,8 @@ export class DataFieldMultiSelect extends React.Component<
     };
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
-      toggleChange: 0
+      toggleChange: 0,
+      multiSelectOptionsTemp: this.props.options
     };
     this.isOpenVar = false;
   }
@@ -55,7 +57,10 @@ export class DataFieldMultiSelect extends React.Component<
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       if (this.isOpenVar) {
         this.isOpenVar = false;
-        this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
+        this.setState({
+          toggleChange: this.state.toggleChange === 0 ? 1 : 0,
+          multiSelectOptionsTemp: this.props.options
+        });
       }
     }
   }
@@ -102,10 +107,21 @@ export class DataFieldMultiSelect extends React.Component<
   };
 
   handleValueChange = (option: MultiSelectValue) => {
-    let changeOptionsArray: MultiSelectValue[] = [];
-    changeOptionsArray.push(option);
-    this.props.onChange(changeOptionsArray);
-    this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
+    let multiSelectOptionsTemp = this.state.multiSelectOptionsTemp.slice();
+    multiSelectOptionsTemp.forEach(element => {
+      if (option.label === element.label) {
+        element.selected = option.selected;
+      }
+    });
+    // console.log(multiSelectOptionsTemp);
+    // let changeOptionsArray: MultiSelectValue[] = [];
+    // changeOptionsArray.push(option);
+    // // this.props.onChange(changeOptionsArray);
+    // this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
+  };
+
+  onApplySetting = () => {
+    this.props.onChange(this.state.multiSelectOptionsTemp);
   };
 
   renderSelectOption = (option: MultiSelectValue, index: number) => {
@@ -165,21 +181,26 @@ export class DataFieldMultiSelect extends React.Component<
             role="dialog"
           >
             <ul className="">
-              {this.renderSelectMultiOptionsMenu(this.props.options)}
+              {this.renderSelectMultiOptionsMenu(
+                this.state.multiSelectOptionsTemp
+              )}
             </ul>
             <div className="field-customizer-divider" />
             <div className="flex-data-field-popup">
               {/* btn to apply customize field setting; id is required for tacking active elements anytime */}
               <button
                 className="btn btn-success "
+                type="button"
                 id="btn_apply_customize_field"
                 onKeyDown={e => {
                   this.onKeyPressOnButton(e);
                 }}
+                onClick={this.onApplySetting}
               >
                 Apply
               </button>
               <button
+                type="button"
                 className="btn btn-danger "
                 id="btn_apply_customize_field"
                 tabIndex={0}
