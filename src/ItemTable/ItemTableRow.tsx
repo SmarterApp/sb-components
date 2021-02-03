@@ -151,7 +151,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
     let isHidden = false;
     const tableHeaderConfig = this.props.itemTableConfig.find(
-      hs => hs.headerName === colGroup.header
+      hs => hs.headerName.toUpperCase() === colGroup.header.toUpperCase()
     );
 
     if (tableHeaderConfig != undefined) {

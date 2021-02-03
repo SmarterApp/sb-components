@@ -107,7 +107,7 @@ export class HeaderTable extends React.Component<HeaderTableProps, {}> {
     );
     let isHidden = false;
     const tableHeaderConfig = this.props.itemTableConfig.find(
-      hs => hs.headerName === col.header
+      hs => hs.headerName.toUpperCase() === col.header.toUpperCase()
     );
 
     if (tableHeaderConfig != undefined) {
