@@ -87,7 +87,7 @@ export class DataFieldCheckBox extends React.Component<
         aria-checked={this.props.option.selected}
         aria-label={this.ariaLabelText()}
         id={`${this.props.option.value}${this.props.uniqueId}`}
-        className={`checkbox-multi-select btn ${
+        className={`checkbox-multi-select checkbox-data-fields-customize  btn ${
           this.shouldDisabled() ? " disabled" : " "
         }`}
         onClick={e => this.handleCheckBoxChange(e, this.props.option)}
@@ -98,9 +98,9 @@ export class DataFieldCheckBox extends React.Component<
         <i
           style={{ marginRight: "4px" }}
           className={
-            this.props.option.selected
-              ? "fa fa-eye"
-              : "fa fa-eye-slash font-color-grey"
+            this.props.option.selected || this.props.option.disabled
+              ? "fa fa-check-square-o checkbox-fields-customize-checked"
+              : "fa fa-square-o checkbox-fields-customize-unchecked"
           }
           aria-hidden="true"
         />

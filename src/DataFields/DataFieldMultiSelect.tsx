@@ -82,37 +82,6 @@ export class DataFieldMultiSelect extends React.Component<
     e: React.KeyboardEvent<HTMLElement>,
     currentFocusedElement: number
   ) => {
-    // if (e.keyCode == UP_KEY) {
-    //   e.preventDefault();
-    //   const nextFocusIndex = getItemIndexInDirection(this.props.options, currentFocusedElement, "PREVIOUS");
-    //   if (nextFocusIndex !== undefined) {
-    //     const dom = document.getElementById(this.props.options[nextFocusIndex].value + this.props.uniqueId.toString());
-    //     if (dom !== null) {
-    //       window.setTimeout(function () {
-    //         dom.focus();
-    //       }, 0);
-    //     }
-    //   }
-    // }
-    //down
-    // if (e.keyCode == DOWN_KEY) {
-    //   e.preventDefault();
-    //   const nextFocusIndex = getItemIndexInDirection(this.props.options, currentFocusedElement, "NEXT");
-    //   if (nextFocusIndex !== undefined) {
-    //     const dom = document.getElementById(this.props.options[nextFocusIndex].value + this.props.uniqueId.toString());
-    //     if (dom !== null) {
-    //       window.setTimeout(function () {
-    //         dom.focus();
-    //       }, 0);
-    //     }
-    //   }
-    // }
-
-    // if (e.keyCode === 9) {
-    //   this.isOpenVar = false;
-    //   this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
-    // }
-
     if (e.keyCode === 13 || e.keyCode === 32) {
       e.preventDefault();
       const currentFocus = document.activeElement;
@@ -128,26 +97,7 @@ export class DataFieldMultiSelect extends React.Component<
       this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
     } else {
       this.isOpenVar = true;
-      this.setState(
-        { toggleChange: this.state.toggleChange === 0 ? 1 : 0 },
-        () => {
-          this.focusFirstOption();
-        }
-      );
-    }
-  };
-
-  focusFirstOption = () => {
-    const firstFocusableIndex = getFirstEnabledItem(this.props.options);
-    if (
-      firstFocusableIndex !== -1 &&
-      firstFocusableIndex < this.props.options.length
-    ) {
-      const elementId =
-        this.props.options[firstFocusableIndex].value +
-        this.props.uniqueId.toString();
-      const element = document.getElementById(elementId);
-      document.getElementById(elementId)!.focus();
+      this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
     }
   };
 
@@ -177,7 +127,9 @@ export class DataFieldMultiSelect extends React.Component<
 
   renderSelectMultiOptionsMenu = (optionsList: MultiSelectValue[]) => {
     const multiSelectOptions = optionsList.map((option, index) => (
-      <li>{this.renderSelectOption(option, index)}</li>
+      <li className="li-data-fields-customize">
+        {this.renderSelectOption(option, index)}
+      </li>
     ));
     return multiSelectOptions;
   };
@@ -206,6 +158,7 @@ export class DataFieldMultiSelect extends React.Component<
           >
             <i className="fa fa-table" aria-hidden="true" />
           </button>
+          {/* <div className="modal-backdrop"> */}
           <form
             className="dropdown-menu dropdown-menu-field-customizer"
             aria-labelledby={"dropdownMenuButton" + this.props.uniqueId}
@@ -235,6 +188,7 @@ export class DataFieldMultiSelect extends React.Component<
               </button>
             </div>
           </form>
+          {/* </div> */}
         </div>
       </>
     );

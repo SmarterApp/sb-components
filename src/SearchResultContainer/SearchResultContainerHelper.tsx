@@ -228,19 +228,19 @@ export function moveArrayItemToNewIndex(
   return array;
 }
 
-// Function to return defualt table header fields config model
-export const getColumnsHeaderConfig = () => {
-  const headerModel: ItemColumnHeadersConfig[] = [];
-  let i = 0;
-  const itemsHeaderName = itemColumnsName;
-  itemsHeaderName.forEach(element => {
-    let column: ItemColumnHeadersConfig = {
-      headerName: element,
-      columnIndex: ++i,
-      isHidden: false,
-      isSortable: true
-    };
-    headerModel.push(column);
-  });
-  return headerModel;
-};
+// // Function to return defualt table header fields config model
+// export const getColumnsHeaderConfig = (itemColumnHeaderConfig: ItemColumnHeadersConfig[]) => {
+//   const headerModel: ItemColumnHeadersConfig[] = [];
+//   let i = 0;
+//   const itemsHeaderName = itemColumnsName;
+//   itemsHeaderName.forEach(element => {
+//     let column: ItemColumnHeadersConfig = {
+//       headerName: element,
+//       columnIndex: ++i,
+//       isHidden: false,
+//       isSortable: true
+//     };
+//     headerModel.push(column);
+//   });
+//   return headerModel;
+// };

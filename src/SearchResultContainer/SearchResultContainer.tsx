@@ -37,6 +37,7 @@ import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
 import { dataFieldsDummyData } from "@src/DataFields/DummyData";
 import { MultiSelectValue } from "lib/src";
+import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
 
 /**
  * SearchResultType enum
@@ -104,8 +105,7 @@ export interface SearchResultContainerState {
   ItemsCountInPrintCart: number;
   currentSelectedItemIndex: number;
   associatedItemsInPrintCart: any;
-  fieldCustomizeBtnPositionX: number;
-  fieldCustomizeBtnPositionY: number;
+  itemColumnHeaderConfig: ItemColumnHeadersConfig[];
 }
 
 /**
@@ -137,8 +137,7 @@ export class SearchResultContainer extends React.Component<
       ItemsCountInPrintCart: 0,
       currentSelectedItemIndex: -1,
       associatedItemsInPrintCart: {},
-      fieldCustomizeBtnPositionX: 0,
-      fieldCustomizeBtnPositionY: 0
+      itemColumnHeaderConfig: []
     };
   }
 
@@ -175,6 +174,31 @@ export class SearchResultContainer extends React.Component<
     if (itemsInPrintCart !== undefined)
       this.handleUpdateSelectionIndex(itemsInPrintCart);
   }
+
+  // Function to return defualt table header fields config model
+  getColumnsHeaderConfig = () => {
+    const itemColumnHeaderConfig: ItemColumnHeadersConfig[] = this.state
+      .itemColumnHeaderConfig;
+    if (
+      itemColumnHeaderConfig !== undefined &&
+      itemColumnHeaderConfig.length >= 0
+    ) {
+      return itemColumnHeaderConfig;
+    }
+    const headerModel: ItemColumnHeadersConfig[] = [];
+    let i = 0;
+    const itemsHeaderName = itemColumnsName;
+    itemsHeaderName.forEach(element => {
+      let column: ItemColumnHeadersConfig = {
+        headerName: element,
+        columnIndex: ++i,
+        isHidden: false,
+        isSortable: true
+      };
+      headerModel.push(column);
+    });
+    return headerModel;
+  };
 
   handleUpdateItemsinPrintCart = (itemsInPrintCart: ItemCardModel[]) => {
     this.handleUpdateSelectionIndex(itemsInPrintCart);
@@ -623,7 +647,9 @@ export class SearchResultContainer extends React.Component<
     this.setState({ showFieldFilterModal: false });
   };
 
-  handleApplyFieldFilters = (v: MultiSelectValue[]) => {};
+  handleApplyTableFieldFilters = (v: MultiSelectValue[]) => {
+    console.log(v);
+  };
 
   /**
    * Renders button toggle for changing the layout to cards or table
@@ -714,7 +740,7 @@ export class SearchResultContainer extends React.Component<
     return (
       <DataFieldMultiSelect
         options={dataFieldsDummyData}
-        onChange={this.handleApplyFieldFilters}
+        onChange={this.handleApplyTableFieldFilters}
         uniqueId={9502}
       />
     );
