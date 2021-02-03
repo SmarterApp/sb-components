@@ -36,7 +36,7 @@ import {
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
 import { dataFieldsDummyData } from "@src/DataFields/DummyData";
-import { MultiSelectValue } from "lib/src";
+import { MultiSelectValue } from "@src/index";
 import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
 
 /**
@@ -947,6 +947,7 @@ export class SearchResultContainer extends React.Component<
             }
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
+            itemColumnHeaderConfig={this.getColumnsHeaderConfig()}
           />
         );
       } else {

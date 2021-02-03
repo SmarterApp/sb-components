@@ -14,6 +14,7 @@ import {
   ColumnGroup
 } from "@src/index";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface ItemTableProps {
   cardRows: ItemCardModel[];
@@ -35,6 +36,7 @@ export interface ItemTableProps {
   ) => number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -107,6 +109,7 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         }
         isInterimSite={this.props.isInterimSite}
         testCodeToLabelMap={this.props.testCodeToLabelMap}
+        itemTableConfig={this.props.itemTableConfig}
       />
     );
 

@@ -12,6 +12,7 @@ import {
   mapItemSubjectlabel,
   mapItemClaim
 } from "@src/PrintCart/PrintCartItemTableRow";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -31,6 +32,7 @@ export interface ItemTableRowProps {
   ) => number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 const unChecked = (
@@ -147,14 +149,27 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
+    let isHidden = false;
+    const tableHeaderConfig = this.props.itemTableConfig.find(
+      hs => hs.headerName === colGroup.header
+    );
+
+    if (tableHeaderConfig != undefined) {
+      isHidden = tableHeaderConfig.isHidden;
+    }
+
     return (
-      <td
-        key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
-        className={headerClassName}
-        role="gridcell"
-      >
-        {colValues}
-      </td>
+      <>
+        {!isHidden && (
+          <td
+            key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
+            className={headerClassName}
+            role="gridcell"
+          >
+            {colValues}
+          </td>
+        )}
+      </>
     );
   }
 
