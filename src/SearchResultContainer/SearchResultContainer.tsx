@@ -38,7 +38,11 @@ import {
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
-import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
+import {
+  ItemColumnHeadersConfig,
+  itemColumnsName_Interim,
+  itemColumnsName_NonInterim
+} from "./SearchResultModels";
 
 /**
  * SearchResultType enum
@@ -107,6 +111,7 @@ export interface SearchResultContainerState {
   currentSelectedItemIndex: number;
   associatedItemsInPrintCart: any;
   itemColumnHeaderConfig: ItemColumnHeadersConfig[];
+  stateChangeToReRender: number;
 }
 
 /**
@@ -138,7 +143,8 @@ export class SearchResultContainer extends React.Component<
       ItemsCountInPrintCart: 0,
       currentSelectedItemIndex: -1,
       associatedItemsInPrintCart: {},
-      itemColumnHeaderConfig: []
+      itemColumnHeaderConfig: [],
+      stateChangeToReRender: 0
     };
   }
 
@@ -188,7 +194,9 @@ export class SearchResultContainer extends React.Component<
     }
     const headerModel: ItemColumnHeadersConfig[] = [];
     let i = 0;
-    const itemsHeaderName = itemColumnsName;
+    const itemsHeaderName = this.props.isInterimSite
+      ? itemColumnsName_Interim
+      : itemColumnsName_NonInterim;
     itemsHeaderName.forEach(element => {
       let column: ItemColumnHeadersConfig = {
         headerName: element,
@@ -658,6 +666,15 @@ export class SearchResultContainer extends React.Component<
     console.log(newItemColumnHeaderConfig);
   };
 
+  reRender = (shouldReRender: boolean) => {
+    console.log(this.getColumnsHeaderConfig());
+    if (shouldReRender) {
+      this.setState({
+        stateChangeToReRender: this.state.stateChangeToReRender === 0 ? 1 : 0
+      });
+    }
+  };
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -751,6 +768,7 @@ export class SearchResultContainer extends React.Component<
         )}
         onChange={this.handleApplyTableFieldFilters}
         uniqueId={9502}
+        shouldReRender={this.reRender}
       />
     );
   }

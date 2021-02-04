@@ -17,6 +17,7 @@ export interface MultiSelectProps {
   options: MultiSelectValue[];
   onChange: (v: MultiSelectValue[]) => void;
   uniqueId: number;
+  shouldReRender: (shouldReRnder: boolean) => void;
 }
 
 export interface MultiSelectState {
@@ -40,7 +41,7 @@ export class DataFieldMultiSelect extends React.Component<
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       toggleChange: 0,
-      multiSelectOptionsTemp: this.props.options
+      multiSelectOptionsTemp: JSON.parse(JSON.stringify(this.props.options))
     };
     this.isOpenVar = false;
   }
@@ -59,7 +60,7 @@ export class DataFieldMultiSelect extends React.Component<
         this.isOpenVar = false;
         this.setState({
           toggleChange: this.state.toggleChange === 0 ? 1 : 0,
-          multiSelectOptionsTemp: this.props.options
+          multiSelectOptionsTemp: JSON.parse(JSON.stringify(this.props.options))
         });
       }
     }
@@ -107,12 +108,20 @@ export class DataFieldMultiSelect extends React.Component<
   };
 
   handleValueChange = (option: MultiSelectValue) => {
-    let multiSelectOptionsTemp = this.state.multiSelectOptionsTemp.slice();
+    let multiSelectOptionsTemp: MultiSelectValue[] = JSON.parse(
+      JSON.stringify(this.state.multiSelectOptionsTemp)
+    );
     multiSelectOptionsTemp.forEach(element => {
       if (option.label === element.label) {
-        element.selected = option.selected;
+        element.selected = !option.selected;
       }
     });
+    const x = this.state.multiSelectOptionsTemp;
+    const y = this.props.options;
+    this.setState({ multiSelectOptionsTemp: multiSelectOptionsTemp });
+    // let localPropsChangedTemp = [...this.state.localPropsChangedTemp]
+    // localPropsChangedTemp.push(option.label);
+    // this.setState({localPropsChangedTemp: localPropsChangedTemp});
     // console.log(multiSelectOptionsTemp);
     // let changeOptionsArray: MultiSelectValue[] = [];
     // changeOptionsArray.push(option);
@@ -122,6 +131,10 @@ export class DataFieldMultiSelect extends React.Component<
 
   onApplySetting = () => {
     this.props.onChange(this.state.multiSelectOptionsTemp);
+    this.isOpenVar = false;
+    this.setState({
+      toggleChange: this.state.toggleChange === 0 ? 1 : 0
+    });
   };
 
   renderSelectOption = (option: MultiSelectValue, index: number) => {
@@ -139,6 +152,22 @@ export class DataFieldMultiSelect extends React.Component<
         />
       </label>
     );
+  };
+
+  onCancelSetting = () => {
+    this.isOpenVar = false;
+    this.setState({
+      toggleChange: this.state.toggleChange === 0 ? 1 : 0,
+      multiSelectOptionsTemp: JSON.parse(JSON.stringify(this.props.options))
+    });
+  };
+
+  //remove it after testing
+  ifIncludes = (x: string, arr: string[]) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].toUpperCase() === x.toUpperCase()) return true;
+    }
+    return false;
   };
 
   renderSelectMultiOptionsMenu = (optionsList: MultiSelectValue[]) => {
@@ -204,6 +233,7 @@ export class DataFieldMultiSelect extends React.Component<
                 className="btn btn-danger "
                 id="btn_apply_customize_field"
                 tabIndex={0}
+                onClick={this.onCancelSetting}
               >
                 cancel
               </button>
