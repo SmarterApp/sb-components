@@ -26,7 +26,8 @@ describe("ItemTableHeader", () => {
     sorts,
     columns: headerColumns,
     onHeaderClick: itemHandler,
-    isLinkTable: false
+    isLinkTable: false,
+    itemTableConfig: []
   };
 
   const wrapper = shallow(<PrintcartHeaderTable {...props} />);

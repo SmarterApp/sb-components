@@ -27,6 +27,7 @@ import {
   printCartColumnsInterim,
   printCartColumnsNonInterimSite
 } from "./PrintCartModel";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface PrintCartItemTableContainerProps {
   ItemsInPrintCart: ItemCardModel[];
@@ -37,6 +38,7 @@ export interface PrintCartItemTableContainerProps {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 export interface PrintCartItemTableContainerState {
@@ -155,6 +157,7 @@ export class PrintCartTableContainer extends React.Component<
         onHeaderClick={this.onClickHeader}
         columns={this.pageHeaderColumns}
         isLinkTable={false}
+        itemTableConfig={this.props.itemTableConfig}
       />
     );
   }
@@ -181,6 +184,7 @@ export class PrintCartTableContainer extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          itemTableConfig={this.props.itemTableConfig}
         />
       );
     }

@@ -13,6 +13,7 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface PrintWizardSteps1_Props {
   itemsInCart: ItemCardModel[];
@@ -25,6 +26,7 @@ export interface PrintWizardSteps1_Props {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 export interface PrintWizardSteps2_Props {
@@ -72,6 +74,7 @@ export class PrintWizardSteps1 extends React.Component<
               isInterimSite={this.props.isInterimSite}
               testCodeToLabelMap={this.props.testCodeToLabelMap}
               itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+              itemTableConfig={this.props.itemTableConfig}
             />
           </div>
         );

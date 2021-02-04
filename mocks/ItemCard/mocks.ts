@@ -475,7 +475,7 @@ export const itemCardProps: ItemCardProps = {
   showErrorModalOnPrintItemsCountExceeded: () => {
     return;
   },
-  isPrintLimitEnabled: true,
+  isPrintLimitEnabled: false,
   associatedItems: [],
   countNumberOfItemsAfterSelection: () => {
     return 0;

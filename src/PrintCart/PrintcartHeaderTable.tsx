@@ -5,6 +5,7 @@ import {
   SortDirection,
   ColumnGroup
 } from "@src/index";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 /**
  * Properties for HeaderTable component
@@ -15,6 +16,7 @@ export interface PrintCartHeaderTableProps {
   onHeaderClick: (header: ColumnGroup) => void;
   sorts: HeaderSortModel[];
   isLinkTable: boolean;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 const invokeResetSortLimit = 2;
@@ -107,21 +109,34 @@ export class PrintcartHeaderTable extends React.Component<
     const headerSort = this.props.sorts.find(
       hs => hs.col.header === col.header
     );
+
+    let isHidden = false;
+    const tableHeaderConfig = this.props.itemTableConfig.find(
+      hs => hs.headerName.toUpperCase() === col.header.toUpperCase()
+    );
+    if (tableHeaderConfig != undefined) {
+      isHidden = tableHeaderConfig.isHidden;
+    }
+
     if (headerSort) {
       this.setDirElem(headerSort);
     }
 
     return (
-      <th
-        key={col.header}
-        className={col.headerClassName}
-        tabIndex={0}
-        scope="col"
-      >
-        <div className={col.headerClassName}>
-          <span>{col.header}</span>
-        </div>
-      </th>
+      <>
+        {!isHidden && (
+          <th
+            key={col.header}
+            className={col.headerClassName}
+            tabIndex={0}
+            scope="col"
+          >
+            <div className={col.headerClassName}>
+              <span>{col.header}</span>
+            </div>
+          </th>
+        )}
+      </>
     );
   }
 

@@ -18,6 +18,7 @@ import {
   TestCodeToLabel,
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface PrintCartTableProps {
   itemsInPrintCart: ItemCardModel[];
@@ -31,6 +32,7 @@ export interface PrintCartTableProps {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -81,6 +83,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
             itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+            itemTableConfig={this.props.itemTableConfig}
           />
         );
       } else {
@@ -99,6 +102,7 @@ export class PrintCartTable extends React.Component<PrintCartTableProps, {}> {
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
             itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+            itemTableConfig={this.props.itemTableConfig}
           />
         );
       }

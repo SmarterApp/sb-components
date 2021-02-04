@@ -17,7 +17,7 @@ export const tabClassNames = [
 ];
 
 export const itemTableProps: ItemTableContainerProps = {
-  isInterimSite: false,
+  isInterimSite: true,
   isLinkTable: false,
   onRowSelection: () => {
     return;

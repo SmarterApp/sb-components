@@ -10,6 +10,7 @@ import { ItemCardModel, ItemTableContainer, ItemModel } from "@src/index";
 import { PrintAccessibilityModal } from "@src/Accessibility/PrintAccessibilityModal";
 import { getUpdatedSelectedItems } from "@src/SearchResultContainer/SearchResultContainerHelper";
 import { DropDownSelectionModel } from "@src/DropDown/DropDownModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface PrintCartModalProps {
   showModal: boolean;
@@ -33,6 +34,7 @@ export interface PrintCartModalProps {
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
   translationAccessibility?: DropDownSelectionModel[];
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 export interface PrintCartModalState {
   isChanged: boolean;
@@ -213,6 +215,7 @@ export class PrintCartModal extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          itemTableConfig={this.props.itemTableConfig}
         />
 
         <PrintWizardSteps2
