@@ -3,7 +3,7 @@ import {
   TestNameItemsPoolModel,
   itemKeys
 } from "@src/ItemSearch/ItemSearchModels";
-import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
+import { ItemColumnHeadersConfig } from "./SearchResultModels";
 import { MultiSelectValue } from "@src/Select/SelectModel";
 
 export function getUpdatedSelectedItems(

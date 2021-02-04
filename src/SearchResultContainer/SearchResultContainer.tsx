@@ -38,7 +38,11 @@ import {
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
 import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
-import { itemColumnsName, ItemColumnHeadersConfig } from "./SearchResultModels";
+import {
+  ItemColumnHeadersConfig,
+  itemColumnsName_Interim,
+  itemColumnsName_NonInterim
+} from "./SearchResultModels";
 
 /**
  * SearchResultType enum
@@ -190,7 +194,9 @@ export class SearchResultContainer extends React.Component<
     }
     const headerModel: ItemColumnHeadersConfig[] = [];
     let i = 0;
-    const itemsHeaderName = itemColumnsName;
+    const itemsHeaderName = this.props.isInterimSite
+      ? itemColumnsName_Interim
+      : itemColumnsName_NonInterim;
     itemsHeaderName.forEach(element => {
       let column: ItemColumnHeadersConfig = {
         headerName: element,

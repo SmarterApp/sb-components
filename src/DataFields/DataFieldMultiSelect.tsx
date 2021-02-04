@@ -131,6 +131,10 @@ export class DataFieldMultiSelect extends React.Component<
 
   onApplySetting = () => {
     this.props.onChange(this.state.multiSelectOptionsTemp);
+    this.isOpenVar = false;
+    this.setState({
+      toggleChange: this.state.toggleChange === 0 ? 1 : 0
+    });
   };
 
   renderSelectOption = (option: MultiSelectValue, index: number) => {
@@ -152,7 +156,6 @@ export class DataFieldMultiSelect extends React.Component<
 
   onCancelSetting = () => {
     this.isOpenVar = false;
-    const propsOption = this.props.options;
     this.setState({
       toggleChange: this.state.toggleChange === 0 ? 1 : 0,
       multiSelectOptionsTemp: JSON.parse(JSON.stringify(this.props.options))
