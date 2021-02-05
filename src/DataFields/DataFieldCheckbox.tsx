@@ -24,8 +24,6 @@ export class DataFieldCheckBox extends React.Component<
   }
 
   handleUpdateOption = () => {
-    // this.props.option.selected = this.props.option.selected ? false : true;
-    // this.setState({ isChecked: this.props.option.selected ? false : true });
     this.props.onValueChange(this.props.option);
   };
 

@@ -74,25 +74,15 @@ export class DataFieldMultiSelect extends React.Component<
           activeElementId &&
           activeElementId === "btn_apply_customize_field"
         ) {
-          console.log("tab pressed : ", document.activeElement.id);
           this.isOpenVar = false;
           this.setState({
-            toggleChange: this.state.toggleChange === 0 ? 1 : 0
+            toggleChange: this.state.toggleChange === 0 ? 1 : 0,
+            multiSelectOptionsTemp: JSON.parse(
+              JSON.stringify(this.props.options)
+            )
           });
         }
       }
-    }
-  };
-
-  shiftFocus = (
-    e: React.KeyboardEvent<HTMLElement>,
-    currentFocusedElement: number
-  ) => {
-    if (e.keyCode === 13 || e.keyCode === 32) {
-      e.preventDefault();
-      const currentFocus = document.activeElement;
-      if (currentFocus !== null)
-        document.getElementById(currentFocus.id)!.click();
     }
   };
 
@@ -116,17 +106,7 @@ export class DataFieldMultiSelect extends React.Component<
         element.selected = !option.selected;
       }
     });
-    const x = this.state.multiSelectOptionsTemp;
-    const y = this.props.options;
     this.setState({ multiSelectOptionsTemp: multiSelectOptionsTemp });
-    // let localPropsChangedTemp = [...this.state.localPropsChangedTemp]
-    // localPropsChangedTemp.push(option.label);
-    // this.setState({localPropsChangedTemp: localPropsChangedTemp});
-    // console.log(multiSelectOptionsTemp);
-    // let changeOptionsArray: MultiSelectValue[] = [];
-    // changeOptionsArray.push(option);
-    // // this.props.onChange(changeOptionsArray);
-    // this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
   };
 
   onApplySetting = () => {
@@ -180,9 +160,6 @@ export class DataFieldMultiSelect extends React.Component<
   };
 
   renderDropDown = () => {
-    //Get ready with text to be displayed in toggle button
-    let buttonText: string = this.getButtonText();
-
     return (
       <>
         <div
@@ -190,18 +167,19 @@ export class DataFieldMultiSelect extends React.Component<
           ref={node => this.setWrapperRef(node)}
         >
           <button
-            className="btn btn-default dropdown-toggle dropdown-toggle-btn"
+            className="btn btn-default dropdown-toggle dropdown-toggle-btn dropdown-toggle-btn-customize-field"
             type="button"
             id={"dropdownMenuButton" + this.props.uniqueId}
             data-toggle="dropdown"
             aria-haspopup="true"
+            aria-label="Customize the fields"
             onClick={this.handleFocus}
             onKeyDown={e => {
               this.onKeyPressOnButton(e);
             }}
             tabIndex={0}
           >
-            <i className="fa fa-table" aria-hidden="true" />
+            <i className="fa fa-list" aria-hidden="true" />
           </button>
           {/* <div className="modal-backdrop"> */}
           <form
@@ -216,9 +194,20 @@ export class DataFieldMultiSelect extends React.Component<
             </ul>
             <div className="field-customizer-divider" />
             <div className="flex-data-field-popup">
+              <button
+                type="button"
+                aria-label="Cancel the setting"
+                className="btn btn-danger "
+                id="btn_cancel_customize_field"
+                onClick={this.onCancelSetting}
+              >
+                Cancel
+              </button>
+
               {/* btn to apply customize field setting; id is required for tacking active elements anytime */}
               <button
                 className="btn btn-success "
+                aria-label="Apply the setting"
                 type="button"
                 id="btn_apply_customize_field"
                 onKeyDown={e => {
@@ -228,15 +217,6 @@ export class DataFieldMultiSelect extends React.Component<
               >
                 Apply
               </button>
-              <button
-                type="button"
-                className="btn btn-danger "
-                id="btn_apply_customize_field"
-                tabIndex={0}
-                onClick={this.onCancelSetting}
-              >
-                cancel
-              </button>
             </div>
           </form>
           {/* </div> */}
@@ -244,29 +224,6 @@ export class DataFieldMultiSelect extends React.Component<
       </>
     );
   };
-
-  private getButtonText() {
-    const buttonDetails = getButtonTextDetails(this.props.options);
-    let buttonText: string;
-    if (buttonDetails.selectedItemsCount === 0) {
-      buttonText = "None selected";
-    } else if (buttonDetails.isAllSelected) {
-      buttonText = "All selected (" + buttonDetails.selectedItemsCount + ")";
-    } else if (buttonDetails.selectedItemsCount === 1) {
-      const firstSelectedItem = getFirstSelectedItem(this.props.options);
-      buttonText =
-        firstSelectedItem !== null ? firstSelectedItem : "1 selected";
-      if (buttonText.length > 10) {
-        buttonText = buttonText.replace(
-          buttonText.substring(12, buttonText.length),
-          " ..."
-        );
-      }
-    } else {
-      buttonText = buttonDetails.selectedItemsCount + " selected";
-    }
-    return buttonText;
-  }
 
   render() {
     return <>{this.renderDropDown()}</>;

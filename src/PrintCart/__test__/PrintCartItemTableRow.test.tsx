@@ -45,7 +45,8 @@ describe("ItemTableRow", () => {
         testName: "Test 2",
         testOrder: 1
       }
-    }
+    },
+    itemTableConfig: []
   };
 
   const wrapper = mount(
