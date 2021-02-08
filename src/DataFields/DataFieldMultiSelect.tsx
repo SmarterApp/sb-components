@@ -3,37 +3,26 @@ import "../Assets/Styles/multi-select.less";
 import { MultiSelectValue } from "@src/index";
 import { DataFieldCheckBox } from "./DataFieldCheckbox";
 
-import {
-  UP_KEY,
-  DOWN_KEY,
-  getItemIndexInDirection,
-  getFirstEnabledItem,
-  getFirstSelectedItem,
-  getButtonTextDetails
-} from "../Select/SelectModel";
-import ReactDOM = require("react-dom");
-
-export interface MultiSelectProps {
+export interface DataFieldMultiSelectProps {
   options: MultiSelectValue[];
   onChange: (v: MultiSelectValue[]) => void;
   uniqueId: number;
-  shouldReRender: (shouldReRnder: boolean) => void;
 }
 
-export interface MultiSelectState {
+export interface DataFieldMultiSelectState {
   toggleChange: number;
   multiSelectOptionsTemp: MultiSelectValue[];
 }
 
 export class DataFieldMultiSelect extends React.Component<
-  MultiSelectProps,
-  MultiSelectState
+  DataFieldMultiSelectProps,
+  DataFieldMultiSelectState
 > {
   isOpenVar: boolean;
   wrapperRef: HTMLDivElement;
   setWrapperRef: any;
   node: React.RefObject<HTMLDivElement>;
-  constructor(props: MultiSelectProps) {
+  constructor(props: DataFieldMultiSelectProps) {
     super(props);
     this.setWrapperRef = (element: HTMLDivElement) => {
       this.wrapperRef = element;
@@ -46,6 +35,10 @@ export class DataFieldMultiSelect extends React.Component<
     this.isOpenVar = false;
   }
 
+  /*  Add event listener for mouse click
+      This will help in capturuing mouse click outside of the multiselect popup menu
+  */
+
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside);
   }
@@ -54,6 +47,7 @@ export class DataFieldMultiSelect extends React.Component<
     document.removeEventListener("click", this.handleClickOutside);
   }
 
+  /*Close the multiselect popup when user click outside of popup menu*/
   handleClickOutside(event: { target: any }) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       if (this.isOpenVar) {
@@ -65,6 +59,10 @@ export class DataFieldMultiSelect extends React.Component<
       }
     }
   }
+
+  /*close the popup on pressing tab on last element i.e., apply setting button
+    this will help in maintaining good accessiblity feature
+  */
 
   onKeyPressOnButton = (e: React.KeyboardEvent<HTMLElement>) => {
     if (e.keyCode === 9) {
@@ -86,6 +84,7 @@ export class DataFieldMultiSelect extends React.Component<
     }
   };
 
+  /** Open multiselect popup on click of the btn */
   handleFocus = () => {
     const isOpen = this.isOpenVar;
     if (isOpen) {
@@ -109,6 +108,7 @@ export class DataFieldMultiSelect extends React.Component<
     this.setState({ multiSelectOptionsTemp: multiSelectOptionsTemp });
   };
 
+  /** Apply selected/unselected multiselect option's setting  */
   onApplySetting = () => {
     this.props.onChange(this.state.multiSelectOptionsTemp);
     this.isOpenVar = false;
@@ -142,14 +142,6 @@ export class DataFieldMultiSelect extends React.Component<
     });
   };
 
-  //remove it after testing
-  ifIncludes = (x: string, arr: string[]) => {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].toUpperCase() === x.toUpperCase()) return true;
-    }
-    return false;
-  };
-
   renderSelectMultiOptionsMenu = (optionsList: MultiSelectValue[]) => {
     const multiSelectOptions = optionsList.map((option, index) => (
       <li className="li-data-fields-customize">
@@ -181,7 +173,6 @@ export class DataFieldMultiSelect extends React.Component<
           >
             <i className="fa fa-list" aria-hidden="true" />
           </button>
-          {/* <div className="modal-backdrop"> */}
           <form
             className="dropdown-menu dropdown-menu-field-customizer"
             aria-labelledby={"dropdownMenuButton" + this.props.uniqueId}
@@ -219,7 +210,6 @@ export class DataFieldMultiSelect extends React.Component<
               </button>
             </div>
           </form>
-          {/* </div> */}
         </div>
       </>
     );

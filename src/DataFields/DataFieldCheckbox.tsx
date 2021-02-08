@@ -2,21 +2,21 @@ import * as React from "react";
 import "../Assets/Styles/multi-select.less";
 import { MultiSelectValue } from "@src/index";
 
-export interface MultiSelectProps {
+export interface DataFieldCheckboxProps {
   option: MultiSelectValue;
   onValueChange: (option: MultiSelectValue) => void;
   uniqueId: number;
 }
 
-export interface MultiSelectState {
+export interface DataFieldCheckboxState {
   isChecked: boolean;
 }
 
 export class DataFieldCheckBox extends React.Component<
-  MultiSelectProps,
-  MultiSelectState
+  DataFieldCheckboxProps,
+  DataFieldCheckboxState
 > {
-  constructor(props: MultiSelectProps) {
+  constructor(props: DataFieldCheckboxProps) {
     super(props);
     this.state = {
       isChecked: this.props.option.selected
@@ -28,7 +28,6 @@ export class DataFieldCheckBox extends React.Component<
   };
 
   handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
-    // console.log("Key down");
     if (e.keyCode === 13 || e.keyCode === 32) {
       e.stopPropagation();
       e.preventDefault();
