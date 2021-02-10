@@ -480,7 +480,8 @@ export const itemCardProps: ItemCardProps = {
   countNumberOfItemsAfterSelection: () => {
     return 0;
   },
-  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" },
+  itemHeaderConfig: []
 };
 
 //PerformanceTaskAssociatedItems mockup data

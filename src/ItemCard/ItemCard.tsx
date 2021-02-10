@@ -5,6 +5,7 @@ import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "./ItemCardHelperFunction";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -33,6 +34,7 @@ export interface ItemCardProps {
   ) => number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemHeaderConfig: ItemColumnHeadersConfig[];
 }
 
 export interface ItemCardState {
@@ -73,6 +75,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       }
     }
     return false;
+  };
+
+  toggleItemLabel = (labelName: string) => {
+    var isHidden = false;
+    this.props.itemHeaderConfig.forEach(element => {
+      if (element.headerName.toUpperCase() == labelName.toUpperCase())
+        isHidden = element.isHidden;
+    });
+    return isHidden;
   };
 
   handleTooltipKeyPress = (e: React.SyntheticEvent) => {
@@ -333,42 +344,56 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </span>
               </div>
             </div>
-            <p className="card-text grade">
-              <span className="card-text-label">Grade:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.gradeLabel}
-              </span>
-            </p>
+            {!this.toggleItemLabel("grade") && (
+              <p className="card-text grade">
+                <span className="card-text-label">Grade:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.gradeLabel}
+                </span>
+              </p>
+            )}
             {testNameDetails_tsx()}
-            <p className="card-text stimulusid">
-              <span className="card-text-label">Stimulus ID:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.stimulusKey}
-              </span>
-            </p>
-            <p className="card-text claim">
-              <span className="card-text-label">Claim:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.claimLabel}
-              </span>
-            </p>
-            <p className="card-text target">
-              <span className="card-text-label">Target:</span>
-              <span className="card-text-value">{tooltip}</span>
-            </p>
-            <p className="card-text target">
-              <span className="card-text-label">Standard:</span>
-              <span className="card-text-value">{tooltipCcontentStandard}</span>
-            </p>
-            <p className="card-text interaction-type">
-              <span className="card-text-label">Item Type:</span>
-              <span className="card-text-value">{` ${
-                this.props.rowData.interactionTypeLabel
-              }`}</span>
-            </p>
+            {!this.toggleItemLabel("Stimulus ID") && (
+              <p className="card-text stimulusid">
+                <span className="card-text-label">Stimulus ID:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.stimulusKey}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Claim") && (
+              <p className="card-text claim">
+                <span className="card-text-label">Claim:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.claimLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Target") && (
+              <p className="card-text target">
+                <span className="card-text-label">Target:</span>
+                <span className="card-text-value">{tooltip}</span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Standard") && (
+              <p className="card-text target">
+                <span className="card-text-label">Standard:</span>
+                <span className="card-text-value">
+                  {tooltipCcontentStandard}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Item Type") && (
+              <p className="card-text interaction-type">
+                <span className="card-text-label">Item Type:</span>
+                <span className="card-text-value">{` ${
+                  this.props.rowData.interactionTypeLabel
+                }`}</span>
+              </p>
+            )}
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
               <span className="card-text-value">
