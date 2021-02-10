@@ -436,8 +436,12 @@ export class PrintCartItemTableRow extends React.Component<
 
     return (
       <>
-        <td>{this.renderActionButton(item)}</td>
-        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
+        <td className="td-print-cart-item-sequence">
+          {this.renderActionButton(item)}
+        </td>
+        <td className="td-print-cart-item-sequence">
+          {item.isPerformanceItem ? "-" : this.props.itemSequence}
+        </td>
         <td>{item.itemKey}</td>
         <>{showStimulusKey && <td>{item.stimulusKey}</td>}</>
         <>{showSubject && <td>{mapItemSubjectlabel(item.subjectLabel)}</td>}</>
@@ -520,8 +524,12 @@ export class PrintCartItemTableRow extends React.Component<
 
     return (
       <>
-        <td>{this.renderActionButton(item)}</td>
-        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
+        <td className="td-print-cart-item-sequence">
+          {this.renderActionButton(item)}
+        </td>
+        <td className="td-print-cart-item-sequence">
+          {item.isPerformanceItem ? "-" : this.props.itemSequence}
+        </td>
         <td>{item.itemKey}</td>
         <>{showSubject && <td>{mapItemSubjectlabel(item.subjectLabel)}</td>}</>
         <>{showGrade && <td>{mapItemGrade(item.gradeLabel)}</td>}</>
@@ -573,7 +581,7 @@ export class PrintCartItemTableRow extends React.Component<
           {this.props.isInterimSite
             ? this.renderTableRowItemsForInterim(item)
             : this.renderTableRowItemsForNonInterim(item)}
-          <td>
+          <td className="print-cart-action-btn">
             <div className="btn-group">
               <button
                 type="button"
