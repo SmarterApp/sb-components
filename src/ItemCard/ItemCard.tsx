@@ -174,11 +174,35 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               <span className="card-text-label">Test name:</span>
               <span className="card-text-value"> {testLabel}</span>
             </p>
+          </>
+        );
+      }
+    };
+
+    const ItemPositionintest_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
             <p className="card-text item-position-in-test">
               <span className="card-text-label">Item position in test:</span>
               <span className="card-text-value">
                 {" "}
                 {this.props.rowData.testOrder}
+              </span>
+            </p>
+          </>
+        );
+      }
+    };
+    const ItemDifficulty_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
+            <p className="card-text Difficulty">
+              <span className="card-text-label">Difficulty:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.itemDifficulty}
               </span>
             </p>
           </>
@@ -344,16 +368,13 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </span>
               </div>
             </div>
-            {!this.toggleItemLabel("grade") && (
-              <p className="card-text grade">
-                <span className="card-text-label">Grade:</span>
-                <span className="card-text-value">
-                  {" "}
-                  {this.props.rowData.gradeLabel}
-                </span>
-              </p>
-            )}
-            {testNameDetails_tsx()}
+            <p className="card-text item-id">
+              <span className="card-text-label">Item Id:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.itemKey}
+              </span>
+            </p>
             {!this.toggleItemLabel("Stimulus ID") && (
               <p className="card-text stimulusid">
                 <span className="card-text-label">Stimulus ID:</span>
@@ -363,6 +384,27 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </span>
               </p>
             )}
+            {!this.toggleItemLabel("Item position in test") &&
+              ItemPositionintest_tsx()}
+            {!this.toggleItemLabel("Subject") && (
+              <p className="card-text grade">
+                <span className="card-text-label">Subject:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.subjectLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("grade") && (
+              <p className="card-text grade">
+                <span className="card-text-label">Grade:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.gradeLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Test name") && testNameDetails_tsx()}
             {!this.toggleItemLabel("Claim") && (
               <p className="card-text claim">
                 <span className="card-text-label">Claim:</span>
@@ -386,21 +428,28 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </span>
               </p>
             )}
-            {!this.toggleItemLabel("Item Type") && (
-              <p className="card-text interaction-type">
-                <span className="card-text-label">Item Type:</span>
-                <span className="card-text-value">{` ${
-                  this.props.rowData.interactionTypeLabel
-                }`}</span>
-              </p>
-            )}
-            <p className="card-text item-id">
-              <span className="card-text-label">Item Id:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.itemKey}
-              </span>
-            </p>
+            {!this.props.isInterimSite &&
+              !this.toggleItemLabel("Item Type") && (
+                <p className="card-text interaction-type">
+                  <span className="card-text-label">Item Type:</span>
+                  <span className="card-text-value">{` ${
+                    this.props.rowData.interactionTypeLabel
+                  }`}</span>
+                </p>
+              )}
+            {this.props.isInterimSite &&
+              !this.toggleItemLabel("DOK") && (
+                <p className="card-text interaction-type">
+                  <span className="card-text-label">DOK:</span>
+                  <span className="card-text-value">{` ${
+                    this.props.rowData.depthOfKnowledge == undefined
+                      ? ""
+                      : this.props.rowData.depthOfKnowledge
+                  }`}</span>
+                </p>
+              )}
+            {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
+
             {this.shouldButtonBeDisabled()
               ? AddRemoveButtonDisabled
               : AddRemoveButtonActive}

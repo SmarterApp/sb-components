@@ -310,6 +310,20 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
     ]
   },
   {
+    header: "Stimulus ID",
+    headerClassName: "stimulus",
+    cols: [
+      {
+        accessor: label =>
+          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
+        className: "stimulus"
+      }
+    ],
+    compare: (a, b) =>
+      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
+      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
+  },
+  {
     header: "Subject",
     headerClassName: "subject",
     cols: [{ accessor: label => label.subjectLabel, className: "subject" }],
@@ -326,20 +340,7 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
     ],
     compare: (a, b) => a.grade - b.grade
   },
-  {
-    header: "Stimulus ID",
-    headerClassName: "stimulus",
-    cols: [
-      {
-        accessor: label =>
-          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
-        className: "stimulus"
-      }
-    ],
-    compare: (a, b) =>
-      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
-      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
-  },
+
   {
     header: "Claim",
     headerClassName: "claim",
