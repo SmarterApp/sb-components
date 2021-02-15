@@ -323,11 +323,12 @@ export class PrintCartItemTableRow extends React.Component<
         <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
         <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
         <td>{item[0].itemKey}</td>
+        <>{showStimulusKey && <td>{item[0].stimulusKey}</td>}</>
         <>
           {showSubject && <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>}
         </>
         <>{showGrade && <td>{mapItemGrade(item[0].gradeLabel)}</td>}</>
-        <>{showStimulusKey && <td>{item[0].stimulusKey}</td>}</>
+
         <>{showClaimLabel && <td>{mapItemClaim(item[0].claimLabel)}</td>}</>
         <>
           {showTarget && (
@@ -492,6 +493,10 @@ export class PrintCartItemTableRow extends React.Component<
       showTnteractionType = true;
 
     this.props.itemTableConfig.forEach(element => {
+      showStimulusKey =
+        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
+          ? !element.isHidden
+          : showStimulusKey;
       showSubject =
         element.headerName.toUpperCase() == "Subject".toUpperCase()
           ? !element.isHidden
@@ -500,10 +505,6 @@ export class PrintCartItemTableRow extends React.Component<
         element.headerName.toUpperCase() == "Grade".toUpperCase()
           ? !element.isHidden
           : showGrade;
-      showStimulusKey =
-        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
-          ? !element.isHidden
-          : showStimulusKey;
       showClaimLabel =
         element.headerName.toUpperCase() == "Claim".toUpperCase()
           ? !element.isHidden
@@ -531,9 +532,10 @@ export class PrintCartItemTableRow extends React.Component<
           {item.isPerformanceItem ? "-" : this.props.itemSequence}
         </td>
         <td>{item.itemKey}</td>
+        <>{showStimulusKey && <td>{item.stimulusKey}</td>}</>
         <>{showSubject && <td>{mapItemSubjectlabel(item.subjectLabel)}</td>}</>
         <>{showGrade && <td>{mapItemGrade(item.gradeLabel)}</td>}</>
-        <>{showStimulusKey && <td>{item.stimulusKey}</td>}</>
+
         <>{showClaimLabel && <td>{mapItemClaim(item.claimLabel)}</td>}</>
         <>
           {showTarget && (

@@ -92,7 +92,7 @@ label:focus:not(:hover) {
 .flex-data-field-popup {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-end !important;
   width: auto !important;
 }
 .flex-data-field-popup > button {
@@ -109,9 +109,11 @@ label:focus:not(:hover) {
 .dropdown-menu-field-customizer {
   color: black;
   min-width: 250px;
+  padding-top: 10px;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
   // -webkit-box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.14), 0 1px 14px 0 rgba(0,0,0,0.12);
   // box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.14), 0 1px 14px 0 rgba(0,0,0,0.12);
-  box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 .checkbox-data-fields-customize {
@@ -150,6 +152,6 @@ label:focus:not(:hover) {
   height: 100vh;
 }
 
-.dropdown-toggle-btn-customize-field {
-  width: 100px;
-}
+// .dropdown-toggle-btn-customize-field {
+//   width: 142px;
+// }

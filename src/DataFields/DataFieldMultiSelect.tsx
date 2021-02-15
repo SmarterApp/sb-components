@@ -2,6 +2,7 @@ import * as React from "react";
 import "../Assets/Styles/multi-select.less";
 import { MultiSelectValue } from "@src/index";
 import { DataFieldCheckBox } from "./DataFieldCheckbox";
+import { getFirstEnabledItem } from "@src/Select/SelectModel";
 
 export interface DataFieldMultiSelectProps {
   options: MultiSelectValue[];
@@ -41,15 +42,42 @@ export class DataFieldMultiSelect extends React.Component<
 
   componentDidMount() {
     document.addEventListener("click", this.handleClickOutside);
+    document.addEventListener(
+      "keydown",
+      e => {
+        this.escKeyPressed(e.key);
+      },
+      false
+    );
   }
 
   componentWillUnmount() {
     document.removeEventListener("click", this.handleClickOutside);
+    document.removeEventListener(
+      "keydown",
+      e => {
+        this.escKeyPressed(e.key);
+      },
+      false
+    );
   }
 
   /*Close the multiselect popup when user click outside of popup menu*/
   handleClickOutside(event: { target: any }) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      if (this.isOpenVar) {
+        this.isOpenVar = false;
+        this.setState({
+          toggleChange: this.state.toggleChange === 0 ? 1 : 0,
+          multiSelectOptionsTemp: JSON.parse(JSON.stringify(this.props.options))
+        });
+      }
+    }
+  }
+
+  /*Close the multiselect popup when escape key is pressed*/
+  escKeyPressed(key: string) {
+    if (key === "Escape") {
       if (this.isOpenVar) {
         this.isOpenVar = false;
         this.setState({
@@ -92,7 +120,26 @@ export class DataFieldMultiSelect extends React.Component<
       this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
     } else {
       this.isOpenVar = true;
-      this.setState({ toggleChange: this.state.toggleChange === 0 ? 1 : 0 });
+      this.setState(
+        { toggleChange: this.state.toggleChange === 0 ? 1 : 0 },
+        () => {
+          this.focusFirstOption();
+        }
+      );
+    }
+  };
+
+  focusFirstOption = () => {
+    const firstFocusableIndex = getFirstEnabledItem(this.props.options);
+    if (
+      firstFocusableIndex !== -1 &&
+      firstFocusableIndex < this.props.options.length
+    ) {
+      const elementId =
+        this.props.options[firstFocusableIndex].value +
+        this.props.uniqueId.toString();
+      const element = document.getElementById(elementId);
+      document.getElementById(elementId)!.focus();
     }
   };
 
@@ -143,11 +190,14 @@ export class DataFieldMultiSelect extends React.Component<
   };
 
   renderSelectMultiOptionsMenu = (optionsList: MultiSelectValue[]) => {
-    const multiSelectOptions = optionsList.map((option, index) => (
-      <li className="li-data-fields-customize">
-        {this.renderSelectOption(option, index)}
-      </li>
-    ));
+    const multiSelectOptions = optionsList.map(
+      (option, index) =>
+        !option.shouldHidden ? (
+          <li className="li-data-fields-customize">
+            {this.renderSelectOption(option, index)}
+          </li>
+        ) : null
+    );
     return multiSelectOptions;
   };
 
@@ -161,22 +211,23 @@ export class DataFieldMultiSelect extends React.Component<
           <button
             className="btn btn-default dropdown-toggle dropdown-toggle-btn dropdown-toggle-btn-customize-field"
             type="button"
-            id={"dropdownMenuButton" + this.props.uniqueId}
+            id={"popupMenuButton" + this.props.uniqueId}
             data-toggle="dropdown"
             aria-haspopup="true"
-            aria-label="Customize the fields"
+            aria-label="Customize view"
             onClick={this.handleFocus}
             onKeyDown={e => {
               this.onKeyPressOnButton(e);
             }}
             tabIndex={0}
           >
-            <i className="fa fa-list" aria-hidden="true" />
+            Customize View
           </button>
           <form
             className="dropdown-menu dropdown-menu-field-customizer"
-            aria-labelledby={"dropdownMenuButton" + this.props.uniqueId}
+            aria-labelledby={"popupMenuButton" + this.props.uniqueId}
             role="dialog"
+            aria-label={"Customize view popup modal opened"}
           >
             <ul className="">
               {this.renderSelectMultiOptionsMenu(

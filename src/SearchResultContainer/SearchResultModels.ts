@@ -18,9 +18,9 @@ export const itemColumnsName_Interim: string[] = [
 
 export const itemColumnsName_NonInterim: string[] = [
   "Item",
+  "Stimulus ID",
   "Subject",
   "Grade",
-  "Stimulus ID",
   "Claim",
   "Target",
   "Standard",

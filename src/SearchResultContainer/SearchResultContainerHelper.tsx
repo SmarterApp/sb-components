@@ -240,7 +240,8 @@ export const getcolumnsHeaderMultiSelectOptions = (
       selected: !element.isHidden,
       value: element.headerName,
       disabled: element.headerName === "Item",
-      isDefault: element.headerName === "Item"
+      isDefault: element.headerName === "Item",
+      shouldHidden: element.headerName === "Item"
     };
     columnsHeaderOptions.push(columnHeader);
   });
