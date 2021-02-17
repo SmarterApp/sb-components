@@ -34,7 +34,7 @@ export class RubricRenderer extends React.Component<
   }
 
   renderLabel() {
-    if (this.props.showLabel !== undefined && this.props.showLabel) {
+    if (this.props.showLabel === undefined || this.props.showLabel) {
       return (
         <>
           {this.state.showLabelAsRubric ? (

@@ -115,6 +115,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     this.setState({ showAnswerKeysModal: false });
   };
 
+  openAnswerKeyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    this.setState({ showAnswerKeysModal: true });
+  };
+
   handleCheckBoxChange = (
     item: ItemCardModel,
     e: React.SyntheticEvent,
@@ -464,20 +469,26 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
 
             {/***** * Answer keys --- */}
-            <p className="card-text interaction-type">
-              <span className="card-text-label">Answer keys:</span>
-              <span className="card-text-value">
-                {this.props.rowData.answerKeys.length > 0 ? (
-                  this.props.rowData.answerKeys
-                ) : (
-                  <AnswerKeyModal
-                    showModal={this.state.showAnswerKeysModal}
-                    itemCard={this.props.rowData}
-                    // closeAnswerKeysModal={this.closeAnswerKeysModal}
-                  />
-                )}
-              </span>
-            </p>
+            {!this.toggleItemLabel("Answer keys") && (
+              <p className="card-text interaction-type">
+                <span className="card-text-label">Answer keys:</span>
+                <span className="card-text-value">
+                  {this.props.rowData.answerKeys.length > 0 ? (
+                    this.props.rowData.answerKeys
+                  ) : (
+                    <button
+                      type="button"
+                      className="btn"
+                      onClick={e => {
+                        this.openAnswerKeyModal(e);
+                      }}
+                    >
+                      View
+                    </button>
+                  )}
+                </span>
+              </p>
+            )}
 
             {this.shouldButtonBeDisabled()
               ? AddRemoveButtonDisabled
@@ -490,11 +501,11 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     return (
       <>
         {content}
-        {/* <AnswerKeyModal
+        <AnswerKeyModal
           showModal={this.state.showAnswerKeysModal}
           itemCard={this.props.rowData}
-          // closeAnswerKeysModal={this.closeAnswerKeysModal}
-        /> */}
+          closeAnswerKeysModal={this.closeAnswerKeysModal}
+        />
       </>
     );
   }

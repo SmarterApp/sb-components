@@ -36,6 +36,10 @@ export interface ItemTableRowProps {
   itemTableConfig: ItemColumnHeadersConfig[];
 }
 
+export interface ItemTableRowState {
+  showAnswerKeysModal: boolean;
+}
+
 const unChecked = (
   <i className="fa fa-square-o fa-sm table-icon" aria-hidden="true" />
 );
@@ -49,9 +53,15 @@ const expand = (
   <i className="fa fa-chevron-down fa-sm table-icon" aria-hidden="true" />
 );
 
-export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
+export class ItemTableRow extends React.Component<
+  ItemTableRowProps,
+  ItemTableRowState
+> {
   constructor(props: ItemTableRowProps) {
     super(props);
+    this.state = {
+      showAnswerKeysModal: false
+    };
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
@@ -177,6 +187,15 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     }
   }
 
+  closeAnswerKeysModal = () => {
+    this.setState({ showAnswerKeysModal: false });
+  };
+
+  openAnswerKeyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    this.setState({ showAnswerKeysModal: true });
+  };
+
   renderCell(col: SortColumnModel, cellData: ItemCardModel): JSX.Element {
     const columnText = col.accessor(cellData);
     let content: JSX.Element | React.ReactText | undefined;
@@ -216,11 +235,15 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       if (columnText.toString().length > 0) content = <span>{columnText}</span>;
       else {
         content = (
-          <AnswerKeyModal
-            showModal={false}
-            itemCard={this.props.rowData}
-            // closeAnswerKeysModal={this.closeAnswerKeysModal}
-          />
+          <button
+            type="button"
+            className="btn"
+            onClick={e => {
+              this.openAnswerKeyModal(e);
+            }}
+          >
+            View
+          </button>
         );
       }
     } else {
@@ -303,15 +326,22 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const { rowData, isExpanded, columns } = this.props;
 
     return (
-      <tr
-        key={`${rowData.bankKey}-${rowData.itemKey}`}
-        className={isExpanded ? "selected" : ""}
-        onClick={() => this.handleRowClick(rowData)}
-        onKeyUp={e => this.handleKeyUpEnter(e)}
-      >
-        {this.renderControls()}
-        {columns.map(col => this.renderColumnGroup(col, rowData))}
-      </tr>
+      <>
+        <AnswerKeyModal
+          showModal={this.state.showAnswerKeysModal}
+          itemCard={this.props.rowData}
+          closeAnswerKeysModal={this.closeAnswerKeysModal}
+        />
+        <tr
+          key={`${rowData.bankKey}-${rowData.itemKey}`}
+          className={isExpanded ? "selected" : ""}
+          onClick={() => this.handleRowClick(rowData)}
+          onKeyUp={e => this.handleKeyUpEnter(e)}
+        >
+          {this.renderControls()}
+          {columns.map(col => this.renderColumnGroup(col, rowData))}
+        </tr>
+      </>
     );
   }
 }
