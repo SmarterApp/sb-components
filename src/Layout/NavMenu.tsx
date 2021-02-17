@@ -9,6 +9,7 @@ export interface NavMenuProps {
   siteName: string;
   mainContentId: string;
   isInterimSite?: boolean;
+  siteUrl?: string;
   userName?: string;
   signoutLink?: string;
   signinLink?: string;
@@ -78,14 +79,10 @@ export class NavMenu extends React.Component<NavMenuProps, {}> {
               <div className="nav-titleGroup-item">
                 <a
                   rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://smartertoolsforteachers.org/"
-                  title="Smarter Balanced Tools For Teachers"
+                  href="https://sampleitems.smarterbalanced.org/"
+                  title="Smarter Balanced Sample Items"
                 >
-                  <img
-                    alt="Smarter Balanced Tools for Teachers Logo"
-                    src={sbLogo}
-                  />
+                  <img alt="Smarter Balanced Logo" src={sbLogo} />
                 </a>
               </div>
               <div className="nav-titleGroup-item">

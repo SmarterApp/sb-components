@@ -109,7 +109,7 @@ export class BrailleMenuContainer extends React.Component<
           }
           // else {
           //   showAlertMsg = true;
-          // }
+          //}
         });
         if (isBrailleCodeApplied == false) showAlertMsg = true;
       });

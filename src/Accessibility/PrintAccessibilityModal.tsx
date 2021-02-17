@@ -221,9 +221,9 @@ export class PrintAccessibilityModal extends React.Component<
 
   //Render Print options
   renderPrintOptions(): JSX.Element {
-    if (!this.props.isInterimSite) {
-      return <></>;
-    }
+    //if (!this.props.isInterimSite) {
+    //  return <></>;
+    //}
     return (
       <>
         <div className="header-message-print-cart header-print-cart">

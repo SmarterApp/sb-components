@@ -777,7 +777,7 @@ export class SearchResultContainer extends React.Component<
         <div className="col-sm-5 header-grid-div header-print-button-groups">
           {this.renderResetButton()}
           {this.renderPrintButton(SearchResultType.ItemCard)}
-          {this.props.isInterimSite ? this.renderBrailleCartButton() : null}
+          {this.renderBrailleCartButton()}
         </div>
       </div>
     );

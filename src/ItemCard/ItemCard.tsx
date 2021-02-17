@@ -307,24 +307,13 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         <div
           role="link"
           className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
-          // onClick={this.handleOnClick}
-          // onKeyUp={this.handleKeyPress}
-          // tabIndex={0}
-          // aria-label={`Item of Grade ${this.props.rowData.gradeLabel}, Subject ${this.props.rowData.subjectLabel}, Item Id ${this.props.rowData.itemKey}`}
+          onClick={this.handleOnClick}
+          onKeyUp={this.handleKeyPress}
+          tabIndex={0}
         >
           <div className="card-contents">
-            <div
-              className="card-header"
-              onClick={this.handleOnClick}
-              onKeyUp={this.handleKeyPress}
-              tabIndex={0}
-              aria-label={`Item of Grade ${
-                this.props.rowData.gradeLabel
-              }, Subject ${this.props.rowData.subjectLabel}, Item Id ${
-                this.props.rowData.itemKey
-              }`}
-            >
-              <h3 className="card-title">{this.props.rowData.itemKey}</h3>
+            <div className="card-header">
+              <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
               <div className="card-icon-container">
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(

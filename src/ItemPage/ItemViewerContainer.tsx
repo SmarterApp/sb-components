@@ -81,13 +81,18 @@ export class ItemViewerContainer extends React.Component<
     let content: JSX.Element | undefined;
     if (enabled) {
       content = (
-        <IframeModal
-          url={calculatorURL}
-          title="About Calculators"
-          btnText="About Calculators"
-          btnClass="item-nav-btn btn btn-default btn-sm"
-          btnIcon="fa fa-calculator"
-        />
+        <div>
+          <a
+            className="item-nav-btn btn btn-default btn-sm"
+            role="button"
+            aria-label="Open About Calculators Modal"
+            href="https://calculator.smarterbalanced.org"
+            target="_blank"
+          >
+            <span aria-hidden="true" className="fa fa-calculator" />About
+            Calculators
+          </a>
+        </div>
       );
     }
 
