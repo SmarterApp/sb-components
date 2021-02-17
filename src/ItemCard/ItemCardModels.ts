@@ -1,3 +1,4 @@
+import { SampleItemScoringModel } from "@src/Rubric/RubricModels";
 import { GradeLevels } from "../GradeLevels/GradeLevels";
 
 export interface ItemCardModel {
@@ -34,6 +35,7 @@ export interface ItemCardModel {
   releaseDate?: string;
   selectedBrailleTypes?: string[];
   availableBrailleTypes: BrailleTypeModel[];
+  answerKeys: string;
 }
 
 export function itemIdEqual(a: ItemCardModel, b: ItemCardModel) {

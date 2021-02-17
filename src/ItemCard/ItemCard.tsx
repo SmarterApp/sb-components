@@ -6,6 +6,7 @@ import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "./ItemCardHelperFunction";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
+import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -43,6 +44,7 @@ export interface ItemCardState {
   isChecked: boolean;
   showErrorModal: boolean;
   statusMessage: string;
+  showAnswerKeysModal: boolean;
 }
 
 export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
@@ -53,6 +55,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       isChecked: false,
       isCheckBoxChanged: false,
       showErrorModal: false,
+      showAnswerKeysModal: false,
       statusMessage: ""
     };
   }
@@ -100,6 +103,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     if (e.keyCode === 13 || e.keyCode === 23) {
       this.setState({ redirect: true });
     }
+  };
+
+  showAnswerKeysModal = () => {
+    this.setState({
+      showAnswerKeysModal: this.state.showAnswerKeysModal ? false : true
+    });
+  };
+
+  closeAnswerKeysModal = () => {
+    this.setState({ showAnswerKeysModal: false });
   };
 
   handleCheckBoxChange = (
@@ -450,6 +463,22 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               )}
             {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
 
+            {/***** * Answer keys --- */}
+            <p className="card-text interaction-type">
+              <span className="card-text-label">Answer keys:</span>
+              <span className="card-text-value">
+                {this.props.rowData.answerKeys.length > 0 ? (
+                  this.props.rowData.answerKeys
+                ) : (
+                  <AnswerKeyModal
+                    showModal={this.state.showAnswerKeysModal}
+                    itemCard={this.props.rowData}
+                    // closeAnswerKeysModal={this.closeAnswerKeysModal}
+                  />
+                )}
+              </span>
+            </p>
+
             {this.shouldButtonBeDisabled()
               ? AddRemoveButtonDisabled
               : AddRemoveButtonActive}
@@ -458,6 +487,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       );
     }
 
-    return <>{content}</>;
+    return (
+      <>
+        {content}
+        {/* <AnswerKeyModal
+          showModal={this.state.showAnswerKeysModal}
+          itemCard={this.props.rowData}
+          // closeAnswerKeysModal={this.closeAnswerKeysModal}
+        /> */}
+      </>
+    );
   }
 }

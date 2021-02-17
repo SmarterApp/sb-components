@@ -4,6 +4,7 @@ import {
   mapItemClaim,
   getClaimValue
 } from "@src/PrintCart/PrintCartItemTableRow";
+import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
 
 export type HeaderType =
   | "Item"
@@ -17,7 +18,8 @@ export type HeaderType =
   | "Item Type"
   | "DOK"
   | "Difficulty"
-  | "Target";
+  | "Target"
+  | "Answer keys";
 
 export type HeaderType_NonInterimSite =
   | "Item"
@@ -26,7 +28,8 @@ export type HeaderType_NonInterimSite =
   | "Subject"
   | "Grade"
   | "Item Type"
-  | "Target";
+  | "Target"
+  | "Answer keys";
 
 export enum SortDirection {
   NoSort = 0,
@@ -293,6 +296,21 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.itemDifficulty.localeCompare(b.itemDifficulty)
+  },
+  {
+    header: "Answer keys",
+    headerClassName: "answerkeys",
+    cols: [
+      {
+        accessor: label =>
+          label.answerKeys.length > 0 ? label.answerKeys : "",
+        className: "answerkeys"
+      }
+    ],
+    compare: (a, b) =>
+      (a.answerKeys.length > 0 ? a.answerKeys : "").localeCompare(
+        b.answerKeys.length > 0 ? b.answerKeys : ""
+      )
   }
 ];
 
@@ -451,5 +469,20 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
     ],
     compare: (a, b) =>
       a.interactionTypeCode.localeCompare(b.interactionTypeCode)
+  },
+  {
+    header: "Answer keys",
+    headerClassName: "answerkeys",
+    cols: [
+      {
+        accessor: label =>
+          label.answerKeys.length > 0 ? label.answerKeys : "",
+        className: "answerkeys"
+      }
+    ],
+    compare: (a, b) =>
+      (a.answerKeys.length > 0 ? a.answerKeys : "").localeCompare(
+        b.answerKeys.length > 0 ? b.answerKeys : ""
+      )
   }
 ];

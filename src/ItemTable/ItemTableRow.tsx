@@ -13,6 +13,7 @@ import {
   mapItemClaim
 } from "@src/PrintCart/PrintCartItemTableRow";
 import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
+import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -158,19 +159,22 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       isHidden = tableHeaderConfig.isHidden;
     }
 
-    return (
-      <>
-        {!isHidden && (
-          <td
-            key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
-            className={headerClassName}
-            role="gridcell"
-          >
-            {colValues}
-          </td>
-        )}
-      </>
-    );
+    if (true) {
+      return (
+        <>
+          {!isHidden && (
+            <td
+              key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
+              className={headerClassName}
+              role="gridcell"
+            >
+              {colValues}
+            </td>
+          )}
+        </>
+      );
+    } else {
+    }
   }
 
   renderCell(col: SortColumnModel, cellData: ItemCardModel): JSX.Element {
@@ -208,6 +212,17 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     } else if (col.className === "grade") {
       const shortGradeValue = mapItemGrade(columnText.toString());
       content = <span>{shortGradeValue}</span>;
+    } else if (col.className === "answerkeys") {
+      if (columnText.toString().length > 0) content = <span>{columnText}</span>;
+      else {
+        content = (
+          <AnswerKeyModal
+            showModal={false}
+            itemCard={this.props.rowData}
+            // closeAnswerKeysModal={this.closeAnswerKeysModal}
+          />
+        );
+      }
     } else {
       if (col.className === "item") {
         content = (
