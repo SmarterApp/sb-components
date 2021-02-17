@@ -123,35 +123,27 @@ export class AnswerKeyModal extends React.Component<
         <ReactModal
           // isOpen={this.state.showModal}
           isOpen={this.props.showModal}
-          contentLabel="Answer Key Information Modal"
+          contentLabel="Answer keys or rubrics modal opened"
           onRequestClose={this.handleHideAnswerKeysModal}
           overlayClassName="react-modal-overlay"
           className="react-modal-content rubric-table-modal"
         >
-          <div
-            className="modal-wrapper"
-            aria-labelledby="Answer Key Information Modal"
-            aria-hidden="true"
-          >
+          <div className="modal-wrapper" aria-labelledby="Answer Keys/Rubrics">
             <div className="modal-header">
               <h4 className="modal-title">Answer Keys/Rubrics</h4>
               <button
                 className="close"
                 onClick={this.handleHideAnswerKeysModal}
-                aria-label="Close modal"
+                aria-label="Close answer keys or rubrics modal"
               >
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
-            <div className="modal-body">
-              {/* {this <p className="loader loader-downloading" />} */}
-              {this.displayAnswerKeysRubrics()}
-              {/* {this.state.rubric === undefined ? "heyyy" : this.state.rubric.answerKey} */}
-            </div>
+            <div className="modal-body">{this.displayAnswerKeysRubrics()}</div>
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
-                aria-label="Close modal"
+                aria-label="Close answer keysor rubrics modal"
                 onClick={this.handleHideAnswerKeysModal}
               >
                 Close

@@ -232,7 +232,12 @@ export class ItemTableRow extends React.Component<
       const shortGradeValue = mapItemGrade(columnText.toString());
       content = <span>{shortGradeValue}</span>;
     } else if (col.className === "answerkeys") {
-      if (columnText.toString().length > 0) content = <span>{columnText}</span>;
+      if (columnText.toString().length > 0)
+        content = (
+          <span tabIndex={0} aria-label={"Answer is " + columnText}>
+            {columnText}
+          </span>
+        );
       else {
         content = (
           <button
@@ -241,6 +246,7 @@ export class ItemTableRow extends React.Component<
             onClick={e => {
               this.openAnswerKeyModal(e);
             }}
+            aria-label="Click to view answer keys or rubrics"
           >
             View
           </button>

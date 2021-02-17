@@ -474,7 +474,12 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 <span className="card-text-label">Answer keys:</span>
                 <span className="card-text-value">
                   {this.props.rowData.answerKeys.length > 0 ? (
-                    this.props.rowData.answerKeys
+                    <span
+                      tabIndex={0}
+                      aria-label={"Answer is " + this.props.rowData.answerKeys}
+                    >
+                      this.props.rowData.answerKeys
+                    </span>
                   ) : (
                     <button
                       type="button"
@@ -482,6 +487,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                       onClick={e => {
                         this.openAnswerKeyModal(e);
                       }}
+                      aria-label="Click to view answer keys or rubrics"
                     >
                       View
                     </button>
