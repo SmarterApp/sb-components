@@ -512,35 +512,36 @@ export class ItemSearch {
     testItemsPool: TestNameItemsPoolModel[]
   ): ItemCardModel[] {
     let results = itemCards;
+    let RequiredFilter = true;
 
     //restrict load item until selection of grade and subject, This rule is not applicable for ItemID search and ReleaseDate
-    if (
-      filter.itemId !== undefined ||
-      filter.itemId !== "" ||
-      filter.releaseDates !== undefined
-    ) {
-      // item
-      if (filter.itemId && filter.itemId !== "") {
-        results = results.filter(i =>
-          i.itemKey.toString().includes(filter.itemId || "")
-        );
-      }
 
-      if (
-        filter.releaseDates &&
-        filter.releaseDates.length > 0 &&
-        filter.releaseDates[0] !== "0"
-      ) {
-        const { releaseDates } = filter;
-        results = results.filter(
-          i => releaseDates.findIndex(t => t === i.releaseDate) !== -1
-        );
-      }
-    } else if (
-      filter.gradeLevels == undefined ||
-      filter.gradeLevels == GradeLevels.NA ||
-      filter.subjects == undefined ||
-      (filter.subjects !== undefined && filter.subjects.length <= 0)
+    // item
+    if (filter.itemId && filter.itemId !== "") {
+      RequiredFilter = false;
+      results = results.filter(i =>
+        i.itemKey.toString().includes(filter.itemId || "")
+      );
+    }
+
+    if (
+      filter.releaseDates &&
+      filter.releaseDates.length > 0 &&
+      filter.releaseDates[0] !== "0"
+    ) {
+      RequiredFilter = false;
+      const { releaseDates } = filter;
+      results = results.filter(
+        i => releaseDates.findIndex(t => t === i.releaseDate) !== -1
+      );
+    }
+
+    if (
+      RequiredFilter &&
+      (filter.gradeLevels == undefined ||
+        filter.gradeLevels == GradeLevels.NA ||
+        filter.subjects == undefined ||
+        (filter.subjects !== undefined && filter.subjects.length <= 0))
     ) {
       return (results = []);
     }
