@@ -3,78 +3,54 @@ import * as ReactModal from "react-modal";
 import { ItemCardModel } from "@src/ItemCard/ItemCardModels";
 import { ItemModel } from "@src/ItemPage/ItemPageModels";
 import { SampleItemScoringModel } from "@src/Rubric/RubricModels";
-import { getRequest } from "@src/ApiModel";
-import { Subscription } from "@src/Common/Subscription";
-import { getResourceContent, Resource } from "@src/Common/ApiResource";
-import { LoadingOverlay } from "@src/Layout/LoadingOverlay";
 import { RubricRenderer } from "@src/Rubric/RubricRenderer";
+import { getAnswerKeysModel, getAnswerKeysModelStoryBookTesting } from "./AnswerKeysRubricModels";
 
-export interface AnswerKeyModalProps {
+export interface AnswerKeysRubricModalProps {
   showModal: boolean;
   itemCard: ItemCardModel;
   closeAnswerKeysModal: () => void;
 }
 
-export interface AnswerKeyModalState {
-  answerKeysRubric: Resource<SampleItemScoringModel>;
+export interface AnswerKeysRubricModalState {
   loading: boolean;
-  rubric?: SampleItemScoringModel;
-  showModal: boolean;
+  answerKeysRubrics?: SampleItemScoringModel;
+  errorMessage?: string;
 }
 
-export const getAnswerKeysModel = (params: ItemModel) =>
-  getRequest<SampleItemScoringModel>("/Item/AnswerKeysModel", params);
 
-// export const getAnswerKeysModel = (params: ItemModel) =>
-//   getRequest<SampleItemScoringModel>("https://localhost:44371/Item/AnswerKeysModel", params);
-
-export class AnswerKeyModal extends React.Component<
-  AnswerKeyModalProps,
-  AnswerKeyModalState
+export class AnswerKeysRubricModal extends React.Component<
+  AnswerKeysRubricModalProps,
+  AnswerKeysRubricModalState
 > {
-  constructor(props: AnswerKeyModalProps) {
+  constructor(props: AnswerKeysRubricModalProps) {
     super(props);
     this.state = {
-      answerKeysRubric: { kind: "loading" },
-      loading: true,
-      showModal: this.props.showModal || false
+      loading: true
     };
   }
 
   componentDidUpdate() {
-    if (this.props.showModal) {
+    if (this.props.showModal && this.state.loading) {
       this.getAnswerKeysRubric();
     }
   }
 
-  // componentDidMount() {
-  //   if (this.props.showModal && this.state.rubric === undefined) {
-  //     this.getAnswerKeysRubric();
-  //   }
-  // }
-
-  // componentWillUnmount() {
-  //   this.subscription.cancelAll();
-  //   // const btnDisplayAnswerKeys = document.getElementById("btn_display_answerkeys_" + this.props.itemCard.itemKey);
-  //   // btnDisplayAnswerKeys?.removeEventListener("click", () => alert("Hi user!"));
-  // }
 
   handleShowAnswerKeysModal = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (this.state.rubric === undefined) this.getAnswerKeysRubric();
+    if (this.state.answerKeysRubrics === undefined) this.getAnswerKeysRubric();
   };
 
   handleHideAnswerKeysModal = () => {
-    // this.setState({ showModal: false });
     this.props.closeAnswerKeysModal();
   };
 
   onFetchAnswerKeysRubric = (data: SampleItemScoringModel) => {
-    console.log("Here come : ", data);
-    this.setState({ rubric: data, loading: false });
+    this.setState({ answerKeysRubrics: data, loading: false });
   };
 
   onFetchAnswerKeysRubricError = (message: any) => {
-    console.log(message);
+    this.setState({ errorMessage: message, loading: false });
   };
 
   getAnswerKeysRubric = () => {
@@ -83,16 +59,35 @@ export class AnswerKeyModal extends React.Component<
       itemKey: this.props.itemCard.itemKey
     };
 
-    getAnswerKeysModel(item)
-      .then(data => this.onFetchAnswerKeysRubric(data))
-      .catch(err => this.onFetchAnswerKeysRubricError(err));
+    //If testing in storybook call api to itemsampler running in another project as application
+    if(location.host === "localhost:6006") {
+      getAnswerKeysModelStoryBookTesting(item)
+        .then(data => this.onFetchAnswerKeysRubric(data))
+        .catch(err => this.onFetchAnswerKeysRubricError(err));
+    }
+
+    else {
+      getAnswerKeysModel(item)
+        .then(data => this.onFetchAnswerKeysRubric(data))
+        .catch(err => this.onFetchAnswerKeysRubricError(err));
+    }
   };
 
   displayAnswerKeysRubrics() {
+
+    if(!this.state.loading && this.state.errorMessage !== undefined) {
+      return(
+        <div className="alert alert-danger">
+          <strong>Error</strong> while loading answer keys or rubrics.
+        </div>
+      );
+    }
+
     if (this.state.loading) {
       return <p className="loader loader-downloading loader-fetching" />;
-    } else if (this.state.rubric) {
-      const answerKeysRubrics = this.state.rubric;
+    
+    } else if (this.state.answerKeysRubrics) {
+      const answerKeysRubrics = this.state.answerKeysRubrics;
       let props = {
         itemCardViewModel: this.props.itemCard,
         showLabel: false,
@@ -110,18 +105,7 @@ export class AnswerKeyModal extends React.Component<
   render() {
     return (
       <>
-        {/* <button
-          type="button"
-          onClick={e => {
-            this.handleShowAnswerKeysModal(e);
-          }}
-          className="btn"
-          id={"btn_display_answerkeys_" + this.props.itemCard.itemKey}
-        >
-          View
-        </button> */}
         <ReactModal
-          // isOpen={this.state.showModal}
           isOpen={this.props.showModal}
           contentLabel="Answer keys or rubrics modal opened"
           onRequestClose={this.handleHideAnswerKeysModal}
@@ -139,7 +123,7 @@ export class AnswerKeyModal extends React.Component<
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
-            <div className="modal-body">{this.displayAnswerKeysRubrics()}</div>
+            <div className="modal-body answer-keys-modal-body">{this.displayAnswerKeysRubrics()}</div>
             <div className="modal-footer">
               <button
                 className="btn btn-primary"

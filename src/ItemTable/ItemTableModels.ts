@@ -4,7 +4,6 @@ import {
   mapItemClaim,
   getClaimValue
 } from "@src/PrintCart/PrintCartItemTableRow";
-import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
 
 export type HeaderType =
   | "Item"

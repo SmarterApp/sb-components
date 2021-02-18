@@ -13,7 +13,7 @@ import {
   mapItemClaim
 } from "@src/PrintCart/PrintCartItemTableRow";
 import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
-import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
+import { AnswerKeysRubricModal } from "@src/AnswerKeysRubrics/AnswerKeysRubricModal";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -242,7 +242,7 @@ export class ItemTableRow extends React.Component<
         content = (
           <button
             type="button"
-            className="btn"
+            className="btn btn-default btn-raised btn-answerkeys"
             onClick={e => {
               this.openAnswerKeyModal(e);
             }}
@@ -333,7 +333,7 @@ export class ItemTableRow extends React.Component<
 
     return (
       <>
-        <AnswerKeyModal
+        <AnswerKeysRubricModal
           showModal={this.state.showAnswerKeysModal}
           itemCard={this.props.rowData}
           closeAnswerKeysModal={this.closeAnswerKeysModal}

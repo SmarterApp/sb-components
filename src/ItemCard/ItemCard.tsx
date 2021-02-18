@@ -6,7 +6,7 @@ import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "./ItemCardHelperFunction";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
-import { AnswerKeyModal } from "@src/AnswerKeys/AnswerKeysModal";
+import { AnswerKeysRubricModal } from "@src/AnswerKeysRubrics/AnswerKeysRubricModal";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -360,10 +360,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         <div
           role="link"
           className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
-          // onClick={this.handleOnClick}
-          // onKeyUp={this.handleKeyPress}
-          // tabIndex={0}
-          // aria-label={`Item of Grade ${this.props.rowData.gradeLabel}, Subject ${this.props.rowData.subjectLabel}, Item Id ${this.props.rowData.itemKey}`}
         >
           <div className="card-contents">
             <div
@@ -475,15 +471,16 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 <span className="card-text-value">
                   {this.props.rowData.answerKeys.length > 0 ? (
                     <span
+                      className="span-answer-keys"
                       tabIndex={0}
                       aria-label={"Answer is " + this.props.rowData.answerKeys}
                     >
-                      this.props.rowData.answerKeys
+                      {this.props.rowData.answerKeys}
                     </span>
                   ) : (
                     <button
                       type="button"
-                      className="btn"
+                      className="btn btn-defualt"
                       onClick={e => {
                         this.openAnswerKeyModal(e);
                       }}
@@ -507,7 +504,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     return (
       <>
         {content}
-        <AnswerKeyModal
+        <AnswerKeysRubricModal
           showModal={this.state.showAnswerKeysModal}
           itemCard={this.props.rowData}
           closeAnswerKeysModal={this.closeAnswerKeysModal}
