@@ -514,7 +514,11 @@ export class ItemSearch {
     let results = itemCards;
 
     //restrict load item until selection of grade and subject, This rule is not applicable for ItemID search and ReleaseDate
-    if (filter.itemId !== undefined || filter.releaseDates !== undefined) {
+    if (
+      filter.itemId !== undefined ||
+      filter.itemId !== "" ||
+      filter.releaseDates !== undefined
+    ) {
       // item
       if (filter.itemId && filter.itemId !== "") {
         results = results.filter(i =>
