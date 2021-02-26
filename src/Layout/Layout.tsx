@@ -11,6 +11,9 @@ export interface LayoutProps {
   userName?: string;
   signoutLink?: string;
   signinLink?: string;
+  siteUrl?: string;
+  appNameCode?: string;
+  appVersion?: string;
 }
 
 export class Layout extends React.Component<LayoutProps, {}> {
@@ -23,13 +26,17 @@ export class Layout extends React.Component<LayoutProps, {}> {
           mainContentId="main"
           isInterimSite={this.props.isInterimSite}
           userName={this.props.userName}
+          siteUrl={this.props.siteUrl}
           signoutLink={this.props.signoutLink}
           signinLink={this.props.signinLink}
         />
         <main id="main" className="site-content" role="main">
           {this.props.children}
         </main>
-        <Footer />
+        <Footer
+          appNameCode={this.props.appNameCode}
+          appVersion={this.props.appVersion}
+        />
       </div>
     );
   }

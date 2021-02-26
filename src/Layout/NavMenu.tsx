@@ -9,6 +9,7 @@ export interface NavMenuProps {
   siteName: string;
   mainContentId: string;
   isInterimSite?: boolean;
+  siteUrl?: string;
   userName?: string;
   signoutLink?: string;
   signinLink?: string;
