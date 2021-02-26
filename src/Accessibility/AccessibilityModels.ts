@@ -1,4 +1,5 @@
 import { DropDownSelectionModel } from "../DropDown/DropDownModels";
+import { SelectOptionProps } from "@src/Select/SelectOption";
 
 export interface AccessibilityResourceModel {
   resourceCode: string; // ID for this resource
@@ -164,3 +165,50 @@ export function resetAccessibilityGroups(
 
   return accGroups;
 }
+
+//Render dropdown menu for Print options
+export function getPrintDropdownOptions(
+  selectedPrintOption: string
+): SelectOptionProps[] {
+  const selectOptions: SelectOptionProps[] = [];
+
+  selectOptions.push({
+    label: "Items only",
+    value: "ITEMS-ONLY",
+    disabled: false,
+    selected: selectedPrintOption === "ITEMS-ONLY"
+  });
+
+  selectOptions.push({
+    label: "Answer Keys only",
+    value: "ANSWERS-ONLY",
+    disabled: false,
+    selected: selectedPrintOption === "ANSWERS-ONLY"
+  });
+
+  selectOptions.push({
+    label: "Answer Keys and Items",
+    value: "ANSWERS-AND-ITEMS",
+    disabled: false,
+    selected: selectedPrintOption === "ANSWERS-AND-ITEMS"
+  });
+
+  return selectOptions;
+}
+// Get translated glossaries accessibility options and push into array of suitable selectionoption object's type
+// which can be directly passed to <Select/> component
+export const mapTranslationGlossaryOptions = (
+  selected: string,
+  translationAccessibility: DropDownSelectionModel[]
+) => {
+  const selectOptions: SelectOptionProps[] = [];
+  translationAccessibility.forEach(x => {
+    selectOptions.push({
+      label: x.label,
+      value: x.selectionCode,
+      disabled: false,
+      selected: x.selectionCode === selected
+    });
+  });
+  return selectOptions;
+};

@@ -13,6 +13,8 @@ import {
   AboutItemModel
 } from "@src/index";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import { headerColumns_nonInterimSite } from "./ItemTableModels";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 /**
  * Properties for ItemTableContainer
@@ -25,10 +27,17 @@ export interface ItemTableContainerProps {
   itemCards?: ItemCardModel[];
   item?: Resource<AboutItemModel>;
   isLinkTable: boolean;
+  isInterimSite: boolean;
   onCountNumberOfItemSelection: () => void;
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 /**
@@ -48,7 +57,9 @@ export class ItemTableContainer extends React.Component<
   ItemTableContainerProps,
   ItemTableContainerState
 > {
-  private pageHeaderColumns = headerColumns;
+  private pageHeaderColumns = this.props.isInterimSite
+    ? headerColumns
+    : headerColumns_nonInterimSite;
 
   constructor(props: ItemTableContainerProps) {
     super(props);
@@ -125,7 +136,6 @@ export class ItemTableContainer extends React.Component<
   handleSelectItem = (item: ItemCardModel) => {
     this.props.onItemSelection(item);
     this.setState({ isItemSelected: this.state.isItemSelected ? false : true });
-    this.props.onCountNumberOfItemSelection();
   };
   /**
    * Sorts two ItemCardModels on the property specified by the sort parameter
@@ -203,6 +213,12 @@ export class ItemTableContainer extends React.Component<
             showErrorModalOnPrintItemsCountExceeded={
               this.props.showErrorModalOnPrintItemsCountExceeded
             }
+            associatedItems={this.props.associatedItems}
+            countNumberOfItemsAfterSelection={
+              this.props.countNumberOfItemsAfterSelection
+            }
+            isInterimSite={this.props.isInterimSite}
+            testCodeToLabelMap={this.props.testCodeToLabelMap}
           />
         );
       }

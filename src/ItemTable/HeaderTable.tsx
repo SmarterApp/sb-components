@@ -24,14 +24,20 @@ const style = {
 };
 
 const descendingArrow = (
-  <span style={style} className="fa fa-sort-desc" aria-hidden="true" />
+  <span
+    style={style}
+    className="fa fa-sort-desc sort-icon"
+    aria-hidden="true"
+  />
 );
 
 const ascendingArrow = (
-  <span style={style} className="fa fa-sort-asc" aria-hidden="true" />
+  <span style={style} className="fa fa-sort-asc sort-icon" aria-hidden="true" />
 );
 
-const noSort = <span style={style} className="fa fa-sort" aria-hidden="true" />;
+const noSort = (
+  <span style={style} className="fa fa-sort sort-icon" aria-hidden="true" />
+);
 
 /**
  * HeaderTable creates a table header based on the passed in columns
@@ -123,7 +129,11 @@ export class HeaderTable extends React.Component<HeaderTableProps, {}> {
     return (
       <thead>
         <tr className="primary">
-          {this.props.isLinkTable ? undefined : <td colSpan={1} />}
+          {this.props.isLinkTable ? (
+            undefined
+          ) : (
+            <td className="td-header" colSpan={1} />
+          )}
           {this.props.columns.map(col => this.renderHeader(col))}
         </tr>
       </thead>

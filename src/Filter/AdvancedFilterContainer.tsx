@@ -107,9 +107,9 @@ export class AdvancedFilterContainer extends React.Component<
   renderSelectedFilterIndicators() {
     const tags: JSX.Element[] = [];
     this.props.filterCategories.forEach(cat => {
-      if (!cat.disabled) {
+      if (!cat.disabled && cat.optionType !== OptionTypeModel.inputBox) {
         cat.filterOptions.forEach(opt => {
-          if (opt.isSelected) {
+          if (opt.key !== "0" && opt.isSelected) {
             tags.push(
               <SelectedFilterIndicator
                 key={cat.label + opt.key}
@@ -132,13 +132,15 @@ export class AdvancedFilterContainer extends React.Component<
   renderFilterCategories() {
     const { filterCategories } = this.props;
     const filterCats = filterCategories.map((category, i) => {
-      return (
-        <AdvancedFilter
-          key={i}
-          {...category}
-          onFilterOptionSelect={opt => this.handleFilterSelect(category, opt)}
-        />
-      );
+      if (category.show == true) {
+        return (
+          <AdvancedFilter
+            key={i}
+            {...category}
+            onFilterOptionSelect={opt => this.handleFilterSelect(category, opt)}
+          />
+        );
+      }
     });
 
     return (

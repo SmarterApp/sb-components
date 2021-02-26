@@ -56,9 +56,13 @@ exports[`Storyshots Advanced Filter disabled multi all 1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -99,6 +103,7 @@ exports[`Storyshots Advanced Filter disabled multi all 1`] = `
         aria-label="Select All Multi All Disabled"
         className="btn btn-primary active"
         disabled={false}
+        id="btn-group-filter"
         onClick={[Function]}
         role="switch"
       >
@@ -109,9 +114,10 @@ exports[`Storyshots Advanced Filter disabled multi all 1`] = `
       >
         <button
           aria-checked={false}
-          aria-label="Calculus"
+          aria-label="Select Multi All Disabled Calculus"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -119,9 +125,10 @@ exports[`Storyshots Advanced Filter disabled multi all 1`] = `
         </button>
         <button
           aria-checked={false}
-          aria-label="Geometry"
+          aria-label="Select Multi All Disabled Geometry"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -172,9 +179,13 @@ exports[`Storyshots Advanced Filter multi select 1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -215,9 +226,10 @@ exports[`Storyshots Advanced Filter multi select 1`] = `
       >
         <button
           aria-checked={true}
-          aria-label="English Literacy & Arts"
+          aria-label="Select Multi English Literacy & Arts"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -225,9 +237,10 @@ exports[`Storyshots Advanced Filter multi select 1`] = `
         </button>
         <button
           aria-checked={true}
-          aria-label="Maths"
+          aria-label="Select Multi Maths"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -261,9 +274,13 @@ exports[`Storyshots Advanced Filter multi select all  1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -304,6 +321,7 @@ exports[`Storyshots Advanced Filter multi select all  1`] = `
         aria-label="Select All Multi All"
         className="btn btn-primary active"
         disabled={false}
+        id="btn-group-filter"
         onClick={[Function]}
         role="switch"
       >
@@ -314,9 +332,10 @@ exports[`Storyshots Advanced Filter multi select all  1`] = `
       >
         <button
           aria-checked={false}
-          aria-label="US History"
+          aria-label="Select Multi All US History"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -324,9 +343,10 @@ exports[`Storyshots Advanced Filter multi select all  1`] = `
         </button>
         <button
           aria-checked={false}
-          aria-label="World History"
+          aria-label="Select Multi All World History"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -360,9 +380,13 @@ exports[`Storyshots Advanced Filter multi select all selected  1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -403,6 +427,7 @@ exports[`Storyshots Advanced Filter multi select all selected  1`] = `
         aria-label="Select All Multi All"
         className="btn btn-primary "
         disabled={false}
+        id="btn-group-filter"
         onClick={[Function]}
         role="switch"
       >
@@ -413,9 +438,10 @@ exports[`Storyshots Advanced Filter multi select all selected  1`] = `
       >
         <button
           aria-checked={true}
-          aria-label="English Literacy & Arts"
+          aria-label="Select Multi All English Literacy & Arts"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -423,9 +449,10 @@ exports[`Storyshots Advanced Filter multi select all selected  1`] = `
         </button>
         <button
           aria-checked={true}
-          aria-label="Maths"
+          aria-label="Select Multi All Maths"
           className="btn btn-primary active"
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -459,9 +486,13 @@ exports[`Storyshots Advanced Filter no options 1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -531,9 +562,13 @@ exports[`Storyshots Advanced Filter single select 1`] = `
     <div
       className="filter-container-header"
     >
-      <label>
+      <label
+        htmlFor="btn-group-filter"
+      >
         <span
           className="tool-tip-links "
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
           tabIndex={0}
         >
           <span
@@ -574,9 +609,10 @@ exports[`Storyshots Advanced Filter single select 1`] = `
       >
         <button
           aria-checked={false}
-          aria-label="English Literacy/ Arts"
+          aria-label="Select Subjects English Literacy/ Arts"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >
@@ -584,9 +620,10 @@ exports[`Storyshots Advanced Filter single select 1`] = `
         </button>
         <button
           aria-checked={false}
-          aria-label="Mathematics"
+          aria-label="Select Subjects Mathematics"
           className="btn btn-primary "
           disabled={false}
+          id="btn-group-filter"
           onClick={[Function]}
           role="switch"
         >

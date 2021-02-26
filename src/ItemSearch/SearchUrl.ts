@@ -47,6 +47,11 @@ export class SearchUrl {
     if (search.calculator !== undefined) {
       pairs.push(`${FilterType.Calculator}=${search.calculator}`);
     }
+    if (search.coreStandards && search.coreStandards.length > 0) {
+      pairs.push(
+        this.encodeFilter(FilterType.CoreStandards, search.coreStandards)
+      );
+    }
     if (
       search.testNames &&
       search.testNames.length > 0 &&
@@ -55,6 +60,15 @@ export class SearchUrl {
       pairs.push(this.encodeFilter(FilterType.TestNames, search.testNames));
     }
 
+    if (
+      search.releaseDates &&
+      search.releaseDates.length > 0 &&
+      search.releaseDates[0] != "0"
+    ) {
+      pairs.push(
+        this.encodeFilter(FilterType.ReleaseDate, search.releaseDates)
+      );
+    }
     return pairs.length > 0 ? `?${pairs.join("&")}` : "";
   }
 
@@ -84,6 +98,8 @@ export class SearchUrl {
     const targets = targetOptions ? targetOptions.map(t => t) : undefined;
     const calculator = this.optionFlag(queryObject[FilterType.Calculator]);
     const testNames = queryObject[FilterType.TestNames];
+    const coreStandards = queryObject[FilterType.CoreStandards];
+    const releaseDates = queryObject[FilterType.ReleaseDate];
 
     return {
       calculator,
@@ -94,7 +110,9 @@ export class SearchUrl {
       catOnly,
       targets,
       gradeLevels,
-      testNames
+      testNames,
+      coreStandards,
+      releaseDates
     };
   }
 
@@ -136,6 +154,8 @@ export class SearchUrl {
     const catOnly = this.getBoolQueryParam(query, FilterType.CAT);
     const calculator = this.getBoolQueryParam(query, FilterType.Calculator);
     const testNames = this.getQueryParam(query, FilterType.TestNames);
+    const coreStandards = this.getQueryParam(query, FilterType.CoreStandards);
+    const releaseDates = this.getQueryParam(query, FilterType.ReleaseDate);
 
     return {
       subjects,
@@ -146,7 +166,9 @@ export class SearchUrl {
       catOnly,
       targets,
       gradeLevels: gradesEnum,
-      testNames
+      testNames,
+      coreStandards,
+      releaseDates
     };
   }
 

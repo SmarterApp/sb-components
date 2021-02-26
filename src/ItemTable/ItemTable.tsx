@@ -13,6 +13,7 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
 
 export interface ItemTableProps {
   cardRows: ItemCardModel[];
@@ -27,6 +28,13 @@ export interface ItemTableProps {
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
+  isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 /**
  * Renders the table populated from an array of ItemCardModels. Also renders an instance of the ItemCardViewer,
@@ -93,6 +101,12 @@ export class ItemTable extends React.Component<ItemTableProps, {}> {
         showErrorModalOnPrintItemsCountExceeded={
           this.props.showErrorModalOnPrintItemsCountExceeded
         }
+        associatedItems={this.props.associatedItems}
+        countNumberOfItemsAfterSelection={
+          this.props.countNumberOfItemsAfterSelection
+        }
+        isInterimSite={this.props.isInterimSite}
+        testCodeToLabelMap={this.props.testCodeToLabelMap}
       />
     );
 

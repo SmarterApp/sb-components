@@ -50,6 +50,23 @@
   padding: @spacing-unit;
 }
 
+.react-modal-content-printcart {
+  border: 1px solid rgb(204, 204, 204);
+  background: @sb-white;
+  border-radius: 4px;
+  outline: none;
+  margin-top: @spacing-unit*2;
+  margin-bottom: @spacing-unit*2;
+  padding: @spacing-unit;
+  min-width: 100%;
+  // height: 580px;
+  height: 85vh;
+}
+.react-modal-overlay-printcart {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .modal-wrapper {
   display: flex;
   flex-direction: column;
@@ -75,6 +92,12 @@
   }
 }
 
+@media screen and (max-width: @small) {
+  .react-modal-content-printcart {
+    min-width: 100%;
+  }
+}
+
 .iframe-modal {
   max-width: @content-width;
   width: 90%;
@@ -87,6 +110,18 @@
 .iframe-modal .itemViewerFrame {
   overflow: hidden;
   height: 65vh;
+}
+
+.print-cart-modal {
+  min-width: 1400px;
+  overflow: auto !important;
+}
+
+.print-cart-modal-body {
+  height: 65vh;
+  width: 100%;
+  padding: 0px !important;
+  padding: auto !important;
 }
 
 .react-modal-download-size {
@@ -109,4 +144,12 @@
 
 .pdf-download-msg > .fa-check {
   color: @sb-green;
+}
+
+#disabled-wizard-btn {
+  background-color: rgb(98, 148, 184);
+}
+
+.btn-wizard-next-download {
+  width: 150px;
 }

@@ -20,7 +20,9 @@
   color: @sb-white;
   background-color: @sb-gray;
   border-color: darken(@sb-gray, 5%);
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: darken(@sb-gray, 5%);
     color: @sb-white;
     border-color: darken(@sb-gray, 10%);
@@ -29,5 +31,50 @@
     cursor: not-allowed;
     background-color: lighten(@sb-gray, 10%);
     color: @sb-white;
+  }
+}
+
+.btn-print-cart {
+  // min-height: 40px;
+  position: relative;
+}
+
+.circle {
+  // position: absolute;
+  height: 25px;
+  width: 25px;
+  //background-color: #DCDCDC;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding-top: 2%;
+  color: white;
+  margin-left: 5px;
+}
+
+.popout-effect1 {
+  animation: pop-out-keyframes-1 0.2s;
+}
+
+.popout-effect2 {
+  animation: pop-out-keyframes-2 0.2s;
+}
+
+@keyframes pop-out-keyframes-1 {
+  from {
+    box-shadow: 0 0 0 0px rgb(74, 238, 74);
+  }
+  to {
+    box-shadow: 0 0 0 30px rgb(169, 240, 169);
+  }
+}
+
+@keyframes pop-out-keyframes-2 {
+  from {
+    box-shadow: 0 0 0 0px rgb(74, 238, 74);
+  }
+  to {
+    box-shadow: 0 0 0 30px rgb(169, 240, 169);
   }
 }

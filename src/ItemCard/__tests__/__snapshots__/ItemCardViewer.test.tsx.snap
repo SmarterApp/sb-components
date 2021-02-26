@@ -22,6 +22,20 @@ exports[`ItemCardViewer renders information tab 1`] = `
           evidenceStatement="This is a sample evidence statement"
           itemCardViewModel={
             Object {
+              "availableBrailleTypes": Array [
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "EBAE-Contracted",
+                  "selectionCode": "EABE",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "BAET-Contracted",
+                  "selectionCode": "BAET",
+                },
+              ],
               "bankKey": 187,
               "brailleOnlyItem": false,
               "calculator": false,
@@ -36,6 +50,7 @@ exports[`ItemCardViewer renders information tab 1`] = `
               "interactionTypeCode": "GI",
               "interactionTypeLabel": "Item Type",
               "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
               "itemKey": 3434,
               "selected": false,
               "subjectCode": "ELA",

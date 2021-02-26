@@ -10,7 +10,7 @@ import {
   GradeLevels,
   GradeLevel
 } from "@src/index";
-import { ClaimModel } from "lib/src";
+import { ClaimModel } from "@src/index";
 
 export const genericSearchStringTypes: SearchFilterStringTypes[] = [
   { label: "test", code: "t1" },
@@ -155,11 +155,12 @@ export const mockSeachAPI: SearchAPIParamsModel = {
   // tslint:disable-next-line:no-bitwise
   gradeLevels: GradeLevels.Grade3 | GradeLevels.Grade4,
   subjects: ["t1", "t2"],
+  testNames: ["Test-Name-1"],
   claims: ["t1", "t2"],
   interactionTypes: ["t1", "t2"],
   performanceOnly: true,
   catOnly: true,
-  targets: ["A","B"]
+  targets: ["A", "B"]
 };
 
 export const resultFilterOptionModelClaim: FilterOptionModel[] = [

@@ -19,7 +19,10 @@ import {
   InteractionTypeModel
 } from "@src/index";
 import { constants } from "fs";
-import { TestNameModel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  TestNameModel,
+  CoreStandardModel
+} from "@src/ItemSearch/ItemSearchModels";
 
 // tslint:disable-next-line:no-stateless-class, no-unnecessary-class
 export class Filter {
@@ -79,6 +82,22 @@ export class Filter {
 
     return selectedCodes ? selectedCodes.map(s => s) : undefined;
   }
+
+  /**
+   * Gets selected target hash values
+   * @param  {FilterCategoryModel[]} filterModels
+   */
+  public static getSelectedCoreStandards(
+    filterModels: FilterCategoryModel[]
+  ): string[] | undefined {
+    const selectedCodes = this.getSelectedCodes(
+      FilterType.CoreStandards,
+      filterModels
+    );
+
+    return selectedCodes ? selectedCodes.map(s => s) : undefined;
+  }
+
   public static filterStringTypes<T extends SearchFilterStringTypes>(
     filterOptions: T[],
     codes?: string[]
@@ -129,6 +148,21 @@ export class Filter {
   }
 
   /**
+   * Gets selected release date
+   * @param  {FilterCategoryModel[]} filterModels
+   */
+  public static getSelectedReleaseDates(
+    filterModels: FilterCategoryModel[]
+  ): string[] | undefined {
+    const selectedCodes = this.getSelectedCodes(
+      FilterType.ReleaseDate,
+      filterModels
+    );
+
+    return selectedCodes ? selectedCodes.map(s => s) : undefined;
+  }
+
+  /**
    * Filters targets with the given codes
    * @param  {TargetModel[]} targets
    * @param  {number[]} targetCodes
@@ -139,13 +173,51 @@ export class Filter {
   ): TargetModel[] {
     const filteredTargets: TargetModel[] = [];
     targetCodes.forEach(tc => {
-      const target = targets.find(t => t.idLabel === tc);
+      const target = targets.find(t => t.idLabel == tc);
       if (target) {
         filteredTargets.push(target);
       }
     });
 
     return filteredTargets;
+  }
+
+  /**
+   * Filters core standards with the given claim
+   * @param  {CoreStandardModel[]} targets
+   * @param  {ClaimModel[]} targetCodes
+   */
+  public static filterCoreStandards(
+    coreStandards: CoreStandardModel[],
+    claim: ClaimModel[],
+    subject: string,
+    targetCodes: TargetModel[]
+  ): CoreStandardModel[] {
+    let filteredCS: CoreStandardModel[] = [];
+
+    //filter by claim and subject
+    claim.forEach(cm => {
+      let cs = coreStandards.filter(
+        t => t.claimId == cm.claimNumber && t.subject == subject
+      );
+
+      if (cs) {
+        if (targetCodes != undefined && targetCodes && targetCodes.length > 0) {
+          targetCodes.forEach(std => {
+            let coreStandardByTargets = cs.filter(
+              c => c.target.nameHash == std.nameHash
+            );
+
+            if (coreStandardByTargets) {
+              filteredCS = filteredCS.concat(coreStandardByTargets);
+            }
+          });
+        } else {
+          filteredCS = cs;
+        }
+      }
+    });
+    return filteredCS;
   }
 
   /** Returns the list of related claims
@@ -267,7 +339,8 @@ export class Filter {
   public static getCurrentTargets(
     targets: TargetModel[],
     searchApiModel: SearchAPIParamsModel,
-    filteredClaims: ClaimModel[]
+    filteredClaims: ClaimModel[],
+    filteredCoreStandards: CoreStandardModel[] | undefined
   ): TargetModel[] | undefined {
     let filteredTargets: TargetModel[] | undefined;
 
@@ -277,11 +350,54 @@ export class Filter {
           /* tslint:disable: no-non-null-assertion */
           searchApiModel.claims!.indexOf(c.code) !== -1
       );
-      const targetCodes = this.getClaimTargetCodes(selectedClaims);
+      let targetCodes = this.getClaimTargetCodes(selectedClaims);
       filteredTargets = this.filterTargets(targets, targetCodes);
     }
 
     return filteredTargets;
+  }
+
+  /**
+   * Gets the list of current core Standards from dependent subjects and claims
+   * @param  {ItemsSearchModel} model
+   * @param  {SearchAPIParamsModel} searchApiModel
+   */
+  public static getCurrentCoreStandards(
+    coreStandards: CoreStandardModel[],
+    searchApiModel: SearchAPIParamsModel,
+    filteredClaims: ClaimModel[],
+    filteredTargets: TargetModel[] | undefined
+  ): CoreStandardModel[] | undefined {
+    let filteredCoreStandards: CoreStandardModel[] | undefined;
+
+    if (
+      searchApiModel.claims &&
+      searchApiModel.claims.length > 0 &&
+      searchApiModel.subjects &&
+      searchApiModel.subjects.length &&
+      filteredTargets != undefined
+    ) {
+      //Claim Code
+      const selectedClaims = filteredClaims.filter(
+        (c /* tslint:disable: no-non-null-assertion */) =>
+          searchApiModel.claims!.indexOf(c.code) !== -1
+      );
+
+      //Subject Code
+      const subjectCode = searchApiModel.subjects[0].toString();
+
+      // //target Code
+      let selectedTagets: TargetModel[] = [];
+
+      filteredCoreStandards = this.filterCoreStandards(
+        coreStandards,
+        selectedClaims,
+        subjectCode,
+        selectedTagets
+      );
+    }
+
+    return filteredCoreStandards;
   }
 
   /**
@@ -306,6 +422,10 @@ export class Filter {
 
       let filteredTestNames: TestNameModel[] | undefined;
 
+      const subjectFilterIdx = filters.findIndex(
+        f => f.code === FilterType.Subject
+      );
+
       const claimFilterIdx = filters.findIndex(
         f => f.code === FilterType.Claim
       );
@@ -316,6 +436,10 @@ export class Filter {
         f => f.code === FilterType.Target
       );
 
+      const coreStandardFilterIdx = filters.findIndex(
+        f => f.code === FilterType.CoreStandards
+      );
+
       const testNameFilterIdx = filters.findIndex(
         f => f.code === FilterType.TestNames
       );
@@ -324,6 +448,37 @@ export class Filter {
         f => f.code === FilterType.Grade
       );
 
+      if (gradeFilterIdx !== -1) {
+        let selectedGrade =
+          filters[gradeFilterIdx].filterOptions.filter(
+            x => x.isSelected === true
+          )[0] || undefined;
+
+        if (subjectFilterIdx !== -1) {
+          if (selectedGrade == undefined || selectedGrade.key == "0") {
+            filters[subjectFilterIdx].filterOptions = [];
+          } else {
+            var filterType = FilterType.Subject;
+            var selectedSubject =
+              searchAPI.subjects == undefined ? "0" : searchAPI.subjects[0];
+            var subjectOptions = this.filterStringTypes(model.subjects);
+
+            var subjects = subjectOptions.map(o => {
+              return {
+                filterType,
+                label: o.label,
+                key: o.code,
+                isSelected: o.code == selectedSubject ? true : false
+              };
+            });
+            filters[subjectFilterIdx].filterOptions = subjects;
+          }
+        }
+      }
+
+      const releaseDateFilterIdx = filters.findIndex(
+        f => f.code === FilterType.ReleaseDate
+      );
       // TestNames
       if (testNameFilterIdx !== -1 && model.testNames) {
         const selectedTestName = filters[testNameFilterIdx].filterOptions
@@ -406,8 +561,12 @@ export class Filter {
       // targets
       if (targetFilterIdx !== -1 && model.targets && filteredClaims) {
         const filteredTargets =
-          this.getCurrentTargets(model.targets, searchAPI, filteredClaims) ||
-          [];
+          this.getCurrentTargets(
+            model.targets,
+            searchAPI,
+            filteredClaims,
+            model.coreStandard
+          ) || [];
         let filterOptions: FilterOptionModel[] = [];
         if (filteredTargets && filteredTargets.length > 0) {
           filterOptions = ItemSearch.searchOptionToFilterTarget(
@@ -418,6 +577,32 @@ export class Filter {
         }
 
         filters[targetFilterIdx].filterOptions = filterOptions;
+      }
+
+      // coreStandard
+      if (
+        coreStandardFilterIdx !== -1 &&
+        model.coreStandard &&
+        filteredClaims
+      ) {
+        const filteredCoreStandards =
+          this.getCurrentCoreStandards(
+            model.coreStandard,
+            searchAPI,
+            filteredClaims,
+            model.targets
+          ) || [];
+
+        let filterOptions: FilterOptionModel[] = [];
+        if (filteredCoreStandards && filteredCoreStandards.length > 0) {
+          filterOptions = ItemSearch.searchOptionToFilterCoreStandard(
+            filteredCoreStandards,
+            FilterType.CoreStandards,
+            searchAPI.coreStandards
+          );
+        }
+
+        filters[coreStandardFilterIdx].filterOptions = filterOptions;
       }
     }
     return filters;

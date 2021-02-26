@@ -19,20 +19,20 @@ exports[`Storyshots About This Item Detail displays information about an item 1`
     className="item-details"
   >
     <p
-      className="card-text subject"
+      className="card-text item-id"
       tabIndex={0}
     >
       <span
         className="card-text-label"
       >
-        Subject
+        Item Id
         :
       </span>
       <span
         className="card-text-value"
       >
          
-        ELA
+        3434
       </span>
     </p>
     <p
@@ -50,6 +50,23 @@ exports[`Storyshots About This Item Detail displays information about an item 1`
       >
          
         Grade 4
+      </span>
+    </p>
+    <p
+      className="card-text subject"
+      tabIndex={0}
+    >
+      <span
+        className="card-text-label"
+      >
+        Subject
+        :
+      </span>
+      <span
+        className="card-text-value"
+      >
+         
+        ELA
       </span>
     </p>
     <p
@@ -87,6 +104,40 @@ exports[`Storyshots About This Item Detail displays information about an item 1`
       </span>
     </p>
     <p
+      className="card-text target-description"
+      tabIndex={0}
+    >
+      <span
+        className="card-text-label"
+      >
+        Target Description
+        :
+      </span>
+      <span
+        className="card-text-value"
+      >
+         
+        Solve equations
+      </span>
+    </p>
+    <p
+      className="card-text ccss"
+      tabIndex={0}
+    >
+      <span
+        className="card-text-label"
+      >
+        Content Standard
+        :
+      </span>
+      <span
+        className="card-text-value"
+      >
+         
+        AB-123. this is the common core description
+      </span>
+    </p>
+    <p
       className="card-text interaction-type"
       tabIndex={0}
     >
@@ -104,23 +155,6 @@ exports[`Storyshots About This Item Detail displays information about an item 1`
       </span>
     </p>
     <p
-      className="card-text item-id"
-      tabIndex={0}
-    >
-      <span
-        className="card-text-label"
-      >
-        Item Id
-        :
-      </span>
-      <span
-        className="card-text-value"
-      >
-         
-        3434
-      </span>
-    </p>
-    <p
       className="card-text dok"
       tabIndex={0}
     >
@@ -135,40 +169,6 @@ exports[`Storyshots About This Item Detail displays information about an item 1`
       >
          
         3
-      </span>
-    </p>
-    <p
-      className="card-text ccss"
-      tabIndex={0}
-    >
-      <span
-        className="card-text-label"
-      >
-        Common Core State Standard
-        :
-      </span>
-      <span
-        className="card-text-value"
-      >
-         
-        A-123-BC
-      </span>
-    </p>
-    <p
-      className="card-text target-description"
-      tabIndex={0}
-    >
-      <span
-        className="card-text-label"
-      >
-        Target Description
-        :
-      </span>
-      <span
-        className="card-text-value"
-      >
-         
-        Solve equations
       </span>
     </p>
     <p

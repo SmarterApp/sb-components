@@ -352,7 +352,6 @@ exports[`FilterContainer renders 1`] = `
             <div
               className="bf-selection"
               id="grade-bf"
-              tabIndex={0}
               title=""
             >
               <Component
@@ -394,7 +393,9 @@ exports[`FilterContainer renders 1`] = `
                 <div
                   className=""
                 >
-                  <label>
+                  <label
+                    htmlFor="Grade"
+                  >
                     <span
                       className=""
                     >
@@ -402,8 +403,10 @@ exports[`FilterContainer renders 1`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Grade"
                     className="form-control input-sm"
                     disabled={false}
+                    id="Grade"
                     onChange={[Function]}
                     value="default"
                   >
@@ -504,10 +507,11 @@ exports[`FilterContainer renders 1`] = `
             <div
               className="bf-selection"
               id="subjects-bf"
-              tabIndex={0}
               title=""
             >
-              <label>
+              <label
+                htmlFor="basic-filter-checkbox"
+              >
                 Subjects
                 <div
                   className="radio"
@@ -516,9 +520,12 @@ exports[`FilterContainer renders 1`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects ELA"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="ELA"
                     />
@@ -532,9 +539,12 @@ exports[`FilterContainer renders 1`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects Math"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="Math"
                     />
@@ -578,7 +588,9 @@ exports[`FilterContainer renders 1`] = `
               <div
                 className="filter-container-header"
               >
-                <label>
+                <label
+                  htmlFor="btn-group-filter"
+                >
                   <span
                     className="tooltip-label"
                     info-label="true"
@@ -603,6 +615,7 @@ exports[`FilterContainer renders 1`] = `
                     aria-label="Select All TechType"
                     className="btn btn-primary active"
                     disabled={false}
+                    id="btn-group-filter"
                     onClick={[Function]}
                     role="switch"
                   >
@@ -613,6 +626,7 @@ exports[`FilterContainer renders 1`] = `
                   className="btn-group filter-btn-group"
                 >
                   <Component
+                    ariaLabel="Select TechType tech2"
                     disabled={false}
                     key="tech2"
                     label="tech2"
@@ -621,9 +635,10 @@ exports[`FilterContainer renders 1`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech2"
+                      aria-label="Select TechType tech2"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -631,6 +646,7 @@ exports[`FilterContainer renders 1`] = `
                     </button>
                   </Component>
                   <Component
+                    ariaLabel="Select TechType tech1"
                     disabled={false}
                     key="tech1"
                     label="tech1"
@@ -639,9 +655,10 @@ exports[`FilterContainer renders 1`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech1"
+                      aria-label="Select TechType tech1"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -658,16 +675,20 @@ exports[`FilterContainer renders 1`] = `
         >
           <span>
             <button
+              aria-label="Reset filters"
               className="btn btn-default filter-button"
               onClick={[Function]}
+              tabIndex={1}
             >
               Reset
             </button>
           </span>
           <span>
             <button
+              aria-label="Advanced filters"
               className="btn btn-default filter-button af-expand"
               onClick={[Function]}
+              tabIndex={1}
             >
               Advanced Filters 
               <span
@@ -1279,7 +1300,6 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             <div
               className="bf-selection"
               id="grade-bf"
-              tabIndex={0}
               title=""
             >
               <Component
@@ -1321,7 +1341,9 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                 <div
                   className=""
                 >
-                  <label>
+                  <label
+                    htmlFor="Grade"
+                  >
                     <span
                       className=""
                     >
@@ -1329,8 +1351,10 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Grade"
                     className="form-control input-sm"
                     disabled={false}
+                    id="Grade"
                     onChange={[Function]}
                     value="default"
                   >
@@ -1431,10 +1455,11 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
             <div
               className="bf-selection"
               id="subjects-bf"
-              tabIndex={0}
               title=""
             >
-              <label>
+              <label
+                htmlFor="basic-filter-checkbox"
+              >
                 Subjects
                 <div
                   className="radio"
@@ -1443,9 +1468,12 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects ELA"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="ELA"
                     />
@@ -1459,9 +1487,12 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects Math"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="Math"
                     />
@@ -1505,7 +1536,9 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
               <div
                 className="filter-container-header"
               >
-                <label>
+                <label
+                  htmlFor="btn-group-filter"
+                >
                   <span
                     className="tooltip-label"
                     info-label="true"
@@ -1530,6 +1563,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                     aria-label="Select All TechType"
                     className="btn btn-primary active"
                     disabled={false}
+                    id="btn-group-filter"
                     onClick={[Function]}
                     role="switch"
                   >
@@ -1540,6 +1574,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                   className="btn-group filter-btn-group"
                 >
                   <Component
+                    ariaLabel="Select TechType tech2"
                     disabled={false}
                     key="tech2"
                     label="tech2"
@@ -1548,9 +1583,10 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech2"
+                      aria-label="Select TechType tech2"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -1558,6 +1594,7 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                     </button>
                   </Component>
                   <Component
+                    ariaLabel="Select TechType tech1"
                     disabled={false}
                     key="tech1"
                     label="tech1"
@@ -1566,9 +1603,10 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech1"
+                      aria-label="Select TechType tech1"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -1585,16 +1623,20 @@ exports[`FilterContainer toggles the advanced filter 1`] = `
         >
           <span>
             <button
+              aria-label="Reset filters"
               className="btn btn-default filter-button"
               onClick={[Function]}
+              tabIndex={1}
             >
               Reset
             </button>
           </span>
           <span>
             <button
+              aria-label="Advanced filters"
               className="btn btn-default filter-button af-expand"
               onClick={[Function]}
+              tabIndex={1}
             >
               Advanced Filters 
               <span
@@ -2206,7 +2248,6 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             <div
               className="bf-selection"
               id="grade-bf"
-              tabIndex={0}
               title=""
             >
               <Component
@@ -2248,7 +2289,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                 <div
                   className=""
                 >
-                  <label>
+                  <label
+                    htmlFor="Grade"
+                  >
                     <span
                       className=""
                     >
@@ -2256,8 +2299,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Grade"
                     className="form-control input-sm"
                     disabled={false}
+                    id="Grade"
                     onChange={[Function]}
                     value="default"
                   >
@@ -2358,10 +2403,11 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
             <div
               className="bf-selection"
               id="subjects-bf"
-              tabIndex={0}
               title=""
             >
-              <label>
+              <label
+                htmlFor="basic-filter-checkbox"
+              >
                 Subjects
                 <div
                   className="radio"
@@ -2370,9 +2416,12 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects ELA"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="ELA"
                     />
@@ -2386,9 +2435,12 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects Math"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="Math"
                     />
@@ -2432,7 +2484,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
               <div
                 className="filter-container-header"
               >
-                <label>
+                <label
+                  htmlFor="btn-group-filter"
+                >
                   <span
                     className="tooltip-label"
                     info-label="true"
@@ -2457,6 +2511,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     aria-label="Select All TechType"
                     className="btn btn-primary active"
                     disabled={false}
+                    id="btn-group-filter"
                     onClick={[Function]}
                     role="switch"
                   >
@@ -2467,6 +2522,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                   className="btn-group filter-btn-group"
                 >
                   <Component
+                    ariaLabel="Select TechType tech2"
                     disabled={false}
                     key="tech2"
                     label="tech2"
@@ -2475,9 +2531,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech2"
+                      aria-label="Select TechType tech2"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -2485,6 +2542,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     </button>
                   </Component>
                   <Component
+                    ariaLabel="Select TechType tech1"
                     disabled={false}
                     key="tech1"
                     label="tech1"
@@ -2493,9 +2551,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech1"
+                      aria-label="Select TechType tech1"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -2512,16 +2571,20 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
         >
           <span>
             <button
+              aria-label="Reset filters"
               className="btn btn-default filter-button"
               onClick={[Function]}
+              tabIndex={1}
             >
               Reset
             </button>
           </span>
           <span>
             <button
+              aria-label="Advanced filters"
               className="btn btn-default filter-button af-expand"
               onClick={[Function]}
+              tabIndex={1}
             >
               Advanced Filters 
               <span
@@ -2771,7 +2834,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                 <div
                   className="filter-container-header"
                 >
-                  <label>
+                  <label
+                    htmlFor="btn-group-filter"
+                  >
                     <ToolTip
                       displayIcon={true}
                       displayText={
@@ -2790,6 +2855,8 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <span
                         className="tool-tip-links "
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
                         tabIndex={0}
                       >
                         <span
@@ -2838,6 +2905,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       aria-label="Select All Grade"
                       className="btn btn-primary active"
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -2848,6 +2916,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     className="btn-group filter-btn-group"
                   >
                     <Component
+                      ariaLabel="Select Grade Grades 3-5"
                       disabled={false}
                       key="7"
                       label="Grades 3-5"
@@ -2856,9 +2925,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="Grades 3-5"
+                        aria-label="Select Grade Grades 3-5"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -2866,6 +2936,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       </button>
                     </Component>
                     <Component
+                      ariaLabel="Select Grade Grades 6-8"
                       disabled={false}
                       key="56"
                       label="Grades 6-8"
@@ -2874,9 +2945,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="Grades 6-8"
+                        aria-label="Select Grade Grades 6-8"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -2884,6 +2956,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       </button>
                     </Component>
                     <Component
+                      ariaLabel="Select Grade High School"
                       disabled={false}
                       key="960"
                       label="High School"
@@ -2892,9 +2965,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="High School"
+                        aria-label="Select Grade High School"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -2939,7 +3013,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                 <div
                   className="filter-container-header"
                 >
-                  <label>
+                  <label
+                    htmlFor="btn-group-filter"
+                  >
                     <ToolTip
                       displayIcon={true}
                       displayText={
@@ -2958,6 +3034,8 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <span
                         className="tool-tip-links "
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
                         tabIndex={0}
                       >
                         <span
@@ -2998,6 +3076,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     className="btn-group filter-btn-group"
                   >
                     <Component
+                      ariaLabel="Select Multi English Literacy & Arts"
                       disabled={false}
                       key="EL&A"
                       label="English Literacy & Arts"
@@ -3006,9 +3085,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="English Literacy & Arts"
+                        aria-label="Select Multi English Literacy & Arts"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3016,6 +3096,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       </button>
                     </Component>
                     <Component
+                      ariaLabel="Select Multi Maths"
                       disabled={false}
                       key="Mth"
                       label="Maths"
@@ -3024,9 +3105,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="Maths"
+                        aria-label="Select Multi Maths"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3125,7 +3207,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                 <div
                   className="filter-container-header"
                 >
-                  <label>
+                  <label
+                    htmlFor="btn-group-filter"
+                  >
                     <ToolTip
                       displayIcon={true}
                       displayText={
@@ -3144,6 +3228,8 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <span
                         className="tool-tip-links "
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
                         tabIndex={0}
                       >
                         <span
@@ -3192,6 +3278,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       aria-label="Select All Multi All"
                       className="btn btn-primary active"
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -3202,6 +3289,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     className="btn-group filter-btn-group"
                   >
                     <Component
+                      ariaLabel="Select Multi All US History"
                       disabled={false}
                       key="USh"
                       label="US History"
@@ -3210,9 +3298,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="US History"
+                        aria-label="Select Multi All US History"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3220,6 +3309,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       </button>
                     </Component>
                     <Component
+                      ariaLabel="Select Multi All World History"
                       disabled={false}
                       key="Wh"
                       label="World History"
@@ -3228,9 +3318,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="World History"
+                        aria-label="Select Multi All World History"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3275,7 +3366,9 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                 <div
                   className="filter-container-header"
                 >
-                  <label>
+                  <label
+                    htmlFor="btn-group-filter"
+                  >
                     <ToolTip
                       displayIcon={true}
                       displayText={
@@ -3294,6 +3387,8 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <span
                         className="tool-tip-links "
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
                         tabIndex={0}
                       >
                         <span
@@ -3342,6 +3437,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       aria-label="Select All Multi All Disabled"
                       className="btn btn-primary active"
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -3352,6 +3448,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     className="btn-group filter-btn-group"
                   >
                     <Component
+                      ariaLabel="Select Multi All Disabled Calculus"
                       disabled={false}
                       key="Calc"
                       label="Calculus"
@@ -3360,9 +3457,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="Calculus"
+                        aria-label="Select Multi All Disabled Calculus"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3370,6 +3468,7 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                       </button>
                     </Component>
                     <Component
+                      ariaLabel="Select Multi All Disabled Geometry"
                       disabled={false}
                       key="Geom"
                       label="Geometry"
@@ -3378,9 +3477,10 @@ exports[`FilterContainer toggles the advanced filter 2`] = `
                     >
                       <button
                         aria-checked={false}
-                        aria-label="Geometry"
+                        aria-label="Select Multi All Disabled Geometry"
                         className="btn btn-primary "
                         disabled={false}
+                        id="btn-group-filter"
                         onClick={[Function]}
                         role="switch"
                       >
@@ -3995,7 +4095,6 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             <div
               className="bf-selection"
               id="grade-bf"
-              tabIndex={0}
               title=""
             >
               <Component
@@ -4037,7 +4136,9 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                 <div
                   className=""
                 >
-                  <label>
+                  <label
+                    htmlFor="Grade"
+                  >
                     <span
                       className=""
                     >
@@ -4045,8 +4146,10 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                     </span>
                   </label>
                   <select
+                    aria-label="Grade"
                     className="form-control input-sm"
                     disabled={false}
+                    id="Grade"
                     onChange={[Function]}
                     value="default"
                   >
@@ -4147,10 +4250,11 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
             <div
               className="bf-selection"
               id="subjects-bf"
-              tabIndex={0}
               title=""
             >
-              <label>
+              <label
+                htmlFor="basic-filter-checkbox"
+              >
                 Subjects
                 <div
                   className="radio"
@@ -4159,9 +4263,12 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects ELA"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="ELA"
                     />
@@ -4175,9 +4282,12 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                   <label>
                     <input
                       aria-checked={false}
+                      aria-label="Select Subjects Math"
                       checked={false}
+                      id="basic-filter-checkbox"
                       name="Subjects"
                       onChange={[Function]}
+                      tabIndex={0}
                       type="radio"
                       value="Math"
                     />
@@ -4221,7 +4331,9 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
               <div
                 className="filter-container-header"
               >
-                <label>
+                <label
+                  htmlFor="btn-group-filter"
+                >
                   <span
                     className="tooltip-label"
                     info-label="true"
@@ -4246,6 +4358,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                     aria-label="Select All TechType"
                     className="btn btn-primary active"
                     disabled={false}
+                    id="btn-group-filter"
                     onClick={[Function]}
                     role="switch"
                   >
@@ -4256,6 +4369,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                   className="btn-group filter-btn-group"
                 >
                   <Component
+                    ariaLabel="Select TechType tech2"
                     disabled={false}
                     key="tech2"
                     label="tech2"
@@ -4264,9 +4378,10 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech2"
+                      aria-label="Select TechType tech2"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -4274,6 +4389,7 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                     </button>
                   </Component>
                   <Component
+                    ariaLabel="Select TechType tech1"
                     disabled={false}
                     key="tech1"
                     label="tech1"
@@ -4282,9 +4398,10 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
                   >
                     <button
                       aria-checked={false}
-                      aria-label="tech1"
+                      aria-label="Select TechType tech1"
                       className="btn btn-primary "
                       disabled={false}
+                      id="btn-group-filter"
                       onClick={[Function]}
                       role="switch"
                     >
@@ -4301,16 +4418,20 @@ exports[`FilterContainer toggles the advanced filter 3`] = `
         >
           <span>
             <button
+              aria-label="Reset filters"
               className="btn btn-default filter-button"
               onClick={[Function]}
+              tabIndex={1}
             >
               Reset
             </button>
           </span>
           <span>
             <button
+              aria-label="Advanced filters"
               className="btn btn-default filter-button af-expand"
               onClick={[Function]}
+              tabIndex={1}
             >
               Advanced Filters 
               <span

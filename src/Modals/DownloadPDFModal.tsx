@@ -10,6 +10,8 @@ export interface DownloadPDFModalProps {
   btnText?: string;
   btnClass?: string;
   btnIcon?: string;
+  pdfContentType: string;
+  isInterim: boolean;
 }
 
 export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
@@ -18,7 +20,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
   }
 
   handleHideModal = () => {
-    this.props.onResetItems();
+    //this.props.onResetItems();
     this.props.onChangeDownloadPdfModelState();
   };
 
@@ -26,7 +28,10 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
     var a = document.createElement("a");
     document.body.appendChild(a);
     a.href = this.props.url;
-    const fileName = getFileNameAsPerDate();
+    const fileName = getFileNameAsPerDate(
+      this.props.pdfContentType,
+      this.props.isInterim
+    );
     a.download = fileName;
     a.click();
     //window.URL.revokeObjectURL(this.props.downloadPDFUrl);
@@ -39,7 +44,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
         <button
           className="close"
           onClick={this.handleHideModal}
-          aria-label="Close modal"
+          aria-label="Close PDF modal"
         >
           <span className="fa fa-times" aria-hidden="true" />
         </button>
@@ -52,7 +57,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
       <div className="modal-footer">
         <button
           className="btn btn-primary"
-          aria-label="Close modal"
+          aria-label="Download PDF"
           onClick={this.downloadPDF}
         >
           <i className="fa fa-download" />
@@ -61,7 +66,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 
         <button
           className="btn btn-primary"
-          aria-label="Close modal"
+          aria-label="Close PDF modal"
           onClick={this.handleHideModal}
         >
           Close
@@ -72,14 +77,10 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
 
   renderModalWrapper() {
     return (
-      <div
-        className="modal-wrapper"
-        aria-labelledby={`${this.props.title} Modal`}
-        aria-hidden="true"
-      >
+      <div className="modal-wrapper" aria-labelledby={`PDF Modal`}>
         {this.renderHeader()}
-        <div className="modal-body">
-          <ItemViewerFrame {...this.props} />
+        <div className="modal-body" tabIndex={-1} aria-hidden="true">
+          <ItemViewerFrame {...this.props} tabIndex={-1} ariaHidden={true} />
         </div>
         {this.renderFooter()}
       </div>
@@ -92,7 +93,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
       <div className="search-result-container">
         <ReactModal
           isOpen={modelState}
-          contentLabel="About This Item Modal"
+          contentLabel="PDF modal opened"
           onRequestClose={this.handleHideModal}
           overlayClassName="react-modal-overlay"
           className="react-modal-content iframe-modal"
@@ -106,7 +107,7 @@ export class DownloadPDFModal extends React.Component<DownloadPDFModalProps> {
   }
 }
 
-function getFileNameAsPerDate() {
+function getFileNameAsPerDate(pdfContentType: string, isInterim: boolean) {
   const currentdatatime = new Date();
   const day = currentdatatime.getDate();
   const month = currentdatatime.getMonth() + 1;
@@ -117,7 +118,23 @@ function getFileNameAsPerDate() {
   const hour = currentdatatime.getHours();
   const min = currentdatatime.getMinutes();
   const sec = currentdatatime.getSeconds();
-  const fileName =
-    "Sample Items Printout-" + day + "-" + month + "-" + year + ".pdf";
-  return fileName;
+
+  const baseFileName = isInterim ? "Interim Items " : "Sample Items ";
+
+  if (pdfContentType == "ANSWERS-AND-ITEMS") {
+    return (
+      baseFileName +
+      "and Answer Keys Printout-" +
+      day +
+      "-" +
+      month +
+      "-" +
+      year +
+      ".pdf"
+    );
+  } else if (pdfContentType == "ANSWERS-ONLY") {
+    return "Answer Keys Printout-" + day + "-" + month + "-" + year + ".pdf";
+  } else {
+    return baseFileName + "Printout-" + day + "-" + month + "-" + year + ".pdf";
+  }
 }

@@ -6,19 +6,19 @@
   border: 2px solid;
   border-radius: 6px;
   background-color: @sb-white;
-  color: #444444;
+  color: hsl(0, 0%, 27%);
   width: 300px;
   -webkit-transition-duration: 0.2s; // Safari
   transition-duration: 0.2s;
-  cursor: pointer;
+  // cursor: pointer;
   margin: 26px;
   font-size: @font-size-base;
   box-shadow: @card-shadow;
 
-  &:focus,
-  &:hover {
-    box-shadow: 0 0px 20px #959595;
-  }
+  // &:focus,
+  // &:hover {
+  //   box-shadow: 0 0px 20px #959595;
+  // }
 }
 
 .card.math {
@@ -96,6 +96,13 @@
   .ela & {
     background-color: @sb-blue;
   }
+
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0px 20px #959595;
+  }
 }
 
 .card-icon-container {
@@ -132,6 +139,9 @@
 
 .card-contents p:first-of-type {
   padding-top: @spacing-item;
+}
+.card-contents p:last-of-type {
+  margin-bottom: 60px;
 }
 
 /* container - checkbox  */
@@ -205,18 +215,26 @@
 }
 
 .btn-add-remove-print-selection {
-  margin: 8px;
-  width: 270px;
+  width: auto;
   border-radius: 6px;
   font-family: PTSans-Bold;
   font-size: 17px;
   text-align: center;
-  margin-left: 13px;
-  margin-right: 13px;
-  position: absolute;
-  bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
+.tooltip-item-card-button {
+  position: absolute !important;
+  bottom: 5px;
+  right: 22%;
+  left: 25%;
+  float: bottom !important;
+}
+
+.btn-add-remove-disabled-print-selection {
+  background-color: lightgrey !important;
+}
 
 .btn.math {
   border: 2px solid @sb-green;
@@ -230,12 +248,10 @@
 
 .btn.math:hover {
   background-color: white;
-  // color: black;
 }
 
 .btn.ela:hover {
   background-color: white;
-  // color: black;
 }
 
 .btn.math.btn-selected {
@@ -254,4 +270,10 @@
 .card-block {
   position: relative;
   min-height: 320px;
+}
+
+.btn:focus,
+.btn:active {
+  outline: dotted !important;
+  // box-shadow: ;
 }

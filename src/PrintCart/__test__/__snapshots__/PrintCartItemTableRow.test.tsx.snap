@@ -1,0 +1,1136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemTableRow matches snapshot 1`] = `
+<table>
+  <tbody>
+    <PrintCartItemTableRow
+      ItemCard={
+        Object {
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECN",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "DS BT UCB Label",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECL label",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TTDS BT EXN Label",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": false,
+          "claimCode": "ELA1",
+          "claimLabel": "1.Reading",
+          "commonCoreStandardId": "3.R.2a",
+          "grade": 1,
+          "gradeLabel": "Grade 3",
+          "interactionTypeCode": "MC",
+          "interactionTypeLabel": "Multiple Choice",
+          "isPerformanceItem": true,
+          "itemDifficulty": "Easy",
+          "itemKey": 3163,
+          "stimulusKey": 58679,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "Target B description",
+          "targetHash": 1039,
+          "targetId": "B",
+          "targetShortName": "Key Details",
+          "testName": "Test-Name-1",
+          "testOrder": 2,
+          "title": "ELA/ literacy Grade 3 Claim 1",
+        }
+      }
+      TotalItemsCard={
+        Array [
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "calculator": true,
+            "claimCode": "MATH1",
+            "claimLabel": "1.Concepts and Procedures and Logical",
+            "commonCoreStandardId": "6.M.1a",
+            "grade": 8,
+            "gradeLabel": "Grade 6",
+            "interactionTypeCode": "EQ",
+            "interactionTypeLabel": "Equation Multiple Choice choice",
+            "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
+            "itemKey": 3206,
+            "stimulusKey": 56900,
+            "subjectCode": "MATH",
+            "subjectLabel": "Math",
+            "targetDescription": "Target A description with extra text for testing",
+            "targetHash": 100,
+            "targetId": "A",
+            "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+            "title": "Math Grade 6 Claim 1",
+          },
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "calculator": false,
+            "claimCode": "ELA1",
+            "claimLabel": "1.Reading",
+            "commonCoreStandardId": "3.R.2a",
+            "grade": 1,
+            "gradeLabel": "Grade 3",
+            "interactionTypeCode": "MC",
+            "interactionTypeLabel": "Multiple Choice",
+            "isPerformanceItem": true,
+            "itemDifficulty": "Easy",
+            "itemKey": 3163,
+            "stimulusKey": 58679,
+            "subjectCode": "ELA",
+            "subjectLabel": "ELA/literacy",
+            "targetDescription": "Target B description",
+            "targetHash": 1039,
+            "targetId": "B",
+            "targetShortName": "Key Details",
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+            "title": "ELA/ literacy Grade 3 Claim 1",
+          },
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "claimCode": "MATH4",
+            "claimLabel": "3.Modeling/Data Analysis",
+            "commonCoreStandardId": "6.M.2b",
+            "grade": 8,
+            "gradeLabel": "Grade 6",
+            "interactionTypeCode": "MS",
+            "interactionTypeLabel": "Multi Select",
+            "isPerformanceItem": true,
+            "itemDifficulty": "",
+            "itemKey": 3615,
+            "stimulusKey": 23461,
+            "subjectCode": "MATH",
+            "subjectLabel": "Math",
+            "targetDescription": "target C description",
+            "targetHash": 0,
+            "targetId": "C",
+            "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+            "title": "Math Grade 6 Claim 4",
+          },
+          Object {
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "claimCode": "ELA4",
+            "claimLabel": "4.Research/Inquiry",
+            "commonCoreStandardId": "4.E.4a",
+            "grade": 2,
+            "gradeLabel": "Grade 4",
+            "interactionTypeCode": "MS",
+            "interactionTypeLabel": "Multi Select",
+            "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
+            "itemKey": 2928,
+            "stimulusKey": 87679,
+            "subjectCode": "ELA",
+            "subjectLabel": "ELA/literacy",
+            "targetDescription": "target D description",
+            "targetHash": 2832,
+            "targetId": "D",
+            "targetShortName": "Evaluate Information/ sources",
+            "testName": "",
+            "testOrder": 2,
+            "title": "ELA/ literacy Grade 4 Claim 4",
+          },
+        ]
+      }
+      associatedItemsInPrintCart={
+        Array [
+          Array [
+            Object {
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "calculator": false,
+              "claimCode": "ELA1",
+              "claimLabel": "Reading",
+              "grade": 1,
+              "gradeLabel": "Grade 3",
+              "interactionTypeCode": "MC",
+              "interactionTypeLabel": "Multiple Choice",
+              "isPerformanceItem": true,
+              "itemKey": 3163,
+              "subjectCode": "ELA",
+              "subjectLabel": "ELA/literacy",
+              "targetDescription": "Target B description",
+              "targetHash": 1039,
+              "targetId": "B",
+              "targetShortName": "Key Details",
+              "title": "ELA/ literacy Grade 3 Claim 1",
+            },
+          ],
+          Array [
+            Object {
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "calculator": true,
+              "claimCode": "MATH1",
+              "claimLabel": "Concepts and Procedures and Logical",
+              "grade": 8,
+              "gradeLabel": "Grade 6",
+              "interactionTypeCode": "EQ",
+              "interactionTypeLabel": "Equation Multiple Choice choice",
+              "isPerformanceItem": true,
+              "itemKey": 3206,
+              "subjectCode": "MATH",
+              "subjectLabel": "Math",
+              "targetDescription": "Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia",
+              "targetHash": 100,
+              "targetId": "A",
+              "targetShortName": "",
+              "title": "Math Grade 6 Claim 1",
+            },
+          ],
+          Array [
+            Object {
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "claimCode": "MATH4",
+              "claimLabel": "Modeling/Data Analysis",
+              "grade": 8,
+              "gradeLabel": "Grade 6",
+              "interactionTypeCode": "MS",
+              "interactionTypeLabel": "Multi Select",
+              "isPerformanceItem": true,
+              "itemKey": 3615,
+              "subjectCode": "MATH",
+              "subjectLabel": "Math",
+              "targetDescription": "target C description",
+              "targetHash": 0,
+              "targetId": "C",
+              "targetShortName": "",
+              "title": "Math Grade 6 Claim 4",
+            },
+          ],
+        ]
+      }
+      columns={
+        Array [
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "item",
+              },
+            ],
+            "compare": [Function],
+            "header": "Item",
+            "headerClassName": "item",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "stimulus",
+              },
+            ],
+            "compare": [Function],
+            "header": "Stimulus ID",
+            "headerClassName": "stimulus",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "item-position-in-test",
+              },
+            ],
+            "compare": [Function],
+            "header": "Item position in test",
+            "headerClassName": "item-position-in-test",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "subject",
+              },
+            ],
+            "compare": [Function],
+            "header": "Subject",
+            "headerClassName": "subject",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "grade",
+              },
+            ],
+            "compare": [Function],
+            "header": "Grade",
+            "headerClassName": "grade",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "testname",
+              },
+            ],
+            "compare": [Function],
+            "header": "Test name",
+            "headerClassName": "testname",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "claim",
+                "helpText": [Function],
+              },
+            ],
+            "compare": [Function],
+            "header": "Claim",
+            "headerClassName": "claim",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "target",
+                "helpText": [Function],
+              },
+            ],
+            "compare": [Function],
+            "header": "Target",
+            "headerClassName": "Target",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "standard",
+              },
+              Object {
+                "accessor": [Function],
+                "className": "standard",
+                "helpText": [Function],
+              },
+            ],
+            "compare": [Function],
+            "header": "Standard",
+            "headerClassName": "standard",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "dok",
+              },
+            ],
+            "compare": [Function],
+            "header": "DOK",
+            "headerClassName": "dok",
+          },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "difficulty",
+              },
+            ],
+            "compare": [Function],
+            "header": "Difficulty",
+            "headerClassName": "difficulty",
+          },
+        ]
+      }
+      index={1}
+      isInterimSite={true}
+      isLinkTable={false}
+      itemIdToTestNameMap={
+        Object {
+          "2928": Object {
+            "testName": "Test 2",
+            "testOrder": 1,
+          },
+          "3163": Object {
+            "testName": "Test 1",
+            "testOrder": 2,
+          },
+          "3206": Object {
+            "testName": "Test 1",
+            "testOrder": 1,
+          },
+          "3615": Object {
+            "testName": "Test 1",
+            "testOrder": 3,
+          },
+        }
+      }
+      itemSequence={2}
+      onAddOrRemoveSelectedItems={[MockFunction]}
+      onItemsReorder={[MockFunction]}
+      testCodeToLabelMap={
+        Object {
+          "Test-Name-1": "Test 1",
+          "Test-Name-2": "Test 2",
+        }
+      }
+    >
+      <tr
+        className=""
+        key="3163"
+      >
+        <td>
+          <button
+            aria-label="Remove selected item from print cart"
+            className="btn btn-sm btn-danger btn-remove-item-print-cart"
+            onClick={[Function]}
+          >
+            X
+          </button>
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          3163
+        </td>
+        <td>
+          58679
+        </td>
+        <td>
+          ELA
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          Test 1
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText="B"
+            helpText={
+              <span>
+                Target B description
+              </span>
+            }
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                B
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <span>
+                    Target B description
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          <span>
+            3.R.2a
+             
+          </span>
+          <span>
+            <ToolTip
+              className="box"
+              displayIcon={true}
+              displayText=""
+              helpText={
+                <span>
+                  Content Standard information is currently unavailable for this item.
+                </span>
+              }
+            >
+              <span
+                className="tool-tip-links box"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                   
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-info-circle fa-sm"
+                  />
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <span>
+                      Content Standard information is currently unavailable for this item.
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </span>
+        </td>
+        <td />
+        <td>
+          Easy
+        </td>
+        <td>
+          <div
+            className="btn-group"
+          >
+            <button
+              aria-disabled={false}
+              aria-label="Move item up"
+              className="btn btn-sm btn-primary "
+              id="move-item-btn"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fa fa-arrow-up"
+              />
+            </button>
+            <button
+              aria-disabled={false}
+              aria-label="Move item down"
+              className="btn btn-sm btn-primary "
+              id="move-item-btn"
+              onClick={[Function]}
+              type="button"
+            >
+              <i
+                className="fa fa-arrow-down"
+              />
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        className="table-row-associated-item"
+        key="3163"
+      >
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText=""
+            helpText={
+              <span>
+                This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+              </span>
+            }
+            position="top"
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message top "
+                >
+                  <span>
+                    This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          3163
+        </td>
+        <td />
+        <td>
+          ELA
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          Test 1
+        </td>
+        <td>
+          2
+        </td>
+        <td>
+          Reading
+        </td>
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText="B"
+            helpText={
+              <span>
+                Target B description
+              </span>
+            }
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                B
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <span>
+                    Target B description
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          <span>
+            Not Available
+             
+          </span>
+          <span>
+            <ToolTip
+              className="box"
+              displayIcon={true}
+              displayText=""
+              helpText={
+                <span>
+                  Content Standard information is currently unavailable for this item.
+                </span>
+              }
+            >
+              <span
+                className="tool-tip-links box"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                   
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-info-circle fa-sm"
+                  />
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <span>
+                      Content Standard information is currently unavailable for this item.
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </span>
+        </td>
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="table-row-associated-item"
+        key="3206"
+      >
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText=""
+            helpText={
+              <span>
+                This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+              </span>
+            }
+            position="top"
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message top "
+                >
+                  <span>
+                    This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          3206
+        </td>
+        <td />
+        <td>
+          Math
+        </td>
+        <td>
+          6
+        </td>
+        <td>
+          Test 1
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          Concepts and Procedures and Logical
+        </td>
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText="A"
+            helpText={
+              <span>
+                Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+              </span>
+            }
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                A
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <span>
+                    Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          <span>
+            Not Available
+             
+          </span>
+          <span>
+            <ToolTip
+              className="box"
+              displayIcon={true}
+              displayText=""
+              helpText={
+                <span>
+                  Content Standard information is currently unavailable for this item.
+                </span>
+              }
+            >
+              <span
+                className="tool-tip-links box"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                   
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-info-circle fa-sm"
+                  />
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <span>
+                      Content Standard information is currently unavailable for this item.
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </span>
+        </td>
+        <td />
+        <td />
+        <td />
+      </tr>
+      <tr
+        className="table-row-associated-item"
+        key="3615"
+      >
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText=""
+            helpText={
+              <span>
+                This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+              </span>
+            }
+            position="top"
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message top "
+                >
+                  <span>
+                    This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          4
+        </td>
+        <td>
+          3615
+        </td>
+        <td />
+        <td>
+          Math
+        </td>
+        <td>
+          6
+        </td>
+        <td>
+          Test 1
+        </td>
+        <td>
+          3
+        </td>
+        <td>
+          Modeling/Data Analysis
+        </td>
+        <td>
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText="C"
+            helpText={
+              <span>
+                target C description
+              </span>
+            }
+          >
+            <span
+              className="tool-tip-links box"
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              tabIndex={0}
+            >
+              <span
+                className="tool-tip-hoverable"
+              >
+                C
+                 
+                <span
+                  aria-hidden="true"
+                  className="fa fa-info-circle fa-sm"
+                />
+              </span>
+              <span
+                className="tool-tip-details"
+              >
+                <span
+                  className="tool-tip-message  "
+                >
+                  <span>
+                    target C description
+                  </span>
+                </span>
+              </span>
+            </span>
+          </ToolTip>
+        </td>
+        <td>
+          <span>
+            Math Practice
+             
+          </span>
+          <span>
+            <ToolTip
+              className="box"
+              displayIcon={true}
+              displayText=""
+              helpText={
+                <span>
+                  Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                </span>
+              }
+            >
+              <span
+                className="tool-tip-links box"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                   
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-info-circle fa-sm"
+                  />
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <span>
+                      Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </span>
+        </td>
+        <td />
+        <td />
+        <td />
+      </tr>
+    </PrintCartItemTableRow>
+  </tbody>
+</table>
+`;

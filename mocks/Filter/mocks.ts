@@ -363,6 +363,7 @@ export const mockSIWFilterCategories: BasicFilterCategoryModel[] = [
     label: "Item Types",
     code: FilterType.InteractionType,
     show: true,
+    displayAllButton: true,
     filterOptions: [
       {
         label: "Equation",

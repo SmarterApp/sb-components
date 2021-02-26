@@ -8,20 +8,6 @@ exports[`Storyshots Layout name links body 1`] = `
   <header
     role="navigation"
   >
-    <div
-      id="skip-main"
-    >
-      <a
-        aria-current={false}
-        className="skip-link"
-        href="/BrowseItems"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        style={undefined}
-      >
-        Skip to main content
-      </a>
-    </div>
     <nav
       className="nav-container"
       role="navigation"
@@ -36,13 +22,13 @@ exports[`Storyshots Layout name links body 1`] = `
             className="nav-titleGroup-item"
           >
             <a
-              href="http://www.smarterbalanced.org/"
+              href="https://smartertoolsforteachers.org/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Smarter Balanced Home"
+              title="Smarter Balanced Tools For Teachers"
             >
               <img
-                alt="Smarter Balanced Logo"
+                alt="Smarter Balanced Tools for Teachers Logo"
                 src="test-file-stub"
               />
             </a>
@@ -168,6 +154,9 @@ exports[`Storyshots Layout name links body 1`] = `
           </div>
         </div>
       </div>
+      <div>
+        IAIP v1.0.0
+      </div>
     </div>
   </footer>
 </div>
@@ -181,20 +170,6 @@ exports[`Storyshots Layout name links header and body 1`] = `
   <header
     role="navigation"
   >
-    <div
-      id="skip-main"
-    >
-      <a
-        aria-current={false}
-        className="skip-link"
-        href="/BrowseItems"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        style={undefined}
-      >
-        Skip to main content
-      </a>
-    </div>
     <nav
       className="nav-container"
       role="navigation"
@@ -209,13 +184,13 @@ exports[`Storyshots Layout name links header and body 1`] = `
             className="nav-titleGroup-item"
           >
             <a
-              href="http://www.smarterbalanced.org/"
+              href="https://smartertoolsforteachers.org/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Smarter Balanced Home"
+              title="Smarter Balanced Tools For Teachers"
             >
               <img
-                alt="Smarter Balanced Logo"
+                alt="Smarter Balanced Tools for Teachers Logo"
                 src="test-file-stub"
               />
             </a>
@@ -358,6 +333,9 @@ exports[`Storyshots Layout name links header and body 1`] = `
           </div>
         </div>
       </div>
+      <div>
+        IAIP v1.0.0
+      </div>
     </div>
   </footer>
 </div>
@@ -371,20 +349,6 @@ exports[`Storyshots Layout name no links no body 1`] = `
   <header
     role="navigation"
   >
-    <div
-      id="skip-main"
-    >
-      <a
-        aria-current={false}
-        className="skip-link"
-        href="/BrowseItems"
-        onClick={[Function]}
-        onKeyUp={[Function]}
-        style={undefined}
-      >
-        Skip to main content
-      </a>
-    </div>
     <nav
       className="nav-container"
       role="navigation"
@@ -399,13 +363,13 @@ exports[`Storyshots Layout name no links no body 1`] = `
             className="nav-titleGroup-item"
           >
             <a
-              href="http://www.smarterbalanced.org/"
+              href="https://smartertoolsforteachers.org/"
               rel="noopener noreferrer"
               target="_blank"
-              title="Smarter Balanced Home"
+              title="Smarter Balanced Tools For Teachers"
             >
               <img
-                alt="Smarter Balanced Logo"
+                alt="Smarter Balanced Tools for Teachers Logo"
                 src="test-file-stub"
               />
             </a>
@@ -466,6 +430,9 @@ exports[`Storyshots Layout name no links no body 1`] = `
             </button>
           </div>
         </div>
+      </div>
+      <div>
+        IAIP v1.0.0
       </div>
     </div>
   </footer>

@@ -89,8 +89,11 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
             <input
               checked={fo.isSelected}
               aria-checked={fo.isSelected}
+              tabIndex={0}
+              id="basic-filter-checkbox"
               type="radio"
               name={label}
+              aria-label={`Select ${label} ${fo.key}`}
               value={fo.key}
               onChange={() => this.props.selectedHandler(fo)}
             />
@@ -101,7 +104,7 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
     });
 
     return (
-      <label>
+      <label htmlFor="basic-filter-checkbox">
         {label}
         {radioOptions}
       </label>
@@ -205,7 +208,7 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
    * @returns default render method JSX Element
    */
   render() {
-    let { label, filterOptions } = this.props;
+    let { label, filterOptions, optionType } = this.props;
     label = label.replace(/\ /g, "-");
 
     const selected = filterOptions.find(fil => fil.isSelected === true);
@@ -221,7 +224,7 @@ export class BasicFilter extends React.Component<BasicFilterProps, {}> {
         title={selectedValue}
         id={`${label}-bf`.toLocaleLowerCase()}
         className="bf-selection"
-        tabIndex={tabIndex}
+        // tabIndex={tabIndex}
       >
         {this.renderCategory()}
       </div>

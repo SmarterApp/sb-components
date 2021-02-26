@@ -3,7 +3,9 @@ import * as GradeLevels from "../GradeLevels/GradeLevels";
 import { ItemCardModel } from "./ItemCardModels";
 import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
-import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
+import { getContentStandardCode } from "./ItemCardHelperFunction";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
   MATH1: require("@sbac/sbac-ui-kit/src/images/math-1.svg"),
@@ -24,6 +26,13 @@ export interface ItemCardProps {
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
   isPrintLimitEnabled: boolean;
+  associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
+  isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 export interface ItemCardState {
@@ -46,6 +55,31 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     };
   }
 
+  shouldButtonBeDisabled = () => {
+    if (
+      this.props.rowData.selected === undefined ||
+      this.props.rowData.selected === false
+    ) {
+      if (this.props.associatedItems !== undefined) {
+        const associatedItems = this.props.associatedItems;
+        const itemKey = this.props.rowData.itemKey;
+        for (const itemKeyInAssociatedItems in associatedItems) {
+          const associatedItemsArray =
+            associatedItems[itemKeyInAssociatedItems];
+          for (let i = 0; i < associatedItemsArray.length; i++) {
+            if (associatedItemsArray[i][0].itemKey === itemKey) return true;
+          }
+        }
+      }
+    }
+    return false;
+  };
+
+  handleTooltipKeyPress = (e: React.SyntheticEvent) => {
+    const item = this.props.rowData;
+    this.handleCheckBoxChange(item, e, this.shouldButtonBeDisabled());
+  };
+
   shouldComponentUpdate(nextProps: ItemCardProps, nextState: ItemCardState) {
     // return nextState.redirect || nextState.isCheckBoxChanged;
     return true;
@@ -57,17 +91,31 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     }
   };
 
-  handleCheckBoxChange = (item: ItemCardModel, e: React.SyntheticEvent) => {
+  handleCheckBoxChange = (
+    item: ItemCardModel,
+    e: React.SyntheticEvent,
+    shouldButtonBeDisabled: boolean
+  ) => {
     e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
+    if (
+      shouldButtonBeDisabled &&
+      (item.selected === undefined || item.selected === false)
+    ) {
+      return;
+    }
     const target = e.target as HTMLInputElement;
     const value = target.type === "checkbox" ? target.checked : target.value;
+
     let selectedItemsCount = this.props.getSelectedItemCount();
     //check if selection items count exceed the limits
-    if (
-      item.selected !== true &&
-      this.props.isPrintLimitEnabled == true &&
-      selectedItemsCount >= 20
-    ) {
+    let currentItems: ItemCardModel[] = [];
+    currentItems[0] = item;
+    const ItemsSelectionCountInAdvance = this.props.countNumberOfItemsAfterSelection(
+      currentItems,
+      selectedItemsCount
+    );
+    if (item.selected !== true && ItemsSelectionCountInAdvance > 50) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -102,6 +150,31 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
   };
 
   render() {
+    let testLabel = "";
+    if (this.props.rowData.testName !== undefined) {
+      testLabel = this.props.testCodeToLabelMap[this.props.rowData.testName];
+    }
+
+    const testNameDetails_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
+            <p className="card-text test-name">
+              <span className="card-text-label">Test name:</span>
+              <span className="card-text-value"> {testLabel}</span>
+            </p>
+            <p className="card-text item-position-in-test">
+              <span className="card-text-label">Item position in test:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.testOrder}
+              </span>
+            </p>
+          </>
+        );
+      }
+    };
+
     /**
      * Function related to print button view
      */
@@ -110,11 +183,18 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         ? "fa-check-square"
         : "fa-plus-square";
     };
+    const cssForDisabledButton = () => {
+      const _shouldBeDisabled = this.shouldButtonBeDisabled();
+      if (_shouldBeDisabled) {
+        return "btn-add-remove-disabled-print-selection";
+      } else return "";
+    };
     const onBtnClickChangeBtnStyleCss = () => {
       return this.props.rowData.selected === true
         ? " btn-selected"
         : " btn-unselected";
     };
+
     const selectOrSelectedBtnText = () => {
       return this.props.rowData.selected === true
         ? " Item Selected"
@@ -123,6 +203,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 
     const { bankKey, itemKey } = this.props.rowData;
     let content = <Redirect push to={`/Item/${bankKey}-${itemKey}`} />;
+
     if (!this.state.redirect) {
       const tooltip = generateTooltip({
         displayIcon: true,
@@ -131,24 +212,119 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         displayText: this.props.rowData.targetId
       });
 
-      const tooltip_printOption = generateTooltip({
+      const addOrRemoveIcon = () => {
+        return this.props.rowData.selected === true ? "fa-minus" : "fa-plus";
+      };
+      const getToolTipMsg = () => {
+        if (addOrRemoveIcon() === "fa-plus") return "Add item to print queue";
+        else return "Remove item from print queue ";
+      };
+
+      // Tooltip for content standard
+      const subjectCode = this.props.rowData.subjectCode;
+      const claimCode = this.props.rowData.claimCode;
+      let commonCoreStandardId = this.props.rowData.commonCoreStandardId;
+      let ccssDescription = this.props.rowData.ccssDescription;
+      //get the new and logically updated commonCoreStandardId, ccssDescription value
+      const standard = getContentStandardCode(
+        subjectCode,
+        claimCode,
+        commonCoreStandardId,
+        ccssDescription
+      );
+      commonCoreStandardId = standard["commonCoreStandardId"];
+      ccssDescription = standard["ccssDescription"];
+
+      const tooltipCcontentStandard = generateTooltip({
         displayIcon: true,
         className: "box",
-        helpText: <span>Select to print this item</span>,
-        displayText: ""
+        helpText: <span>{ccssDescription}</span>,
+        displayText: commonCoreStandardId
       });
+
+      const addRemoveButton = (
+        <button
+          type="button"
+          className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()} ${cssForDisabledButton()}`}
+          onClick={e =>
+            this.handleCheckBoxChange(
+              this.props.rowData,
+              e,
+              this.shouldButtonBeDisabled()
+            )
+          }
+          aria-hidden={true}
+          tabIndex={-1}
+          // onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
+          // onKeyDown={e => this.handleEnterKeyDown(e)}
+        >
+          <i className={"fa  " + onBtnClickChangeIcon()} />
+          &nbsp;&nbsp;
+          {selectOrSelectedBtnText()}
+        </button>
+      );
+
+      const noteForDisabledAssocitedItemsButton = (
+        shouldBeDisabled: boolean
+      ) => {
+        if (shouldBeDisabled)
+          return (
+            <>
+              {"This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to" +
+                " measure a student’s ability to demonstrate critical-thinking," +
+                " problem-solving skills and/or complex analysis, and writing and" +
+                " research skills."}
+            </>
+          );
+        else return <></>;
+      };
+
+      const AddRemoveButtonDisabled = (
+        <ToolTip
+          className="tooltip-item-card-button"
+          helpText={noteForDisabledAssocitedItemsButton(
+            this.shouldButtonBeDisabled()
+          )}
+          includeTabindex={true}
+          onKeyPress={this.handleTooltipKeyPress}
+          position="top"
+        >
+          {addRemoveButton}
+        </ToolTip>
+      );
+      const AddRemoveButtonActive = (
+        <ToolTip
+          className="tooltip-item-card-button"
+          helpText={<span>{getToolTipMsg()}</span>}
+          includeTabindex={true}
+          onKeyPress={this.handleTooltipKeyPress}
+        >
+          {addRemoveButton}
+        </ToolTip>
+      );
 
       content = (
         <div
           role="link"
           className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
-          onClick={this.handleOnClick}
-          onKeyUp={this.handleKeyPress}
-          tabIndex={0}
+          // onClick={this.handleOnClick}
+          // onKeyUp={this.handleKeyPress}
+          // tabIndex={0}
+          // aria-label={`Item of Grade ${this.props.rowData.gradeLabel}, Subject ${this.props.rowData.subjectLabel}, Item Id ${this.props.rowData.itemKey}`}
         >
           <div className="card-contents">
-            <div className="card-header">
-              <h4 className="card-title">{this.props.rowData.subjectLabel}</h4>
+            <div
+              className="card-header"
+              onClick={this.handleOnClick}
+              onKeyUp={this.handleKeyPress}
+              tabIndex={0}
+              aria-label={`Item of Grade ${
+                this.props.rowData.gradeLabel
+              }, Subject ${this.props.rowData.subjectLabel}, Item Id ${
+                this.props.rowData.itemKey
+              }`}
+            >
+              <h3 className="card-title">{this.props.rowData.itemKey}</h3>
               <div className="card-icon-container">
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(
@@ -164,6 +340,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.gradeLabel}
               </span>
             </p>
+            {testNameDetails_tsx()}
+            <p className="card-text stimulusid">
+              <span className="card-text-label">Stimulus ID:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.stimulusKey}
+              </span>
+            </p>
             <p className="card-text claim">
               <span className="card-text-label">Claim:</span>
               <span className="card-text-value">
@@ -175,11 +359,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               <span className="card-text-label">Target:</span>
               <span className="card-text-value">{tooltip}</span>
             </p>
+            <p className="card-text target">
+              <span className="card-text-label">Standard:</span>
+              <span className="card-text-value">{tooltipCcontentStandard}</span>
+            </p>
             <p className="card-text interaction-type">
               <span className="card-text-label">Item Type:</span>
-              <span className="card-text-value">
-                {` ${this.props.rowData.interactionTypeLabel}`}
-              </span>
+              <span className="card-text-value">{` ${
+                this.props.rowData.interactionTypeLabel
+              }`}</span>
             </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
@@ -188,27 +376,14 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
-            <button
-              type="button"
-              className={`btn btn-add-remove-print-selection ${this.props.rowData.subjectCode.toLowerCase()} ${onBtnClickChangeBtnStyleCss()}`}
-              onClick={e => this.handleCheckBoxChange(this.props.rowData, e)}
-              tabIndex={0}
-              onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-              onKeyDown={e => this.handleEnterKeyDown(e)}
-            >
-              <i className={"fa  " + onBtnClickChangeIcon()} />&nbsp;&nbsp;
-              {selectOrSelectedBtnText()}
-            </button>
+            {this.shouldButtonBeDisabled()
+              ? AddRemoveButtonDisabled
+              : AddRemoveButtonActive}
           </div>
         </div>
       );
     }
 
-    return (
-      <>
-        {/* {this.renderErrorModal()} */}
-        {content}
-      </>
-    );
+    return <>{content}</>;
   }
 }

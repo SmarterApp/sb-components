@@ -45,6 +45,50 @@ exports[`ItemCard renders correctly 1`] = `
           Grade 4
         </span>
       </p>
+      <React.Fragment>
+        <p
+          className="card-text test-name"
+        >
+          <span
+            className="card-text-label"
+          >
+            Test name:
+          </span>
+          <span
+            className="card-text-value"
+          >
+             
+          </span>
+        </p>
+        <p
+          className="card-text item-position-in-test"
+        >
+          <span
+            className="card-text-label"
+          >
+            Item position in test:
+          </span>
+          <span
+            className="card-text-value"
+          >
+             
+          </span>
+        </p>
+      </React.Fragment>
+      <p
+        className="card-text stimulusid"
+      >
+        <span
+          className="card-text-label"
+        >
+          Stimulus ID:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+        </span>
+      </p>
       <p
         className="card-text claim"
       >
@@ -84,6 +128,29 @@ exports[`ItemCard renders correctly 1`] = `
         </span>
       </p>
       <p
+        className="card-text target"
+      >
+        <span
+          className="card-text-label"
+        >
+          Standard:
+        </span>
+        <span
+          className="card-text-value"
+        >
+          <ToolTip
+            className="box"
+            displayIcon={true}
+            displayText="AB-123"
+            helpText={
+              <span>
+                this is the common core description
+              </span>
+            }
+          />
+        </span>
+      </p>
+      <p
         className="card-text interaction-type"
       >
         <span
@@ -112,20 +179,30 @@ exports[`ItemCard renders correctly 1`] = `
           3434
         </span>
       </p>
-      <button
-        className="btn btn-add-remove-print-selection ela  btn-unselected"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        tabIndex={0}
-        type="button"
+      <ToolTip
+        className="tooltip-item-card-button"
+        helpText={
+          <span>
+            Add item to print queue
+          </span>
+        }
+        includeTabindex={true}
+        onKeyPress={[Function]}
       >
-        <i
-          className="fa  fa-plus-square"
-        />
-          
-         Select to Print
-      </button>
+        <button
+          aria-hidden={true}
+          className="btn btn-add-remove-print-selection ela  btn-unselected "
+          onClick={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          <i
+            className="fa  fa-plus-square"
+          />
+            
+           Select to Print
+        </button>
+      </ToolTip>
     </div>
   </div>
 </React.Fragment>

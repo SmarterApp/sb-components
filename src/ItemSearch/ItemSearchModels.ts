@@ -12,17 +12,22 @@ export type SearchFilterStringTypes =
   | SubjectModel
   | InteractionTypeModel
   | SearchBaseModel
-  | TestNameModel;
+  | TestNameModel
+  | ReleaseDateModel;
+
 export type SearchFilterTypes =
   | SearchFilterStringTypes
   | TargetModel
   | GradeLevels
-  | ClaimModel;
+  | ClaimModel
+  | CoreStandardModel;
+
 export type SearchFilterModelTypes =
   | FilterSearchGradeLevelModel
   | FilterSearchStringModel<SearchFilterStringTypes>
   | FilterSearchTargetModel
-  | FilterSearchClaimModel;
+  | FilterSearchClaimModel
+  | FilterSearchCoreStandardModel;
 
 export interface SubjectClaimsModel {
   [subject: string]: { text: string; value: string }[];
@@ -46,9 +51,23 @@ export interface TestNameModel extends SearchBaseModel {
   grade?: string;
 }
 
+export interface ReleaseDateModel extends SearchBaseModel {
+  shortLabel?: string;
+  releaseDate: string;
+}
+
 export interface ClaimModel extends SearchBaseModel {
   targetCodes?: string[];
   claimNumber: string;
+  coreStandardCodes?: string;
+}
+
+export interface TestCodeToLabel {
+  [key: string]: string;
+}
+
+export interface ItemIdToTestNameMap {
+  [key: number]: TestNameAndPosition;
 }
 
 export interface TargetModel {
@@ -56,6 +75,14 @@ export interface TargetModel {
   nameHash: number;
   idLabel: string;
   id: string;
+}
+
+export interface CoreStandardModel {
+  commonCoreStandardsId: string;
+  commonCoreStandardsDescription: string;
+  claimId: string;
+  subject: string;
+  target: TargetModel;
 }
 
 export interface SearchAPIParamsModel {
@@ -69,6 +96,8 @@ export interface SearchAPIParamsModel {
   targets?: string[];
   calculator?: boolean;
   testNames?: string[];
+  coreStandards?: string[];
+  releaseDates?: string[];
 }
 
 export interface ItemsSearchModel {
@@ -77,6 +106,8 @@ export interface ItemsSearchModel {
   claims?: ClaimModel[];
   targets?: TargetModel[];
   testNames?: TestNameModel[];
+  coreStandard?: CoreStandardModel[];
+  releaseDates?: ReleaseDateModel[];
 }
 
 export interface ItemsSearchFilterModel {
@@ -89,6 +120,8 @@ export interface ItemsSearchFilterModel {
   calculator: FilterSearchStringModel<SearchBaseModel>;
   testNames: FilterSearchStringModel<TestNameModel>;
   testNameItemPools: TestNameItemsPoolModel[];
+  coreStandards: FilterSearchCoreStandardModel;
+  releaseDates: FilterSearchStringModel<ReleaseDateModel>;
 }
 
 export interface FilterSearchModel {
@@ -106,7 +139,8 @@ export interface FilterSearchStringModel<T extends SearchFilterStringTypes>
     | FilterType.Subject
     | FilterType.TechnologyType
     | FilterType.Calculator
-    | FilterType.TestNames;
+    | FilterType.TestNames
+    | FilterType.ReleaseDate;
   show: boolean;
 }
 
@@ -118,6 +152,11 @@ export interface FilterSearchGradeLevelModel extends FilterSearchModel {
 export interface FilterSearchTargetModel extends FilterSearchModel {
   filterOptions: TargetModel[];
   code: FilterType.Target;
+}
+
+export interface FilterSearchCoreStandardModel extends FilterSearchModel {
+  filterOptions: CoreStandardModel[];
+  code: FilterType.CoreStandards;
 }
 
 export interface FilterSearchGradeModel extends FilterSearchModel {
@@ -132,5 +171,15 @@ export interface FilterSearchClaimModel extends FilterSearchModel {
 
 export interface TestNameItemsPoolModel {
   code: string;
+  itemKeys: Array<itemKeys>;
+}
+
+export interface itemKeys {
   itemKey: number;
+  itemPosition: number;
+}
+
+export interface TestNameAndPosition {
+  testName: string;
+  testOrder: number;
 }

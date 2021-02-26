@@ -38,9 +38,37 @@ describe("ItemSearch.filterItemCards", () => {
   it("filters with empty filter", () => {
     const params: SearchAPIParamsModel = {};
     const result = ItemSearch.filterItemCards(itemCardList, params, []);
+    expect(result).toHaveLength(0);
+  });
 
-    expect(result).toHaveLength(itemCardList.length);
-    itemCardList.forEach(card => expect(result).toContain(card));
+  it("filters with only either Grade or with Subject filter", () => {
+    const params_grade: SearchAPIParamsModel = {
+      gradeLevels: GradeLevels.Elementary
+    };
+    const params_subject: SearchAPIParamsModel = {
+      subjects: ["ELA"]
+    };
+    const result_filtererd_by_grade = ItemSearch.filterItemCards(
+      itemCardList,
+      params_grade,
+      []
+    );
+    const result_filtererd_by_subject = ItemSearch.filterItemCards(
+      itemCardList,
+      params_subject,
+      []
+    );
+    expect(result_filtererd_by_grade).toHaveLength(0);
+    expect(result_filtererd_by_subject).toHaveLength(0);
+  });
+
+  it("filters with Grade & Subject filter", () => {
+    const params: SearchAPIParamsModel = {
+      gradeLevels: GradeLevels.Elementary,
+      subjects: ["ELA"]
+    };
+    const result = ItemSearch.filterItemCards(itemCardList, params, []);
+    expect(result).toHaveLength(2);
   });
 
   it("works without cards", () => {
@@ -53,85 +81,47 @@ describe("ItemSearch.filterItemCards", () => {
     expect(result).toHaveLength(0);
   });
 
-  it("filters based on subject, claim, and target", () => {
+  it("filters based on grade, subject, claim, target and Standard", () => {
     const params: SearchAPIParamsModel = {
+      gradeLevels: GradeLevels.Grade4,
       subjects: ["ELA"],
       claims: ["ELA4"],
-      targets: ["D"]
+      targets: ["D"],
+      coreStandards: ["4.E.4a"]
     };
     const result = ItemSearch.filterItemCards(itemCardList, params, []);
     const expectedCards = itemCardList.filter(
       c =>
-        c.subjectCode === "ELA" && c.claimCode === "ELA4" && c.targetId === "D"
+        GradeLevel.gradeLevelContains(GradeLevels.Grade4, c.grade) &&
+        c.subjectCode === "ELA" &&
+        c.claimCode === "ELA4" &&
+        c.targetId === "D" &&
+        c.commonCoreStandardId === "4.E.4a"
     );
 
     expect(result).toHaveLength(1);
     expect(result).toContain(expectedCards[0]);
   });
 
-  it("filters based on grade", () => {
+  it("filters based on grade, subject and performance", () => {
     const params: SearchAPIParamsModel = {
-      gradeLevels: GradeLevels.Middle
-    };
-    const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList.filter(c =>
-      GradeLevel.gradeLevelContains(GradeLevels.Middle, c.grade)
-    );
-
-    expect(result).toHaveLength(expectedCards.length);
-    expectedCards.forEach(card => expect(result).toContain(card));
-  });
-
-  it("filters for cat items only", () => {
-    const params: SearchAPIParamsModel = {
-      catOnly: true
-    };
-    const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList.filter(c => !c.isPerformanceItem);
-
-    expect(result).toHaveLength(expectedCards.length);
-    expectedCards.forEach(card => expect(result).toContain(card));
-  });
-
-  it("filters for performance items only", () => {
-    const params: SearchAPIParamsModel = {
+      gradeLevels: GradeLevels.Grade6,
+      subjects: ["MATH"],
+      claims: ["MATH4"],
+      targets: ["C"],
+      coreStandards: ["6.M.2b"],
       performanceOnly: true
     };
     const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList.filter(c => c.isPerformanceItem);
-
-    expect(result).toHaveLength(expectedCards.length);
-    expectedCards.forEach(card => expect(result).toContain(card));
-  });
-
-  it("filters for calculator off", () => {
-    const params: SearchAPIParamsModel = {
-      calculator: false
-    };
-    const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList.filter(c => c.calculator === false);
-
-    expect(result).toHaveLength(expectedCards.length);
-    expectedCards.forEach(card => expect(result).toContain(card));
-  });
-
-  it("filters for calculator on", () => {
-    const params: SearchAPIParamsModel = {
-      calculator: true
-    };
-    const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList.filter(c => c.calculator === true);
-
-    expect(result).toHaveLength(expectedCards.length);
-    expectedCards.forEach(card => expect(result).toContain(card));
-  });
-
-  it("filters for calculator undefined", () => {
-    const params: SearchAPIParamsModel = {
-      calculator: undefined
-    };
-    const result = ItemSearch.filterItemCards(itemCardList, params, []);
-    const expectedCards = itemCardList;
+    const expectedCards = itemCardList.filter(
+      c =>
+        GradeLevel.gradeLevelContains(GradeLevels.Grade6, c.grade) &&
+        c.subjectCode === "MATH" &&
+        c.claimCode === "MATH4" &&
+        c.targetId === "C" &&
+        c.commonCoreStandardId === "6.M.2b" &&
+        c.isPerformanceItem === true
+    );
 
     expect(result).toHaveLength(expectedCards.length);
     expectedCards.forEach(card => expect(result).toContain(card));

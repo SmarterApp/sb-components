@@ -21,16 +21,26 @@ table.item-table {
 table.link-table th,
 table.item-table th {
   min-width: 50px;
+  // max-width: 100px;
   white-space: nowrap;
   border: 0;
   padding: 4px 8px;
+  text-align: center !important;
+
+  // make sticky table header
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: @grey-border-color;
 }
 
 table.link-table td,
 table.item-table td {
   min-width: 50px;
+  // max-width: 100px;
   padding: 4px 8px;
   white-space: normal;
+  text-align: center;
 }
 
 table.link-table .item-checkbox,
@@ -68,7 +78,8 @@ table.link-table > tbody > tr > td > div {
 table > thead > tr > th > div {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: center;
+  // justify-content: space-between;
 }
 
 table > thead > tr > th > div > span {
@@ -101,4 +112,128 @@ table.item-table.table-icon {
 
 .form-control.error {
   border-color: red;
+}
+
+.btn-item-add-remove-grid {
+  //margin: 2px;
+  width: auto;
+  font-size: 12px;
+}
+
+.btn-red-border {
+  border-color: red;
+}
+.btn-blue-border {
+  border-color: blue;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+// Style for PT associated items group in print cart
+.table-row-associated-item {
+  background-color: #dcdcdc !important;
+  color: black !important;
+  border-bottom: 1px solid white !important;
+}
+
+.item-sequence {
+  margin-left: 25px;
+}
+
+.th-arrrow-button {
+  min-width: 110px !important;
+}
+.testname {
+  min-width: 110px !important;
+}
+
+//Make sticky table header
+.td-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: @grey-border-color;
+}
+
+//Give space between table header text & sorting icon
+.sort-icon {
+  margin-left: 6px;
+}
+
+th > .item-position-in-test {
+  text-align: center;
+}
+
+.item-position-in-test {
+  white-space: normal !important;
+  max-width: 160px;
+}
+.item-position-in-test > .sort-icon {
+  margin-left: 2px;
+}
+
+.btn-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#disabled-move-item-btn {
+  background-color: rgb(98, 148, 184);
+  cursor: default;
+}
+
+table.braille-menu-table {
+  width: 50%;
+  height: 100%;
+  background-color: @grey-border-color;
+  margin: 0;
+  padding: 0;
+  border-radius: @spacing-item;
+  border-spacing: 1px;
+  cursor: pointer;
+  box-shadow: @box-shadow;
+}
+
+table.braille-menu-table th {
+  min-width: 50px;
+  // max-width: 100px;
+  white-space: nowrap;
+  border: 0;
+  padding: 4px 8px;
+  text-align: center !important;
+
+  // make sticky table header
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: @grey-border-color;
+}
+
+table.braille-menu-table td {
+  min-width: 50px;
+  // max-width: 100px;
+  padding: 4px 8px;
+  white-space: normal;
+  text-align: center;
+}
+
+table.braille-menu-table > tbody > tr:nth-child(even),
+table.braille-menu-table > tbody > tr:nth-child(odd) {
+  background-color: @sb-white;
+  border-top: 1px solid @grey-border-color;
+  border-bottom: 1px solid @grey-border-color;
+}
+
+table.link-table > tbody > tr:last-child,
+table.braille-menu-table > tbody > tr:last-child {
+  border: 0;
+}
+
+table.braille-menu-table > tbody > tr:hover,
+table.braille-menu-table > tbody > tr:hover {
+  background-color: @background-color-base;
 }

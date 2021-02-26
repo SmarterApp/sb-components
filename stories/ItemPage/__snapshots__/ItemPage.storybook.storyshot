@@ -90,6 +90,7 @@ exports[`Storyshots Item Page Item Page returns error 1`] = `
     </div>
   </div>
   <div
+    aria-hidden={false}
     className="itemViewerFrame"
     tabIndex={0}
   >
@@ -203,6 +204,7 @@ exports[`Storyshots Item Page Item Page with an item 1`] = `
     </div>
   </div>
   <div
+    aria-hidden={false}
     className="itemViewerFrame"
     tabIndex={0}
   >

@@ -8,13 +8,16 @@ import { itemCardList, sortableItemCards } from "@mocks/index";
 
 export const tabClassNames = [
   "item",
-  "claimAndTarget",
+  "claim",
+  "standard",
   "subject",
   "grade",
-  "item-type"
+  "item-type",
+  "Target"
 ];
 
 export const itemTableProps: ItemTableContainerProps = {
+  isInterimSite: false,
   isLinkTable: false,
   onRowSelection: () => {
     return;
@@ -29,9 +32,19 @@ export const itemTableProps: ItemTableContainerProps = {
   item: {
     kind: "none"
   },
+
   numberOfSelectedItem: 0,
-  getSelectedItemCount: () => {return 0;},
-  showErrorModalOnPrintItemsCountExceeded: () => {return}
+  getSelectedItemCount: () => {
+    return 0;
+  },
+  showErrorModalOnPrintItemsCountExceeded: () => {
+    return;
+  },
+  associatedItems: [],
+  countNumberOfItemsAfterSelection: () => {
+    return 0;
+  },
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

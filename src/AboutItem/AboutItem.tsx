@@ -7,6 +7,7 @@ import * as ReactModal from "react-modal";
 export interface AboutItemProps extends AboutItemModel {
   showModal?: boolean;
   showRubrics?: boolean;
+  isInterimSite?: boolean;
 }
 
 export interface AboutItemState {

@@ -11,6 +11,7 @@ export interface AboutItemModel {
   evidenceStatement?: string;
   sampleItemScoring?: SampleItemScoringModel;
   associatedItems?: string;
+  isInterimSite?: boolean;
 }
 
 export interface StandardPublication {

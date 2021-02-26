@@ -6,6 +6,12 @@ import {
   SortColumnModel,
   ColumnGroup
 } from "@src/index";
+import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import {
+  mapItemGrade,
+  mapItemSubjectlabel,
+  mapItemClaim
+} from "@src/PrintCart/PrintCartItemTableRow";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -18,6 +24,13 @@ export interface ItemTableRowProps {
   numberOfSelectedItem: number;
   getSelectedItemCount: () => number;
   showErrorModalOnPrintItemsCountExceeded: () => void;
+  associatedItems: any[];
+  countNumberOfItemsAfterSelection: (
+    currentItems: ItemCardModel[],
+    selectedItemsCount: number
+  ) => number;
+  isInterimSite: boolean;
+  testCodeToLabelMap: TestCodeToLabel;
 }
 
 const unChecked = (
@@ -48,26 +61,75 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     return true;
   }
 
+  //keyboard accessibility handler tooltip: select item on key press on tooltip
+  handleTooltipKeyPress = (e: any) => {
+    const item = this.props.rowData;
+    this.handleCheckboxClick(e, item, this.shouldRowButtonBeDisabled());
+  };
+
   handleRowClick = (rowData: ItemCardModel) => {
     this.props.onRowExpand(rowData);
   };
 
-  handleKeyUpEnter = (
-    e: React.KeyboardEvent<HTMLTableRowElement>,
-    rowData: ItemCardModel
-  ) => {
+  handleKeyUpEnter = (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+    const rowData = this.props.rowData;
     if (e.keyCode === 13) {
       this.props.onRowExpand(rowData);
     }
   };
 
+  //disabled button for an item if it associated PT item is already selected
+  shouldRowButtonBeDisabled = () => {
+    if (
+      this.props.rowData.selected === undefined ||
+      this.props.rowData.selected === false
+    ) {
+      if (this.props.associatedItems !== undefined) {
+        const associatedItems = this.props.associatedItems;
+        const itemKey = this.props.rowData.itemKey;
+        for (const itemKeyInAssociatedItems in associatedItems) {
+          const associatedItemsArray =
+            associatedItems[itemKeyInAssociatedItems];
+          for (let i = 0; i < associatedItemsArray.length; i++) {
+            if (associatedItemsArray[i][0].itemKey === itemKey)
+              return "disabled";
+          }
+        }
+      }
+    }
+
+    return " ";
+  };
+
+  /**
+   * @param e
+   * @param rowData
+   * @param shouldBeDisabled
+   * Select/deselect item on checkbox click
+   * Dot not perform any operation if item is PT item and any of its assocaited item is already selected
+   */
   handleCheckboxClick = (
     e: React.MouseEvent<HTMLTableDataCellElement>,
-    rowData: ItemCardModel
+    rowData: ItemCardModel,
+    shouldBeDisabled: string
   ) => {
+    let currentItems: ItemCardModel[] = [];
+    currentItems[0] = rowData;
     e.stopPropagation();
+    if (
+      shouldBeDisabled == "disabled" &&
+      (rowData.selected === undefined || rowData.selected === false)
+    ) {
+      return;
+    }
     let selectedItemsCount = this.props.getSelectedItemCount();
-    if (rowData.selected !== true && selectedItemsCount >= 20) {
+    if (
+      rowData.selected !== true &&
+      this.props.countNumberOfItemsAfterSelection(
+        currentItems,
+        selectedItemsCount
+      ) > 50
+    ) {
       this.props.showErrorModalOnPrintItemsCountExceeded();
       return;
     } else {
@@ -76,34 +138,6 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
       this.props.onRowSelect(rowData);
       e.stopPropagation();
     }
-  };
-
-  handleKeyUpSpacebar = (
-    e: React.KeyboardEvent<HTMLTableDataCellElement>,
-    rowData: ItemCardModel
-  ) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      return;
-    }
-    if (e.keyCode === 32) {
-      e.preventDefault();
-      let selectedItemsCount = this.props.getSelectedItemCount();
-
-      if (rowData.selected !== true && selectedItemsCount >= 20) {
-        this.props.showErrorModalOnPrintItemsCountExceeded();
-        return;
-      } else {
-        if (rowData.selected === true) rowData.selected = false;
-        else rowData.selected = true;
-        this.props.onRowSelect(rowData);
-      }
-      e.preventDefault();
-    }
-  };
-
-  handleKeyUpEnterStopPropogation = (e: React.SyntheticEvent) => {
-    e.stopPropagation();
   };
 
   renderColumnGroup(
@@ -147,9 +181,18 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         <span
           className={`table-subject-highlight ${cellData.subjectCode.toLowerCase()}`}
         >
-          {columnText}
+          {mapItemSubjectlabel(columnText.toString())}
         </span>
       );
+    } else if (col.className === "testname") {
+      let testLabel = "";
+      if (columnText !== undefined) {
+        testLabel = this.props.testCodeToLabelMap[columnText];
+      }
+      content = <span>{testLabel}</span>;
+    } else if (col.className === "grade") {
+      const shortGradeValue = mapItemGrade(columnText.toString());
+      content = <span>{shortGradeValue}</span>;
     } else {
       if (col.className === "item") {
         content = (
@@ -167,18 +210,58 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
 
   renderControls(): JSX.Element[] | undefined {
     const { rowData, hasControls, isExpanded } = this.props;
+
+    const shouldBeDisabledResult = this.shouldRowButtonBeDisabled();
+
+    const addOrRemoveIcon = () => {
+      return rowData.selected === true ? "fa-check-circle" : "fa-plus-circle";
+    };
+    const addRemoveItemBtnCSSClass = () => {
+      return rowData.selected === true ? "btn-red-border" : "btn-blue-border";
+    };
+
+    const getToolTipMsg = () => {
+      if (shouldBeDisabledResult === "disabled")
+        return "This is a Performance Task and must be selected as a group in a predefined sequence. PTs are designed as a complete activity to measure a student’s ability to demonstrate critical-thinking, problem-solving skills and/or complex analysis, and writing and research skills.";
+      if (addOrRemoveIcon() === "fa-plus-circle")
+        return "Add item to print queue";
+      else return "Remove item from print queue ";
+    };
+
+    const buttonAddOrRemove = (
+      <button
+        type="button"
+        tabIndex={-1}
+        className={`btn btn  btn-item-add-remove-grid btn-sm ${addRemoveItemBtnCSSClass()}`} //${this.props.rowData.subjectCode.toLowerCase()
+      >
+        <i className={"fa fa-2x " + addOrRemoveIcon()} />
+      </button>
+    );
+
+    const tooltip = generateTooltip({
+      displayIcon: false,
+      className: "btn-table-cell",
+      helpText: <label>{getToolTipMsg()}</label>,
+      displayText: buttonAddOrRemove,
+      onKeyPress: this.handleTooltipKeyPress
+    });
+
     let controls: JSX.Element[] | undefined;
     if (hasControls) {
       controls = [
         <td
           className="item-checkbox"
           key="checkbox-control"
-          onClick={e => this.handleCheckboxClick(e, rowData)}
-          onKeyDown={e => this.handleKeyUpSpacebar(e, rowData)}
-          onKeyUp={e => this.handleKeyUpEnterStopPropogation(e)}
-          tabIndex={0}
+          onClick={e =>
+            this.handleCheckboxClick(
+              e,
+              rowData,
+              this.shouldRowButtonBeDisabled()
+            )
+          }
+          aria-label="Select item to print cart"
         >
-          {rowData.selected === true ? checked : unChecked}&nbsp;
+          {tooltip}
         </td>
       ];
     }
@@ -194,7 +277,7 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
         key={`${rowData.bankKey}-${rowData.itemKey}`}
         className={isExpanded ? "selected" : ""}
         onClick={() => this.handleRowClick(rowData)}
-        onKeyUp={e => this.handleKeyUpEnter(e, rowData)}
+        onKeyUp={e => this.handleKeyUpEnter(e)}
       >
         {this.renderControls()}
         {columns.map(col => this.renderColumnGroup(col, rowData))}
@@ -202,3 +285,8 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     );
   }
 }
+
+// for expand...  deprecitd... after addremove icon... leaving code for future refrence if required
+// <td className="arrow-indicator" tabIndex={0} key="expand-control">
+//   {isExpanded ? expand : collapse}
+// </td>

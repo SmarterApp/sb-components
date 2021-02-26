@@ -24,7 +24,7 @@ export class GradeLevel {
     // tslint:disable-next-line:switch-default
     switch (grade) {
       case GradeLevels.NA:
-        return "NA";
+        return "Select Grade";
       case GradeLevels.All:
         return "All Grades";
       case GradeLevels.Grade3:
@@ -101,6 +101,8 @@ export class GradeLevel {
     haystack: GradeLevels,
     needle: GradeLevels
   ): boolean {
+    if (needle == 0 && haystack != 0) return false;
+
     return (haystack & needle) === needle;
   }
 

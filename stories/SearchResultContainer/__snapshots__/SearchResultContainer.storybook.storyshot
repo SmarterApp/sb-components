@@ -25,11 +25,30 @@ exports[`Storyshots Search Result Container normal render 1`] = `
       className="search-result-container"
     />
     <div
+      className="search-result-container"
+    />
+    <div
+      className="search-result-container"
+    />
+    <div
       className="row search-result-header-row"
     >
       <div
         className="col-sm-4 header-grid-div header-print-button-groups"
-      />
+      >
+        <button
+          aria-label="Select all to print"
+          className="btn btn-default search-result-container-header-button  "
+          onClick={[Function]}
+          title="Select all to print"
+        >
+          <i
+            aria-hidden="true"
+            className="fa fa-check"
+          />
+           Select All
+        </button>
+      </div>
       <div
         className="col-sm-3 header-grid-div  "
       >
@@ -60,10 +79,10 @@ exports[`Storyshots Search Result Container normal render 1`] = `
         className="col-sm-5 header-grid-div header-print-button-groups"
       >
         <button
-          aria-label="Clear Selection"
-          className="btn btn-default search-result-container-header-button disabled"
+          aria-label="Clear items from print cart"
+          className="btn btn-default search-result-container-header-button disabled btn-sm"
           onClick={[Function]}
-          title="Clear Selection"
+          title="Clear items from print cart"
         >
           <i
             aria-hidden="true"
@@ -72,17 +91,34 @@ exports[`Storyshots Search Result Container normal render 1`] = `
            Clear
         </button>
         <button
-          aria-label="Print Item"
-          className="btn btn-default search-result-container-header-button"
+          aria-label="Open print cart popup"
+          className="btn btn-default btn-sm btn-print-cart"
           onClick={[Function]}
-          title="Print Items"
+          type="button"
+        >
+          <span
+            className="glyphicon glyphicon-print"
+          />
+           
+          Print Cart
+           
+          <span
+            className="circle "
+          >
+            0
+          </span>
+        </button>
+        <button
+          aria-label="Open barille cart modal"
+          className="btn btn-default btn-sm "
+          onClick={[Function]}
+          title="Open barille cart modal"
         >
           <i
             aria-hidden="true"
-            className="glyphicon glyphicon-th-large glyphicon-print"
+            className="fa fa-braille"
           />
-           
-          Print
+           Braille Cart
         </button>
       </div>
     </div>
@@ -100,6 +136,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               className="primary"
             >
               <td
+                className="td-header"
                 colSpan={1}
               />
               <th
@@ -117,7 +154,55 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   </span>
                   <span
                     aria-hidden="true"
-                    className="fa fa-sort"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="stimulus"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="stimulus"
+                >
+                  <span>
+                    Stimulus ID
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="item-position-in-test"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="item-position-in-test"
+                >
+                  <span>
+                    Item position in test
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
                     style={
                       Object {
                         "color": "gray",
@@ -141,7 +226,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   </span>
                   <span
                     aria-hidden="true"
-                    className="fa fa-sort"
+                    className="fa fa-sort sort-icon"
                     style={
                       Object {
                         "color": "gray",
@@ -165,7 +250,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   </span>
                   <span
                     aria-hidden="true"
-                    className="fa fa-sort"
+                    className="fa fa-sort sort-icon"
                     style={
                       Object {
                         "color": "gray",
@@ -175,21 +260,21 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </div>
               </th>
               <th
-                className="claimAndTarget"
+                className="testname"
                 onClick={[Function]}
                 onKeyUp={[Function]}
                 scope="col"
                 tabIndex={0}
               >
                 <div
-                  className="claimAndTarget"
+                  className="testname"
                 >
                   <span>
-                    Claim/Target
+                    Test name
                   </span>
                   <span
                     aria-hidden="true"
-                    className="fa fa-sort"
+                    className="fa fa-sort sort-icon"
                     style={
                       Object {
                         "color": "gray",
@@ -199,21 +284,117 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </div>
               </th>
               <th
-                className="item-type"
+                className="claim"
                 onClick={[Function]}
                 onKeyUp={[Function]}
                 scope="col"
                 tabIndex={0}
               >
                 <div
-                  className="item-type"
+                  className="claim"
                 >
                   <span>
-                    Item Type
+                    Claim
                   </span>
                   <span
                     aria-hidden="true"
-                    className="fa fa-sort"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="Target"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="Target"
+                >
+                  <span>
+                    Target
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="standard"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="standard"
+                >
+                  <span>
+                    Standard
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="dok"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="dok"
+                >
+                  <span>
+                    DOK
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
+                    style={
+                      Object {
+                        "color": "gray",
+                      }
+                    }
+                  />
+                </div>
+              </th>
+              <th
+                className="difficulty"
+                onClick={[Function]}
+                onKeyUp={[Function]}
+                scope="col"
+                tabIndex={0}
+              >
+                <div
+                  className="difficulty"
+                >
+                  <span>
+                    Difficulty
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="fa fa-sort sort-icon"
                     style={
                       Object {
                         "color": "gray",
@@ -231,17 +412,42 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onKeyUp={[Function]}
             >
               <td
+                aria-label="Select item to print cart"
                 className="item-checkbox"
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                tabIndex={0}
               >
-                <i
-                  aria-hidden="true"
-                  className="fa fa-square-o fa-sm table-icon"
-                />
-                 
+                <span
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    <button
+                      className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      <i
+                        className="fa fa-2x fa-plus-circle"
+                      />
+                    </button>
+                     
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
+                  </span>
+                </span>
               </td>
               <td
                 className="item"
@@ -254,6 +460,26 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   >
                     3206
                   </a>
+                </span>
+              </td>
+              <td
+                className="stimulus"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    56900
+                  </span>
+                </span>
+              </td>
+              <td
+                className="item-position-in-test"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    1
+                  </span>
                 </span>
               </td>
               <td
@@ -274,22 +500,64 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               >
                 <span>
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
               <td
-                className="claimAndTarget"
+                className="testname"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Concepts and Procedures
+                    Test 1
                   </span>
                 </span>
+              </td>
+              <td
+                className="claim"
+                role="gridcell"
+              >
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      1
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          1.Concepts and Procedures and Logical
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="Target"
+                role="gridcell"
+              >
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -309,7 +577,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                         className="tool-tip-message bottom "
                       >
                         <p>
-                          Target A description with extra text for testing fewoiauighruiaebiurbbvnianiuergruia
+                          Target A description with extra text for testing
                         </p>
                       </span>
                     </span>
@@ -317,12 +585,62 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
-                className="item-type"
+                className="standard"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Equation
+                    6.M.1a
+                  </span>
+                </span>
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          Content Standard information is currently unavailable for this item.
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="dok"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    
+                  </span>
+                </span>
+              </td>
+              <td
+                className="difficulty"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    Moderate
                   </span>
                 </span>
               </td>
@@ -333,17 +651,42 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onKeyUp={[Function]}
             >
               <td
+                aria-label="Select item to print cart"
                 className="item-checkbox"
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                tabIndex={0}
               >
-                <i
-                  aria-hidden="true"
-                  className="fa fa-square-o fa-sm table-icon"
-                />
-                 
+                <span
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    <button
+                      className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      <i
+                        className="fa fa-2x fa-plus-circle"
+                      />
+                    </button>
+                     
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
+                  </span>
+                </span>
               </td>
               <td
                 className="item"
@@ -359,6 +702,26 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    58679
+                  </span>
+                </span>
+              </td>
+              <td
+                className="item-position-in-test"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    2
+                  </span>
+                </span>
+              </td>
+              <td
                 className="subject"
                 role="gridcell"
               >
@@ -366,7 +729,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -376,22 +739,64 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               >
                 <span>
                   <span>
-                    Grade 3
+                    3
                   </span>
                 </span>
               </td>
               <td
-                className="claimAndTarget"
+                className="testname"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Reading
+                    Test 1
                   </span>
                 </span>
+              </td>
+              <td
+                className="claim"
+                role="gridcell"
+              >
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      1
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          1.Reading
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="Target"
+                role="gridcell"
+              >
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -419,12 +824,62 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
-                className="item-type"
+                className="standard"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Multiple Choice
+                    3.R.2a
+                  </span>
+                </span>
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          Content Standard information is currently unavailable for this item.
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="dok"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    
+                  </span>
+                </span>
+              </td>
+              <td
+                className="difficulty"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    Easy
                   </span>
                 </span>
               </td>
@@ -435,17 +890,42 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onKeyUp={[Function]}
             >
               <td
+                aria-label="Select item to print cart"
                 className="item-checkbox"
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                tabIndex={0}
               >
-                <i
-                  aria-hidden="true"
-                  className="fa fa-square-o fa-sm table-icon"
-                />
-                 
+                <span
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    <button
+                      className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      <i
+                        className="fa fa-2x fa-plus-circle"
+                      />
+                    </button>
+                     
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
+                  </span>
+                </span>
               </td>
               <td
                 className="item"
@@ -458,6 +938,26 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   >
                     3615
                   </a>
+                </span>
+              </td>
+              <td
+                className="stimulus"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    23461
+                  </span>
+                </span>
+              </td>
+              <td
+                className="item-position-in-test"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    3
+                  </span>
                 </span>
               </td>
               <td
@@ -478,22 +978,64 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               >
                 <span>
                   <span>
-                    Grade 6
+                    6
                   </span>
                 </span>
               </td>
               <td
-                className="claimAndTarget"
+                className="testname"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Modeling/Data Analysis
+                    Test 1
                   </span>
                 </span>
+              </td>
+              <td
+                className="claim"
+                role="gridcell"
+              >
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      3
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          3.Modeling/Data Analysis
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="Target"
+                role="gridcell"
+              >
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -521,12 +1063,62 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
-                className="item-type"
+                className="standard"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Multi Select
+                    Math Practice
+                  </span>
+                </span>
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="dok"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    
+                  </span>
+                </span>
+              </td>
+              <td
+                className="difficulty"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    
                   </span>
                 </span>
               </td>
@@ -537,17 +1129,42 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               onKeyUp={[Function]}
             >
               <td
+                aria-label="Select item to print cart"
                 className="item-checkbox"
                 onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                tabIndex={0}
               >
-                <i
-                  aria-hidden="true"
-                  className="fa fa-square-o fa-sm table-icon"
-                />
-                 
+                <span
+                  className="tool-tip-links btn-table-cell"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    <button
+                      className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                      tabIndex={-1}
+                      type="button"
+                    >
+                      <i
+                        className="fa fa-2x fa-plus-circle"
+                      />
+                    </button>
+                     
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message  "
+                    >
+                      <label>
+                        Add item to print queue
+                      </label>
+                    </span>
+                  </span>
+                </span>
               </td>
               <td
                 className="item"
@@ -563,6 +1180,26 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
+                className="stimulus"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    87679
+                  </span>
+                </span>
+              </td>
+              <td
+                className="item-position-in-test"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    2
+                  </span>
+                </span>
+              </td>
+              <td
                 className="subject"
                 role="gridcell"
               >
@@ -570,7 +1207,7 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                   <span
                     className="table-subject-highlight ela"
                   >
-                    ELA/literacy
+                    ELA
                   </span>
                 </span>
               </td>
@@ -580,22 +1217,62 @@ exports[`Storyshots Search Result Container normal render 1`] = `
               >
                 <span>
                   <span>
-                    Grade 4
+                    4
                   </span>
                 </span>
               </td>
               <td
-                className="claimAndTarget"
+                className="testname"
                 role="gridcell"
               >
                 <span>
-                  <span>
-                    Research/Inquiry
-                  </span>
+                  <span />
                 </span>
+              </td>
+              <td
+                className="claim"
+                role="gridcell"
+              >
                 <span>
                   <span
                     className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      4
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          4.Research/Inquiry
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="Target"
+                role="gridcell"
+              >
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
                     tabIndex={0}
                   >
                     <span
@@ -623,12 +1300,62 @@ exports[`Storyshots Search Result Container normal render 1`] = `
                 </span>
               </td>
               <td
-                className="item-type"
+                className="standard"
                 role="gridcell"
               >
                 <span>
                   <span>
-                    Multi Select
+                    4.E.4a
+                  </span>
+                </span>
+                <span>
+                  <span
+                    className="tool-tip-links box"
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    tabIndex={0}
+                  >
+                    <span
+                      className="tool-tip-hoverable"
+                    >
+                      
+                       
+                      <span
+                        aria-hidden="true"
+                        className="fa fa-info-circle fa-sm"
+                      />
+                    </span>
+                    <span
+                      className="tool-tip-details"
+                    >
+                      <span
+                        className="tool-tip-message bottom "
+                      >
+                        <p>
+                          Content Standard information is currently unavailable for this item.
+                        </p>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </td>
+              <td
+                className="dok"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    
+                  </span>
+                </span>
+              </td>
+              <td
+                className="difficulty"
+                role="gridcell"
+              >
+                <span>
+                  <span>
+                    Hard
                   </span>
                 </span>
               </td>
