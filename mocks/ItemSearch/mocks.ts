@@ -10,7 +10,7 @@ import {
   GradeLevels,
   GradeLevel
 } from "@src/index";
-import { ClaimModel } from "lib/src";
+import { ClaimModel } from "@src/index";
 
 export const genericSearchStringTypes: SearchFilterStringTypes[] = [
   { label: "test", code: "t1" },
