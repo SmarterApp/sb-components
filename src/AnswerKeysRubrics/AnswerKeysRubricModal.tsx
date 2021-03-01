@@ -4,7 +4,10 @@ import { ItemCardModel } from "@src/ItemCard/ItemCardModels";
 import { ItemModel } from "@src/ItemPage/ItemPageModels";
 import { SampleItemScoringModel } from "@src/Rubric/RubricModels";
 import { RubricRenderer } from "@src/Rubric/RubricRenderer";
-import { getAnswerKeysModel, getAnswerKeysModelStoryBookTesting } from "./AnswerKeysRubricModels";
+import {
+  getAnswerKeysModel,
+  getAnswerKeysModelStoryBookTesting
+} from "./AnswerKeysRubricModels";
 
 export interface AnswerKeysRubricModalProps {
   showModal: boolean;
@@ -17,7 +20,6 @@ export interface AnswerKeysRubricModalState {
   answerKeysRubrics?: SampleItemScoringModel;
   errorMessage?: string;
 }
-
 
 export class AnswerKeysRubricModal extends React.Component<
   AnswerKeysRubricModalProps,
@@ -35,7 +37,6 @@ export class AnswerKeysRubricModal extends React.Component<
       this.getAnswerKeysRubric();
     }
   }
-
 
   handleShowAnswerKeysModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (this.state.answerKeysRubrics === undefined) this.getAnswerKeysRubric();
@@ -60,13 +61,11 @@ export class AnswerKeysRubricModal extends React.Component<
     };
 
     //If testing in storybook call api to itemsampler running in another project as application
-    if(location.host === "localhost:6006") {
+    if (location.host === "localhost:6006") {
       getAnswerKeysModelStoryBookTesting(item)
         .then(data => this.onFetchAnswerKeysRubric(data))
         .catch(err => this.onFetchAnswerKeysRubricError(err));
-    }
-
-    else {
+    } else {
       getAnswerKeysModel(item)
         .then(data => this.onFetchAnswerKeysRubric(data))
         .catch(err => this.onFetchAnswerKeysRubricError(err));
@@ -74,10 +73,13 @@ export class AnswerKeysRubricModal extends React.Component<
   };
 
   displayAnswerKeysRubrics() {
-
-    if(!this.state.loading && this.state.errorMessage !== undefined) {
-      return(
-        <div className="alert alert-danger">
+    if (!this.state.loading && this.state.errorMessage !== undefined) {
+      return (
+        <div
+          className="alert alert-danger"
+          tabIndex={0}
+          aria-label="There is an error while loading answer keys or rubrics."
+        >
           <strong>Error</strong> while loading answer keys or rubrics.
         </div>
       );
@@ -85,7 +87,6 @@ export class AnswerKeysRubricModal extends React.Component<
 
     if (this.state.loading) {
       return <p className="loader loader-downloading loader-fetching" />;
-    
     } else if (this.state.answerKeysRubrics) {
       const answerKeysRubrics = this.state.answerKeysRubrics;
       let props = {
@@ -95,7 +96,7 @@ export class AnswerKeysRubricModal extends React.Component<
         answerKey: answerKeysRubrics ? answerKeysRubrics.answerKey : ""
       };
       return (
-        <div>
+        <div tabIndex={0}>
           <RubricRenderer {...props} />
         </div>
       );
@@ -123,7 +124,9 @@ export class AnswerKeysRubricModal extends React.Component<
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
             </div>
-            <div className="modal-body answer-keys-modal-body">{this.displayAnswerKeysRubrics()}</div>
+            <div className="modal-body answer-keys-modal-body">
+              {this.displayAnswerKeysRubrics()}
+            </div>
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
