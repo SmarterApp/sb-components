@@ -15,7 +15,7 @@ import { translationAccessibilityDropDown } from "@mocks/Accessibility/mocks";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {
   isLinkTable: false,
-  isInterimSite: false,
+  isInterimSite: true,
   totalItemCards: totalItemsCardList,
   showSelectAllButton: true,
   isPrintLimitEnabled: true,

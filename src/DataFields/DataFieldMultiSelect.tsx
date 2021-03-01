@@ -209,7 +209,7 @@ export class DataFieldMultiSelect extends React.Component<
           ref={node => this.setWrapperRef(node)}
         >
           <button
-            className="btn btn-default dropdown-toggle dropdown-toggle-btn dropdown-toggle-btn-customize-field"
+            className="btn btn-default btn-sm search-result-container-header-button"
             type="button"
             id={"popupMenuButton" + this.props.uniqueId}
             data-toggle="dropdown"
@@ -239,7 +239,7 @@ export class DataFieldMultiSelect extends React.Component<
               <button
                 type="button"
                 aria-label="Cancel the setting"
-                className="btn btn-danger "
+                className="btn btn-default btn-sm btn-cancel-customize-view-setting"
                 id="btn_cancel_customize_field"
                 onClick={this.onCancelSetting}
               >
@@ -248,7 +248,7 @@ export class DataFieldMultiSelect extends React.Component<
 
               {/* btn to apply customize field setting; id is required for tacking active elements anytime */}
               <button
-                className="btn btn-success "
+                className="btn btn-primary btn-sm btn-apply-customize-view-setting"
                 aria-label="Apply the setting"
                 type="button"
                 id="btn_apply_customize_field"
