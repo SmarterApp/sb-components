@@ -131,7 +131,13 @@ export class PrintcartHeaderTable extends React.Component<
             tabIndex={0}
             scope="col"
           >
-            <div className={col.headerClassName}>
+            <div
+              className={
+                col.headerClassName === "item-position-in-test"
+                  ? "item-position-in-test-field"
+                  : col.headerClassName
+              }
+            >
               <span>{col.header}</span>
             </div>
           </th>
