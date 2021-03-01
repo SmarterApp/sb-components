@@ -57,7 +57,7 @@ export class PrintCartButton extends React.Component<
       <button
         type="button"
         aria-label="Open print cart popup"
-        className="btn btn-default btn-sm btn-print-cart"
+        className="btn btn-default btn-sm btn-print-cart search-result-container-header-button"
         onClick={() => this.props.onClick(true)}
       >
         <span className="glyphicon glyphicon-print" /> {this.props.label}{" "}

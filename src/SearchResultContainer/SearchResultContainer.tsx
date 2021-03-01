@@ -743,7 +743,9 @@ export class SearchResultContainer extends React.Component<
         onClick={() => this.handleShowBrailleCartModal(true)}
         aria-label="Open barille cart modal"
         title="Open barille cart modal"
-        className={"btn btn-default btn-sm "}
+        className={
+          "btn btn-default btn-sm search-result-container-header-button"
+        }
       >
         <i aria-hidden="true" className="fa fa-braille" /> Braille Cart
       </button>
@@ -794,7 +796,7 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleSelectAllItems}
           aria-label="Select all to print"
           title="Select all to print"
-          className={`btn btn-default search-result-container-header-button ${disableCssClass} `}
+          className={`btn btn-default btn-sm search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
         </button>
