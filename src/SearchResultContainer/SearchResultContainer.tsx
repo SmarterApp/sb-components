@@ -9,7 +9,8 @@ import {
   IframeModal,
   SearchAPIParamsModel,
   AccResourceGroupModel,
-  DropDownSelectionModel
+  DropDownSelectionModel,
+  MultiSelectValue
 } from "@src/index";
 import { ErrorMessageModal } from "@src/ErrorBoundary/ErrorMessageModal";
 import { PrintCartModal } from "@src/PrintCart/PrintCartModal";
@@ -24,7 +25,9 @@ import {
   deleteTestNameDetails,
   addTestNameDetails,
   addTestName_associatedItems,
-  getItemPositionInTest
+  getItemPositionInTest,
+  getcolumnsHeaderMultiSelectOptions,
+  getUpdatedItemColumnsHeaderConfig
 } from "./SearchResultContainerHelper";
 import { countNumberOfItemsAfterSelection } from "@src/ItemCard/ItemCardHelperFunction";
 import {
@@ -34,6 +37,12 @@ import {
   ItemIdToTestNameMap
 } from "@src/ItemSearch/ItemSearchModels";
 import { BrailleCartModal } from "@src/BrailleCart/BrailleCartModal";
+import { DataFieldMultiSelect } from "@src/DataFields/DataFieldMultiSelect";
+import {
+  ItemColumnHeadersConfig,
+  itemColumnsName_Interim,
+  itemColumnsName_NonInterim
+} from "./SearchResultModels";
 
 /**
  * SearchResultType enum
@@ -92,6 +101,7 @@ export interface SearchResultContainerState {
   loading: boolean;
   showModal: boolean;
   showBrailleModal: boolean;
+  showFieldFilterModal: boolean;
   statusMessage: string;
   showErrorModal: boolean;
   // selectedItems: ItemCardModel[];
@@ -100,6 +110,8 @@ export interface SearchResultContainerState {
   ItemsCountInPrintCart: number;
   currentSelectedItemIndex: number;
   associatedItemsInPrintCart: any;
+  itemColumnHeaderConfig: ItemColumnHeadersConfig[];
+  stateChangeToReRender: number;
 }
 
 /**
@@ -112,13 +124,17 @@ export class SearchResultContainer extends React.Component<
   SearchResultContainerProps,
   SearchResultContainerState
 > {
+  // private fieldCustomizeBtnReference = React.createRef<HTMLButtonElement>();
+  private fieldCustomizeBtnReference: HTMLButtonElement | null;
   constructor(props: SearchResultContainerProps) {
     super(props);
+    // this.fieldCustomizeBtnReference = React.createRef();
     this.state = {
       renderType: props.defaultRenderType || SearchResultType.Table,
       loading: true,
       showModal: false,
       showBrailleModal: false,
+      showFieldFilterModal: false,
       showErrorModal: false,
       statusMessage: "",
       // selectedItems: [],
@@ -126,7 +142,9 @@ export class SearchResultContainer extends React.Component<
       itemsInPrintCart: [],
       ItemsCountInPrintCart: 0,
       currentSelectedItemIndex: -1,
-      associatedItemsInPrintCart: {}
+      associatedItemsInPrintCart: {},
+      itemColumnHeaderConfig: [],
+      stateChangeToReRender: 0
     };
   }
 
@@ -163,6 +181,33 @@ export class SearchResultContainer extends React.Component<
     if (itemsInPrintCart !== undefined)
       this.handleUpdateSelectionIndex(itemsInPrintCart);
   }
+
+  // Function to return defualt table header fields config model
+  getColumnsHeaderConfig = () => {
+    const itemColumnHeaderConfig: ItemColumnHeadersConfig[] = this.state
+      .itemColumnHeaderConfig;
+    if (
+      itemColumnHeaderConfig !== undefined &&
+      itemColumnHeaderConfig.length > 0
+    ) {
+      return itemColumnHeaderConfig;
+    }
+    const headerModel: ItemColumnHeadersConfig[] = [];
+    let i = 0;
+    const itemsHeaderName = this.props.isInterimSite
+      ? itemColumnsName_Interim
+      : itemColumnsName_NonInterim;
+    itemsHeaderName.forEach(element => {
+      let column: ItemColumnHeadersConfig = {
+        headerName: element,
+        columnIndex: ++i,
+        isHidden: false,
+        isSortable: true
+      };
+      headerModel.push(column);
+    });
+    return headerModel;
+  };
 
   handleUpdateItemsinPrintCart = (itemsInPrintCart: ItemCardModel[]) => {
     this.handleUpdateSelectionIndex(itemsInPrintCart);
@@ -603,6 +648,24 @@ export class SearchResultContainer extends React.Component<
     });
   };
 
+  openFieldFilterModal = () => {
+    this.setState({ showFieldFilterModal: true });
+  };
+
+  onHideFieldFilterModal = () => {
+    this.setState({ showFieldFilterModal: false });
+  };
+
+  handleApplyTableFieldFilters = (v: MultiSelectValue[]) => {
+    console.log(v);
+    const newItemColumnHeaderConfig = getUpdatedItemColumnsHeaderConfig(
+      v,
+      this.getColumnsHeaderConfig()
+    );
+    this.setState({ itemColumnHeaderConfig: newItemColumnHeaderConfig });
+    console.log(newItemColumnHeaderConfig);
+  };
+
   /**
    * Renders button toggle for changing the layout to cards or table
    * @param {SearchResultType} viewType
@@ -680,10 +743,25 @@ export class SearchResultContainer extends React.Component<
         onClick={() => this.handleShowBrailleCartModal(true)}
         aria-label="Open barille cart modal"
         title="Open barille cart modal"
-        className={"btn btn-default btn-sm "}
+        className={
+          "btn btn-default btn-sm search-result-container-header-button"
+        }
       >
         <i aria-hidden="true" className="fa fa-braille" /> Braille Cart
       </button>
+    );
+  }
+
+  // Render button for table customizable
+  renderFieldCustomizeButton(): JSX.Element {
+    return (
+      <DataFieldMultiSelect
+        options={getcolumnsHeaderMultiSelectOptions(
+          this.getColumnsHeaderConfig()
+        )}
+        onChange={this.handleApplyTableFieldFilters}
+        uniqueId={9502}
+      />
     );
   }
 
@@ -718,7 +796,7 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleSelectAllItems}
           aria-label="Select all to print"
           title="Select all to print"
-          className={`btn btn-default search-result-container-header-button ${disableCssClass} `}
+          className={`btn btn-default btn-sm search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
         </button>
@@ -751,6 +829,7 @@ export class SearchResultContainer extends React.Component<
           }
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
+          itemHeaderConfig={this.getColumnsHeaderConfig()}
         />
       ));
     }
@@ -768,7 +847,9 @@ export class SearchResultContainer extends React.Component<
       <div className="row search-result-header-row">
         <div className="col-sm-4 header-grid-div header-print-button-groups">
           {this.renderSelectAllButton(this.props.showSelectAllButton)}
+          {this.renderFieldCustomizeButton()}
         </div>
+
         <div className="col-sm-3 header-grid-div  ">
           {this.renderToggle(SearchResultType.Table)}
           {this.renderToggle(SearchResultType.ItemCard)}
@@ -813,6 +894,7 @@ export class SearchResultContainer extends React.Component<
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
           translationAccessibility={this.props.translationAccessibility}
+          itemTableConfig={this.getColumnsHeaderConfig()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -849,6 +931,7 @@ export class SearchResultContainer extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          itemTableConfig={this.getColumnsHeaderConfig()}
         />
         <ErrorMessageModal
           StatusMessage={statusMessage}
@@ -886,6 +969,7 @@ export class SearchResultContainer extends React.Component<
             }
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
+            itemColumnHeaderConfig={this.getColumnsHeaderConfig()}
           />
         );
       } else {

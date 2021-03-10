@@ -12,6 +12,7 @@ import {
   isAnyBrailleOptionSelected
 } from "./BrailleCart";
 import { BrailleCartWizardFinal } from "./BrailleCartWizardFinal";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface BrailleCartModalProps {
   showModal: boolean;
@@ -27,6 +28,7 @@ export interface BrailleCartModalProps {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 export interface BrailleCartModalState {
   isChanged: boolean;
@@ -163,6 +165,7 @@ export class BrailleCartModal extends React.Component<
           isInterimSite={this.props.isInterimSite}
           testCodeToLabelMap={this.props.testCodeToLabelMap}
           itemIdToTestNameMap={this.props.itemIdToTestNameMap}
+          itemTableConfig={this.props.itemTableConfig}
         />
 
         <BrailleOptionsWizard

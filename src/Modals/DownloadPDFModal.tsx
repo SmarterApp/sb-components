@@ -124,7 +124,7 @@ function getFileNameAsPerDate(pdfContentType: string, isInterim: boolean) {
   if (pdfContentType == "ANSWERS-AND-ITEMS") {
     return (
       baseFileName +
-      "and Answer Keys Printout-" +
+      "and Answer Key Printout-" +
       day +
       "-" +
       month +
@@ -133,7 +133,7 @@ function getFileNameAsPerDate(pdfContentType: string, isInterim: boolean) {
       ".pdf"
     );
   } else if (pdfContentType == "ANSWERS-ONLY") {
-    return "Answer Keys Printout-" + day + "-" + month + "-" + year + ".pdf";
+    return "Answer Key Printout-" + day + "-" + month + "-" + year + ".pdf";
   } else {
     return baseFileName + "Printout-" + day + "-" + month + "-" + year + ".pdf";
   }

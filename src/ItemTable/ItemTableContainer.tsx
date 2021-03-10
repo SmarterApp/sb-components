@@ -15,6 +15,7 @@ import {
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import { headerColumns_nonInterimSite } from "./ItemTableModels";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 /**
  * Properties for ItemTableContainer
@@ -38,6 +39,7 @@ export interface ItemTableContainerProps {
     selectedItemsCount: number
   ) => number;
   testCodeToLabelMap: TestCodeToLabel;
+  itemColumnHeaderConfig: ItemColumnHeadersConfig[];
 }
 
 /**
@@ -178,6 +180,7 @@ export class ItemTableContainer extends React.Component<
         onHeaderClick={this.onClickHeader}
         columns={this.pageHeaderColumns}
         isLinkTable={this.props.isLinkTable}
+        itemTableConfig={this.props.itemColumnHeaderConfig}
       />
     );
   }
@@ -219,6 +222,7 @@ export class ItemTableContainer extends React.Component<
             }
             isInterimSite={this.props.isInterimSite}
             testCodeToLabelMap={this.props.testCodeToLabelMap}
+            itemTableConfig={this.props.itemColumnHeaderConfig}
           />
         );
       }

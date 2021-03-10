@@ -12,6 +12,8 @@ import {
   mapItemSubjectlabel,
   mapItemClaim
 } from "@src/PrintCart/PrintCartItemTableRow";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
+import { AnswerKeysRubricModal } from "@src/AnswerKeysRubrics/AnswerKeysRubricModal";
 
 export interface ItemTableRowProps {
   rowData: ItemCardModel;
@@ -31,6 +33,11 @@ export interface ItemTableRowProps {
   ) => number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemTableConfig: ItemColumnHeadersConfig[];
+}
+
+export interface ItemTableRowState {
+  showAnswerKeysModal: boolean;
 }
 
 const unChecked = (
@@ -46,9 +53,15 @@ const expand = (
   <i className="fa fa-chevron-down fa-sm table-icon" aria-hidden="true" />
 );
 
-export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
+export class ItemTableRow extends React.Component<
+  ItemTableRowProps,
+  ItemTableRowState
+> {
   constructor(props: ItemTableRowProps) {
     super(props);
+    this.state = {
+      showAnswerKeysModal: false
+    };
   }
 
   shouldComponentUpdate(nextProps: ItemTableRowProps, nextState: {}) {
@@ -147,16 +160,41 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const colValues = colGroup.cols.map(c => this.renderCell(c, cellData));
     const { headerClassName } = colGroup;
 
-    return (
-      <td
-        key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
-        className={headerClassName}
-        role="gridcell"
-      >
-        {colValues}
-      </td>
+    let isHidden = false;
+    const tableHeaderConfig = this.props.itemTableConfig.find(
+      hs => hs.headerName.toUpperCase() === colGroup.header.toUpperCase()
     );
+
+    if (tableHeaderConfig != undefined) {
+      isHidden = tableHeaderConfig.isHidden;
+    }
+
+    if (true) {
+      return (
+        <>
+          {!isHidden && (
+            <td
+              key={`${headerClassName}-${cellData.bankKey}-${cellData.itemKey}`}
+              className={headerClassName}
+              role="gridcell"
+            >
+              {colValues}
+            </td>
+          )}
+        </>
+      );
+    } else {
+    }
   }
+
+  closeAnswerKeysModal = () => {
+    this.setState({ showAnswerKeysModal: false });
+  };
+
+  openAnswerKeyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    this.setState({ showAnswerKeysModal: true });
+  };
 
   renderCell(col: SortColumnModel, cellData: ItemCardModel): JSX.Element {
     const columnText = col.accessor(cellData);
@@ -193,6 +231,27 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     } else if (col.className === "grade") {
       const shortGradeValue = mapItemGrade(columnText.toString());
       content = <span>{shortGradeValue}</span>;
+    } else if (col.className === "answerkeys") {
+      if (columnText.toString().length > 0)
+        content = (
+          <span tabIndex={0} aria-label={"Answer is " + columnText}>
+            {columnText}
+          </span>
+        );
+      else {
+        content = (
+          <button
+            type="button"
+            className="btn btn-default btn-raised btn-answerkeys"
+            onClick={e => {
+              this.openAnswerKeyModal(e);
+            }}
+            aria-label="Click to view answer key or rubrics"
+          >
+            View
+          </button>
+        );
+      }
     } else {
       if (col.className === "item") {
         content = (
@@ -273,15 +332,22 @@ export class ItemTableRow extends React.Component<ItemTableRowProps, {}> {
     const { rowData, isExpanded, columns } = this.props;
 
     return (
-      <tr
-        key={`${rowData.bankKey}-${rowData.itemKey}`}
-        className={isExpanded ? "selected" : ""}
-        onClick={() => this.handleRowClick(rowData)}
-        onKeyUp={e => this.handleKeyUpEnter(e)}
-      >
-        {this.renderControls()}
-        {columns.map(col => this.renderColumnGroup(col, rowData))}
-      </tr>
+      <>
+        <AnswerKeysRubricModal
+          showModal={this.state.showAnswerKeysModal}
+          itemCard={this.props.rowData}
+          closeAnswerKeysModal={this.closeAnswerKeysModal}
+        />
+        <tr
+          key={`${rowData.bankKey}-${rowData.itemKey}`}
+          className={isExpanded ? "selected" : ""}
+          onClick={() => this.handleRowClick(rowData)}
+          onKeyUp={e => this.handleKeyUpEnter(e)}
+        >
+          {this.renderControls()}
+          {columns.map(col => this.renderColumnGroup(col, rowData))}
+        </tr>
+      </>
     );
   }
 }

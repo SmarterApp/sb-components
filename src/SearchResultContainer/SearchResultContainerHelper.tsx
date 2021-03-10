@@ -3,6 +3,8 @@ import {
   TestNameItemsPoolModel,
   itemKeys
 } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "./SearchResultModels";
+import { MultiSelectValue } from "@src/Select/SelectModel";
 
 export function getUpdatedSelectedItems(
   item: ItemCardModel,
@@ -226,3 +228,34 @@ export function moveArrayItemToNewIndex(
   array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
   return array;
 }
+
+// // Function to return defualt table header fields config model
+export const getcolumnsHeaderMultiSelectOptions = (
+  itemColumnHeaderConfig: ItemColumnHeadersConfig[]
+) => {
+  let columnsHeaderOptions: MultiSelectValue[] = [];
+  itemColumnHeaderConfig.forEach(element => {
+    let columnHeader: MultiSelectValue = {
+      label: element.headerName,
+      selected: !element.isHidden,
+      value: element.headerName,
+      disabled: element.headerName === "Item",
+      isDefault: element.headerName === "Item",
+      shouldHidden: element.headerName === "Item"
+    };
+    columnsHeaderOptions.push(columnHeader);
+  });
+  return columnsHeaderOptions;
+};
+
+export const getUpdatedItemColumnsHeaderConfig = (
+  v: MultiSelectValue[],
+  itemColumnHeaderConfig: ItemColumnHeadersConfig[]
+) => {
+  if (v.length === itemColumnHeaderConfig.length) {
+    for (let i = 0; i < v.length; i++) {
+      itemColumnHeaderConfig[i].isHidden = !v[i].selected;
+    }
+  }
+  return itemColumnHeaderConfig;
+};

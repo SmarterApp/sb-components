@@ -7,6 +7,7 @@ export interface RendererRubricProps {
   itemCardViewModel: ItemCardModel;
   rubrics?: RubricModel[];
   answerKey?: string;
+  showLabel?: boolean;
 }
 export interface PageState {
   showLabelAsRubric: boolean;
@@ -31,14 +32,25 @@ export class RubricRenderer extends React.Component<
         this.props.itemCardViewModel.interactionTypeCode == "SA" ? true : false
     };
   }
+
+  renderLabel() {
+    if (this.props.showLabel === undefined || this.props.showLabel) {
+      return (
+        <>
+          {this.state.showLabelAsRubric ? (
+            <span className="card-text-label">Rubric: </span>
+          ) : (
+            <span className="card-text-label">Answer Key: </span>
+          )}
+        </>
+      );
+    } else return <></>;
+  }
+
   renderResult() {
     return (
       <div className="item-content ">
-        {this.state.showLabelAsRubric ? (
-          <span className="card-text-label">Rubric: </span>
-        ) : (
-          <span className="card-text-label">Answer Key: </span>
-        )}
+        {this.renderLabel()}
         <span className="card-text-value">
           {this.state.RenderRubricAsTable ? (
             <RubricTable

@@ -5,6 +5,8 @@ import { Redirect } from "react-router";
 import { ToolTip, generateTooltip } from "../index";
 import { getContentStandardCode } from "./ItemCardHelperFunction";
 import { TestCodeToLabel } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
+import { AnswerKeysRubricModal } from "@src/AnswerKeysRubrics/AnswerKeysRubricModal";
 
 // tslint:disable:no-require-imports
 const claimIcons: { [claimCode: string]: string } = {
@@ -33,6 +35,7 @@ export interface ItemCardProps {
   ) => number;
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
+  itemHeaderConfig: ItemColumnHeadersConfig[];
 }
 
 export interface ItemCardState {
@@ -41,6 +44,7 @@ export interface ItemCardState {
   isChecked: boolean;
   showErrorModal: boolean;
   statusMessage: string;
+  showAnswerKeysModal: boolean;
 }
 
 export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
@@ -51,6 +55,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       isChecked: false,
       isCheckBoxChanged: false,
       showErrorModal: false,
+      showAnswerKeysModal: false,
       statusMessage: ""
     };
   }
@@ -75,6 +80,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     return false;
   };
 
+  toggleItemLabel = (labelName: string) => {
+    var isHidden = false;
+    this.props.itemHeaderConfig.forEach(element => {
+      if (element.headerName.toUpperCase() == labelName.toUpperCase())
+        isHidden = element.isHidden;
+    });
+    return isHidden;
+  };
+
   handleTooltipKeyPress = (e: React.SyntheticEvent) => {
     const item = this.props.rowData;
     this.handleCheckBoxChange(item, e, this.shouldButtonBeDisabled());
@@ -89,6 +103,21 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
     if (e.keyCode === 13 || e.keyCode === 23) {
       this.setState({ redirect: true });
     }
+  };
+
+  showAnswerKeysModal = () => {
+    this.setState({
+      showAnswerKeysModal: this.state.showAnswerKeysModal ? false : true
+    });
+  };
+
+  closeAnswerKeysModal = () => {
+    this.setState({ showAnswerKeysModal: false });
+  };
+
+  openAnswerKeyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    this.setState({ showAnswerKeysModal: true });
   };
 
   handleCheckBoxChange = (
@@ -163,11 +192,35 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               <span className="card-text-label">Test name:</span>
               <span className="card-text-value"> {testLabel}</span>
             </p>
+          </>
+        );
+      }
+    };
+
+    const ItemPositionintest_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
             <p className="card-text item-position-in-test">
               <span className="card-text-label">Item position in test:</span>
               <span className="card-text-value">
                 {" "}
                 {this.props.rowData.testOrder}
+              </span>
+            </p>
+          </>
+        );
+      }
+    };
+    const ItemDifficulty_tsx = () => {
+      if (this.props.isInterimSite) {
+        return (
+          <>
+            <p className="card-text Difficulty">
+              <span className="card-text-label">Difficulty:</span>
+              <span className="card-text-value">
+                {" "}
+                {this.props.rowData.itemDifficulty}
               </span>
             </p>
           </>
@@ -307,10 +360,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         <div
           role="link"
           className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
-          // onClick={this.handleOnClick}
-          // onKeyUp={this.handleKeyPress}
-          // tabIndex={0}
-          // aria-label={`Item of Grade ${this.props.rowData.gradeLabel}, Subject ${this.props.rowData.subjectLabel}, Item Id ${this.props.rowData.itemKey}`}
         >
           <div className="card-contents">
             <div
@@ -333,42 +382,6 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 </span>
               </div>
             </div>
-            <p className="card-text grade">
-              <span className="card-text-label">Grade:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.gradeLabel}
-              </span>
-            </p>
-            {testNameDetails_tsx()}
-            <p className="card-text stimulusid">
-              <span className="card-text-label">Stimulus ID:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.stimulusKey}
-              </span>
-            </p>
-            <p className="card-text claim">
-              <span className="card-text-label">Claim:</span>
-              <span className="card-text-value">
-                {" "}
-                {this.props.rowData.claimLabel}
-              </span>
-            </p>
-            <p className="card-text target">
-              <span className="card-text-label">Target:</span>
-              <span className="card-text-value">{tooltip}</span>
-            </p>
-            <p className="card-text target">
-              <span className="card-text-label">Standard:</span>
-              <span className="card-text-value">{tooltipCcontentStandard}</span>
-            </p>
-            <p className="card-text interaction-type">
-              <span className="card-text-label">Item Type:</span>
-              <span className="card-text-value">{` ${
-                this.props.rowData.interactionTypeLabel
-              }`}</span>
-            </p>
             <p className="card-text item-id">
               <span className="card-text-label">Item Id:</span>
               <span className="card-text-value">
@@ -376,6 +389,110 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                 {this.props.rowData.itemKey}
               </span>
             </p>
+            {!this.toggleItemLabel("Stimulus ID") && (
+              <p className="card-text stimulusid">
+                <span className="card-text-label">Stimulus ID:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.stimulusKey}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Item position in test") &&
+              ItemPositionintest_tsx()}
+            {!this.toggleItemLabel("Subject") && (
+              <p className="card-text grade">
+                <span className="card-text-label">Subject:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.subjectLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("grade") && (
+              <p className="card-text grade">
+                <span className="card-text-label">Grade:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.gradeLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Test name") && testNameDetails_tsx()}
+            {!this.toggleItemLabel("Claim") && (
+              <p className="card-text claim">
+                <span className="card-text-label">Claim:</span>
+                <span className="card-text-value">
+                  {" "}
+                  {this.props.rowData.claimLabel}
+                </span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Target") && (
+              <p className="card-text target">
+                <span className="card-text-label">Target:</span>
+                <span className="card-text-value">{tooltip}</span>
+              </p>
+            )}
+            {!this.toggleItemLabel("Standard") && (
+              <p className="card-text target">
+                <span className="card-text-label">Standard:</span>
+                <span className="card-text-value">
+                  {tooltipCcontentStandard}
+                </span>
+              </p>
+            )}
+            {!this.props.isInterimSite &&
+              !this.toggleItemLabel("Item Type") && (
+                <p className="card-text interaction-type">
+                  <span className="card-text-label">Item Type:</span>
+                  <span className="card-text-value">{` ${
+                    this.props.rowData.interactionTypeLabel
+                  }`}</span>
+                </p>
+              )}
+            {this.props.isInterimSite &&
+              !this.toggleItemLabel("DOK") && (
+                <p className="card-text interaction-type">
+                  <span className="card-text-label">DOK:</span>
+                  <span className="card-text-value">{` ${
+                    this.props.rowData.depthOfKnowledge == undefined
+                      ? ""
+                      : this.props.rowData.depthOfKnowledge
+                  }`}</span>
+                </p>
+              )}
+            {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
+
+            {/***** * Answer key --- */}
+            {!this.toggleItemLabel("Answer key") && (
+              <p className="card-text interaction-type">
+                <span className="card-text-label">Answer key:</span>
+                <span className="card-text-value">
+                  {this.props.rowData.answerKeys.length > 0 ? (
+                    <span
+                      className="span-answer-keys"
+                      tabIndex={0}
+                      aria-label={"Answer is " + this.props.rowData.answerKeys}
+                    >
+                      {this.props.rowData.answerKeys}
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      className="btn btn-defualt"
+                      onClick={e => {
+                        this.openAnswerKeyModal(e);
+                      }}
+                      aria-label="Click to view answer key or rubrics"
+                    >
+                      View
+                    </button>
+                  )}
+                </span>
+              </p>
+            )}
+
             {this.shouldButtonBeDisabled()
               ? AddRemoveButtonDisabled
               : AddRemoveButtonActive}
@@ -384,6 +501,15 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
       );
     }
 
-    return <>{content}</>;
+    return (
+      <>
+        {content}
+        <AnswerKeysRubricModal
+          showModal={this.state.showAnswerKeysModal}
+          itemCard={this.props.rowData}
+          closeAnswerKeysModal={this.closeAnswerKeysModal}
+        />
+      </>
+    );
   }
 }

@@ -8,9 +8,9 @@ import {
   FilterOptionModel,
   FilterType,
   GradeLevels,
-  GradeLevel
+  GradeLevel,
+  ClaimModel
 } from "@src/index";
-import { ClaimModel } from "@src/index";
 
 export const genericSearchStringTypes: SearchFilterStringTypes[] = [
   { label: "test", code: "t1" },

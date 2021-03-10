@@ -176,22 +176,13 @@ export class MultiSelect extends React.Component<
           onValueChange={this.handleValueChange}
           uniqueId={this.props.uniqueId}
         />
-
-        {/* {"  "}
-        {option.label} */}
       </label>
     );
   };
 
   renderSelectMultiOptionsMenu = (optionsList: MultiSelectValue[]) => {
     const multiSelectOptions = optionsList.map((option, index) => (
-      // <label
-      //   className={
-      //     option.disabled && option.disabled === true ? "disabled " : " "
-      //   }
-      // >
       <li>{this.renderSelectOption(option, index)}</li>
-      // </label>
     ));
     return multiSelectOptions;
   };

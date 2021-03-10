@@ -5,6 +5,7 @@ export const completeItemCard: ItemCardModel = {
   selected: false,
   bankKey: 187,
   itemKey: 3434,
+  answerKeys: "",
   title: "ELA Grade 4",
   grade: 4,
   gradeLabel: "Grade 4",
@@ -70,6 +71,7 @@ export const itemCardList: ItemCardModel[] = [
     bankKey: 187,
     itemKey: 3206,
     stimulusKey: 56900,
+    answerKeys: "",
     title: "Math Grade 6 Claim 1",
     grade: 8,
     gradeLabel: "Grade 6",
@@ -120,6 +122,7 @@ export const itemCardList: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 3163,
+    answerKeys: "C,D",
     stimulusKey: 58679,
     title: "ELA/ literacy Grade 3 Claim 1",
     grade: 1,
@@ -171,6 +174,7 @@ export const itemCardList: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 3615,
+    answerKeys: "",
     stimulusKey: 23461,
     title: "Math Grade 6 Claim 4",
     grade: 8,
@@ -221,6 +225,7 @@ export const itemCardList: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 2928,
+    answerKeys: "",
     stimulusKey: 87679,
     title: "ELA/ literacy Grade 4 Claim 4",
     grade: 2,
@@ -276,6 +281,7 @@ export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 1,
+    answerKeys: "",
     title: "alpha",
     grade: 5,
     gradeLabel: "Grade 5",
@@ -323,6 +329,7 @@ export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 2,
+    answerKeys: "",
     title: "bravo",
     grade: 4,
     gradeLabel: "Grade 4",
@@ -370,6 +377,7 @@ export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 3,
+    answerKeys: "",
     title: "charlie",
     grade: 3,
     gradeLabel: "Grade 3",
@@ -417,6 +425,7 @@ export const sortableItemCards: ItemCardModel[] = [
   {
     bankKey: 187,
     itemKey: 4,
+    answerKeys: "",
     title: "delta",
     grade: 2,
     gradeLabel: "Grade 2",
@@ -468,19 +477,20 @@ export const itemCardProps: ItemCardProps = {
   onRowSelect: () => {
     return;
   },
-  isInterimSite: true,
+  isInterimSite: false,
   getSelectedItemCount: () => {
     return 0;
   },
   showErrorModalOnPrintItemsCountExceeded: () => {
     return;
   },
-  isPrintLimitEnabled: true,
+  isPrintLimitEnabled: false,
   associatedItems: [],
   countNumberOfItemsAfterSelection: () => {
     return 0;
   },
-  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" },
+  itemHeaderConfig: []
 };
 
 //PerformanceTaskAssociatedItems mockup data

@@ -44,7 +44,8 @@ export const itemTableProps: ItemTableContainerProps = {
   countNumberOfItemsAfterSelection: () => {
     return 0;
   },
-  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" }
+  testCodeToLabelMap: { "Test-Name-1": "Test 1", "Test-Name-2": "Test 2" },
+  itemColumnHeaderConfig: []
 };
 
 export const itemTableSortProps: ItemTableContainerProps = {

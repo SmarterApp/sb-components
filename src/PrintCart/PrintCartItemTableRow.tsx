@@ -7,6 +7,7 @@ import {
   ItemIdToTestNameMap,
   TestNameAndPosition
 } from "@src/ItemSearch/ItemSearchModels";
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 
 export interface PrintCartItemTableRowProps {
   ItemCard: ItemCardModel;
@@ -21,6 +22,7 @@ export interface PrintCartItemTableRowProps {
   isInterimSite: boolean;
   testCodeToLabelMap: TestCodeToLabel;
   itemIdToTestNameMap: ItemIdToTestNameMap;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 export interface PrintCartItemTableRowState {}
@@ -172,70 +174,185 @@ export class PrintCartItemTableRow extends React.Component<
       this.props.itemIdToTestNameMap,
       this.props.testCodeToLabelMap
     );
+
+    let showSubject = true,
+      showGrade = true,
+      showStimulusKey = true,
+      showClaimLabel = true,
+      showTarget = true,
+      showStandard = true,
+      showDOK = true;
+    let showItemPositioninTest = true,
+      showTestName = true,
+      showDifficulty = true;
+    this.props.itemTableConfig.forEach(element => {
+      showStimulusKey =
+        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
+          ? !element.isHidden
+          : showStimulusKey;
+      showItemPositioninTest =
+        element.headerName.toUpperCase() ==
+        "Item position in test".toUpperCase()
+          ? !element.isHidden
+          : showItemPositioninTest;
+      showSubject =
+        element.headerName.toUpperCase() == "Subject".toUpperCase()
+          ? !element.isHidden
+          : showSubject;
+      showGrade =
+        element.headerName.toUpperCase() == "Grade".toUpperCase()
+          ? !element.isHidden
+          : showGrade;
+      showTestName =
+        element.headerName.toUpperCase() == "Test name".toUpperCase()
+          ? !element.isHidden
+          : showTestName;
+      showClaimLabel =
+        element.headerName.toUpperCase() == "Claim".toUpperCase()
+          ? !element.isHidden
+          : showClaimLabel;
+      showTarget =
+        element.headerName.toUpperCase() == "Target".toUpperCase()
+          ? !element.isHidden
+          : showTarget;
+      showStandard =
+        element.headerName.toUpperCase() == "Standard".toUpperCase()
+          ? !element.isHidden
+          : showStandard;
+      showDOK =
+        element.headerName.toUpperCase() == "DOK".toUpperCase()
+          ? !element.isHidden
+          : showDOK;
+      showDifficulty =
+        element.headerName.toUpperCase() == "Difficulty".toUpperCase()
+          ? !element.isHidden
+          : showDifficulty;
+    });
     return (
       <>
         <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
         <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
         <td>{item[0].itemKey}</td>
-        <td>{item[0].stimulusKey}</td>
-        <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
-        <td>{mapItemGrade(item[0].gradeLabel)}</td>
-        {/* <td>{this.getTestNameLabel(item[0].testNameInPrintCart)}</td> */}
-        <td>{testNameAndPosition.testName}</td>
-        <td>
-          {testNameAndPosition.testOrder === Number.MIN_VALUE
-            ? ""
-            : testNameAndPosition.testOrder}
-        </td>
-        <td>{mapItemClaim(item[0].claimLabel)}</td>
-        <td>
-          {this.getToolTipForTarget(
-            item[0].targetId,
-            item[0].targetDescription
+        <>{showStimulusKey && <td>{item[0].stimulusKey}</td>}</>
+        <>
+          {showSubject && <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>}
+        </>
+        <>{showGrade && <td>{mapItemGrade(item[0].gradeLabel)}</td>}</>
+        <>{showTestName && <td>{testNameAndPosition.testName}</td>}</>
+        <>
+          {showItemPositioninTest && (
+            <td>
+              {testNameAndPosition.testOrder === Number.MIN_VALUE
+                ? ""
+                : testNameAndPosition.testOrder}
+            </td>
           )}
-        </td>
-        <td>
-          {this.getContentStandardToolTip(
-            item[0].subjectCode,
-            item[0].claimCode,
-            item[0].commonCoreStandardId,
-            item[0].ccssDescription
+        </>
+        <>{showClaimLabel && <td>{mapItemClaim(item[0].claimLabel)}</td>}</>
+        <>
+          {showTarget && (
+            <td>
+              {this.getToolTipForTarget(
+                item[0].targetId,
+                item[0].targetDescription
+              )}
+            </td>
           )}
-        </td>
-        <td>{item[0].depthOfKnowledge}</td>
-        <td>{item[0].itemDifficulty}</td>
-        <td />
+        </>
+        <>
+          {showStandard && (
+            <td>
+              {this.getContentStandardToolTip(
+                item[0].subjectCode,
+                item[0].claimCode,
+                item[0].commonCoreStandardId,
+                item[0].ccssDescription
+              )}
+            </td>
+          )}
+        </>
+        <>{showDOK && <td>{item[0].depthOfKnowledge}</td>}</>
+        <>{showDifficulty && <td> {item[0].itemDifficulty}</td>}</>
       </>
     );
   }
 
   //Render PT associated items for non-interim in a group
   renderPTitemsForNonInterim(item: any, itemSequence: number) {
+    let showSubject = true,
+      showGrade = true,
+      showStimulusKey = true,
+      showClaimLabel = true,
+      showTarget = true,
+      showStandard = true,
+      showTnteractionType = true;
+
+    this.props.itemTableConfig.forEach(element => {
+      showSubject =
+        element.headerName.toUpperCase() == "Subject".toUpperCase()
+          ? !element.isHidden
+          : showSubject;
+      showGrade =
+        element.headerName.toUpperCase() == "Grade".toUpperCase()
+          ? !element.isHidden
+          : showGrade;
+      showStimulusKey =
+        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
+          ? !element.isHidden
+          : showStimulusKey;
+      showClaimLabel =
+        element.headerName.toUpperCase() == "Claim".toUpperCase()
+          ? !element.isHidden
+          : showClaimLabel;
+      showTarget =
+        element.headerName.toUpperCase() == "Target".toUpperCase()
+          ? !element.isHidden
+          : showTarget;
+      showStandard =
+        element.headerName.toUpperCase() == "Standard".toUpperCase()
+          ? !element.isHidden
+          : showStandard;
+      showTnteractionType =
+        element.headerName.toUpperCase() == "Item Type".toUpperCase()
+          ? !element.isHidden
+          : showTnteractionType;
+    });
+
     return (
       <>
         <td>{this.renderToolTipForAssociatedGroupItems(item[0])}</td>
         <td>{!item[0].isPerformanceItem ? "-" : itemSequence}</td>
         <td>{item[0].itemKey}</td>
-        <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>
-        <td>{mapItemGrade(item[0].gradeLabel)}</td>
-        <td>{item[0].stimulusKey}</td>
-        <td>{mapItemClaim(item[0].claimLabel)}</td>
-        <td>
-          {this.getToolTipForTarget(
-            item[0].targetId,
-            item[0].targetDescription
+        <>{showStimulusKey && <td>{item[0].stimulusKey}</td>}</>
+        <>
+          {showSubject && <td>{mapItemSubjectlabel(item[0].subjectLabel)}</td>}
+        </>
+        <>{showGrade && <td>{mapItemGrade(item[0].gradeLabel)}</td>}</>
+
+        <>{showClaimLabel && <td>{mapItemClaim(item[0].claimLabel)}</td>}</>
+        <>
+          {showTarget && (
+            <td>
+              {this.getToolTipForTarget(
+                item[0].targetId,
+                item[0].targetDescription
+              )}
+            </td>
           )}
-        </td>
-        <td>
-          {this.getContentStandardToolTip(
-            item[0].subjectCode,
-            item[0].claimCode,
-            item[0].commonCoreStandardId,
-            item[0].ccssDescription
+        </>
+        <>
+          {showStandard && (
+            <td>
+              {this.getContentStandardToolTip(
+                item[0].subjectCode,
+                item[0].claimCode,
+                item[0].commonCoreStandardId,
+                item[0].ccssDescription
+              )}
+            </td>
           )}
-        </td>
-        <td>{item[0].interactionTypeLabel}</td>
-        <td />
+        </>
+        <>{showTnteractionType && <td>{item[0].interactionTypeLabel}</td>}</>
       </>
     );
   }
@@ -263,63 +380,183 @@ export class PrintCartItemTableRow extends React.Component<
       this.props.itemIdToTestNameMap,
       this.props.testCodeToLabelMap
     );
+
+    let showSubject = true,
+      showGrade = true,
+      showStimulusKey = true,
+      showClaimLabel = true,
+      showTarget = true,
+      showStandard = true,
+      showDOK = true;
+    let showItemPositioninTest = true,
+      showTestName = true,
+      showDifficulty = true;
+    this.props.itemTableConfig.forEach(element => {
+      showStimulusKey =
+        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
+          ? !element.isHidden
+          : showStimulusKey;
+      showItemPositioninTest =
+        element.headerName.toUpperCase() ==
+        "Item position in test".toUpperCase()
+          ? !element.isHidden
+          : showItemPositioninTest;
+      showSubject =
+        element.headerName.toUpperCase() == "Subject".toUpperCase()
+          ? !element.isHidden
+          : showSubject;
+      showGrade =
+        element.headerName.toUpperCase() == "Grade".toUpperCase()
+          ? !element.isHidden
+          : showGrade;
+      showTestName =
+        element.headerName.toUpperCase() == "Test name".toUpperCase()
+          ? !element.isHidden
+          : showTestName;
+      showClaimLabel =
+        element.headerName.toUpperCase() == "Claim".toUpperCase()
+          ? !element.isHidden
+          : showClaimLabel;
+      showTarget =
+        element.headerName.toUpperCase() == "Target".toUpperCase()
+          ? !element.isHidden
+          : showTarget;
+      showStandard =
+        element.headerName.toUpperCase() == "Standard".toUpperCase()
+          ? !element.isHidden
+          : showStandard;
+      showDOK =
+        element.headerName.toUpperCase() == "DOK".toUpperCase()
+          ? !element.isHidden
+          : showDOK;
+      showDifficulty =
+        element.headerName.toUpperCase() == "Difficulty".toUpperCase()
+          ? !element.isHidden
+          : showDifficulty;
+    });
+
     return (
       <>
-        <td>{this.renderActionButton(item)}</td>
-        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
+        <td className="td-print-cart-item-sequence">
+          {this.renderActionButton(item)}
+        </td>
+        <td className="td-print-cart-item-sequence">
+          {item.isPerformanceItem ? "-" : this.props.itemSequence}
+        </td>
         <td>{item.itemKey}</td>
-        <td>{item.stimulusKey}</td>
-        {/* <td>{item.testOrderInPrintCart}</td> */}
-        <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
-        <td>{mapItemGrade(item.gradeLabel)}</td>
-        {/* {this.renderTestName(item)} */}
-        <td>{testNameAndPosition.testName}</td>
-        <td>
-          {testNameAndPosition.testOrder === Number.MIN_VALUE
-            ? ""
-            : testNameAndPosition.testOrder}
-        </td>
-        <td>{mapItemClaim(item.claimLabel)}</td>
-        <td>
-          {this.getToolTipForTarget(item.targetId, item.targetDescription)}
-        </td>
-        <td>
-          {this.getContentStandardToolTip(
-            item.subjectCode,
-            item.claimCode,
-            item.commonCoreStandardId,
-            item.ccssDescription
+        <>{showStimulusKey && <td>{item.stimulusKey}</td>}</>
+        <>{showSubject && <td>{mapItemSubjectlabel(item.subjectLabel)}</td>}</>
+        <>{showGrade && <td>{mapItemGrade(item.gradeLabel)}</td>}</>
+        <>{showTestName && <td>{testNameAndPosition.testName}</td>}</>
+        <>
+          {showItemPositioninTest && (
+            <td>
+              {testNameAndPosition.testOrder === Number.MIN_VALUE
+                ? ""
+                : testNameAndPosition.testOrder}
+            </td>
           )}
-        </td>
-        <td>{item.depthOfKnowledge}</td>
-        <td>{item.itemDifficulty}</td>
+        </>
+        <>{showClaimLabel && <td>{mapItemClaim(item.claimLabel)}</td>}</>
+        <>
+          {showTarget && (
+            <td>
+              {this.getToolTipForTarget(item.targetId, item.targetDescription)}
+            </td>
+          )}
+        </>
+        <>
+          {showStandard && (
+            <td>
+              {this.getContentStandardToolTip(
+                item.subjectCode,
+                item.claimCode,
+                item.commonCoreStandardId,
+                item.ccssDescription
+              )}
+            </td>
+          )}
+        </>
+        <>{showDOK && <td>{item.depthOfKnowledge}</td>}</>
+        <>{showDifficulty && <td>{item.itemDifficulty}</td>}</>
       </>
     );
   }
 
   renderTableRowItemsForNonInterim(item: ItemCardModel) {
+    let showSubject = true,
+      showGrade = true,
+      showStimulusKey = true,
+      showClaimLabel = true,
+      showTarget = true,
+      showStandard = true,
+      showTnteractionType = true;
+
+    this.props.itemTableConfig.forEach(element => {
+      showStimulusKey =
+        element.headerName.toUpperCase() == "Stimulus ID".toUpperCase()
+          ? !element.isHidden
+          : showStimulusKey;
+      showSubject =
+        element.headerName.toUpperCase() == "Subject".toUpperCase()
+          ? !element.isHidden
+          : showSubject;
+      showGrade =
+        element.headerName.toUpperCase() == "Grade".toUpperCase()
+          ? !element.isHidden
+          : showGrade;
+      showClaimLabel =
+        element.headerName.toUpperCase() == "Claim".toUpperCase()
+          ? !element.isHidden
+          : showClaimLabel;
+      showTarget =
+        element.headerName.toUpperCase() == "Target".toUpperCase()
+          ? !element.isHidden
+          : showTarget;
+      showStandard =
+        element.headerName.toUpperCase() == "Standard".toUpperCase()
+          ? !element.isHidden
+          : showStandard;
+      showTnteractionType =
+        element.headerName.toUpperCase() == "Item Type".toUpperCase()
+          ? !element.isHidden
+          : showTnteractionType;
+    });
+
     return (
       <>
-        <td>{this.renderActionButton(item)}</td>
-        <td>{item.isPerformanceItem ? "-" : this.props.itemSequence}</td>
-        {/* <td>{this.props.index}</td> */}
+        <td className="td-print-cart-item-sequence">
+          {this.renderActionButton(item)}
+        </td>
+        <td className="td-print-cart-item-sequence">
+          {item.isPerformanceItem ? "-" : this.props.itemSequence}
+        </td>
         <td>{item.itemKey}</td>
-        <td>{mapItemSubjectlabel(item.subjectLabel)}</td>
-        <td>{mapItemGrade(item.gradeLabel)}</td>
-        <td>{item.stimulusKey}</td>
-        <td>{mapItemClaim(item.claimLabel)}</td>
-        <td>
-          {this.getToolTipForTarget(item.targetId, item.targetDescription)}
-        </td>
-        <td>
-          {this.getContentStandardToolTip(
-            item.subjectCode,
-            item.claimCode,
-            item.commonCoreStandardId,
-            item.ccssDescription
+        <>{showStimulusKey && <td>{item.stimulusKey}</td>}</>
+        <>{showSubject && <td>{mapItemSubjectlabel(item.subjectLabel)}</td>}</>
+        <>{showGrade && <td>{mapItemGrade(item.gradeLabel)}</td>}</>
+
+        <>{showClaimLabel && <td>{mapItemClaim(item.claimLabel)}</td>}</>
+        <>
+          {showTarget && (
+            <td>
+              {this.getToolTipForTarget(item.targetId, item.targetDescription)}
+            </td>
           )}
-        </td>
-        <td>{item.interactionTypeLabel}</td>
+        </>
+        <>
+          {showStandard && (
+            <td>
+              {this.getContentStandardToolTip(
+                item.subjectCode,
+                item.claimCode,
+                item.commonCoreStandardId,
+                item.ccssDescription
+              )}
+            </td>
+          )}
+        </>
+        <>{showTnteractionType && <td>{item.interactionTypeLabel}</td>}</>
       </>
     );
   }
@@ -346,7 +583,7 @@ export class PrintCartItemTableRow extends React.Component<
           {this.props.isInterimSite
             ? this.renderTableRowItemsForInterim(item)
             : this.renderTableRowItemsForNonInterim(item)}
-          <td>
+          <td className="print-cart-action-btn">
             <div className="btn-group">
               <button
                 type="button"

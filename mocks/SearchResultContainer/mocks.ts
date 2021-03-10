@@ -10,6 +10,7 @@ import {
   allAccessibilityResourceGroups
 } from "@mocks/index";
 import { mockSeachAPI } from "@mocks/ItemSearch/mocks";
+
 import { translationAccessibilityDropDown } from "@mocks/Accessibility/mocks";
 
 export const mockSearchResultCardProps: SearchResultContainerProps = {

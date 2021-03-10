@@ -17,7 +17,8 @@ export type HeaderType =
   | "Item Type"
   | "DOK"
   | "Difficulty"
-  | "Target";
+  | "Target"
+  | "Answer key";
 
 export type HeaderType_NonInterimSite =
   | "Item"
@@ -26,7 +27,8 @@ export type HeaderType_NonInterimSite =
   | "Subject"
   | "Grade"
   | "Item Type"
-  | "Target";
+  | "Target"
+  | "Answer key";
 
 export enum SortDirection {
   NoSort = 0,
@@ -293,6 +295,21 @@ export const headerColumns: ColumnGroup[] = [
       }
     ],
     compare: (a, b) => a.itemDifficulty.localeCompare(b.itemDifficulty)
+  },
+  {
+    header: "Answer key",
+    headerClassName: "answerkeys",
+    cols: [
+      {
+        accessor: label =>
+          label.answerKeys.length > 0 ? label.answerKeys : "",
+        className: "answerkeys"
+      }
+    ],
+    compare: (a, b) =>
+      (a.answerKeys.length > 0 ? a.answerKeys : "").localeCompare(
+        b.answerKeys.length > 0 ? b.answerKeys : ""
+      )
   }
 ];
 
@@ -308,6 +325,20 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
         className: "item"
       }
     ]
+  },
+  {
+    header: "Stimulus ID",
+    headerClassName: "stimulus",
+    cols: [
+      {
+        accessor: label =>
+          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
+        className: "stimulus"
+      }
+    ],
+    compare: (a, b) =>
+      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
+      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
   },
   {
     header: "Subject",
@@ -326,20 +357,7 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
     ],
     compare: (a, b) => a.grade - b.grade
   },
-  {
-    header: "Stimulus ID",
-    headerClassName: "stimulus",
-    cols: [
-      {
-        accessor: label =>
-          label.stimulusKey !== undefined ? label.stimulusKey : "NA",
-        className: "stimulus"
-      }
-    ],
-    compare: (a, b) =>
-      (a.stimulusKey !== undefined ? a.stimulusKey : 0) -
-      (b.stimulusKey !== undefined ? b.stimulusKey : 0)
-  },
+
   {
     header: "Claim",
     headerClassName: "claim",
@@ -450,5 +468,20 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
     ],
     compare: (a, b) =>
       a.interactionTypeCode.localeCompare(b.interactionTypeCode)
+  },
+  {
+    header: "Answer key",
+    headerClassName: "answerkeys",
+    cols: [
+      {
+        accessor: label =>
+          label.answerKeys.length > 0 ? label.answerKeys : "",
+        className: "answerkeys"
+      }
+    ],
+    compare: (a, b) =>
+      (a.answerKeys.length > 0 ? a.answerKeys : "").localeCompare(
+        b.answerKeys.length > 0 ? b.answerKeys : ""
+      )
   }
 ];

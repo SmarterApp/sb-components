@@ -5,7 +5,7 @@ import {
   SortDirection,
   ColumnGroup
 } from "@src/index";
-
+import { ItemColumnHeadersConfig } from "@src/SearchResultContainer/SearchResultModels";
 /**
  * Properties for HeaderTable component
  * @interface HeaderTableProps
@@ -15,6 +15,7 @@ export interface HeaderTableProps {
   onHeaderClick: (header: ColumnGroup) => void;
   sorts: HeaderSortModel[];
   isLinkTable: boolean;
+  itemTableConfig: ItemColumnHeadersConfig[];
 }
 
 const invokeResetSortLimit = 2;
@@ -104,24 +105,43 @@ export class HeaderTable extends React.Component<HeaderTableProps, {}> {
     const headerSort = this.props.sorts.find(
       hs => hs.col.header === col.header
     );
+    let isHidden = false;
+    const tableHeaderConfig = this.props.itemTableConfig.find(
+      hs => hs.headerName.toUpperCase() === col.header.toUpperCase()
+    );
+
+    if (tableHeaderConfig != undefined) {
+      isHidden = tableHeaderConfig.isHidden;
+    }
+
     if (headerSort) {
       this.setDirElem(headerSort);
     }
 
     return (
-      <th
-        key={col.header}
-        className={col.headerClassName}
-        onClick={() => this.headerClickHandler(col, headerSort)}
-        onKeyUp={e => this.headerKeyUpHandler(e, col, headerSort)}
-        tabIndex={0}
-        scope="col"
-      >
-        <div className={col.headerClassName}>
-          <span>{col.header}</span>
-          {this.setDirElem(headerSort)}
-        </div>
-      </th>
+      <>
+        {!isHidden && (
+          <th
+            key={col.header}
+            className={col.headerClassName}
+            onClick={() => this.headerClickHandler(col, headerSort)}
+            onKeyUp={e => this.headerKeyUpHandler(e, col, headerSort)}
+            tabIndex={0}
+            scope="col"
+          >
+            <div
+              className={
+                col.headerClassName === "item-position-in-test"
+                  ? "item-position-in-test-field"
+                  : col.headerClassName
+              }
+            >
+              <span>{col.header}</span>
+              {this.setDirElem(headerSort)}
+            </div>
+          </th>
+        )}
+      </>
     );
   }
 

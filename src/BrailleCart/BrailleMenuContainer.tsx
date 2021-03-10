@@ -4,7 +4,7 @@ import "@src/Assets/Styles/braille-cart.less";
 import { BrailleCartMenu } from "./BrailleCartMenu";
 import { getBrailleUniversalOptions } from "./BrailleCart";
 import { MultiSelect } from "@src/Select/MultiSelect";
-import { multiSelectOptions, MultiSelectValue } from "@src/Select/SelectModel";
+import { MultiSelectValue } from "@src/Select/SelectModel";
 
 export interface BrailleMenuContainerProps {
   itemsInCart: ItemCardModel[];
