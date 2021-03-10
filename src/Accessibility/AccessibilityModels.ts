@@ -180,14 +180,14 @@ export function getPrintDropdownOptions(
   });
 
   selectOptions.push({
-    label: "Answer Keys only",
+    label: "Answer Key only",
     value: "ANSWERS-ONLY",
     disabled: false,
     selected: selectedPrintOption === "ANSWERS-ONLY"
   });
 
   selectOptions.push({
-    label: "Answer Keys and Items",
+    label: "Answer Key and Items",
     value: "ANSWERS-AND-ITEMS",
     disabled: false,
     selected: selectedPrintOption === "ANSWERS-AND-ITEMS"

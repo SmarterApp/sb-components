@@ -18,7 +18,7 @@ export type HeaderType =
   | "DOK"
   | "Difficulty"
   | "Target"
-  | "Answer keys";
+  | "Answer key";
 
 export type HeaderType_NonInterimSite =
   | "Item"
@@ -28,7 +28,7 @@ export type HeaderType_NonInterimSite =
   | "Grade"
   | "Item Type"
   | "Target"
-  | "Answer keys";
+  | "Answer key";
 
 export enum SortDirection {
   NoSort = 0,
@@ -297,7 +297,7 @@ export const headerColumns: ColumnGroup[] = [
     compare: (a, b) => a.itemDifficulty.localeCompare(b.itemDifficulty)
   },
   {
-    header: "Answer keys",
+    header: "Answer key",
     headerClassName: "answerkeys",
     cols: [
       {
@@ -470,7 +470,7 @@ export const headerColumns_nonInterimSite: ColumnGroup[] = [
       a.interactionTypeCode.localeCompare(b.interactionTypeCode)
   },
   {
-    header: "Answer keys",
+    header: "Answer key",
     headerClassName: "answerkeys",
     cols: [
       {

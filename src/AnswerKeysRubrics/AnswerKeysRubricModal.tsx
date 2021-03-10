@@ -78,9 +78,9 @@ export class AnswerKeysRubricModal extends React.Component<
         <div
           className="alert alert-danger"
           tabIndex={0}
-          aria-label="There is an error while loading answer keys or rubrics."
+          aria-label="There is an error while loading answer key or rubrics."
         >
-          <strong>Error</strong> while loading answer keys or rubrics.
+          <strong>Error</strong> while loading answer key or rubrics.
         </div>
       );
     }
@@ -108,18 +108,18 @@ export class AnswerKeysRubricModal extends React.Component<
       <>
         <ReactModal
           isOpen={this.props.showModal}
-          contentLabel="Answer keys or rubrics modal opened"
+          contentLabel="Answer key or rubrics modal opened"
           onRequestClose={this.handleHideAnswerKeysModal}
           overlayClassName="react-modal-overlay"
           className="react-modal-content rubric-table-modal"
         >
-          <div className="modal-wrapper" aria-labelledby="Answer Keys/Rubrics">
+          <div className="modal-wrapper" aria-labelledby="Answer Key/Rubrics">
             <div className="modal-header">
-              <h4 className="modal-title">Answer Keys/Rubrics</h4>
+              <h4 className="modal-title">Answer Key/Rubrics</h4>
               <button
                 className="close"
                 onClick={this.handleHideAnswerKeysModal}
-                aria-label="Close answer keys or rubrics modal"
+                aria-label="Close answer key or rubrics modal"
               >
                 <span className="fa fa-times" aria-hidden="true" />
               </button>
@@ -130,7 +130,7 @@ export class AnswerKeysRubricModal extends React.Component<
             <div className="modal-footer">
               <button
                 className="btn btn-primary"
-                aria-label="Close answer keysor rubrics modal"
+                aria-label="Close answer key or rubrics modal"
                 onClick={this.handleHideAnswerKeysModal}
               >
                 Close

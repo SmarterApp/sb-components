@@ -246,7 +246,7 @@ export class ItemTableRow extends React.Component<
             onClick={e => {
               this.openAnswerKeyModal(e);
             }}
-            aria-label="Click to view answer keys or rubrics"
+            aria-label="Click to view answer key or rubrics"
           >
             View
           </button>

@@ -464,10 +464,10 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
               )}
             {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
 
-            {/***** * Answer keys --- */}
-            {!this.toggleItemLabel("Answer keys") && (
+            {/***** * Answer key --- */}
+            {!this.toggleItemLabel("Answer key") && (
               <p className="card-text interaction-type">
-                <span className="card-text-label">Answer keys:</span>
+                <span className="card-text-label">Answer key:</span>
                 <span className="card-text-value">
                   {this.props.rowData.answerKeys.length > 0 ? (
                     <span
@@ -484,7 +484,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                       onClick={e => {
                         this.openAnswerKeyModal(e);
                       }}
-                      aria-label="Click to view answer keys or rubrics"
+                      aria-label="Click to view answer key or rubrics"
                     >
                       View
                     </button>
