@@ -4,22 +4,23 @@ exports[`ItemCard renders correctly 1`] = `
 <React.Fragment>
   <div
     className="card card-block ela"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="link"
-    tabIndex={0}
   >
     <div
       className="card-contents"
     >
       <div
+        aria-label="Item of Grade Grade 4, Subject ELA, Item Id 3434"
         className="card-header"
+        onClick={[Function]}
+        onKeyUp={[Function]}
+        tabIndex={0}
       >
-        <h4
+        <h3
           className="card-title"
         >
-          ELA
-        </h4>
+          3434
+        </h3>
         <div
           className="card-icon-container"
         >
@@ -30,6 +31,66 @@ exports[`ItemCard renders correctly 1`] = `
           </span>
         </div>
       </div>
+      <p
+        className="card-text item-id"
+      >
+        <span
+          className="card-text-label"
+        >
+          Item Id:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+          3434
+        </span>
+      </p>
+      <p
+        className="card-text stimulusid"
+      >
+        <span
+          className="card-text-label"
+        >
+          Stimulus ID:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+        </span>
+      </p>
+      <React.Fragment>
+        <p
+          className="card-text item-position-in-test"
+        >
+          <span
+            className="card-text-label"
+          >
+            Item position in test:
+          </span>
+          <span
+            className="card-text-value"
+          >
+             
+          </span>
+        </p>
+      </React.Fragment>
+      <p
+        className="card-text grade"
+      >
+        <span
+          className="card-text-label"
+        >
+          Subject:
+        </span>
+        <span
+          className="card-text-value"
+        >
+           
+          ELA
+        </span>
+      </p>
       <p
         className="card-text grade"
       >
@@ -60,35 +121,7 @@ exports[`ItemCard renders correctly 1`] = `
              
           </span>
         </p>
-        <p
-          className="card-text item-position-in-test"
-        >
-          <span
-            className="card-text-label"
-          >
-            Item position in test:
-          </span>
-          <span
-            className="card-text-value"
-          >
-             
-          </span>
-        </p>
       </React.Fragment>
-      <p
-        className="card-text stimulusid"
-      >
-        <span
-          className="card-text-label"
-        >
-          Stimulus ID:
-        </span>
-        <span
-          className="card-text-value"
-        >
-           
-        </span>
-      </p>
       <p
         className="card-text claim"
       >
@@ -156,27 +189,50 @@ exports[`ItemCard renders correctly 1`] = `
         <span
           className="card-text-label"
         >
-          Item Type:
+          DOK:
         </span>
         <span
           className="card-text-value"
         >
-           Item Type
+           2
         </span>
       </p>
+      <React.Fragment>
+        <p
+          className="card-text Difficulty"
+        >
+          <span
+            className="card-text-label"
+          >
+            Difficulty:
+          </span>
+          <span
+            className="card-text-value"
+          >
+             
+            Hard
+          </span>
+        </p>
+      </React.Fragment>
       <p
-        className="card-text item-id"
+        className="card-text interaction-type"
       >
         <span
           className="card-text-label"
         >
-          Item Id:
+          Answer key:
         </span>
         <span
           className="card-text-value"
         >
-           
-          3434
+          <button
+            aria-label="Click to view answer key or rubrics"
+            className="btn btn-defualt"
+            onClick={[Function]}
+            type="button"
+          >
+            View
+          </button>
         </span>
       </p>
       <ToolTip
@@ -205,5 +261,52 @@ exports[`ItemCard renders correctly 1`] = `
       </ToolTip>
     </div>
   </div>
+  <AnswerKeysRubricModal
+    closeAnswerKeysModal={[Function]}
+    itemCard={
+      Object {
+        "answerKeys": "",
+        "availableBrailleTypes": Array [
+          Object {
+            "disabled": false,
+            "hidden": false,
+            "label": "EBAE-Contracted",
+            "selectionCode": "EABE",
+          },
+          Object {
+            "disabled": false,
+            "hidden": false,
+            "label": "BAET-Contracted",
+            "selectionCode": "BAET",
+          },
+        ],
+        "bankKey": 187,
+        "brailleOnlyItem": false,
+        "calculator": false,
+        "ccssDescription": "this is the common core description",
+        "claimCode": "ELA3",
+        "claimLabel": "Claim",
+        "commonCoreStandardId": "AB-123",
+        "depthOfKnowledge": "2",
+        "domain": "domain",
+        "grade": 4,
+        "gradeLabel": "Grade 4",
+        "interactionTypeCode": "GI",
+        "interactionTypeLabel": "Item Type",
+        "isPerformanceItem": false,
+        "itemDifficulty": "Hard",
+        "itemKey": 3434,
+        "selected": false,
+        "subjectCode": "ELA",
+        "subjectLabel": "ELA",
+        "targetDescription": "target description right here",
+        "targetHash": 33434,
+        "targetId": "dfas",
+        "targetShortName": "target short name",
+        "title": "ELA Grade 4",
+      }
+    }
+    showModal={false}
+  />
 </React.Fragment>
 `;

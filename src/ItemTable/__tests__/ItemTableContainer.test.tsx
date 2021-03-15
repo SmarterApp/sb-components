@@ -3,7 +3,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as TestUtils from "react-dom/test-utils";
 import { shallow, mount, render } from "enzyme";
-import { tabClassNames } from "@mocks/ItemTable/mocks";
+import {
+  getColumnsHeaderConfig_mock,
+  tabClassNames
+} from "@mocks/ItemTable/mocks";
 import { aboutItemMockModel, itemCardList } from "@mocks/index";
 import {
   itemHandler,
@@ -23,7 +26,10 @@ import {
   ItemTableContainer,
   ItemCardViewer
 } from "@src/index";
-import { PTassociatedItems } from "@mocks/ItemCard/mocks";
+import {
+  PTassociatedItems,
+  testCodeToLabelMap_mock
+} from "@mocks/ItemCard/mocks";
 
 describe("ItemPageTable", () => {
   const selectedItem = itemCardList[0];
@@ -43,7 +49,10 @@ describe("ItemPageTable", () => {
     numberOfSelectedItem: 3,
     countNumberOfItemsAfterSelection: countNumberOfItemsAfterSelection,
     showErrorModalOnPrintItemsCountExceeded: showErrorModal,
-    associatedItems: PTassociatedItems
+    associatedItems: PTassociatedItems,
+    isInterimSite: true,
+    testCodeToLabelMap: testCodeToLabelMap_mock,
+    itemColumnHeaderConfig: getColumnsHeaderConfig_mock()
   };
 
   const wrapper = mount(<ItemTableContainer {...props} />);

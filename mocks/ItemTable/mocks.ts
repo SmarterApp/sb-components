@@ -5,19 +5,28 @@ import {
 } from "@src/index";
 import { aboutItemMockModel } from "@mocks/AboutItem/mocks";
 import { itemCardList, sortableItemCards } from "@mocks/index";
+import {
+  ItemColumnHeadersConfig,
+  itemColumnsName_Interim
+} from "@src/SearchResultContainer/SearchResultModels";
 
 export const tabClassNames = [
   "item",
-  "claim",
-  "standard",
+  "stimulus",
+  "item-position-in-test",
   "subject",
   "grade",
-  "item-type",
-  "Target"
+  "testname",
+  "claim",
+  "Target",
+  "standard",
+  "dok",
+  "difficulty",
+  "answerkeys"
 ];
 
 export const itemTableProps: ItemTableContainerProps = {
-  isInterimSite: false,
+  isInterimSite: true,
   isLinkTable: false,
   onRowSelection: () => {
     return;
@@ -63,3 +72,19 @@ export const itemTableSelectProps: ItemTableContainerProps = {
     content: aboutItemMockModel
   }
 };
+
+export function getColumnsHeaderConfig_mock() {
+  const headerModel: ItemColumnHeadersConfig[] = [];
+  let i = 0;
+  const itemsHeaderName = itemColumnsName_Interim;
+  itemsHeaderName.forEach(element => {
+    let column: ItemColumnHeadersConfig = {
+      headerName: element,
+      columnIndex: ++i,
+      isHidden: false,
+      isSortable: true
+    };
+    headerModel.push(column);
+  });
+  return headerModel;
+}

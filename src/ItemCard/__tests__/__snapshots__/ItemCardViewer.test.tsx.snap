@@ -22,6 +22,7 @@ exports[`ItemCardViewer renders information tab 1`] = `
           evidenceStatement="This is a sample evidence statement"
           itemCardViewModel={
             Object {
+              "answerKeys": "",
               "availableBrailleTypes": Array [
                 Object {
                   "disabled": false,

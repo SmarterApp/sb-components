@@ -6,6 +6,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
     <PrintCartItemTableRow
       ItemCard={
         Object {
+          "answerKeys": "C,D",
           "availableBrailleTypes": Array [
             Object {
               "disabled": false,
@@ -60,6 +61,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
       TotalItemsCard={
         Array [
           Object {
+            "answerKeys": "",
             "availableBrailleTypes": Array [
               Object {
                 "disabled": false,
@@ -111,6 +113,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "title": "Math Grade 6 Claim 1",
           },
           Object {
+            "answerKeys": "C,D",
             "availableBrailleTypes": Array [
               Object {
                 "disabled": false,
@@ -162,6 +165,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "title": "ELA/ literacy Grade 3 Claim 1",
           },
           Object {
+            "answerKeys": "",
             "availableBrailleTypes": Array [
               Object {
                 "disabled": false,
@@ -212,9 +216,10 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "title": "Math Grade 6 Claim 4",
           },
           Object {
+            "answerKeys": "",
             "availableBrailleTypes": Array [
               Object {
-                "disabled": false,
+                "disabled": true,
                 "hidden": false,
                 "label": "TDS BT ECN",
                 "selectionCode": "TDS_BT_ECN",
@@ -462,6 +467,17 @@ exports[`ItemTableRow matches snapshot 1`] = `
             "header": "Difficulty",
             "headerClassName": "difficulty",
           },
+          Object {
+            "cols": Array [
+              Object {
+                "accessor": [Function],
+                "className": "answerkeys",
+              },
+            ],
+            "compare": [Function],
+            "header": "Answer key",
+            "headerClassName": "answerkeys",
+          },
         ]
       }
       index={1}
@@ -488,6 +504,7 @@ exports[`ItemTableRow matches snapshot 1`] = `
         }
       }
       itemSequence={2}
+      itemTableConfig={Array []}
       onAddOrRemoveSelectedItems={[MockFunction]}
       onItemsReorder={[MockFunction]}
       testCodeToLabelMap={
@@ -501,7 +518,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
         className=""
         key="3163"
       >
-        <td>
+        <td
+          className="td-print-cart-item-sequence"
+        >
           <button
             aria-label="Remove selected item from print cart"
             className="btn btn-sm btn-danger btn-remove-item-print-cart"
@@ -510,7 +529,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
             X
           </button>
         </td>
-        <td>
+        <td
+          className="td-print-cart-item-sequence"
+        >
           -
         </td>
         <td>
@@ -625,7 +646,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
         <td>
           Easy
         </td>
-        <td>
+        <td
+          className="print-cart-action-btn"
+        >
           <div
             className="btn-group"
           >
@@ -811,8 +834,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td />
-        <td />
-        <td />
+        <td>
+           
+        </td>
       </tr>
       <tr
         className="table-row-associated-item"
@@ -969,8 +993,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td />
-        <td />
-        <td />
+        <td>
+           
+        </td>
       </tr>
       <tr
         className="table-row-associated-item"
@@ -1127,8 +1152,9 @@ exports[`ItemTableRow matches snapshot 1`] = `
           </span>
         </td>
         <td />
-        <td />
-        <td />
+        <td>
+           
+        </td>
       </tr>
     </PrintCartItemTableRow>
   </tbody>

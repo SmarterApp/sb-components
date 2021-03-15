@@ -1,0 +1,3515 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemTable matches snapshot 1`] = `
+<table>
+  <ItemTable
+    associatedItems={Array []}
+    cardRows={
+      Array [
+        Object {
+          "answerKeys": "",
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECN",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "DS BT UCB Label",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECL label",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TTDS BT EXN Label",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": true,
+          "claimCode": "MATH1",
+          "claimLabel": "1.Concepts and Procedures and Logical",
+          "commonCoreStandardId": "6.M.1a",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "EQ",
+          "interactionTypeLabel": "Equation Multiple Choice choice",
+          "isPerformanceItem": true,
+          "itemDifficulty": "Moderate",
+          "itemKey": 3206,
+          "stimulusKey": 56900,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "Target A description with extra text for testing",
+          "targetHash": 100,
+          "targetId": "A",
+          "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 1,
+          "title": "Math Grade 6 Claim 1",
+        },
+        Object {
+          "answerKeys": "C,D",
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECN",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "DS BT UCB Label",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECL label",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TTDS BT EXN Label",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "calculator": false,
+          "claimCode": "ELA1",
+          "claimLabel": "1.Reading",
+          "commonCoreStandardId": "3.R.2a",
+          "grade": 1,
+          "gradeLabel": "Grade 3",
+          "interactionTypeCode": "MC",
+          "interactionTypeLabel": "Multiple Choice",
+          "isPerformanceItem": true,
+          "itemDifficulty": "Easy",
+          "itemKey": 3163,
+          "stimulusKey": 58679,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "Target B description",
+          "targetHash": 1039,
+          "targetId": "B",
+          "targetShortName": "Key Details",
+          "testName": "Test-Name-1",
+          "testOrder": 2,
+          "title": "ELA/ literacy Grade 3 Claim 1",
+        },
+        Object {
+          "answerKeys": "",
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECN",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "DS BT UCB Label",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECL label",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TTDS BT EXN Label",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "MATH4",
+          "claimLabel": "3.Modeling/Data Analysis",
+          "commonCoreStandardId": "6.M.2b",
+          "grade": 8,
+          "gradeLabel": "Grade 6",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": true,
+          "itemDifficulty": "",
+          "itemKey": 3615,
+          "stimulusKey": 23461,
+          "subjectCode": "MATH",
+          "subjectLabel": "Math",
+          "targetDescription": "target C description",
+          "targetHash": 0,
+          "targetId": "C",
+          "targetShortName": "",
+          "testName": "Test-Name-1",
+          "testOrder": 3,
+          "title": "Math Grade 6 Claim 4",
+        },
+        Object {
+          "answerKeys": "",
+          "availableBrailleTypes": Array [
+            Object {
+              "disabled": true,
+              "hidden": false,
+              "label": "TDS BT ECN",
+              "selectionCode": "TDS_BT_ECN",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "DS BT UCB Label",
+              "selectionCode": "TDS_BT_UCB",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TDS BT ECL label",
+              "selectionCode": "TDS_BT_ECL",
+            },
+            Object {
+              "disabled": false,
+              "hidden": false,
+              "label": "TTDS BT EXN Label",
+              "selectionCode": "TTDS_BT_EXN",
+            },
+          ],
+          "bankKey": 187,
+          "brailleOnlyItem": false,
+          "claimCode": "ELA4",
+          "claimLabel": "4.Research/Inquiry",
+          "commonCoreStandardId": "4.E.4a",
+          "grade": 2,
+          "gradeLabel": "Grade 4",
+          "interactionTypeCode": "MS",
+          "interactionTypeLabel": "Multi Select",
+          "isPerformanceItem": false,
+          "itemDifficulty": "Hard",
+          "itemKey": 2928,
+          "stimulusKey": 87679,
+          "subjectCode": "ELA",
+          "subjectLabel": "ELA/literacy",
+          "targetDescription": "target D description",
+          "targetHash": 2832,
+          "targetId": "D",
+          "targetShortName": "Evaluate Information/ sources",
+          "testName": "",
+          "testOrder": 2,
+          "title": "ELA/ literacy Grade 4 Claim 4",
+        },
+      ]
+    }
+    columns={
+      Array [
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "item",
+            },
+          ],
+          "compare": [Function],
+          "header": "Item",
+          "headerClassName": "item",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "stimulus",
+            },
+          ],
+          "compare": [Function],
+          "header": "Stimulus ID",
+          "headerClassName": "stimulus",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "item-position-in-test",
+            },
+          ],
+          "compare": [Function],
+          "header": "Item position in test",
+          "headerClassName": "item-position-in-test",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "subject",
+            },
+          ],
+          "compare": [Function],
+          "header": "Subject",
+          "headerClassName": "subject",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "grade",
+            },
+          ],
+          "compare": [Function],
+          "header": "Grade",
+          "headerClassName": "grade",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "testname",
+            },
+          ],
+          "compare": [Function],
+          "header": "Test name",
+          "headerClassName": "testname",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "claim",
+              "helpText": [Function],
+            },
+          ],
+          "compare": [Function],
+          "header": "Claim",
+          "headerClassName": "claim",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "target",
+              "helpText": [Function],
+            },
+          ],
+          "compare": [Function],
+          "header": "Target",
+          "headerClassName": "Target",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "standard",
+            },
+            Object {
+              "accessor": [Function],
+              "className": "standard",
+              "helpText": [Function],
+            },
+          ],
+          "compare": [Function],
+          "header": "Standard",
+          "headerClassName": "standard",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "dok",
+            },
+          ],
+          "compare": [Function],
+          "header": "DOK",
+          "headerClassName": "dok",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "difficulty",
+            },
+          ],
+          "compare": [Function],
+          "header": "Difficulty",
+          "headerClassName": "difficulty",
+        },
+        Object {
+          "cols": Array [
+            Object {
+              "accessor": [Function],
+              "className": "answerkeys",
+            },
+          ],
+          "compare": [Function],
+          "header": "Answer key",
+          "headerClassName": "answerkeys",
+        },
+      ]
+    }
+    countNumberOfItemsAfterSelection={[MockFunction]}
+    getSelectedItemCount={[MockFunction]}
+    isInterimSite={true}
+    isItemSelected={false}
+    isLinkTable={false}
+    itemTableConfig={
+      Array [
+        Object {
+          "columnIndex": 1,
+          "headerName": "Item",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 2,
+          "headerName": "Stimulus ID",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 3,
+          "headerName": "Item position in test",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 4,
+          "headerName": "Subject",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 5,
+          "headerName": "Grade",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 6,
+          "headerName": "Test Name",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 7,
+          "headerName": "Claim",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 8,
+          "headerName": "Target",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 9,
+          "headerName": "Standard",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 10,
+          "headerName": "DOK",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 11,
+          "headerName": "Difficulty",
+          "isHidden": false,
+          "isSortable": true,
+        },
+        Object {
+          "columnIndex": 12,
+          "headerName": "Answer key",
+          "isHidden": false,
+          "isSortable": true,
+        },
+      ]
+    }
+    numberOfSelectedItem={0}
+    onRowExpand={[MockFunction]}
+    onRowSelect={[MockFunction]}
+    showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
+    sort={Array []}
+    testCodeToLabelMap={
+      Object {
+        "Test-Name-1": "Test 1",
+        "Test-Name-2": "Test 2",
+      }
+    }
+  >
+    <tbody>
+      <ItemTableRow
+        associatedItems={Array []}
+        columns={
+          Array [
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item",
+              "headerClassName": "item",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item-position-in-test",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item position in test",
+              "headerClassName": "item-position-in-test",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "subject",
+                },
+              ],
+              "compare": [Function],
+              "header": "Subject",
+              "headerClassName": "subject",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "grade",
+                },
+              ],
+              "compare": [Function],
+              "header": "Grade",
+              "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "testname",
+                },
+              ],
+              "compare": [Function],
+              "header": "Test name",
+              "headerClassName": "testname",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "claim",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "target",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Target",
+              "headerClassName": "Target",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "dok",
+                },
+              ],
+              "compare": [Function],
+              "header": "DOK",
+              "headerClassName": "dok",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "difficulty",
+                },
+              ],
+              "compare": [Function],
+              "header": "Difficulty",
+              "headerClassName": "difficulty",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "answerkeys",
+                },
+              ],
+              "compare": [Function],
+              "header": "Answer key",
+              "headerClassName": "answerkeys",
+            },
+          ]
+        }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
+        hasControls={true}
+        isExpanded={false}
+        isInterimSite={true}
+        isItemSelected={false}
+        itemTableConfig={
+          Array [
+            Object {
+              "columnIndex": 1,
+              "headerName": "Item",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 2,
+              "headerName": "Stimulus ID",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 3,
+              "headerName": "Item position in test",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 4,
+              "headerName": "Subject",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 5,
+              "headerName": "Grade",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 6,
+              "headerName": "Test Name",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 7,
+              "headerName": "Claim",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 8,
+              "headerName": "Target",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 9,
+              "headerName": "Standard",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 10,
+              "headerName": "DOK",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 11,
+              "headerName": "Difficulty",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 12,
+              "headerName": "Answer key",
+              "isHidden": false,
+              "isSortable": true,
+            },
+          ]
+        }
+        key="187-3206"
+        numberOfSelectedItem={0}
+        onRowExpand={[MockFunction]}
+        onRowSelect={[MockFunction]}
+        rowData={
+          Object {
+            "answerKeys": "",
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "calculator": true,
+            "claimCode": "MATH1",
+            "claimLabel": "1.Concepts and Procedures and Logical",
+            "commonCoreStandardId": "6.M.1a",
+            "grade": 8,
+            "gradeLabel": "Grade 6",
+            "interactionTypeCode": "EQ",
+            "interactionTypeLabel": "Equation Multiple Choice choice",
+            "isPerformanceItem": true,
+            "itemDifficulty": "Moderate",
+            "itemKey": 3206,
+            "stimulusKey": 56900,
+            "subjectCode": "MATH",
+            "subjectLabel": "Math",
+            "targetDescription": "Target A description with extra text for testing",
+            "targetHash": 100,
+            "targetId": "A",
+            "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 1,
+            "title": "Math Grade 6 Claim 1",
+          }
+        }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
+        testCodeToLabelMap={
+          Object {
+            "Test-Name-1": "Test 1",
+            "Test-Name-2": "Test 2",
+          }
+        }
+      >
+        <AnswerKeysRubricModal
+          closeAnswerKeysModal={[Function]}
+          itemCard={
+            Object {
+              "answerKeys": "",
+              "availableBrailleTypes": Array [
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECN",
+                  "selectionCode": "TDS_BT_ECN",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "DS BT UCB Label",
+                  "selectionCode": "TDS_BT_UCB",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECL label",
+                  "selectionCode": "TDS_BT_ECL",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TTDS BT EXN Label",
+                  "selectionCode": "TTDS_BT_EXN",
+                },
+              ],
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "calculator": true,
+              "claimCode": "MATH1",
+              "claimLabel": "1.Concepts and Procedures and Logical",
+              "commonCoreStandardId": "6.M.1a",
+              "grade": 8,
+              "gradeLabel": "Grade 6",
+              "interactionTypeCode": "EQ",
+              "interactionTypeLabel": "Equation Multiple Choice choice",
+              "isPerformanceItem": true,
+              "itemDifficulty": "Moderate",
+              "itemKey": 3206,
+              "stimulusKey": 56900,
+              "subjectCode": "MATH",
+              "subjectLabel": "Math",
+              "targetDescription": "Target A description with extra text for testing",
+              "targetHash": 100,
+              "targetId": "A",
+              "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 1,
+              "title": "Math Grade 6 Claim 1",
+            }
+          }
+          showModal={false}
+        >
+          <Modal
+            ariaHideApp={true}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="react-modal-content rubric-table-modal"
+            closeTimeoutMS={0}
+            contentLabel="Answer key or rubrics modal opened"
+            isOpen={false}
+            onRequestClose={[Function]}
+            overlayClassName="react-modal-overlay"
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+          >
+            <ModalPortal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="react-modal-content rubric-table-modal"
+              closeTimeoutMS={0}
+              contentLabel="Answer key or rubrics modal opened"
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={false}
+              onRequestClose={[Function]}
+              overlayClassName="react-modal-overlay"
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+              style={
+                Object {
+                  "content": Object {},
+                  "overlay": Object {},
+                }
+              }
+            />
+          </Modal>
+        </AnswerKeysRubricModal>
+        <tr
+          className=""
+          key="187-3206"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+        >
+          <td
+            aria-label="Select item to print cart"
+            className="item-checkbox"
+            key="checkbox-control"
+            onClick={[Function]}
+          >
+            <ToolTip
+              className="btn-table-cell"
+              displayIcon={false}
+              displayText={
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              }
+              helpText={
+                <label>
+                  Add item to print queue
+                </label>
+              }
+              onKeyPress={[Function]}
+            >
+              <span
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                   
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </td>
+          <td
+            className="item"
+            key="item-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="item"
+            >
+              <a
+                role="link"
+                tabIndex={0}
+              >
+                3206
+              </a>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            key="stimulus-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="stimulus"
+            >
+              <span>
+                56900
+              </span>
+            </span>
+          </td>
+          <td
+            className="item-position-in-test"
+            key="item-position-in-test-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="item-position-in-test"
+            >
+              <span>
+                1
+              </span>
+            </span>
+          </td>
+          <td
+            className="subject"
+            key="subject-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="subject"
+            >
+              <span
+                className="table-subject-highlight math"
+              >
+                Math
+              </span>
+            </span>
+          </td>
+          <td
+            className="grade"
+            key="grade-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="grade"
+            >
+              <span>
+                6
+              </span>
+            </span>
+          </td>
+          <td
+            className="testname"
+            key="testname-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="testname"
+            >
+              <span>
+                Test 1
+              </span>
+            </span>
+          </td>
+          <td
+            className="claim"
+            key="claim-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="claim"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="1"
+                helpText={
+                  <p>
+                    1.Concepts and Procedures and Logical
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    1
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        1.Concepts and Procedures and Logical
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="target"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="A"
+                helpText={
+                  <p>
+                    Target A description with extra text for testing
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    A
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Target A description with extra text for testing
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="standard"
+            key="standard-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                6.M.1a
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="dok"
+            key="dok-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="dok"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="difficulty"
+            key="difficulty-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="difficulty"
+            >
+              <span>
+                Moderate
+              </span>
+            </span>
+          </td>
+          <td
+            className="answerkeys"
+            key="answerkeys-187-3206"
+            role="gridcell"
+          >
+            <span
+              key="answerkeys"
+            >
+              <button
+                aria-label="Click to view answer key or rubrics"
+                className="btn btn-default btn-raised btn-answerkeys"
+                onClick={[Function]}
+                type="button"
+              >
+                View
+              </button>
+            </span>
+          </td>
+        </tr>
+      </ItemTableRow>
+      <ItemTableRow
+        associatedItems={Array []}
+        columns={
+          Array [
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item",
+              "headerClassName": "item",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item-position-in-test",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item position in test",
+              "headerClassName": "item-position-in-test",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "subject",
+                },
+              ],
+              "compare": [Function],
+              "header": "Subject",
+              "headerClassName": "subject",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "grade",
+                },
+              ],
+              "compare": [Function],
+              "header": "Grade",
+              "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "testname",
+                },
+              ],
+              "compare": [Function],
+              "header": "Test name",
+              "headerClassName": "testname",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "claim",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "target",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Target",
+              "headerClassName": "Target",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "dok",
+                },
+              ],
+              "compare": [Function],
+              "header": "DOK",
+              "headerClassName": "dok",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "difficulty",
+                },
+              ],
+              "compare": [Function],
+              "header": "Difficulty",
+              "headerClassName": "difficulty",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "answerkeys",
+                },
+              ],
+              "compare": [Function],
+              "header": "Answer key",
+              "headerClassName": "answerkeys",
+            },
+          ]
+        }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
+        hasControls={true}
+        isExpanded={false}
+        isInterimSite={true}
+        isItemSelected={false}
+        itemTableConfig={
+          Array [
+            Object {
+              "columnIndex": 1,
+              "headerName": "Item",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 2,
+              "headerName": "Stimulus ID",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 3,
+              "headerName": "Item position in test",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 4,
+              "headerName": "Subject",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 5,
+              "headerName": "Grade",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 6,
+              "headerName": "Test Name",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 7,
+              "headerName": "Claim",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 8,
+              "headerName": "Target",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 9,
+              "headerName": "Standard",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 10,
+              "headerName": "DOK",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 11,
+              "headerName": "Difficulty",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 12,
+              "headerName": "Answer key",
+              "isHidden": false,
+              "isSortable": true,
+            },
+          ]
+        }
+        key="187-3163"
+        numberOfSelectedItem={0}
+        onRowExpand={[MockFunction]}
+        onRowSelect={[MockFunction]}
+        rowData={
+          Object {
+            "answerKeys": "C,D",
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "calculator": false,
+            "claimCode": "ELA1",
+            "claimLabel": "1.Reading",
+            "commonCoreStandardId": "3.R.2a",
+            "grade": 1,
+            "gradeLabel": "Grade 3",
+            "interactionTypeCode": "MC",
+            "interactionTypeLabel": "Multiple Choice",
+            "isPerformanceItem": true,
+            "itemDifficulty": "Easy",
+            "itemKey": 3163,
+            "stimulusKey": 58679,
+            "subjectCode": "ELA",
+            "subjectLabel": "ELA/literacy",
+            "targetDescription": "Target B description",
+            "targetHash": 1039,
+            "targetId": "B",
+            "targetShortName": "Key Details",
+            "testName": "Test-Name-1",
+            "testOrder": 2,
+            "title": "ELA/ literacy Grade 3 Claim 1",
+          }
+        }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
+        testCodeToLabelMap={
+          Object {
+            "Test-Name-1": "Test 1",
+            "Test-Name-2": "Test 2",
+          }
+        }
+      >
+        <AnswerKeysRubricModal
+          closeAnswerKeysModal={[Function]}
+          itemCard={
+            Object {
+              "answerKeys": "C,D",
+              "availableBrailleTypes": Array [
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECN",
+                  "selectionCode": "TDS_BT_ECN",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "DS BT UCB Label",
+                  "selectionCode": "TDS_BT_UCB",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECL label",
+                  "selectionCode": "TDS_BT_ECL",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TTDS BT EXN Label",
+                  "selectionCode": "TTDS_BT_EXN",
+                },
+              ],
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "calculator": false,
+              "claimCode": "ELA1",
+              "claimLabel": "1.Reading",
+              "commonCoreStandardId": "3.R.2a",
+              "grade": 1,
+              "gradeLabel": "Grade 3",
+              "interactionTypeCode": "MC",
+              "interactionTypeLabel": "Multiple Choice",
+              "isPerformanceItem": true,
+              "itemDifficulty": "Easy",
+              "itemKey": 3163,
+              "stimulusKey": 58679,
+              "subjectCode": "ELA",
+              "subjectLabel": "ELA/literacy",
+              "targetDescription": "Target B description",
+              "targetHash": 1039,
+              "targetId": "B",
+              "targetShortName": "Key Details",
+              "testName": "Test-Name-1",
+              "testOrder": 2,
+              "title": "ELA/ literacy Grade 3 Claim 1",
+            }
+          }
+          showModal={false}
+        >
+          <Modal
+            ariaHideApp={true}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="react-modal-content rubric-table-modal"
+            closeTimeoutMS={0}
+            contentLabel="Answer key or rubrics modal opened"
+            isOpen={false}
+            onRequestClose={[Function]}
+            overlayClassName="react-modal-overlay"
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+          >
+            <ModalPortal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="react-modal-content rubric-table-modal"
+              closeTimeoutMS={0}
+              contentLabel="Answer key or rubrics modal opened"
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={false}
+              onRequestClose={[Function]}
+              overlayClassName="react-modal-overlay"
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+              style={
+                Object {
+                  "content": Object {},
+                  "overlay": Object {},
+                }
+              }
+            />
+          </Modal>
+        </AnswerKeysRubricModal>
+        <tr
+          className=""
+          key="187-3163"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+        >
+          <td
+            aria-label="Select item to print cart"
+            className="item-checkbox"
+            key="checkbox-control"
+            onClick={[Function]}
+          >
+            <ToolTip
+              className="btn-table-cell"
+              displayIcon={false}
+              displayText={
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              }
+              helpText={
+                <label>
+                  Add item to print queue
+                </label>
+              }
+              onKeyPress={[Function]}
+            >
+              <span
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                   
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </td>
+          <td
+            className="item"
+            key="item-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="item"
+            >
+              <a
+                role="link"
+                tabIndex={0}
+              >
+                3163
+              </a>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            key="stimulus-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="stimulus"
+            >
+              <span>
+                58679
+              </span>
+            </span>
+          </td>
+          <td
+            className="item-position-in-test"
+            key="item-position-in-test-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="item-position-in-test"
+            >
+              <span>
+                2
+              </span>
+            </span>
+          </td>
+          <td
+            className="subject"
+            key="subject-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="subject"
+            >
+              <span
+                className="table-subject-highlight ela"
+              >
+                ELA
+              </span>
+            </span>
+          </td>
+          <td
+            className="grade"
+            key="grade-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="grade"
+            >
+              <span>
+                3
+              </span>
+            </span>
+          </td>
+          <td
+            className="testname"
+            key="testname-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="testname"
+            >
+              <span>
+                Test 1
+              </span>
+            </span>
+          </td>
+          <td
+            className="claim"
+            key="claim-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="claim"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="1"
+                helpText={
+                  <p>
+                    1.Reading
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    1
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        1.Reading
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="target"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="B"
+                helpText={
+                  <p>
+                    Target B description
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    B
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Target B description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="standard"
+            key="standard-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                3.R.2a
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="dok"
+            key="dok-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="dok"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="difficulty"
+            key="difficulty-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="difficulty"
+            >
+              <span>
+                Easy
+              </span>
+            </span>
+          </td>
+          <td
+            className="answerkeys"
+            key="answerkeys-187-3163"
+            role="gridcell"
+          >
+            <span
+              key="answerkeys"
+            >
+              <span
+                aria-label="Answer is C,D"
+                tabIndex={0}
+              >
+                C,D
+              </span>
+            </span>
+          </td>
+        </tr>
+      </ItemTableRow>
+      <ItemTableRow
+        associatedItems={Array []}
+        columns={
+          Array [
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item",
+              "headerClassName": "item",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item-position-in-test",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item position in test",
+              "headerClassName": "item-position-in-test",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "subject",
+                },
+              ],
+              "compare": [Function],
+              "header": "Subject",
+              "headerClassName": "subject",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "grade",
+                },
+              ],
+              "compare": [Function],
+              "header": "Grade",
+              "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "testname",
+                },
+              ],
+              "compare": [Function],
+              "header": "Test name",
+              "headerClassName": "testname",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "claim",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "target",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Target",
+              "headerClassName": "Target",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "dok",
+                },
+              ],
+              "compare": [Function],
+              "header": "DOK",
+              "headerClassName": "dok",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "difficulty",
+                },
+              ],
+              "compare": [Function],
+              "header": "Difficulty",
+              "headerClassName": "difficulty",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "answerkeys",
+                },
+              ],
+              "compare": [Function],
+              "header": "Answer key",
+              "headerClassName": "answerkeys",
+            },
+          ]
+        }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
+        hasControls={true}
+        isExpanded={false}
+        isInterimSite={true}
+        isItemSelected={false}
+        itemTableConfig={
+          Array [
+            Object {
+              "columnIndex": 1,
+              "headerName": "Item",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 2,
+              "headerName": "Stimulus ID",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 3,
+              "headerName": "Item position in test",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 4,
+              "headerName": "Subject",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 5,
+              "headerName": "Grade",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 6,
+              "headerName": "Test Name",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 7,
+              "headerName": "Claim",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 8,
+              "headerName": "Target",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 9,
+              "headerName": "Standard",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 10,
+              "headerName": "DOK",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 11,
+              "headerName": "Difficulty",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 12,
+              "headerName": "Answer key",
+              "isHidden": false,
+              "isSortable": true,
+            },
+          ]
+        }
+        key="187-3615"
+        numberOfSelectedItem={0}
+        onRowExpand={[MockFunction]}
+        onRowSelect={[MockFunction]}
+        rowData={
+          Object {
+            "answerKeys": "",
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "claimCode": "MATH4",
+            "claimLabel": "3.Modeling/Data Analysis",
+            "commonCoreStandardId": "6.M.2b",
+            "grade": 8,
+            "gradeLabel": "Grade 6",
+            "interactionTypeCode": "MS",
+            "interactionTypeLabel": "Multi Select",
+            "isPerformanceItem": true,
+            "itemDifficulty": "",
+            "itemKey": 3615,
+            "stimulusKey": 23461,
+            "subjectCode": "MATH",
+            "subjectLabel": "Math",
+            "targetDescription": "target C description",
+            "targetHash": 0,
+            "targetId": "C",
+            "targetShortName": "",
+            "testName": "Test-Name-1",
+            "testOrder": 3,
+            "title": "Math Grade 6 Claim 4",
+          }
+        }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
+        testCodeToLabelMap={
+          Object {
+            "Test-Name-1": "Test 1",
+            "Test-Name-2": "Test 2",
+          }
+        }
+      >
+        <AnswerKeysRubricModal
+          closeAnswerKeysModal={[Function]}
+          itemCard={
+            Object {
+              "answerKeys": "",
+              "availableBrailleTypes": Array [
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECN",
+                  "selectionCode": "TDS_BT_ECN",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "DS BT UCB Label",
+                  "selectionCode": "TDS_BT_UCB",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECL label",
+                  "selectionCode": "TDS_BT_ECL",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TTDS BT EXN Label",
+                  "selectionCode": "TTDS_BT_EXN",
+                },
+              ],
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "claimCode": "MATH4",
+              "claimLabel": "3.Modeling/Data Analysis",
+              "commonCoreStandardId": "6.M.2b",
+              "grade": 8,
+              "gradeLabel": "Grade 6",
+              "interactionTypeCode": "MS",
+              "interactionTypeLabel": "Multi Select",
+              "isPerformanceItem": true,
+              "itemDifficulty": "",
+              "itemKey": 3615,
+              "stimulusKey": 23461,
+              "subjectCode": "MATH",
+              "subjectLabel": "Math",
+              "targetDescription": "target C description",
+              "targetHash": 0,
+              "targetId": "C",
+              "targetShortName": "",
+              "testName": "Test-Name-1",
+              "testOrder": 3,
+              "title": "Math Grade 6 Claim 4",
+            }
+          }
+          showModal={false}
+        >
+          <Modal
+            ariaHideApp={true}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="react-modal-content rubric-table-modal"
+            closeTimeoutMS={0}
+            contentLabel="Answer key or rubrics modal opened"
+            isOpen={false}
+            onRequestClose={[Function]}
+            overlayClassName="react-modal-overlay"
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+          >
+            <ModalPortal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="react-modal-content rubric-table-modal"
+              closeTimeoutMS={0}
+              contentLabel="Answer key or rubrics modal opened"
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={false}
+              onRequestClose={[Function]}
+              overlayClassName="react-modal-overlay"
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+              style={
+                Object {
+                  "content": Object {},
+                  "overlay": Object {},
+                }
+              }
+            />
+          </Modal>
+        </AnswerKeysRubricModal>
+        <tr
+          className=""
+          key="187-3615"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+        >
+          <td
+            aria-label="Select item to print cart"
+            className="item-checkbox"
+            key="checkbox-control"
+            onClick={[Function]}
+          >
+            <ToolTip
+              className="btn-table-cell"
+              displayIcon={false}
+              displayText={
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              }
+              helpText={
+                <label>
+                  Add item to print queue
+                </label>
+              }
+              onKeyPress={[Function]}
+            >
+              <span
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                   
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </td>
+          <td
+            className="item"
+            key="item-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="item"
+            >
+              <a
+                role="link"
+                tabIndex={0}
+              >
+                3615
+              </a>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            key="stimulus-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="stimulus"
+            >
+              <span>
+                23461
+              </span>
+            </span>
+          </td>
+          <td
+            className="item-position-in-test"
+            key="item-position-in-test-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="item-position-in-test"
+            >
+              <span>
+                3
+              </span>
+            </span>
+          </td>
+          <td
+            className="subject"
+            key="subject-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="subject"
+            >
+              <span
+                className="table-subject-highlight math"
+              >
+                Math
+              </span>
+            </span>
+          </td>
+          <td
+            className="grade"
+            key="grade-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="grade"
+            >
+              <span>
+                6
+              </span>
+            </span>
+          </td>
+          <td
+            className="testname"
+            key="testname-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="testname"
+            >
+              <span>
+                Test 1
+              </span>
+            </span>
+          </td>
+          <td
+            className="claim"
+            key="claim-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="claim"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="3"
+                helpText={
+                  <p>
+                    3.Modeling/Data Analysis
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    3
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        3.Modeling/Data Analysis
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="target"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="C"
+                helpText={
+                  <p>
+                    target C description
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    C
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        target C description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="standard"
+            key="standard-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                Math Practice
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Items in this claim primarily measure the Standards for Mathematical Practice rather than Content Standards.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="dok"
+            key="dok-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="dok"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="difficulty"
+            key="difficulty-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="difficulty"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="answerkeys"
+            key="answerkeys-187-3615"
+            role="gridcell"
+          >
+            <span
+              key="answerkeys"
+            >
+              <button
+                aria-label="Click to view answer key or rubrics"
+                className="btn btn-default btn-raised btn-answerkeys"
+                onClick={[Function]}
+                type="button"
+              >
+                View
+              </button>
+            </span>
+          </td>
+        </tr>
+      </ItemTableRow>
+      <ItemTableRow
+        associatedItems={Array []}
+        columns={
+          Array [
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item",
+              "headerClassName": "item",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "stimulus",
+                },
+              ],
+              "compare": [Function],
+              "header": "Stimulus ID",
+              "headerClassName": "stimulus",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "item-position-in-test",
+                },
+              ],
+              "compare": [Function],
+              "header": "Item position in test",
+              "headerClassName": "item-position-in-test",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "subject",
+                },
+              ],
+              "compare": [Function],
+              "header": "Subject",
+              "headerClassName": "subject",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "grade",
+                },
+              ],
+              "compare": [Function],
+              "header": "Grade",
+              "headerClassName": "grade",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "testname",
+                },
+              ],
+              "compare": [Function],
+              "header": "Test name",
+              "headerClassName": "testname",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "claim",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Claim",
+              "headerClassName": "claim",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "target",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Target",
+              "headerClassName": "Target",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                },
+                Object {
+                  "accessor": [Function],
+                  "className": "standard",
+                  "helpText": [Function],
+                },
+              ],
+              "compare": [Function],
+              "header": "Standard",
+              "headerClassName": "standard",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "dok",
+                },
+              ],
+              "compare": [Function],
+              "header": "DOK",
+              "headerClassName": "dok",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "difficulty",
+                },
+              ],
+              "compare": [Function],
+              "header": "Difficulty",
+              "headerClassName": "difficulty",
+            },
+            Object {
+              "cols": Array [
+                Object {
+                  "accessor": [Function],
+                  "className": "answerkeys",
+                },
+              ],
+              "compare": [Function],
+              "header": "Answer key",
+              "headerClassName": "answerkeys",
+            },
+          ]
+        }
+        countNumberOfItemsAfterSelection={[MockFunction]}
+        getSelectedItemCount={[MockFunction]}
+        hasControls={true}
+        isExpanded={false}
+        isInterimSite={true}
+        isItemSelected={false}
+        itemTableConfig={
+          Array [
+            Object {
+              "columnIndex": 1,
+              "headerName": "Item",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 2,
+              "headerName": "Stimulus ID",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 3,
+              "headerName": "Item position in test",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 4,
+              "headerName": "Subject",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 5,
+              "headerName": "Grade",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 6,
+              "headerName": "Test Name",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 7,
+              "headerName": "Claim",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 8,
+              "headerName": "Target",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 9,
+              "headerName": "Standard",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 10,
+              "headerName": "DOK",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 11,
+              "headerName": "Difficulty",
+              "isHidden": false,
+              "isSortable": true,
+            },
+            Object {
+              "columnIndex": 12,
+              "headerName": "Answer key",
+              "isHidden": false,
+              "isSortable": true,
+            },
+          ]
+        }
+        key="187-2928"
+        numberOfSelectedItem={0}
+        onRowExpand={[MockFunction]}
+        onRowSelect={[MockFunction]}
+        rowData={
+          Object {
+            "answerKeys": "",
+            "availableBrailleTypes": Array [
+              Object {
+                "disabled": true,
+                "hidden": false,
+                "label": "TDS BT ECN",
+                "selectionCode": "TDS_BT_ECN",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "DS BT UCB Label",
+                "selectionCode": "TDS_BT_UCB",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TDS BT ECL label",
+                "selectionCode": "TDS_BT_ECL",
+              },
+              Object {
+                "disabled": false,
+                "hidden": false,
+                "label": "TTDS BT EXN Label",
+                "selectionCode": "TTDS_BT_EXN",
+              },
+            ],
+            "bankKey": 187,
+            "brailleOnlyItem": false,
+            "claimCode": "ELA4",
+            "claimLabel": "4.Research/Inquiry",
+            "commonCoreStandardId": "4.E.4a",
+            "grade": 2,
+            "gradeLabel": "Grade 4",
+            "interactionTypeCode": "MS",
+            "interactionTypeLabel": "Multi Select",
+            "isPerformanceItem": false,
+            "itemDifficulty": "Hard",
+            "itemKey": 2928,
+            "stimulusKey": 87679,
+            "subjectCode": "ELA",
+            "subjectLabel": "ELA/literacy",
+            "targetDescription": "target D description",
+            "targetHash": 2832,
+            "targetId": "D",
+            "targetShortName": "Evaluate Information/ sources",
+            "testName": "",
+            "testOrder": 2,
+            "title": "ELA/ literacy Grade 4 Claim 4",
+          }
+        }
+        showErrorModalOnPrintItemsCountExceeded={[MockFunction]}
+        testCodeToLabelMap={
+          Object {
+            "Test-Name-1": "Test 1",
+            "Test-Name-2": "Test 2",
+          }
+        }
+      >
+        <AnswerKeysRubricModal
+          closeAnswerKeysModal={[Function]}
+          itemCard={
+            Object {
+              "answerKeys": "",
+              "availableBrailleTypes": Array [
+                Object {
+                  "disabled": true,
+                  "hidden": false,
+                  "label": "TDS BT ECN",
+                  "selectionCode": "TDS_BT_ECN",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "DS BT UCB Label",
+                  "selectionCode": "TDS_BT_UCB",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TDS BT ECL label",
+                  "selectionCode": "TDS_BT_ECL",
+                },
+                Object {
+                  "disabled": false,
+                  "hidden": false,
+                  "label": "TTDS BT EXN Label",
+                  "selectionCode": "TTDS_BT_EXN",
+                },
+              ],
+              "bankKey": 187,
+              "brailleOnlyItem": false,
+              "claimCode": "ELA4",
+              "claimLabel": "4.Research/Inquiry",
+              "commonCoreStandardId": "4.E.4a",
+              "grade": 2,
+              "gradeLabel": "Grade 4",
+              "interactionTypeCode": "MS",
+              "interactionTypeLabel": "Multi Select",
+              "isPerformanceItem": false,
+              "itemDifficulty": "Hard",
+              "itemKey": 2928,
+              "stimulusKey": 87679,
+              "subjectCode": "ELA",
+              "subjectLabel": "ELA/literacy",
+              "targetDescription": "target D description",
+              "targetHash": 2832,
+              "targetId": "D",
+              "targetShortName": "Evaluate Information/ sources",
+              "testName": "",
+              "testOrder": 2,
+              "title": "ELA/ literacy Grade 4 Claim 4",
+            }
+          }
+          showModal={false}
+        >
+          <Modal
+            ariaHideApp={true}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="react-modal-content rubric-table-modal"
+            closeTimeoutMS={0}
+            contentLabel="Answer key or rubrics modal opened"
+            isOpen={false}
+            onRequestClose={[Function]}
+            overlayClassName="react-modal-overlay"
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={true}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+          >
+            <ModalPortal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="react-modal-content rubric-table-modal"
+              closeTimeoutMS={0}
+              contentLabel="Answer key or rubrics modal opened"
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={false}
+              onRequestClose={[Function]}
+              overlayClassName="react-modal-overlay"
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+              style={
+                Object {
+                  "content": Object {},
+                  "overlay": Object {},
+                }
+              }
+            />
+          </Modal>
+        </AnswerKeysRubricModal>
+        <tr
+          className=""
+          key="187-2928"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+        >
+          <td
+            aria-label="Select item to print cart"
+            className="item-checkbox"
+            key="checkbox-control"
+            onClick={[Function]}
+          >
+            <ToolTip
+              className="btn-table-cell"
+              displayIcon={false}
+              displayText={
+                <button
+                  className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                  tabIndex={-1}
+                  type="button"
+                >
+                  <i
+                    className="fa fa-2x fa-plus-circle"
+                  />
+                </button>
+              }
+              helpText={
+                <label>
+                  Add item to print queue
+                </label>
+              }
+              onKeyPress={[Function]}
+            >
+              <span
+                className="tool-tip-links btn-table-cell"
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                tabIndex={0}
+              >
+                <span
+                  className="tool-tip-hoverable"
+                >
+                  <button
+                    className="btn btn  btn-item-add-remove-grid btn-sm btn-blue-border"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <i
+                      className="fa fa-2x fa-plus-circle"
+                    />
+                  </button>
+                   
+                </span>
+                <span
+                  className="tool-tip-details"
+                >
+                  <span
+                    className="tool-tip-message  "
+                  >
+                    <label>
+                      Add item to print queue
+                    </label>
+                  </span>
+                </span>
+              </span>
+            </ToolTip>
+          </td>
+          <td
+            className="item"
+            key="item-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="item"
+            >
+              <a
+                role="link"
+                tabIndex={0}
+              >
+                2928
+              </a>
+            </span>
+          </td>
+          <td
+            className="stimulus"
+            key="stimulus-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="stimulus"
+            >
+              <span>
+                87679
+              </span>
+            </span>
+          </td>
+          <td
+            className="item-position-in-test"
+            key="item-position-in-test-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="item-position-in-test"
+            >
+              <span>
+                2
+              </span>
+            </span>
+          </td>
+          <td
+            className="subject"
+            key="subject-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="subject"
+            >
+              <span
+                className="table-subject-highlight ela"
+              >
+                ELA
+              </span>
+            </span>
+          </td>
+          <td
+            className="grade"
+            key="grade-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="grade"
+            >
+              <span>
+                4
+              </span>
+            </span>
+          </td>
+          <td
+            className="testname"
+            key="testname-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="testname"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="claim"
+            key="claim-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="claim"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="4"
+                helpText={
+                  <p>
+                    4.Research/Inquiry
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    4
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        4.Research/Inquiry
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="Target"
+            key="Target-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="target"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText="D"
+                helpText={
+                  <p>
+                    target D description
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                    D
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        target D description
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="standard"
+            key="standard-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="standard"
+            >
+              <span>
+                4.E.4a
+              </span>
+            </span>
+            <span
+              key="standard"
+            >
+              <ToolTip
+                className="box"
+                displayIcon={true}
+                displayText=""
+                helpText={
+                  <p>
+                    Content Standard information is currently unavailable for this item.
+                  </p>
+                }
+                position="bottom"
+              >
+                <span
+                  className="tool-tip-links box"
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="tool-tip-hoverable"
+                  >
+                     
+                    <span
+                      aria-hidden="true"
+                      className="fa fa-info-circle fa-sm"
+                    />
+                  </span>
+                  <span
+                    className="tool-tip-details"
+                  >
+                    <span
+                      className="tool-tip-message bottom "
+                    >
+                      <p>
+                        Content Standard information is currently unavailable for this item.
+                      </p>
+                    </span>
+                  </span>
+                </span>
+              </ToolTip>
+            </span>
+          </td>
+          <td
+            className="dok"
+            key="dok-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="dok"
+            >
+              <span />
+            </span>
+          </td>
+          <td
+            className="difficulty"
+            key="difficulty-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="difficulty"
+            >
+              <span>
+                Hard
+              </span>
+            </span>
+          </td>
+          <td
+            className="answerkeys"
+            key="answerkeys-187-2928"
+            role="gridcell"
+          >
+            <span
+              key="answerkeys"
+            >
+              <button
+                aria-label="Click to view answer key or rubrics"
+                className="btn btn-default btn-raised btn-answerkeys"
+                onClick={[Function]}
+                type="button"
+              >
+                View
+              </button>
+            </span>
+          </td>
+        </tr>
+      </ItemTableRow>
+    </tbody>
+  </ItemTable>
+</table>
+`;

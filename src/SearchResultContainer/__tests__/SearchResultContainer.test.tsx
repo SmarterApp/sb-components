@@ -62,10 +62,10 @@ describe("SearchResultContainer", () => {
       <SearchResultContainer {...mockSearchResultCardProps} />
     );
     const isClearButtonDisabled = wrapper
-      .find(`button[title="Clear Selection"]`)
+      .find(`button[id="reset-item-selection"]`)
       .hasClass("disabled");
     const isSelectAllButtonDisabled = wrapper
-      .find(`button[title="Select All"]`)
+      .find(`button[id="select-all-items-btn"]`)
       .hasClass("disabled");
     expect(isClearButtonDisabled).toBe(true);
     expect(isSelectAllButtonDisabled).toBe(false);

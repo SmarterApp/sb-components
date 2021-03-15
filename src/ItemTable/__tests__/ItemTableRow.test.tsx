@@ -1,10 +1,7 @@
 import "jsdom-global/register";
 import * as React from "react";
-import * as TestUtils from "react-dom/test-utils";
 import { shallow, mount, render } from "enzyme";
-import { itemCardList } from "@mocks/ItemCard/mocks";
-import { tabClassNames } from "@mocks/ItemTable/mocks";
-import { aboutItemMockModel } from "@mocks/index";
+import { itemCardList, testCodeToLabelMap_mock } from "@mocks/ItemCard/mocks";
 import { itemHandler } from "./mocks";
 import {
   GradeLevels,
@@ -16,6 +13,7 @@ import {
   ItemTableRowProps,
   ItemTableRow
 } from "@src/index";
+import { getColumnsHeaderConfig_mock } from "../mocks";
 
 describe("ItemTableRow", () => {
   const rubrics: RubricModel[] = [];
@@ -27,7 +25,16 @@ describe("ItemTableRow", () => {
     columns: headerColumns,
     isExpanded: false,
     onRowExpand: itemHandler,
-    onRowSelect: itemHandler
+    onRowSelect: itemHandler,
+    isInterimSite: true,
+    testCodeToLabelMap: testCodeToLabelMap_mock,
+    associatedItems: [],
+    countNumberOfItemsAfterSelection: () => 1,
+    isItemSelected: true,
+    getSelectedItemCount: () => 4,
+    itemTableConfig: getColumnsHeaderConfig_mock(),
+    numberOfSelectedItem: 4,
+    showErrorModalOnPrintItemsCountExceeded: () => false
   };
 
   const wrapper = mount(

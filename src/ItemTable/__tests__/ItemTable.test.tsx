@@ -3,8 +3,11 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as TestUtils from "react-dom/test-utils";
 import { shallow, mount, render } from "enzyme";
-import { itemCardList } from "@mocks/ItemCard/mocks";
-import { tabClassNames } from "@mocks/ItemTable/mocks";
+import { itemCardList, testCodeToLabelMap_mock } from "@mocks/ItemCard/mocks";
+import {
+  getColumnsHeaderConfig_mock,
+  tabClassNames
+} from "@mocks/ItemTable/mocks";
 import { itemHandler, getSelectedItemCount } from "./mocks";
 import { aboutItemMockModel } from "@mocks/index";
 import {
@@ -18,6 +21,11 @@ import {
   ItemTable,
   ItemTableProps
 } from "@src/index";
+import { getUpdatedItemColumnsHeaderConfig } from "@src/SearchResultContainer/SearchResultContainerHelper";
+import {
+  ItemColumnHeadersConfig,
+  itemColumnsName_Interim
+} from "@src/SearchResultContainer/SearchResultModels";
 
 describe("ItemTable", () => {
   const selectedItem = itemCardList[0];
@@ -38,7 +46,10 @@ describe("ItemTable", () => {
     getSelectedItemCount: getSelectedItemCount,
     showErrorModalOnPrintItemsCountExceeded: itemHandler,
     associatedItems: [],
-    countNumberOfItemsAfterSelection: itemHandler
+    countNumberOfItemsAfterSelection: itemHandler,
+    isInterimSite: true,
+    testCodeToLabelMap: testCodeToLabelMap_mock,
+    itemTableConfig: getColumnsHeaderConfig_mock()
   };
 
   const propsExpanded: ItemTableProps = {

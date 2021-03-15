@@ -9,7 +9,10 @@ import {
   HeaderTable,
   HeaderTableProps
 } from "@src/index";
-import { tabClassNames } from "@mocks/ItemTable/mocks";
+import {
+  getColumnsHeaderConfig_mock,
+  tabClassNames
+} from "@mocks/ItemTable/mocks";
 import { itemHandler } from "./mocks";
 import { PrintcartHeaderTable } from "../PrintcartHeaderTable";
 
@@ -27,7 +30,7 @@ describe("ItemTableHeader", () => {
     columns: headerColumns,
     onHeaderClick: itemHandler,
     isLinkTable: false,
-    itemTableConfig: []
+    itemTableConfig: getColumnsHeaderConfig_mock()
   };
 
   const wrapper = shallow(<PrintcartHeaderTable {...props} />);
@@ -39,43 +42,7 @@ describe("ItemTableHeader", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("calls onHeaderClick", () => {
-    tabClassNames.forEach(tab => {
-      wrapper.find(`th.${tab}`).simulate("click");
-      expect(props.onHeaderClick).toHaveBeenCalled();
-    });
-  });
-
-  it("sorts list on header click", () => {
-    tabClassNames.forEach(tab => {
-      wrapper.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-      wrapper.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-      wrapper.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-    });
-  });
-
   it("matches link table snapshot", () => {
     expect(wrapperLinkTable).toMatchSnapshot();
-  });
-
-  it("calls onHeaderClick link table", () => {
-    tabClassNames.forEach(tab => {
-      wrapperLinkTable.find(`th.${tab}`).simulate("click");
-      expect(props.onHeaderClick).toHaveBeenCalled();
-    });
-  });
-
-  it("sorts list on header link table", () => {
-    tabClassNames.forEach(tab => {
-      wrapperLinkTable.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-      wrapperLinkTable.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-      wrapperLinkTable.find(`th.${tab}`).simulate("click");
-      expect(JSON.stringify(wrapper.html())).toMatchSnapshot();
-    });
   });
 });

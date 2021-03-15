@@ -705,6 +705,7 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleResetItems}
           aria-label="Clear items from print cart"
           title="Clear items from print cart"
+          id="reset-item-selection"
           className={
             "btn btn-default search-result-container-header-button disabled btn-sm"
           }
@@ -796,6 +797,7 @@ export class SearchResultContainer extends React.Component<
           onClick={this.handleSelectAllItems}
           aria-label="Select all to print"
           title="Select all to print"
+          id="select-all-items-btn"
           className={`btn btn-default btn-sm search-result-container-header-button ${disableCssClass} `}
         >
           <i className="fa fa-check" aria-hidden="true" /> Select All
