@@ -13,7 +13,7 @@ import {
   ItemTableRowProps,
   ItemTableRow
 } from "@src/index";
-import { getColumnsHeaderConfig_mock } from "../mocks";
+import { getColumnsHeaderConfig_mock } from "@mocks/ItemTable/mocks";
 
 describe("ItemTableRow", () => {
   const rubrics: RubricModel[] = [];

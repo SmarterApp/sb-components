@@ -360,20 +360,18 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
         <div
           role="link"
           className={`card card-block ${this.props.rowData.subjectCode.toLowerCase()}`}
+          tabIndex={0}
+          aria-label={`Item of Grade ${
+            this.props.rowData.gradeLabel
+          }, Subject ${this.props.rowData.subjectLabel}, Item Id ${
+            this.props.rowData.itemKey
+          }`}
+          onClick={this.handleOnClick}
+          onKeyUp={this.handleKeyPress}
         >
           <div className="card-contents">
-            <div
-              className="card-header"
-              onClick={this.handleOnClick}
-              onKeyUp={this.handleKeyPress}
-              tabIndex={0}
-              aria-label={`Item of Grade ${
-                this.props.rowData.gradeLabel
-              }, Subject ${this.props.rowData.subjectLabel}, Item Id ${
-                this.props.rowData.itemKey
-              }`}
-            >
-              <h3 className="card-title">{this.props.rowData.itemKey}</h3>
+            <div className="card-header">
+              <h3 className="card-title">{this.props.rowData.subjectLabel}</h3>
               <div className="card-icon-container">
                 <span className="card-grade-tag card-icon">
                   {GradeLevels.GradeLevel.gradeCaseToShortString(
@@ -400,15 +398,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             )}
             {!this.toggleItemLabel("Item position in test") &&
               ItemPositionintest_tsx()}
-            {!this.toggleItemLabel("Subject") && (
-              <p className="card-text grade">
-                <span className="card-text-label">Subject:</span>
-                <span className="card-text-value">
-                  {" "}
-                  {this.props.rowData.subjectLabel}
-                </span>
-              </p>
-            )}
+
             {!this.toggleItemLabel("grade") && (
               <p className="card-text grade">
                 <span className="card-text-label">Grade:</span>
@@ -467,7 +457,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             {/***** * Answer key --- */}
             {!this.toggleItemLabel("Answer key") && (
               <p className="card-text interaction-type">
-                <span className="card-text-label">Answer key:</span>
+                <span className="card-text-label">Answer:</span>
                 <span className="card-text-value">
                   {this.props.rowData.answerKeys.length > 0 ? (
                     <span
@@ -480,7 +470,7 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
                   ) : (
                     <button
                       type="button"
-                      className="btn btn-defualt"
+                      className="btn btn-defualt btn-answerkeys"
                       onClick={e => {
                         this.openAnswerKeyModal(e);
                       }}
