@@ -455,9 +455,9 @@ export class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
             {!this.toggleItemLabel("Difficulty") && ItemDifficulty_tsx()}
 
             {/***** * Answer key --- */}
-            {!this.toggleItemLabel("Answer key") && (
+            {!this.toggleItemLabel("Answer Key") && (
               <p className="card-text answer">
-                <span className="card-text-label">Answer:</span>
+                <span className="card-text-label">Answer Key:</span>
                 <span className="card-text-value">
                   {this.props.rowData.answerKeys.length > 0 ? (
                     <span

@@ -14,7 +14,7 @@ export const itemColumnsName_Interim: string[] = [
   "Standard",
   "DOK",
   "Difficulty",
-  "Answer key"
+  "Answer Key"
 ];
 
 export const itemColumnsName_NonInterim: string[] = [
@@ -26,7 +26,7 @@ export const itemColumnsName_NonInterim: string[] = [
   "Target",
   "Standard",
   "Item Type",
-  "Answer key"
+  "Answer Key"
 ];
 
 export interface ItemColumnHeadersConfig {

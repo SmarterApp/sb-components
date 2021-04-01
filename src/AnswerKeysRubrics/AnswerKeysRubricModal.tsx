@@ -113,9 +113,9 @@ export class AnswerKeysRubricModal extends React.Component<
           overlayClassName="react-modal-overlay"
           className="react-modal-content rubric-table-modal"
         >
-          <div className="modal-wrapper" aria-labelledby="Answer Key/Rubrics">
+          <div className="modal-wrapper" aria-labelledby="Answer Key/Rubric">
             <div className="modal-header">
-              <h4 className="modal-title">Answer Key/Rubrics</h4>
+              <h4 className="modal-title">Answer Key/Rubric</h4>
               <button
                 className="close"
                 onClick={this.handleHideAnswerKeysModal}
