@@ -28,7 +28,7 @@ export const Footer: React.SFC<{}> = props => {
             />
           </div>
         </div>
-        <div>IAIP v1.0.0</div>
+        <div>IAIP v1.1.3</div>
       </div>
     </footer>
   );
